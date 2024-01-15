@@ -3,10 +3,12 @@ body{
     right: 0;
     top: 0;
     margin: 0;
-    background-color: rgb(82, 82, 82);
+    background-color: #F6F7F8;
 }
 
-.testing{
+.logo_container{
+    position: absolute;
+    top: 0;
     height: 10vw;
     width: 10vw;
     min-height: 130px;
@@ -15,7 +17,7 @@ body{
     justify-content: center;
     align-items: center;
     transition: 500ms ease-in-out;
-    background-color: rgb(255, 255, 255);
+    background-color: #F6F7F8;
 }
 
 .big_size{
@@ -28,5 +30,29 @@ transition: 500ms ease-in-out;
     height: 50%;
 }
 
+.sign_up_menu{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin: 50px;
+    gap: 10px;
+}
 
+.sign_up_menu a{    
+    text-decoration: none;
+    color: #091931 !important;
+}
+
+.btndark{
+    padding: 15px, 24px, 15px, 24px;
+    border-radius: 8px;
+    color: #FFFFFF !important;
+    background-color: #091931 !important;
+}
+
+.btndark:hover{
+    border-color: #091931 !important;
+    background-color:#FFFFFF !important;
+    color: #091931 !important;
+}
 

@@ -1,3 +1,3 @@
 function move (){
-    document.getElementById('testing').classList.remove("big_size");
+    document.getElementById('logo_container').classList.remove("big_size");
 }
