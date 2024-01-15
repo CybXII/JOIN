@@ -53,8 +53,8 @@ transition: 500ms ease-in-out;
 }
 
 .btndark:hover{
-    border-color: #091931 !important;
-    background-color:#FFFFFF !important;
-    color: #091931 !important;
+    border-color: #29ABE2 !important;
+    background-color:#29ABE2 !important;
+    color: #FFFFFF !important;
 }
 
