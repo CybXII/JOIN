@@ -38,9 +38,11 @@ transition: 500ms ease-in-out;
     gap: 10px;
 }
 
-.sign_up_menu a{    
+.sign_up_menu p{    
     text-decoration: none;
     color: #091931 !important;
+    margin: 0;
+    cursor: default;
 }
 
 .btndark{
