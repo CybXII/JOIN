@@ -1,0 +1,28 @@
+body{
+    left: 0;
+    right: 0;
+    top: 0;
+    margin: 0;
+    background-color: rgb(82, 82, 82);
+}
+
+.testing{
+    height: 10vw;
+    width: 10vw;
+    min-height: 130px;
+    min-width: 130px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 500ms ease-in-out;
+    background-color: rgb(255, 255, 255);
+}
+
+.big_size{
+transition: 500ms ease-in-out;
+    height: 100vh;
+    width: 100vw;
+}
+
+
+
