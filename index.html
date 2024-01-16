@@ -11,12 +11,52 @@
     <script src="./js/script.js"></script>
 </head>
 <body>
-    <div onclick="move()" id="logo_container" class="logo_container big_size">
-        <img id="join_logo" class="join_logo"src="./img/join_start.svg" alt="">
+
+    <div class="sign_up_menu">
+        <div onclick="move()" id="logo_container" class="logo_container big_size">
+            <img id="join_logo" class="join_logo"src="./img/join_start.svg" alt="">
+        </div>
+        <div class="frame_156" id="sign_up_menu">
+            <p>Not a Join user?</p>
+            <button onclick="openRegistration()" type="button" class="btndark">Sign up</button>
+        </div>    
     </div>
-    <div class="sign_up_menu" id="sign_up_menu">
-        <p class="">Not a Join user?</p>
-        <button onclick="openRegistration()" type="button" class="btn btndark">Sign up</button>
+    <div class="form_container">
+        <div class="frame_153">
+            <div class="frame_159">
+                <h1>Log in</h1>
+                <div class="vector"></div>
+            </div>
+            <form class="frame_250">
+                <div class="mb-3">
+                    <div class="form-control space">
+                        <input type="email" class="" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email">
+                        <img src="./img/mail.svg"  alt="">      
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <div class="space form-control">
+                        <input type="password" class="" id="exampleInputPassword1" placeholder="Password">
+                        <img src="./img/lock.svg"  alt="">
+                    </div>
+                </div>
+                <div class="frame_158">
+                    <div class="frame_37 mb-3 center form-check">
+                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                        <label class="form-check-label" for="exampleCheck1">Remember me</label>
+                    </div>
+                    <a href="">Forgot my password</a>      
+                </div>
+              </form>
+              <div class="frame_176">
+                <button type="submit" class="btndark">Log in</button>
+                <button type="submit" class="btnlight">Guest Log in</button>
+              </div>
+        </div>
     </div>
+    <div class="frame_213">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Legal notice</a>
+  </div>  
 </body>
 </html>
