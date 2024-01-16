@@ -1,5 +1,5 @@
 
-const STORAGE_TOKEN = "HIER DEIN TOKEN EINFÜGEN";
+const STORAGE_TOKEN = `${token["token"]}`;
 const STORAGE_URL = "https://remote-storage.developerakademie.org/item";
 
 
