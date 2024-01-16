@@ -1,12 +1,11 @@
 
-const STORAGE_TOKEN = `${token["token"]}`;
-const STORAGE_URL = "https://remote-storage.developerakademie.org/item";
-
+let STORAGE_TOKEN = [];
+let STORAGE_URL = `https://remote-storage.developerakademie.org/item`;
 
 async function loadToken(){
-    let resp = await fetch("../json/storagetoken.json")
+    let resp = await fetch("../json/token.json")
     token = await resp.json();
-    console.log(token)
+    STORAGE_TOKEN.push(token[0]["token"]);
 }
 
 
