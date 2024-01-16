@@ -6,8 +6,9 @@
     <title>Document</title>
     <script src="./js/login.js"></script>
     <script src="./js/register.js"></script>
+    <script src="./js/remotestorage.js"></script>
   </head>
-  <body onload="registerComplete()">
+  <body onload="registerComplete(), loadToken()">
     <form onsubmit="login(); return false">
       <input type="email" required id="email" />
       <input type="password" required id="password" />
