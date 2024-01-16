@@ -220,7 +220,13 @@ body{
 .frame_213 a:hover{
     color: #29ABE2;
     font-weight: 600;
-
 }
+
+.form-check-input:checked{
+    background-color: #FFFFFF;
+    color: #091931;
+    --bs-form-check-bg-image: url()
+}
+
 
 
