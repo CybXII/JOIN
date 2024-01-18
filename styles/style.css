@@ -618,11 +618,13 @@ body{
 }
 
 .big_size img{
-position: absolute;
-width: 50% !important;
-height: 50% !important;
-transition: 500ms ease-in-out;
-}
+  position: absolute;
+  width: 50% !important;
+  height: 50% !important;
+  transition: 500ms ease-in-out;
+  top: 25% !important;
+  left: 25% !important;
+  }
 
 
 
