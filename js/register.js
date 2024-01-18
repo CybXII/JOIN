@@ -7,3 +7,7 @@ function addUser() {
   // Weiterleitung zu Loginseite + Nachricht anzeigen erfolgreiche Registrierung
   window.location.href = "login.html?msg=Du hast Dich erfolgreich registriert";
 }
+
+function openRegistration() {
+  location.href = "./register.html";
+}

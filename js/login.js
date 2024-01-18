@@ -9,7 +9,7 @@ function registerComplete() {
   // else display none
 }
 
-let users = [{ email: "max@test.de", password: "test123" }];
+// let users = [{ email: "max@test.de", password: "test123" }];
 
 function login() {
   let email = document.getElementById("email");
