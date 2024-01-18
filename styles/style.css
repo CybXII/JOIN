@@ -38,11 +38,7 @@ body{
     width: 100%;
 }
 
-.big_size{
-    transition: 500ms ease-in-out;
-    height: 100vh;
-    width: 100vw;
-}
+
 
 .join_logo{
     height: 50%;
@@ -245,12 +241,7 @@ body{
   width: 100%;
 }
 
-.log-in .div {
-  background-color: #f6f7f8;
-  width: 1440px;
-  height: 1024px;
-  position: relative;
-}
+
 
 .log-in .frame {
   display: inline-flex;
@@ -499,13 +490,7 @@ body{
   white-space: nowrap;
 }
 
-.log-in .capa {
-  position: absolute;
-  width: 100px;
-  height: 122px;
-  top: 80px;
-  left: 77px;
-}
+
 
 .log-in .frame-9 {
   display: inline-flex;
@@ -603,6 +588,41 @@ body{
   left: 137px;
 }
 
+.log-in .div {
+  background-color: #f6f7f8;
+  width: 1440px;
+  height: 1024px;
+  position: relative;
+  transition: 500ms ease-in-out;
+}
+
+
+.log-in .capa {
+  position: absolute;
+  width: 100px;
+  height: 122px;
+  top: 80px;
+  left: 77px;
+  transition: 500ms ease-in-out;
+}
+
+
+.big_size{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 500ms ease-in-out;
+  height: 100%;
+  width: 100%;
+  transition: 500ms ease-in-out;
+}
+
+.big_size img{
+position: absolute;
+width: 50% !important;
+height: 50% !important;
+transition: 500ms ease-in-out;
+}
 
 
 
