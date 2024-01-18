@@ -243,7 +243,7 @@ body{
 
 
 
-.log-in .frame {
+.log-in .frame-153 {
   display: inline-flex;
   flex-direction: column;
   align-items: center;
@@ -258,7 +258,7 @@ body{
   box-shadow: var(--shadoe-backlog-box);
 }
 
-.log-in .frame-2 {
+.log-in .frame-159 {
   display: inline-flex;
   flex-direction: column;
   align-items: center;
@@ -288,7 +288,7 @@ body{
   margin-bottom: -1.5px;
 }
 
-.log-in .frame-3 {
+.log-in .frame-250 {
   display: flex;
   flex-direction: column;
   align-items: center;
