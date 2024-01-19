@@ -1,18 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image" href="./img/join-favicon.svg" />
     <title>Document</title>
-        <script src="./js/script.js"></script>
+    <script src="./js/script.js"></script>
     <script src="./js/login.js"></script>
+    <link rel="stylesheet" href="./templates/header_desktop_top.css" />
+    <link rel="stylesheet" href="./templates/menu_desktop_left.css" />
     <script src="./js/register.js"></script>
-</head>
-<body onload="includeHTML()">
-  <nav w3-include-html="./templates/header_deskop_top.html" class="navigation"></nav>
-  <main w3-include-html="./templates/menu_deskop_left.html"></main>
-        <div
+  </head>
+  <body onload="includeHTML()">
+    <nav
+      w3-include-html="./templates/header_desktop_top.html"
+      class="navigation"
+    ></nav>
+    <sidebar w3-include-html="./templates/menu_desktop_left.html"></sidebar>
+    <div
       style="
         width: 150px;
         height: 250px;
@@ -24,15 +29,14 @@
     >
       SUMMARY
     </div>
-    <div style="display: flex; flex-direction: column;">
-    <a href="./summary.html">SUMMARY</a>
-    <a href="./board.html">BOARD</a>
-    <a href="./addtask.html">ADD TASK</a>
-    <a href="./contacts.html">CONTACTS</a>
-    <a href="./privacy_policy.html">PRIVACY POLICY</a>
-    <a href="./legal_notice.html">LEGAL NOTICE</a>
-        <a href="./index.html">LOGOUT</a>
+    <div style="display: flex; flex-direction: column">
+      <a href="./summary.html">SUMMARY</a>
+      <a href="./board.html">BOARD</a>
+      <a href="./addtask.html">ADD TASK</a>
+      <a href="./contacts.html">CONTACTS</a>
+      <a href="./privacy_policy.html">PRIVACY POLICY</a>
+      <a href="./legal_notice.html">LEGAL NOTICE</a>
+      <a href="./index.html">LOGOUT</a>
     </div>
-    
-</body>
+  </body>
 </html>

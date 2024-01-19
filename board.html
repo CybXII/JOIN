@@ -4,9 +4,17 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image" href="./img/join-favicon.svg" />
+    <link rel="stylesheet" href="./templates/header_desktop_top.css" />
+    <link rel="stylesheet" href="./templates/menu_desktop_left.css" />
+    <script src="./js/script.js"></script>
     <title>Board</title>
   </head>
-  <body>
+  <body onload="includeHTML()">
+    <nav
+      w3-include-html="./templates/header_desktop_top.html"
+      class="navigation"
+    ></nav>
+    <sidebar w3-include-html="./templates/menu_desktop_left.html"></sidebar>
     <div
       style="
         width: 150px;
@@ -19,14 +27,14 @@
     >
       BOARD
     </div>
-    <div style="display: flex; flex-direction: column;">
-    <a href="./summary.html">SUMMARY</a>
-    <a href="./board.html">BOARD</a>
-    <a href="./addtask.html">ADD TASK</a>
-    <a href="./contacts.html">CONTACTS</a>
-    <a href="./privacy_policy.html">PRIVACY POLICY</a>
-    <a href="./legal_notice.html">LEGAL NOTICE</a>
-        <a href="./index.html">LOGOUT</a>
+    <div style="display: flex; flex-direction: column">
+      <a href="./summary.html">SUMMARY</a>
+      <a href="./board.html">BOARD</a>
+      <a href="./addtask.html">ADD TASK</a>
+      <a href="./contacts.html">CONTACTS</a>
+      <a href="./privacy_policy.html">PRIVACY POLICY</a>
+      <a href="./legal_notice.html">LEGAL NOTICE</a>
+      <a href="./index.html">LOGOUT</a>
     </div>
   </body>
 </html>
