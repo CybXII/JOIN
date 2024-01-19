@@ -7,3 +7,19 @@
     align-items: center;
 }
 
+.kanban_body {
+    padding: 1.25rem 2.5rem 1.25rem 21.75rem;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.frame-42 {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.help_icon {
+    width: 2rem;
+    height: 2rem;
+}
