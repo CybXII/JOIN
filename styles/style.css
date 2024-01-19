@@ -13,6 +13,7 @@ body{
 
 
 .logo_container{
+      border: 1px solid red;
     position: absolute;
     top: 0;
     left: 0;
@@ -228,6 +229,7 @@ body{
 
 
 .log-in {
+      border: 1px solid red;
   top: 0;
   left: 0;
   right: 0;
@@ -245,6 +247,7 @@ body{
 
 
 .log-in .frame-153 {
+      border: 1px solid red;
   display: inline-flex;
   flex-direction: column;
   align-items: center;
@@ -260,6 +263,7 @@ body{
 }
 
 .log-in .frame-159 {
+      border: 1px solid red;
   display: inline-flex;
   flex-direction: column;
   align-items: center;
@@ -269,6 +273,7 @@ body{
 }
 
 .log-in .text-wrapper {
+      border: 1px solid red;
   position: relative;
   width: 315px;
   margin-top: -1px;
@@ -283,6 +288,7 @@ body{
 }
 
 .log-in .vector {
+      border: 1px solid red;
   position: relative;
   width: 153px;
   height: 3px;
@@ -290,6 +296,7 @@ body{
 }
 
 .log-in .frame-250 {
+      border: 1px solid red;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -301,6 +308,7 @@ body{
 }
 
 .log-in .form_div {
+      border: 1px solid red;
   display: inline-flex;
   flex-direction: column;
   height: 152px;
@@ -310,6 +318,7 @@ body{
 }
 
 .log-in .frame-155 {
+      border: 1px solid red;
   display: inline-flex;
   flex-direction: column;
   align-items: flex-start;
@@ -319,6 +328,7 @@ body{
 }
 
 .log-in .frame-wrapper {
+      border: 1px solid red;
   display: flex;
   width: 422px;
   align-items: center;
@@ -333,6 +343,7 @@ body{
 }
 
 .log-in .frame-14 {
+      border: 1px solid red;
   display: flex;
   width: 380px;
   align-items: center;
@@ -341,6 +352,7 @@ body{
 }
 
 input{
+      border: 1px solid red;
   border: none;
   color: black;
   /* Version 2/t6 */
@@ -352,23 +364,28 @@ input{
 }
 
 input::placeholder{
+      border: 1px solid red;
   color: var(--Style, #D1D1D1);
 }
 
 .frame-wrapper:focus-visible{
+      border: 1px solid red;
   outline: 2px ridge #29ABE2;
   border-radius: 2px;
 }
 
 .frame-wrapper:hover{
+      border: 1px solid red;
   outline: 2px ridge #29ABE2;;
 }
 
 input:focus-visible{
+      border: 1px solid red;
   outline: none;
 }
 
 .log-in .text-wrapper-2 {
+      border: 1px solid red;
   position: relative;
   width: fit-content;
   margin-top: -1px;
@@ -383,12 +400,14 @@ input:focus-visible{
 }
 
 .log-in .img {
+      border: 1px solid red;
   position: relative;
   width: 24px;
   height: 24px;
 }
 
 .log-in .text-wrapper-3 {
+      border: 1px solid red;
   position: relative;
   width: 119px;
   height: 12px;
@@ -402,6 +421,7 @@ input:focus-visible{
 }
 
 .log-in .frame-6 {
+      border: 1px solid red;
   position: relative;
   align-self: stretch;
   width: 100%;
@@ -409,6 +429,7 @@ input:focus-visible{
 }
 
 .log-in .frame-7 {
+      border: 1px solid red;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -418,6 +439,7 @@ input:focus-visible{
 }
 
 .log-in .check-button {
+      border: 1px solid red;
   position: relative;
   width: 24px;
   height: 24px;
@@ -425,6 +447,7 @@ input:focus-visible{
 }
 
 .log-in .rectangle {
+      border: 1px solid red;
   position: relative;
   width: 18px;
   height: 18px;
@@ -436,6 +459,7 @@ input:focus-visible{
 }
 
 .log-in .text-wrapper-4 {
+      border: 1px solid red;
   position: relative;
   width: fit-content;
   font-family: var(--version-2-body-font-family);
@@ -449,6 +473,7 @@ input:focus-visible{
 }
 
 .log-in .frame-8 {
+      border: 1px solid red;
   display: inline-flex;
   align-items: flex-start;
   justify-content: center;
@@ -458,6 +483,7 @@ input:focus-visible{
 }
 
 .log-in .button-wo-icon {
+      border: 1px solid red;
   display: inline-flex;
   height: 48px;
   align-items: center;
@@ -472,6 +498,7 @@ input:focus-visible{
 }
 
 .log-in .button {
+      border: 1px solid red;
   all: unset;
   box-sizing: border-box;
   position: relative;
@@ -488,6 +515,7 @@ input:focus-visible{
 }
 
 .log-in .button-seconday-wo {
+      border: 1px solid red;
   display: inline-flex;
   height: 48px;
   align-items: center;
@@ -504,6 +532,7 @@ input:focus-visible{
 }
 
 .log-in .button-2 {
+      border: 1px solid red;
   all: unset;
   box-sizing: border-box;
   margin-top: -4.5px;
@@ -522,6 +551,7 @@ input:focus-visible{
 
 
 .log-in .frame-156 {
+      border: 1px solid red;
   display: inline-flex;
   align-items: center;
   gap: 35px;
@@ -531,6 +561,7 @@ input:focus-visible{
 }
 
 .log-in .text-wrapper-5 {
+      border: 1px solid red;
   position: relative;
   width: fit-content;
   font-family: var(--version-2-t6-font-family);
@@ -544,6 +575,7 @@ input:focus-visible{
 }
 
 .log-in .button-wrapper {
+      border: 1px solid red;
   all: unset;
   box-sizing: border-box;
   display: inline-flex;
@@ -560,6 +592,7 @@ input:focus-visible{
 }
 
 .log-in .button-3 {
+      border: 1px solid red;
   all: unset;
   box-sizing: border-box;
   margin-top: -1px;
@@ -576,6 +609,7 @@ input:focus-visible{
 }
 
 .log-in .frame-213 {
+      border: 1px solid red;
   position: absolute;
   width: 246px;
   height: 35px;
@@ -583,6 +617,7 @@ input:focus-visible{
 }
 
 .log-in .text-button {
+      border: 1px solid red;
   display: inline-flex;
   align-items: center;
   gap: 8px;
@@ -593,6 +628,7 @@ input:focus-visible{
 }
 
 .log-in .text-wrapper-6 {
+      border: 1px solid red;
   position: relative;
   width: fit-content;
   margin-top: -1px;
@@ -607,6 +643,7 @@ input:focus-visible{
 }
 
 .log-in .div-wrapper {
+      border: 1px solid red;
   display: inline-flex;
   align-items: center;
   gap: 8px;
@@ -617,6 +654,7 @@ input:focus-visible{
 }
 
 .log-in .div {
+      border: 1px solid red;
   background-color: #f6f7f8;
   width: 1440px;
   height: 1024px;
@@ -626,6 +664,7 @@ input:focus-visible{
 
 
 .log-in .capa {
+      border: 1px solid red;
   position: absolute;
   width: 100px;
   height: 122px;
@@ -636,6 +675,7 @@ input:focus-visible{
 
 
 .big_size{
+      border: 1px solid red;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -646,6 +686,7 @@ input:focus-visible{
 }
 
 .big_size img{
+      border: 1px solid red;
   position: absolute;
   width: 50% !important;
   height: 50% !important;
