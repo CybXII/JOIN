@@ -22,9 +22,11 @@ body{
     transition: 500ms ease-in-out;
     background-color: #F6F7F8;
     z-index: 20;
+    width: 0;
+    height:0;
 }
-/* 
-.sign_up_menu{
+
+/* .sign_up_menu{
     position: relative;
     display: flex;
     justify-content: flex-end;
@@ -157,9 +159,9 @@ body{
 .frame_158 a{
     text-decoration: none;
 }
+ */
 
-
-.frame_159{
+/* .frame_159{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -167,8 +169,8 @@ body{
     width: 315px;
     height: 89px;
     gap: 16px;
-}
-
+} */
+/* 
 .vector{
     width: 150px;
     height: 3px;
@@ -234,15 +236,11 @@ body{
   background-color: #f6f7f8;
   position: relative;
   width: 100vw;
-
   height: 100vh;
-
   display: flex;
   justify-content: center;
   align-items: center;
 }
-
-
 
 .log-in .frame-153 {
   display: inline-flex;
@@ -280,6 +278,7 @@ body{
   letter-spacing: var(--version-2-t1-letter-spacing);
   line-height: var(--version-2-t1-line-height);
   font-style: var(--version-2-t1-font-style);
+  cursor: default;
 }
 
 .log-in .vector {
@@ -330,6 +329,12 @@ body{
   border-radius: 10px;
   border: 1px solid;
   border-color: var(--style);
+  cursor: default;
+}
+
+.log-in .frame-wrapper:hover {
+  outline: 2px ridge #29ABE2;
+
 }
 
 .log-in .frame-14 {
@@ -355,13 +360,13 @@ input::placeholder{
   color: var(--Style, #D1D1D1);
 }
 
-.frame-wrapper:focus-visible{
+.frame-wrapper:active{
   outline: 2px ridge #29ABE2;
-  border-radius: 2px;
 }
 
 .frame-wrapper:hover{
-  outline: 2px ridge #29ABE2;;
+  outline: 2px ridge #29ABE2;
+;
 }
 
 input:focus-visible{
@@ -415,6 +420,7 @@ input:focus-visible{
   gap: 8px;
   position: relative;
   left: 39px;
+  cursor: pointer;
 }
 
 .log-in .check-button {
@@ -433,6 +439,7 @@ input:focus-visible{
   border-radius: 3px;
   border: 2px solid;
   border-color: var(--version-2main-color);
+  cursor: pointer;
 }
 
 .log-in .text-wrapper-4 {
@@ -469,7 +476,17 @@ input:focus-visible{
   background-color: #2a3647;
   border-radius: 8px;
   overflow: hidden;
+  cursor: pointer;
 }
+
+.log-in .button-wo-icon:hover {
+  background-color: var(--ligth-blue);
+}
+
+.log-in .button-wo-icon:active {
+  background-color: var(--active-button);
+}
+
 
 .log-in .button {
   all: unset;
@@ -501,7 +518,20 @@ input:focus-visible{
   overflow: hidden;
   border: 1px solid;
   border-color: var(--version-2main-color);
+  cursor: pointer;
+  transition: 100ms ease-in-out;
 }
+
+.log-in .button-seconday-wo:hover {
+  border: 2px solid;
+  border-color: var(--ligth-blue);
+}
+
+.log-in .button-seconday-wo:active {
+  border: 1px solid;
+  border-color: var(--active-button);
+}
+
 
 .log-in .button-2 {
   all: unset;
@@ -541,6 +571,7 @@ input:focus-visible{
   line-height: var(--version-2-t6-line-height);
   white-space: nowrap;
   font-style: var(--version-2-t6-font-style);
+  cursor: default;
 }
 
 .log-in .button-wrapper {
@@ -557,6 +588,7 @@ input:focus-visible{
   color: #ffffff;
   border-radius: 8px;
   overflow: hidden;
+  cursor: pointer;
 }
 
 .log-in .button-3 {
@@ -573,6 +605,7 @@ input:focus-visible{
   letter-spacing: 0;
   white-space: nowrap;
   background-color: #2a3647;
+  cursor: pointer;
 }
 
 .log-in .frame-213 {
@@ -604,7 +637,13 @@ input:focus-visible{
   line-height: var(--version-2-body-line-height);
   white-space: nowrap;
   font-style: var(--version-2-body-font-style);
+  cursor: default;
 }
+
+.log-in .text-wrapper-6:hover {
+  color: var(--ligth-blue);
+}
+
 
 .log-in .div-wrapper {
   display: inline-flex;
@@ -624,17 +663,6 @@ input:focus-visible{
   transition: 500ms ease-in-out;
 }
 
-
-.log-in .capa {
-  position: absolute;
-  width: 100px;
-  height: 122px;
-  top: 80px;
-  left: 77px;
-  transition: 500ms ease-in-out;
-}
-
-
 .big_size{
   display: flex;
   justify-content: center;
@@ -653,6 +681,17 @@ input:focus-visible{
   top: 25% !important;
   left: 25% !important;
   }
+
+.log-in .capa {
+  position: absolute;
+  width: 100px;
+  height: 122px;
+  top: 80px;
+  left: 77px;
+  transition: 500ms ease-in-out;
+}
+
+
 
 
 
