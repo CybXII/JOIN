@@ -3,13 +3,11 @@ body{
     right: 0;
     top: 0;
     margin: 0;
-    height: 100vh;
-    width: 100vw;
     background-color: #F6F7F8;
     font-family: Inter;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
 }
 
@@ -18,10 +16,6 @@ body{
     position: absolute;
     top: 0;
     left: 0;
-    height: 10vw;
-    width: 10vw;
-    min-height: 130px;
-    min-width: 130px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -29,7 +23,7 @@ body{
     background-color: #F6F7F8;
     z-index: 20;
 }
-
+/* 
 .sign_up_menu{
     position: relative;
     display: flex;
@@ -134,7 +128,7 @@ body{
     align-items: center;
     border-color: #091931 ;
     border: 2px solid;
-}
+} */
 
 /* .frame_250{
     width: 422px;
@@ -155,7 +149,7 @@ body{
     box-shadow: 0px 0px 14px 3px #0000000A;
 } */
 
-.frame_158{
+/* .frame_158{
     display: flex;
     justify-content: space-around;
 }
@@ -165,7 +159,7 @@ body{
 }
 
 
-/* .frame_159{
+.frame_159{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -173,7 +167,7 @@ body{
     width: 315px;
     height: 89px;
     gap: 16px;
-} */
+}
 
 .vector{
     width: 150px;
@@ -222,7 +216,7 @@ body{
     background-color: #FFFFFF;
     color: #091931;
     --bs-form-check-bg-image: url()
-}
+} */
 
 
 /*
@@ -234,11 +228,18 @@ body{
 
 
 .log-in {
+  top: 0;
+  left: 0;
+  right: 0;
   background-color: #f6f7f8;
+  position: relative;
+  width: 100vw;
+
+  height: 100vh;
+
   display: flex;
-  flex-direction: row;
   justify-content: center;
-  width: 100%;
+  align-items: center;
 }
 
 
@@ -249,9 +250,9 @@ body{
   align-items: center;
   gap: 32px;
   padding: 48px 115px;
-  position: absolute;
+  /* position: absolute;
   top: 266px;
-  left: 394px;
+  left: 394px; */
   background-color: var(--white);
   border-radius: 30px;
   overflow: hidden;
@@ -352,6 +353,19 @@ input{
 
 input::placeholder{
   color: var(--Style, #D1D1D1);
+}
+
+.frame-wrapper:focus-visible{
+  outline: 2px ridge #29ABE2;
+  border-radius: 2px;
+}
+
+.frame-wrapper:hover{
+  outline: 2px ridge #29ABE2;;
+}
+
+input:focus-visible{
+  outline: none;
 }
 
 .log-in .text-wrapper-2 {
@@ -512,8 +526,8 @@ input::placeholder{
   align-items: center;
   gap: 35px;
   position: absolute;
-  top: 67px;
-  left: 1039px;
+  top: 60px;
+  right: 60px;
 }
 
 .log-in .text-wrapper-5 {
@@ -565,8 +579,7 @@ input::placeholder{
   position: absolute;
   width: 246px;
   height: 35px;
-  top: 949px;
-  left: 597px;
+  bottom: 0;
 }
 
 .log-in .text-button {
