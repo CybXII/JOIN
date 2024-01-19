@@ -52,7 +52,7 @@ body {
     color: #CDCDCD;
 }
 
-.img_name p {
+.img_name span {
     color: #CDCDCD;
     
     /* Version 2/body */
@@ -80,7 +80,7 @@ body {
     gap: 0.5rem;
 }
 
-.font p {
+.font span {
     color: #A8A8A8;
     font-family: Inter;
     font-size: 1rem;
