@@ -5,7 +5,7 @@ function addUser() {
   let password = document.getElementById("password");
   users.push({ email: email.value, password: password.value });
   // Weiterleitung zu Loginseite + Nachricht anzeigen erfolgreiche Registrierung
-  window.location.href = "index.html?msg=Du hast Dich erfolgreich registriert";
+  window.location.href = "index.html?msg=Du hast Dich erfolgreich registriert!";
 }
 
 function openRegistration() {
