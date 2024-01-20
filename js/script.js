@@ -14,16 +14,16 @@ function renderBoard() {
 }
 
 function renderContacts() {
-  document.getElementById("content").innerHTML = renderContactsHTML();
   classesContacts();
+  document.getElementById("content").innerHTML = renderContactsHTML();
 }
 
 function renderPrivacyPolicy() {
-  document.getElementById("content").innerHTML = renderPrivacyPolicyHTML();
   classesPrivacyPolicy();
+  document.getElementById("content").innerHTML = renderPrivacyPolicyHTML();
 }
 
 function renderLegalNotice() {
-  document.getElementById("content").innerHTML = renderLegalNoticeHTML();
   classesLegalNotice();
+  document.getElementById("content").innerHTML = renderLegalNoticeHTML();
 }
