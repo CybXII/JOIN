@@ -25,21 +25,6 @@ password_input.addEventListener('focus', function () {
 });
 });
 
-
-// function setListener(){
-//   email_input.addEventListener("click", () => {
-//     email_div.classList.toggle("aktive");
-//     password_div.classList.toggle("aktive");
-//   });
-//   password_input.addEventListener("in", () => {
-//     password_div.classList.toggle("aktive");
-//     email_div.classList.toggle("aktive");
-//   });
-// }
-
-
-
-
 function move (){
   document.getElementById('logo_container').classList.remove("big_size");
 }
