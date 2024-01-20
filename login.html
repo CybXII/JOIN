@@ -1,20 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <script src="./js/login.js"></script>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="./styles/styleguide.css" />
+    <link rel="stylesheet" href="./styles/global.css" />
+    <link rel="stylesheet" href="./styles/style.css" />
+    <link rel="stylesheet" href="./styles/fonts.css" />
+    <script src="./js/script.js"></script>
     <script src="./js/register.js"></script>
-    <script src="./js/remotestorage.js"></script>
+    <script src="./js/login.js"></script>
+    <link rel="icon" type="image" href="./img/join-favicon.svg" />
   </head>
-  <body onload="registerComplete(), loadToken()">
-    <form onsubmit="login(); return false">
-      <input type="email" required id="email" />
-      <input type="password" required id="password" />
-      <button>Login</button>
-    </form>
 
-    <div id="msgBox"></div>
+  <body onload="registerComplete(); move()">
+    <div class="log-in">
+      <div class="logo">
+        <div id="logo_container" class="big_size logo_container background">
+          <img id="join_logo" class="capa background" src="img/join_start.svg" />
+        </div>
+      </div>
+      <form class="frame-153">
+        <div class="frame-159">
+          <div class="text-wrapper">Log in</div>
+          <img src="./img/vector-5.svg" alt="blue seperator" />
+        </div>
+        <div id="msgBox"></div>
+        <!-- WENN REGISTRIERUNG ERFOLGT -->
+        <div class="frame-250">
+          <div class="form_div">
+            <div class="frame-155">
+              <label
+                id="parent_email"
+                class="frame-wrapper"
+                for="email"
+                aria-selected="false"
+              >
+                <input
+                  type="email"
+                  class="frame-14"
+                  id="email"
+                  aria-describedby="emailHelp"
+                  placeholder="Email"
+                  autocomplete="email"
+                  required
+                  oninvalid="this.setCustomValidity('Das ist ein Test')"
+                  oninput="this.setCustomValidity('')"
+                />
+                <img src="./img/mail.svg" alt="" />
+              </label>
+            </div>
+            <div class="frame-155">
+              <label id="parent_password" for="password" class="frame-wrapper">
+                <input
+                  type="password"
+                  class="frame-14"
+                  id="password"
+                  autocomplete="new-password"
+                  placeholder="Password"
+                  required
+                  oninvalid="this.setCustomValidity('Das ist ein Test')"
+                  oninput="this.setCustomValidity('')"
+                />
+                <img class="img" src="img/lock.svg" alt="locker spicture" />
+              </label>
+            </div>
+            <div class="text-wrapper-3">This field is required</div>
+          </div>
+          <div class="frame-6">
+            <div class="frame-7">
+              <div class="check-button">
+                <div class="rectangle"></div>
+              </div>
+              <div class="text-wrapper-4">Remember me</div>
+            </div>
+          </div>
+        </div>
+        <div class="frame-176">
+          <div class="button-wo-icon" type="submit" onclick="login()">
+            <button class="button"; return false;>
+              Log in
+            </button>
+          </div>
+          <div class="button-seconday-wo">
+            <button class="button-2">Guest Log in</button>
+          </div>
+        </div>
+      </form>
+      <div class="frame-156">
+        <div class="text-wrapper-5">Not a Join user?</div>
+        <div class="button-wrapper" onclick="openRegistration()">
+          <button class="button-3">Sign up</button>
+        </div>
+      </div>
+      <div class="frame-213">
+        <div class="text-button">
+          <div class="text-wrapper-6">Privacy Policy</div>
+        </div>
+        <div class="div-wrapper">
+          <div class="text-wrapper-6">Legal notice</div>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
