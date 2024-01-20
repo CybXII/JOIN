@@ -4,16 +4,62 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image" href="./img/join-favicon.svg" />
-    <title>Document</title>
-    <script src="./js/script.js"></script>
-    <script src="./js/login.js"></script>
+    <title>Join</title>
     <link rel="stylesheet" href="./templates/header_desktop_top.css" />
     <link rel="stylesheet" href="./templates/menu_desktop_left.css" />
     <link rel="stylesheet" href="./styles/fonts.css" />
-    <script src="./js/register.js"></script>
+    <link rel="stylesheet" href="./styles/style.css" />
+    <script src="./js/script.js"></script>
   </head>
-  <body onload="includeHTML()">
-    <sidebar w3-include-html="./templates/menu_desktop_left.html"></sidebar>
-    <nav w3-include-html="./templates/header_desktop_top.html" class="navigation"></nav>
+  <body>
+    <div class="frame-3">
+      <img src="./../img/capa-2.svg" alt="Logo" class="capa-2" />
+
+      <div class="menu">
+        <div id="summary" class="frame-10-active">
+          <img src="./../img/summary_icon.svg" alt="Summary" class="icons" />
+          <a href="../summary.html">Summary</a>
+        </div>
+
+        <div id="add_task" class="frame-10">
+          <img src="./../img/add_task_icon.svg" alt="Add Task" class="icons" />
+          <a href="../addtask.html">Add Task</a>
+        </div>
+
+        <div id="board" class="frame-10">
+          <img src="./../img/bord_img.svg" alt="Board" class="icons" />
+          <a href="../board.html">Board</a>
+        </div>
+
+        <div id="contacts" class="frame-10">
+          <img src="./../img/contacts_img.svg" alt="Contacts" class="icons" />
+          <a href="../contacts.html">Contacts</a>
+        </div>
+      </div>
+
+      <div class="footer">
+        <div class="font-active">
+          <a href="../privacy_policy.html">Privacy Policy</a>
+        </div>
+        <div class="font">
+          <a href="../legal_notice.html">Legal Notice</a>
+        </div>
+      </div>
+    </div>
+    <div class="navigation">
+      <div class="header">
+        <span class="kpmt-header">Kanban Project Management Tool</span>
+        <div class="frame-42">
+          <img class="help_icon" src="./../img/help.svg" alt="Help Icon" />
+          <div class="frame-31">
+            <img src="../img/ellipse-3.svg" alt="" class="ellipse-3" />
+            <img src="../img/group-9.svg" alt="" class="group-9" />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="content-container">
+      <div class="container">TESTCONTENT</div>
+    </div>
   </body>
 </html>
