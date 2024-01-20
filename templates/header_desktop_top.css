@@ -3,7 +3,7 @@
 }
 
 .header {
-  border: 1px solid red;
+  /* border: 1px solid red; */
   display: flex;
   width: 100%;
   padding: 20px 40px 20px 348px;
@@ -15,7 +15,7 @@
 }
 
 .kanban_body {
-  border: 1px solid red;
+  /* border: 1px solid red; */
   padding: 1.25rem 2.5rem 1.25rem 21.75rem;
   justify-content: space-between;
   align-items: center;
@@ -32,16 +32,16 @@
 }
 
 .frame-42 {
-  border: 1px solid red;
+  /* border: 1px solid red; */
   display: flex;
   align-items: center;
   gap: 16px;
 }
 
 .help_icon {
-  border: 1px solid red;
-  width: 2rem;
-  height: 2rem;
+  /* border: 1px solid red; */
+  width: 32px;
+  height: 32px;
 }
 
 .navigation {
@@ -67,9 +67,15 @@
 }
 
 .ellipse-3 {
-    width: 56px;
-height: 56px;
-flex-shrink: 0;
+  width: 56px;
+  height: 56px;
+  flex-shrink: 0;
   stroke-width: 3px;
-  stroke: #2a3647;
+  position: absolute;
+}
+
+.group-9 {
+  width: 27.944px;
+  height: 14.238px;
+  flex-shrink: 0;
 }
