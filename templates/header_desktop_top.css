@@ -9,9 +9,9 @@
   padding: 20px 40px 20px 348px;
   justify-content: space-between;
   align-items: center;
-  /* background: #FFF; */
-  /* Barra superior */
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.1);
+  position: relative;
+  z-index: -1;
 }
 
 .kanban_body {
