@@ -26,7 +26,12 @@ password_input.addEventListener('focus', function () {
 });
 
 function move (){
-  document.getElementById('logo_container').classList.remove("big_size");
+  setTimeout(() => {
+    document.getElementById("logo_container").classList.remove("background");
+    document.getElementById("join_logo").classList.remove("background");
+    document.getElementById('logo_container').classList.remove("big_size");
+
+  }, 500);
 }
 
 async function includeHTML() {
