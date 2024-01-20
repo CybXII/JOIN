@@ -373,7 +373,7 @@ input::placeholder{
   color: var(--Style, #D1D1D1);
 }
 
-.frame-wrapper:focus-visible{
+.aktive{
   outline: 2px ridge #29ABE2;
 }
 
