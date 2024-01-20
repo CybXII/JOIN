@@ -1,29 +1,81 @@
+* {
+  margin: 0;
+}
 
 .header {
-    border: 1px solid red;
-    display: flex;
-    width: 90rem;
-    padding: 1.25rem 2.5rem 1.25rem 21.75rem;
-    justify-content: space-between;
-    align-items: center;
+  /* border: 1px solid red; */
+  display: flex;
+  width: 100%;
+  padding: 20px 40px 20px 348px;
+  justify-content: space-between;
+  align-items: center;
+  /* background: #FFF; */
+  /* Barra superior */
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.1);
 }
 
 .kanban_body {
-    border: 1px solid red;
-    padding: 1.25rem 2.5rem 1.25rem 21.75rem;
-    justify-content: space-between;
-    align-items: center;
+  /* border: 1px solid red; */
+  padding: 1.25rem 2.5rem 1.25rem 21.75rem;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.kpmt-header {
+  color: #000;
+  /* Version 2/t6 */
+  font-family: "Inter";
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 120%; /* 24px */
 }
 
 .frame-42 {
-    border: 1px solid red;
-    display: flex;
-    align-items: center;
-    gap: 1rem;
+  /* border: 1px solid red; */
+  display: flex;
+  align-items: center;
+  gap: 16px;
 }
 
 .help_icon {
-    border: 1px solid red;
-    width: 2rem;
-    height: 2rem;
+  /* border: 1px solid red; */
+  width: 32px;
+  height: 32px;
+}
+
+.navigation {
+  top: 0;
+  position: absolute;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.frame-31 {
+  display: flex;
+  width: 48px;
+  height: 48px;
+  padding: 10px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+  border-radius: 559px;
+  background: var(--white, #fff);
+}
+
+.ellipse-3 {
+  width: 56px;
+  height: 56px;
+  flex-shrink: 0;
+  stroke-width: 3px;
+  position: absolute;
+}
+
+.group-9 {
+  width: 27.944px;
+  height: 14.238px;
+  flex-shrink: 0;
 }
