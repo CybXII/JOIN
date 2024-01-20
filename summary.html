@@ -5,44 +5,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image" href="./img/join-favicon.svg" />
     <title>Join</title>
-    <link rel="stylesheet" href="./templates/header_desktop_top.css" />
-    <link rel="stylesheet" href="./templates/menu_desktop_left.css" />
     <link rel="stylesheet" href="./styles/fonts.css" />
     <link rel="stylesheet" href="./styles/style.css" />
     <script src="./js/script.js"></script>
   </head>
-  <body>
+  <body onload="renderSummary()">
     <div class="frame-3">
       <img src="./../img/capa-2.svg" alt="Logo" class="capa-2" />
 
       <div class="menu">
-        <div id="summary" class="frame-10-active">
+        <div id="summary" class="frame-10-active" onclick="renderSummary()">
           <img src="./../img/summary_icon.svg" alt="Summary" class="icons" />
-          <a href="../summary.html">Summary</a>
+          <span>Summary</span>
         </div>
 
-        <div id="add_task" class="frame-10">
+        <div id="add_task" class="frame-10" onclick="renderAddTask()">
           <img src="./../img/add_task_icon.svg" alt="Add Task" class="icons" />
-          <a href="../addtask.html">Add Task</a>
+          <span>Add Task</span>
         </div>
 
-        <div id="board" class="frame-10">
+        <div id="board" class="frame-10" onclick="renderBoard()">
           <img src="./../img/bord_img.svg" alt="Board" class="icons" />
-          <a href="../board.html">Board</a>
+          <span>Board</span>
         </div>
 
-        <div id="contacts" class="frame-10">
+        <div id="contacts" class="frame-10" onclick="renderContacts()">
           <img src="./../img/contacts_img.svg" alt="Contacts" class="icons" />
-          <a href="../contacts.html">Contacts</a>
+          <span>Contacts</span>
         </div>
       </div>
 
       <div class="footer">
-        <div class="font-active">
-          <a href="../privacy_policy.html">Privacy Policy</a>
+        <div class="font-active" onclick="renderPrivacyPolicy()">
+          <span>Privacy Policy</span>
         </div>
-        <div class="font">
-          <a href="../legal_notice.html">Legal Notice</a>
+        <div class="font" onclick="renderLegalNotice()">
+          <span>Legal Notice</span>
         </div>
       </div>
     </div>
@@ -59,7 +57,7 @@
       </div>
     </div>
     <div class="content-container">
-      <div class="container">TESTCONTENT</div>
+      <div class="container" id="content"></div>
     </div>
   </body>
 </html>

@@ -1,3 +1,7 @@
+* {
+  margin: 0;
+}
+
 .logo_container {
   /* border: 1px solid red; */
   position: absolute;
@@ -528,14 +532,11 @@ input:focus-visible {
 
 .container {
   /* margin-top: 108px; */
-  border: 1px solid red;
-  height: calc(100vh - 110px);
+  /* border: 1px solid red; */
+  height: calc(100vh - 140px);
   z-index: -2;
   background-color: white;
-}
-
-* {
-  margin: 0;
+  padding: 30px 0 0 30px;
 }
 
 .header {
@@ -680,7 +681,7 @@ input:focus-visible {
   cursor: default;
   text-decoration: none;
 }
-.frame-10-active > a {
+.frame-10-active > span {
   /* border: 1px solid red; */
   color: var(--white, #fff);
   font-family: Inter;
@@ -694,7 +695,7 @@ input:focus-visible {
   text-decoration: none;
 }
 
-.frame-10 > a {
+.frame-10 > span {
   color: var(--white, #fff);
   font-family: Inter;
   font-size: 16px;
@@ -742,7 +743,7 @@ input:focus-visible {
   text-align: center;
 }
 
-.font > a {
+.font > span {
   text-decoration: none;
   color: #fff;
   font-family: Inter;
@@ -750,8 +751,9 @@ input:focus-visible {
   font-size: 16px;
   padding: 8px 0;
 }
-.font > a:hover {
+.font > span:hover {
   color: #1aa7e4;
+  cursor: pointer;
 }
 
 .font-active {
@@ -763,7 +765,7 @@ input:focus-visible {
   font-family: Inter;
   padding: 8px 0;
 }
-.font-active > a {
+.font-active > span {
   background-color: #091931;
   padding-left: 0;
   color: #fff;
