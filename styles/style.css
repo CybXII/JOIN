@@ -664,6 +664,7 @@ input:focus-visible {
   height: 46px;
   align-items: center;
   gap: 8px;
+  color: #cdcdcd;
 }
 .frame-10:hover {
   cursor: pointer;
@@ -680,6 +681,7 @@ input:focus-visible {
   background: #091931;
   cursor: default;
   text-decoration: none;
+  color: var(--white, #fff);
 }
 .frame-10-active > span {
   /* border: 1px solid red; */
@@ -696,7 +698,7 @@ input:focus-visible {
 }
 
 .frame-10 > span {
-  color: var(--white, #fff);
+  color: #cdcdcd;
   font-family: Inter;
   font-size: 16px;
   font-style: normal;
@@ -733,7 +735,7 @@ input:focus-visible {
   flex-direction: column;
   justify-content: flex-end;
   align-items: center;
-  gap: 20px;
+  gap: 4px;
   align-self: stretch;
   margin-bottom: 48px;
 }
@@ -741,11 +743,12 @@ input:focus-visible {
 .font {
   width: 232px;
   text-align: center;
+  padding: 8px 0;
 }
 
 .font > span {
   text-decoration: none;
-  color: #fff;
+  color: var(--icon, #a8a8a8);
   font-family: Inter;
   font-weight: 400;
   font-size: 16px;
@@ -768,7 +771,7 @@ input:focus-visible {
 .font-active > span {
   background-color: #091931;
   padding-left: 0;
-  color: #fff;
+  color: var(--icon, #a8a8a8);
   font-family: Inter;
   text-decoration: none;
   cursor: default;
@@ -779,4 +782,62 @@ input:focus-visible {
   height: 30px;
   flex-shrink: 0;
   padding-left: 56px;
+  color: white;
+}
+
+.sign-up {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background: #f6f7f8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.capa {
+  position: absolute;
+  top: 80px;
+  left: 77px;
+  width: 100.034px;
+  height: 121.966px;
+  flex-shrink: 0;
+}
+
+.frame-153-su {
+  position: absolute;
+  display: inline-flex;
+  padding: 48px 88px;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+  border-radius: 30px;
+  background: var(--white, #fff);
+  box-shadow: 0px 0px 14px 3px rgba(0, 0, 0, 0.04);
+}
+
+.frame-159-su {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  height: 89px;
+  width: 315px;
+}
+
+.arrow-left-line {
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+}
+
+.sign-up-text {
+  width: 315px;
+  color: #000;
+  text-align: center;
+  font-family: Inter;
+  font-size: 61px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 120%;
 }

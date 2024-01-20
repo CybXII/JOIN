@@ -8,13 +8,15 @@
     <link rel="stylesheet" href="./styles/fonts.css" />
     <link rel="stylesheet" href="./styles/style.css" />
     <script src="./js/script.js"></script>
+    <script src="./js/classesSidebar.js"></script>
+    <script src="./js/templates.js"></script>
   </head>
   <body onload="renderSummary()">
     <div class="frame-3">
       <img src="./../img/capa-2.svg" alt="Logo" class="capa-2" />
 
       <div class="menu">
-        <div id="summary" class="frame-10-active" onclick="renderSummary()">
+        <div id="summary" class="frame-10" onclick="renderSummary()">
           <img src="./../img/summary_icon.svg" alt="Summary" class="icons" />
           <span>Summary</span>
         </div>
@@ -36,10 +38,10 @@
       </div>
 
       <div class="footer">
-        <div class="font-active" onclick="renderPrivacyPolicy()">
+        <div id="privacy_policy" class="font" onclick="renderPrivacyPolicy()">
           <span>Privacy Policy</span>
         </div>
-        <div class="font" onclick="renderLegalNotice()">
+        <div id="legal_notice" class="font" onclick="renderLegalNotice()">
           <span>Legal Notice</span>
         </div>
       </div>

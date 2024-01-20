@@ -1,25 +1,29 @@
-
-
-// Toggle Classlist "frame-10-active" & "frame-10"
-
-function renderSummary(){
-  document.getElementById("content").innerHTML = `Summary`;
-}
-function renderAddTask(){
-  document.getElementById("content").innerHTML = `Add Task`;
-}
-function renderBoard(){
-  document.getElementById("content").innerHTML = `Board`;
-}
-function renderContacts(){
-  document.getElementById("content").innerHTML = `Contacts`;
+function renderSummary() {
+  classesSummary();
+  document.getElementById("content").innerHTML = renderSummaryHTML();
 }
 
-// Toggle Classlist "font-active" & "font" // ggfs. Klassennamen umbenennen?
-
-function renderPrivacyPolicy(){
-  document.getElementById("content").innerHTML = `Privacy Policy`;
+function renderAddTask() {
+  classesAddTask();
+  document.getElementById("content").innerHTML = renderAddTaskHTML();
 }
-function renderLegalNotice(){
-  document.getElementById("content").innerHTML = `Legal Notice`;
+
+function renderBoard() {
+  classesBoard();
+  document.getElementById("content").innerHTML = renderBoardHTML();
+}
+
+function renderContacts() {
+  document.getElementById("content").innerHTML = renderContactsHTML();
+  classesContacts();
+}
+
+function renderPrivacyPolicy() {
+  document.getElementById("content").innerHTML = renderPrivacyPolicyHTML();
+  classesPrivacyPolicy();
+}
+
+function renderLegalNotice() {
+  document.getElementById("content").innerHTML = renderLegalNoticeHTML();
+  classesLegalNotice();
 }
