@@ -82,17 +82,17 @@ function renderLegalNotice() {
   classesLegalNotice();
 }
 
-function renderSignUp(){
+function renderSignUp() {
   document.getElementById("frame-153").innerHTML = renderSignUpHTML();
   document.getElementById("frame-156").classList.add("d-none");
 }
 
-function renderLogin(){
+function renderLogin() {
   document.getElementById("frame-153").innerHTML = renderLoginHTML();
     document.getElementById("frame-156").classList.remove("d-none");
 }
 
-function renderBody(){
+function renderBody() {
   document.getElementById("body").innerHTML = renderBodyHTML();
   renderSummary();
 }
