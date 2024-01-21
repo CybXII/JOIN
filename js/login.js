@@ -56,13 +56,13 @@ function test() {
 
 // WIEDER EINKOMMENTIEREN!!!!
 
-// function move() {
-//   setTimeout(() => {
-//     document.getElementById("logo_container").classList.remove("background");
-//     document.getElementById("join_logo").classList.remove("background");
-//     document.getElementById("logo_container").classList.remove("big_size");
-//   }, 500);
-// }
+function move() {
+  setTimeout(() => {
+    document.getElementById("logo_container").classList.remove("background");
+    document.getElementById("join_logo").classList.remove("background");
+    document.getElementById("logo_container").classList.remove("big_size");
+  }, 500);
+}
 
 
 // Register & Login
