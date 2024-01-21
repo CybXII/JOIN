@@ -38,7 +38,7 @@ function renderLegalNotice() {
 function renderSignUp() {
   document.getElementById("frame-153").innerHTML = renderSignUpHTML();
   document.getElementById("frame-156").classList.add("d-none");
-
+  initializeSignUPListeners();
 }
 
 function renderLogin() {
