@@ -19,6 +19,7 @@ function addUser() {
   // Weiterleitung zu Loginseite + Nachricht anzeigen erfolgreiche Registrierung
   registerCompleteText();
   renderLogin();
+  initializeLoginListeners();
 }
 
 function login() {
