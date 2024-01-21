@@ -74,7 +74,8 @@ function addUser() {
   let password = document.getElementById("password");
   users.push({ email: email.value, password: password.value });
   // Weiterleitung zu Loginseite + Nachricht anzeigen erfolgreiche Registrierung
-  location.href = "join.html?msg=Du hast Dich erfolgreich registriert!";
+  location.href = "join.html?msg=Registration Complete!";
+    
 }
 
 
@@ -85,6 +86,7 @@ function registerComplete() {
   if (msg) {
     msgBox = document.getElementById("msgBox");
     msgBox.innerHTML = msg;
+    registerCompleteText();
   }
   // else display none
 }
@@ -100,6 +102,10 @@ function login() {
   if (user) {
     console.log("user gefunden");
     renderBody();
+  }
+  else {
+    console.log("Wrong password Ups! Try again.")
+    alert("Wrong password Ups! Try again.")
   }
 }
 

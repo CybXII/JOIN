@@ -51,7 +51,10 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 function registerCompleteText(){
-  document.getElementById('msgBox-bg').classList.remove("d-none");
+  document.getElementById("msgBox-bg").classList.remove("d-none");
+  setTimeout(() => {
+      document.getElementById("msgBox-bg").classList.add("d-none");
+  }, 2000);
 }
 
 
@@ -91,6 +94,7 @@ function renderSignUp() {
 }
 
 function renderLogin() {
+
   document.getElementById("frame-153").innerHTML = renderLoginHTML();
     document.getElementById("frame-156").classList.remove("d-none");
 }
