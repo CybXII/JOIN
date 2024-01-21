@@ -122,8 +122,8 @@ function renderSignUpHTML() {
             </div>
           </div>
         </div>
-        <button class="button-wo-icon-su">
-          <span class="button-wo-icon-su-text">Sign up</span>
+        <button class="button-wo-icon-su" onclick="addUser()">
+          <span class="button-wo-icon-su-text" onclick="addUser()">Sign up</span>
         </button>
         <img src="./img/arrow-left-line.svg" class="arrow-left-line" onclick="renderLogin()">
 `;
