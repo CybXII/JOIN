@@ -38,11 +38,13 @@ function renderLegalNotice() {
 function renderSignUp() {
   document.getElementById("frame-153").innerHTML = renderSignUpHTML();
   document.getElementById("frame-156").classList.add("d-none");
+
 }
 
 function renderLogin() {
   document.getElementById("frame-153").innerHTML = renderLoginHTML();
   document.getElementById("frame-156").classList.remove("d-none");
+  test();
 }
 
 function renderBody() {

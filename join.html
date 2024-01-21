@@ -16,7 +16,7 @@
   <link rel="icon" type="image" href="./img/join-favicon.svg" />
 </head>
 
-  <body onload="renderLogin(); move();" id="body"> 
+  <body onload="move()" id="body"> 
     <!--  FUNKTION ONLOAD EINKOMMENTIEREN -->
     <div class="log-in">
 
@@ -76,19 +76,6 @@
           <button class="button-2">Guest Log in</button>
         </div>
       </div>
-      <label id="parent_name" class="frame-wrapper" for="name" aria-selected="false">
-        <input type="name" class="frame-14" id="name" aria-describedby="emailHelp" placeholder="Name"
-          autocomplete="Name" required oninvalid="this.setCustomValidity('Das ist ein Test')"
-          oninput="this.setCustomValidity('')" />
-        <img src="./img/person-su.svg" alt="" />
-      </label>
-      <label id="parent_confirm_password" for="confirm_password" class="frame-wrapper d-none">
-        <input type="password" class="frame-14" id="confirm_password" autocomplete="new-password"
-          placeholder="Confirm Password" required oninvalid="this.setCustomValidity('Das ist ein Test')"
-          oninput="this.setCustomValidity('')" />
-        <img class="img" src="img/lock.svg" alt="locker spicture" />
-      </label>
-
       </form>
       <div class="frame-156" id="frame-156">
         <div class="text-wrapper-5">Not a Join user?</div>

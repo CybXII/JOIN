@@ -1,8 +1,8 @@
 document.addEventListener("DOMContentLoaded", function () {
-  const email_div = document.getElementById("parent_email");
-  const email_input = document.getElementById("email");
-  const password_div = document.getElementById("parent_password");
-  const password_input = document.getElementById("password");
+  let email_div = document.getElementById("parent_email");
+  let email_input = document.getElementById("email");
+  let password_div = document.getElementById("parent_password");
+  let password_input = document.getElementById("password");
 
   email_input.addEventListener("blur", function () {
     // Entferne die Klasse, wenn das Inputfeld den Fokus verliert
@@ -24,41 +24,41 @@ document.addEventListener("DOMContentLoaded", function () {
     password_div.classList.add("aktive");
   });
 
-  const name_div = document.getElementById("parent_name");
-  const name_input = document.getElementById("name");
-  const confirm_password_div = document.getElementById(
-    "parent_confirm_password"
-  );
-  const confirm_password = document.getElementById("confirm_password");
+  // const name_div = document.getElementById("parent_name");
+  // const name_input = document.getElementById("name");
+  // const confirm_password_div = document.getElementById(
+  //   "parent_confirm_password"
+  // );
+  // const confirm_password = document.getElementById("confirm_password");
 
-  name_input.addEventListener("blur", function () {
-    // Entferne die Klasse, wenn das Inputfeld den Fokus verliert
-    name_div.classList.remove("aktive");
-  });
+  // name_input.addEventListener("blur", function () {
+  //   // Entferne die Klasse, wenn das Inputfeld den Fokus verliert
+  //   name_div.classList.remove("aktive");
+  // });
 
-  name_input.addEventListener("focus", function () {
-    // Füge die Klasse hinzu, wenn das Inputfeld den Fokus hat
-    name_div.classList.add("aktive");
-  });
+  // name_input.addEventListener("focus", function () {
+  //   // Füge die Klasse hinzu, wenn das Inputfeld den Fokus hat
+  //   name_div.classList.add("aktive");
+  // });
 
-  confirm_password.addEventListener("blur", function () {
-    // Entferne die Klasse, wenn das Inputfeld den Fokus verliert
-    confirm_password_div.classList.remove("aktive");
-  });
+  // confirm_password.addEventListener("blur", function () {
+  //   // Entferne die Klasse, wenn das Inputfeld den Fokus verliert
+  //   confirm_password_div.classList.remove("aktive");
+  // });
 
-  confirm_password.addEventListener("focus", function () {
-    // Füge die Klasse hinzu, wenn das Inputfeld den Fokus hat
-    confirm_password_div.classList.add("aktive");
-  });
+  // confirm_password.addEventListener("focus", function () {
+  //   // Füge die Klasse hinzu, wenn das Inputfeld den Fokus hat
+  //   confirm_password_div.classList.add("aktive");
+  // });
 });
 
 
 function test() {
   document.addEventListener("DOMContentLoaded", function () {
-    const email_div = document.getElementById("parent_email");
-    const email_input = document.getElementById("email");
-    const password_div = document.getElementById("parent_password");
-    const password_input = document.getElementById("password");
+    let email_div = document.getElementById("parent_email");
+    let email_input = document.getElementById("email");
+    let password_div = document.getElementById("parent_password");
+    let password_input = document.getElementById("password");
 
     email_input.addEventListener("blur", function () {
       // Entferne die Klasse, wenn das Inputfeld den Fokus verliert
@@ -80,12 +80,12 @@ function test() {
       password_div.classList.add("aktive");
     });
 
-    const name_div = document.getElementById("parent_name");
-    const name_input = document.getElementById("name");
-    const confirm_password_div = document.getElementById(
+    let name_div = document.getElementById("parent_name");
+    let name_input = document.getElementById("name");
+    let confirm_password_div = document.getElementById(
       "parent_confirm_password"
     );
-    const confirm_password = document.getElementById("confirm_password");
+    let confirm_password = document.getElementById("confirm_password");
 
     name_input.addEventListener("blur", function () {
       // Entferne die Klasse, wenn das Inputfeld den Fokus verliert
