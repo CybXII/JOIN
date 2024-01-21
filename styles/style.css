@@ -805,7 +805,6 @@ input:focus-visible {
 }
 
 .frame-153-su {
-  position: absolute;
   display: inline-flex;
   padding: 48px 88px;
   flex-direction: column;
@@ -818,11 +817,9 @@ input:focus-visible {
 
 .frame-159-su {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
   gap: 16px;
-  height: 89px;
-  width: 315px;
 }
 
 .arrow-left-line {
@@ -840,4 +837,110 @@ input:focus-visible {
   font-style: normal;
   font-weight: 700;
   line-height: 120%;
+}
+
+.frame-212-su {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.frame-160-su {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 24px;
+}
+
+.frame-155-su {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.frame-157-su {
+  display: flex;
+  width: 380px;
+  justify-content: space-between;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.frame-157-su-text {
+  color: var(--Style, #d1d1d1);
+  /* Version 2/t6 */
+  font-family: Inter;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 120%; /* 24px */
+}
+
+.frame-157-su-img {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+}
+
+.frame-158-su {
+  display: flex;
+  width: 380px;
+  justify-content: space-between;
+  align-items: center;
+  flex-shrink: 0;
+}
+.frame-158-su-text {
+  color: var(--Style, #d1d1d1);
+  /* Version 2/t6 */
+  font-family: Inter;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 120%; /* 24px */
+}
+
+.frame-158-su-img {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+}
+
+.frame-156-su{
+  display: flex;
+flex-direction: column;
+align-items: flex-start;
+gap: 8px;
+}
+
+.frame-14-text{
+  align-self: stretch;
+  font-family: Poppins;
+font-size: 12px;
+font-style: normal;
+font-weight: 400;
+line-height: 120%; /* 14.4px */
+}
+
+.privacy-check-su{
+  width: 231px;
+height: 24px;
+}
+
+.privacy-check-su-img{
+  width: 24px;
+height: 24px;
+flex-shrink: 0;
+}
+
+.privacy-check-su-text{
+  color: var(--icon, #A8A8A8);
+
+/* Version 2/body */
+font-family: Inter;
+font-size: 16px;
+font-style: normal;
+font-weight: 400;
+line-height: 120%; /* 19.2px */
 }
