@@ -44,7 +44,7 @@ function renderSignUp() {
 function renderLogin() {
   document.getElementById("frame-153").innerHTML = renderLoginHTML();
   document.getElementById("frame-156").classList.remove("d-none");
-  test();
+  initializeLoginListeners();
 }
 
 function renderBody() {
