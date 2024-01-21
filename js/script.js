@@ -1,12 +1,9 @@
-
-
-function registerCompleteText(){
+function registerCompleteText() {
   document.getElementById("msgBox-bg").classList.remove("d-none");
   setTimeout(() => {
-      document.getElementById("msgBox-bg").classList.add("d-none");
+    document.getElementById("msgBox-bg").classList.add("d-none");
   }, 2000);
 }
-
 
 function renderSummary() {
   document.getElementById("content").innerHTML = renderSummaryHTML();
@@ -44,14 +41,11 @@ function renderSignUp() {
 }
 
 function renderLogin() {
-
   document.getElementById("frame-153").innerHTML = renderLoginHTML();
-    document.getElementById("frame-156").classList.remove("d-none");
+  document.getElementById("frame-156").classList.remove("d-none");
 }
 
 function renderBody() {
   document.getElementById("body").innerHTML = renderBodyHTML();
   renderSummary();
 }
-
-
