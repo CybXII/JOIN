@@ -1,8 +1,3 @@
-document.addEventListener("DOMContentLoaded", function () {
-  // Initialisiere die Event Listener
-  initializeLoginListeners();
-});
-
 function initializeLoginListeners() {
   // Finde die Input-Elemente
   let emailInput = document.getElementById("email");

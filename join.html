@@ -15,7 +15,7 @@
   <link rel="icon" type="image" href="./img/join-favicon.svg" />
 </head>
 
-  <body onload="move()" id="body"> 
+  <body onload="move(); renderLogin()" id="body"> 
     <div class="log-in">
       <div class="logo">
         <div id="logo_container" class="big_size logo_container background">
@@ -31,48 +31,7 @@
           <span id="msgBox" class="register-comp-text">You Signed Up successfully</span>
         </div>
         </div>
-    <form class="frame-153" id="frame-153">
-      <div class="frame-159">
-        <div class="text-wrapper">Log in</div>
-        <img src="./img/vector-5.svg" alt="blue seperator" />
-      </div>
-      <div class="frame-250">
-        <div class="form_div">
-          <div class="frame-155">
-            <label id="parent_email" class="frame-wrapper" for="email" aria-selected="false">
-              <input type="email" class="frame-14" id="email" aria-describedby="emailHelp" placeholder="Email"
-                autocomplete="email" required oninvalid="this.setCustomValidity('Das ist ein Test')"
-                oninput="this.setCustomValidity('')" />
-              <img src="./img/mail.svg" alt="" />
-            </label>
-          </div>
-          <div class="frame-155">
-            <label id="parent_password" for="password" class="frame-wrapper">
-              <input type="password" class="frame-14" id="password" autocomplete="new-password" placeholder="Password"
-                required oninvalid="this.setCustomValidity('Das ist ein Test')" oninput="this.setCustomValidity('')" />
-              <img class="img" src="img/lock.svg" alt="locker spicture" />
-            </label>
-          </div>
-          <div class="text-wrapper-3">This field is required</div>
-        </div>
-        <div class="frame-6">
-          <div class="frame-7">
-            <div class="check-button">
-              <div class="rectangle"></div>
-            </div>
-            <div class="text-wrapper-4">Remember me</div>
-          </div>
-        </div>
-      </div>
-      <div class="frame-176">
-        <div class="button-wo-icon" type="submit" onclick="login(); return false;">
-          <button class="button">Log in</button>
-        </div>
-        <div class="button-seconday-wo">
-          <button class="button-2">Guest Log in</button>
-        </div>
-      </div>
-      </form>
+    <form class="frame-153" id="frame-153" onsubmit="login(event)"></form>
       <div class="frame-156" id="frame-156">
         <div class="text-wrapper-5">Not a Join user?</div>
         <div class="button-wrapper" onclick="renderSignUp()">

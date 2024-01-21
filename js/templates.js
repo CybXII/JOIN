@@ -185,7 +185,7 @@ function renderLoginHTML(){
           </div>
         </div>
         <div class="frame-176">
-          <div class="button-wo-icon" type="submit" onclick="login(); return false;">
+          <div class="button-wo-icon" type="submit">
             <button class="button">Log in</button>
           </div>
           <div class="button-seconday-wo">

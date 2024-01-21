@@ -21,7 +21,10 @@ function addUser() {
   renderLogin();
 }
 
-function login() {
+function login(event){
+
+    // Das Standardverhalten des Formulars unterdrücken
+    event.preventDefault();
   let email = document.getElementById("email");
   let password = document.getElementById("password");
   let user = users.find(
