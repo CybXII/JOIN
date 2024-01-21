@@ -6,6 +6,11 @@ body {
 }
 
 .frame-40 {
+    display: flex;
+    margin-top: 12.9rem;
+    margin-left: 18.5rem;
+    margin-right: 30.4rem;
+    margin-right: 30.44rem;
     display: inline-flex;
     justify-content: center;
     align-items: center;
@@ -31,14 +36,15 @@ body {
 }
 
 .frame-71 {
+    margin-top: 5.5rem;
+    margin-left: 20.5rem;
+    margin-right: 34.5rem;
     display: flex;
     width: 35rem;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
     gap: 1.75rem;
-    margin-left: 6rem;
-    margin-top: 3.5rem;
 }
 
 .frame-65 {
@@ -54,7 +60,7 @@ body {
     display: flex;
     width: 16.5rem;
     height: 10.5rem;
-    padding: 2.375rem 1.1875rem;
+    padding: 2.375rem 3.625rem;
     justify-content: center;
     align-items: center;
     gap: 1.125rem;
@@ -153,11 +159,11 @@ body {
 
 .urgency-summary-v1 {
     display: flex;
-    width: 35rem;
+    margin-top: 1.75rem;
     height: 10.5rem;
-    padding: 1.75rem 3rem;
     justify-content: center;
     align-items: center;
+    padding: 1.75rem 3rem;
     gap: 3.8125rem;
     border-radius: 1.875rem;
     background-color: #fff;
@@ -298,13 +304,15 @@ body {
 }
 
 .frame-69 {
+    position: absolute;
+    margin-left: 60.5rem;
+    margin-right: 5.44rem;
+    margin-top: 34.22 rem;
     display: inline-flex;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
     gap: 0.1875rem;
-    margin-left: 46rem;
-    margin-top: 34.22rem;
 }
 
 .header-text {
