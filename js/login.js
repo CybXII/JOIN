@@ -28,13 +28,16 @@
 //   });
 // });
 
-function move() {
-  setTimeout(() => {
-    document.getElementById("logo_container").classList.remove("background");
-    document.getElementById("join_logo").classList.remove("background");
-    document.getElementById("logo_container").classList.remove("big_size");
-  }, 500);
-}
+
+// WIEDER EINKOMMENTIEREN!!!!
+
+// function move() {
+//   setTimeout(() => {
+//     document.getElementById("logo_container").classList.remove("background");
+//     document.getElementById("join_logo").classList.remove("background");
+//     document.getElementById("logo_container").classList.remove("big_size");
+//   }, 500);
+// }
 
 
 // Register & Login
@@ -61,6 +64,6 @@ function login() {
   console.log(user);
   if (user) {
     console.log("user gefunden");
-    location.href = "./summary.html";
+    renderBody();
   }
 }

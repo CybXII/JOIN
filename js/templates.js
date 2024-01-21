@@ -186,11 +186,63 @@ function renderLoginHTML(){
           </div>
         </div>
         <div class="frame-176">
-          <div class="button-wo-icon" type="submit" onclick="login()">
-            <button class="button" ; return false;>Log in</button>
+          <div class="button-wo-icon" type="submit" onclick="login(); return false;">
+            <button class="button">Log in</button>
           </div>
           <div class="button-seconday-wo">
             <button class="button-2">Guest Log in</button>
           </div>
         </div>`;
+}
+
+function renderBodyHTML(){
+  return /*html*/ `<div class="frame-3">
+      <img src="./../img/capa-2.svg" alt="Logo" class="capa-2" />
+
+      <div class="menu">
+        <div id="summary" class="frame-10" onclick="renderSummary()">
+          <img src="./../img/summary_icon.svg" alt="Summary" class="icons" />
+          <span>Summary</span>
+        </div>
+
+        <div id="add_task" class="frame-10" onclick="renderAddTask()">
+          <img src="./../img/add_task_icon.svg" alt="Add Task" class="icons" />
+          <span>Add Task</span>
+        </div>
+
+        <div id="board" class="frame-10" onclick="renderBoard()">
+          <img src="./../img/bord_img.svg" alt="Board" class="icons" />
+          <span>Board</span>
+        </div>
+
+        <div id="contacts" class="frame-10" onclick="renderContacts()">
+          <img src="./../img/contacts_img.svg" alt="Contacts" class="icons" />
+          <span>Contacts</span>
+        </div>
+      </div>
+
+      <div class="footer">
+        <div id="privacy_policy" class="font" onclick="renderPrivacyPolicy()">
+          <span>Privacy Policy</span>
+        </div>
+        <div id="legal_notice" class="font" onclick="renderLegalNotice()">
+          <span>Legal Notice</span>
+        </div>
+      </div>
+    </div>
+    <div class="navigation">
+      <div class="header">
+        <span class="kpmt-header">Kanban Project Management Tool</span>
+        <div class="frame-42">
+          <img class="help_icon" src="./../img/help.svg" alt="Help Icon" />
+          <div class="frame-31">
+            <img src="../img/ellipse-3.svg" alt="" class="ellipse-3" />
+            <img src="../img/group-9.svg" alt="" class="group-9" />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="content-container">
+      <div class="container" id="content"></div>
+    </div>`;
 }

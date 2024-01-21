@@ -1,31 +1,31 @@
 function renderSummary() {
-  classesSummary();
   document.getElementById("content").innerHTML = renderSummaryHTML();
+  classesSummary();
 }
 
 function renderAddTask() {
-  classesAddTask();
   document.getElementById("content").innerHTML = renderAddTaskHTML();
+  classesAddTask();
 }
 
 function renderBoard() {
-  classesBoard();
   document.getElementById("content").innerHTML = renderBoardHTML();
+  classesBoard();
 }
 
 function renderContacts() {
-  classesContacts();
   document.getElementById("content").innerHTML = renderContactsHTML();
+  classesContacts();
 }
 
 function renderPrivacyPolicy() {
-  classesPrivacyPolicy();
   document.getElementById("content").innerHTML = renderPrivacyPolicyHTML();
+  classesPrivacyPolicy();
 }
 
 function renderLegalNotice() {
-  classesLegalNotice();
   document.getElementById("content").innerHTML = renderLegalNoticeHTML();
+  classesLegalNotice();
 }
 
 function renderSignUp(){
@@ -39,6 +39,11 @@ function renderLogin(){
   document.getElementById("frame-153").innerHTML = renderLoginHTML();
     document.getElementById("frame-156").classList.remove("d-none");
   validateListenerLogin();
+}
+
+function renderBody(){
+  document.getElementById("body").innerHTML = renderBodyHTML();
+  renderSummary();
 }
 
 function validateListenerLogin(){

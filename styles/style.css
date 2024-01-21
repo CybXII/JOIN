@@ -477,7 +477,7 @@ input:focus-visible {
   line-height: var(--version-2-body-line-height);
   white-space: nowrap;
   font-style: var(--version-2-body-font-style);
-  cursor: default;
+  cursor: pointer;
 }
 
 .log-in .text-wrapper-6:hover {
@@ -520,7 +520,7 @@ input:focus-visible {
 }
 
 .big_size {
-  border: 1px solid red;
+  /* border: 1px solid red; */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -534,7 +534,7 @@ input:focus-visible {
 }
 
 .big_size img {
-  border: 1px solid red;
+  /* border: 1px solid red; */
   position: absolute;
   width: 50% !important;
   height: 50% !important;
@@ -560,7 +560,7 @@ input:focus-visible {
 
 .container {
   /* margin-top: 108px; */
-  border: 1px solid red;
+  /* border: 1px solid red; */
   height: calc(100vh - 140px);
   z-index: -2;
   background-color: white;
@@ -568,7 +568,7 @@ input:focus-visible {
 }
 
 .header {
-  border: 1px solid red;
+  /* border: 1px solid red; */
   display: flex;
   width: 100%;
   padding: 20px 40px 20px 348px;
@@ -581,7 +581,7 @@ input:focus-visible {
 }
 
 .kanban_body {
-  border: 1px solid red;
+  /* border: 1px solid red; */
   padding: 1.25rem 2.5rem 1.25rem 21.75rem;
   justify-content: space-between;
   align-items: center;
@@ -598,14 +598,14 @@ input:focus-visible {
 }
 
 .frame-42 {
-  border: 1px solid red;
+  /* border: 1px solid red; */
   display: flex;
   align-items: center;
   gap: 16px;
 }
 
 .help_icon {
-  border: 1px solid red;
+  /* border: 1px solid red; */
   width: 32px;
   height: 32px;
 }
@@ -649,7 +649,7 @@ input:focus-visible {
 }
 
 .frame-3 {
-  border: 1px solid red;
+  /* border: 1px solid red; */
   display: flex;
   width: 232px;
   height: 100vh;
@@ -664,7 +664,7 @@ input:focus-visible {
 }
 
 .capa-2 {
-  border: 1px solid red;
+  /* border: 1px solid red; */
   width: 100.034px;
   height: 121.966px;
   flex-shrink: 0;
@@ -676,7 +676,7 @@ input:focus-visible {
 }
 
 .menu {
-  border: 1px solid red;
+  /* border: 1px solid red; */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -686,7 +686,7 @@ input:focus-visible {
 }
 
 .frame-10 {
-  border: 1px solid red;
+  /* border: 1px solid red; */
   display: flex;
   width: 232px;
   height: 46px;
@@ -700,7 +700,7 @@ input:focus-visible {
 }
 
 .frame-10-active {
-  border: 1px solid red;
+  /* border: 1px solid red; */
   display: flex;
   width: 232px;
   height: 46px;
@@ -712,7 +712,7 @@ input:focus-visible {
   color: var(--white, #fff);
 }
 .frame-10-active > span {
-  border: 1px solid red;
+  /* border: 1px solid red; */
   color: var(--white, #fff);
   font-family: Inter;
   font-size: 16px;
@@ -736,7 +736,7 @@ input:focus-visible {
 }
 
 .img_name img {
-  border: 1px solid red;
+  /* border: 1px solid red; */
   width: 1.875rem;
   height: 1.875rem;
   flex-shrink: 0;
@@ -757,7 +757,7 @@ input:focus-visible {
 }
 
 .footer {
-  border: 1px solid red;
+  /* border: 1px solid red; */
   display: flex;
   /* padding: 243px 0px 0px 52px; */
   flex-direction: column;
@@ -857,6 +857,7 @@ input:focus-visible {
   position: absolute;
   top: 64px;
   left: 48px;
+  cursor: pointer;
 }
 
 .sign-up-text {
@@ -966,6 +967,7 @@ input:focus-visible {
   width: 24px;
   height: 24px;
   flex-shrink: 0;
+  cursor: pointer;
 }
 
 .privacy-check-su-text {
@@ -993,6 +995,7 @@ input:focus-visible {
   font-style: normal;
   font-weight: 400;
   line-height: 120%; /* 19.2px */
+  cursor: pointer;
 }
 
 .button-wo-icon-su {
@@ -1003,6 +1006,7 @@ input:focus-visible {
   gap: 10px;
   border-radius: 8px;
   background: #2a3647;
+  cursor: pointer;
 }
 
 .button-wo-icon-su-text {
