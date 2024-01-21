@@ -126,9 +126,15 @@ body {
     gap: 0.625rem;
 }
 
-.frame-59 img {
+.frame-59-ellipse {
     width: 4.3125rem;
     height: 4.3125rem;
+}
+
+.frame-59-prio-alta {
+    position: absolute;
+    width: 2.13663rem;
+    height: 1.56975rem;
 }
 
 .frame-60 {
