@@ -3,7 +3,7 @@
 }
 
 .logo_container {
-  /* border: 1px solid red; */
+  border: 1px solid red;
   position: absolute;
   top: 0;
   left: 0;
@@ -279,7 +279,6 @@ input:focus-visible {
 .log-in .button-wo-icon {
   /* border: 1px solid red; */
   display: inline-flex;
-  height: 48px;
   align-items: center;
   justify-content: center;
   gap: 10px;
@@ -293,10 +292,12 @@ input:focus-visible {
 }
 
 .log-in .button-wo-icon:hover {
+  box-shadow: 0px 4px 4px 0px #00000040;
   background-color: var(--ligth-blue);
 }
 
 .log-in .button-wo-icon:active {
+  box-shadow: 0px 4px 4px 0px #00000040;
   background-color: var(--active-button);
 }
 
@@ -320,7 +321,6 @@ input:focus-visible {
 .log-in .button-seconday-wo {
   /* border: 1px solid red; */
   display: inline-flex;
-  height: 48px;
   align-items: center;
   justify-content: center;
   gap: 10px;
@@ -337,11 +337,13 @@ input:focus-visible {
 }
 
 .log-in .button-seconday-wo:hover {
+  box-shadow: 0px 4px 4px 0px #00000040;
   border: 2px solid;
   border-color: var(--ligth-blue);
 }
 
 .log-in .button-seconday-wo:active {
+  box-shadow: 0px 4px 4px 0px #00000040;
   border: 1px solid;
   border-color: var(--active-button);
 }
@@ -389,7 +391,7 @@ input:focus-visible {
 }
 
 .log-in .button-wrapper {
-  border: 1px solid red;
+  /* border: 1px solid red; */
   all: unset;
   box-sizing: border-box;
   display: inline-flex;
@@ -406,8 +408,20 @@ input:focus-visible {
   cursor: pointer;
 }
 
+.log-in .button-wrapper:hover {
+  box-shadow: 0px 4px 4px 0px #00000040;
+  border: 2px solid;
+  border-color: var(--ligth-blue);
+}
+
+.log-in .button-wrapper:active {
+  box-shadow: 0px 4px 4px 0px #00000040;
+  border: 1px solid;
+  border-color: var(--active-button);
+}
+
 .log-in .button-3 {
-  border: 1px solid red;
+  /* border: 1px solid red; */
   all: unset;
   box-sizing: border-box;
   margin-top: -1px;
@@ -424,8 +438,15 @@ input:focus-visible {
   cursor: pointer;
 }
 
+.log-in .frame-176{
+  display: flex;
+  width: 322px;
+  height: 48px;
+  gap: 35px;
+}
+
 .log-in .frame-213 {
-  border: 1px solid red;
+  /* border: 1px solid red; */
   position: absolute;
   width: 246px;
   height: 35px;
@@ -433,7 +454,7 @@ input:focus-visible {
 }
 
 .log-in .text-button {
-  border: 1px solid red;
+  /* border: 1px solid red; */
   display: inline-flex;
   align-items: center;
   gap: 8px;
@@ -444,7 +465,7 @@ input:focus-visible {
 }
 
 .log-in .text-wrapper-6 {
-  border: 1px solid red;
+  /* border: 1px solid red; */
   position: relative;
   width: fit-content;
   margin-top: -1px;
@@ -460,11 +481,17 @@ input:focus-visible {
 }
 
 .log-in .text-wrapper-6:hover {
+  font-family: Inter;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 19px;
+  letter-spacing: 0em;
+  text-align: left;
   color: var(--ligth-blue);
 }
 
 .log-in .div-wrapper {
-  border: 1px solid red;
+  /* border: 1px solid red; */
   display: inline-flex;
   align-items: center;
   gap: 8px;
@@ -475,7 +502,7 @@ input:focus-visible {
 }
 
 .log-in .div {
-  border: 1px solid red;
+  /* border: 1px solid red; */
   background-color: #f6f7f8;
   width: 1440px;
   height: 1024px;
@@ -493,7 +520,7 @@ input:focus-visible {
 }
 
 .big_size {
-  /* border: 1px solid red; */
+  border: 1px solid red;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -507,7 +534,7 @@ input:focus-visible {
 }
 
 .big_size img {
-  /* border: 1px solid red; */
+  border: 1px solid red;
   position: absolute;
   width: 50% !important;
   height: 50% !important;
@@ -533,7 +560,7 @@ input:focus-visible {
 
 .container {
   /* margin-top: 108px; */
-  /* border: 1px solid red; */
+  border: 1px solid red;
   height: calc(100vh - 140px);
   z-index: -2;
   background-color: white;
@@ -541,7 +568,7 @@ input:focus-visible {
 }
 
 .header {
-  /* border: 1px solid red; */
+  border: 1px solid red;
   display: flex;
   width: 100%;
   padding: 20px 40px 20px 348px;
@@ -554,7 +581,7 @@ input:focus-visible {
 }
 
 .kanban_body {
-  /* border: 1px solid red; */
+  border: 1px solid red;
   padding: 1.25rem 2.5rem 1.25rem 21.75rem;
   justify-content: space-between;
   align-items: center;
@@ -571,14 +598,14 @@ input:focus-visible {
 }
 
 .frame-42 {
-  /* border: 1px solid red; */
+  border: 1px solid red;
   display: flex;
   align-items: center;
   gap: 16px;
 }
 
 .help_icon {
-  /* border: 1px solid red; */
+  border: 1px solid red;
   width: 32px;
   height: 32px;
 }
@@ -622,7 +649,7 @@ input:focus-visible {
 }
 
 .frame-3 {
-  /* border: 1px solid red; */
+  border: 1px solid red;
   display: flex;
   width: 232px;
   height: 100vh;
@@ -637,7 +664,7 @@ input:focus-visible {
 }
 
 .capa-2 {
-  /* border: 1px solid red; */
+  border: 1px solid red;
   width: 100.034px;
   height: 121.966px;
   flex-shrink: 0;
@@ -649,7 +676,7 @@ input:focus-visible {
 }
 
 .menu {
-  /* border: 1px solid red; */
+  border: 1px solid red;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -659,7 +686,7 @@ input:focus-visible {
 }
 
 .frame-10 {
-  /* border: 1px solid red; */
+  border: 1px solid red;
   display: flex;
   width: 232px;
   height: 46px;
@@ -673,7 +700,7 @@ input:focus-visible {
 }
 
 .frame-10-active {
-  /* border: 1px solid red; */
+  border: 1px solid red;
   display: flex;
   width: 232px;
   height: 46px;
@@ -685,7 +712,7 @@ input:focus-visible {
   color: var(--white, #fff);
 }
 .frame-10-active > span {
-  /* border: 1px solid red; */
+  border: 1px solid red;
   color: var(--white, #fff);
   font-family: Inter;
   font-size: 16px;
@@ -709,7 +736,7 @@ input:focus-visible {
 }
 
 .img_name img {
-  /* border: 1px solid red; */
+  border: 1px solid red;
   width: 1.875rem;
   height: 1.875rem;
   flex-shrink: 0;
@@ -717,7 +744,7 @@ input:focus-visible {
 }
 
 .img_name a {
-  border: 1px solid red;
+  /* border: 1px solid red; */
   color: #cdcdcd;
 
   /* Version 2/body */
@@ -730,7 +757,7 @@ input:focus-visible {
 }
 
 .footer {
-  /* border: 1px solid red; */
+  border: 1px solid red;
   display: flex;
   /* padding: 243px 0px 0px 52px; */
   flex-direction: column;
