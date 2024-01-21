@@ -1,3 +1,13 @@
+// WIEDER EINKOMMENTIEREN!!!!
+
+// function move() {
+//   setTimeout(() => {
+//     document.getElementById("logo_container").classList.remove("background");
+//     document.getElementById("join_logo").classList.remove("background");
+//     document.getElementById("logo_container").classList.remove("big_size");
+//   }, 500);
+// }
+
 function renderSummary() {
   document.getElementById("content").innerHTML = renderSummaryHTML();
   classesSummary();
@@ -28,25 +38,25 @@ function renderLegalNotice() {
   classesLegalNotice();
 }
 
-function renderSignUp(){
+function renderSignUp() {
   document.getElementById("frame-153").innerHTML = renderSignUpHTML();
   document.getElementById("frame-156").classList.add("d-none");
-  validateListenerLogin();  
+  validateListenerLogin();
   validateListenerSignUp();
 }
 
-function renderLogin(){
+function renderLogin() {
   document.getElementById("frame-153").innerHTML = renderLoginHTML();
-    document.getElementById("frame-156").classList.remove("d-none");
+  document.getElementById("frame-156").classList.remove("d-none");
   validateListenerLogin();
 }
 
-function renderBody(){
+function renderBody() {
   document.getElementById("body").innerHTML = renderBodyHTML();
   renderSummary();
 }
 
-function validateListenerLogin(){
+function validateListenerLogin() {
   document.addEventListener("DOMContentLoaded", function () {
     const email_div = document.getElementById("parent_email");
     const email_input = document.getElementById("email");
@@ -75,8 +85,7 @@ function validateListenerLogin(){
   });
 }
 
-
-function validateListenerSignUp(){
+function validateListenerSignUp() {
   document.addEventListener("DOMContentLoaded", function () {
     const name_div = document.getElementById("parent_name");
     const name_input = document.getElementById("name");
