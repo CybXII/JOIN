@@ -50,6 +50,9 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
+function registerCompleteText(){
+  document.getElementById('msgBox-bg').classList.remove("d-none");
+}
 
 
 function renderSummary() {
