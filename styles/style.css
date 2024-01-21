@@ -237,19 +237,27 @@ input:focus-visible {
   width: 24px;
   height: 24px;
   border-radius: 3px;
+  display: flex;
+  align-items:first baseline
 }
 
-.log-in .rectangle {
+.checkbox {
   /* border: 1px solid red; */
   position: relative;
-  width: 18px;
-  height: 18px;
-  top: 3px;
-  left: 3px;
-  border-radius: 3px;
-  border: 2px solid;
-  border-color: var(--version-2main-color);
+  width: 24px;
+  height: 24px;
+  background-image: url("../img/check-button-su.svg");
   cursor: pointer;
+}
+
+.checkbox_active {
+  /* border: 1px solid red; */
+  position: relative;
+  width: 24px;
+  height: 24px;
+  background-image: url("../img/checkbox-checked.svg");
+  cursor: pointer;
+
 }
 
 .log-in .text-wrapper-4 {

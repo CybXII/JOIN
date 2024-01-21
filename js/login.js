@@ -12,13 +12,16 @@ function move() {
 
 let users = [{ email: "max@test.de", password: "test123" }];
 
-function addUser() {
-  let email = document.getElementById("email");
+function addUser(event) {
+  // Das Standardverhalten des Formulars unterdrücken
+  event.preventDefault();  let email = document.getElementById("email");
   let password = document.getElementById("password");
   users.push({ email: email.value, password: password.value });
   // Weiterleitung zu Loginseite + Nachricht anzeigen erfolgreiche Registrierung
   registerCompleteText();
-  renderLogin();
+  setTimeout(() => {
+    renderLogin();
+  }, 2000);
 }
 
 function login(event){

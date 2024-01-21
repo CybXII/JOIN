@@ -38,6 +38,7 @@ function renderLegalNotice() {
 function renderSignUp() {
   document.getElementById("frame-153").innerHTML = renderSignUpHTML();
   document.getElementById("frame-156").classList.add("d-none");
+  document.getElementById("frame-153").setAttribute("onsubmit", "addUser(event)");
   initializeSignUPListeners();
 }
 
@@ -50,4 +51,18 @@ function renderLogin() {
 function renderBody() {
   document.getElementById("body").innerHTML = renderBodyHTML();
   renderSummary();
+}
+
+function setChecker(input){
+  let checker = `${input}Check`;
+  document.getElementById(checker).classList.remove('checkbox');
+  document.getElementById(checker).classList.add('checkbox_active');
+  document.getElementById(checker).setAttribute('onclick', `resetChecker("${input}")`);
+}
+
+function resetChecker(input){
+  let checker = `${input}Check`;
+  document.getElementById(checker).classList.remove('checkbox_active');
+  document.getElementById(checker).classList.add('checkbox');
+  document.getElementById(checker).setAttribute('onclick', `setChecker("${input}")`);
 }

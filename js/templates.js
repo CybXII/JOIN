@@ -46,7 +46,7 @@ function renderSignUpHTML() {
                   placeholder="Name"
                   autocomplete="Name"
                   required
-                  oninvalid="this.setCustomValidity('Das ist ein Test')"
+                  oninvalid="this.setCustomValidity('Geben sie ihren Namen ein')"
                   oninput="this.setCustomValidity('')"
                 />
                 <img src="./img/person-su.svg" alt="" />
@@ -69,7 +69,7 @@ function renderSignUpHTML() {
                   placeholder="Email"
                   autocomplete="email"
                   required
-                  oninvalid="this.setCustomValidity('Das ist ein Test')"
+                  oninvalid="this.setCustomValidity('Geben ihre Email Adresse ein!')"
                   oninput="this.setCustomValidity('')"
                 />
                 <img src="./img/mail.svg" alt="" />
@@ -85,7 +85,7 @@ function renderSignUpHTML() {
                   autocomplete="new-password"
                   placeholder="Password"
                   required
-                  oninvalid="this.setCustomValidity('Das ist ein Test')"
+                  oninvalid="this.setCustomValidity('Geben sie ihr Passwort ein!')"
                   oninput="this.setCustomValidity('')"
                 />
                 <img class="img" src="img/lock.svg" alt="locker spicture" />
@@ -101,7 +101,7 @@ function renderSignUpHTML() {
                   autocomplete="new-password"
                   placeholder="Confirm Password"
                   required
-                  oninvalid="this.setCustomValidity('Das ist ein Test')"
+                  oninvalid="this.setCustomValidity('Ups! your password don${'`'}t match')"
                   oninput="this.setCustomValidity('')"
                 />
                 <img class="img" src="img/lock.svg" alt="locker spicture" />
@@ -113,7 +113,7 @@ function renderSignUpHTML() {
             </div>
           </div>
           <div class="privacy-check-su">
-            <img src="./img/check-button-su.svg" class="privacy-check-su-img" />
+          <div class="checkbox" id="signUpCheck" onclick="setChecker('signUp')"></div>
             <span class="privacy-check-su-text">I accept the</span>
             <div class="privacy-check-su-text-underlined">
               <span class="privacy-check-su-text-underlined-text"
@@ -122,7 +122,7 @@ function renderSignUpHTML() {
             </div>
           </div>
         </div>
-        <button class="button-wo-icon-su" onclick="addUser()">
+        <button class="button-wo-icon-su">
           <span class="button-wo-icon-su-text">Sign up</span>
         </button>
         <img src="./img/arrow-left-line.svg" class="arrow-left-line" onclick="renderLogin()">
@@ -178,7 +178,7 @@ function renderLoginHTML(){
           <div class="frame-6">
             <div class="frame-7">
               <div class="check-button">
-                <div class="rectangle"></div>
+                <div class="checkbox" id="rememberCheck" onclick="setChecker('remember')"></div>
               </div>
               <div class="text-wrapper-4">Remember me</div>
             </div>
