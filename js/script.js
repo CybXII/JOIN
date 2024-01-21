@@ -49,6 +49,9 @@ function renderLogin() {
   document.getElementById("frame-153").innerHTML = renderLoginHTML();
   document.getElementById("frame-156").classList.remove("d-none");
   validateListenerLogin();
+  setTimeout(() => {
+     document.getElementById("msgBox-bg").classList.add("d-none");
+   }, 2500);
 }
 
 function renderBody() {

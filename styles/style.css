@@ -438,7 +438,7 @@ input:focus-visible {
   cursor: pointer;
 }
 
-.log-in .frame-176{
+.log-in .frame-176 {
   display: flex;
   width: 322px;
   height: 48px;
@@ -1016,4 +1016,40 @@ input:focus-visible {
   font-style: normal;
   font-weight: 700;
   line-height: 120%; /* 25.2px */
+}
+
+.register-comp-bg {
+  position: absolute;
+  background-color: #2a364765;
+  height: 100vh;
+  width: 100vw;
+  z-index: 99;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.register-comp {
+  position: absolute;
+  border-radius: 20px;
+  background: var(--Version-2-main-color, #2a3647);
+  box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.15);
+  display: flex;
+  height: 74px;
+  padding: 0px 25px;
+  justify-content: center;
+  align-items: center;
+  margin-left: auto;
+  margin-top: auto;
+  z-index: 99;
+}
+
+.register-comp-text {
+  color: #fff;
+  /* Version 2/t6 */
+  font-family: Inter;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 120%; /* 24px */
 }
