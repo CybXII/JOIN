@@ -392,8 +392,8 @@ input:focus-visible {
 
 .log-in .button-wrapper {
   /* border: 1px solid red; */
-  all: unset;
-  box-sizing: border-box;
+  /* all: unset; */
+  /* box-sizing: border-box; */
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -402,7 +402,7 @@ input:focus-visible {
   position: relative;
   flex: 0 0 auto;
   background-color: #2a3647;
-  color: #ffffff;
+  /* color: #ffffff; */
   border-radius: 8px;
   overflow: hidden;
   cursor: pointer;
@@ -410,8 +410,7 @@ input:focus-visible {
 
 .log-in .button-wrapper:hover {
   box-shadow: 0px 4px 4px 0px #00000040;
-  border: 2px solid;
-  border-color: var(--ligth-blue);
+  background-color: var(--ligth-blue);
 }
 
 .log-in .button-wrapper:active {
@@ -421,7 +420,6 @@ input:focus-visible {
 }
 
 .log-in .button-3 {
-  /* border: 1px solid red; */
   all: unset;
   box-sizing: border-box;
   margin-top: -1px;
@@ -434,7 +432,6 @@ input:focus-visible {
   font-weight: 700;
   letter-spacing: 0;
   white-space: nowrap;
-  background-color: #2a3647;
   cursor: pointer;
 }
 
@@ -1007,6 +1004,12 @@ input:focus-visible {
   border-radius: 8px;
   background: #2a3647;
   cursor: pointer;
+  border: none;
+}
+
+.button-wo-icon-su:hover {
+  box-shadow: 0px 4px 4px 0px #00000040;
+  background-color: var(--ligth-blue);
 }
 
 .button-wo-icon-su-text {
@@ -1027,6 +1030,7 @@ input:focus-visible {
   display: flex;
   align-items: center;
   justify-content: center;
+
 }
 
 .register-comp {
@@ -1042,6 +1046,7 @@ input:focus-visible {
   margin-left: auto;
   margin-top: auto;
   z-index: 99;
+  animation: moveUpToCenter 1s ease forwards;
 }
 
 .register-comp-text {
@@ -1052,4 +1057,13 @@ input:focus-visible {
   font-style: normal;
   font-weight: 400;
   line-height: 120%; /* 24px */
+}
+
+@keyframes moveUpToCenter {
+  from {
+    transform: translateY(100vh);
+  }
+  to {
+    transform: translateY(0);
+  }
 }
