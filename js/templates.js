@@ -32,34 +32,80 @@ function renderSignUpHTML() {
           <div class="frame-160-su">
             <div class="frame-155-su">
               <div class="frame-14-su">
-                <div class="frame-157-su">
-                  <span class="frame-157-su-text">Name</span>
-                  <img src="./img/person-su.svg" class="frame-157-su-img" />
-                </div>
+                <label
+                id="parent_name"
+                class="frame-wrapper"
+                for="name"
+                aria-selected="false"
+              >
+                <input
+                  type="name"
+                  class="frame-14"
+                  id="name"
+                  aria-describedby="emailHelp"
+                  placeholder="Name"
+                  autocomplete="Name"
+                  required
+                  oninvalid="this.setCustomValidity('Das ist ein Test')"
+                  oninput="this.setCustomValidity('')"
+                />
+                <img src="./img/person-su.svg" alt="" />
+              </label>
               </div>
             </div>
             <div class="frame-157-su">
               <div class="frame-14-su">
-                <div class="frame-157-su">
-                  <span class="frame-157-su-text">Email</span>
-                  <img src="./img/email-su.svg" class="frame-157-su-img" />
-                </div>
+                <label
+                id="parent_email"
+                class="frame-wrapper"
+                for="email"
+                aria-selected="false"
+              >
+                <input
+                  type="email"
+                  class="frame-14"
+                  id="email"
+                  aria-describedby="emailHelp"
+                  placeholder="Email"
+                  autocomplete="email"
+                  required
+                  oninvalid="this.setCustomValidity('Das ist ein Test')"
+                  oninput="this.setCustomValidity('')"
+                />
+                <img src="./img/mail.svg" alt="" />
+              </label>
               </div>
             </div>
-            <div class="frame-158-su">
-              <div class="frame-14-su">
-                <div class="frame-158-su">
-                  <span class="frame-158-su-text">Password</span>
-                  <img src="./img/lock-su.svg" class="frame-158-su-img" />
-                </div>
-              </div>
+            <div class="frame-158">
+              <label id="parent_password" for="password" class="frame-wrapper">
+                <input
+                  type="password"
+                  class="frame-14"
+                  id="password"
+                  autocomplete="new-password"
+                  placeholder="Password"
+                  required
+                  oninvalid="this.setCustomValidity('Das ist ein Test')"
+                  oninput="this.setCustomValidity('')"
+                />
+                <img class="img" src="img/lock.svg" alt="locker spicture" />
+              </label>
             </div>
             <div class="frame-156-su">
-              <div class="frame-14-su">
-                <div class="frame-158-su">
-                  <span class="frame-158-su-text">Confirm Password</span>
-                  <img src="./img/lock-su.svg" class="frame-158-su-img" />
-                </div>
+              <div class="frame-14-su" >
+                <label id="parent_confirm_password" for="password" class="frame-wrapper">
+                <input
+                  type="password"
+                  class="frame-14"
+                  id="confirm_password"
+                  autocomplete="new-password"
+                  placeholder="Confirm Password"
+                  required
+                  oninvalid="this.setCustomValidity('Das ist ein Test')"
+                  oninput="this.setCustomValidity('')"
+                />
+                <img class="img" src="img/lock.svg" alt="locker spicture" />
+              </label>
                 <span class="frame-14-text">
                   Ups! your password don’t match
                 </span>
