@@ -36,7 +36,7 @@ function login(event){
   console.log(user);
   if (user) {
     console.log("user gefunden");
-    renderBody();
+    window.location.href= "summary.html"
   } else {
     console.log("Wrong password Ups! Try again.");
     alert("Wrong password Ups! Try again.");
