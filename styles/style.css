@@ -863,6 +863,13 @@ input:focus-visible {
   cursor: pointer;
 }
 
+.arrow-left-line:hover {
+  background-color: #EEEEEE;
+  border-radius: 17px;
+  width: 34px;
+  height: 34px;
+}
+
 .sign-up-text {
   width: 315px;
   color: #000;
