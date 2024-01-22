@@ -29,6 +29,10 @@ function renderPrivacyPolicy() {
   document.getElementById("content").innerHTML = renderPrivacyPolicyHTML();
   classesPrivacyPolicy();
 }
+function renderHelp() {
+  document.getElementById("content").innerHTML = renderHelpHTML();
+  classesHelp();
+}
 
 function renderLegalNotice() {
   document.getElementById("content").innerHTML = renderLegalNoticeHTML();

@@ -12,6 +12,14 @@ function classesSummary() {
   document.getElementById("legal_notice").classList.add("font");
   document.getElementById("legal_notice").classList.remove("font-active");
 }
+function classesHelp() {
+  document.getElementById("summary").classList.remove("frame-10-active");
+  document.getElementById("add_task").classList.remove("frame-10-active");
+  document.getElementById("board").classList.remove("frame-10-active");
+  document.getElementById("contacts").classList.remove("frame-10-active");
+  document.getElementById("privacy_policy").classList.remove("font-active");
+  document.getElementById("legal_notice").classList.remove("font-active");
+}
 
 function classesAddTask() {
   document.getElementById("summary").classList.add("frame-10");

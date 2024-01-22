@@ -77,6 +77,19 @@ function renderSummaryHTML() {
     </div>`;
 }
 
+async function includeHTMLInit(input) {
+  let functionName = `render${input}`;
+  await includeHTML();
+
+  // Überprüfen, ob die Funktion im globalen Kontext vorhanden ist
+  if (typeof window[functionName] === "function") {
+    window[functionName]();
+  } else {
+    console.error(`Die Funktion ${functionName} wurde nicht gefunden.`);
+  }
+}
+
+
 function renderAddTaskHTML() {
   return /*html*/ `<div>Add Task</div>`;
 }
@@ -87,6 +100,10 @@ function renderBoardHTML() {
 
 function renderContactsHTML() {
   return /*html*/ `<div>Contacts</div>`;
+}
+
+function renderHelpHTML() {
+  return /*html*/ `<div>Help</div>`;
 }
 
 function renderPrivacyPolicyHTML() {
