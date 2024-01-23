@@ -574,9 +574,11 @@ body {
     width: 10.625rem;
     height: 1.6875rem;
     flex-shrink: 0;
-    margin-top: 13.94rem;
-    margin-left: 20.5rem;
-    margin-right: 58.88rem;
+    position: absolute;
+    top: 57.88rem;
+    left: 20.5rem;
+    right: 58.88rem;
+    height: 4.44rem;
 }
 
 .disclaimer span {
