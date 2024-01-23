@@ -562,12 +562,9 @@ input:focus-visible {
 }
 
 .container {
-  /* margin-top: 108px; */
-  /* border: 1px solid red; */
-  height: calc(100vh - 140px);
   z-index: -2;
   background-color: white;
-  padding: 30px 0 0 30px;
+  padding: 10% 0 0 10%;
 }
 
 .header {

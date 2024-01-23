@@ -2,10 +2,6 @@
 
 .frame-40 {
     display: flex;
-    margin-top: 206.4px;
-    margin-left: 296px;
-    margin-right: 486.4px;
-    margin-right: 487px;
     display: inline-flex;
     justify-content: center;
     align-items: center;
@@ -29,13 +25,14 @@
     font-weight: 400;
     line-height: 32.4px;
   }
+
+  .board_window{
+    display: flex;
+    justify-content: flex-start;
+  }
   
   .frame-71 {
-    margin-top: 88px;
-    margin-left: 328px;
-    margin-right: 552px;
     display: flex;
-    width: 560px;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
@@ -305,15 +302,16 @@
   }
   
   .frame-69 {
-    position: absolute;
-    margin-left: 648px;
-    margin-right: 87px;
-    margin-top: 547.5px;
     display: inline-flex;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
     gap: 3px;
+  }
+
+  .helper{
+    width: 10px;
+    gap:10%
   }
   
   .header-text {
