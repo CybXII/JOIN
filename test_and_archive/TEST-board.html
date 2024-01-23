@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JOIN - Board</title>
+    <link rel="stylesheet" href="../styles/styleguide.css" />
+    <link rel="stylesheet" href="../styles/global.css" />
+    <link rel="stylesheet" href="../styles/style.css" />
+    <link rel="stylesheet" href="../styles/fonts.css" />
+    <link rel="stylesheet" href="./TEST-board.css" />
+    <script src="../js/login.js"></script>
+    <script src="../js/templates.js"></script>
+    <script src="../js/script.js"></script>
+    <script src="../js/classesSidebar.js"></script>
+    <script src="../js/eventListener.js"></script>
+    <link rel="icon" type="image" href="./img/join-favicon.svg" />
+  </head>
+  <body>
+      <div class="frame-3">
+        <img src="./../img/capa-2.svg" alt="Logo" class="capa-2" />
+        <div class="menu">
+          <a id="summary" class="frame-10" href="../summary.html">
+            <img src="./../img/summary_icon.svg" alt="Summary" class="icons" />
+            <span>Summary</span>
+          </a>
+          <a id="add_task" class="frame-10" href="../addtask.html">
+            <img
+              src="./../img/add_task_icon.svg"
+              alt="Add Task"
+              class="icons"
+            />
+            <span>Add Task</span>
+          </a>
+          <a id="board" class="frame-10" href="../board.html">
+            <img src="./../img/bord_img.svg" alt="Board" class="icons" />
+            <span>Board</span>
+          </a>
+          <a id="contacts" class="frame-10" href="../contacts.html">
+            <img src="./../img/contacts_img.svg" alt="Contacts" class="icons" />
+            <span>Contacts</span>
+          </a>
+        </div>
+        <div class="footer">
+          <a id="privacy_policy" class="font" href="../privacy.html">
+            <span>Privacy Policy</span>
+          </a>
+          <a id="legal_notice" class="font" href="../legal.html">
+            <span>Legal Notice</span>
+          </a>
+        </div>
+      </div>
+      <div class="navigation">
+        <div class="header">
+          <span class="kpmt-header">Kanban Project Management Tool</span>
+          <div class="frame-42">
+            <a href="../help.html">
+              <img class="help_icon" src="./../img/help.svg" alt="Help Icon" />
+            </a>
+            <div class="frame-31">
+              <img src="../img/ellipse-3.svg" alt="" class="ellipse-3" />
+              <img src="../img/group-9.svg" alt="" class="group-9" />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="content-container">
+        <div class="container" id="content">
+          
+            <div class="frame">
+      <div class="column-title">
+        <div class="div">
+          <div class="text-wrapper">To do</div>
+          <img class="plus-button" src="img/plus-button-2.svg" />
+        </div>
+        <div class="div">
+          <div class="text-wrapper">In progress</div>
+          <img class="plus-button" src="img/image.svg" />
+        </div>
+        <div class="div">
+          <div class="text-wrapper">Await feedback</div>
+          <img class="plus-button" src="img/plus-button.svg" />
+        </div>
+        <div class="div-2"><div class="text-wrapper">Done</div></div>
+      </div>
+      <div class="div-3">
+        <div class="div-wrapper"><div class="text-wrapper-2">Board</div></div>
+        <div class="div-4">
+          <div class="search-task-web">
+            <div class="div-5">
+              <div class="text-wrapper-3">Find Task</div>
+              <div class="div-6">
+                <img class="vector" src="img/vector-3.svg" /> <img class="img" src="img/search.svg" />
+              </div>
+            </div>
+          </div>
+          <div class="secondary-plus">
+            <div class="text-wrapper-4">Add task</div>
+            <img class="img" src="img/add.png" />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="board-distribution">
+      <div class="column-todo">
+        <div class="no-tasks-feedback"><div class="text-wrapper">No tasks To do</div></div>
+      </div>
+      <div class="div">
+        <div class="cards">
+          <div class="frame">
+            <div class="labels-board-card"><div class="text-wrapper-2">User Story</div></div>
+            <div class="frame-2">
+              <p class="title">Kochwelt Page &amp; Recipe Recommender</p>
+              <p class="content">Build start page with recipe recommendation...</p>
+            </div>
+            <div class="progress">
+              <div class="progress-bar"><div class="filler"></div></div>
+              <div class="element-subtasks">1/2 Subtasks</div>
+            </div>
+            <div class="frame-3">
+              <div class="frame-4">
+                <div class="profile-badge">
+                  <div class="group">
+                    <div class="overlap-group"><div class="text-wrapper-3">AM</div></div>
+                  </div>
+                </div>
+                <div class="group-wrapper">
+                  <div class="group">
+                    <div class="div-wrapper"><div class="text-wrapper-3">EM</div></div>
+                  </div>
+                </div>
+                <div class="group-wrapper">
+                  <div class="group">
+                    <div class="overlap-group-2"><div class="text-wrapper-3">MB</div></div>
+                  </div>
+                </div>
+              </div>
+              <img class="priority-symbols" src="img/priority-symbols.svg" />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="div">
+        <div class="cards">
+          <div class="frame-5">
+            <div class="labels-board-card-2"><div class="text-wrapper-2">Technical Task</div></div>
+            <div class="frame-2">
+              <div class="title">HTML Base Template Creation</div>
+              <p class="content">Create reusable HTML base templates...</p>
+            </div>
+            <div class="frame-3">
+              <div class="frame-4">
+                <div class="profile-badge">
+                  <div class="group">
+                    <div class="overlap-group-3"><div class="text-wrapper-3">DE</div></div>
+                  </div>
+                </div>
+                <div class="group-wrapper">
+                  <div class="group">
+                    <div class="overlap-group-4"><div class="text-wrapper-3">BZ</div></div>
+                  </div>
+                </div>
+                <div class="group-wrapper">
+                  <div class="group">
+                    <div class="overlap-group-5"><div class="text-wrapper-3">AS</div></div>
+                  </div>
+                </div>
+              </div>
+              <img class="img" src="img/priority-symbols-2.svg" />
+            </div>
+          </div>
+        </div>
+        <div class="cards">
+          <div class="frame-5">
+            <div class="labels-board-card"><div class="text-wrapper-2">User Story</div></div>
+            <div class="frame-2">
+              <div class="title">Daily Kochwelt Recipe</div>
+              <p class="content">Implement daily recipe and portion calculator....</p>
+            </div>
+            <div class="frame-3">
+              <div class="frame-4">
+                <div class="profile-badge">
+                  <div class="group">
+                    <div class="overlap-group-6"><div class="text-wrapper-3">EF</div></div>
+                  </div>
+                </div>
+                <div class="group-wrapper">
+                  <div class="group">
+                    <div class="overlap-group-5"><div class="text-wrapper-3">AS</div></div>
+                  </div>
+                </div>
+                <div class="group-wrapper">
+                  <div class="group">
+                    <div class="overlap-group-7"><div class="text-wrapper-3">TW</div></div>
+                  </div>
+                </div>
+              </div>
+              <img class="priority-symbols" src="img/priority-symbols-3.svg" />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="div">
+        <div class="cards">
+          <div class="frame">
+            <div class="labels-board-card-2"><div class="text-wrapper-2">Technical Task</div></div>
+            <div class="frame-2">
+              <div class="title">CSS Architecture Planning</div>
+              <p class="content">Define CSS naming conventions and structure...</p>
+            </div>
+            <div class="progress">
+              <div class="filler-wrapper"><div class="filler"></div></div>
+              <div class="element-subtasks">2/2 Subtasks</div>
+            </div>
+            <div class="frame-3">
+              <div class="frame-4">
+                <div class="profile-badge">
+                  <div class="group">
+                    <div class="overlap-group-8"><div class="text-wrapper-3">SM</div></div>
+                  </div>
+                </div>
+                <div class="group-wrapper">
+                  <div class="group">
+                    <div class="overlap-group-4"><div class="text-wrapper-3">BZ</div></div>
+                  </div>
+                </div>
+              </div>
+              <img class="img" src="img/image.svg" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+
+        </div>
+      </div>
+  </body>
+</html>
