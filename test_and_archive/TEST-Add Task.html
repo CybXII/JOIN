@@ -17,21 +17,21 @@
                 <span class="required">*</span>
                 <div class="frame-203">
                     <div class="frame-14">
-                        <input class="input-title placeholder" placeholder="Enter a title" type="text" name="title" id="title" required>
+                        <input class="input-title" placeholder="Enter a title" type="text" name="title" id="title" required>
                     </div>
                     <!-- des volgende Feld soll nur erscheinen wenn nix im input field steht -->
                     <!-- font famili "Poppins" -->
-                    <span class="warning-info-1">This field is required</span>
+                    <span class="warning-info-1" style="display: none;">This field is required</span>
                 </div>
             </div>
             <div class="description-v1">
                 <span>Description</span>
                 <div class="frame-207">
                     <div class="frame-17">
-                        <textarea class="input-title placeholder" placeholder="Enter a Description" type="text" name="description" id="description"></textarea>
+                        <textarea class="input-title" placeholder="Enter a Description" type="text" name="description" id="description"></textarea>
                     </div>
                     <!-- des volgende Feld soll nur erscheinen wenn nix im input field steht -->
-                    <span class="warning-info-2">This field is required</span>
+                    <span class="warning-info-2" style="display: none;">This field is required</span>
                 </div>
             </div>
             <div class="asigned-to-v1">
@@ -42,11 +42,39 @@
                 </div>
             </div>
         </div>
-        <img src="./../img/vector-4.svg" alt="vector-4">
+        <div class="vertical-line"></div>
         <div class="frame-39">
-            <div class=""></div>
-            <div class=""></div>
-            <div class=""></div>
+            <div class="due-date-v1">
+                <label for="title">Due date</label>
+                <span>*</span>
+                <div class="frame-211">
+                    <div class="frame-15">
+                        <input class="input-title" placeholder="dd/mm/yyyy" type="text" name="birth-dates" id="birth-dates" required>
+                        <img src="./../img/event.svg" alt="evemt">
+                    </div>
+                    <!-- des volgende Feld soll nur erscheinen wenn nix im input field steht -->
+                    <span class="warning-info-3" style="display: none;">This field is required.</span>
+                </div>
+            </div>
+            <div class="frame-28">
+                <label for="title">Prio</label>
+                <div class="priority">
+                    <div class="frame-16">
+                        <span>Urgent</span>
+                        <img src="./../img/prio-alta-red.svg" alt="prio-alta-red">
+                    </div>
+                    <div class="frame-25">
+                        <span>Medium</span>
+                        <img src="./../img/prio-media.svg" alt="prio-media">
+                    </div>
+                    <div class="frame-26">
+                        <span>Low</span>
+                        <img src="./../img/prio-baja.svg" alt="prio-baja">
+                    </div>
+                </div>
+            </div>
+            <div class="category"></div>
+            <div class="subtask-v1-reconstrution"></div>
         </div>
     </div>
 </body>
