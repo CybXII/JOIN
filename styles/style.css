@@ -563,8 +563,8 @@ input:focus-visible {
 
 .container {
   z-index: -2;
-  background-color: white;
-  padding: 10% 0 0 10%;
+  background-color: #F6F7F8;
+  padding: 100px 0 0 80px;
 }
 
 .header {
