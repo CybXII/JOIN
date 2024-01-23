@@ -273,3 +273,16 @@ body {
     height: 1.5rem;
     flex-shrink: 0;
 }
+
+.vector-4 {
+    stroke-width: 1px;
+    stroke: #D1D1D1;
+    margin-left: 51rem;
+    height: 20.4rem;
+    margin-right: 39rem;
+    width: 0.00006rem;
+    height: 26.5rem;
+    flex-shrink: 0;
+}
+
+.frame-39
