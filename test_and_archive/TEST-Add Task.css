@@ -278,7 +278,7 @@ body {
     flex-shrink: 0;
 }
 
-.vertical-line {
+.evertical-lin {
     height: 26.5rem;
     width: 0.125rem;
     color: #D1D1D1;
@@ -570,11 +570,41 @@ body {
     height: 1.5rem;
 }
 
+.disclaimer {
+    width: 10.625rem;
+    height: 1.6875rem;
+    flex-shrink: 0;
+    margin-top: 13.94rem;
+    margin-left: 20.5rem;
+    margin-right: 58.88rem;
+}
+
+.disclaimer span {
+    color: #FF8190;
+    font-family: Inter;
+    font-size: 1.25rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.5rem;
+}
+
+.disclaimer label {
+    color: #000;
+    font-family: Inter;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.5rem;
+}
+
 .frame-27 {
     display: inline-flex;
     justify-content: center;
     align-items: center;
     gap: 1rem;
+    margin-top: 9.12rem;
+    margin-left: 67.02rem;
+    margin-right: 8.48rem;
 }
 
 .secondary {
@@ -626,31 +656,4 @@ body {
 .primary-check-button img {
     width: 1.5rem;
     height: 1.5rem;
-}
-
-.disclaimer {
-    width: 10.625rem;
-    height: 1.6875rem;
-    flex-shrink: 0;
-    margin-left: 20.5rem;
-    margin-top: 57.87rem;
-    margin-right: 58.88rem;
-}
-
-.disclaimer span {
-    color: #FF8190;
-    font-family: Inter;
-    font-size: 1.25rem;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 1.5rem;
-}
-
-.disclaimer label {
-    color: #000;
-    font-family: Inter;
-    font-size: 1rem;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 1.5rem;
 }
