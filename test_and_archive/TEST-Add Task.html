@@ -4,15 +4,38 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Add Task</title>
+    <link rel="stylesheet" href="./TEST-Add Task.css">
 </head>
 <body>
-    <div class="frame 40">
+    <div class="frame-40">
         <h1>Add Task</h1>
     </div>
-    <div class="frame-219">
-        <div class="title-v1"></div>
-        <div class="description-v1"></div>
-        <div class="asigned-to-v1"></div>
+    <div class="input-fields">
+        <div class="frame-219">
+            <div class="title-v1">
+                <label for="title">Title</label>
+                <span class="required">*</span>
+                <div class="frame-203">
+                    <div class="frame-14">
+                        <input class="input-title placeholder" placeholder="Enter a title" type="text" name="title" id="title" required>
+                    </div>
+                    <!-- des volgende Feld soll nur erscheinen wenn nix im input field steht -->
+                    <!-- font famili "Poppins" -->
+                    <span class="warning-info-1">This field is required</span>
+                </div>
+            </div>
+            <div class="description-v1">
+                <span>Description</span>
+                <div class="frame-207">
+                    <div class="frame-17">
+                        <input class="input-title placeholder" placeholder="Enter a Description" type="text" name="description" id="description">
+                        <img src="./../img/recurso-11.svg" alt="Ecke">
+                    </div>
+                    <span class="warning-info-2">This field is required</span>
+                </div>
+            </div>
+            <div class="asigned-to-v1"></div>
+        </div>
     </div>
 </body>
 </html>
