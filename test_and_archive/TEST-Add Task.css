@@ -143,6 +143,7 @@ body {
     font-style: normal;
     font-weight: 400;
     line-height: 1.5rem;
+    padding-left: 0.5rem;
 }
 
 .input-title {
@@ -159,7 +160,7 @@ body {
     color: rgba(255, 129, 144, 0);
     width: 7.4375rem;
     height: 0.75rem;
-    font-family: Poppins;
+    font-family: Inter;
     font-style: normal;
     font-weight: 400;
     line-height: 0.9rem;
@@ -199,13 +200,13 @@ body {
     gap: 0.625rem;
     align-self: stretch;
     border-radius: 0.625rem;
-    border: 1px solid #D1D1D1;
+    color:  #D1D1D1;
     background: #FFF;
 }
 
-.frame-17 input {
+.frame-17 textarea {
     flex: 1 0 0;
-    color: #D1D1D1;
+    color: #000;
     font-family: Inter;
     font-size: 1.25rem;
     font-style: normal;
@@ -226,3 +227,49 @@ body {
     top: 43rem;
 }
 
+.asigned-to-v1 {
+    margin-top: 1rem;
+    display: flex;
+    width: 27.5rem;
+    height: 5rem;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+}
+
+.assigned-to {
+    width: 7rem;
+    flex: 1 0 0;
+    color: #2A3647;
+    font-family: Inter;
+    font-size: 1.25rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.5rem;
+}
+
+.frame-74 {
+    display: flex;
+    width: 27.5rem;
+    padding: 0.75rem 1rem;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 0.625rem;
+    border: 0.0625rem solid #D1D1D1;
+    background-color: #FFF;
+}
+
+.selcet-contacts {
+    color: #000;
+    font-family: Inter;
+    font-size: 1.25rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.5rem;
+}
+
+.frame-74 img {
+    width: 1.5rem;
+    height: 1.5rem;
+    flex-shrink: 0;
+}
