@@ -17,7 +17,10 @@
     <link rel="icon" type="image" href="./img/join-favicon.svg" />
   </head>
   <body onload="includeHTMLInit(`Help`)">
-    <nav w3-include-html="./templates/sidebar.html"></nav>
+    <main w3-include-html="./templates/sidebar.html"></main>
     <nav w3-include-html="./templates/header.html"></nav>
-      </body>
+    <div class="content-container">
+      <div class="container" id="content"></div>
+    </div>
+  </body>
 </html>
