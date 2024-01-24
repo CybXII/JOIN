@@ -13,8 +13,7 @@
     <div class="input-fields">
         <div class="frame-219">
             <div class="title-v1">
-                <label for="title">Title</label>
-                <span class="required">*</span>
+                <label for="title">Title<span>*</span></label>
                 <div class="frame-203">
                     <div class="frame-14">
                         <input class="input-title" placeholder="Enter a title" type="text" name="title" id="title" required>
@@ -42,15 +41,14 @@
                 </div>
             </div>
         </div>
-        <div class="vertical-line"></div>
+        <img class="vertical-line" src="./../img/vertical-line.svg" alt="vertical-line">
         <div class="frame-39">
             <div class="due-date-v1">
-                <label for="title">Due date</label>
-                <span>*</span>
+                <label for="title">Due date<span>*</span></label>
                 <div class="frame-211">
                     <div class="frame-15">
                         <input class="input-title" placeholder="dd/mm/yyyy" type="text" name="birth-dates" id="birth-dates" required>
-                        <img src="./../img/event.svg" alt="evemt">
+                        <img src="./../img/event.svg" alt="event">
                     </div>
                     <!-- des volgende Feld soll nur erscheinen wenn nix im input field steht -->
                     <span class="warning-info-3" style="display: none;">This field is required.</span>
@@ -73,9 +71,32 @@
                     </div>
                 </div>
             </div>
-            <div class="category"></div>
-            <div class="subtask-v1-reconstrution"></div>
+            <div class="category">
+                <label for="title">Catagory<span>*</span></label>
+                <div class="frame-75">
+                    <span>Select contacts to assign</span>
+                    <img src="./../img/arrow-drop-downaa.svg" alt="drop-downas">
+                </div>
+            </div>
+            <div class="subtask-v1-reconstrution">
+                <label for="subtasks">Subtasks</label>
+                <div class="frame-18">
+                    <span class="subtasks" placeholder="Add new subtask"></span>
+                    <img src="./../img/subtasks-icons-11.svg" alt="subtasks-icon">
+                </div>
+            </div>
         </div>
+    </div>
+    <label class="disclaimer" for="disclaimer"><span>*</span>This field is required</label>
+    <div class="frame-27">
+        <button class="secondary">
+            <span>Clear</span>
+            <img src="./../img/iconoir-cancel.svg" alt="cancel-icon">
+        </button>
+        <button class="primary-check-button">
+            <span>Create Task</span>
+            <img src="./../img/check-out-wheite.svg" alt="">
+        </button>
     </div>
 </body>
 </html>

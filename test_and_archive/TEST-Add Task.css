@@ -94,6 +94,7 @@ body {
     flex-direction: column;
     align-items: flex-start;
     gap: 0.5rem;
+    border-radius: 0.625rem;
 }
 
 .title-v1 label {
@@ -105,10 +106,8 @@ body {
     line-height: 1.5rem;
 }
 
-.required {
+.title-v1 span {
     color: #FF8190;
-    position: absolute;
-    left: 23.8rem;
     font-family: Inter;
     font-size: 1.25rem;
     font-style: normal;
@@ -125,12 +124,7 @@ body {
 }
 
 .frame-14 {
-    display: flex;
-    align-items: center;
-    gap: 0.625rem;
-    align-self: stretch;
-    border-radius: 0.625rem;
-    border: 1px solid #D1D1D1;
+    /* Serves only as a teacher container */
 }
 
 .input-title::placeholder {
@@ -152,6 +146,12 @@ body {
     font-style: normal;
     font-weight: 400;
     line-height: 1.5rem;
+    border-radius: 0.625rem;
+    display: flex;
+    width: 27.5rem;
+    padding: 0.75rem 1rem;
+    justify-content: center;
+    border: 0.0625rem solid #D1D1D1;
 }
 
 .warning-info-1 {
@@ -196,7 +196,6 @@ body {
     align-items: flex-start;
     gap: 0.625rem;
     align-self: stretch;
-    border-radius: 0.625rem;
     color:  #D1D1D1;
 }
 
@@ -209,6 +208,7 @@ body {
     font-weight: 400;
     line-height: 1.5rem;
     height: 7.5rem;
+    border-radius: 0.625rem;
 }
 
 
@@ -280,14 +280,14 @@ body {
     flex-shrink: 0;
 }
 
-.vertical-line {
+.evertical-lin {
     height: 26.5rem;
     width: 0.125rem;
     color: #D1D1D1;
     flex-shrink: 0;
     stroke-width: 0.125rem;
     margin-left: 3rem;
-    margin-top: 20.4rem;
+    margin-top: 3rem;
     
 }
 
@@ -299,7 +299,7 @@ body {
     align-items: flex-start;
     gap: 1.5rem;
     margin-left: 3rem;
-    margin-top: 20.4rem;
+    margin-top: 3rem;
     margin-right: 8.48rem;
 }
 
@@ -322,8 +322,6 @@ body {
 
 .due-date-v1 span {
     color: #FF8190;
-    position: absolute;
-    left: 69.3rem;
     font-family: Inter;
     font-size: 1.25rem;
     font-style: normal;
@@ -485,4 +483,181 @@ body {
     flex-direction: column;
     align-items: flex-start;
     gap: 0.5rem;
+}
+
+.category label {
+    color: #2A3647;
+    font-family: Inter;
+    font-size: 1.25rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.5rem;
+}
+
+.category span {
+    color: #FF8190;
+    font-family: Inter;
+    font-size: 1.25rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.5rem;
+}
+
+.frame-75 {
+    display: flex;
+    width: 27.5rem;
+    padding: 0.75rem 1rem;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 0.625rem;
+    border: 1px solid #D1D1D1;
+    background: #fff;
+}
+
+.frame-75 span {
+    color: #000;
+    font-family: Inter;
+    font-size: 1.25rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.5rem;
+}
+
+.frame-75 img {
+    color: #2A3647;
+    width: 1.5rem;
+    height: 1.5rem;
+    flex-shrink: 0;
+}
+
+.subtask-v1-reconstrution {
+    display: flex;
+    width: 27.5rem;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+}
+
+.subtask-v1-reconstrution label {
+    color: #2A3647;
+    font-family: Inter;
+    font-size: 1.25rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.5rem;
+}
+
+.frame-18 {
+    display: flex;
+    padding: 0.75rem 1rem;
+    justify-content: space-between;
+    align-items: center;
+    align-self: stretch;
+    border-radius: 0.625rem;
+    background: #fff;
+}
+
+.subtasks::placeholder {
+    color: #D1D1D1;
+    font-family: Inter;
+    font-size: 1.25rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.5rem;
+}
+
+.frame-18 img {
+    color: #2A3647;
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+.disclaimer {
+    width: 10.625rem;
+    height: 1.6875rem;
+    flex-shrink: 0;
+    position: absolute;
+    top: 57.88rem;
+    left: 20.5rem;
+    right: 58.88rem;
+    height: 4.44rem;
+}
+
+.disclaimer span {
+    color: #FF8190;
+    font-family: Inter;
+    font-size: 1.25rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.5rem;
+}
+
+.disclaimer label {
+    color: #000;
+    font-family: Inter;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.5rem;
+}
+
+.frame-27 {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 9.12rem;
+    margin-left: 67.02rem;
+    margin-right: 8.48rem;
+}
+
+.secondary {
+    display: flex;
+    padding: 1rem;
+    justify-content: center;
+    align-items: center;
+    gap: 0.25rem;
+    border-radius: 0.625rem;
+    border:  1px solid #2A3647;
+    background: #F6F7F8;
+}
+
+.secondary span {
+    color: #2A3647;
+    font-family: Inter;
+    font-size: 1.25rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.5rem;
+}
+
+.secondary img {
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+.primary-check-button {
+    display: flex;
+    padding: 1rem;
+    justify-content: center;
+    align-items: center;
+    gap: 0.25rem;
+    border-radius: 0.625rem;
+    background: #2A3647;
+}
+
+.primary-check-button span {
+    width: 7.6875rem;
+    height: 1.5rem;
+    color: #FFF;
+    font-family: Inter;
+    font-size: 1.3125rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 1.575rem;
+}
+
+.primary-check-button img {
+    width: 1.5rem;
+    height: 1.5rem;
 }
