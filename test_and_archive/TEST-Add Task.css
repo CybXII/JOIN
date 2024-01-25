@@ -73,7 +73,7 @@ body {
 .input-fields {
     display: flex;
     align-items: center;
-    gap: 3rem;
+    
 }
 
 .frame-219 {
@@ -170,6 +170,7 @@ body {
     flex-direction: column;
     align-items: flex-start;
     gap: 0.5rem;
+    margin-top: 1.5rem;
 }
 
 .description-v1 span {
@@ -275,15 +276,11 @@ body {
     flex-shrink: 0;
 }
 
-.evertical-lin {
-    height: 26.5rem;
+.vertical-line {
+    height: 27rem;
     width: 0.125rem;
-    color: #D1D1D1;
-    flex-shrink: 0;
-    stroke-width: 0.125rem;
-    margin-left: 3rem;
+    margin-left: 2.5rem;
     margin-top: 3rem;
-    
 }
 
 .frame-39 {
@@ -371,6 +368,7 @@ body {
     flex-direction: column;
     align-items: flex-start;
     gap: 0.5rem;
+    margin-top: 1.5rem;
 }
 
 .frame-28 label {
@@ -601,7 +599,7 @@ body {
     align-items: center;
     gap: 1rem;
     margin-top: 9.12rem;
-    margin-left: 70rem;
+    margin-left: 66.5rem;
 }
 
 .secondary {
