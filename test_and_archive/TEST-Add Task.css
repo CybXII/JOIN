@@ -60,13 +60,13 @@ body {
 .frame-40 {
     color: #000;
     font-family: Inter;
-    font-size: 3.8125rem;
+    font-size: 61px;
     font-style: normal;
     font-weight: 700;
-    line-height: 4.575rem;
-    margin-left: 20.5rem;
-    margin-top: 12.87rem;
-    margin-right: 52.13rem;
+    line-height: 73.2px;
+    margin-left: 328px;
+    margin-top: 205.92px;
+    margin-right: 834.08px;
     
 }
 
@@ -78,48 +78,48 @@ body {
 
 .frame-219 {
     display: flex;
-    width: 27.5rem;
+    width: 440px;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-    gap: 1rem;
-    margin-left: 20.5rem;
-    margin-top: 3rem;
-    margin-right: 3rem;
+    gap: 16px;
+    margin-left: 328px;
+    margin-top: 48px;
+    margin-right: 48px;
 }
 
 .title-v1 {
     display: flex;
-    width: 27.5rem;
+    width: 440px;
     flex-direction: column;
     align-items: flex-start;
-    gap: 0.5rem;
-    border-radius: 0.625rem;
+    gap: 8px;
+    border-radius: 10px;
 }
 
 .title-v1 label {
     color: #2A3647;
     font-family: Inter;
-    font-size: 1.25rem;
+    font-size: 20px;
     font-style: normal;
     font-weight: 400;
-    line-height: 1.5rem;
+    line-height: 24px;
 }
 
 .title-v1 span {
     color: #FF8190;
     font-family: Inter;
-    font-size: 1.25rem;
+    font-size: 20px;
     font-style: normal;
     font-weight: 400;
-    line-height: 1.5rem;
+    line-height: 24px;
 }
 
 .frame-203 {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 0.25rem;
+    gap: 4px;
     align-self: stretch;
 }
 
@@ -131,63 +131,63 @@ body {
     flex: 1 0 0;
     color: #D1D1D1;
     font-family: Inter;
-    font-size: 1.25rem;
+    font-size: 20px;
     font-style: normal;
     font-weight: 400;
-    line-height: 1.5rem;
-    padding-left: 0.5rem;
+    line-height: 24px;
+    padding-left: 8px;
 }
 
 .input-title {
     flex: 1 0 0;
     color: #2A3647;
     font-family: Inter;
-    font-size: 1.25rem;
+    font-size: 20px;
     font-style: normal;
     font-weight: 400;
-    line-height: 1.5rem;
-    border-radius: 0.625rem;
+    line-height: 24px;
+    border-radius: 10px;
     display: flex;
-    width: 27.5rem;
-    padding: 0.75rem 1rem;
+    width: 440px;
+    padding: 12px 16px;
     justify-content: center;
-    border: 0.0625rem solid #D1D1D1;
+    border: 1px solid #D1D1D1;
 }
 
 .warning-info-1 {
     color: red;
-    width: 7.4375rem;
-    height: 0.75rem;
+    width: 119px;
+    height: 12px;
     font-family: Inter;
     font-style: normal;
     font-weight: 400;
-    line-height: 0.9rem;
+    line-height: 14.4px;
 }
 
 .description-v1 {
     display: flex;
-    width: 27.5rem;
+    width: 440px;
     flex-direction: column;
     align-items: flex-start;
-    gap: 0.5rem;
-    margin-top: 1.5rem;
+    gap: 8px;
+    margin-top: 24px;
 }
 
 .description-v1 span {
     align-self: stretch;
     color: #2A3647;
     font-family: Inter;
-    font-size: 1.25rem;
+    font-size: 20px;
     font-style: normal;
     font-weight: 400;
-    line-height: 1.5rem;
+    line-height: 24px;
 }
 
 .frame-207 {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 0.25rem;
+    gap: 4px;
     align-self: stretch;
 }
 
@@ -199,133 +199,133 @@ body {
     flex: 1 0 0;
     color: #000;
     font-family: Inter;
-    font-size: 1.25rem;
+    font-size: 20px;
     font-style: normal;
     font-weight: 400;
-    line-height: 1.5rem;
-    height: 7.5rem;
-    border-radius: 0.625rem;
+    line-height: 24px;
+    height: 120px;
+    border-radius: 10px;
 }
 
 
 .frame-17 img {
-    width: 1.18125rem;
-    height: 1.18125rem;
-    right: 0.38125rem;
-    bottom: 0.38125rem;
+    width: 18.9px;
+    height: 18.9px;
+    right: 6.1px;
+    bottom: 6.1px;
     color: #D1D1D1;
     position: absolute;
-    left: 46.2rem;
-    top: 43rem;
+    left: 739.2px;
+    top: 688px;
 }
 
 .warning-info-2 {
         color: red;
-        width: 7.4375rem;
-        height: 0.75rem;
+        width: 119px;
+        height: 12px;
         font-family: Inter;
         font-style: normal;
         font-weight: 400;
-        line-height: 0.9rem;
+        line-height: 14.4px;
 }
 
 .asigned-to-v1 {
-    margin-top: 1rem;
+    margin-top: 16px;
     display: flex;
-    width: 27.5rem;
-    height: 5rem;
+    width: 440px;
+    height: 80px;
     flex-direction: column;
     align-items: flex-start;
-    gap: 0.5rem;
+    gap: 8px;
 }
 
 .assigned-to {
-    width: 7rem;
+    width: 112px;
     flex: 1 0 0;
     color: #2A3647;
     font-family: Inter;
-    font-size: 1.25rem;
+    font-size: 20px;
     font-style: normal;
     font-weight: 400;
-    line-height: 1.5rem;
+    line-height: 24px;
 }
 
 .frame-74 {
     display: flex;
-    width: 27.5rem;
-    padding: 0.75rem 1rem;
+    width: 440px;
+    padding: 12px 16px;
     justify-content: space-between;
     align-items: center;
-    border-radius: 0.625rem;
-    border: 0.0625rem solid #D1D1D1;
+    border-radius: 10px;
+    border: 1px solid #D1D1D1;
     background-color: #FFF;
 }
 
 .selcet-contacts {
     color: #000;
     font-family: Inter;
-    font-size: 1.25rem;
+    font-size: 20px;
     font-style: normal;
     font-weight: 400;
-    line-height: 1.5rem;
+    line-height: 24px;
 }
 
 .frame-74 img {
-    width: 1.5rem;
-    height: 1.5rem;
+    width: 24px;
+    height: 24px;
     flex-shrink: 0;
 }
 
 .vertical-line {
-    height: 27rem;
-    width: 0.125rem;
-    margin-left: 2.5rem;
-    margin-top: 3rem;
+    height: 432px;
+    width: 2px;
+    margin-left: 40px;
+    margin-top: 48px;
 }
 
 .frame-39 {
     display: flex;
-    width: 27.5rem;
+    width: 440px;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-    gap: 1.5rem;
-    margin-left: 3rem;
-    margin-top: 3rem;
-    margin-right: 8.48rem;
+    gap: 24px;
+    margin-left: 48px;
+    margin-top: 48px;
+    margin-right: 135.68px;
 }
 
 .due-date-v1 {
     display: flex;
-    width: 27.5rem;
+    width: 440px;
     flex-direction: column;
     align-items: flex-start;
-    gap: 0.5rem;
+    gap: 8px;
 }
 
 .due-date-v1 label {
     color: #2A3647;
     font-family: Inter;
-    font-size: 1.25rem;
+    font-size: 20px;
     font-style: normal;
     font-weight: 400;
-    line-height: 1.5rem;
+    line-height: 24px;
 }
 
 .due-date-v1 span {
     color: #FF8190;
     font-family: Inter;
-    font-size: 1.25rem;
+    font-size: 20px;
     font-style: normal;
     font-weight: 400;
-    line-height: 1.5rem;
+    line-height: 24px;
 }
 
 .frame-211 {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 0.25rem;
+    gap: 4px;
     align-self: stretch;
 }
 
@@ -337,65 +337,65 @@ body {
     background-image: url(./../img/event.svg);
     background-repeat: no-repeat;
     background-position: 27rem;
-    border-radius: 0.625rem;
-    gap: 0.625rem;
-    border: 0.0625rem solid #D1D1D1;
+    border-radius: 10px;
+    gap: 10px;
+    border: 1px solid #D1D1D1;
     font-family: Inter;
-    font-size: 1.25rem;
+    font-size: 20px;
     font-style: normal;
     font-weight: 400;
-    line-height: 1.5rem;
+    line-height: 24px;
 }
 
 .frame-15 img {
-    width: 1.5rem;
-    height: 1.5rem;
+    width: 24px;
+    height: 24px;
     color: #2A3647;
 }
 
 .warning-info-3 {
     color: red;
-    width: 7.4375rem;
-    height: 0.75rem;
+    width: 119px;
+    height: 12px;
     font-family: Inter;
     font-style: normal;
     font-weight: 400;
-    line-height: 0.9rem;
+    line-height: 14.4px;
 }
 
 .frame-28 {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 0.5rem;
-    margin-top: 1.5rem;
+    gap: 8px;
+    margin-top: 24px;
 }
 
 .frame-28 label {
     color: #000;
     font-family: Inter;
-    font-size: 1.25rem;
+    font-size: 20px;
     font-style: normal;
     font-weight: 400;
-    line-height: 1.5rem;
+    line-height: 24px;
 }
 
 .priority {
     display: flex;
-    width: 29.5rem;
+    width: 472px;
     justify-content: center;
     align-items: center;
-    gap: 1rem;
+    gap: 16px;
 }
 
 .frame-16 {
     display: flex;
-    padding: 1rem 0.625rem;
+    padding: 16px 10px;
     justify-content: center;
     align-items: center;
-    gap: 0.5rem;
+    gap: 8px;
     flex: 1 0 0;
-    border-radius: 0.625rem;
+    border-radius: 10px;
     background-color: #fff;
     box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.10);
 }
@@ -403,53 +403,53 @@ body {
 .frame-16 span {
     color: #000;
     font-family: Inter;
-    font-size: 1.25rem;
+    font-size: 20px;
     font-style: normal;
     font-weight: 400;
-    line-height: 1.5rem;
+    line-height: 24px;
 }
 
 .frame-16 img {
-    width: 1.25rem;
-    height: 0.90688rem;
+    width: 20px;
+    height: 14.5101px;
     color: #FF3D00;
 }
 
 .frame-25 {
     display: flex;
-    padding: 1rem 0.625rem;
+    padding: 16px 10px;
     justify-content: center;
     align-items: center;
-    gap: 0.5rem;
+    gap: 8px;
     flex: 1  00;
-    border-radius: 0.625rem;
+    border-radius: 10px;
     background-color: #FFA800;
 }
 
 .frame-25 span {
-    width: 5.25rem;
-    height: 1.5rem;
+    width: 84px;
+    height: 24px;
     color: #FFF;
     font-family: Inter;
-    font-size: 1.3125rem;
+    font-size: 21px;
     font-style: normal;
     font-weight: 700;
-    line-height: 1.575rem;
+    line-height: 25.2px;
 }
 
 .frame-25 img {
-    width: 1.25rem;
-    height: 0.46469rem;
+    width: 20px;
+    height: 7.435px;
 }
 
 .frame-26 {
     display: flex;
-    padding: 1rem 0.625rem;
+    padding: 16px 10px;
     justify-content: center;
     align-items: center;
-    gap: 0.5rem;
+    gap: 8px;
     flex: 1 0 0;
-    border-radius: 0.625rem;
+    border-radius: 10px;
     background-color: #fff;
     box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.10);
 }
@@ -458,51 +458,51 @@ body {
 .frame-26 span {
     color: #000;
     font-family: Inter;
-    font-size: 1.25rem;
+    font-size: 20px;
     font-style: normal;
     font-weight: 400;
-    line-height: 1.5rem;
+    line-height: 24px;
 }
 
 .frame-26 img {
-    width: 1.25rem;
-    height: 0.90681rem;
+    width: 20px;
+    height: 14.509px;
     color: #7AE229;
 }
 
 .category {
     display: flex;
-    width: 27.5rem;
+    width: 440px;
     flex-direction: column;
     align-items: flex-start;
-    gap: 0.5rem;
+    gap: 8px;
 }
 
 .category label {
     color: #2A3647;
     font-family: Inter;
-    font-size: 1.25rem;
+    font-size: 20px;
     font-style: normal;
     font-weight: 400;
-    line-height: 1.5rem;
+    line-height: 24px;
 }
 
 .category span {
     color: #FF8190;
     font-family: Inter;
-    font-size: 1.25rem;
+    font-size: 20px;
     font-style: normal;
     font-weight: 400;
-    line-height: 1.5rem;
+    line-height: 24px;
 }
 
 .frame-75 {
     display: flex;
-    width: 27.5rem;
-    padding: 0.75rem 1rem;
+    width: 440px;
+    padding: 12px 16px;
     justify-content: space-between;
     align-items: center;
-    border-radius: 0.625rem;
+    border-radius: 10px;
     border: 1px solid #D1D1D1;
     background: #fff;
 }
@@ -510,105 +510,105 @@ body {
 .frame-75 span {
     color: #000;
     font-family: Inter;
-    font-size: 1.25rem;
+    font-size: 20px;
     font-style: normal;
     font-weight: 400;
-    line-height: 1.5rem;
+    line-height: 24px;
 }
 
 .frame-75 img {
     color: #2A3647;
-    width: 1.5rem;
-    height: 1.5rem;
+    width: 24px;
+    height: 24px;
     flex-shrink: 0;
 }
 
 .subtask-v1-reconstrution {
     display: flex;
-    width: 27.5rem;
+    width: 440px;
     flex-direction: column;
     align-items: flex-start;
-    gap: 0.5rem;
+    gap: 8px;
 }
 
 .subtask-v1-reconstrution label {
     color: #2A3647;
     font-family: Inter;
-    font-size: 1.25rem;
+    font-size: 20px;
     font-style: normal;
     font-weight: 400;
-    line-height: 1.5rem;
+    line-height: 24px;
 }
 
 .frame-18 {
     display: flex;
-    padding: 0.75rem 1rem;
+    padding: 12px 16px;
     justify-content: space-between;
     align-items: center;
     align-self: stretch;
-    width: 27.5rem;
-    border-radius: 0.625rem;
+    width: 440px;
+    border-radius: 10px;
     background: #fff;
 }
 
 .subtasks::placeholder {
     color: #D1D1D1;
     font-family: Inter;
-    font-size: 1.25rem;
+    font-size: 20px;
     font-style: normal;
     font-weight: 400;
-    line-height: 1.5rem;
+    line-height: 24px;
 }
 
 .frame-18 img {
     color: #2A3647;
-    width: 1.5rem;
-    height: 1.5rem;
+    width: 24px;
+    height: 24px;
 }
 
 .disclaimer {
-    width: 10.625rem;
-    height: 1.6875rem;
+    width: 170px;
+    height: 27px;
     flex-shrink: 0;
     position: absolute;
-    top: 62.5rem;
-    left: 20.5rem;
+    top: 1000px;
+    left: 328px;
 }
 
 .disclaimer span {
     color: #FF8190;
     font-family: Inter;
-    font-size: 1.25rem;
+    font-size: 20px;
     font-style: normal;
     font-weight: 400;
-    line-height: 1.5rem;
+    line-height: 24px;
 }
 
 .disclaimer label {
     color: #000;
     font-family: Inter;
-    font-size: 1rem;
+    font-size: 16px;
     font-style: normal;
     font-weight: 400;
-    line-height: 1.5rem;
+    line-height: 24px;
 }
 
 .frame-27 {
     display: inline-flex;
     justify-content: center;
     align-items: center;
-    gap: 1rem;
-    margin-top: 9.12rem;
-    margin-left: 66.5rem;
+    gap: 16px;
+    margin-top: 145.92px;
+    margin-left: 1064px;
 }
 
 .secondary {
     display: flex;
-    padding: 1rem;
+    padding: 16px;
     justify-content: center;
     align-items: center;
-    gap: 0.25rem;
-    border-radius: 0.625rem;
+    gap: 4px;
+    border-radius: 10px;
     border:  1px solid #2A3647;
     background: #F6F7F8;
 }
@@ -616,39 +616,39 @@ body {
 .secondary span {
     color: #2A3647;
     font-family: Inter;
-    font-size: 1.25rem;
+    font-size: 20px;
     font-style: normal;
     font-weight: 400;
-    line-height: 1.5rem;
+    line-height: 24px;
 }
 
 .secondary img {
-    width: 1.5rem;
-    height: 1.5rem;
+    width: 24px;
+    height: 24px;
 }
 
 .primary-check-button {
     display: flex;
-    padding: 1rem;
+    padding: 16px;
     justify-content: center;
     align-items: center;
-    gap: 0.25rem;
-    border-radius: 0.625rem;
+    gap: 4px;
+    border-radius: 10px;
     background: #2A3647;
 }
 
 .primary-check-button span {
-    width: 7.6875rem;
-    height: 1.5rem;
+    width: 123px;
+    height: 24px;
     color: #FFF;
     font-family: Inter;
-    font-size: 1.3125rem;
+    font-size: 21px;
     font-style: normal;
     font-weight: 700;
-    line-height: 1.575rem;
+    line-height: 25.2px;
 }
 
 .primary-check-button img {
-    width: 1.5rem;
-    height: 1.5rem;
+    width: 24px;
+    height: 24px;
 }
