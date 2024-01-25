@@ -123,9 +123,9 @@ body {
     align-self: stretch;
 }
 
-.frame-14 {
-    /* Serves only as a teacher container */
-}
+/* .frame-14 {
+    Serves only as a teacher container
+} */
 
 .input-title::placeholder {
     flex: 1 0 0;
@@ -190,14 +190,9 @@ body {
     align-self: stretch;
 }
 
-.frame-17 {
-    display: flex;
-    height: 7.5rem;
-    align-items: flex-start;
-    gap: 0.625rem;
-    align-self: stretch;
-    color:  #D1D1D1;
-}
+/* .frame-17 {
+    Serves only as a teacher container
+} */
 
 .frame-17 textarea {
     flex: 1 0 0;
@@ -337,14 +332,14 @@ body {
     align-self: stretch;
 }
 
-.frame-15 {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    align-self: stretch;
-}
+/* .frame-15 {
+    Serves only as a teacher container 
+} */ 
 
 .frame-15 input {
+    background-image: url(./../img/event.svg);
+    background-repeat: no-repeat;
+    background-position: 27rem;
     border-radius: 0.625rem;
     gap: 0.625rem;
     border: 0.0625rem solid #D1D1D1;
@@ -389,7 +384,7 @@ body {
 
 .priority {
     display: flex;
-    width: 27.5rem;
+    width: 29.5rem;
     justify-content: center;
     align-items: center;
     gap: 1rem;
@@ -428,7 +423,7 @@ body {
     justify-content: center;
     align-items: center;
     gap: 0.5rem;
-    flex: 1 0 0;
+    flex: 1  00;
     border-radius: 0.625rem;
     background-color: #FFA800;
 }
@@ -553,6 +548,7 @@ body {
     justify-content: space-between;
     align-items: center;
     align-self: stretch;
+    width: 27.5rem;
     border-radius: 0.625rem;
     background: #fff;
 }
