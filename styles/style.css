@@ -723,11 +723,13 @@ input:focus-visible {
   height: 46px;
   align-items: center;
   gap: 8px;
+  color: #cdcdcd;
+  justify-content: center;
+  gap: 8px;
   background: #091931;
   cursor: default;
   text-decoration: none;
   color: var(--white, #fff);
-  padding-left: 56px;
 }
 .frame-10-active > span {
   /* border: 1px solid red; */
