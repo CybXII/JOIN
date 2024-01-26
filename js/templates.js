@@ -171,7 +171,7 @@ function renderAddTaskHTML() {
             </div>
         </div>
     </div>
-    <label class="disclaimer" for="disclaimer"><span>*</span>This field is required</label>
+    <p class="disclaimer" for="disclaimer"><span>*</span>This field is required</p>
     <div class="frame-27">
         <button class="secondary">
             <span>Clear</span>
