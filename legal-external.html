@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>JOIN - Legal EXTERNAL</title>
     <link rel="stylesheet" href="./styles/styleguide.css" />
-    <link rel="stylesheet" href="./styles/global.css" />
+    <!-- <link rel="stylesheet" href="./styles/global.css" /> -->
     <link rel="stylesheet" href="./styles/style.css" />
     <link rel="stylesheet" href="./styles/fonts.css" />
     <script src="./js/login.js"></script>
@@ -15,10 +15,24 @@
     <script src="./js/eventListener.js"></script>
     <link rel="icon" type="image" href="./img/join-favicon.svg" />
   </head>
-  <body onload="includeHTMLInit(`LegalNotice`)">
+  <body onload="includeHTML()">
     <main w3-include-html="./templates/sidebar.html"></main>
     <nav w3-include-html="./templates/header.html"></nav>
     <div class="content-container">
-      <div class="container" id="content"></div>
-    </div>  </body>
+      <div class="container" id="content">
+        <h1>Impressum</h1><br />
+        <br /><br />
+        
+        <h2>Angaben gemäß § 5 TMG</h2>
+        <p>Luft Alexander<br />
+        Arnold-Schönbergstr.14<br />
+        66955 Pirmasens</p><br /><br />
+
+        <h2>Kontakt</h2>
+        <p>Telefon: 017670814014<br />
+        E-Mail: luft.luft86@googlemail.com</p>
+        <p>Quelle: <a href="https://www.e-recht24.de">https://www.e-recht24.de</a></p>
+      </div>
+    </div>  
+  </body>
 </html>

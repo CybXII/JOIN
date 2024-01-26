@@ -1,0 +1,11 @@
+h1{
+    width: fit-content;
+    font-family: var(--version-2-t1-font-family);
+    font-weight: var(--version-2-t1-font-weight);
+    color: #000000;
+    font-size: var(--version-2-t1-font-size);
+    letter-spacing: var(--version-2-t1-letter-spacing);
+    line-height: var(--version-2-t1-line-height);
+    white-space: nowrap;
+    font-style: var(--version-2-t1-font-style);
+}

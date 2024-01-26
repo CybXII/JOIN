@@ -555,19 +555,25 @@ input:focus-visible {
   transition: 500ms ease-in-out;
 }
 
+.main_content{
+  position: relative;
+
+}
+
 .content-container {
-  overflow: hidden;
+  box-sizing: border-box;
   margin-left: 232px;
   font-family: "Inter";
+  margin-top: 96px;
 }
 
 .container {
-  z-index: -2;
-  padding: 100px 0 0 80px;
+  padding: 80px 0 0 80px;
 }
 
 .header {
   /* border: 1px solid red; */
+  box-sizing: border-box;
   display: flex;
   width: 100%;
   padding: 20px 40px 20px 348px;
@@ -695,11 +701,19 @@ input:focus-visible {
   align-items: center;
   gap: 8px;
   color: #cdcdcd;
-  padding-left: 56px;
+  justify-content: center;
 }
 .frame-10:hover {
+  box-sizing: border-box;
   cursor: pointer;
   background-color: #2a3d59;
+}
+
+.frame-10_helper{
+  width: 120px;
+  display: flex;
+  gap: 8px;
+  align-items: center;
 }
 
 .frame-10-active {
