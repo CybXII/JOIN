@@ -2,12 +2,13 @@ function renderSummaryHTML() {
   return /*html*/ `
  
   <div class="board_window">
-    <div class="frame-71">
     <div class="frame-40">
         <span>Join 360</span>
         <img src="./img/separation-blue.svg" alt="separation-blue">
         <p>Key Metrics at a Glance</p>
     </div>
+    <div class="summary_helper">
+    <div class="frame-71">
           <div class="frame-65">
               <div class="pencil-rectangle-button-v1">
                   <div class="frame-59">
@@ -73,6 +74,8 @@ function renderSummaryHTML() {
         <span class="header-text">Good morning,</span>
         <span class="footer-text">Sofia Müller</span>
     </div>
+
+    </div>  
   </div>`;
 }
 
@@ -90,7 +93,7 @@ async function includeHTMLInit(input) {
 
 function renderAddTaskHTML() {
   return /*html*/ `
-  <div class="frame-40">
+    <div class="frame-40">
         <h1>Add Task</h1>
     </div>
     <div class="input-fields">

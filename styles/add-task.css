@@ -8,11 +8,8 @@ body {
     font-size: 61px;
     font-style: normal;
     font-weight: 700;
-    line-height: 73.2px;
-    margin-left: 96px;
-    margin-top: 205.92px;
-    margin-right: 834.08px;
-    
+    line-height: 73.2px;    
+    margin-bottom: 48px;
 }
 
 .input-fields {
@@ -28,9 +25,6 @@ body {
     justify-content: center;
     align-items: flex-start;
     gap: 16px;
-    margin-left: 96px;
-    margin-top: 48px;
-    margin-right: 48px;
 }
 
 .title-v1 {
@@ -225,7 +219,6 @@ body {
     height: 432px;
     width: 2px;
     margin-left: 40px;
-    margin-top: 48px;
 }
 
 .frame-39 {
@@ -236,8 +229,6 @@ body {
     align-items: flex-start;
     gap: 24px;
     margin-left: 48px;
-    margin-top: 88px;
-    margin-right: 135.68px;
 }
 
 .due-date-v1 {
