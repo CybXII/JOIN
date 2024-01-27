@@ -12,17 +12,22 @@ body {
     margin-bottom: 48px;
 }
 
+input{
+    box-sizing: border-box;
+}
+
+textarea{
+    box-sizing: border-box;
+}
+
 .input-fields {
     display: flex;
-    align-items: center;
-    
 }
 
 .frame-219 {
     display: flex;
     width: 440px;
     flex-direction: column;
-    justify-content: center;
     align-items: flex-start;
     gap: 16px;
 }
@@ -198,6 +203,7 @@ body {
     border-radius: 10px;
     border: 1px solid #D1D1D1;
     background-color: #FFF;
+    box-sizing: border-box;
 }
 
 .selcet-contacts {
@@ -441,6 +447,7 @@ body {
     border-radius: 10px;
     border: 1px solid #D1D1D1;
     background: #fff;
+    box-sizing: border-box;
 }
 
 .frame-75 span {
@@ -485,6 +492,7 @@ body {
     width: 440px;
     border-radius: 10px;
     background: #fff;
+    box-sizing: border-box;
 }
 
 .subtasks::placeholder {
@@ -530,12 +538,13 @@ body {
 }
 
 .frame-27 {
+    position: absolute;
     display: inline-flex;
     justify-content: center;
     align-items: center;
     gap: 16px;
-    margin-top: 240px;
-    margin-left: 800px;
+    top: 793px;
+    left: 970px;
 }
 
 .secondary {
