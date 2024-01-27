@@ -560,16 +560,32 @@ input:focus-visible {
 
 }
 
-.content-container {
+/* .content-container {
   box-sizing: border-box;
   margin-left: 232px;
   font-family: "Inter";
   margin-top: 96px;
+} */
+
+.content-container {
+  box-sizing: border-box;
+  font-family: "Inter";
 }
 
 .container {
-  padding: 80px 20px 0 80px;
+  display: flex;
+  padding: 0;
+  gap: 60px;
+  justify-content: flex-start;
+  align-items: flex-start;
+  position: relative;
+  top: 96px;
+  left: 232px;
 }
+
+/* .container {
+  padding: 80px 20px 0 80px;
+} */
 
 .header {
   /* border: 1px solid red; */

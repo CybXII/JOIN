@@ -9,3 +9,10 @@ h1{
     white-space: nowrap;
     font-style: var(--version-2-t1-font-style);
 }
+
+.container {
+    padding: 80px 20px 0 80px;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}

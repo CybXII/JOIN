@@ -2,6 +2,10 @@
   .help{
     padding-bottom: 40px;
   }
+
+  .container {
+    padding: 80px 20px 0 80px;
+  }
   
   .help .frame {
     display: inline-flex;
