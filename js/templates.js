@@ -497,8 +497,6 @@ function renderSignUpHTML() {
                   autocomplete="new-password"
                   placeholder="Confirm Password"
                   required
-                  oninvalid="this.setCustomValidity('Ups! your password don${"`"}t match')"
-                  oninput="this.setCustomValidity('')"
                 />
                 <img class="img" src="img/lock.svg" alt="locker spicture" />
               </label>
@@ -509,7 +507,9 @@ function renderSignUpHTML() {
             </div>
           </div>
           <div class="privacy-check-su">
-          <div class="checkbox" id="signUpCheck" onclick="setChecker('signUp')"></div>
+          <label for="signUpCheck" id="parent_signUpCheck" onclick="toogleChecker('privacy')">
+            <input id="signUpCheck" type="checkbox" class="checkbox">
+          </label>
             <span class="privacy-check-su-text">I accept the</span>
             <div class="privacy-check-su-text-underlined">
               <span class="privacy-check-su-text-underlined-text"
@@ -574,7 +574,9 @@ function renderLoginHTML() {
           <div class="frame-6">
             <div class="frame-7">
               <div class="check-button">
-                <div class="checkbox" id="rememberCheck" onclick="setChecker('remember')"></div>
+                <label for="signUpCheck" id="parent_signUpCheck" onclick="toogleChecker('remember')">
+                  <input id="signUpCheck" type="checkbox" class="checkbox">
+                </label>
               </div>
               <div class="text-wrapper-4">Remember me</div>
             </div>

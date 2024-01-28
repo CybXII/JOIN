@@ -242,23 +242,7 @@ input:focus-visible {
   align-items: first baseline;
 }
 
-.checkbox {
-  /* border: 1px solid red; */
-  position: relative;
-  width: 24px;
-  height: 24px;
-  background-image: url("../img/check-button-su.svg");
-  cursor: pointer;
-}
 
-.checkbox_active {
-  /* border: 1px solid red; */
-  position: relative;
-  width: 24px;
-  height: 24px;
-  background-image: url("../img/checkbox-checked.svg");
-  cursor: pointer;
-}
 
 .log-in .text-wrapper-4 {
   /* border: 1px solid red; */
@@ -1117,3 +1101,26 @@ input:focus-visible {
 a {
   text-decoration: none;
 }
+
+.checkbox {
+  /* border: 1px solid red; */
+  appearance: none;
+  position: relative;
+  width: 24px;
+  height: 24px;
+  background-image: url("../img/check-button-su.svg");
+  cursor: pointer;
+
+}
+.checkbox:checked {
+  background-image: url("../img/checkbox-checked.svg");
+}
+
+
+/* .checkbox_active {
+  position: relative;
+  width: 24px;
+  height: 24px;
+  background-image: url("../img/checkbox-checked.svg");
+  cursor: pointer;
+} */

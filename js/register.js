@@ -1,4 +1,5 @@
-let privacyChecker;
+let privacyChecker = false;
+let login_remember = false;
 
 function addUser(event) {
   event.preventDefault();
@@ -30,22 +31,11 @@ function passwordDontMatch() {
   document.getElementById("pass-match").classList.remove("d-none");
 }
 
-function setChecker(input) {
-  let checker = `${input}Check`;
-  document.getElementById(checker).classList.remove("checkbox");
-  document.getElementById(checker).classList.add("checkbox_active");
-  document
-    .getElementById(checker)
-    .setAttribute("onclick", `resetChecker("${input}")`);
-  privacyChecker = !privacyChecker;
-}
-
-function resetChecker(input) {
-  let checker = `${input}Check`;
-  document.getElementById(checker).classList.remove("checkbox_active");
-  document.getElementById(checker).classList.add("checkbox");
-  document
-    .getElementById(checker)
-    .setAttribute("onclick", `setChecker("${input}")`);
-  privacyChecker = !privacyChecker;
+function toogleChecker(input) {
+  if (input === 'remember'){
+    login_remember= !login_remember;
+  }
+  else if(input === 'privacy'){
+    privacyChecker = !privacyChecker;
+  }
 }
