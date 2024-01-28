@@ -1,17 +1,35 @@
 let privacyChecker;
 let login_remember = false;
+let active_user = [];
 
-function addUser(event) {
+async function addUser(event) {
+  let Name = document.getElementById("name").value;
+  let email = document.getElementById("email").value;
+  let password = document.getElementById("password-su").value;
+
   event.preventDefault();
   signUpPasswordChecker();
+  active_user.push({
+    name: Name,
+    email: email,
+    password: password,
+  });
+  await setItem("active_user", JSON.stringify(active_user));
 }
 
-function signUpPasswordChecker() {
+async function loadUser() {
+  try {
+    active_user = JSON.parse(await getItem("active_user"));
+  } catch (e) {
+    console.error("Loading error:", e);
+  }
+}
+
+async function signUpPasswordChecker() {
   let password = document.getElementById("password-su").value;
   let confirm_password = document.getElementById("confirm_password").value;
 
   if (password === confirm_password) {
-      users.push({ email: email.value, password: password });
     if (privacyChecker == true) {
       registerCompleteText();
     } else {
