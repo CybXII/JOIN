@@ -2,6 +2,7 @@ function registerCompleteText() {
   document.getElementById("msgBox-bg").classList.remove("d-none");
   setTimeout(() => {
     document.getElementById("msgBox-bg").classList.add("d-none");
+    renderLogin();
   }, 2000);
 }
 
@@ -52,20 +53,6 @@ function renderLogin() {
 function renderBody() {
   document.getElementById("body").innerHTML = renderBodyHTML();
   renderSummary();
-}
-
-function setChecker(input){
-  let checker = `${input}Check`;
-  document.getElementById(checker).classList.remove('checkbox');
-  document.getElementById(checker).classList.add('checkbox_active');
-  document.getElementById(checker).setAttribute('onclick', `resetChecker("${input}")`);
-}
-
-function resetChecker(input){
-  let checker = `${input}Check`;
-  document.getElementById(checker).classList.remove('checkbox_active');
-  document.getElementById(checker).classList.add('checkbox');
-  document.getElementById(checker).setAttribute('onclick', `setChecker("${input}")`);
 }
 
 async function includeHTML() {
