@@ -1,5 +1,4 @@
-.header {
-  /* border: 1px solid red; */
+/* .header {
   box-sizing: border-box;
   display: flex;
   width: 100%;
@@ -16,7 +15,6 @@
 
 
 .frame-3 {
-  /* border: 1px solid red; */
   display: flex;
   width: 20vw;
   height: 100vh;
@@ -41,6 +39,28 @@
   left: 20vw;
   width: 80vw;
 }
+
+.frame-10_helper {
+  width: 11vw;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+} */
+
+/* .frame-10 {
+  display: flex;
+  width: 18vw;
+  height: 46px;
+  align-items: center;
+  gap: 8px;
+  color: #cdcdcd;
+  justify-content: center;
+} */
+
+/* .menu{
+  width: 18vw;
+
+} */
 
 /* 
 Die Oberen sind zwecks zum Testen und vor zeigen
