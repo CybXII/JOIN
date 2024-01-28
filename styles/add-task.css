@@ -282,8 +282,6 @@ textarea{
 } */ 
 
 .frame-15 input {
-    background-image: url(./../img/event.svg);
-    background-repeat: no-repeat;
     background-position: 392px;
     border-radius: 10px;
     gap: 10px;
@@ -295,10 +293,10 @@ textarea{
     line-height: 24px;
 }
 
-.frame-15 img {
-    width: 24px;
-    height: 24px;
-    color: #2A3647;
+.frame-15 input::placeholder {
+    color: #D1D1D1;
+    padding-left: 8px;
+    font-family: Inter;
 }
 
 .warning-info-3 {
