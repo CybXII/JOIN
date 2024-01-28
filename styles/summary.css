@@ -166,7 +166,6 @@
   
   .urgency-summary-v1 {
     display: flex;
-    margin-top: 28px;
     height: 168px;
     justify-content: center;
     align-items: center;
@@ -274,7 +273,6 @@
     display: flex;
     width: 168px;
     height: 168px;
-    padding: 25px 0px;
     justify-content: center;
     align-items: center;
     gap: 13px;
