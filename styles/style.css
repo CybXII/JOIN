@@ -579,8 +579,7 @@ input:focus-visible {
   justify-content: flex-start;
   align-items: flex-start;
   position: relative;
-  top: 96px;
-  left: 232px;
+  margin: 96px 0 0 232px;
 }
 
 /* .container {
