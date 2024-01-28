@@ -418,19 +418,6 @@ function renderContactsHTML() {
       </div>`;
 }
 
-function renderHelpHTML() {
-  return /*html*/ `
-    `;
-}
-
-function renderPrivacyPolicyHTML() {
-  return /*html*/ `<div>Privacy Policy</div>`;
-}
-
-function renderLegalNoticeHTML() {
-  return /*html*/ `<div>Legal Notice</div>`;
-}
-
 function renderSignUpHTML() {
   return /*html*/ `
         <div class="frame-159-su">
