@@ -196,9 +196,13 @@ function renderBoardHTML() {
               <h1>Board</h1>
               <div class="frame-123">
                 <div class="frame-123-inp">
-                  <input type="text" placeholder="Find Task" />
-                  <img src="../img/vector-3.svg" alt="" />
-                  <img src="../img/search.svg" alt="" />
+                  <div class="frame-121">
+                    <input type="text" placeholder="Find Task" />
+                    <div class="frame-122">
+                      <img src="../img/vector-3.svg" class="vector-3-board" />
+                      <img src="../img/search.svg" class="search-board" />
+                    </div>
+                  </div>
                 </div>
                 <div class="frame-123-btn">
                   <span>Add task</span>
@@ -215,7 +219,7 @@ function renderBoardHTML() {
                   <img src="../img/plus-board.svg" />
                 </div>
               </div>
-              <div class="card-board">TEST</div>
+              <div class="card-board-empty">No tasks To do</div>
             </div>
             <div class="frame-136">
               <div class="category-board">
@@ -224,7 +228,55 @@ function renderBoardHTML() {
                   <img src="../img/plus-board.svg" />
                 </div>
               </div>
-              <div class="card-board">TEST</div>
+              <div class="card-board">
+                <div class="frame-119">
+                  <div class="card-board-user-story">
+                    <span class="card-board-user-story-text">User Story</span>
+                  </div>
+                  <div class="frame-114">
+                    <span class="card-board-title">Contact Form & Imprint</span>
+                    <span class="card-board-content"
+                      >Create a contact form and imprint page...</span
+                    >
+                  </div>
+                  <div class="card-board-progress">
+                    <div class="card-board-progress-bar">
+                      <div class="card-board-progress-bar-filler"></div>
+                    </div>
+                    <span class="card-board-count-progress">
+                      1/2 Subtasks
+                    </span>
+                  </div>
+                  <div class="frame-139">
+                    <div class="frame-217">
+                      <div class="card-board-profile-batch">
+                        <div class="group-9-board">
+                          <img src="../img/ellipse-5.svg" class="ellipse-5" />
+                          <div class="group-9-text">AS</div>
+                        </div>
+                      </div>
+                      <div class="card-board-profile-batch">
+                        <div class="group-9-board">
+                          <img src="../img/ellipse-5.svg" class="ellipse-5" />
+                          <div class="group-9-text">AS</div>
+                        </div>
+                      </div>
+                      <div class="card-board-profile-batch">
+                        <div class="group-9-board">
+                          <img src="../img/ellipse-5.svg" class="ellipse-5" />
+                          <div class="group-9-text">AS</div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card-board-priority">
+                      <img
+                        src="../img/prio-baja-board.svg"
+                        class="card-board-priority-img"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
             <div class="frame-136">
               <div class="category-board">
@@ -233,21 +285,13 @@ function renderBoardHTML() {
                   <img src="../img/plus-board.svg" />
                 </div>
               </div>
-              <div class="card-board">
-                <div>User Story</div>
-                <div>
-                  <span>Kochwelt Page & Recipe Recommender</span>
-                  <span>Build start page with recipe recommendation...</span>
-                </div>
-                <div>User Story</div>
-                <div>User Story</div>
-              </div>
+              <div class="card-board-empty">No tasks To do</div>
             </div>
             <div class="frame-136">
               <div class="category-board">
                 <span class="board-sections-headline">Done</span>
               </div>
-              <div class="card-board">TEST</div>
+              <div class="card-board-empty">No tasks To do</div>
             </div>
           </div>
         </div>
