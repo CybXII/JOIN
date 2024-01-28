@@ -29,6 +29,9 @@ function signUpPasswordChecker() {
 
 function passwordDontMatch() {
   document.getElementById("pass-match").classList.remove("d-none");
+  document.getElementById("parent_password").classList.add("invalid");
+  document.getElementById("parent_confirm_password").classList.add("invalid");
+  initializeSignUPListeners()
 }
 
 function toogleChecker(input) {

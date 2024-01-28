@@ -16,6 +16,7 @@ function setFocusListener(inputElement){
     // Füge die Klasse hinzu, wenn das Inputfeld den Fokus hat
     if (parentWrapper) {
       parentWrapper.classList.add("aktive");
+      parentWrapper.classList.remove("invalid");
     }
   });
 }
@@ -27,6 +28,7 @@ function setBlurListener(inputElement){
     // Entferne die Klasse, wenn das Inputfeld den Fokus verliert
     if (parentWrapper) {
       parentWrapper.classList.remove("aktive");
+      parentWrapper.classList.remove("invalid");
     }
   });
 }
@@ -47,3 +49,6 @@ function initializeSignUPListeners() {
     setBlurListener(inputElement);
   });
 }
+
+
+

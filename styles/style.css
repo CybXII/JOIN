@@ -168,6 +168,10 @@ input::placeholder {
   outline: 2px ridge #29abe2;
 }
 
+.invalid{
+  outline: 2px ridge #ff8190;
+}
+
 .frame-wrapper:hover {
   outline: 2px ridge #29abe2;
 }
