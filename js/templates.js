@@ -189,7 +189,70 @@ function renderAddTaskHTML() {
 }
 
 function renderBoardHTML() {
-  return /*html*/ `<div>Board</div>`;
+  return /*html*/ `
+          <div>
+          <div class="frame-191">
+            <div class="frame-192">
+              <h1>Board</h1>
+              <div class="frame-123">
+                <div class="frame-123-inp">
+                  <input type="text" placeholder="Find Task" />
+                  <img src="../img/vector-3.svg" alt="" />
+                  <img src="../img/search.svg" alt="" />
+                </div>
+                <div class="frame-123-btn">
+                  <span>Add task</span>
+                  <img src="../img/secondary-plus.svg" alt="" />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="board-dist">
+            <div class="frame-136">
+              <div class="category-board">
+                <span class="board-sections-headline">To do</span>
+                <div class="plus-board-container">
+                  <img src="../img/plus-board.svg" />
+                </div>
+              </div>
+              <div class="card-board">TEST</div>
+            </div>
+            <div class="frame-136">
+              <div class="category-board">
+                <span class="board-sections-headline">In Progress</span>
+                <div class="plus-board-container">
+                  <img src="../img/plus-board.svg" />
+                </div>
+              </div>
+              <div class="card-board">TEST</div>
+            </div>
+            <div class="frame-136">
+              <div class="category-board">
+                <span class="board-sections-headline">Await Feedback</span>
+                <div class="plus-board-container">
+                  <img src="../img/plus-board.svg" />
+                </div>
+              </div>
+              <div class="card-board">
+                <div>User Story</div>
+                <div>
+                  <span>Kochwelt Page & Recipe Recommender</span>
+                  <span>Build start page with recipe recommendation...</span>
+                </div>
+                <div>User Story</div>
+                <div>User Story</div>
+              </div>
+            </div>
+            <div class="frame-136">
+              <div class="category-board">
+                <span class="board-sections-headline">Done</span>
+              </div>
+              <div class="card-board">TEST</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      `;
 }
 
 function renderContactsHTML() {
