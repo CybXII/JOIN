@@ -293,11 +293,11 @@ textarea{
     line-height: 24px;
 }
 
-.frame-15 input::placeholder {
+/* .frame-15 input::placeholder {
     color: #D1D1D1;
     padding-left: 8px;
     font-family: Inter;
-}
+} */
 
 .warning-info-3 {
     color: red;
