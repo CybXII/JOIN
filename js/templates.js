@@ -168,7 +168,7 @@ function renderAddTaskHTML() {
             <div class="subtask-v1-reconstrution">
                 <label for="subtasks">Subtasks</label>
                 <div class="frame-18">
-                    <span class="subtasks" placeholder="Add new subtask"></span>
+                    <input class="subtasks" placeholder="Add new subtask"></input>
                     <img src="./../img/subtasks-icons-11.svg" alt="subtasks-icon">
                 </div>
             </div>
