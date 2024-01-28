@@ -40,7 +40,7 @@ function initializeSignUPListeners() {
   // Finde die Input-Elemente
   let nameInput = document.getElementById("name");
   let emailInput = document.getElementById("email");
-  let passwordInput = document.getElementById("password");
+  let passwordInput = document.getElementById("password-su");
   let confirm_password = document.getElementById("confirm_password");
 
   // Füge Event Listener für das Fokusevent hinzu

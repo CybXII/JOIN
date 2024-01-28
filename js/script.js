@@ -38,6 +38,7 @@ function renderLegalNotice() {
 }
 
 function renderSignUp() {
+  privacyChecker = false;
   document.getElementById("frame-153").innerHTML = renderSignUpHTML();
   document.getElementById("frame-156").classList.add("d-none");
   document.getElementById("frame-153").setAttribute("onsubmit", "addUser(event)");

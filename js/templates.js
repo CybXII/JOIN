@@ -421,107 +421,122 @@ function renderContactsHTML() {
 function renderSignUpHTML() {
   return /*html*/ `
         <div class="frame-159-su">
-          <span class="sign-up-text">Sign up</span>
-          <img src="./img/vector-5.svg" alt="" />
-        </div>
-        <div class="frame-212-su">
-          <div class="frame-160-su">
-            <div class="frame-155-su">
-              <div class="frame-14-su">
-                <label
-                id="parent_name"
-                class="frame-wrapper"
-                for="name"
-                aria-selected="false"
-              >
-                <input
-                  type="name"
-                  class="frame-14"
-                  id="name"
-                  aria-describedby="emailHelp"
-                  placeholder="Name"
-                  autocomplete="Name"
-                  required
-                  oninvalid="this.setCustomValidity('Geben sie ihren Namen ein')"
-                  oninput="this.setCustomValidity('')"
-                />
-                <img src="./img/person-su.svg" alt="" />
-              </label>
-              </div>
-            </div>
-            <div class="frame-157-su">
-              <div class="frame-14-su">
-                <label
-                id="parent_email"
-                class="frame-wrapper"
-                for="email"
-                aria-selected="false"
-              >
-                <input
-                  type="email"
-                  class="frame-14"
-                  id="email"
-                  aria-describedby="emailHelp"
-                  placeholder="Email"
-                  autocomplete="email"
-                  required
-                  oninvalid="this.setCustomValidity('Geben ihre Email Adresse ein!')"
-                  oninput="this.setCustomValidity('')"
-                />
-                <img src="./img/mail.svg" alt="" />
-              </label>
-              </div>
-            </div>
-            <div class="frame-158">
-              <label id="parent_password" for="password" class="frame-wrapper">
-                <input
-                  type="password"
-                  class="frame-14"
-                  id="password"
-                  autocomplete="new-password"
-                  placeholder="Password"
-                  required
-                  oninvalid="this.setCustomValidity('Geben sie ihr Passwort ein!')"
-                  oninput="this.setCustomValidity('')"
-                />
-                <img class="img" src="img/lock.svg" alt="locker spicture" />
-              </label>
-            </div>
-            <div class="frame-156-su">
-              <div class="frame-14-su" >
-                <label id="parent_confirm_password" for="password" class="frame-wrapper">
-                <input
-                  type="password"
-                  class="frame-14"
-                  id="confirm_password"
-                  autocomplete="new-password"
-                  placeholder="Confirm Password"
-                  required
-                />
-                <img class="img" src="img/lock.svg" alt="locker spicture" />
-              </label>
-                <span class="frame-14-text d-none" id="pass-match">
-                  Ups! your password don’t match
-                </span>
-              </div>
-            </div>
-          </div>
-          <div class="privacy-check-su">
-          <label for="signUpCheck" id="parent_signUpCheck" onclick="toogleChecker('privacy')">
-            <input id="signUpCheck" type="checkbox" class="checkbox" required>
-          </label>
-            <span class="privacy-check-su-text">I accept the</span>
-            <div class="privacy-check-su-text-underlined">
-              <span class="privacy-check-su-text-underlined-text"
-                >Privacy policy</span
-              >
-            </div>
+  <span class="sign-up-text">Sign up</span>
+  <img src="./img/vector-5.svg" alt="" />
+</div>
+  <div class="frame-212-su">
+    <div class="frame-160-su">
+      <div class="frame-155-su">
+        <div class="frame-14-su">
+          <div
+            id="parent_name"
+            class="frame-wrapper"
+            for="name"
+            aria-selected="false"
+          >
+            <input
+              type="name"
+              class="frame-14"
+              id="name"
+              aria-describedby="emailHelp"
+              placeholder="Name"
+              autocomplete="Name"
+              required
+              oninvalid="this.setCustomValidity('Geben sie ihren Namen ein')"
+              oninput="this.setCustomValidity('')"
+            />
+            <img src="./img/person-su.svg" alt="" />
           </div>
         </div>
-        <button class="button-wo-icon-su">
-          <span class="button-wo-icon-su-text">Sign up</span>
-        </button>
-        <img src="./img/arrow-left-line.svg" class="arrow-left-line" onclick="renderLogin()">
+      </div>
+      <div class="frame-157-su">
+        <div class="frame-14-su">
+          <div
+            id="parent_email"
+            class="frame-wrapper"
+            for="email"
+            aria-selected="false"
+          >
+            <input
+              type="email"
+              class="frame-14"
+              id="email"
+              aria-describedby="emailHelp"
+              placeholder="Email"
+              autocomplete="email"
+              required
+              oninvalid="this.setCustomValidity('Geben ihre Email Adresse ein!')"
+              oninput="this.setCustomValidity('')"
+            />
+            <img src="./img/mail.svg" alt="" />
+          </div>
+        </div>
+      </div>
+      <div class="frame-158">
+        <div id="parent_password" for="password" class="frame-wrapper">
+          <input
+            type="password"
+            class="frame-14"
+            id="password-su"
+            autocomplete="new-password"
+            placeholder="Password"
+            required
+            oninvalid="this.setCustomValidity('Geben sie ihr Passwort ein!')"
+            oninput="this.setCustomValidity('')"
+            onkeyup="signUpPasswordValidation()"
+          />
+          <img class="img" src="img/lock.svg" alt="locker spicture" />
+        </div>
+      </div>
+      <div class="frame-156-su">
+        <div class="frame-14-su">
+          <div
+            id="parent_confirm_password"
+            for="password"
+            class="frame-wrapper"
+          >
+            <input
+              type="password"
+              class="frame-14"
+              id="confirm_password"
+              autocomplete="new-password"
+              placeholder="Confirm Password"
+              required
+              onkeyup="signUpPasswordValidation()"
+            />
+            <img class="img" src="img/lock.svg" alt="locker spicture" />
+            </div>
+          <span class="frame-14-text d-none" id="pass-match">
+            Ups! your password don’t match
+          </span>
+        </div>
+      </div>
+    </div>
+    <div class="privacy-check-su">
+      <div
+        for="signUpCheck"
+        id="parent_signUpCheck"
+        onclick="toogleChecker('privacy')"
+      >
+        <input id="signUpCheck" type="checkbox" class="checkbox" required />
+      </div>
+      <span class="privacy-check-su-text">I accept the</span>
+      <div class="privacy-check-su-text-underlined">
+        <span class="privacy-check-su-text-underlined-text"
+          >Privacy policy</span
+        >
+      </div>
+    </div>
+  </div>
+  <button class="button-wo-icon-su">
+    <span class="button-wo-icon-su-text">Sign up</span>
+  </button>
+<img
+  src="./img/arrow-left-line.svg"
+  class="arrow-left-line"
+  onclick="renderLogin()"
+/>
+
 `;
 }
 
