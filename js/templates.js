@@ -135,7 +135,7 @@ function renderAddTaskHTML() {
                 <label for="title">Due date<span>*</span></label>
                 <div class="frame-211">
                     <div class="frame-15">
-                        <input class="input-title" placeholder="dd/mm/yyyy" type="number" name="birth-dates" id="birth-dates" required>
+                        <input class="input-title" placeholder="dd/mm/yyyy" type="date" name="birth-dates" id="birth-dates" required>
                     </div>
                     <!-- des volgende Feld soll nur erscheinen wenn nix im input field steht -->
                     <span class="warning-info-3" style="display: none;">This field is required.</span>
