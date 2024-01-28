@@ -10,19 +10,11 @@ function move() {
 
 // Register & Login
 
-// let users = [{ email: "max@test.de", password: "test123" }];
 
-function addUser(event) {
-  // Das Standardverhalten des Formulars unterdrücken
-  event.preventDefault();  let email = document.getElementById("email");
-  let password = document.getElementById("password");
-  users.push({ email: email.value, password: password.value });
-  // Weiterleitung zu Loginseite + Nachricht anzeigen erfolgreiche Registrierung
-  registerCompleteText();
-  setTimeout(() => {
-    renderLogin();
-  }, 2000);
-}
+// function addUser(event) {
+//   // Das Standardverhalten des Formulars unterdrücken
+
+// }
 
 function login(event){
 
@@ -30,7 +22,7 @@ function login(event){
     event.preventDefault();
   let email = document.getElementById("email");
   let password = document.getElementById("password");
-  let user = users.find(
+  let user = active_user.find(
     (u) => u.email == email.value && u.password == password.value
   );
   console.log(user);

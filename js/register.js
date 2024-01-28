@@ -15,6 +15,11 @@ async function addUser(event) {
     password: password,
   });
   await setItem("active_user", JSON.stringify(active_user));
+
+  registerCompleteText();
+  setTimeout(() => {
+    renderLogin();
+  }, 2000);
 }
 
 async function loadUser() {
@@ -58,7 +63,7 @@ function passwordDontMatch() {
   document.getElementById("pass-match").classList.remove("d-none");
   document.getElementById("parent_password").classList.add("invalid");
   document.getElementById("parent_confirm_password").classList.add("invalid");
-  initializeSignUPListeners();
+  // initializeSignUPListeners();
 }
 
 function toogleChecker(input) {
