@@ -996,6 +996,7 @@ input:focus-visible {
   font-style: normal;
   font-weight: 400;
   line-height: 120%; /* 14.4px */
+  color: red;
 }
 
 .privacy-check-su {

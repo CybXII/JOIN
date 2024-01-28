@@ -83,6 +83,7 @@ async function includeHTML() {
 }
 
 
+
 // RANDOM COLOR CONTACTS
 
     // function getRandomColor() {

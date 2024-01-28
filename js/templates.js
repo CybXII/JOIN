@@ -502,7 +502,7 @@ function renderSignUpHTML() {
                 />
                 <img class="img" src="img/lock.svg" alt="locker spicture" />
               </label>
-                <span class="frame-14-text">
+                <span class="frame-14-text d-none" id="pass-match">
                   Ups! your password don’t match
                 </span>
               </div>
