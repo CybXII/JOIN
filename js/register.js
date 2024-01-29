@@ -3,23 +3,8 @@ let login_remember = false;
 let active_user = [];
 
 async function addUser(event) {
-  let Name = document.getElementById("name").value;
-  let email = document.getElementById("email").value;
-  let password = document.getElementById("password-su").value;
-
   event.preventDefault();
   signUpPasswordChecker();
-  active_user.push({
-    name: Name,
-    email: email,
-    password: password,
-  });
-  await setItem("active_user", JSON.stringify(active_user));
-
-  registerCompleteText();
-  setTimeout(() => {
-    renderLogin();
-  }, 2000);
 }
 
 async function loadUser() {
@@ -30,12 +15,30 @@ async function loadUser() {
   }
 }
 
+async function signUpSuccessfull() {
+  let Name = document.getElementById("name").value;
+  let email = document.getElementById("email").value;
+  let password = document.getElementById("password-su").value;
+
+  active_user.push({
+    name: Name,
+    email: email,
+    password: password,
+  });
+  await setItem("active_user", JSON.stringify(active_user));
+
+  setTimeout(() => {
+    renderLogin();
+  }, 2000);
+}
+
 async function signUpPasswordChecker() {
   let password = document.getElementById("password-su").value;
   let confirm_password = document.getElementById("confirm_password").value;
 
   if (password === confirm_password) {
     if (privacyChecker == true) {
+      signUpSuccessfull();
       registerCompleteText();
     } else {
     }
@@ -54,7 +57,7 @@ function signUpPasswordValidation() {
     document
       .getElementById("parent_confirm_password")
       .classList.remove("invalid");
-  } 
+  }
   // else {
   //   passwordDontMatch();
   // }
