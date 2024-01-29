@@ -485,7 +485,7 @@ function renderSignUpHTML() {
             oninput="this.setCustomValidity('')"
             onkeyup="signUpPasswordValidation()"
           />
-          <img class="img" src="img/lock.svg" alt="locker spicture" />
+          <img id="password_locker" class="img" src="img/lock.svg" onclick="changeLocker('password_locker')" alt="locker spicture" />
         </div>
       </div>
       <div class="frame-156-su">
@@ -504,7 +504,7 @@ function renderSignUpHTML() {
               required
               onkeyup="signUpPasswordValidation()"
             />
-            <img class="img" src="img/lock.svg" alt="locker spicture" />
+            <img id="confirm_locker" class="img" src="img/lock.svg" onfocus="changeLocker('confirm_locker')" alt="lockerspicture" />
             </div>
           <span class="frame-14-text d-none" id="pass-match">
             Ups! your password don’t match
@@ -581,7 +581,7 @@ function renderLoginHTML() {
                   oninvalid="this.setCustomValidity('Das ist ein Test')"
                   oninput="this.setCustomValidity('')"
                 />
-                <img class="img" src="img/lock.svg" alt="locker spicture" />
+                <img class="img" src="img/lock.svg" alt="lockerspicture" />
               </label>
             </div>
             <div class="text-wrapper-3">This field is required</div>

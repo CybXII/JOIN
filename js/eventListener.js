@@ -1,3 +1,6 @@
+let visible=false;
+
+
 function initializeLoginListeners() {
   // Finde die Input-Elemente
   let emailInput = document.getElementById("email");
@@ -15,8 +18,18 @@ function setFocusListener(inputElement){
   
     // Füge die Klasse hinzu, wenn das Inputfeld den Fokus hat
     if (parentWrapper) {
-      parentWrapper.classList.add("aktive");
-      parentWrapper.classList.remove("invalid");
+      let parentWrapperId = parentWrapper.id;
+
+      if (parentWrapperId === 'parent_password' || parentWrapperId === 'parent_confirm_password'){
+        parentWrapper.classList.add("aktive");
+        parentWrapper.classList.remove("invalid");
+
+        changeLocker(parentWrapperId);
+      } 
+      else{
+        parentWrapper.classList.add("aktive");
+        parentWrapper.classList.remove("invalid");  
+      }
     }
   });
 }
@@ -27,8 +40,17 @@ function setBlurListener(inputElement){
 
     // Entferne die Klasse, wenn das Inputfeld den Fokus verliert
     if (parentWrapper) {
-      parentWrapper.classList.remove("aktive");
-      parentWrapper.classList.remove("invalid");
+      let parentWrapperId = parentWrapper.id;
+
+      if (parentWrapperId === 'parent_password' || parentWrapperId === 'parent_confirm_password'){
+        parentWrapper.classList.remove("aktive");
+        parentWrapper.classList.remove("invalid");
+          changeLockerPicture(parentWrapperId);
+      } 
+      else{
+        parentWrapper.classList.remove("aktive");
+        parentWrapper.classList.remove("invalid");
+        }
     }
   });
 }
@@ -54,5 +76,27 @@ function initializeSignUPListeners() {
   });
 }
 
+function changeLocker(input){
+  if (input === 'confirm_locker'){
+    if(visible==false){
+      document.getElementById(`confirm_password`).setAttribute('type','text');
+      document.getElementById(input).setAttribute('src', 'img/visibility_off.svg');  
+    } else{
+      document.getElementById(`confirm_password`).setAttribute('type','text');
+      document.getElementById(input).setAttribute('src', 'img/visibility.svg');  
+    }
+  }
+  else if(input === 'password_locker'){
+    if(visible==false){
+      document.getElementById(`password`).setAttribute('type','text');
+      document.getElementById(input).setAttribute('src', 'img/visibility_off.svg');  
+    } else{
+      document.getElementById(`confirm_password`).setAttribute('type','text');
+      document.getElementById(input).setAttribute('src', 'img/visibility.svg');  
+    }
+  }
+}
 
-
+function changeLockerPicture(){
+  visible= !visible;
+}
