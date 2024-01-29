@@ -485,7 +485,7 @@ function renderSignUpHTML() {
             oninput="this.setCustomValidity('')"
             onkeyup="signUpPasswordValidation()"
           />
-          <img id="password_locker" class="img" src="img/lock.svg" onclick="changeLocker('password_locker')" alt="locker spicture" />
+          <img id="password_locker" class="img" src="img/lock.svg" onclick="changeLockerPicture('parent_password')" alt="locker spicture" />
         </div>
       </div>
       <div class="frame-156-su">
@@ -504,7 +504,7 @@ function renderSignUpHTML() {
               required
               onkeyup="signUpPasswordValidation()"
             />
-            <img id="confirm_locker" class="img" src="img/lock.svg" onfocus="changeLocker('confirm_locker')" alt="lockerspicture" />
+            <img id="confirm_locker" class="img" src="img/lock.svg" onclick="changeLockerPicture('parent_confirm_password')" alt="lockerspicture" />
             </div>
           <span class="frame-14-text d-none" id="pass-match">
             Ups! your password don’t match

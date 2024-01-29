@@ -1,4 +1,5 @@
-let visible=false;
+let pass_visible=false;
+let confirmPass_visible=false;
 
 
 function initializeLoginListeners() {
@@ -23,7 +24,6 @@ function setFocusListener(inputElement){
       if (parentWrapperId === 'parent_password' || parentWrapperId === 'parent_confirm_password'){
         parentWrapper.classList.add("aktive");
         parentWrapper.classList.remove("invalid");
-
         changeLocker(parentWrapperId);
       } 
       else{
@@ -45,7 +45,7 @@ function setBlurListener(inputElement){
       if (parentWrapperId === 'parent_password' || parentWrapperId === 'parent_confirm_password'){
         parentWrapper.classList.remove("aktive");
         parentWrapper.classList.remove("invalid");
-          changeLockerPicture(parentWrapperId);
+        changeLockerPictureBack(parentWrapperId);
       } 
       else{
         parentWrapper.classList.remove("aktive");
@@ -77,26 +77,58 @@ function initializeSignUPListeners() {
 }
 
 function changeLocker(input){
-  if (input === 'confirm_locker'){
-    if(visible==false){
+  if (input === 'parent_confirm_password'){
+    if(confirmPass_visible===false){
       document.getElementById(`confirm_password`).setAttribute('type','text');
-      document.getElementById(input).setAttribute('src', 'img/visibility_off.svg');  
+      document.getElementById('confirm_locker').setAttribute('src', 'img/visibility_off.svg');  
     } else{
       document.getElementById(`confirm_password`).setAttribute('type','text');
-      document.getElementById(input).setAttribute('src', 'img/visibility.svg');  
+      document.getElementById('confirm_locker').setAttribute('src', 'img/visibility.svg');  
     }
   }
-  else if(input === 'password_locker'){
-    if(visible==false){
-      document.getElementById(`password`).setAttribute('type','text');
-      document.getElementById(input).setAttribute('src', 'img/visibility_off.svg');  
-    } else{
-      document.getElementById(`confirm_password`).setAttribute('type','text');
-      document.getElementById(input).setAttribute('src', 'img/visibility.svg');  
+  else if(input === 'parent_password'){
+    if(pass_visible===false){
+      document.getElementById(`password-su`).setAttribute('type','text');
+      document.getElementById('password_locker').setAttribute('src', 'img/visibility_off.svg');  
+    } else {
+      document.getElementById(`password-su`).setAttribute('type','text');
+      document.getElementById('password_locker').setAttribute('src', 'img/visibility.svg');  
     }
   }
 }
 
-function changeLockerPicture(){
-  visible= !visible;
+function changeLockerPictureBack(parentWrapperId){
+    if(confirmPass_visible===false){
+      document.getElementById(`confirm_password`).setAttribute('type','text');
+      document.getElementById('confirm_locker').setAttribute('src', 'img/lock.svg');  
+    } else{
+      document.getElementById(`confirm_password`).setAttribute('type','text');
+      document.getElementById('confirm_locker').setAttribute('src', 'img/visibility.svg');  
+    }
+
+    if(pass_visible===false){
+      document.getElementById(`password-su`).setAttribute('type','password');
+      document.getElementById('password_locker').setAttribute('src', 'img/lock.svg');  
+    } else {
+      document.getElementById(`password-su`).setAttribute('type','text');
+      document.getElementById('password_locker').setAttribute('src', 'img/visibility.svg');  
+    }
+}
+
+function changeLockerPicture(input){
+  if (input==='parent_confirm_password') {
+    confirmPass_visible=!confirmPass_visible;
+    if (confirmPass_visible === false) { 
+      changeLockerPictureBack(input)   
+    }else{
+      changeLocker(input);
+    }
+  }else if((input==='parent_password')){
+    pass_visible=!pass_visible;
+    if (pass_visible === false) { 
+      changeLockerPictureBack(input)   
+    }else{
+      changeLocker(input);
+    }
+  }
 }
