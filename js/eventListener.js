@@ -1,11 +1,11 @@
 let pass_visible=false;
 let confirmPass_visible=false;
-
+let loginPass_visible=false;
 
 function initializeLoginListeners() {
   // Finde die Input-Elemente
   let emailInput = document.getElementById("email");
-  let passwordInput = document.getElementById("password");
+  let passwordInput = document.getElementById("login_password");
   // Füge Event Listener für das Fokusevent hinzu
   [emailInput, passwordInput].forEach(function (inputElement) {
     setFocusListener(inputElement);
@@ -21,7 +21,7 @@ function setFocusListener(inputElement){
     if (parentWrapper) {
       let parentWrapperId = parentWrapper.id;
 
-      if (parentWrapperId === 'parent_password' || parentWrapperId === 'parent_confirm_password'){
+      if (parentWrapperId === 'parent_password' || parentWrapperId === 'parent_confirm_password'||parentWrapperId==='parent_login_password'){
         parentWrapper.classList.add("aktive");
         parentWrapper.classList.remove("invalid");
         changeLocker(parentWrapperId);
@@ -42,7 +42,7 @@ function setBlurListener(inputElement){
     if (parentWrapper) {
       let parentWrapperId = parentWrapper.id;
 
-      if (parentWrapperId === 'parent_password' || parentWrapperId === 'parent_confirm_password'){
+      if (parentWrapperId === 'parent_password' || parentWrapperId === 'parent_confirm_password'||parentWrapperId==='parent_login_password'){
         parentWrapper.classList.remove("aktive");
         parentWrapper.classList.remove("invalid");
         changeLockerPictureBack(parentWrapperId);
@@ -90,22 +90,39 @@ function changeLocker(input){
     if(pass_visible===false){
       document.getElementById(`password-su`).setAttribute('type','text');
       document.getElementById('password_locker').setAttribute('src', 'img/visibility_off.svg');  
-    } else {
+    } else{
       document.getElementById(`password-su`).setAttribute('type','text');
       document.getElementById('password_locker').setAttribute('src', 'img/visibility.svg');  
+    }
+  }
+  else if(input === 'parent_login_password'){
+    if(loginPass_visible===false){
+      document.getElementById(`login_password`).setAttribute('type','text');
+      document.getElementById('login_password_locker').setAttribute('src', 'img/visibility_off.svg');  
+    } else{
+      document.getElementById(`login_password`).setAttribute('type','text');
+      document.getElementById('login_password_locker').setAttribute('src', 'img/visibility.svg');  
     }
   }
 }
 
 function changeLockerPictureBack(parentWrapperId){
+  if(parentWrapperId==='parent_login_password'){
+    if(loginPass_visible===false){
+      document.getElementById(`login_password`).setAttribute('type','password');
+      document.getElementById('login_password_locker').setAttribute('src', 'img/lock.svg');  
+    } else {
+      document.getElementById(`login_password`).setAttribute('type','text');
+      document.getElementById('login_password_locker').setAttribute('src', 'img/visibility.svg');  
+    }
+  } else {
     if(confirmPass_visible===false){
       document.getElementById(`confirm_password`).setAttribute('type','text');
       document.getElementById('confirm_locker').setAttribute('src', 'img/lock.svg');  
-    } else{
+    } else {
       document.getElementById(`confirm_password`).setAttribute('type','text');
       document.getElementById('confirm_locker').setAttribute('src', 'img/visibility.svg');  
     }
-
     if(pass_visible===false){
       document.getElementById(`password-su`).setAttribute('type','password');
       document.getElementById('password_locker').setAttribute('src', 'img/lock.svg');  
@@ -113,6 +130,7 @@ function changeLockerPictureBack(parentWrapperId){
       document.getElementById(`password-su`).setAttribute('type','text');
       document.getElementById('password_locker').setAttribute('src', 'img/visibility.svg');  
     }
+  }
 }
 
 function changeLockerPicture(input){
@@ -126,6 +144,14 @@ function changeLockerPicture(input){
   }else if((input==='parent_password')){
     pass_visible=!pass_visible;
     if (pass_visible === false) { 
+      changeLockerPictureBack(input)   
+    }else{
+      changeLocker(input);
+    }
+  }
+  else if((input==='parent_login_password')){
+    loginPass_visible=!loginPass_visible;
+    if (loginPass_visible === false) { 
       changeLockerPictureBack(input)   
     }else{
       changeLocker(input);

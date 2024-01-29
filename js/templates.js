@@ -570,18 +570,19 @@ function renderLoginHTML() {
               </label>
             </div>
             <div class="frame-155">
-              <label id="parent_password" for="password" class="frame-wrapper">
+              <label id="parent_login_password" for="login_password" class="frame-wrapper">
                 <input
                   type="password"
                   class="frame-14"
-                  id="password"
+                  id="login_password"
                   autocomplete="new-password"
                   placeholder="Password"
                   required
                   oninvalid="this.setCustomValidity('Das ist ein Test')"
                   oninput="this.setCustomValidity('')"
+                  onclick="changeLockerPicture('parent_login_password')"
                 />
-                <img class="img" src="img/lock.svg" alt="lockerspicture" />
+                <img class="img" id="login_password_locker" src="img/lock.svg" alt="lockerspicture" />
               </label>
             </div>
             <div class="text-wrapper-3">This field is required</div>
