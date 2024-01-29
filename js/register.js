@@ -54,16 +54,17 @@ function signUpPasswordValidation() {
     document
       .getElementById("parent_confirm_password")
       .classList.remove("invalid");
-  } else {
-    passwordDontMatch();
-  }
+  } 
+  // else {
+  //   passwordDontMatch();
+  // }
 }
 
 function passwordDontMatch() {
   document.getElementById("pass-match").classList.remove("d-none");
   document.getElementById("parent_password").classList.add("invalid");
   document.getElementById("parent_confirm_password").classList.add("invalid");
-  // initializeSignUPListeners();
+  initializeSignUPListeners();
 }
 
 function toogleChecker(input) {
