@@ -77,8 +77,7 @@ function renderTasksHTML(i) {
                       </div>
                     </div>
                   </div>
-</div>
-    `;
+                </div>`;
 }
 
 function moveToLocation(id) {

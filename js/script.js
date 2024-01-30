@@ -46,7 +46,9 @@ function renderSignUp() {
   privacyChecker = false;
   document.getElementById("frame-153").innerHTML = renderSignUpHTML();
   document.getElementById("frame-156").classList.add("d-none");
-  document.getElementById("frame-153").setAttribute("onsubmit", "addUser(event)");
+  document
+    .getElementById("frame-153")
+    .setAttribute("onsubmit", "addUser(event)");
   initializeSignUPListeners();
 }
 
@@ -75,18 +77,16 @@ async function includeHTML() {
   }
 }
 
-
 // RANDOM COLOR CONTACTS
 
-    // function getRandomColor() {
-    //   var letters = "0123456789ABCDEF";
-    //   var color = "#";
-    //   for (var i = 0; i < 6; i++) {
-    //     color += letters[Math.floor(Math.random() * 16)];
-    //   }
-    //   // return color;
-    //   console.log(color);
-    // }
+// function getRandomColor() {
+//   var letters = "0123456789ABCDEF";
+//   var color = "#";
+//   for (var i = 0; i < 6; i++) {
+//     color += letters[Math.floor(Math.random() * 16)];
+//   }
+//   // return color;
+//   console.log(color);
+// }
 
-// 
-
+//
