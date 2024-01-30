@@ -200,6 +200,7 @@
 }
 
 .frame-119 {
+  margin-top: 10px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -344,4 +345,8 @@
   width: 17px;
   height: 12px;
   flex-shrink: 0;
+}
+
+.drag-area-highlight{
+  border: 1px solid red;
 }

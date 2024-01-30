@@ -16,8 +16,13 @@ function renderAddTask() {
   classesAddTask();
 }
 
-function renderBoard() {
-  document.getElementById("content").innerHTML = renderBoardHTML();
+function renderBoardTasks() {
+  let taskcontent = document.getElementById("in-progress");
+  taskcontent.innerHTML = "";
+  for (let i = 0; i < tasks.length; i++) {
+    // const task = tasks[i];
+    taskcontent.innerHTML += renderTasksHTML(i);
+  }
   classesBoard();
 }
 
