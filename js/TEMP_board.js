@@ -8,7 +8,7 @@ let tasks = [
     dueDate: "30.01.2024",
     priority: "medium",
     subtasks: ["Subtask1", "Subtask2", "Subtask3"],
-    assignedTo: ["AS", "AS", "AS"],
+    assignedTo: ["AB", "CD", "EF"],
   },
   {
     category: "Technical Task",
@@ -17,7 +17,7 @@ let tasks = [
     dueDate: "25.01.2024",
     priority: "urgent",
     subtasks: ["Subtask4", "Subtask5", "Subtask6"],
-    assignedTo: ["BT", "BT", "BT"],
+    assignedTo: ["GH", "IJ", "KL"],
   },
 ];
 
