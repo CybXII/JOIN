@@ -55,6 +55,7 @@
   border-radius: 10px;
   border: 1px solid #2a3647;
   background: #2a3647;
+  cursor: pointer;
 }
 
 .frame-123-btn img {
@@ -347,18 +348,34 @@
   flex-shrink: 0;
 }
 
-.drag-area-highlight{
+.drag-area-highlight {
   border: 1px solid red;
 }
 
-.add-task-board-card{
+.add-task-board-background {
   z-index: 4;
-  width: 400px;
-  height: 400px;
-  background-color: white;
+  background-color: rgba(65, 63, 63, 0.466);
   top: 0;
   bottom: 0;
   left: 0;
   right: 0;
-  position: absolute;
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.add-task-board-card {
+  box-sizing: border-box;
+  background-color: white;
+  height: 670px;
+  width: 1116px;
+  padding: 40px;
+  border-radius: 30px;
+}
+
+.background-fixed {
+  margin: 0;
+  height: 100%;
+  overflow: hidden;
 }

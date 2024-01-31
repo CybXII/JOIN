@@ -2,7 +2,8 @@ let currentDraggedElement;
 
 let tasks = [
   {
-    category: "User Story",
+    categoryboard: "to do",
+    category: "to do Task",
     title: "Contact Form & Imprint",
     description: "Create a contact form and imprint page...",
     dueDate: "30.01.2024",
@@ -11,7 +12,28 @@ let tasks = [
     assignedTo: ["AB", "CD", "EF"],
   },
   {
-    category: "Technical Task",
+    categoryboard: "in progress",
+    category: "in progress Task",
+    title: "Test Technical Task Title",
+    description: "Test Technical Task Description",
+    dueDate: "25.01.2024",
+    priority: "urgent",
+    subtasks: ["Subtask4", "Subtask5", "Subtask6"],
+    assignedTo: ["GH", "IJ", "KL"],
+  },
+  {
+    categoryboard: "await feedback",
+    category: "feedback Task",
+    title: "Test Technical Task Title",
+    description: "Test Technical Task Description",
+    dueDate: "25.01.2024",
+    priority: "urgent",
+    subtasks: ["Subtask4", "Subtask5", "Subtask6"],
+    assignedTo: ["GH", "IJ", "KL"],
+  },
+  {
+    categoryboard: "done",
+    category: "done Task",
     title: "Test Technical Task Title",
     description: "Test Technical Task Description",
     dueDate: "25.01.2024",
@@ -94,4 +116,17 @@ function updateHTML() {
     const element = closed[index];
     document.getElementById("closed").innerHTML += generateTodoHTML(element);
   }
+}
+
+function openAddTaskContainer(){
+  document.getElementById("board-background").classList.remove('d-none');
+  document.body.classList.add("background-fixed");
+}
+function closeAddTaskContainer(){
+  document.getElementById("board-background").classList.add('d-none');
+  document.body.classList.remove("background-fixed");
+}
+
+function dontClose(){
+  event.stopPropagation();
 }

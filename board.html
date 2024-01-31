@@ -20,7 +20,11 @@
 </head>
 
 <body onload="includeHTMLInit(`BoardTasks`)">
-  <div class="add-task-board-card">TEST</div>
+  <div class="add-task-board-background d-none" id="board-background" onclick="closeAddTaskContainer()">
+    <div class="add-task-board-card" onclick="dontClose()">
+        <button onclick="closeAddTaskContainer()">X</button>
+    </div>
+  </div>
   <main w3-include-html="./templates/sidebar.html"></main>
   <nav w3-include-html="./templates/header.html"></nav>
   <div class="content-container">
@@ -39,7 +43,7 @@
                   </div>
                 </div>
               </div>
-              <div class="frame-123-btn">
+              <div class="frame-123-btn" onclick="openAddTaskContainer()">
                 <span>Add task</span>
                 <img src="../img/secondary-plus.svg" alt="" />
               </div>
