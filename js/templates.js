@@ -473,9 +473,8 @@ function renderLoginHTML() {
                   required
                   oninvalid="this.setCustomValidity('Das ist ein Test')"
                   oninput="this.setCustomValidity('')"
-                  onclick="changeLockerPicture('parent_login_password')"
                 />
-                <img class="img" id="login_password_locker" src="img/lock.svg" alt="lockerspicture" />
+                <img class="img" onclick="changeLockerPicture('parent_login_password')" id="login_password_locker" src="img/lock.svg" alt="lockerspicture" />
               </label>
             </div>
             <div class="text-wrapper-3">This field is required</div>
