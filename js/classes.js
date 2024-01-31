@@ -1,7 +1,7 @@
 
 // Wird bei der Erstellung eines Tasks genutzt
 
-class task {
+class taskclass {
   taskId; // Erstellungszeit
   title;
   description;
@@ -15,7 +15,7 @@ class task {
 // Wird bei der Useranlage genutzt
 // Es wird zusätzlich noch ein User erstellt
 
-class user {
+class userclass {
   id; // Länge des Arrays
   firstName;
   lastName;
@@ -27,7 +27,7 @@ class user {
 
 // Wird bei der Erstellung eines Kontaktes genutzt
 
-class contact {
+class contactclass {
   id; // Länge des Arrays
   firstName;
   lastName;
