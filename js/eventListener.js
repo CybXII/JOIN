@@ -79,7 +79,7 @@ function initializeSignUPListeners() {
 function changeLocker(input){
   if (input === 'parent_confirm_password'){
     if(confirmPass_visible===false){
-      document.getElementById(`confirm_password`).setAttribute('type','text');
+      document.getElementById(`confirm_password`).setAttribute('type','password');
       document.getElementById('confirm_locker').setAttribute('src', 'img/visibility_off.svg');  
     } else{
       document.getElementById(`confirm_password`).setAttribute('type','text');
@@ -88,7 +88,7 @@ function changeLocker(input){
   }
   else if(input === 'parent_password'){
     if(pass_visible===false){
-      document.getElementById(`password-su`).setAttribute('type','text');
+      document.getElementById(`password-su`).setAttribute('type','password');
       document.getElementById('password_locker').setAttribute('src', 'img/visibility_off.svg');  
     } else{
       document.getElementById(`password-su`).setAttribute('type','text');
@@ -97,7 +97,7 @@ function changeLocker(input){
   }
   else if(input === 'parent_login_password'){
     if(loginPass_visible===false){
-      document.getElementById(`login_password`).setAttribute('type','text');
+      document.getElementById(`login_password`).setAttribute('type','password');
       document.getElementById('login_password_locker').setAttribute('src', 'img/visibility_off.svg');  
     } else{
       document.getElementById(`login_password`).setAttribute('type','text');
