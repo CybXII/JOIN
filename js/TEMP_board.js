@@ -23,44 +23,32 @@ let tasks = [
 
 function renderTasksHTML(i) {
   return /*html*/ `
-                  <div
-                  class="card-board"
-                  draggable="true"
-                  ondragstart="moveToLocation('1')"
-                  id="board-card${i}"
-                >
-    <div class="frame-119">
-                    <div class="card-board-user-story">
-                      <span class="card-board-user-story-text">${tasks[i]["category"]}</span>
-                    </div>
-                    <div class="frame-114">
-                      <span class="card-board-title"
-                        >${tasks[i]["title"]}</span
-                      >
-                      <span class="card-board-content"
-                        >${tasks[i]["description"]}</span
-                      >
-                    </div>
-                    <div class="card-board-progress">
-                      <div class="card-board-progress-bar">
-                        <div class="card-board-progress-bar-filler"></div>
-                      </div>
-                      <span class="card-board-count-progress">
-                        1/2 Subtasks
-                      </span>
-                    </div>
-                    <div class="frame-139">
-                      <div class="frame-217" id="assigned-to${i}">
-                      </div>
-                      <div class="card-board-priority">
-                        <img
-                          src="../img/prio-baja-board.svg"
-                          class="card-board-priority-img"
-                        />
-                      </div>
-                    </div>
-                  </div>
-                </div>`;
+<div class="card-board" draggable="true" ondragstart="moveToLocation('1')" id="board-card${i}">
+  <div class="frame-119">
+    <div class="card-board-user-story">
+      <span class="card-board-user-story-text">${tasks[i]["category"]}</span>
+    </div>
+    <div class="frame-114">
+      <span class="card-board-title">${tasks[i]["title"]}</span>
+      <span class="card-board-content">${tasks[i]["description"]}</span>
+    </div>
+    <div class="card-board-progress">
+      <div class="card-board-progress-bar">
+        <div class="card-board-progress-bar-filler"></div>
+      </div>
+      <span class="card-board-count-progress">
+        1/2 Subtasks
+      </span>
+    </div>
+    <div class="frame-139">
+      <div class="frame-217" id="assigned-to${i}">
+      </div>
+      <div class="card-board-priority">
+        <img src="../img/prio-baja-board.svg" class="card-board-priority-img" />
+      </div>
+    </div>
+  </div>
+</div>`;
 }
 
 function moveToLocation(id) {

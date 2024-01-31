@@ -1,86 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>JOIN - Board</title>
-    <link rel="stylesheet" href="./styles/styleguide.css" />
-    <link rel="stylesheet" href="./styles/global.css" />
-    <link rel="stylesheet" href="./styles/style.css" />
-    <link rel="stylesheet" href="./styles/fonts.css" />
-    <link rel="stylesheet" href="./styles/board.css" />
-    <script src="./js/templates.js"></script>
-    <script src="./js/login.js"></script>
-    <script src="./js/script.js"></script>
-    <script src="./js/classesSidebar.js"></script>
-    <script src="./js/eventListener.js"></script>
-    <script src="./js/TEMP_board.js"></script>
-    <link rel="icon" type="image" href="./img/join-favicon.svg" />
-  </head>
-  <body onload="includeHTMLInit(`BoardTasks`)">
-    <main w3-include-html="./templates/sidebar.html"></main>
-    <nav w3-include-html="./templates/header.html"></nav>
-    <div class="content-container">
-      <div class="container" id="content">
-        <div>
-          <div class="frame-191">
-            <div class="frame-192">
-              <h1>Board</h1>
-              <div class="frame-123">
-                <div class="frame-123-inp">
-                  <div class="frame-121">
-                    <input type="text" placeholder="Find Task" />
-                    <div class="frame-122">
-                      <img src="../img/vector-3.svg" class="vector-3-board" />
-                      <img src="../img/search.svg" class="search-board" />
-                    </div>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>JOIN - Board</title>
+  <link rel="stylesheet" href="./styles/styleguide.css" />
+  <link rel="stylesheet" href="./styles/global.css" />
+  <link rel="stylesheet" href="./styles/style.css" />
+  <link rel="stylesheet" href="./styles/fonts.css" />
+  <link rel="stylesheet" href="./styles/board.css" />
+  <script src="./js/templates.js"></script>
+  <script src="./js/login.js"></script>
+  <script src="./js/script.js"></script>
+  <script src="./js/classesSidebar.js"></script>
+  <script src="./js/eventListener.js"></script>
+  <script src="./js/TEMP_board.js"></script>
+  <link rel="icon" type="image" href="./img/join-favicon.svg" />
+</head>
+
+<body onload="includeHTMLInit(`BoardTasks`)">
+  <main w3-include-html="./templates/sidebar.html"></main>
+  <nav w3-include-html="./templates/header.html"></nav>
+  <div class="content-container">
+    <div class="container" id="content">
+      <div>
+        <div class="frame-191">
+          <div class="frame-192">
+            <h1>Board</h1>
+            <div class="frame-123">
+              <div class="frame-123-inp">
+                <div class="frame-121">
+                  <input type="text" placeholder="Find Task" />
+                  <div class="frame-122">
+                    <img src="../img/vector-3.svg" class="vector-3-board" />
+                    <img src="../img/search.svg" class="search-board" />
                   </div>
                 </div>
-                <div class="frame-123-btn">
-                  <span>Add task</span>
-                  <img src="../img/secondary-plus.svg" alt="" />
-                </div>
+              </div>
+              <div class="frame-123-btn">
+                <span>Add task</span>
+                <img src="../img/secondary-plus.svg" alt="" />
               </div>
             </div>
           </div>
-          <div class="board-dist">
-            <div
-              class="frame-136"
-              ondrop="moveTo('todo')"
-              ondragleave="removeHighlight('todo')"
-              ondragover="allowDrop(event); highlight('todo')"
-            >
-              <div class="category-board">
-                <span class="board-sections-headline">To do</span>
-                <div class="plus-board-container">
-                  <img src="../img/plus-board.svg" />
-                </div>
-              </div>
-              <div id="todo">
-                <div class="card-board-empty">No tasks To do</div>
+        </div>
+        <div class="board-dist">
+          <div class="frame-136" ondrop="moveTo('todo')" ondragleave="removeHighlight('todo')"
+            ondragover="allowDrop(event); highlight('todo')">
+            <div class="category-board">
+              <span class="board-sections-headline">To do</span>
+              <div class="plus-board-container">
+                <img src="../img/plus-board.svg" />
               </div>
             </div>
-            <div
-              class="frame-136"
-              ondrop="moveTo('in-progress')"
-              ondragleave="removeHighlight('in-progress')"
-              ondragover="allowDrop(event); highlight('in-progress')"
-            >
-              <div class="category-board">
-                <span class="board-sections-headline">In Progress</span>
-                <div class="plus-board-container">
-                  <img src="../img/plus-board.svg" />
-                </div>
-              </div>
-              <div id="in-progress"></div>
+            <div id="todo">
+              <div class="card-board-empty">No tasks To do</div>
             </div>
-          
-          <div
-            class="frame-136"
-            ondrop="moveTo('await-feedback')"
-            ondragleave="removeHighlight('await-feedback')"
-            ondragover="allowDrop(event); highlight('await-feedback')"
-          >
+          </div>
+          <div class="frame-136" ondrop="moveTo('in-progress')" ondragleave="removeHighlight('in-progress')"
+            ondragover="allowDrop(event); highlight('in-progress')">
+            <div class="category-board">
+              <span class="board-sections-headline">In Progress</span>
+              <div class="plus-board-container">
+                <img src="../img/plus-board.svg" />
+              </div>
+            </div>
+            <div id="in-progress"></div>
+          </div>
+          <div class="frame-136" ondrop="moveTo('await-feedback')" ondragleave="removeHighlight('await-feedback')"
+            ondragover="allowDrop(event); highlight('await-feedback')">
             <div class="category-board">
               <span class="board-sections-headline">Await Feedback</span>
               <div class="plus-board-container">
@@ -91,12 +80,8 @@
               <div class="card-board-empty">No tasks To do</div>
             </div>
           </div>
-          <div
-            class="frame-136"
-            ondrop="moveTo('done')"
-            ondragleave="removeHighlight('done')"
-            ondragover="allowDrop(event); highlight('done')"
-          >
+          <div class="frame-136" ondrop="moveTo('done')" ondragleave="removeHighlight('done')"
+            ondragover="allowDrop(event); highlight('done')">
             <div class="category-board">
               <span class="board-sections-headline">Done</span>
             </div>
@@ -105,8 +90,9 @@
             </div>
           </div>
         </div>
-        </div>
       </div>
     </div>
-  </body>
+  </div>
+</body>
+
 </html>

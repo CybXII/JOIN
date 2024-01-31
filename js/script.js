@@ -25,12 +25,13 @@ function renderBoardTasks() {
     let assigned = document.getElementById(`assigned-to${i}`);
     for (let j = 0; j < task["assignedTo"].length; j++) {
       const assign = task["assignedTo"][j];
-      assigned.innerHTML += `<div class="card-board-profile-batch">
-                          <div class="group-9-board">
-                            <img src="../img/ellipse-5.svg" class="ellipse-5" />
-                            <div class="group-9-text">${assign}</div>
-                          </div>
-                        </div>`;
+      assigned.innerHTML += `
+<div class="card-board-profile-batch">
+  <div class="group-9-board">
+    <img src="../img/ellipse-5.svg" class="ellipse-5" />
+    <div class="group-9-text">${assign}</div>
+  </div>
+</div>`;
     }
   }
   classesBoard();
