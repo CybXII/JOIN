@@ -350,3 +350,15 @@
 .drag-area-highlight{
   border: 1px solid red;
 }
+
+.add-task-board-card{
+  z-index: 4;
+  width: 400px;
+  height: 400px;
+  background-color: white;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  position: absolute;
+}
