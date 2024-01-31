@@ -27,6 +27,7 @@ function renderTasksHTML(i) {
                   class="card-board"
                   draggable="true"
                   ondragstart="moveToLocation('1')"
+                  id="board-card${i}"
                 >
     <div class="frame-119">
                     <div class="card-board-user-story">
@@ -49,25 +50,7 @@ function renderTasksHTML(i) {
                       </span>
                     </div>
                     <div class="frame-139">
-                      <div class="frame-217">
-                        <div class="card-board-profile-batch">
-                          <div class="group-9-board">
-                            <img src="../img/ellipse-5.svg" class="ellipse-5" />
-                            <div class="group-9-text">${tasks[i]["assignedTo"][0]}</div>
-                          </div>
-                        </div>
-                        <div class="card-board-profile-batch">
-                          <div class="group-9-board">
-                            <img src="../img/ellipse-5.svg" class="ellipse-5" />
-                            <div class="group-9-text">${tasks[i]["assignedTo"][1]}</div>
-                          </div>
-                        </div>
-                        <div class="card-board-profile-batch">
-                          <div class="group-9-board">
-                            <img src="../img/ellipse-5.svg" class="ellipse-5" />
-                            <div class="group-9-text">${tasks[i]["assignedTo"][2]}</div>
-                          </div>
-                        </div>
+                      <div class="frame-217" id="assigned-to${i}">
                       </div>
                       <div class="card-board-priority">
                         <img
