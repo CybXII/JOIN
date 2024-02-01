@@ -75,6 +75,7 @@ Die Oberen sind zwecks zum Testen und vor zeigen
     display: flex;
     justify-content: flex-start;
     align-items: center;
+    flex-direction: column;
     gap: 30px;
     margin-top: 120px;
     left: 513px;

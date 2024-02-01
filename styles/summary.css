@@ -244,8 +244,6 @@
 .urgency-summary-v1:hover span{
   color: #ffffff;  
 }
-
-
   
   .frame-67 {
     display: flex;
@@ -424,4 +422,71 @@
     font-weight: 700;
     line-height: 76.8px;
   }
+
+  .frame-40 .img1{
+    display: none;
+  }
+
   
+
+  @media (max-width: 1340px) {
+    .header-text{
+      font-size: 200%;
+      line-height: normal;
+    }
+
+    .footer-text{
+      font-size: 200%;
+      line-height: normal;
+    }
+  }
+
+  @media (max-width: 1340px) {
+    .frame-40{
+      margin-bottom: 40px ;
+    }
+    .summary_helper{
+      flex-direction: column-reverse;
+      gap: 12px;
+    }
+    .frame-69{
+      flex-direction: row;
+      justify-content: flex-start;
+    }
+    .header-text{
+      width: fit-content;
+    }
+    .footer-text{
+      width: fit-content;
+    }
+
+  }
+
+  @media (max-width: 964px) {
+    .frame-69{
+      display: none;
+    }
+
+    .frame-40{
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .frame-40 .img2{
+      display: none;
+    }
+
+    .frame-40 span{
+      font-family: Inter;
+      font-size: 47px;
+      font-weight: 700;
+      line-height: 56px;
+      letter-spacing: 0em;
+      text-align: left;
+    }
+
+    .frame-40 .img1{
+      display: flex;
+    }
+  
+  }

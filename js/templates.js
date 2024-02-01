@@ -8,8 +8,9 @@ function renderSummaryHTML() {
   <div class="board_window">
     <div class="frame-40">
         <span>Join 360</span>
-        <img src="./img/separation-blue.svg" alt="separation-blue">
+        <img class="img2" src="./img/separation-blue.svg" alt="separation-blue">
         <p>Key Metrics at a Glance</p>
+        <img class="img1" src="./img/img1_summary.svg"  alt="separation-blue">
     </div>
     <div class="summary_helper">
     <div class="frame-71">
