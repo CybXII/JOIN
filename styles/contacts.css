@@ -214,7 +214,7 @@ Die Oberen sind zwecks zum Testen und vor zeigen
   padding: 15px 24px;
   position: relative;
   flex: 0 0 auto;
-  background-color: #ffffff;
+  /* background-color: #ffffff; */
   border-radius: 10px;
 }
 
@@ -405,7 +405,6 @@ Die Oberen sind zwecks zum Testen und vor zeigen
   border: 1px solid;
 }
 
-
 .frame-97::-webkit-scrollbar {
     position: absolute;
     width: 10px;
@@ -425,3 +424,214 @@ Die Oberen sind zwecks zum Testen und vor zeigen
     border-radius: 5px;
     z-index: 20;
 }
+
+.frame-97 .primary-contact:hover {
+  background-color: var(--ligth-blue);
+  border-color: var(--ligth-blue);
+  box-shadow: var(--stronger);
+}
+
+.frame-97 .contact-name:hover {
+  background: linear-gradient(180deg, #F9F9F9 0%, #F0F0F0 100%);
+}
+
+
+.active_contact .div{
+  color: #ffffff;
+}
+
+
+.active_contact {
+  background-color:var(--version-2main-color);
+ }
+
+ .active_contact:hover .div{
+  /* color: #000 !important; */
+ }
+
+ .contact-name:hover .div{
+  color: #000000;
+ }
+
+ .headline{
+  display: flex;
+  align-items: center;
+  gap:  30px;
+ }
+
+ .contact_info{
+  display: flex;
+  flex-direction: column;
+  width: 461px;
+  height: 364px;
+  gap: 21px;
+ }
+
+ .frame-40{
+  flex-direction: column;
+  align-items: flex-start;
+ }
+
+ .group{
+  height: 120px;
+  width: 120px;
+ }
+
+ .circle{
+  height: 120px;
+  width: 120px;
+  background-color: #ff4646;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #ffffff;
+ }
+
+ .text-wrapper-circle{
+font-family: Inter;
+font-size: 47px;
+font-weight: 500;
+line-height: 56px;
+letter-spacing: 0em;
+text-align: center;
+ }
+
+ .frame-105 {
+  display: flex;
+  align-items: center;
+  gap: 54px;
+}
+
+ .frame-81{
+  display: flex;
+  font-family: Inter;
+  font-size: 47px;
+  font-weight: 500;
+  line-height: 56px;
+  letter-spacing: 0em;
+  text-align: left;
+ }
+
+ .frame-108{
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+
+.frame-108 p{
+  font-family: Inter;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 19px;
+  letter-spacing: 0em;
+  text-align: left;  
+}
+
+.delete p{
+font-family: Inter;
+font-size: 16px;
+font-weight: 400;
+line-height: 19px;
+letter-spacing: 0em;
+text-align: left;
+}
+
+.delete{
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+
+.frame-204{
+  display: flex;
+  width: 160px;
+  justify-content: space-between;
+}
+
+.frame-106 {
+  width: 207px;
+  height:74px;
+  display: flex;
+  align-items: center;
+}
+
+.frame-106 span{
+font-family: Inter;
+font-size: 20px;
+font-weight: 400;
+line-height: 24px;
+letter-spacing: 0em;
+text-align: left;
+}
+
+.frame-101{
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.frame-102{
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.frame-102 p{
+  font-family: Inter;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 19px;
+  letter-spacing: 0em;
+  text-align: left;
+}
+
+.frame-102 a{
+  font-family: Inter;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 19px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #007CEE;
+  cursor: pointer;
+} 
+
+.frame-102 a:hover{
+  text-decoration: underline;
+} 
+
+.frame-103{
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.frame-103 p{
+  font-family: Inter;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 19px;
+  letter-spacing: 0em;
+  text-align: left;
+}
+
+.frame-103 a{
+  font-family: Inter;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 19px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #000000;
+  cursor: pointer;
+} 
+
+.frame-103 a:hover{
+  color: var(--ligth-blue);
+}
+
+
+ 

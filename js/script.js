@@ -40,6 +40,7 @@ function renderBoardTasks() {
 function renderContacts() {
   document.getElementById("content").innerHTML = renderContactsHTML();
   classesContacts();
+  addContactListeners();
 }
 
 function renderPrivacyPolicy() {
@@ -86,6 +87,10 @@ async function includeHTML() {
       element.innerHTML = "Page not found";
     }
   }
+}
+
+function openContact(contactName){
+  document.getElementById('contact_info').innerHTML = renderContactInfo(contactName);
 }
 
 // RANDOM COLOR CONTACTS

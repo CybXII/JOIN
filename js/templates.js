@@ -200,7 +200,7 @@ function renderContactsHTML() {
               <img class="person-add" src="img/person_add.svg" />
             </div>
           </div>
-            <div class="contact-list">
+            <div  id="renderedContent" class="contact-list">
               <div class="div-wrapper"><div class="div">A</div></div>
               <img class="img" src="img/seperator_contacts.svg" />
               <div class="contact-name">
@@ -304,9 +304,13 @@ function renderContactsHTML() {
             </div>
           </div>
           <div class="frame-40">
+            <div  class="headline">              
               <span>Contacts</span>
               <img src="./img/separation-blue.svg" alt="separation-blue">
               <p>Better with a team</p>
+            </div>
+            <div id="contact_info" class="contact_info" >
+            </div>
           </div>
       </div>`;
 }
@@ -498,4 +502,39 @@ function renderLoginHTML() {
             <button class="button-2">Guest Log in</button>
           </div>
         </div>`;
+}
+
+function renderContactInfo(contactName){
+  return /*html*/ `  
+  <div class="frame-105">
+    <div class="frame-79">
+      <div class="group">
+        <div class="circle"><div class="text-wrapper-circle">AM</div></div>
+      </div>
+    </div>
+    <div class="frame-104">
+      <div class="frame-81">${contactName}</div>
+      <div class="frame-204">
+        <div class="frame-108"><img src="./img/pen.svg" alt=""><p>Edit</p></div>
+        <div class="delete"><img src="./img/trash.svg" alt=""><p>Delete</p></div>
+      </div>
+    </div>
+  </div>
+  <div class="frame-106">
+    <span>Contact Information</span>
+    <p></p>
+  </div>
+  <div class="frame-101">
+    <div class="frame-102">
+      <p class="email">Email</p>
+      <a >anton@gmail.com</a>
+    </div>
+    <div class="frame-103">
+      <p class="Phone">Phone</p>
+      <a href="#+491111 111 11 1">+49 1111 111 11 1</a>
+    </div>
+  </div>
+
+`;
+
 }

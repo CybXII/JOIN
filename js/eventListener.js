@@ -158,3 +158,27 @@ function changeLockerPicture(input){
     }
   }
 }
+
+function addContactListeners() {
+  var contactList = document.getElementById('renderedContent');
+  var contactNames = contactList.querySelectorAll('.contact-name');
+
+  contactNames.forEach(function (contact) {
+    contact.addEventListener('click', function () {
+      // Entfernen Sie die 'active_contact'-Klasse von allen Elementen
+      contactNames.forEach(function (c) {
+        c.classList.remove('active_contact');
+      });
+
+      // Fügen Sie dann die 'active_contact'-Klasse nur zum angeklickten Element hinzu
+      contact.classList.add('active_contact');
+
+      // Zeigen Sie den Inhalt von .div2 .div an
+      var nameContainer = contact.querySelector('.div-2 .div');
+      var contactName = nameContainer.textContent.trim();
+      console.log("Kontaktname:", contactName);
+      openContact(contactName);
+    });
+  });
+}
+
