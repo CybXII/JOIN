@@ -2,7 +2,7 @@ let currentDraggedElement;
 
 let tasks = [
   {
-    categoryboard: "to do",
+    categoryboard: "todo",
     category: "to do Task",
     title: "Contact Form & Imprint",
     description: "Create a contact form and imprint page...",
@@ -12,7 +12,7 @@ let tasks = [
     assignedTo: ["AB", "CD", "EF"],
   },
   {
-    categoryboard: "in progress",
+    categoryboard: "in-progress",
     category: "in progress Task",
     title: "Test Technical Task Title",
     description: "Test Technical Task Description",
@@ -22,7 +22,7 @@ let tasks = [
     assignedTo: ["GH", "IJ", "KL"],
   },
   {
-    categoryboard: "await feedback",
+    categoryboard: "await-feedback",
     category: "feedback Task",
     title: "Test Technical Task Title",
     description: "Test Technical Task Description",
@@ -45,7 +45,7 @@ let tasks = [
 
 function renderTasksHTML(i) {
   return /*html*/ `
-<div class="card-board" draggable="true" ondragstart="moveToLocation('1')" id="board-card${i}">
+<div class="card-board" draggable="true" ondragstart="moveToLocation(${i})" id="board-card${i}">
   <div class="frame-119">
     <div class="card-board-user-story">
       <span class="card-board-user-story-text">${tasks[i]["category"]}</span>
@@ -73,8 +73,10 @@ function renderTasksHTML(i) {
 </div>`;
 }
 
-function moveToLocation(id) {
-  console.log(id);
+
+function moveToLocation(taskId) {
+  currentDraggedElement = taskId;
+  console.log(taskId);
 }
 
 function allowDrop(ev) {
@@ -94,28 +96,49 @@ function removeHighlight(id) {
 }
 
 function moveTo(category) {
-  todos[currentDraggedElement]["category"] = category;
+  tasks[currentDraggedElement]["categoryboard"] = category;
   updateHTML();
+  console.log(tasks[currentDraggedElement]["categoryboard"]);
 }
 
+
 function updateHTML() {
-  let open = todos.filter((t) => t["category"] == "open");
 
-  document.getElementById("open").innerHTML = "";
+        document.getElementById("todo").innerHTML = '';
+        document.getElementById("in-progress").innerHTML = '';
+        document.getElementById("await-feedback").innerHTML = '';
+        document.getElementById("done").innerHTML = '';
 
-  for (let index = 0; index < open.length; index++) {
-    const element = open[index];
-    document.getElementById("open").innerHTML += generateTodoHTML(element);
-  }
-
-  let closed = todos.filter((t) => t["category"] == "closed");
-
-  document.getElementById("closed").innerHTML = "";
-
-  for (let index = 0; index < closed.length; index++) {
-    const element = closed[index];
-    document.getElementById("closed").innerHTML += generateTodoHTML(element);
-  }
+tasks.forEach(function(task, i) {
+  document.getElementById(task.categoryboard).innerHTML += 
+    `<div class="card-board" draggable="true" ondragstart="moveToLocation(${i})" id="board-card${i}">
+  <div class="frame-119">
+    <div class="card-board-user-story">
+      <span class="card-board-user-story-text">${task.category}</span>
+    </div>
+    <div class="frame-114">
+      <span class="card-board-title">${task.title}</span>
+      <span class="card-board-content">${task.description}</span>
+    </div>
+    <div class="card-board-progress">
+      <div class="card-board-progress-bar">
+        <div class="card-board-progress-bar-filler"></div>
+      </div>
+      <span class="card-board-count-progress">
+        1/2 Subtasks
+      </span>
+    </div>
+    <div class="frame-139">
+      <div class="frame-217" id="assigned-to${i}">
+      </div>
+      <div class="card-board-priority">
+        <img src="../img/prio-baja-board.svg" class="card-board-priority-img" />
+      </div>
+    </div>
+  </div>
+</div>`;
+});        
+     
 }
 
 function openAddTaskContainer(){
@@ -129,4 +152,5 @@ function closeAddTaskContainer(){
 
 function dontClose(){
   event.stopPropagation();
+  console.log(event);
 }

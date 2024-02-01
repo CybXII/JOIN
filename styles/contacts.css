@@ -463,7 +463,7 @@ Die Oberen sind zwecks zum Testen und vor zeigen
  .contact_info{
   display: flex;
   flex-direction: column;
-  width: 461px;
+  /* width: 461px; */
   height: 364px;
   gap: 21px;
  }
