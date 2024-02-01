@@ -71,7 +71,38 @@
     background-color: #fff;
     box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.1);
   }
-  
+
+  .todo_picture{
+    background-image: url(../img/stift.svg);
+    width: 69px;
+    height: 69px;
+  }
+
+  .done_picture{
+    background-image: url(../img/hacken.svg);
+    width: 69px;
+    height: 69px;
+  }
+
+  .pencil-rectangle-button-v1:hover {
+    width: 284px;
+    height: 188px;
+    background-color: var(--version-2main-color);
+    color: #ffffff;
+  }
+
+  .pencil-rectangle-button-v1:hover span{
+    color: #ffffff;
+  }
+
+  .pencil-rectangle-button-v1:hover .todo_picture{
+    background-color: #ffffff;
+    background-image: url(../img/stift_black.svg);
+    width: 69px;
+    height: 69px;
+    border-radius: 50%;
+  }
+
   .frame-59 {
     display: flex;
     flex-direction: column;
@@ -120,6 +151,31 @@
     background-color: #fff;
     box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.1);
   }
+
+  .cheack-reactangle-button-v1:hover {
+    width: 284px;
+    height: 188px;
+    background-color: var(--version-2main-color);
+    color: #ffffff;
+  }
+
+  .cheack-reactangle-button-v1:hover span{
+    color: #ffffff;
+  }
+
+  .cheack-reactangle-button-v1:hover p{
+    color: #ffffff;
+  }
+
+  .cheack-reactangle-button-v1:hover .done_picture{
+    background-color: #ffffff;
+    background-image: url(../img/hacken_black.svg);
+    width: 69px;
+    height: 69px;
+    border-radius: 50%;
+  }
+
+
   
   .frame-59 {
     display: flex;
@@ -175,6 +231,21 @@
     background-color: #fff;
     box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.1);
   }
+
+.urgency-summary-v1:hover {
+  background-color: var(--version-2main-color);
+  height: 184px;
+}
+
+.urgency-summary-v1:hover p{
+  color: #fff;  
+}
+
+.urgency-summary-v1:hover span{
+  color: #ffffff;  
+}
+
+
   
   .frame-67 {
     display: flex;
@@ -280,6 +351,19 @@
     background-color: #fff;
     box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.1);
   }
+
+  .square-button-v1:hover {
+    width: 168px;
+    height: 168px;
+    background-color: var(--version-2main-color);
+  }
+  .square-button-v1:hover p{
+    color: #ffffff;
+  }
+  .square-button-v1:hover span{
+    color: #ffffff;
+  }
+
   
   .frame-61 {
     display: flex;

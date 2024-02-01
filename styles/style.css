@@ -618,8 +618,13 @@ input:focus-visible {
 
 .help_icon {
   /* border: 1px solid red; */
+  width: 28px;
+  height: 28px;
+}
+
+.help_icon:hover {
   width: 32px;
-  height: 32px;
+  height: 32 px;
 }
 
 .navigation {
@@ -643,6 +648,10 @@ input:focus-visible {
   flex-shrink: 0;
   border-radius: 559px;
   background: var(--white, #fff);
+}
+
+.frame-31:hover {
+  background-color: #0C2E621F;
 }
 
 .ellipse-3 {

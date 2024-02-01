@@ -16,7 +16,7 @@ function renderSummaryHTML() {
           <div class="frame-65">
               <div class="pencil-rectangle-button-v1">
                   <div class="frame-59">
-                      <img src="./img/stift.svg" alt="stift">
+                  <div class="todo_picture"></div>
                   </div>
                   <div class="frame-62">
                       <span>1</span>
@@ -25,7 +25,7 @@ function renderSummaryHTML() {
               </div>
               <div class="cheack-reactangle-button-v1">
                   <div class="frame-59">
-                      <img src="./img/hacken.svg" alt="hacken">
+                      <div class="done_picture"></div>
                   </div>
                   <div class="frame-60">
                       <span>1</span>
