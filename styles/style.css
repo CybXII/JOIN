@@ -1212,22 +1212,12 @@ a {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 80vw;
   }
 
-  .board_window{
-
-    width: 100%;
-  }
   .summary_helper{
-    width: 100%;
     padding: 0 16px;
     box-sizing: border-box;
   }
-
-  .frame-65 {
-    width: 100%;
-}
 
 .urgency-summary-v1 {
   display: flex;
@@ -1244,8 +1234,6 @@ a {
 
   .urgency-summary-v1:hover {
     height: 120px;
-    width: 100%;
-
   }
 
   .cheack-reactangle-button-v1{
@@ -1277,10 +1265,6 @@ a {
     justify-content: space-between;
   }
 
-  .frame-71{
-    width: 100%;
-  }
-
   .frame-64{
     height: 116px;
   }
@@ -1310,4 +1294,32 @@ a {
   .logo_sidebar{
     display: none;
   }
+
+  .frame-10_helper span{
+    font-family: Open Sans;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 17px;
+    letter-spacing: 0em;
+    text-align: left;
+  }
+
+  nav{
+    height: 80px;
+    box-sizing: content-box;
+  }
+
+  main{
+    height: 80px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+
+  body{
+    display: flex;
+    flex-direction: column;
+  }
+
 }

@@ -635,4 +635,52 @@ text-align: left;
 }
 
 
+@media (max-width: 900px) {
+  .content-container{
+    margin-top: 0;
+  }
+
+  .frame-40{
+    display: none;
+  }
+
+  .frame-97{
+    z-index: 0;
+    height: unset;
+    padding: 0px;
+    width: 100%;
+  }
+
+  .frame-97 .contact-list {
+   position: relative;
+   top: 0;
+   padding: 0;
+  }
+
+  .primary-contact{
+    width: 32px;
+  }
+
+  .primary-contact .text-wrapper{
+    display: none;
+  }
+
+  .addContact{
+    height: 0;
+  }
+
+
+  .frame-97 .primary-contact {
+    width: 56px;
+    height: 56px;
+    padding: 0;
+    border-radius: 46px;
+    right: 12px;
+    bottom: 100px;
+}
+
+
+}
+
+
  

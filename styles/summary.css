@@ -48,7 +48,6 @@
     justify-content: center;
     align-items: flex-start;
     gap: 28px;
-    width: 560px;
   }
   
   .frame-65 {
@@ -461,25 +460,9 @@
     }
 
   }
+  
+  @media (max-width: 900px) {
 
-  @media (max-width: 964px) {
-    nav{
-      height: 80px;
-      box-sizing: content-box;
-    }
-
-    main{
-      height: 80px;
-      position: fixed;
-      bottom: 0;
-      left: 0;
-      right: 0;
-    }
-
-    body{
-      display: flex;
-      flex-direction: column;
-    }
     .frame-69{
       display: none;
     }
@@ -506,8 +489,7 @@
     .frame-40 .img1{
       display: flex;
     }
-  
-  }  @media (max-width: 900px) {
+
 
     .frame-40{
       flex-direction: column;
@@ -581,17 +563,10 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      width: 80vw;
     }
 
-    .board_window{
-
-      width: 100%;
-    }
     .summary_helper{
-      width: 100%;
       padding: 0 16px;
-      box-sizing: border-box;
     }
 
     .frame-65 {
@@ -612,58 +587,90 @@
     }
 
     .urgency-summary-v1:hover {
-      height: 120px;
-      width: 100%;
-  
+      height: 110px;
     }
 
     .cheack-reactangle-button-v1{
       height: 110px;
-      padding: 38px 58px 38px 58px;
+      width: 186px;
+      padding: 38px 19px 38px 19px;
       gap: 10px;
+      box-sizing: border-box;
     }
     .cheack-reactangle-button-v1:hover{
-
-      height: 120px;
-      padding: 38px 58px 38px 58px;
+      width: 186px;
+      height: 110px;
+      padding: 38px 19px 38px 19px;
       gap: 10px;
     }
     
     .pencil-rectangle-button-v1{
-
+      width: 186px;
       height: 110px;
-      padding: 38px 58px 38px 58px;
+      padding: 38px 19px 38px 19px;
       gap: 10px; 
+      box-sizing: border-box;
     }
     .pencil-rectangle-button-v1:hover{
-
-      height: 120px;
-      padding: 38px 58px 38px 58px;
+      height: 110px;
+      width: 186px;
+      padding: 38px 19px 38px 19px;
       gap: 10px;
+    }
+
+    .todo_picture{
+      background-size: contain;
+      width: 40px;
+      height: 40px;
+      background-repeat: no-repeat;
+    }
+
+    .pencil-rectangle-button-v1:hover .todo_picture{
+      background-size: cover;
+      width: 40px;
+      height: 40px;
+      background-repeat: no-repeat;
+    }
+
+    .done_picture{
+      background-size: contain;
+      width: 40px;
+      height: 40px;
+      background-repeat: no-repeat;
+    }
+
+    .cheack-reactangle-button-v1:hover .done_picture{
+      background-size: contain;
+      width: 40px;
+      height: 40px;
+      background-repeat: no-repeat;
     }
 
     .frame-65{
       justify-content: space-between;
-    }
-
-    .frame-71{
-      width: 100%;
+      height: 110px;
+      width: 396px
     }
 
     .frame-64{
       height: 116px;
+      justify-content: space-between;
     }
     
     .square-button-v1{
       width: 116px;
       height: 116px;
-      padding: 25px 0px 25px 0px;
+      padding: 25px;
       border-radius: 20px;
       gap: 13px;
+      box-sizing: border-box;
     }
 
     .square-button-v1:hover{
-      height: 124px;
+      height: 116px;
+      width: 116px;
+      padding: 25px;
+      box-sizing: none;
     }   
     
     .header{
@@ -679,5 +686,169 @@
     .logo_sidebar{
       display: none;
     }
+
+    .frame-67{
+      width: 108px;
+      height: 73px;
+    }
+
+    .frame-63{
+      width: 50px;
+      height: 73px;
+    }
+
+    .frame-63 p{
+      font-family: Inter;
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 17px;
+      letter-spacing: 0em;
+      text-align: left;
+    }
+
+    .frame-59{
+      width: 40px;
+      height: 40px;
+    }
+
+
+    .frame-59-ellipse{
+      width: 40px;
+      height: 40px;
+    }
+
+    .separation-gray{
+      width: unset;
+      height: 68px;
+    }
+
+    .frame-59-prio-alta{
+      width: 22.8px;
+      height: 16.75px;
+    }
+
+    .frame-63 span{
+      font-family: Inter;
+      font-size: 47px;
+      font-weight: 600;
+      line-height: 56px;
+      letter-spacing: 0em;
+      text-align: center;
+    }
+
+    .frame-68{
+      width: 135px;
+    }
+
+    .frame-68 span{
+      font-family: Inter;
+      font-size: 16px;
+      font-weight: 700;
+      line-height: 19px;
+      letter-spacing: 0em;
+      text-align: left;
+    }
+
+    .fram-68 p{
+      font-family: Inter;
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 17px;
+      letter-spacing: 0em;
+      text-align: left;      
+    }
+
+    .frame-62 span{
+      font-family: Inter;
+      font-size: 47px;
+      font-weight: 600;
+      line-height: 56px;
+      letter-spacing: 0em;
+      text-align: center;
+    }
+
+    .frame-60 span{
+      font-family: Inter;
+      font-size: 47px;
+      font-weight: 600;
+      line-height: 56px;
+      letter-spacing: 0em;
+      text-align: center;
+    }
+
+    .frame-60 p{
+      font-family: Inter;
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 17px;
+      letter-spacing: 0em;
+      text-align: left;
+    }
+
+    .frame-62 p{
+      font-family: Inter;
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 17px;
+      letter-spacing: 0em;
+      text-align: left;      
+    }
+
+    .board_window{
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .frame-40{
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    .summary_helper{
+      display: flex;
+      gap: 80px;
+      width: 396px;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    .frame-71{
+      width: 396px;
+    }
+
+    .frame-64{
+      width: 396px;
+    }
     
+    .frame-61{
+      width: 116px;
+      height: 116px;
+      border-radius: 20px;
+      gap: 13px;
+    }
+
+    .frame-61 span{
+      font-family: Inter;
+      font-size: 47px;
+      font-weight: 600;
+      line-height: 56px;
+      letter-spacing: 0em;
+      text-align: center;
+    }
+
+    .frame-61 p{
+      font-family: Inter;
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 17px;
+      letter-spacing: 0em;
+      text-align: center;
+    }
+
+
   }
