@@ -22,10 +22,46 @@
     box-shadow: var(--shadoe-backlog-box);
   } 
 
-@media (max-width: 720px) {
+
+@media (max-width: 1060px) {
+    
+    .log-in .capa {
+        width: 64px;
+        height: 78px;
+        top: 20px;
+        left: 20px;
+    }
+
+    .log-in {
+        gap: unset;
+    }
+
+
+}
+
+
+@media (max-width: 874px) {
+
+    .log-in .frame-213 {
+        position: relative;
+    }
+    
+    .sign-up-text{
+        font-family: Inter;
+        font-size: 47px;
+        font-weight: 700;
+        line-height: 56px;
+        letter-spacing: 0em;
+        text-align: center;
+    }
+
+    .logo{
+        height: 70px;
+    }
+
     .log-in{
         flex-direction: column;
-        gap: 42px;
+        justify-content: space-between;
     }
 
     .log-in .frame-156{
@@ -38,13 +74,16 @@
         width: 90%;
         padding: 32px;
         box-sizing: border-box;
+        gap: 24px;
+        display: flex;
+        justify-content: space-between;
     }
 
     .log-in .frame-wrapper{
         width: unset;
     }
     .log-in .frame-14 {
-        width: unset;
+        width: 50%;
     }
 
     .log-in .frame-250 {
@@ -71,17 +110,15 @@
         box-sizing: border-box;
     }
 
-    .frame-153{
-        box-sizing: border-box;
-    }
-
     .frame-157-su {
         width: 100%;
     }
 
     .arrow-left-line{
-        top: 56px;
+        top: 46px;
         left: 12px;
     }
+
+
 }
 
