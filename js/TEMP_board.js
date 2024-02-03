@@ -79,7 +79,6 @@ function renderTasksHTML(i) {
 </div>`;
 }
 
-
 function moveToLocation(taskId) {
   currentDraggedElement = taskId;
   console.log(taskId);
@@ -97,27 +96,22 @@ function highlight(id) {
   document.getElementById(id).classList.add("drag-area-highlight");
 }
 
-function removeHighlight(id) {
-  document.getElementById(id).classList.remove("drag-area-highlight");
-}
-
 function moveTo(category) {
   tasks[currentDraggedElement]["categoryboard"] = category;
   updateHTML();
   console.log(tasks[currentDraggedElement]["categoryboard"]);
 }
 
-
 function updateHTML() {
-    
-        document.getElementById("todo").innerHTML = '';
-        document.getElementById("in-progress").innerHTML = '';
-        document.getElementById("await-feedback").innerHTML = '';
-        document.getElementById("done").innerHTML = '';
+  document.getElementById("todo").innerHTML = "";
+  document.getElementById("in-progress").innerHTML = "";
+  document.getElementById("await-feedback").innerHTML = "";
+  document.getElementById("done").innerHTML = "";
 
-tasks.forEach(function(task, i) {
-  document.getElementById(task.categoryboard).innerHTML += 
-    `<div class="card-board" draggable="true" ondragstart="moveToLocation(${i})" id="board-card${i}">
+  tasks.forEach(function (task, i) {
+    document.getElementById(
+      task.categoryboard
+    ).innerHTML += `<div class="card-board" draggable="true" ondragstart="moveToLocation(${i})" id="board-card${i}">
   <div class="frame-119">
     <div class="card-board-user-story">
       <span class="card-board-user-story-text">${task.category}</span>
@@ -143,22 +137,21 @@ tasks.forEach(function(task, i) {
     </div>
   </div>
 </div>`;
-});  
+  });
 
-setAmounts();
-     
+  setAmounts();
 }
 
-function openAddTaskContainer(){
-  document.getElementById("board-background").classList.remove('d-none');
+function openAddTaskContainer() {
+  document.getElementById("board-background").classList.remove("d-none");
   document.body.classList.add("background-fixed");
 }
-function closeAddTaskContainer(){
-  document.getElementById("board-background").classList.add('d-none');
+function closeAddTaskContainer() {
+  document.getElementById("board-background").classList.add("d-none");
   document.body.classList.remove("background-fixed");
 }
 
-function dontClose(){
+function dontClose() {
   event.stopPropagation();
   console.log(event);
 }
@@ -170,7 +163,7 @@ function setAmounts() {
   tasksInProgress = 0;
   tasksAwaitFeedback = 0;
   tasksUrgent = 0;
-  
+
   for (let i = 0; i < tasks.length; i++) {
     switch (tasks[i].categoryboard) {
       case "todo":

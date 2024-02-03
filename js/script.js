@@ -17,23 +17,6 @@ function renderAddTask() {
 }
 
 function renderBoardTasks() {
-//   let taskcontent = document.getElementById("in-progress");
-//   taskcontent.innerHTML = "";
-//   for (let i = 0; i < tasks.length; i++) {
-//     const task = tasks[i];
-//     taskcontent.innerHTML += renderTasksHTML(i);
-//     let assigned = document.getElementById(`assigned-to${i}`);
-//     for (let j = 0; j < task["assignedTo"].length; j++) {
-//       const assign = task["assignedTo"][j];
-//       assigned.innerHTML += `
-// <div class="card-board-profile-batch">
-//   <div class="group-9-board">
-//     <img src="../img/ellipse-5.svg" class="ellipse-5" />
-//     <div class="group-9-text">${assign}</div>
-//   </div>
-// </div>`;
-//     }
-//   }
   updateHTML();
   classesBoard();
 }
@@ -96,14 +79,14 @@ function openContact(contactName){
 
 // RANDOM COLOR CONTACTS
 
-// function getRandomColor() {
-//   var letters = "0123456789ABCDEF";
-//   var color = "#";
-//   for (var i = 0; i < 6; i++) {
-//     color += letters[Math.floor(Math.random() * 16)];
-//   }
-//   // return color;
-//   console.log(color);
-// }
+function getRandomColor() {
+  var letters = "0123456789ABCDEF";
+  var color = "#";
+  for (var i = 0; i < 6; i++) {
+    color += letters[Math.floor(Math.random() * 16)];
+  }
+  // return color;
+  console.log(color);
+}
 
-//
+
