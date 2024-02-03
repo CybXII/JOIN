@@ -22,6 +22,18 @@
     box-shadow: var(--shadoe-backlog-box);
   } 
 
+  .join_logo_start_responsiv{
+    display: none;
+  }
+
+  #join_logo2{
+    display: none;
+  }
+
+  .join_logo_start_responsiv{
+    display: none;
+  }
+
 
 @media (max-width: 1060px) {
     
@@ -35,17 +47,38 @@
     .log-in {
         gap: unset;
     }
-
-
 }
 
-
 @media (max-width: 874px) {
+
+    #join_logo2{
+        display: block;
+      }
+
+    .join_logo_start_responsiv{
+        display: block;
+        z-index: 30;
+    }
+
+    .join_logo_start{
+        z-index: 20;
+    } 
+
+    .join_logo_start_responsiv2{
+        display: block;
+        z-index: 10;
+    }
+
+
+    .logo_container{    
+        background-color: var(--version-2main-color);
+    }   
+    
 
     .log-in .frame-213 {
         position: relative;
     }
-    
+
     .sign-up-text{
         font-family: Inter;
         font-size: 47px;
