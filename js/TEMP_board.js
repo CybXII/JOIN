@@ -6,28 +6,28 @@ let tasks = [
     category: "to do Task",
     title: "Contact Form & Imprint",
     description: "Create a contact form and imprint page...",
-    dueDate: "30.01.2024",
-    priority: "medium",
+    dueDate: "2024-02-03",
+    prio: "medium",
     subtasks: ["Subtask1", "Subtask2", "Subtask3"],
     assignedTo: ["AB", "CD", "EF"],
   },
   {
-    categoryboard: "in-progress",
+    categoryboard: "todo",
     category: "in progress Task",
     title: "Test Technical Task Title",
     description: "Test Technical Task Description",
     dueDate: "25.01.2024",
-    priority: "urgent",
+    prio: "urgent",
     subtasks: ["Subtask4", "Subtask5", "Subtask6"],
     assignedTo: ["GH", "IJ", "KL"],
   },
   {
-    categoryboard: "await-feedback",
+    categoryboard: "todo",
     category: "feedback Task",
     title: "Test Technical Task Title",
     description: "Test Technical Task Description",
     dueDate: "25.01.2024",
-    priority: "urgent",
+    prio: "urgent",
     subtasks: ["Subtask4", "Subtask5", "Subtask6"],
     assignedTo: ["GH", "IJ", "KL"],
   },
@@ -37,11 +37,17 @@ let tasks = [
     title: "Test Technical Task Title",
     description: "Test Technical Task Description",
     dueDate: "25.01.2024",
-    priority: "urgent",
+    prio: "urgent",
     subtasks: ["Subtask4", "Subtask5", "Subtask6"],
     assignedTo: ["GH", "IJ", "KL"],
   },
 ];
+
+let tasksTodo;
+let tasksDone;
+let tasksInProgress;
+let tasksAwaitFeedback;
+let tasksUrgent;
 
 function renderTasksHTML(i) {
   return /*html*/ `
@@ -73,7 +79,6 @@ function renderTasksHTML(i) {
 </div>`;
 }
 
-
 function moveToLocation(taskId) {
   currentDraggedElement = taskId;
   console.log(taskId);
@@ -91,27 +96,22 @@ function highlight(id) {
   document.getElementById(id).classList.add("drag-area-highlight");
 }
 
-function removeHighlight(id) {
-  document.getElementById(id).classList.remove("drag-area-highlight");
-}
-
 function moveTo(category) {
   tasks[currentDraggedElement]["categoryboard"] = category;
   updateHTML();
   console.log(tasks[currentDraggedElement]["categoryboard"]);
 }
 
-
 function updateHTML() {
+  document.getElementById("todo").innerHTML = "";
+  document.getElementById("in-progress").innerHTML = "";
+  document.getElementById("await-feedback").innerHTML = "";
+  document.getElementById("done").innerHTML = "";
 
-        document.getElementById("todo").innerHTML = '';
-        document.getElementById("in-progress").innerHTML = '';
-        document.getElementById("await-feedback").innerHTML = '';
-        document.getElementById("done").innerHTML = '';
-
-tasks.forEach(function(task, i) {
-  document.getElementById(task.categoryboard).innerHTML += 
-    `<div class="card-board" draggable="true" ondragstart="moveToLocation(${i})" id="board-card${i}">
+  tasks.forEach(function (task, i) {
+    document.getElementById(
+      task.categoryboard
+    ).innerHTML += `<div class="card-board" draggable="true" ondragstart="moveToLocation(${i})" id="board-card${i}">
   <div class="frame-119">
     <div class="card-board-user-story">
       <span class="card-board-user-story-text">${task.category}</span>
@@ -137,20 +137,66 @@ tasks.forEach(function(task, i) {
     </div>
   </div>
 </div>`;
-});        
-     
+  });
+
+  setAmounts();
 }
 
-function openAddTaskContainer(){
-  document.getElementById("board-background").classList.remove('d-none');
+function openAddTaskContainer() {
+  document.getElementById("board-background").classList.remove("d-none");
   document.body.classList.add("background-fixed");
 }
-function closeAddTaskContainer(){
-  document.getElementById("board-background").classList.add('d-none');
+function closeAddTaskContainer() {
+  document.getElementById("board-background").classList.add("d-none");
   document.body.classList.remove("background-fixed");
 }
 
-function dontClose(){
+function dontClose() {
   event.stopPropagation();
   console.log(event);
+}
+
+function setAmounts() {
+  amountOfTasks = tasks.length;
+  tasksTodo = 0;
+  tasksDone = 0;
+  tasksInProgress = 0;
+  tasksAwaitFeedback = 0;
+  tasksUrgent = 0;
+
+  for (let i = 0; i < tasks.length; i++) {
+    switch (tasks[i].categoryboard) {
+      case "todo":
+        tasksTodo += 1;
+        break;
+      case "in-progress":
+        tasksInProgress += 1;
+        break;
+      case "await-feedback":
+        tasksAwaitFeedback += 1;
+        break;
+      case "done":
+        tasksDone += 1;
+        break;
+      default:
+        break;
+    }
+    if (tasks[i].prio == "urgent") tasksUrgent += 1;
+  }
+  noTasksToDo();
+}
+
+function noTasksToDo() {
+  if (tasksTodo == 0)
+    document.getElementById("todo").innerHTML = noTasksToDoHtml();
+  if (tasksInProgress == 0)
+    document.getElementById("in-progress").innerHTML = noTasksToDoHtml();
+  if (tasksAwaitFeedback == 0)
+    document.getElementById("await-feedback").innerHTML = noTasksToDoHtml();
+  if (tasksDone == 0)
+    document.getElementById("done").innerHTML = noTasksToDoHtml();
+}
+
+function noTasksToDoHtml() {
+  return '<div class="card-board-empty">No tasks To do</div>';
 }
