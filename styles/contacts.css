@@ -106,8 +106,8 @@ Die Oberen sind zwecks zum Testen und vor zeigen
     background-color: var(--white);
     overflow-y: scroll;
     overflow-x: hidden;
-    z-index: 50;
-    height: 90vh;
+    top: 96px;
+    bottom: 0;
   }
 
 .seperator_contacts{
@@ -446,10 +446,6 @@ Die Oberen sind zwecks zum Testen und vor zeigen
   background-color:var(--version-2main-color);
  }
 
- .active_contact:hover .div{
-  /* color: #000 !important; */
- }
-
  .contact-name:hover .div{
   color: #000000;
  }
@@ -646,9 +642,12 @@ text-align: left;
 
   .frame-97{
     z-index: 0;
-    height: unset;
     padding: 0px;
     width: 100%;
+    top: 80px;
+    bottom: 80px;
+    justify-content: center;
+    display: flex;
   }
 
   .frame-97 .contact-list {
@@ -669,7 +668,6 @@ text-align: left;
     height: 0;
   }
 
-
   .frame-97 .primary-contact {
     width: 56px;
     height: 56px;
@@ -677,7 +675,7 @@ text-align: left;
     border-radius: 46px;
     right: 12px;
     bottom: 100px;
-}
+  }
 
 
 }

@@ -99,6 +99,7 @@ async function includeHTMLInit(input) {
 
 function renderAddTaskHTML() {
   return /*html*/ `
+    <div class="addTask_helper">
     <div class="frame-40">
       <h1>Add Task</h1>
     </div>
@@ -180,8 +181,9 @@ function renderAddTaskHTML() {
         </div>
       </div>
     </div>
-    <p class="disclaimer" for="disclaimer"><span>*</span>This field is required</p>
+    </div>
     <div class="frame-27">
+      <p class="disclaimer" for="disclaimer"><span>*</span>This field is required</p>
       <button class="secondary">
         <span>Clear</span>
         <img src="./../img/iconoir-cancel.svg" alt="cancel-icon">
