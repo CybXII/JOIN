@@ -11,6 +11,10 @@ body{
   margin: 64px;
 }
 
+.header_logo{
+  display: none;
+}
+
 .frame-3{
   left: 0;
   top: 0;
@@ -1022,12 +1026,11 @@ input:focus-visible {
 .privacy-check-su-text {
   color: var(--icon, #a8a8a8);
 
-  /* Version 2/body */
   font-family: Inter;
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
-  line-height: 120%; /* 19.2px */
+  line-height: 120%; 
 }
 
 .privacy-check-su-text-underlined {
@@ -1038,12 +1041,11 @@ input:focus-visible {
 
 .privacy-check-su-text-underlined-text {
   color: var(--Ligth-blue, #29abe2);
-  /* Version 2/body */
   font-family: Inter;
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
-  line-height: 120%; /* 19.2px */
+  line-height: 120%;
   cursor: pointer;
 }
 
@@ -1070,7 +1072,7 @@ input:focus-visible {
   font-size: 21px;
   font-style: normal;
   font-weight: 700;
-  line-height: 120%; /* 25.2px */
+  line-height: 120%;
 }
 
 .register-comp-bg {
@@ -1102,12 +1104,11 @@ input:focus-visible {
 
 .register-comp-text {
   color: #fff;
-  /* Version 2/t6 */
   font-family: Inter;
   font-size: 20px;
   font-style: normal;
   font-weight: 400;
-  line-height: 120%; /* 24px */
+  line-height: 120%;
 }
 
 @keyframes moveUpToCenter {
@@ -1124,7 +1125,6 @@ a {
 }
 
 .checkbox {
-  /* border: 1px solid red; */
   appearance: none;
   position: relative;
   width: 24px;
@@ -1138,16 +1138,18 @@ a {
 }
 
 
-/* .checkbox_active {
-  position: relative;
-  width: 24px;
-  height: 24px;
-  background-image: url("../img/checkbox-checked.svg");
-  cursor: pointer;
-} */
 
 
 @media (max-width: 900px) {
+
+  .header_logo{
+    display: block;
+    background-image: url(../img/join-favicon.svg);
+    background-size: cover;
+    width: 32px;
+    height: 39px;
+  }
+
   .footer{
     display: none;
   }
@@ -1285,7 +1287,7 @@ a {
   
   .header{
     padding: 00;
-    justify-content: flex-end;
+    justify-content: space-between;
     padding: 0 16px;
   }
 

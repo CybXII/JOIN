@@ -675,20 +675,6 @@
       padding: 25px;
       box-sizing: none;
     }   
-    
-    .header{
-      padding: 00;
-      justify-content: flex-end;
-      padding: 0 16px;
-    }
-
-    .kpmt-header{
-      display: none;
-    }
-
-    .logo_sidebar{
-      display: none;
-    }
 
     .frame-67{
       width: 108px;
