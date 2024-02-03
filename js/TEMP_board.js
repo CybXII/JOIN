@@ -88,12 +88,28 @@ function allowDrop(ev) {
   ev.preventDefault();
 }
 
-function removeHighlight(id) {
-  document.getElementById(id).classList.remove("drag-area-highlight");
+function removeHighlight() {
+  document.getElementById("drag-done").classList.add("d-none");
+  document.getElementById("drag-todo").classList.add("d-none");
+  document.getElementById("drag-in-progress").classList.add("d-none");
+  document.getElementById("drag-await-feedback").classList.add("d-none");
+    document.getElementById("no-task-in-progress").classList.remove("d-none");
+    document.getElementById("no-task-done").classList.remove("d-none");
+    document.getElementById("no-task-await-feedback").classList.remove("d-none");
+    document.getElementById("no-task-todo").classList.remove("d-none");
+  console.log("verlassen");
 }
 
-function highlight(id) {
-  document.getElementById(id).classList.add("drag-area-highlight");
+function highlight() {
+  console.log();
+  document.getElementById("drag-done").classList.remove("d-none");
+  document.getElementById("drag-todo").classList.remove("d-none");
+  document.getElementById("drag-in-progress").classList.remove("d-none");
+  document.getElementById("drag-await-feedback").classList.remove("d-none");
+  document.getElementById("no-task-in-progress").classList.add("d-none");
+  document.getElementById("no-task-done").classList.add("d-none");
+  document.getElementById("no-task-await-feedback").classList.add("d-none");
+  document.getElementById("no-task-todo").classList.add("d-none");
 }
 
 function moveTo(category) {
@@ -188,15 +204,15 @@ function setAmounts() {
 
 function noTasksToDo() {
   if (tasksTodo == 0)
-    document.getElementById("todo").innerHTML = noTasksToDoHtml();
+    document.getElementById("todo").innerHTML = noTasksToDoHtml('todo');
   if (tasksInProgress == 0)
-    document.getElementById("in-progress").innerHTML = noTasksToDoHtml();
+    document.getElementById("in-progress").innerHTML = noTasksToDoHtml('in-progress');
   if (tasksAwaitFeedback == 0)
-    document.getElementById("await-feedback").innerHTML = noTasksToDoHtml();
+    document.getElementById("await-feedback").innerHTML = noTasksToDoHtml('await-feedback');
   if (tasksDone == 0)
-    document.getElementById("done").innerHTML = noTasksToDoHtml();
+    document.getElementById("done").innerHTML = noTasksToDoHtml('done');
 }
 
-function noTasksToDoHtml() {
-  return '<div class="card-board-empty">No tasks To do</div>';
+function noTasksToDoHtml(id) {
+  return `<div class="card-board-empty" id='no-task-${id}'>No tasks To do</div>`;
 }

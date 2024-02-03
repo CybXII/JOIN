@@ -51,8 +51,8 @@
           </div>
         </div>
         <div class="board-dist">
-          <div class="frame-136" ondrop="moveTo('todo')" ondragleave="removeHighlight('todo')"
-            ondragover="allowDrop(event); highlight('todo')">
+          <div class="frame-136" ondrop="moveTo('todo'), removeHighlight()"
+            ondragover="allowDrop(event)" ondrag="highlight()">
             <div class="category-board">
               <span class="board-sections-headline">To do</span>
               <div class="plus-board-container">
@@ -62,19 +62,23 @@
             <div id="todo">
               <!-- <div class="card-board-empty">No tasks To do</div> -->
             </div>
+            <div class="card-board-hover d-none" id="drag-todo">TEST</div>
           </div>
-          <div class="frame-136" ondrop="moveTo('in-progress')" ondragleave="removeHighlight('in-progress')"
-            ondragover="allowDrop(event); highlight('in-progress')">
+          <div class="frame-136" ondrop="moveTo('in-progress'), removeHighlight()"
+            ondragover="allowDrop(event)" ondrag="highlight()">
             <div class="category-board">
               <span class="board-sections-headline">In Progress</span>
               <div class="plus-board-container">
                 <img src="../img/plus-board.svg" />
               </div>
             </div>
-            <div id="in-progress"></div>
+            <div id="in-progress">
+            </div>
+            <div class="card-board-hover d-none" id="drag-in-progress">TEST</div>
           </div>
-          <div class="frame-136" ondrop="moveTo('await-feedback')" ondragleave="removeHighlight('await-feedback')"
-            ondragover="allowDrop(event); highlight('await-feedback')">
+
+          <div class="frame-136" ondrop="moveTo('await-feedback'), removeHighlight()"
+            ondragover="allowDrop(event)" ondrag="highlight()">
             <div class="category-board">
               <span class="board-sections-headline">Await Feedback</span>
               <div class="plus-board-container">
@@ -83,16 +87,17 @@
             </div>
             <div id="await-feedback">
             </div>
-            <div class="card-board-hover">TEST</div>
+            <div class="card-board-hover d-none" id="drag-await-feedback">TEST</div>
           </div>
-          <div class="frame-136" ondrop="moveTo('done')" ondragleave="removeHighlight('done')"
-            ondragover="allowDrop(event); highlight('done')">
+          <div class="frame-136" ondrop="moveTo('done'), removeHighlight()"
+            ondragover="allowDrop(event)" ondrag="highlight()">
             <div class="category-board">
               <span class="board-sections-headline">Done</span>
             </div>
             <div id="done">
               <!-- <div class="card-board-empty">No tasks To do</div> -->
             </div>
+            <div class="card-board-hover d-none" id="drag-done">TEST</div>
           </div>
         </div>
       </div>
