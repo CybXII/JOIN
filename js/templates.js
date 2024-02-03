@@ -321,10 +321,15 @@ function renderContactsHTML() {
 
 function renderSignUpHTML() {
   return /*html*/ `
-        <div class="frame-159-su">
-  <span class="sign-up-text">Sign up</span>
-  <img src="./img/vector-5.svg" alt="" />
-</div>
+  <div class="frame-159-su">
+    <img
+    src="./img/arrow-left-line.svg"
+    class="arrow-left-line"
+    onclick="renderLogin()"
+    />
+    <span class="sign-up-text">Sign up</span>
+    <img src="./img/vector-5.svg" alt="" />
+  </div>
   <div class="frame-212-su">
     <div class="frame-160-su">
       <div class="frame-155-su">
@@ -432,11 +437,7 @@ function renderSignUpHTML() {
   <button class="button-wo-icon-su">
     <span class="button-wo-icon-su-text">Sign up</span>
   </button>
-<img
-  src="./img/arrow-left-line.svg"
-  class="arrow-left-line"
-  onclick="renderLogin()"
-/>
+
 
 `;
 }
