@@ -4,8 +4,12 @@ function move() {
   setTimeout(() => {
     document.getElementById("logo_container").classList.remove("background");
     document.getElementById("join_logo").classList.remove("background");
+    document.getElementById("join_logo2").classList.remove("background");
     document.getElementById("logo_container").classList.remove("big_size");
-  }, 500);
+    document.getElementById("join_logo2").classList.remove("join_logo_start_responsiv");
+    document.getElementById("join_logo2").classList.add("join_logo_start_responsiv2");  
+  }, 1000);
+
 }
 
 // Register & Login
