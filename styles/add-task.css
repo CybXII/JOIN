@@ -716,14 +716,16 @@ textarea{
     .frame-18 {
         width: 396px;
     }
-
-    .frame-27{
+    
+    .frame-27 {
         position: fixed;
         top: unset;
         left: unset;
         bottom: 96px;
         width: 100%;
         justify-content: space-between;
+        box-sizing: border-box;
+        padding: 0 16px;
     }
 
     .secondary{
