@@ -379,3 +379,94 @@
   height: 100%;
   overflow: hidden;
 }
+
+
+@media (max-width: 900px) {
+  body{
+    overflow: hidden;
+  }
+
+  .frame-191{
+    height: unset;
+    margin-bottom: 40px;
+    padding: 0;
+    flex-direction: column;
+    width: unset;
+  }
+
+  .frame-192{
+    flex-direction: column;
+    width: unset;
+    height: unset;
+    gap: 40px;
+  }
+
+  .frame-123-btn{
+    position: absolute;
+    top: 16px;
+    padding: 8px;
+    box-sizing: border-box;
+    width: 40px;
+    height: 40px;
+  }
+
+  .frame-123-btn span{
+    display: none;
+  }
+
+  .board-dist{
+    flex-direction: column;
+    height: 800px;
+    padding: 0 16px 16px 16px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    box-sizing: border-box;
+    height: 716px;
+    width: 428px;
+  }
+
+  .card-board{
+    width:  252px;
+  }
+
+  .frame-136{
+    width: 396px;
+    box-sizing: border-box;
+    height: fit-content;
+  }
+
+
+
+  .container{
+    overflow: hidden;
+  }
+
+  .content-container{
+    overflow: hidden;
+  }
+
+  .board-dist::-webkit-scrollbar {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    z-index: 20;
+}
+    
+  .board-dist::-webkit-scrollbar-track {
+    border-radius: 0.5vw;
+    width: 1px;  
+    height: 53px;
+    z-index: 20;
+  }
+  
+  .board-dist::-webkit-scrollbar-thumb {
+    background: #A8A8A8; 
+    border-radius: 5px;
+    z-index: 20;
+}
+
+.category-board{
+  width: 100%;
+}
+
+}
