@@ -606,21 +606,25 @@ textarea{
         overflow: hidden;
     }
 
-    .addTask_helper::-webkit-scrollbar {
+    .frame-40{
+        padding: 0 16px;
+    }
+    
+    .input-fields::-webkit-scrollbar {
         position: absolute;
         width: 10px;
         height: 10px;
         z-index: 20;
     }
         
-    .addTask_helper::-webkit-scrollbar-track {
+    .input-fields::-webkit-scrollbar-track {
         border-radius: 0.5vw;
         width: 1px;  
         height: 53px;
         z-index: 20;
       }
       
-      .addTask_helper::-webkit-scrollbar-thumb {
+      .input-fields::-webkit-scrollbar-thumb {
         background: #A8A8A8; 
         border-radius: 5px;
         z-index: 20;
@@ -634,11 +638,22 @@ textarea{
 
     .addTask_helper{
         width: 100%;
-        padding: 0 16px 80px 16px;
-        overflow-y: scroll;
         box-sizing: border-box;
-        overflow-x: hidden;
+        overflow: hidden;
+        position: fixed;
+        top: 80px;
+        bottom: 160px;
+        left: 0;
+    }
 
+    .input-fields{
+        overflow-y: scroll;
+        overflow-x: hidden;
+        flex-direction: column;
+        position: fixed;
+        top: 208px;
+        bottom: 160px;  
+        padding: 0 8px 0 16px; 
     }
 
     .content-container {
@@ -719,7 +734,7 @@ textarea{
     .frame-27 {
         position: fixed;
         top: unset;
-        left: unset;
+        left: 0;
         bottom: 96px;
         width: 428px;
         justify-content: space-between;
