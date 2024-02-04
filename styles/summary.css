@@ -14,8 +14,9 @@
   }
 
   .summary_helper{
-    display: flex;
     gap: 80px;
+    box-sizing: border-box;
+    display: flex;
   }
   
   .frame-40 span {
@@ -52,16 +53,16 @@
   
   .frame-65 {
     display: flex;
-    width: 560px;
+    width: 100%;
     height: 168px;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     gap: 32px;
   }
   
   .pencil-rectangle-button-v1 {
     display: flex;
-    width: 264px;
+    min-width: 45%;
     height: 168px;
     justify-content: center;
     align-items: center;
@@ -84,10 +85,11 @@
   }
 
   .pencil-rectangle-button-v1:hover {
-    width: 284px;
+    width: 50%;
     height: 188px;
     background-color: var(--version-2main-color);
     color: #ffffff;
+    box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.815);
   }
 
   .pencil-rectangle-button-v1:hover span{
@@ -141,7 +143,7 @@
   
   .cheack-reactangle-button-v1 {
     display: flex;
-    width: 264px;
+    min-width: 45%;
     height: 168px;
     justify-content: center;
     align-items: center;
@@ -152,10 +154,11 @@
   }
 
   .cheack-reactangle-button-v1:hover {
-    width: 284px;
+    width: 50%;
     height: 188px;
     background-color: var(--version-2main-color);
     color: #ffffff;
+    box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.815);
   }
 
   .cheack-reactangle-button-v1:hover span{
@@ -220,6 +223,7 @@
   }
   
   .urgency-summary-v1 {
+    width: 100%;
     display: flex;
     height: 168px;
     justify-content: center;
@@ -234,6 +238,8 @@
 
 .urgency-summary-v1:hover {
   background-color: var(--version-2main-color);
+  width: 105%;
+  box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.815);
 }
 
 .urgency-summary-v1:hover p{
@@ -329,30 +335,31 @@
   
   .frame-64 {
     display: flex;
-    width: 560px;
+    width: 100%;
     height: 170px;
     padding: 1px 0px;
-    justify-content: center;
+    justify-content: space-between;
     align-items: flex-start;
     gap: 28px;
+    box-sizing: border-box;
   }
   
   .square-button-v1 {
     display: flex;
-    width: 168px;
+    min-width: 30%;
     height: 168px;
     justify-content: center;
     align-items: center;
-    gap: 13px;
     border-radius: 30px;
     background-color: #fff;
     box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
   }
 
   .square-button-v1:hover {
-    width: 168px;
-    height: 168px;
+    height: 175px;
     background-color: var(--version-2main-color);
+    box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.815);
   }
   .square-button-v1:hover p{
     color: #ffffff;
@@ -561,7 +568,7 @@
       display: flex;
       gap: 30px;
       padding: 0;
-      box-sizing: border-box;
+      box-sizing: border-box !important;
     }
 
     .summary_helper{
@@ -585,15 +592,19 @@
       box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.1);
       box-sizing: border-box;
       margin-bottom: 18px;
+      width: 100%;
+      cursor: pointer;
+      
     }
 
     .urgency-summary-v1:hover {
       height: 110px;
+      box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.815);
     }
 
     .cheack-reactangle-button-v1{
       height: 110px;
-      width: 186px;
+      width: 40%;
       padding: 38px 19px 38px 19px;
       gap: 10px;
       box-sizing: border-box;
@@ -618,6 +629,7 @@
       width: 186px;
       padding: 38px 19px 38px 19px;
       gap: 10px;
+      box-sizing: border-box;
     }
 
     .todo_picture{
