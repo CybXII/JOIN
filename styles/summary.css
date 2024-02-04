@@ -229,11 +229,11 @@
     border-radius: 30px;
     background-color: #fff;
     box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
   }
 
 .urgency-summary-v1:hover {
   background-color: var(--version-2main-color);
-  height: 184px;
 }
 
 .urgency-summary-v1:hover p{
@@ -655,10 +655,6 @@
       margin-bottom: 28px
     }
 
-    .frame-64{
-      height: 116px;
-      justify-content: space-between;
-    }
     
     .square-button-v1{
       width: 116px;
@@ -798,7 +794,10 @@
     }
 
     .frame-64{
+      height: 116px;
+      justify-content: space-between;
       width: 396px;
+      gap: 0;
     }
     
     .frame-61{
