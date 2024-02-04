@@ -562,10 +562,6 @@ input:focus-visible {
   margin: 96px 0 0 232px;
 }
 
-/* .container {
-  padding: 80px 20px 0 80px;
-} */
-
 .header {
   /* border: 1px solid red; */
   box-sizing: border-box;
@@ -615,7 +611,7 @@ input:focus-visible {
 
 .help_icon:hover {
   width: 32px;
-  height: 32 px;
+  height: 32px;
 }
 
 .navigation {

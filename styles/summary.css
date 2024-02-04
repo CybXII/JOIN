@@ -1,5 +1,9 @@
 /* SUMMARY TEST */
 
+body{
+  overflow: hidden;
+}
+
 .container {
   padding: 80px 20px 0 80px;
 }
@@ -433,6 +437,10 @@
     display: none;
   }
 
+  .frame-69_responsiv{
+    display: none;
+  }
+
   
 
   @media (max-width: 1340px) {
@@ -447,32 +455,30 @@
     }
   }
 
-  @media (max-width: 1340px) {
-    .frame-40{
-      margin-bottom: 40px ;
-    }
-    .summary_helper{
-      flex-direction: column-reverse;
-      gap: 12px;
-    }
-    .frame-69{
-      flex-direction: row;
-      justify-content: flex-start;
-    }
-    .header-text{
-      width: fit-content;
-    }
-    .footer-text{
-      width: fit-content;
-    }
-
+  @media (max-width: 1110px) {
+  .frame-69{
+    display: none;
   }
+  .frame-69_responsiv{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    transform: translateY(0px);
+    transition: 500ms;
+    z-index: 0;
+    height: 100%;
+    width: 100%;
+  }
+
+  .frame-69_responsiv .header-text{
+    transition: 500ms;
+}
+  .frame-69_responsiv .footer-text{
+    transition: 500ms;
+}
+}
   
   @media (max-width: 900px) {
-
-    .frame-69{
-      display: none;
-    }
 
     .frame-40{
       gap: 16px;
