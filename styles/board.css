@@ -165,6 +165,7 @@
   box-shadow: 0px 0px 10px 3px rgba(0, 0, 0, 0.08);
   cursor: grab;
 }
+
 .card-board-empty {
   margin-top: 16px;
   display: flex;
@@ -177,8 +178,6 @@
   border-radius: 10px;
   border: 1px dashed var(--icon, #a8a8a8);
   background: #e7e7e7;
-
-  /* nuevo */
   box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.16);
 }
 
@@ -398,6 +397,14 @@
   box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.16);
 }
 
+.rotate-card {
+  transform: rotate(5deg);
+}
+
+.mouseDown{
+ cursor: progress;
+}
+
 @media (max-width: 900px) {
   body {
     overflow: hidden;
@@ -484,8 +491,4 @@
   .category-board {
     width: 100%;
   }
-}
-
-.rotate-card{
-  transform: rotate(5deg);
 }
