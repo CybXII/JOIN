@@ -1,7 +1,6 @@
 let currentDraggedElement;
 let currentCardDragged;
 
-
 let tasks = [
   {
     categoryboard: "todo",
@@ -14,7 +13,7 @@ let tasks = [
     assignedTo: ["AB", "CD", "EF"],
   },
   {
-    categoryboard: "todo",
+    categoryboard: "in-progress",
     category: "in progress Task",
     title: "Test Technical Task Title",
     description: "Test Technical Task Description",
@@ -24,7 +23,7 @@ let tasks = [
     assignedTo: ["GH", "IJ", "KL"],
   },
   {
-    categoryboard: "todo",
+    categoryboard: "await-feedback",
     category: "feedback Task",
     title: "Test Technical Task Title",
     description: "Test Technical Task Description",
@@ -184,7 +183,9 @@ function setAmounts() {
     }
     if (tasks[i].prio == "urgent") tasksUrgent += 1;
   }
-  noTasksToDo();
+  if (window.location.pathname == "/board.html") {
+    noTasksToDo();
+  }
 }
 
 function noTasksToDo() {
@@ -204,20 +205,17 @@ function noTasksToDoHtml(id) {
   return `<div class="card-board-empty" id='no-task-${id}'>No tasks To do</div>`;
 }
 
-
-function logEvent(){
-  console.log('LOGEVENT')
+function logEvent() {
+  console.log("LOGEVENT");
 }
 
-function rotateCardStart(i){
+function rotateCardStart(i) {
   console.log(i + " aufgenommen");
   currentCardDragged = i;
   document.getElementById(`board-card${i}`).classList.add("rotate-card");
 }
 
-
-
-function rotateCardEnd(){
+function rotateCardEnd() {
   let card = currentCardDragged;
   console.log(card + " losgelassen");
   document.getElementById(`board-card${card}`).classList.remove("rotate-card");
