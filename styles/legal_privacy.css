@@ -16,3 +16,13 @@ h1{
     flex-direction: column;
     gap: 0;
 }
+
+@media (max-width: 900px) {
+
+.content-container {
+    margin-top: 48px;
+    top: -160px;
+    position: relative;
+}
+
+}
