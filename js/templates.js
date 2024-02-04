@@ -1,17 +1,8 @@
-
-// TODO: NUR DYNAMISCHEN INHALT RENDERN 
-
-
-// function renderSummaryHTML() {
-//   return /*html*/ `
- 
-//   `;
-// }
+// TODO: NUR DYNAMISCHEN INHALT RENDERN
 
 async function includeHTMLInit(input) {
   let functionName = `render${input}`;
   await includeHTML();
-  
 
   // Überprüfen, ob die Funktion im globalen Kontext vorhanden ist
   if (typeof window[functionName] === "function") {
@@ -432,7 +423,7 @@ function renderLoginHTML() {
         </div>`;
 }
 
-function renderContactInfo(contactName){
+function renderContactInfo(contactName) {
   return /*html*/ `  
   <div class="frame-105">
     <div class="frame-79">
@@ -464,5 +455,4 @@ function renderContactInfo(contactName){
   </div>
 
 `;
-
 }
