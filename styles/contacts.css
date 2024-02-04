@@ -152,6 +152,7 @@ Die Oberen sind zwecks zum Testen und vor zeigen
   background-color: #2a3647;
   border-radius: 10px;
   border: 1px solid;
+  cursor: pointer;
 }
 
 .frame-97 .text-wrapper {

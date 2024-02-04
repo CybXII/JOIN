@@ -101,7 +101,7 @@ function updateHTML() {
   tasks.forEach(function (task, i) {
     document.getElementById(
       task.categoryboard
-    ).innerHTML += `<div class="card-board" draggable="true" ondragstart="moveToLocation(${i})" id="board-card${i}" onmousedown="rotateCardStart(${i})" onmouseup="rotateCardEnd()">
+    ).innerHTML += `<div class="card-board" draggable="true" ondragstart="moveToLocation(${i}),highlight()" id="board-card${i}" onmousedown="rotateCardStart(${i})" onmouseup="rotateCardEnd()">
   <div class="frame-119">
     <div class="card-board-user-story">
       <span class="card-board-user-story-text">${task.category}</span>

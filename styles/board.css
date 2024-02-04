@@ -399,10 +399,7 @@
 
 .rotate-card {
   transform: rotate(5deg);
-}
-
-.mouseDown{
- cursor: progress;
+  cursor: grabbing;
 }
 
 @media (max-width: 900px) {
