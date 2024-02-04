@@ -7,6 +7,13 @@ function registerCompleteText() {
 }
 
 function renderSummary() {
+  setAmounts();
+  document.getElementById("summ-tasks-todo").innerHTML = tasksTodo;
+  document.getElementById("summ-tasks-done").innerHTML = tasksDone;
+  document.getElementById("summ-tasks-urgent").innerHTML = tasksUrgent;
+  document.getElementById("summ-tasks-board").innerHTML = tasks.length;
+  document.getElementById("summ-tasks-progress").innerHTML = tasksInProgress;
+  document.getElementById("summ-tasks-feedback").innerHTML = tasksAwaitFeedback;
   classesSummary();
 }
 

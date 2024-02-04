@@ -11,9 +11,9 @@
     <link rel="stylesheet" href="./styles/summary.css" />
     <script src="./js/login.js"></script>
     <script src="./js/templates.js"></script>
+    <script src="./js/board.js"></script>
     <script src="./js/script.js"></script>
     <script src="./js/classesSidebar.js"></script>
-    <script src="./js/board.js"></script>
     <script src="./js/eventListener.js"></script>
     <link rel="icon" type="image" href="./img/join-favicon.svg" />
   </head>
@@ -45,7 +45,7 @@
                     <div class="todo_picture"></div>
                   </div>
                   <div class="frame-62">
-                    <span>1</span>
+                    <span id="summ-tasks-todo"></span>
                     <p>To-do</p>
                   </div>
                 </div>
@@ -54,7 +54,7 @@
                     <div class="done_picture"></div>
                   </div>
                   <div class="frame-60">
-                    <span>1</span>
+                    <span id="summ-tasks-done"></span>
                     <p>Done</p>
                   </div>
                 </div>
@@ -74,7 +74,7 @@
                     />
                   </div>
                   <div class="frame-63">
-                    <span>1</span>
+                    <span id="summ-tasks-urgent"></span>
                     <p>Urgent</p>
                   </div>
                 </div>
@@ -91,7 +91,7 @@
               <div class="frame-64">
                 <div class="square-button-v1">
                   <div class="frame-61">
-                    <span>5</span>
+                    <span id="summ-tasks-board"></span>
                     <p>
                       Tasks in<br />
                       Board
@@ -100,7 +100,7 @@
                 </div>
                 <div class="square-button-v1">
                   <div class="frame-61">
-                    <span>2</span>
+                    <span id="summ-tasks-progress"></span>
                     <p>
                       Tasks In<br />
                       Progress
@@ -109,7 +109,7 @@
                 </div>
                 <div class="square-button-v1">
                   <div class="frame-61">
-                    <span>2</span>
+                    <span id="summ-tasks-feedback"></span>
                     <p>
                       Awaiting<br />
                       Feedback
