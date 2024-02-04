@@ -1,4 +1,6 @@
 let currentDraggedElement;
+let currentCardDragged;
+
 
 let tasks = [
   {
@@ -52,7 +54,7 @@ let tasksUrgent;
 function moveToLocation(taskId) {
   currentDraggedElement = taskId;
   console.log(taskId);
-  console.log('movetolocation');
+  console.log("movetolocation");
 }
 
 function allowDrop(ev) {
@@ -64,7 +66,7 @@ function removeHighlight() {
   document.getElementById("drag-todo").classList.add("d-none");
   document.getElementById("drag-in-progress").classList.add("d-none");
   document.getElementById("drag-await-feedback").classList.add("d-none");
-  console.log('removehighlight');
+  console.log("removehighlight");
 }
 
 function highlight() {
@@ -81,14 +83,14 @@ function highlight() {
     document.getElementById("no-task-await-feedback").classList.add("d-none");
   if (tasksDone == 0)
     document.getElementById("no-task-done").classList.add("d-none");
-  console.log('highlight');
+  console.log("highlight");
 }
 
 function moveTo(category) {
   tasks[currentDraggedElement]["categoryboard"] = category;
   updateHTML();
   console.log(tasks[currentDraggedElement]["categoryboard"]);
-  console.log('moveto');
+  console.log("moveto");
 }
 
 function updateHTML() {
@@ -100,7 +102,7 @@ function updateHTML() {
   tasks.forEach(function (task, i) {
     document.getElementById(
       task.categoryboard
-    ).innerHTML += `<div class="card-board" draggable="true" ondragstart="moveToLocation(${i})" id="board-card${i}">
+    ).innerHTML += `<div class="card-board" draggable="true" ondragstart="moveToLocation(${i})" id="board-card${i}" onmousedown="rotateCardStart(${i})" onmouseup="rotateCardEnd()">
   <div class="frame-119">
     <div class="card-board-user-story">
       <span class="card-board-user-story-text">${task.category}</span>
@@ -126,8 +128,18 @@ function updateHTML() {
     </div>
   </div>
 </div>`;
+    let assigned = document.getElementById(`assigned-to${i}`);
+    for (let j = 0; j < task["assignedTo"].length; j++) {
+      const assign = task["assignedTo"][j];
+      assigned.innerHTML += `
+<div class="card-board-profile-batch">
+  <div class="group-9-board">
+    <img src="../img/ellipse-5.svg" class="ellipse-5" />
+    <div class="group-9-text">${assign}</div>
+  </div>
+</div>`;
+    }
   });
-
   setAmounts();
 }
 
@@ -190,4 +202,23 @@ function noTasksToDo() {
 
 function noTasksToDoHtml(id) {
   return `<div class="card-board-empty" id='no-task-${id}'>No tasks To do</div>`;
+}
+
+
+function logEvent(){
+  console.log('LOGEVENT')
+}
+
+function rotateCardStart(i){
+  console.log(i + " aufgenommen");
+  currentCardDragged = i;
+  document.getElementById(`board-card${i}`).classList.add("rotate-card");
+}
+
+
+
+function rotateCardEnd(){
+  let card = currentCardDragged;
+  console.log(card + " losgelassen");
+  document.getElementById(`board-card${card}`).classList.remove("rotate-card");
 }

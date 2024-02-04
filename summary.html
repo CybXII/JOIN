@@ -13,14 +13,118 @@
     <script src="./js/templates.js"></script>
     <script src="./js/script.js"></script>
     <script src="./js/classesSidebar.js"></script>
+    <script src="./js/board.js"></script>
     <script src="./js/eventListener.js"></script>
     <link rel="icon" type="image" href="./img/join-favicon.svg" />
   </head>
-  <body onload="includeHTMLInit(`Summary`)">  
-      <main w3-include-html="./templates/sidebar.html"></main>
-      <nav w3-include-html="./templates/header.html"></nav>
-      <div class="content-container">
-        <div class="container" id="content"></div>
+  <body onload="includeHTMLInit(`Summary`)">
+    <main w3-include-html="./templates/sidebar.html"></main>
+    <nav w3-include-html="./templates/header.html"></nav>
+    <div class="content-container">
+      <div class="container" id="content">
+        <div class="board_window">
+          <div class="frame-40">
+            <span>Join 360</span>
+            <img
+              class="img2"
+              src="./img/separation-blue.svg"
+              alt="separation-blue"
+            />
+            <p>Key Metrics at a Glance</p>
+            <img
+              class="img1"
+              src="./img/img1_summary.svg"
+              alt="separation-blue"
+            />
+          </div>
+          <div class="summary_helper">
+            <div class="frame-71">
+              <div class="frame-65">
+                <div class="pencil-rectangle-button-v1">
+                  <div class="frame-59">
+                    <div class="todo_picture"></div>
+                  </div>
+                  <div class="frame-62">
+                    <span>1</span>
+                    <p>To-do</p>
+                  </div>
+                </div>
+                <div class="cheack-reactangle-button-v1">
+                  <div class="frame-59">
+                    <div class="done_picture"></div>
+                  </div>
+                  <div class="frame-60">
+                    <span>1</span>
+                    <p>Done</p>
+                  </div>
+                </div>
+              </div>
+              <div class="urgency-summary-v1">
+                <div class="frame-67">
+                  <div class="frame-59">
+                    <img
+                      class="frame-59-ellipse"
+                      src="./img/ellipse-4.svg"
+                      alt="ellipse"
+                    />
+                    <img
+                      class="frame-59-prio-alta"
+                      src="./img/prio-alta.svg"
+                      alt="prio-alta"
+                    />
+                  </div>
+                  <div class="frame-63">
+                    <span>1</span>
+                    <p>Urgent</p>
+                  </div>
+                </div>
+                <img
+                  class="separation-gray"
+                  src="./img/separation-gray.svg"
+                  alt="Trennungsstrich"
+                />
+                <div class="frame-68">
+                  <span>October 16, 2022</span>
+                  <p>Upcoming Deadline</p>
+                </div>
+              </div>
+              <div class="frame-64">
+                <div class="square-button-v1">
+                  <div class="frame-61">
+                    <span>5</span>
+                    <p>
+                      Tasks in<br />
+                      Board
+                    </p>
+                  </div>
+                </div>
+                <div class="square-button-v1">
+                  <div class="frame-61">
+                    <span>2</span>
+                    <p>
+                      Tasks In<br />
+                      Progress
+                    </p>
+                  </div>
+                </div>
+                <div class="square-button-v1">
+                  <div class="frame-61">
+                    <span>2</span>
+                    <p>
+                      Awaiting<br />
+                      Feedback
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="frame-69">
+              <span class="header-text">Good morning,</span>
+              <span class="footer-text">Sofia Müller</span>
+            </div>
+          </div>
+        </div>
       </div>
+    </div>
   </body>
 </html>

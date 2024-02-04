@@ -15,7 +15,7 @@
   <script src="./js/script.js"></script>
   <script src="./js/classesSidebar.js"></script>
   <script src="./js/eventListener.js"></script>
-  <script src="./js/TEMP_board.js"></script>
+  <script src="./js/board.js"></script>
   <link rel="icon" type="image" href="./img/join-favicon.svg" />
 </head>
 
@@ -50,7 +50,7 @@
           </div>
         </div>
         <div class="board-dist">
-          <div class="frame-136" ondrop="moveTo('todo'), removeHighlight()"
+          <div class="frame-136" ondrop="moveTo('todo'), removeHighlight(), rotateCardEnd()"
             ondragover="allowDrop(event)" ondrag="highlight()">
             <div class="category-board">
               <span class="board-sections-headline">To do</span>
@@ -63,7 +63,7 @@
             </div>
             <div class="card-board-hover d-none" id="drag-todo"></div>
           </div>
-          <div class="frame-136" ondrop="moveTo('in-progress'), removeHighlight()"
+          <div class="frame-136" ondrop="moveTo('in-progress'), removeHighlight(), rotateCardEnd()"
             ondragover="allowDrop(event)" ondrag="highlight()">
             <div class="category-board">
               <span class="board-sections-headline">In Progress</span>
@@ -76,7 +76,7 @@
             <div class="card-board-hover d-none" id="drag-in-progress"></div>
           </div>
 
-          <div class="frame-136" ondrop="moveTo('await-feedback'), removeHighlight()"
+          <div class="frame-136" ondrop="moveTo('await-feedback'), removeHighlight(), rotateCardEnd()"
             ondragover="allowDrop(event)" ondrag="highlight()">
             <div class="category-board">
               <span class="board-sections-headline">Await Feedback</span>
@@ -88,7 +88,7 @@
             </div>
             <div class="card-board-hover d-none" id="drag-await-feedback"></div>
           </div>
-          <div class="frame-136" ondrop="moveTo('done'), removeHighlight()"
+          <div class="frame-136" ondrop="moveTo('done'), removeHighlight(), rotateCardEnd()"
             ondragover="allowDrop(event)" ondrag="highlight()">
             <div class="category-board">
               <span class="board-sections-headline">Done</span>

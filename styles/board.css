@@ -485,3 +485,7 @@
     width: 100%;
   }
 }
+
+.rotate-card{
+  transform: rotate(5deg);
+}

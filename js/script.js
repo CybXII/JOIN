@@ -7,7 +7,6 @@ function registerCompleteText() {
 }
 
 function renderSummary() {
-  document.getElementById("content").innerHTML = renderSummaryHTML();
   classesSummary();
 }
 
