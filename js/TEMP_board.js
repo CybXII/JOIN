@@ -49,39 +49,10 @@ let tasksInProgress;
 let tasksAwaitFeedback;
 let tasksUrgent;
 
-function renderTasksHTML(i) {
-  return /*html*/ `
-<div class="card-board" draggable="true" ondragstart="moveToLocation(${i})" id="board-card${i}">
-  <div class="frame-119">
-    <div class="card-board-user-story">
-      <span class="card-board-user-story-text">${tasks[i]["category"]}</span>
-    </div>
-    <div class="frame-114">
-      <span class="card-board-title">${tasks[i]["title"]}</span>
-      <span class="card-board-content">${tasks[i]["description"]}</span>
-    </div>
-    <div class="card-board-progress">
-      <div class="card-board-progress-bar">
-        <div class="card-board-progress-bar-filler"></div>
-      </div>
-      <span class="card-board-count-progress">
-        1/2 Subtasks
-      </span>
-    </div>
-    <div class="frame-139">
-      <div class="frame-217" id="assigned-to${i}">
-      </div>
-      <div class="card-board-priority">
-        <img src="../img/prio-baja-board.svg" class="card-board-priority-img" />
-      </div>
-    </div>
-  </div>
-</div>`;
-}
-
 function moveToLocation(taskId) {
   currentDraggedElement = taskId;
   console.log(taskId);
+  console.log('movetolocation');
 }
 
 function allowDrop(ev) {
@@ -93,29 +64,31 @@ function removeHighlight() {
   document.getElementById("drag-todo").classList.add("d-none");
   document.getElementById("drag-in-progress").classList.add("d-none");
   document.getElementById("drag-await-feedback").classList.add("d-none");
-    document.getElementById("no-task-in-progress").classList.remove("d-none");
-    document.getElementById("no-task-done").classList.remove("d-none");
-    document.getElementById("no-task-await-feedback").classList.remove("d-none");
-    document.getElementById("no-task-todo").classList.remove("d-none");
-  console.log("verlassen");
+  console.log('removehighlight');
 }
 
 function highlight() {
-  console.log();
   document.getElementById("drag-done").classList.remove("d-none");
   document.getElementById("drag-todo").classList.remove("d-none");
   document.getElementById("drag-in-progress").classList.remove("d-none");
   document.getElementById("drag-await-feedback").classList.remove("d-none");
-  document.getElementById("no-task-in-progress").classList.add("d-none");
-  document.getElementById("no-task-done").classList.add("d-none");
-  document.getElementById("no-task-await-feedback").classList.add("d-none");
-  document.getElementById("no-task-todo").classList.add("d-none");
+
+  if (tasksTodo == 0)
+    document.getElementById("no-task-todo").classList.add("d-none");
+  if (tasksInProgress == 0)
+    document.getElementById("no-task-in-progress").classList.add("d-none");
+  if (tasksAwaitFeedback == 0)
+    document.getElementById("no-task-await-feedback").classList.add("d-none");
+  if (tasksDone == 0)
+    document.getElementById("no-task-done").classList.add("d-none");
+  console.log('highlight');
 }
 
 function moveTo(category) {
   tasks[currentDraggedElement]["categoryboard"] = category;
   updateHTML();
   console.log(tasks[currentDraggedElement]["categoryboard"]);
+  console.log('moveto');
 }
 
 function updateHTML() {
@@ -204,13 +177,15 @@ function setAmounts() {
 
 function noTasksToDo() {
   if (tasksTodo == 0)
-    document.getElementById("todo").innerHTML = noTasksToDoHtml('todo');
+    document.getElementById("todo").innerHTML = noTasksToDoHtml("todo");
   if (tasksInProgress == 0)
-    document.getElementById("in-progress").innerHTML = noTasksToDoHtml('in-progress');
+    document.getElementById("in-progress").innerHTML =
+      noTasksToDoHtml("in-progress");
   if (tasksAwaitFeedback == 0)
-    document.getElementById("await-feedback").innerHTML = noTasksToDoHtml('await-feedback');
+    document.getElementById("await-feedback").innerHTML =
+      noTasksToDoHtml("await-feedback");
   if (tasksDone == 0)
-    document.getElementById("done").innerHTML = noTasksToDoHtml('done');
+    document.getElementById("done").innerHTML = noTasksToDoHtml("done");
 }
 
 function noTasksToDoHtml(id) {

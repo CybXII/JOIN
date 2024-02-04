@@ -163,6 +163,7 @@
   border-radius: 24px;
   background: var(--white, #fff);
   box-shadow: 0px 0px 10px 3px rgba(0, 0, 0, 0.08);
+  cursor: grab;
 }
 .card-board-empty {
   margin-top: 16px;
@@ -393,7 +394,7 @@
   align-self: stretch;
   border-radius: 10px;
   border: 1px dashed var(--icon, #a8a8a8);
-  background: #e7e7e7;
+  background: #e7e7e700;
   box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.16);
 }
 
@@ -443,6 +444,7 @@
 
   .card-board {
     width: 252px;
+    cursor: pointer;
   }
 
   .frame-136 {
