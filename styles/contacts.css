@@ -217,6 +217,7 @@ Die Oberen sind zwecks zum Testen und vor zeigen
   flex: 0 0 auto;
   /* background-color: #ffffff; */
   border-radius: 10px;
+  cursor: pointer;
 }
 
 .frame-97 .profile-badge {
@@ -437,14 +438,23 @@ Die Oberen sind zwecks zum Testen und vor zeigen
 }
 
 
+.active_contact{
+    display: flex;
+    width: 352px;
+    align-items: flex-start;
+    gap: 35px;
+    padding: 15px 24px;
+    position: relative;
+    flex: 0 0 auto;
+    border-radius: 10px;
+    background-color:var(--version-2main-color) !important;
+    color: #ffffff !important;
+    cursor: pointer;
+}
+
 .active_contact .div{
   color: #ffffff;
 }
-
-
-.active_contact {
-  background-color:var(--version-2main-color);
- }
 
  .contact-name:hover .div{
   color: #000000;

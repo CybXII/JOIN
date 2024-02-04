@@ -168,11 +168,13 @@ function addContactListeners() {
       // Entfernen Sie die 'active_contact'-Klasse von allen Elementen
       contactNames.forEach(function (c) {
         c.classList.remove('active_contact');
+        c.classList.add('contact-name');
+
       });
 
       // Fügen Sie dann die 'active_contact'-Klasse nur zum angeklickten Element hinzu
       contact.classList.add('active_contact');
-
+      contact.classList.remove('contact-name');
       // Zeigen Sie den Inhalt von .div2 .div an
       var nameContainer = contact.querySelector('.div-2 .div');
       var contactName = nameContainer.textContent.trim();
