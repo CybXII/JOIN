@@ -506,4 +506,24 @@
   .category-board {
     width: 100%;
   }
+
+  .categorys::-webkit-scrollbar {
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      z-index: 20;
+    }
+  
+    .categorys::-webkit-scrollbar-track {
+      border-radius: 0.5vw;
+      width: 1px;
+      height: 53px;
+      z-index: 20;
+    }
+  
+    .categorys::-webkit-scrollbar-thumb {
+      background: #a8a8a8;
+      border-radius: 5px;
+      z-index: 20;
+    }
 }
