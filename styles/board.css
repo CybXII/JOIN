@@ -410,25 +410,35 @@
   .frame-191 {
     height: unset;
     margin-bottom: 40px;
-    padding: 0;
+    padding: 0 16px;
     flex-direction: column;
     width: unset;
   }
 
   .frame-192 {
     flex-direction: column;
-    width: unset;
     height: unset;
     gap: 40px;
+    width: 100%;
   }
 
   .frame-123-btn {
     position: absolute;
-    top: 16px;
+    top: 60px;
+    right: 16px;
     padding: 8px;
     box-sizing: border-box;
     width: 40px;
     height: 40px;
+  }
+
+  .frame-123 {
+    display: block;
+}
+
+  .frame-123-inp {
+    width: 100%;
+    box-sizing: border-box;
   }
 
   .frame-123-btn span {
@@ -436,14 +446,22 @@
   }
 
   .board-dist {
+    position: fixed;
+    top: 312px;
+    bottom: 80px;
     flex-direction: column;
-    height: 800px;
     padding: 0 16px 16px 16px;
     overflow-y: scroll;
     overflow-x: hidden;
     box-sizing: border-box;
-    height: 716px;
-    width: 428px;
+    width: 100%;
+  }
+
+  .categorys{
+    display: flex;
+    gap: 12px;
+    overflow-x: auto;
+    box-sizing: border-box;
   }
 
   .card-board {
@@ -452,7 +470,7 @@
   }
 
   .frame-136 {
-    width: 396px;
+    width: 100%;
     box-sizing: border-box;
     height: fit-content;
   }

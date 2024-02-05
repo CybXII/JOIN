@@ -464,14 +464,26 @@ input:focus-visible {
 }
 
 .log-in .text-wrapper-6:hover {
-  font-family: Inter;
-  font-size: 16px;
-  font-weight: 700;
-  line-height: 19px;
-  letter-spacing: 0em;
-  text-align: left;
-  color: var(--ligth-blue);
+  position: absolute;
+  top: 74px;
+  right: 16px;
+  padding: 8px;
+  box-sizing: border-box;
+  width: 40px;
+  height: 40px;
 }
+
+.scroll_container{
+    position: fixed;
+    top: 80px;
+    bottom: 0;
+    right: 0;
+    padding-top: 42px;
+    overflow-x: auto;
+    /* width: 100%; */
+    left: 232px;
+}
+
 
 .log-in .div-wrapper {
   /* border: 1px solid red; */
@@ -1148,7 +1160,10 @@ a {
   }
 
   .content-container{
-  margin-top: 48px;
+    position: fixed;
+    top: 80px;
+    bottom: 80px;
+    width: 100%;
   }
 
   .frame-10{
@@ -1184,6 +1199,10 @@ a {
   .container{
     margin: 0;
     padding: 0;
+    position: fixed;
+    top: 80px;
+    bottom: 80px;
+    width: 100%;
   }
 
   .summary_helper{
@@ -1289,10 +1308,10 @@ a {
 
   main{
     height: 80px;
-    /* position: fixed;
+    position: fixed;
     bottom: 0;
     left: 0;
-    right: 0; */
+    right: 0;
   }
 
   body{
@@ -1308,5 +1327,10 @@ a {
     top: unset;
     bottom: 0;
   }
+
+  .scroll_container{
+    bottom: 80px;
+    left: 0px;
+}
 
 }
