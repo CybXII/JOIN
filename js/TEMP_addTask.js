@@ -1,6 +1,7 @@
 
 // Funktion, die das Mindest- und Standarddatum setzt
 function configureDatePicker() {
+
     // Funktion 1: Setzt das Mindesdatum auf das heutige Datum
     function setMinDate() {
         var today = new Date();

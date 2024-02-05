@@ -23,9 +23,9 @@ function renderAddTaskHTML() {
         <div class="title-v1">
           <label for="title">Title<span>*</span></label>
           <div class="frame-203">
-            <div class="frame-14">
+            <form class="frame-14">
               <input class="input-title" placeholder="Enter a title" type="text" name="title" id="title" required>
-            </div>
+            </form>
             <!-- des volgende Feld soll nur erscheinen wenn nix im input field steht -->
             <!-- font famili "Poppins" -->
             <span class="warning-info-1" style="display: none;">This field is required</span>
@@ -34,10 +34,10 @@ function renderAddTaskHTML() {
         <div class="description-v1">
           <span>Description</span>
           <div class="frame-207">
-            <div class="frame-17">
+            <form class="frame-17">
               <textarea class="input-title" placeholder="Enter a Description" type="text" name="description"
                 id="description"></textarea>
-            </div>
+            </form>
             <!-- des volgende Feld soll nur erscheinen wenn nix im input field steht -->
             <span class="warning-info-2" style="display: none;">This field is required</span>
           </div>
@@ -55,9 +55,9 @@ function renderAddTaskHTML() {
         <div class="due-date-v1">
           <label for="title">Due date<span>*</span></label>
           <div class="frame-211">
-            <div class="frame-15">
+            <form class="frame-15">
               <input class="input-title" placeholder="dd/mm/yyyy" type="date" name="birth-dates" id="datePicker" required>
-            </div>
+            </form>
             <!-- des volgende Feld soll nur erscheinen wenn nix im input field steht -->
             <span class="warning-info-3" style="display: none;">This field is required.</span>
           </div>
@@ -81,17 +81,17 @@ function renderAddTaskHTML() {
         </div>
         <div class="category">
           <label for="title">Category<span>*</span></label>
-          <div class="frame-75">
+          <form class="frame-75" required>
             <span>Select contacts to assign</span>
             <img src="./../img/arrow-drop-downaa.svg" alt="drop-downas">
-          </div>
+          </form>
         </div>
         <div class="subtask-v1-reconstrution">
           <label for="subtasks">Subtasks</label>
-          <div class="frame-18">
+          <form class="frame-18">
             <input class="subtasks" placeholder="Add new subtask">
             <img src="./../img/subtasks-icons-11.svg" alt="subtasks-icon">
-          </div>
+          </form>
         </div>
       </div>
     </div>
