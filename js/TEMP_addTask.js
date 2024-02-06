@@ -69,6 +69,7 @@ function addTasksToStorage(){
     tasks.push(JSONToPush);
     title.value = '';
     description.value = '';
+    date.value = '';
 
     // FORMVALIDATION MIT IF ELSE ABFRAGE
 

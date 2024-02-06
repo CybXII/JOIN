@@ -568,6 +568,7 @@ textarea{
     border-radius: 10px;
     border:  1px solid #2A3647;
     background: #F6F7F8;
+    cursor: pointer;
 }
 
 .secondary span {
@@ -592,6 +593,7 @@ textarea{
     gap: 4px;
     border-radius: 10px;
     background: #2A3647;
+    cursor: pointer;
 }
 
 .primary-check-button span {

@@ -8,12 +8,46 @@ function registerCompleteText() {
 
 function renderSummary() {
   setAmounts();
+
+  // Filtern und sortieren der Daten
+let filteredDueDates = tasks
+  .filter((task) => task.prio === "urgent" && task.categoryboard !== "done")
+  .map((task) => new Date(task.dueDate));
+filteredDueDates.sort((a, b) => a - b);
+
+// Geringstes Datum extrahieren
+let smallestDueDate = filteredDueDates[0];
+
+// Funktion zur Umwandlung des Datums in das gewünschte Format
+function formatDate(date) {
+  const months = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
+  ];
+  const month = months[date.getMonth()];
+  const day = date.getDate();
+  const year = date.getFullYear();
+  return `${month} ${day}, ${year}`;
+}
+
+  document.getElementById("summ-upcoming").innerHTML = formatDate(smallestDueDate);
   document.getElementById("summ-tasks-todo").innerHTML = tasksTodo;
   document.getElementById("summ-tasks-done").innerHTML = tasksDone;
   document.getElementById("summ-tasks-urgent").innerHTML = tasksUrgent;
   document.getElementById("summ-tasks-board").innerHTML = tasks.length;
   document.getElementById("summ-tasks-progress").innerHTML = tasksInProgress;
   document.getElementById("summ-tasks-feedback").innerHTML = tasksAwaitFeedback;
+
   classesSummary();
   renderGreetingTime();
 }
