@@ -41,6 +41,36 @@ let taskpriority = "medium";
 
 function taskPriorityChoosed(i){
     taskpriority = i;
+
+    taskPriorityActive();
+
+
+}
+
+function taskPriorityActive() {
+  if (
+    taskpriority = 'urgent'
+  ) {
+    document.getElementById('prio-urgent').classList.remove('frame-16');
+    document.getElementById('prio-urgent').classList.add('frame-16-active');
+    document.getElementById('prio-urgent-img').src = '../img/urgent_fill.svg';
+  }
+  
+  else if (
+    taskpriority = 'medium'
+  ) {
+    document.getElementById('prio-medium').classList.remove('frame-25');
+    document.getElementById('prio-medium').classList.add('frame-25-active');
+    document.getElementById('prio-medium-img').src = '../img/medium_fill.svg';
+  }
+
+    else if (
+    taskpriority = 'low'
+  ) {
+    document.getElementById('prio-low').classList.remove('frame-26');
+    document.getElementById('prio-low').classList.add('frame-26-active');
+    document.getElementById('prio-low-img').src = '../img/low_fill.svg';
+  }
 }
 
 

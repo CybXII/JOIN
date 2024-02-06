@@ -364,10 +364,66 @@ textarea{
 .frame-16 img {
     width: 20px;
     height: 14.5101px;
-    color: #FF3D00;
+}
+
+.frame-16-active {
+    display: flex;
+    padding: 16px 10px;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    flex: 1  00;
+    border-radius: 10px;
+    background-color: #FF3D00;
+    cursor: pointer;
+}
+
+
+.frame-16-active span {
+    width: 84px;
+    height: 24px;
+    color: #FFF;
+    font-family: Inter;
+    font-size: 21px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 25.2px;
+}
+
+.frame-16-active img {
+    width: 20px;
+    height: 14.5101px;
 }
 
 .frame-25 {
+    display: flex;
+    padding: 16px 10px;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    flex: 1  00;
+    border-radius: 10px;
+    background-color: #fff;
+    cursor: pointer;
+}
+
+.frame-25 span {
+    width: 84px;
+    height: 24px;
+    color: #000;
+    font-family: Inter;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 25.2px;
+}
+
+.frame-25 img {
+    width: 20px;
+    height: 7.435px;
+}
+
+.frame-25-active {
     display: flex;
     padding: 16px 10px;
     justify-content: center;
@@ -379,7 +435,7 @@ textarea{
     cursor: pointer;
 }
 
-.frame-25 span {
+.frame-25-active span {
     width: 84px;
     height: 24px;
     color: #FFF;
@@ -390,7 +446,7 @@ textarea{
     line-height: 25.2px;
 }
 
-.frame-25 img {
+.frame-25-active img {
     width: 20px;
     height: 7.435px;
 }
@@ -421,7 +477,34 @@ textarea{
 .frame-26 img {
     width: 20px;
     height: 14.509px;
-    color: #7AE229;
+}
+
+.frame-26-active {
+    display: flex;
+    padding: 16px 10px;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    flex: 1 0 0;
+    border-radius: 10px;
+    background-color: #7AE229;
+    box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.10);
+    cursor: pointer;
+}
+
+
+.frame-26-active span {
+    color: #fff;
+    font-family: Inter;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 24px;
+}
+
+.frame-26-active img {
+    width: 20px;
+    height: 14.509px;
 }
 
 .category {
