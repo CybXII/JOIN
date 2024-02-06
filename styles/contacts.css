@@ -691,5 +691,13 @@ text-align: left;
 
 }
 
+@media (max-width: 420px) {
+  .frame-97 .contact-name {
+    width: 248px;
+  }  
 
+  .active_contact {
+    width: 248px;
+  }
+}
  
