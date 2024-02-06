@@ -15,10 +15,7 @@ body{
   display: none;
 }
 
-.frame-3{
-  left: 0;
-  top: 0;
-}
+
 
 .logo_container {
   /* border: 1px solid red; */
@@ -671,7 +668,7 @@ input:focus-visible {
   /* border: 1px solid red; */
   display: flex;
   width: 232px;
-  height: 100vh;
+  height: 100%;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
@@ -680,6 +677,9 @@ input:focus-visible {
   box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.1);
   position: fixed;
   z-index: 50;
+  left: 0;
+  top: 0;
+
 }
 
 .capa-2 {
@@ -1145,6 +1145,7 @@ a {
     height: 80px;
     bottom: 0;
     flex-direction: row;
+    top: unset;
   }
 
   .menu{
@@ -1154,6 +1155,7 @@ a {
     height: 80px;
     box-sizing: border-box;
     justify-content: space-around;
+    gap: 0;
   }
   .header{
     height: 80px;
@@ -1323,10 +1325,6 @@ a {
     display: contents;
   }
 
-  .frame-3{
-    top: unset;
-    bottom: 0;
-  }
 
   .scroll_container{
     bottom: 80px;

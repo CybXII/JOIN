@@ -84,7 +84,6 @@
   
   .help .text-wrapper-3 {
     position: relative;
-    width: 346px;
     margin-top: -1px;
     font-family: "Inter-Bold", Helvetica;
     font-weight: 700;
@@ -108,7 +107,6 @@
   
   .help .text-wrapper-4 {
     position: relative;
-    width: 346px;
     font-family: "Inter-Bold", Helvetica;
     font-weight: 700;
     color: var(--black);
@@ -266,7 +264,7 @@
   
   .help .menu-button-hover {
     display: flex;
-    width: 232px;
+
     height: 46px;
     align-items: center;
     gap: 8px;
@@ -308,7 +306,7 @@
   
   .help .menu-button-hover-2 {
     display: flex;
-    width: 232px;
+
     height: 46px;
     align-items: center;
     gap: 8px;
@@ -319,7 +317,7 @@
   
   .help .board {
     display: flex;
-    width: 232px;
+
     align-items: flex-start;
     gap: 20px;
     position: relative;
@@ -328,7 +326,7 @@
   
   .help .contacts {
     display: flex;
-    width: 232px;
+
     align-items: flex-start;
     gap: 8px;
     position: relative;
@@ -359,7 +357,6 @@
   
   .help .text-wrapper-10 {
     position: relative;
-    width: fit-content;
     margin-top: -1px;
     font-family: var(--version-2-body-font-family);
     font-weight: var(--version-2-body-font-weight);
@@ -463,6 +460,7 @@ body{
     padding:  80px 16px;
     overflow-y: scroll;
     top: 80px;
+    left: 0;
     bottom: 80px;
     position: fixed;
     width: 100%;

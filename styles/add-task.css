@@ -768,7 +768,7 @@ textarea{
     border: 1px solid #D1D1D1;
     background: #fff;
     box-sizing: border-box;
-    width: 440px;
+    width: 396px;
     z-index: 20;
 }
 
@@ -837,30 +837,56 @@ textarea{
     padding: 0 8px;
 }
 
+.frame-123-btn-responsiv {
+    display: none;
+}
+
 /*  */
+@media (max-width: 1290px) {
 
-
-
-
-
-
-
-
-
-
-
-
-
+    .input-fields{
+        display: flex;
+        flex-direction: column;
+    }
+    .vertical-line{
+        display: none;
+    }
+    .frame-39 {
+        margin: 0;
+    }
+    .addTask_helper {
+        align-items: flex-start;
+        padding: 0 0 80px 0;
+}
 
 @media (max-width: 900px) {
     body{
         overflow: hidden;
     }
+    frame-69_responsiv{
+
+    }
+
+    .header-text {
+        width: unset;
+    }
 
     .frame-40{
         padding: 0 16px;
+        gap: 40px;
+        display: flex;
+        margin-bottom: 0;
+        position: fixed;
+        top: 80px;
+        left: 0;
+        right: 0;
+        justify-content: center;
     }
     
+    .container-task{
+        margin: 0;
+    }
+
     .input-fields::-webkit-scrollbar {
         position: absolute;
         width: 10px;
@@ -903,8 +929,13 @@ textarea{
         flex-direction: column;
         position: fixed;
         top: 208px;
-        bottom: 160px;  
-        padding: 0 8px 0 16px; 
+        bottom: 160px;
+        left: 0;
+        width: 100%;
+        padding: 0 8px 0 16px;
+        justify-content: unset;
+        box-sizing: border-box;
+        align-items: center;
     }
 
     .content-container {
@@ -983,14 +1014,16 @@ textarea{
     }
     
     .frame-27 {
+        align-items: center;
         position: fixed;
         top: unset;
         left: 0;
+        right: 0;
         bottom: 96px;
-        width: 428px;
-        justify-content: space-between;
+        /* width: 428px; */
+        justify-content: center;
         box-sizing: border-box;
-        padding: 0 16px;
+        /* padding: 0 16px;*/        
     }
 
     .secondary{
@@ -1002,5 +1035,7 @@ textarea{
         top: 0;
         left: 0;
     }
+
+
 
 }

@@ -73,6 +73,7 @@ body{
     padding:  80px 16px;
     overflow-y: scroll;
     top: 80px;
+    left: 0;
     bottom: 80px;
     position: fixed;
     width: 100%;

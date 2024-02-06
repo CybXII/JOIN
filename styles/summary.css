@@ -456,6 +456,16 @@ body{
       font-size: 200%;
       line-height: normal;
     }
+
+  
+  .header-text {
+      width: unset;
+  }
+
+  .footer-text{
+      width: unset;
+
+  }
   }
 
   @media (max-width: 1110px) {
@@ -471,7 +481,26 @@ body{
     z-index: 0;
     height: 100%;
     width: 100%;
-  }
+    top: 0;
+    left: 0;
+    justify-content: center;
+    align-items: center;
+    }
+
+    .frame-69_responsiv_background{
+      background-color: #ffffff;
+    }
+
+    .transparent{
+      color: transparent !important;
+    }
+    .transparent .footer-text{
+      color: transparent !important;
+    }    
+    .transparent .header-text{
+      color: transparent !important;
+    }    
+
 
   .frame-69_responsiv .header-text{
     transition: 500ms;

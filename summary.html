@@ -17,7 +17,7 @@
     <script src="./js/eventListener.js"></script>
     <link rel="icon" type="image" href="./img/join-favicon.svg" />
   </head>
-  <body onload="includeHTMLInit(`Summary`)">
+  <body onload="includeHTMLInit(`Summary`), greetSummaryAnimation()">
     <main w3-include-html="./templates/sidebar.html"></main>
     <nav w3-include-html="./templates/header.html"></nav>
     <div class="content-container">
@@ -122,7 +122,7 @@
               <span class="header-text" id="summary-greeting"></span>
               <span class="footer-text">Sofia Müller</span>
             </div>
-            <div class="frame-69_responsiv">
+            <div id="frame-69_responsiv" class="frame-69_responsiv frame-69_responsiv_background"">
               <span class="header-text" id="summary-greeting-resp"></span>
               <span class="footer-text">Sofia Müller</span>
             </div>

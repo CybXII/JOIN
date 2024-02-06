@@ -149,3 +149,12 @@ function renderGreetingTime() {
   document.getElementById("summary-greeting").innerHTML = greetingTime();
   document.getElementById("summary-greeting-resp").innerHTML = greetingTime();
 }
+
+function greetSummaryAnimation() {
+  setTimeout(() => {
+    document.getElementById("frame-69_responsiv").classList.remove("frame-69_responsiv_background");
+    document.getElementById("frame-69_responsiv").classList.add("transparent");
+  }, 2000);
+
+
+}
