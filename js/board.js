@@ -17,7 +17,7 @@ let tasks = [
     category: "in progress Task",
     title: "Test Technical Task Title",
     description: "Test Technical Task Description",
-    dueDate: "25.01.2024",
+    dueDate: "2024-01-24",
     prio: "urgent",
     subtasks: ["Subtask4", "Subtask5", "Subtask6"],
     assignedTo: ["GH", "IJ", "KL"],
@@ -27,7 +27,7 @@ let tasks = [
     category: "feedback Task",
     title: "Test Technical Task Title",
     description: "Test Technical Task Description",
-    dueDate: "25.01.2024",
+    dueDate: "2024-02-25",
     prio: "urgent",
     subtasks: ["Subtask4", "Subtask5", "Subtask6"],
     assignedTo: ["GH", "IJ", "KL"],
@@ -37,7 +37,7 @@ let tasks = [
     category: "done Task",
     title: "Test Technical Task Title",
     description: "Test Technical Task Description",
-    dueDate: "25.01.2024",
+    dueDate: "2024-02-28",
     prio: "urgent",
     subtasks: ["Subtask4", "Subtask5", "Subtask6"],
     assignedTo: ["GH", "IJ", "KL"],
@@ -223,7 +223,6 @@ function rotateCardEnd() {
   document.getElementById(`board-card${card}`).classList.remove("rotate-card");
 }
 
-
 // #### Übergangsweise Local Storage ####
 
 function saveToLocalStorage() {
@@ -239,4 +238,3 @@ function loadFromLocalStorage() {
 }
 
 // ######################################
-

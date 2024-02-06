@@ -2,10 +2,16 @@ body {
     background: #F5F5F5;
 }
 
-.container {
+.container-task {
     padding: 80px 20px 0 80px;
     display: flex;
     flex-direction: column ;
+  display: flex;
+  /* gap: 60px; */
+  justify-content: flex-start;
+  align-items: flex-start;
+  position: relative;
+  margin: 96px 0 0 232px;
   }
 
 .frame-40 {
@@ -85,7 +91,6 @@ textarea{
     font-style: normal;
     font-weight: 400;
     line-height: 24px;
-    padding-left: 8px;
 }
 
 .input-title {
@@ -344,6 +349,7 @@ textarea{
     border-radius: 10px;
     background-color: #fff;
     box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.10);
+    cursor: pointer;
 }
 
 .frame-16 span {
@@ -370,6 +376,7 @@ textarea{
     flex: 1  00;
     border-radius: 10px;
     background-color: #FFA800;
+    cursor: pointer;
 }
 
 .frame-25 span {
@@ -398,6 +405,7 @@ textarea{
     border-radius: 10px;
     background-color: #fff;
     box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.10);
+    cursor: pointer;
 }
 
 
@@ -541,7 +549,8 @@ textarea{
 }
 
 .frame-27 {
-    position: absolute;
+    /* position: absolute; */
+    margin-top: 30px;
     display: inline-flex;
     justify-content: center;
     align-items: center;
@@ -600,6 +609,51 @@ textarea{
     width: 24px;
     height: 24px;
 }
+
+.task-comp-bg {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #2a364765;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.task-comp {
+  position: absolute;
+  border-radius: 20px;
+  background: var(--Version-2-main-color, #2a3647);
+  box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.15);
+  display: flex;
+  height: 74px;
+  padding: 0px 25px;
+  justify-content: center;
+  align-items: center;
+  margin-left: auto;
+  margin-top: auto;
+  z-index: 999;
+  animation: moveUpToCenter 1s ease forwards;
+}
+
+.task-comp-text {
+  color: #fff;
+  font-family: Inter;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 120%;
+}
+
+.addTask_helper{
+        display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
 
 @media (max-width: 900px) {
     body{

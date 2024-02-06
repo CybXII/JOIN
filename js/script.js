@@ -20,6 +20,7 @@ function renderSummary() {
 
 function renderAddTask() {
   classesAddTask();
+  document.querySelector("form").noValidate = false;
 }
 
 function renderBoardTasks() {
@@ -79,8 +80,9 @@ async function includeHTML() {
   }
 }
 
-function openContact(contactName){
-  document.getElementById('contact_info').innerHTML = renderContactInfo(contactName);
+function openContact(contactName) {
+  document.getElementById("contact_info").innerHTML =
+    renderContactInfo(contactName);
 }
 
 // RANDOM COLOR CONTACTS

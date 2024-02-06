@@ -3,6 +3,7 @@
 async function includeHTMLInit(input) {
   let functionName = `render${input}`;
   await includeHTML();
+  
 
   // Überprüfen, ob die Funktion im globalen Kontext vorhanden ist
   if (typeof window[functionName] === "function") {

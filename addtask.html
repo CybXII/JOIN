@@ -19,26 +19,26 @@
     <link rel="icon" type="image" href="./img/join-favicon.svg" />
   </head>
   <body onload="includeHTMLInit(`AddTask`)">
+    
+    
+    <div class="task-comp-bg d-none" id="msgBox-bg">
+      <div class="task-comp">
+        <span id="msgBox" class="task-comp-text"
+          >Task added to Board</span
+        >
+      </div>
+    </div>
+
+
     <main w3-include-html="./templates/sidebar.html"></main>
     <div class="content-container">
-      <div class="container" id="content">
-        <form class="addTask_helper" action="board.html">
-          <div class="frame-40">
-            <h1>Add Task</h1>
-          </div>
-          <div class="frame-27">
-            <p class="disclaimer" for="disclaimer">
-              <span>*</span>This field is required
-            </p>
-            <button class="secondary">
-              <span>Clear</span>
-              <img src="./../img/iconoir-cancel.svg" alt="cancel-icon" />
-            </button>
-            <button class="primary-check-button" onclick="addTasksToStorage()">
-              <span>Create Task</span>
-              <img src="./../img/check-out-wheite.svg" alt="check-out-wheite" />
-            </button>
-          </div>
+      <div class="container-task" id="content">
+        
+        <div class="frame-40">
+          <h1>Add Task</h1>
+        </div>
+
+        <form class="addTask_helper" onsubmit="return false;">
           <div class="input-fields">
             <div class="frame-219">
               <div class="title-v1">
@@ -101,7 +101,6 @@
                       type="date"
                       name="birth-dates"
                       id="datePicker"
-                     
                     />
                   </div>
                   <!-- des volgende Feld soll nur erscheinen wenn nix im input field steht -->
@@ -113,15 +112,15 @@
               <div class="frame-28">
                 <div for="title">Prio</div>
                 <div class="priority">
-                  <div class="frame-16">
+                  <div class="frame-16" onclick="prioUrg();">
                     <span>Urgent</span>
                     <img src="./../img/prio-alta-red.svg" alt="prio-alta-red" />
                   </div>
-                  <div class="frame-25">
+                  <div class="frame-25" onclick="prioMed();">
                     <span>Medium</span>
                     <img src="./../img/prio-media.svg" alt="prio-media" />
                   </div>
-                  <div class="frame-26">
+                  <div class="frame-26" onclick="prioLow();">
                     <span>Low</span>
                     <img src="./../img/prio-baja.svg" alt="prio-baja" />
                   </div>
@@ -145,6 +144,19 @@
                 </div>
               </div>
             </div>
+          </div>
+          <div class="frame-27">
+            <p class="disclaimer" for="disclaimer">
+              <span>*</span>This field is required
+            </p>
+            <button class="secondary">
+              <span>Clear</span>
+              <img src="./../img/iconoir-cancel.svg" alt="cancel-icon" />
+            </button>
+            <button class="primary-check-button" onclick="addTasksToStorage()">
+              <span>Create Task</span>
+              <img src="./../img/check-out-wheite.svg" alt="check-out-wheite" />
+            </button>
           </div>
         </form>
       </div>

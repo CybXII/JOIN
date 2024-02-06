@@ -37,23 +37,55 @@ function configureDatePicker() {
 // Event-Listener, der darauf wartet, dass das DOM geladen wird
 document.addEventListener('DOMContentLoaded',configureDatePicker);
 
+let taskpriority = "medium";
+
+function prioLow(){
+    taskpriority = 'low';
+}
+function prioMed(){
+    taskpriority = 'medium';
+}
+function prioUrg(){
+    taskpriority = 'urgent';
+}
+
 
 function addTasksToStorage(){
-    let title = document.getElementById("task-title").value;
-    let description = document.getElementById("task-description").value;
-
+    let title = document.getElementById("task-title");
+    let description = document.getElementById("task-description");
+    let date = document.getElementById("datePicker");
+    
     let JSONToPush = {
-        categoryboard : "in-progress",
+        categoryboard : "todo",
         category: "JSONPUSHTEST",
-        title: title,
-        description : description,
-        dueDate: "01.01.2022",
-        prio: "urgent",
+        title: title.value,
+        description : description.value,
+        dueDate: date.value,
+        prio: taskpriority,
         subtasks: ["1", "2", "3"],
         assignedTo: ["XY", "ZA", "BC"]
     }
 
     tasks.push(JSONToPush);
+    title.value = '';
+    description.value = '';
+
+    // FORMVALIDATION MIT IF ELSE ABFRAGE
+
+    taskAddedCompleteText();
+    
+    //     
+    
     console.log(tasks);
     saveToLocalStorage();
+}
+
+function taskAddedCompleteText() {
+  document.getElementById("msgBox-bg").classList.remove("d-none");
+      document.querySelector("form").noValidate = true;
+  setTimeout(() => {
+      document.getElementById("msgBox-bg").classList.add("d-none");
+      location.href = "../board.html";
+  }, 2000);
+
 }
