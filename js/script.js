@@ -55,6 +55,7 @@ function formatDate(date) {
 function renderAddTask() {
   classesAddTask();
   document.querySelector("form").noValidate = false;
+  dropdown();
 }
 
 function renderBoardTasks() {

@@ -19,21 +19,15 @@
     <link rel="icon" type="image" href="./img/join-favicon.svg" />
   </head>
   <body onload="includeHTMLInit(`AddTask`)">
-    
-    
     <div class="task-comp-bg d-none" id="msgBox-bg">
       <div class="task-comp">
-        <span id="msgBox" class="task-comp-text"
-          >Task added to Board</span
-        >
+        <span id="msgBox" class="task-comp-text">Task added to Board</span>
       </div>
     </div>
-
 
     <main w3-include-html="./templates/sidebar.html"></main>
     <div class="content-container">
       <div class="container-task" id="content">
-        
         <div class="frame-40">
           <h1>Add Task</h1>
         </div>
@@ -79,18 +73,19 @@
               </div>
               <div class="asigned-to-v1">
                 <span class="assigned-to">Assigned to</span>
-                <label class="dropdown" id="dropdown-container">Assigned to
-                  <input list="browsers" name="myBrowser" /></label>
-                  <datalist id="browsers">
-                    <option value="Chrome">
-                    <option value="Firefox">
-                    <option value="Internet Explorer">
-                    <option value="Opera">
-                    <option value="Safari">
-                    <option value="Microsoft Edge">
-                  </datalist>
-                <div class="frame-74">
-                </div>
+                <label class="dropdown" id="dropdown-container"
+                  >Assigned to <input list="browsers" name="myBrowser"
+                /></label>
+                <datalist id="browsers">
+                  <option value="Chrome"></option>
+                  <option value="Firefox"></option>
+                  <option value="Internet Explorer"></option>
+                  <option value="Opera"></option>
+                  <option value="Safari"></option>
+                  <option value="Microsoft Edge"></option>
+                </datalist>
+
+                <div class="frame-74"></div>
               </div>
             </div>
             <img
@@ -120,26 +115,61 @@
               <div class="frame-28">
                 <div for="title">Prio</div>
                 <div class="priority">
-                  <div class="frame-16" id="prio-urgent" onclick="taskPriorityChoosed('urgent');">
+                  <div
+                    class="frame-16"
+                    id="prio-urgent"
+                    onclick="taskPriorityChoosed('urgent');"
+                  >
                     <span>Urgent</span>
-                    <img id="prio-urgent-img" src="../img/urgent_nofill.svg" alt="prio-alta-red" />
+                    <img
+                      id="prio-urgent-img"
+                      src="../img/urgent_nofill.svg"
+                      alt="prio-alta-red"
+                    />
                   </div>
-                  <div class="frame-25-active" id="prio-medium" onclick="taskPriorityChoosed('medium');">
+                  <div
+                    class="frame-25-active"
+                    id="prio-medium"
+                    onclick="taskPriorityChoosed('medium');"
+                  >
                     <span>Medium</span>
-                    <img id="prio-medium-img" src="../img/medium_fill.svg" alt="prio-media" />
+                    <img
+                      id="prio-medium-img"
+                      src="../img/medium_fill.svg"
+                      alt="prio-media"
+                    />
                   </div>
-                  <div class="frame-26" id="prio-low" onclick="taskPriorityChoosed('low');">
+                  <div
+                    class="frame-26"
+                    id="prio-low"
+                    onclick="taskPriorityChoosed('low');"
+                  >
                     <span>Low</span>
-                    <img id="prio-low-img" src="../img/low_nofill.svg" alt="prio-baja" />
+                    <img
+                      id="prio-low-img"
+                      src="../img/low_nofill.svg"
+                      alt="prio-baja"
+                    />
                   </div>
                 </div>
               </div>
               <div class="category">
                 <div for="title">Category<span>*</span></div>
-                <div class="frame-75" required>
-                  <span>Select contacts to assign</span>
-                  <img src="./../img/arrow-drop-downaa.svg" alt="drop-downas" />
+
+                <div id="list1" class="dropdown-check-list frame-75" tabindex="100">
+                  <span class="anchor">Select Fruits</span>
+                  <ul class="items">
+                    <li><input type="checkbox" />Apple</li>
+                    <li><input type="checkbox" />Orange</li>
+                    <li><input type="checkbox" />Grapes</li>
+                    <li><input type="checkbox" />Berry</li>
+                    <li><input type="checkbox" />Mango</li>
+                    <li><input type="checkbox" />Banana</li>
+                    <li><input type="checkbox" />Tomato</li>
+                  </ul>
                 </div>
+
+                <!-- <img src="./../img/arrow-drop-downaa.svg" alt="drop-downas" /> -->
               </div>
               <div class="subtask-v1-reconstrution">
                 <div for="subtasks">Subtasks</div>
