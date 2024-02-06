@@ -82,6 +82,12 @@
     flex: 0 0 auto;
   }
   
+  .arrow-left-line{
+    right: 16px;
+    left: unset;
+    top: 100px;
+}
+  
   .help .text-wrapper-3 {
     position: relative;
     margin-top: -1px;

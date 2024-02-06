@@ -52,6 +52,12 @@ main{
     z-index: 20;
 }
 
+.arrow-left-line{
+    right: 16px;
+    left: unset;
+    top: 100px;
+}
+
 
 body{
 overflow: hidden;
