@@ -80,8 +80,20 @@
               <div class="asigned-to-v1">
                 <span class="assigned-to">Assigned to</span>
                 <div class="frame-74">
-                  <span class="selcet-contacts">Select contacts to assign</span>
-                  <img src="./../img/arrow-drop-downaa.svg" alt="drop-downas" />
+
+
+<div class="dropdown" id="dropdown-container">
+    <button onclick="toggleDropdown()" class="dropbtn">Dropdown</button>
+    <div id="dropdown-content" class="dropdown-content">
+        <label><input type="checkbox" value="option1"> Option 1</label>
+        <label><input type="checkbox" value="option2"> Option 2</label>
+        <label><input type="checkbox" value="option3"> Option 3</label>
+        <label><input type="checkbox" value="option4"> Option 4</label>
+    </div>
+</div>
+
+
+
                 </div>
               </div>
             </div>
@@ -112,15 +124,15 @@
               <div class="frame-28">
                 <div for="title">Prio</div>
                 <div class="priority">
-                  <div class="frame-16" onclick="prioUrg();">
+                  <div class="frame-16" onclick="taskPriorityChoosed('urgent');">
                     <span>Urgent</span>
                     <img src="./../img/prio-alta-red.svg" alt="prio-alta-red" />
                   </div>
-                  <div class="frame-25" onclick="prioMed();">
+                  <div class="frame-25" onclick="taskPriorityChoosed('medium');">
                     <span>Medium</span>
                     <img src="./../img/prio-media.svg" alt="prio-media" />
                   </div>
-                  <div class="frame-26" onclick="prioLow();">
+                  <div class="frame-26" onclick="taskPriorityChoosed('low');">
                     <span>Low</span>
                     <img src="./../img/prio-baja.svg" alt="prio-baja" />
                   </div>
