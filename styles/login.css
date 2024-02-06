@@ -151,13 +151,11 @@
         top: 46px;
         left: 12px;
     }
-
-
 }
 
 @media (max-width: 470px) {
     .log-in .frame-176 {
         width: fit-content;
-}
+    }
 }
 
