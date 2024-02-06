@@ -38,4 +38,22 @@ function configureDatePicker() {
 document.addEventListener('DOMContentLoaded',configureDatePicker);
 
 
+function addTasksToStorage(){
+    let title = document.getElementById("task-title").value;
+    let description = document.getElementById("task-description").value;
 
+    let JSONToPush = {
+        categoryboard : "in-progress",
+        category: "JSONPUSHTEST",
+        title: title,
+        description : description,
+        dueDate: "01.01.2022",
+        prio: "urgent",
+        subtasks: ["1", "2", "3"],
+        assignedTo: ["XY", "ZA", "BC"]
+    }
+
+    tasks.push(JSONToPush);
+    console.log(tasks);
+    saveToLocalStorage();
+}

@@ -15,10 +15,10 @@ function renderSummary() {
   document.getElementById("summ-tasks-progress").innerHTML = tasksInProgress;
   document.getElementById("summ-tasks-feedback").innerHTML = tasksAwaitFeedback;
   classesSummary();
+  renderGreetingTime();
 }
 
 function renderAddTask() {
-  document.getElementById("content").innerHTML = renderAddTaskHTML();
   classesAddTask();
 }
 
@@ -95,4 +95,20 @@ function getRandomColor() {
   console.log(color);
 }
 
+// Greeting Time Summary
 
+function greetingTime() {
+  let currentTime = new Date();
+  let currentHour = currentTime.getHours();
+
+  if (currentHour >= 5 && currentHour < 12) {
+    return "Good morning,";
+  } else if (currentHour >= 12 && currentHour < 18) {
+    return "Good day,";
+  } else return "Good evening,";
+}
+
+function renderGreetingTime() {
+  document.getElementById("summary-greeting").innerHTML = greetingTime();
+  document.getElementById("summary-greeting-resp").innerHTML = greetingTime();
+}

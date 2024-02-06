@@ -44,6 +44,8 @@ let tasks = [
   },
 ];
 
+loadFromLocalStorage();
+
 let tasksTodo;
 let tasksDone;
 let tasksInProgress;
@@ -220,3 +222,21 @@ function rotateCardEnd() {
   console.log(card + " losgelassen");
   document.getElementById(`board-card${card}`).classList.remove("rotate-card");
 }
+
+
+// #### Übergangsweise Local Storage ####
+
+function saveToLocalStorage() {
+  localStorage.setItem("tasks", JSON.stringify(tasks));
+}
+
+function loadFromLocalStorage() {
+  let storageAsText = localStorage.getItem("tasks");
+
+  if (storageAsText) {
+    tasks = JSON.parse(storageAsText);
+  }
+}
+
+// ######################################
+
