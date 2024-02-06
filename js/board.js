@@ -90,6 +90,7 @@ function highlight() {
 function moveTo(category) {
   tasks[currentDraggedElement]["categoryboard"] = category;
   updateHTML();
+  saveToLocalStorage();
   console.log(tasks[currentDraggedElement]["categoryboard"]);
   console.log("moveto");
 }
