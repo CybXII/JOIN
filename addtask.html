@@ -73,19 +73,14 @@
               </div>
               <div class="asigned-to-v1">
                 <span class="assigned-to">Assigned to</span>
-                <label class="dropdown" id="dropdown-container"
-                  >Assigned to <input list="browsers" name="myBrowser"
-                /></label>
-                <datalist id="browsers">
-                  <option value="Chrome"></option>
-                  <option value="Firefox"></option>
-                  <option value="Internet Explorer"></option>
-                  <option value="Opera"></option>
-                  <option value="Safari"></option>
-                  <option value="Microsoft Edge"></option>
-                </datalist>
-
-                <div class="frame-74"></div>
+                <div id="list1" class="dropdown-check-list" tabindex="100">
+                  <span class="anchor">Select task category</span>
+                  <ul class="items">
+                    <li><input type="checkbox" />Technical Task</li>
+                    <li><input type="checkbox" />User Story</li>
+                  </ul>
+                </div>
+                <!-- <div class="frame-74"></div> -->
               </div>
             </div>
             <img
@@ -156,16 +151,11 @@
               <div class="category">
                 <div for="title">Category<span>*</span></div>
 
-                <div id="list1" class="dropdown-check-list frame-75" tabindex="100">
-                  <span class="anchor">Select Fruits</span>
+                <div id="list1" class="dropdown-check-list" tabindex="100">
+                  <span class="anchor">Select task category</span>
                   <ul class="items">
-                    <li><input type="checkbox" />Apple</li>
-                    <li><input type="checkbox" />Orange</li>
-                    <li><input type="checkbox" />Grapes</li>
-                    <li><input type="checkbox" />Berry</li>
-                    <li><input type="checkbox" />Mango</li>
-                    <li><input type="checkbox" />Banana</li>
-                    <li><input type="checkbox" />Tomato</li>
+                    <li><input type="checkbox" />Technical Task</li>
+                    <li><input type="checkbox" />User Story</li>
                   </ul>
                 </div>
 
