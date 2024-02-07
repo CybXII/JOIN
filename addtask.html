@@ -32,7 +32,7 @@
           <h1>Add Task</h1>
         </div>
 
-        <form class="addTask_helper" onsubmit="return false;">
+        <form class="addTask_helper" onsubmit="addTasksToStorage(); return false;">
           <div class="input-fields">
             <div class="frame-219">
               <div class="title-v1">
@@ -74,13 +74,14 @@
               <div class="asigned-to-v1">
                 <span class="assigned-to">Assigned to</span>
                 <div id="list1" class="dropdown-check-list" tabindex="100">
-                  <span class="anchor">Select task category</span>
+                  <span class="anchor">Select contacts to assign</span>
                   <ul class="items">
-                    <li><input type="checkbox" />Technical Task</li>
-                    <li><input type="checkbox" />User Story</li>
+                    <li id="catergory_list_1"><input id="checkbox1" type="checkbox" class="checkbox">Contact1</li>
+                    <li id="catergory_list_1"><input id="checkbox2" type="checkbox" class="checkbox">Contact2</li>
+                    <li id="catergory_list_1"><input id="checkbox3" type="checkbox" class="checkbox">Contact3</li>
+                    <li id="catergory_list_1"><input id="checkbox4" type="checkbox" class="checkbox">Contact4</li>
                   </ul>
                 </div>
-                <!-- <div class="frame-74"></div> -->
               </div>
             </div>
             <img
@@ -150,17 +151,18 @@
               </div>
               <div class="category">
                 <div for="title">Category<span>*</span></div>
-
-                <div id="list1" class="dropdown-radio-list" tabindex="100">
-                  <label class="anchor" >
-                    <input list="browsers" name="myBrowser"  placeholder="Select task category"/>
-                  </label>
-                  <datalist id="browsers">
-                    <option value="Technical Task">
-                    <option value="User Story">
-                  </datalist>
-                </div>
-
+                    <div id="list2" class="dropdown-radio-list" tabindex="100">
+                      <!-- <select required class="anchor" name="resistors">
+                        <option class="d-none" value="" disabled selected>Select task category</option>
+                        <option class="test" value="Technical Task">Technical Task</option>
+                        <option class="test" value="User Story">User Story</option>
+                      </select> -->
+                      <select class="moreMinimal">
+                        <option class="d-none" value="" disabled selected>Select task category</option>
+                        <option class="test" value="Technical Task">Technical Task</option>
+                        <option class="test" value="User Story">User Story</option>
+                      </select>
+                  </div>
                 <!-- <img src="./../img/arrow-drop-downaa.svg" alt="drop-downas" /> -->
               </div>
               <div class="subtask-v1-reconstrution">
@@ -179,11 +181,11 @@
             <p class="disclaimer" for="disclaimer">
               <span>*</span>This field is required
             </p>
-            <button class="secondary">
+            <button onclick="clearFields()" class="secondary">
               <span>Clear</span>
               <img src="./../img/iconoir-cancel.svg" alt="cancel-icon" />
             </button>
-            <button class="primary-check-button" onclick="addTasksToStorage()">
+            <button class="primary-check-button" type="submit">
               <span>Create Task</span>
               <img src="./../img/check-out-wheite.svg" alt="check-out-wheite" />
             </button>

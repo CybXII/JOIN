@@ -129,6 +129,9 @@ function taskAddedCompleteText() {
   }, 2000);
 }
 
+function clearFields(){
+  console.log('funktion zum leeren der Input felder oder neu laden der Seite')
+}
 
 
 
