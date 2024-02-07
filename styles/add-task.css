@@ -339,6 +339,10 @@ textarea{
     gap: 16px;
 }
 
+.frame-16:hover {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
 .frame-16 {
     display: flex;
     padding: 16px 10px;
@@ -395,6 +399,10 @@ textarea{
     height: 14.5101px;
 }
 
+.frame-25:hover {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
 .frame-25 {
     display: flex;
     padding: 16px 10px;
@@ -449,6 +457,10 @@ textarea{
 .frame-25-active img {
     width: 20px;
     height: 7.435px;
+}
+
+.frame-26:hover {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 
 .frame-26 {
