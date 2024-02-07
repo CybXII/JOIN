@@ -157,3 +157,10 @@ function greetSummaryAnimation() {
 
 
 }
+
+function openLogOutBox() {
+  let logOutBox = document.getElementById('LogOutBoxCSS');
+  let isVisible = logOutBox.style.display === 'block';
+  logOutBox.style.display = isVisible ? 'none' : 'block';
+}
+

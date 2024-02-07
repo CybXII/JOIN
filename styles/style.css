@@ -640,6 +640,7 @@ input:focus-visible {
   height: 48px;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
   gap: 10px;
   flex-shrink: 0;
   border-radius: 559px;
@@ -1120,6 +1121,45 @@ a {
 .checkbox:checked {
   background-image: url("../img/checkbox-checked.svg");
 }
+
+.LogOutBox {
+  display: none;
+  position: absolute;
+  right: 100px;
+  margin-top: 280px;
+  width: 150px;
+  height: 158px;
+  padding: 10px;
+  overflow: hidden;
+  background-color: #2a3647;
+  border-radius: 20px 0px 20px 20px;
+  box-shadow: 0px 0px 4px 0px #0000001A;
+}
+
+.LogOutBox a {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-top: 5px;
+  margin-left: 23px;
+  width: 130px;
+  height: 46px;
+  border-radius: 8px;
+  padding: 8px, 16px, 8px, 16px;
+  gap: 8px;
+  color: #cdcdcd;
+  font-family: Inter;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19.2px;
+}
+
+.BoxHoverTest:hover {
+  background-color: #091931;
+  height: 46px;
+  width: 148px;
+}
+
 
 
 
