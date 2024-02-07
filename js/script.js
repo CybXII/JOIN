@@ -157,3 +157,21 @@ function greetSummaryAnimation() {
 
 
 }
+
+function openLogOutBox() {
+  let logOutBox = document.getElementById('LogOutBoxCSS');
+  let isVisible = logOutBox.style.display === 'block';
+  logOutBox.style.display = isVisible ? 'none' : 'block';
+}
+
+document.addEventListener('click', function(event) {
+  let logOutBox = document.getElementById('LogOutBoxCSS');
+  let userNameButton = document.getElementById('openLogOutBox');
+
+  if (!logOutBox.contains(event.target) && event.target !== userNameButton) {
+    LogOutBox.style.display = 'none';
+  } else if (event.target === userNameButton) {
+    openLogOutBox();
+  }
+})
+

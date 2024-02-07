@@ -6,60 +6,20 @@
           <a href="../help.html">
           <img class="help_icon" src="./../img/help.svg" alt="Help Icon"/>
           </a>
-          <div class="frame-31">
+          <div id="openLogOutBox" onclick="openLogOutBox()" class="frame-31">
             <img src="../img/ellipse-3.svg" alt="" class="ellipse-3" />
             <img src="../img/group-9.svg" alt="" class="group-9" />
           </div>
-          <div class="LogOutBox">
-              <div class="BoxHoverTest">
-                <a href="./../legal.html">Legal Notice</a>
+              <div id="LogOutBoxCSS" class="LogOutBox">
+                <div class="BoxHoverTest">
+                  <a href="./../legal.html">Legal Notice</a>
+                </div>
+                <div class="BoxHoverTest">
+                  <a href="./../privacy.html">Privace Policy</a>
+                </div>
+                <div class="BoxHoverTest">
+                  <a href="./../login.html">Log out</a>
+                </div>
               </div>
-              <div class="BoxHoverTest">
-                <a href="./../privacy.html">Privace Policy</a>
-              </div>
-              <div class="BoxHoverTest">
-                <a id="LogOut" href="">Log out</a>
-              </div>
-          </div>
-
-          <style>
-            .LogOutBox {
-              position: absolute;
-              right: 100px;
-              margin-top: 320px;
-              width: 150px;
-              height: 158px;
-              padding: 10px;
-              overflow: hidden;
-              background-color: #2a3647;
-              border-radius: 20px 0px 20px 20px;
-              box-shadow: 0px 0px 4px 0px #0000001A;
-            }
-
-            .LogOutBox a {
-              display: flex;
-              justify-content: flex-start;
-              align-items: center;
-              margin-top: 5px;
-              margin-left: 23px;
-              width: 130px;
-              height: 46px;
-              border-radius: 8px;
-              padding: 8px, 16px, 8px, 16px;
-              gap: 8px;
-              color: #cdcdcd;
-              font-family: Inter;
-              font-weight: 400;
-              font-size: 16px;
-              line-height: 19.2px;
-            }
-
-            .BoxHoverTest:hover {
-              background-color: #091931;
-              height: 46px;
-              width: 148px;
-            }
-          </style>
-        </div>
       </div>
     </div>
