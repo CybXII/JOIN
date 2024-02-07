@@ -64,7 +64,6 @@ function renderBoardTasks() {
 }
 
 function renderContacts() {
-  document.getElementById("content").innerHTML = renderContactsHTML();
   classesContacts();
   addContactListeners();
 }

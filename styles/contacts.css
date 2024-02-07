@@ -243,7 +243,7 @@ Die Oberen sind zwecks zum Testen und vor zeigen
   position: relative;
   width: 42px;
   height: 42px;
-  background-color: #ff7a00;
+  /* background-color: #ff7a00; */
   border-radius: 21px;
   border: 2px solid;
   border-color: var(--white);

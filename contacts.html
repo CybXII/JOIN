@@ -14,13 +14,34 @@
     <script src="./js/script.js"></script>
     <script src="./js/classesSidebar.js"></script>
     <script src="./js/eventListener.js"></script>
+    <script src="./js/TEMP_contacts.js"></script>
     <link rel="icon" type="image" href="./img/join-favicon.svg" />
   </head>
-  <body onload="includeHTMLInit(`Contacts`)">
+  <body onload="includeHTMLInit(`Contacts`), pushLetters()">
     <nav w3-include-html="./templates/header.html"></nav>
     <div class="content-container">
-      <div class="container" id="content"></div>
-    </div> 
-    <main w3-include-html="./templates/sidebar.html"></main> 
+      <div class="container" id="content">
+        <div>
+          <div class="frame-97">
+            <div class="addContact">
+              <div class="primary-contact">
+                <div class="text-wrapper">Add new contact</div>
+                <img class="person-add" src="img/person_add.svg" />
+              </div>
+            </div>
+            <div id="renderedContent" class="contact-list"></div>
+          </div>
+          <div class="frame-40">
+            <div class="headline">
+              <span>Contacts</span>
+              <img src="./img/separation-blue.svg" alt="separation-blue" />
+              <p>Better with a team</p>
+            </div>
+            <div id="contact_info" class="contact_info"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <main w3-include-html="./templates/sidebar.html"></main>
   </body>
 </html>
