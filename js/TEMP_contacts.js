@@ -72,23 +72,21 @@ function pushLetters() {
 
     if (!letters.includes(firstLetter)) {
       letters.push(firstLetter);
+      renderLetters(firstLetter);
+      renderContactCard(firstLetter);
     }
-    renderLetters();
-    renderContactCard(firstLetter);
   }
 }
 
-function renderLetters() {
+function renderLetters(firstLetter) {
   let letterbox = document.getElementById("renderedContent");
-  letterbox.innerHTML = "";
+  // letterbox.innerHTML = "";
 
-  for (let i = 0; i < letters.length; i++) {
-    const letter = letters[i];
+    const letter = firstLetter;
     letterbox.innerHTML += `
     <div class="div-wrapper"><div class="div">${letter}</div></div>
               <img class="img" src="img/seperator_contacts.svg" />
               <div id="contact-card-${letter}"></div>`;
-  }
 }
 
 function renderContactCard(firstLetter) {
