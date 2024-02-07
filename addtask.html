@@ -151,12 +151,14 @@
               <div class="category">
                 <div for="title">Category<span>*</span></div>
 
-                <div id="list1" class="dropdown-check-list" tabindex="100">
-                  <span class="anchor">Select task category</span>
-                  <ul class="items">
-                    <li><input type="checkbox" />Technical Task</li>
-                    <li><input type="checkbox" />User Story</li>
-                  </ul>
+                <div id="list1" class="dropdown-radio-list" tabindex="100">
+                  <label class="anchor" >
+                    <input list="browsers" name="myBrowser"  placeholder="Select task category"/>
+                  </label>
+                  <datalist id="browsers">
+                    <option value="Technical Task">
+                    <option value="User Story">
+                  </datalist>
                 </div>
 
                 <!-- <img src="./../img/arrow-drop-downaa.svg" alt="drop-downas" /> -->
