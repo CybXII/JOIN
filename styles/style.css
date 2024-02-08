@@ -472,7 +472,7 @@ input:focus-visible {
 
 .scroll_container{
     position: fixed;
-    top: 80px;
+    top: 96px;
     bottom: 0;
     right: 0;
     padding-top: 42px;
@@ -1152,6 +1152,27 @@ a {
   font-weight: 400;
   font-size: 16px;
   line-height: 19.2px;
+}
+
+
+.scroll_container::-webkit-scrollbar {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  z-index: 20;
+}
+  
+.scroll_container::-webkit-scrollbar-track {
+  border-radius: 0.5vw;
+  width: 1px;  
+  height: 53px;
+  z-index: 20;
+}
+
+.scroll_container::-webkit-scrollbar-thumb {
+  background: #A8A8A8; 
+  border-radius: 5px;
+  z-index: 20;
 }
 
 .BoxHoverTest:hover {
