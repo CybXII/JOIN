@@ -931,6 +931,13 @@ select {
           background-repeat: no-repeat;
           /* outline: 0; */
      }
+
+     .items div{
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+        z-index: 10;
+     }
      
 
      .checkbox {
@@ -942,7 +949,7 @@ select {
         cursor: pointer;
         width: 100%;
         background-repeat: no-repeat;
-        background-position: right;
+        background-position: 374px center;
       
       }
       .checkbox:checked {
@@ -1011,27 +1018,20 @@ select {
         box-sizing: border-box;
       }
 
-      .active_contact{
-        display: flex;
+      .items div .active_contact{
+        flex-direction: row;
         align-items: center;
         height: fit-content;
         gap: 8px;
       }
-      
-      
-      /* .items div{
-        margin-top: 8px;
-        display: flex;
-        gap: 8px;
-        flex-direction: column;
+      .text-wrapper-2{
+        color: #000;
       }
-     */
+      
 
 
 
 
-
-/*  */
 @media (max-width: 1290px) {
 
     .input-fields{
