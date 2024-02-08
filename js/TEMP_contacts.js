@@ -6,7 +6,7 @@ let contacts = [
     initials: "AM",
     email: "antom@gmail.com",
     phone: "+49 1111 1111 11",
-    color: "#DDFF22",
+    color: "#F5E227",
   },
   {
     firstname: "Anja",
@@ -51,7 +51,7 @@ let contacts = [
     initials: "MB",
     email: "bauer@gmail.com",
     phone: "+49 1111 1111 11",
-    color: "#0E3E99",
+    color: "#2F546E",
   },
   {
     firstname: "Tatjana",
@@ -60,7 +60,7 @@ let contacts = [
     initials: "TW",
     email: "wolf@gmail.com",
     phone: "+49 1111 1111 11",
-    color: "#0E3E99",
+    color: "#EF1835",
   },
 ];
 

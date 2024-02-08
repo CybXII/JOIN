@@ -164,6 +164,15 @@ function openLogOutBox() {
   logOutBox.style.display = isVisible ? 'none' : 'block';
 }
 
+window.addEventListener("click", function (e) {
+  if (document.getElementById("openLogOutBox").contains(e.target)) {
+    document.getElementById("LogOutBoxCSS").classList.remove("d-none");
+  } else {
+    document.getElementById("LogOutBoxCSS").classList.add("d-none");
+  }
+});
+
+
 // document.addEventListener('DOMContentLoaded',function() {
 // document.getElementById('openLogOutBox').addEventListener('click', function(event) {
 //   event.stopPropagation();

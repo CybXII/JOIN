@@ -1123,7 +1123,6 @@ a {
 }
 
 .LogOutBox {
-  display: none;
   position: absolute;
   right: 100px;
   margin-top: 280px;
