@@ -164,14 +164,16 @@ function openLogOutBox() {
   logOutBox.style.display = isVisible ? 'none' : 'block';
 }
 
-document.addEventListener('click', function(event) {
-  let logOutBox = document.getElementById('LogOutBoxCSS');
-  let userNameButton = document.getElementById('openLogOutBox');
+// document.addEventListener('DOMContentLoaded',function() {
+// document.getElementById('openLogOutBox').addEventListener('click', function(event) {
+//   event.stopPropagation();
+//   openLogOutBox();
+//   });
+// });
 
-  if (!logOutBox.contains(event.target) && event.target !== userNameButton) {
-    LogOutBox.style.display = 'none';
-  } else if (event.target === userNameButton) {
-    openLogOutBox();
-  }
-})
-
+// document.addEventListener('click', function() {
+//   let logOutBox = document.getElementById('LogOutBoxCSS');
+//   if (logOutBox.style.display === 'block') {
+//     logOutBox.style.display = 'none';
+//   }
+// });
