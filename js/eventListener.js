@@ -184,6 +184,9 @@ function addContactListeners() {
   });
 }
 
+
+function listenerContacts(){
+
 document.addEventListener('DOMContentLoaded', function() {
   let id_frame_40 = document.getElementById('renderedContent');
 
@@ -192,4 +195,4 @@ document.addEventListener('DOMContentLoaded', function() {
     contactInfo.classList.toggle('show');
   });
 });
-
+}
