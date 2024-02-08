@@ -493,6 +493,7 @@ body{
 
     .transparent{
       color: transparent !important;
+      z-index: -10;
     }
     .transparent .footer-text{
       color: transparent !important;
