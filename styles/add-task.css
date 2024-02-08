@@ -797,6 +797,17 @@ textarea{
   background-image: url(../img/arrow-drop-downaa.svg);
   height: 10px;
   width: 10px;
+  background-position-y: center;
+}
+.dropdown-check-list.visible .anchor::after {
+    position: absolute;
+    content: "";
+    padding: 5px;
+    right: 10px;
+    background-image: url(../img/arrow_drop_down.svg);
+    height: 10px;
+    width: 10px;
+    background-position-y: center;
 }
 
 .anchor span{
@@ -817,15 +828,7 @@ textarea{
     text-align: left;
 }
 
-.dropdown-check-list.visible .anchor::after {
-    position: absolute;
-    content: "";
-    padding: 5px;
-    right: 10px;
-    background-image: url(../img/arrow_drop_down.svg);
-    height: 10px;
-    width: 10px;
-}
+
 
 .dropdown-check-list ul.items {
   padding: 2px;
@@ -865,7 +868,6 @@ textarea{
 }
 
 select {
-
     /* styling */
     background-color: white;
     border-radius: 4px;
@@ -888,7 +890,7 @@ select {
     
   select:-moz-focusring {
     color: transparent;
-    text-shadow: 0 0 0 #000;
+    /* text-shadow: 0 0 0 #000; */
   }
 
       select.moreMinimal {    
@@ -903,44 +905,33 @@ select {
         width: 440px;
         padding: 12px 16px;
         margin: 0;      
-          cursor: pointer;
+        cursor: pointer;
         border: none;
       
-          -webkit-box-sizing: border-box;
+          /* -webkit-box-sizing: border-box;
           -moz-box-sizing: border-box;
           box-sizing: border-box;
           -webkit-appearance: none;
-          -moz-appearance: none;
-          appearance: none ;
+          -moz-appearance: none; */
+          /* appearance: none ; */
         }
       
       select.moreMinimal {
-          background-image:
-            linear-gradient(45deg, transparent 50%, gray 50%),
-            linear-gradient(135deg, gray 50%, transparent 50%);
-          background-position:
-            calc(100% - 20px), 
-            calc(100% - 15px);
-          background-size:
-            5px 5px,
-            5px 5px;
+        background-image: url(../img/arrow_drop_down.svg);
+          background-position-x: right;
+          background-position-y: center;
+          background-size: 24px;
           background-repeat: no-repeat;
       }
         
   
       select.moreMinimal:focus {
-          background-image:
-              linear-gradient(50deg,  gray 50%, transparent 50%),
-              linear-gradient(135deg, transparent 50%,  gray 50%);
-          background-position:
-              calc(100% - 11px),
-              calc(100% - 16px);
-          background-size:
-              6px 6px,
-              6px 6px;
+        background-image: url(../img/arrow-drop-downaa.svg);
+          background-size: 24px;
           background-repeat: no-repeat;
-          outline: 0;
+          /* outline: 0; */
      }
+     
 
      .checkbox {
         appearance: none;
@@ -1061,9 +1052,6 @@ select {
 @media (max-width: 900px) {
     body{
         overflow: hidden;
-    }
-    frame-69_responsiv{
-
     }
 
     .header-text {
