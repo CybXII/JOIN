@@ -473,6 +473,13 @@ Die Oberen sind zwecks zum Testen und vor zeigen
   /* width: 461px; */
   height: 364px;
   gap: 21px;
+  right: -100%;
+  transition: right 0.5s ease-in-out;
+ }
+
+ .contact_info.show {
+  top: 101px;
+  right: 1600px;
  }
 
  .frame-40{

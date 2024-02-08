@@ -184,3 +184,12 @@ function addContactListeners() {
   });
 }
 
+document.addEventListener('DOMContentLoaded', function() {
+  let id_frame_40 = document.getElementById('renderedContent');
+
+  id_frame_40.addEventListener('click', function() {
+    let contactInfo = document.querySelector('.contact_info');
+    contactInfo.classList.toggle('show');
+  });
+});
+
