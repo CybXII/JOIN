@@ -78,13 +78,13 @@ body{
   }
 
   .todo_picture{
-    background-image: url(../img/stift.svg);
+    background-image: url(./img/stift.svg);
     width: 69px;
     height: 69px;
   }
 
   .done_picture{
-    background-image: url(../img/hacken.svg);
+    background-image: url(./img/hacken.svg);
     width: 69px;
     height: 69px;
   }
@@ -103,7 +103,7 @@ body{
 
   .pencil-rectangle-button-v1:hover .todo_picture{
     background-color: #ffffff;
-    background-image: url(../img/stift_black.svg);
+    background-image: url(./img/stift_black.svg);
     width: 69px;
     height: 69px;
     border-radius: 50%;
@@ -177,7 +177,7 @@ body{
 
   .cheack-reactangle-button-v1:hover .done_picture{
     background-color: #ffffff;
-    background-image: url(../img/hacken_black.svg);
+    background-image: url(./img/hacken_black.svg);
     width: 69px;
     height: 69px;
     border-radius: 50%;

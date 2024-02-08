@@ -3,7 +3,7 @@ const STORAGE_URL = `https://remote-storage.developerakademie.org/item`;
 
 
 async function loadToken(){
-    let resp = await fetch("../json/token.json")
+    let resp = await fetch("./json/token.json")
     token = await resp.json();
     STORAGE_TOKEN = token[0]["token"];
 }
