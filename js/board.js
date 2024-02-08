@@ -125,7 +125,7 @@ function updateHTML() {
       <div class="frame-217" id="assigned-to${i}">
       </div>
       <div class="card-board-priority">
-        <img src="../img/prio-baja-board.svg" class="card-board-priority-img" />
+        <img src="./img/prio-baja-board.svg" class="card-board-priority-img" />
       </div>
     </div>
   </div>
@@ -136,7 +136,7 @@ function updateHTML() {
       assigned.innerHTML += `
 <div class="card-board-profile-batch">
   <div class="group-9-board">
-    <img src="../img/ellipse-5.svg" class="ellipse-5" />
+    <img src="./img/ellipse-5.svg" class="ellipse-5" />
     <div class="group-9-text">${assign}</div>
   </div>
 </div>`;

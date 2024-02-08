@@ -1114,12 +1114,12 @@ a {
   position: relative;
   width: 24px;
   height: 24px;
-  background-image: url("../img/check-button-su.svg");
+  background-image: url("./img/check-button-su.svg");
   cursor: pointer;
 
 }
 .checkbox:checked {
-  background-image: url("../img/checkbox-checked.svg");
+  background-image: url("./img/checkbox-checked.svg");
 }
 
 .LogOutBox {
@@ -1188,7 +1188,7 @@ a {
 
   .header_logo{
     display: block;
-    background-image: url(../img/join-favicon.svg);
+    background-image: url(./img/join-favicon.svg);
     background-size: cover;
     width: 32px;
     height: 39px;

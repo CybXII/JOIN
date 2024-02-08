@@ -794,9 +794,20 @@ textarea{
   -o-transform: rotate(-135deg);
   -webkit-transform: rotate(-135deg);
   transform: rotate(-135deg); */
-  background-image: url(../img/arrow-drop-downaa.svg);
+  background-image: url(./img/arrow-drop-downaa.svg);
   height: 10px;
   width: 10px;
+  background-position-y: center;
+}
+.dropdown-check-list.visible .anchor::after {
+    position: absolute;
+    content: "";
+    padding: 5px;
+    right: 10px;
+    background-image: url(./img/arrow_drop_down.svg);
+    height: 10px;
+    width: 10px;
+    background-position-y: center;
 }
 
 .anchor span{
@@ -817,20 +828,7 @@ textarea{
     text-align: left;
 }
 
-.dropdown-check-list.visible .anchor::after {
-    position: absolute;
-    content: "";
-    padding: 5px;
-    right: 10px;
-    /* -moz-transform: rotate(-135deg);
-    -ms-transform: rotate(-135deg);
-    -o-transform: rotate(-135deg);
-    -webkit-transform: rotate(-135deg);
-    transform: rotate(-135deg); */
-    background-image: url(../img/arrow_drop_down.svg);
-    height: 10px;
-    width: 10px;
-}
+
 
 .dropdown-check-list ul.items {
   padding: 2px;
@@ -850,17 +848,19 @@ textarea{
     position: relative;
     z-index: 10;
     top: -8px;
-    background-color: aliceblue;
-    padding: 8px 0 0 0;
+    background: var(--white, #fff);
+    padding: 7px 16px 7px 16px;
+    height: 224px;
+    overflow-y: scroll;
 }
 
 .dropdown-check-list.visible .items li{
-    height: 32px;
     display: flex;
-    flex-direction: row-reverse;
-    justify-content: space-between;
+    flex-direction: row;
+    justify-content: flex-start;
     align-items: center;
     padding: 0 8px;
+    height: 50px;
 }
 
 .frame-123-btn-responsiv {
@@ -868,7 +868,6 @@ textarea{
 }
 
 select {
-
     /* styling */
     background-color: white;
     border-radius: 4px;
@@ -891,7 +890,7 @@ select {
     
   select:-moz-focusring {
     color: transparent;
-    text-shadow: 0 0 0 #000;
+    /* text-shadow: 0 0 0 #000; */
   }
 
       select.moreMinimal {    
@@ -906,66 +905,133 @@ select {
         width: 440px;
         padding: 12px 16px;
         margin: 0;      
-          cursor: pointer;
+        cursor: pointer;
         border: none;
       
-          -webkit-box-sizing: border-box;
+          /* -webkit-box-sizing: border-box;
           -moz-box-sizing: border-box;
           box-sizing: border-box;
           -webkit-appearance: none;
-          -moz-appearance: none;
-          appearance: none ;
+          -moz-appearance: none; */
+          /* appearance: none ; */
         }
       
       select.moreMinimal {
-          background-image:
-            linear-gradient(45deg, transparent 50%, gray 50%),
-            linear-gradient(135deg, gray 50%, transparent 50%);
-          background-position:
-            calc(100% - 20px), 
-            calc(100% - 15px);
-          background-size:
-            5px 5px,
-            5px 5px;
+        background-image: url(./img/arrow_drop_down.svg);
+          background-position-x: right;
+          background-position-y: center;
+          background-size: 24px;
           background-repeat: no-repeat;
       }
         
   
       select.moreMinimal:focus {
-          background-image:
-              linear-gradient(50deg,  gray 50%, transparent 50%),
-              linear-gradient(135deg, transparent 50%,  gray 50%);
-          background-position:
-              calc(100% - 11px),
-              calc(100% - 16px);
-          background-size:
-              6px 6px,
-              6px 6px;
+        background-image: url(./img/arrow-drop-downaa.svg);
+          background-size: 24px;
           background-repeat: no-repeat;
-          outline: 0;
+          /* outline: 0; */
      }
+
+     .items div{
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+        z-index: 10;
+     }
+     
 
      .checkbox {
         appearance: none;
-        position: relative;
-        width: 24px;
-        height: 24px;
-        background-image: url("../img/check-button-su.svg");
+        position: absolute;
+        height: 40px;
+        right: 0;
+        background-image: url(./img/check-button-su.svg);
         cursor: pointer;
+        width: 100%;
+        background-repeat: no-repeat;
+        background-position: 374px center;
       
       }
       .checkbox:checked {
-        background-image: url("../img/checkbox-checked.svg");
+        background-image: url(./img/Check_button.svg);
+        border-radius: 10px;
+        background-color: var(--version-2main-color) !important;
+        color: #ffffff !important;
+        cursor: pointer;
+        gap: 4px;
+        display: flex;
+        height: 50px;
       }
 
+      .dropdown-check-list .visible .checkbox:checked.name {
+        color: var(--white) !important;
+      }
 
-    
+.checkbox:checked.active_contact{
+        display: flex;
+        width: 352px;
+        align-items: flex-start;
+        gap: 35px;
+        padding: 15px 24px;
+        position: relative;
+        flex: 0 0 auto;
+        border-radius: 10px;
+        background-color:var(--version-2main-color) !important;
+        color: #ffffff !important;
+        cursor: pointer;
+    }
+
+    .text-wrapper-2 {
+        position: absolute;
+        width: 28px;
+        height: 10px;
+        top: 14px;
+        left: 5px;
+        font-family: var(--version-2-t7-font-family);
+        font-weight: var(--version-2-t7-font-weight);
+        color: var(--white);
+        font-size: var(--version-2-t7-font-size);
+        text-align: center;
+        letter-spacing: var(--version-2-t7-letter-spacing);
+        line-height: var(--version-2-t7-line-height);
+        white-space: nowrap;
+        font-style: var(--version-2-t7-font-style);
+      }
+
+      .div-2 {
+        display: inline-flex;
+        gap: 5px;
+        flex-direction: column;
+        align-items: flex-start;
+        position: relative;
+        flex: 0 0 auto;
+      }
+
+      .overlap-group {
+        background-color: #6e52ff;
+        position: relative;
+        width: 42px;
+        height: 42px;
+        border-radius: 21px;
+        border: 2px solid;
+        border-color: var(--white);
+        box-sizing: border-box;
+      }
+
+      .items div .active_contact{
+        flex-direction: row;
+        align-items: center;
+        height: fit-content;
+        gap: 8px;
+      }
+      .text-wrapper-2{
+        color: #000;
+      }
+      
 
 
 
 
-
-/*  */
 @media (max-width: 1290px) {
 
     .input-fields{
@@ -986,9 +1052,6 @@ select {
 @media (max-width: 900px) {
     body{
         overflow: hidden;
-    }
-    frame-69_responsiv{
-
     }
 
     .header-text {

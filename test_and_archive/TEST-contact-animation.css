@@ -1,15 +1,16 @@
 
-.contact-checkbox {
-    display: flex; /* Checkbox verstecken */
+h1 {
     cursor: pointer;
 }
 
 .contact-info {
-    transform: translateX(4000px); /* Start außerhalb des Bildschirmes */
-    transition: ease-in-out 1.35s; /* Animation */
-    /* weitere css eigenschafte */
+    position: absolute;
+    right: -100%; /* Startet außerhalb des Bildschirms */
+    transition: right 0.5s ease-in-out; /* Glätet die Bewegung */
 }
 
-.contact-checkbox:checked + .contact-label + .contact-info {
-    transform: translateX(500px);
+/* Die .show-Klasse wird durch Javascript hinzugefügt  */
+.contact-info.show {
+    top: 250px;
+    right: 1800px; /* Bewwegt sich ins Bild */
 }
