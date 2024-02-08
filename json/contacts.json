@@ -1,0 +1,19 @@
+{
+    "users": 
+    ["users1",
+    "user2",
+    "user3"
+    ] ,
+    "users-email":[
+    "email1",
+    "email2",
+    "email3"
+    ],
+    "Userlogin":[
+        "Userlogin1",
+        "Userlogin2",
+        "Userlogin3"],
+    "Users_contacts":[["``,lucas, steffen"],["alex,steffen"],["lucas,steffen"]],
+
+    "logedinUsers":[true, false,true]
+}
