@@ -20,14 +20,19 @@
 </head>
 
 <body onload="includeHTMLInit(`BoardTasks`)">
-  <div class="add-task-board-background d-none" id="board-background" onclick="closeAddTaskContainer()">
-    <div class="add-task-board-card" onclick="dontClose()">
-        <button onclick="closeAddTaskContainer()">X</button>
-    </div>
-  </div>
   <nav w3-include-html="./templates/header.html"></nav>
   <div class="content-container">
+
+
+  
     <div class="container" id="content">
+      
+      <div class="add-task-board-background d-none" id="board-background" onclick="closeAddTaskContainer()">
+        <div class="add-task-board-card" onclick="dontClose()">
+          <button onclick="closeAddTaskContainer()">X</button>
+        </div>
+      </div>
+
       <div class="scroll_container">
         <div class="frame-191">
           <div class="frame-192">
@@ -55,7 +60,7 @@
         </div>
         <div class="board-dist" id="board-dist">
           <div class="frame-136" ondrop="moveTo('todo'), removeHighlight(), rotateCardEnd()"
-            ondragover="allowDrop(event)"> 
+            ondragover="allowDrop(event)">
             <div class="category-board">
               <span class="board-sections-headline">To do</span>
               <div class="plus-board-container">
@@ -107,4 +112,5 @@
   </div>
   <main w3-include-html="./templates/sidebar.html"></main>
 </body>
+
 </html>

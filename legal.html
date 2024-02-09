@@ -20,7 +20,10 @@
     <nav w3-include-html="./templates/header.html"></nav>
     <div id="main_content" class="content-container">
       <div class="container" id="content">
-        <a href="./summary.html"><img
+        <a action="action"
+        onclick="window.history.go(-1); return false;"
+        type="submit"
+        value="Cancel"><img
           src="./img/arrow-left-line.svg"
           class="arrow-left-line"/>
         </a>

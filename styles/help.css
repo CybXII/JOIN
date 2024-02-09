@@ -425,6 +425,23 @@ main{
     z-index: 30;
 }
 
+.text-wrapper-6 {
+  /* border: 1px solid red; */  
+  position: relative;
+  width: fit-content;
+  margin-top: -1px;
+  font-family: var(--version-2-body-font-family);
+  font-weight: var(--version-2-body-font-weight);
+  color: var(--icon);
+  font-size: var(--version-2-body-font-size);
+  letter-spacing: var(--version-2-body-letter-spacing);
+  line-height: var(--version-2-body-line-height);
+  white-space: nowrap;
+  font-style: var(--version-2-body-font-style);
+  cursor: pointer;
+
+}
+
 .container::-webkit-scrollbar {
     position: absolute;
     width: 10px;
