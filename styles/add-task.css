@@ -835,7 +835,10 @@ box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     text-align: left;
 }
 
-
+.contact_background{
+    background-color: var(--version-2main-color);
+    border-radius: 10px;
+}
 
 .dropdown-check-list ul.items {
   padding: 2px;
@@ -856,7 +859,7 @@ box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     z-index: 10;
     top: -8px;
     background: var(--white, #fff);
-    padding: 7px 16px 7px 16px;
+    padding: 7px 0 7px 0;
     height: 224px;
     overflow-y: scroll;
 }
@@ -897,7 +900,6 @@ select {
     
   select:-moz-focusring {
     color: transparent;
-    /* text-shadow: 0 0 0 #000; */
   }
 
       select.moreMinimal {    
@@ -943,7 +945,7 @@ select {
         display: flex;
         flex-direction: column;
         gap: 6px;
-        z-index: 10;
+        z-index: 5;
      }
      
 
@@ -957,11 +959,11 @@ select {
         width: 100%;
         background-repeat: no-repeat;
         background-position: 374px center;
+        z-index: 10;
       }
       .checkbox:checked {
         background-image: url(../img/Check_button.svg);
         border-radius: 10px;
-        background-color: var(--version-2main-color) !important;
         cursor: pointer;
         gap: 4px;
         display: flex;
