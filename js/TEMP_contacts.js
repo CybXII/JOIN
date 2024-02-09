@@ -123,5 +123,17 @@ function renderContactCard(firstLetter) {
 }
 
 function renderContactCardHTML(fullname, email, color, initials) {
-  return /*html*/ ``;
+  return /*html*/ `<div class="contact-name">
+                <div class="profile-badge">
+                  <div class="group">
+                    <div class="overlap-group" style="background-color: ${color}">
+                      <div class="text-wrapper-2">${initials}</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="div-2">
+                  <div class="div">${fullname}</div>
+                  <div class="text-wrapper-3">${email}</div>
+                </div>
+              </div>`;
 }
