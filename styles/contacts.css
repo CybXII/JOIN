@@ -469,15 +469,12 @@ Die Oberen sind zwecks zum Testen und vor zeigen
  }
 
  .contact_info{
-  position: fixed;
-  right: -100%;
-  transition: right 0.5s ease-in-out;
-  top: 400px;
+  transition: 0.5s ease-in-out;
+  transform: translateX(0);
  }
 
  .contact_info.show {
-  top: 400px;
-  right: 1000px;
+  transform: translateX(5000px) !important;
  }
 
  .frame-40{
@@ -645,6 +642,8 @@ text-align: left;
 .frame-103 a:hover{
   color: var(--ligth-blue);
 }
+
+.contact_info{}
 
 
 @media (max-width: 900px) {

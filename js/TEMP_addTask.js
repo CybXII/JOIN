@@ -198,7 +198,6 @@ function addClassOnCheckboxChange(userid) {
     } else {
       divElement.classList.remove("white");
       parentDivElement.classList.remove("contact_background")
-
     }
   });
 }
