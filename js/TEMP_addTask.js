@@ -154,7 +154,7 @@ function renderAssignedTo() {
     const color = element.color;
     const userid = element.id;
 
-  assigncontent.innerHTML += /*html*/ `<li id="catergory_list_${userid}">
+    assigncontent.innerHTML += /*html*/ `<li id="catergory_list_${userid}">
   <div class="active_contact">
     <div class="profile-badge">
       <div class="group">
@@ -171,9 +171,7 @@ function renderAssignedTo() {
   }, (assigncontent.innerHTML = ""));
 }
 
-
-function openAssignTo(){
-
+function openAssignTo() {
   let logoutBox = document.getElementById("list1");
   if (!logoutBox.classList.contains("visible")) {
     logoutBox.classList.add("visible");
@@ -184,14 +182,9 @@ function openAssignTo(){
       } else {
         document.getElementById("list1").classList.remove("visible");
       }
-    }
-    );
+    });
   }
 }
-
-
-
-
 
 function addClassOnCheckboxChange(userid) {
   const checkbox = document.getElementById(`checkbox${userid}`);
