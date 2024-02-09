@@ -678,6 +678,10 @@ textarea{
     cursor: pointer;
 }
 
+.secondary:hover {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    }
+
 .secondary span {
     color: #2A3647;
     font-family: Inter;
@@ -701,6 +705,9 @@ textarea{
     border-radius: 10px;
     background: #2A3647;
     cursor: pointer;
+}
+.primary-check-button:hover {
+box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 
 .primary-check-button span {
