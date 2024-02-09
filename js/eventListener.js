@@ -206,6 +206,8 @@ function addContactListeners() {
       console.log("Kontaktname:", contactName);
       openContact(contactName);
 
+      contact.id = 'active-contact';
+
       // Animation für .contact_info auslösen
       let contactInfo = document.querySelector('.contact_info'); // Sttelt sicher, dass die Klasse koreckt ist
       if (contactInfo) {
@@ -218,7 +220,7 @@ function addContactListeners() {
 // function listenerContacts(){
 
 // document.addEventListener('DOMContentLoaded', function() {
-//   let id_frame_40 = document.getElementById('renderedContent');
+//   let idContact = document.getElementById('active-contact');
 
 //   id_frame_40.addEventListener('click', function() {
 //     let contactInfo = document.querySelector('.contact_info');
