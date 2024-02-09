@@ -135,14 +135,14 @@ function clearFields() {
 
 // DROPDOWN CHECKBOX
 
-function dropdown() {
-  var checkList = document.getElementById("list1");
-  checkList.getElementsByClassName("anchor")[0].onclick = function (evt) {
-    if (checkList.classList.contains("visible"))
-      checkList.classList.remove("visible");
-    else checkList.classList.add("visible");
-  };
-}
+// function dropdown() {
+//   var checkList = document.getElementById("list1");
+//   checkList.getElementsByClassName("anchor")[0].onclick = function (evt) {
+//     if (checkList.classList.contains("visible"))
+//       checkList.classList.remove("visible");
+//     else checkList.classList.add("visible");
+//   };
+// }
 
 //
 
@@ -170,6 +170,28 @@ function renderAssignedTo() {
 `;
   }, (assigncontent.innerHTML = ""));
 }
+
+
+function openAssignTo(){
+
+  let logoutBox = document.getElementById("list1");
+  if (!logoutBox.classList.contains("visible")) {
+    logoutBox.classList.add("visible");
+  } else {
+    logoutBox.classList.remove("visible");
+    window.addEventListener("click", function (e) {
+      if (document.getElementById("list1").contains(e.target)) {
+      } else {
+        document.getElementById("list1").classList.remove("visible");
+      }
+    }
+    );
+  }
+}
+
+
+
+
 
 function addClassOnCheckboxChange(userid) {
   const checkbox = document.getElementById(`checkbox${userid}`);

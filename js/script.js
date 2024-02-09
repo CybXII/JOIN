@@ -56,7 +56,6 @@ function renderSummary() {
 function renderAddTask() {
   classesAddTask();
   document.querySelector("form").noValidate = false;
-  dropdown();
 }
 
 function renderBoardTasks() {
