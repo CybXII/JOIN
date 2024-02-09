@@ -189,12 +189,16 @@ function openAssignTo() {
 function addClassOnCheckboxChange(userid) {
   const checkbox = document.getElementById(`checkbox${userid}`);
   const divElement = document.getElementById(`fullname-addtask-dd-${userid}`);
+  const parentDivElement = document.getElementById(`catergory_list_${userid}`);
 
   checkbox.addEventListener("change", function () {
     if (checkbox.checked) {
       divElement.classList.add("white");
+      parentDivElement.classList.add("contact_background")
     } else {
       divElement.classList.remove("white");
+      parentDivElement.classList.remove("contact_background")
+
     }
   });
 }
