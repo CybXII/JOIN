@@ -950,17 +950,16 @@ select {
         width: 100%;
         background-repeat: no-repeat;
         background-position: 374px center;
-      
       }
       .checkbox:checked {
         background-image: url(../img/Check_button.svg);
         border-radius: 10px;
         background-color: var(--version-2main-color) !important;
-        color: #ffffff !important;
         cursor: pointer;
         gap: 4px;
         display: flex;
         height: 50px;
+        color: #ffffff !important;
       }
 
       .dropdown-check-list .visible .checkbox:checked.name {
@@ -978,6 +977,12 @@ select {
         border-radius: 10px;
         background-color:var(--version-2main-color) !important;
         color: #ffffff !important;
+        cursor: pointer;
+    }
+
+    .white{
+        color: white !important;
+        z-index: 1;
         cursor: pointer;
     }
 

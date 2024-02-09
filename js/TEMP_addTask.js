@@ -129,24 +129,57 @@ function taskAddedCompleteText() {
   }, 2000);
 }
 
-function clearFields(){
-  console.log('funktion zum leeren der Input felder oder neu laden der Seite')
+function clearFields() {
+  console.log("funktion zum leeren der Input felder oder neu laden der Seite");
 }
-
-
-
 
 // DROPDOWN CHECKBOX
 
-function dropdown(){
-    var checkList = document.getElementById("list1");
-checkList.getElementsByClassName("anchor")[0].onclick = function (evt) {
-  if (checkList.classList.contains("visible"))
-    checkList.classList.remove("visible");
-  else checkList.classList.add("visible");
-};
+function dropdown() {
+  var checkList = document.getElementById("list1");
+  checkList.getElementsByClassName("anchor")[0].onclick = function (evt) {
+    if (checkList.classList.contains("visible"))
+      checkList.classList.remove("visible");
+    else checkList.classList.add("visible");
+  };
 }
 
-// 
+//
 
+function renderAssignedTo() {
+  let assigncontent = document.getElementById("assigned-list");
+  contacts.forEach((element) => {
+    const fullname = element.fullname;
+    const initials = element.initials;
+    const color = element.color;
+    const userid = element.id;
 
+  assigncontent.innerHTML += /*html*/ `<li id="catergory_list_${userid}">
+  <div class="active_contact">
+    <div class="profile-badge">
+      <div class="group">
+        <div class="overlap-group" style="background-color: ${color}">
+          <div class="text-wrapper-2">${initials}</div>
+        </div>
+      </div>
+    </div>
+    <span  id="fullname-addtask-dd-${userid}">${fullname}</span>
+    <input id="checkbox${userid}" type="checkbox" class="checkbox" onclick="addClassOnCheckboxChange(${userid})" />
+  </div>
+</li>
+`;
+  }, (assigncontent.innerHTML = ""));
+}
+
+function addClassOnCheckboxChange(userid) {
+  const checkbox = document.getElementById(`checkbox${userid}`);
+  const divElement = document.getElementById(`fullname-addtask-dd-${userid}`);
+
+  checkbox.addEventListener("change", function () {
+    if (checkbox.checked) {
+      divElement.classList.add("white");
+    } else {
+      divElement.classList.remove("white");
+    }
+  });
+}

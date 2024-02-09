@@ -7,6 +7,8 @@ let contacts = [
     email: "antom@gmail.com",
     phone: "+49 1111 1111 11",
     color: "#F5E227",
+    id: "1",
+    taskassigned: false,
   },
   {
     firstname: "Anja",
@@ -16,6 +18,8 @@ let contacts = [
     email: "schulz@hotmail.com",
     phone: "+49 1111 1111 11",
     color: "#D5C809",
+    id: "2",
+    taskassigned: false,
   },
   {
     firstname: "Benedikt",
@@ -25,6 +29,8 @@ let contacts = [
     email: "benedikt@gmail.com",
     phone: "+49 1111 1111 11",
     color: "#61C3DD",
+    id: "3",
+    taskassigned: false,
   },
   {
     firstname: "David",
@@ -34,6 +40,8 @@ let contacts = [
     email: "davidberg@gmail.com",
     phone: "+49 1111 1111 11",
     color: "#D8EF5A",
+    id: "4",
+    taskassigned: false,
   },
   {
     firstname: "Eva",
@@ -43,6 +51,8 @@ let contacts = [
     email: "eva@gmail.com",
     phone: "+49 1111 1111 11",
     color: "#0E3E99",
+    id: "5",
+    taskassigned: false,
   },
   {
     firstname: "Marcel",
@@ -52,6 +62,8 @@ let contacts = [
     email: "bauer@gmail.com",
     phone: "+49 1111 1111 11",
     color: "#2F546E",
+    id: "6",
+    taskassigned: false,
   },
   {
     firstname: "Tatjana",
@@ -61,6 +73,8 @@ let contacts = [
     email: "wolf@gmail.com",
     phone: "+49 1111 1111 11",
     color: "#EF1835",
+    id: "7",
+    taskassigned: false,
   },
 ];
 
@@ -109,17 +123,5 @@ function renderContactCard(firstLetter) {
 }
 
 function renderContactCardHTML(fullname, email, color, initials) {
-  return /*html*/ `<div class="contact-name">
-                <div class="profile-badge">
-                  <div class="group">
-                    <div class="overlap-group" style="background-color: ${color}">
-                      <div class="text-wrapper-2">${initials}</div>
-                    </div>
-                  </div>
-                </div>
-                <div class="div-2">
-                  <div class="div">${fullname}</div>
-                  <div class="text-wrapper-3">${email}</div>
-                </div>
-              </div>`;
+  return /*html*/ ``;
 }
