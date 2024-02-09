@@ -16,6 +16,7 @@
     <script src="./js/classesSidebar.js"></script>
     <script src="./js/eventListener.js"></script>
     <script src="./js/TEMP_addTask.js"></script>
+    <script src="./js/TEMP_contacts.js"></script>
     <link rel="icon" type="image" href="./img/join-favicon.svg" />
   </head>
   <body onload="includeHTMLInit(`AddTask`)">
@@ -74,69 +75,11 @@
               <div class="asigned-to-v1">
                 <span class="assigned-to">Assigned to</span>
                 <div id="list1" class="dropdown-check-list" tabindex="100">
+                  <div onclick="renderAssignedTo()">
                   <span class="anchor">Select contacts to assign</span>
+                  </div>
                   <ul class="items">
-                    <div>
-                    <li id="catergory_list_1">
-                      <div class="active_contact">
-                        <div class="profile-badge">
-                          <div class="group">
-                            <div class="overlap-group" style="background-color: #DDFF22">
-                              <div class="text-wrapper-2">AM</div>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="div-2">
-                          <div class="name">Anton Mayer</div>
-                        </div>
-                        <input id="checkbox1" type="checkbox" class="checkbox">
-                    </div>
-                  </li>
-
-                    <li id="catergory_list_1"><input id="checkbox2" type="checkbox" class="checkbox">
-                        <div class="active_contact">
-                          <div class="profile-badge">
-                            <div class="group">
-                              <div class="overlap-group" style="background-color: #DDFF22">
-                                <div class="text-wrapper-2">AM</div>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="div-2">
-                            <div class="name">Anton Mayer</div>
-                          </div>
-                        </div>
-                    </li>
-
-                    <li id="catergory_list_1"><input id="checkbox3" type="checkbox" class="checkbox">
-                      <div class="active_contact">
-                        <div class="profile-badge">
-                          <div class="group">
-                            <div class="overlap-group" style="background-color: #DDFF22">
-                              <div class="text-wrapper-2">AM</div>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="div-2">
-                          <div class="name">Anton Mayer</div>
-                        </div>
-                      </div>
-                    </li>
-
-                    <li id="catergory_list_1"><input id="checkbox4" type="checkbox" class="checkbox">
-                      <div class="active_contact">
-                        <div class="profile-badge">
-                          <div class="group">
-                            <div class="overlap-group" style="background-color: #DDFF22">
-                              <div class="text-wrapper-2">AM</div>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="div-2">
-                          <div class="name">Anton Mayer</div>
-                        </div>
-                      </div>
-                    </li>
+                    <div id="assigned-list">
                   </div>
                   </ul>
                 </div>

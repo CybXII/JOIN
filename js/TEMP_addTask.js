@@ -150,3 +150,38 @@ checkList.getElementsByClassName("anchor")[0].onclick = function (evt) {
 // 
 
 
+function renderAssignedTo(){
+  
+  let assigncontent = document.getElementById('assigned-list');
+  contacts.forEach(element => {
+    
+       
+    const fullname = element.fullname;
+    const initials = element.initials;
+    const color = element.color;
+    const userid = element.id;
+
+    assigncontent.innerHTML += /*html*/ `<li id="catergory_list_${userid}">
+  <div class="active_contact">
+    <div class="profile-badge">
+      <div class="group">
+        <div class="overlap-group" style="background-color: ${color}">
+          <div class="text-wrapper-2">${initials}</div>
+        </div>
+      </div>
+    </div>
+    <div class="div-2">
+      <div class="name">${fullname}</div>
+    </div>
+    <input id="checkbox${userid}" type="checkbox" class="checkbox" />
+  </div>
+</li>
+`;
+  },
+  assigncontent.innerHTML = ''
+  );
+  
+  
+  
+
+}
