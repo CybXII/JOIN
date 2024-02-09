@@ -159,40 +159,70 @@ function changeLockerPicture(input){
   }
 }
 
+// function addContactListeners() {
+//   var contactList = document.getElementById('renderedContent');
+//   var contactNames = contactList.querySelectorAll('.contact-name');
+
+//   contactNames.forEach(function (contact) {
+//     contact.addEventListener('click', function () {
+//       // Entfernen Sie die 'active_contact'-Klasse von allen Elementen
+//       contactNames.forEach(function (c) {
+//         c.classList.remove('active_contact');
+//         c.classList.add('contact-name');
+
+//       });
+
+//       // Fügen Sie dann die 'active_contact'-Klasse nur zum angeklickten Element hinzu
+//       contact.classList.add('active_contact');
+//       contact.classList.remove('contact-name');
+//       // Zeigen Sie den Inhalt von .div2 .div an
+//       var nameContainer = contact.querySelector('.div-2 .div');
+//       var contactName = nameContainer.textContent.trim();
+//       console.log("Kontaktname:", contactName);
+//       openContact(contactName);
+//     });
+//   });
+// }
+
 function addContactListeners() {
   var contactList = document.getElementById('renderedContent');
   var contactNames = contactList.querySelectorAll('.contact-name');
 
-  contactNames.forEach(function (contact) {
-    contact.addEventListener('click', function () {
-      // Entfernen Sie die 'active_contact'-Klasse von allen Elementen
-      contactNames.forEach(function (c) {
+  contactNames.forEach(function(contact) {
+    contact.addEventListener('click', function() {
+      // Entfernen der 'active'-Klasse von allen Elementen
+      contactNames.forEach(function(c) {
         c.classList.remove('active_contact');
         c.classList.add('contact-name');
-
       });
 
-      // Fügen Sie dann die 'active_contact'-Klasse nur zum angeklickten Element hinzu
+      // Hinzufügen der 'active_contact'-Klasse zum angeklickten Elemnt
       contact.classList.add('active_contact');
       contact.classList.remove('contact-name');
+
       // Zeigen Sie den Inhalt von .div2 .div an
       var nameContainer = contact.querySelector('.div-2 .div');
       var contactName = nameContainer.textContent.trim();
       console.log("Kontaktname:", contactName);
       openContact(contactName);
+
+      // Animation für .contact_info auslösen
+      let contactInfo = document.querySelector('.contact_info'); // Sttelt sicher, dass die Klasse koreckt ist
+      if (contactInfo) {
+        contactInfo.classList.toggle('show');
+      }
     });
   });
 }
 
+// function listenerContacts(){
 
-function listenerContacts(){
+// document.addEventListener('DOMContentLoaded', function() {
+//   let id_frame_40 = document.getElementById('renderedContent');
 
-document.addEventListener('DOMContentLoaded', function() {
-  let id_frame_40 = document.getElementById('renderedContent');
-
-  id_frame_40.addEventListener('click', function() {
-    let contactInfo = document.querySelector('.contact_info');
-    contactInfo.classList.toggle('show');
-  });
-});
-}
+//   id_frame_40.addEventListener('click', function() {
+//     let contactInfo = document.querySelector('.contact_info');
+//     contactInfo.classList.toggle('show');
+//   });
+// });
+// }
