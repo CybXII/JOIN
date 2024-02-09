@@ -438,31 +438,6 @@ input:focus-visible {
   left: 0;
 }
 
-.log-in .text-wrapper-6 {
-  /* border: 1px solid red; */
-  position: relative;
-  width: fit-content;
-  margin-top: -1px;
-  font-family: var(--version-2-body-font-family);
-  font-weight: var(--version-2-body-font-weight);
-  color: var(--icon);
-  font-size: var(--version-2-body-font-size);
-  letter-spacing: var(--version-2-body-letter-spacing);
-  line-height: var(--version-2-body-line-height);
-  white-space: nowrap;
-  font-style: var(--version-2-body-font-style);
-  cursor: pointer;
-}
-
-.log-in .text-wrapper-6:hover {
-  position: absolute;
-  top: 74px;
-  right: 16px;
-  padding: 8px;
-  box-sizing: border-box;
-  width: 40px;
-  height: 40px;
-}
 
 .scroll_container {
   position: fixed;
