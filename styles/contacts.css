@@ -68,9 +68,8 @@ Die Oberen sind zwecks zum Testen und vor zeigen
 
 .container {
 overflow-x: hidden;
-overflow-y: scroll;
+/* overflow-y: scroll; */
 }
-
 
 
 .frame-40 {
@@ -111,7 +110,7 @@ overflow-y: scroll;
     overflow-x: hidden;
     top: 96px;
     bottom: 0;
-    z-index: 10;
+    z-index: 3;
   }
 
 .seperator_contacts{
@@ -647,6 +646,83 @@ text-align: left;
 .frame-103 a:hover{
   color: var(--ligth-blue);
 }
+
+/* Fenster AddContact */
+
+.contacts-background {
+  z-index: 4;
+  background-color: rgba(65, 63, 63, 0.466);
+  top: 0;
+  bottom: 0;
+  left: 232px;
+  right: 0;
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.contacts-card {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  background-color: white;
+  height: 670px;
+  width: 1116px;
+  padding: 40px;
+  border-radius: 30px;
+}
+
+.contacts-card > button {
+  width: 30px;
+}
+
+.contacts-background-fixed {
+  margin: 0;
+  height: 100%;
+  overflow: hidden;
+}
+
+.add-contacts-initials{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  color: white;
+}
+
+.add-contacts-form{
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 280px;
+}
+
+.add-contact-cancel{
+  border: 1px solid black;
+  padding: 5px;
+  cursor: pointer;
+  text-align: center;
+}
+
+ .add-contact-name{
+  border: 1px solid black;
+ }
+ .add-contact-email{
+  border: 1px solid black;
+ }
+ .add-contact-phone{
+  border: 1px solid black;
+ }
+
+
+/* #################### */
+
+
 
 
 @media (max-width: 900px) {

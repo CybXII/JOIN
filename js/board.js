@@ -156,7 +156,6 @@ function closeAddTaskContainer() {
 
 function dontClose() {
   event.stopPropagation();
-  console.log(event);
 }
 
 function setAmounts() {

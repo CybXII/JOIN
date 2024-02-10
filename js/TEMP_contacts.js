@@ -44,17 +44,6 @@ let contacts = [
     taskassigned: false,
   },
   {
-    firstname: "Eva",
-    lastname: "Fischer",
-    fullname: "Eva Fischer",
-    initials: "EF",
-    email: "eva@gmail.com",
-    phone: "+49 1111 1111 11",
-    color: "#0E3E99",
-    id: "5",
-    taskassigned: false,
-  },
-  {
     firstname: "Marcel",
     lastname: "Bauer",
     fullname: "Marcel Bauer",
@@ -76,14 +65,45 @@ let contacts = [
     id: "7",
     taskassigned: false,
   },
+  {
+    firstname: "Eva",
+    lastname: "Fischer",
+    fullname: "Eva Fischer",
+    initials: "EF",
+    email: "eva@gmail.com",
+    phone: "+49 1111 1111 11",
+    color: "#0E3E99",
+    id: "5",
+    taskassigned: false,
+  },
 ];
+
+
+
+function sortContacts(){
+  let sortedContacts = contacts.sort((a, b) => {
+    const nameA = a.firstname.toUpperCase();
+    const nameB = b.firstname.toUpperCase();
+    if (nameA < nameB) {
+      return -1;
+    }
+    if (nameA > nameB) {
+      return 1;
+    }
+    return 0;
+  });
+
+  console.log(sortedContacts);
+}
 
 let letters = [];
 
 function pushLetters() {
+  let letterbox = document.getElementById("renderedContent");
+  letterbox.innerHTML = "";
+  loadContactsFromLocalStorage();
   for (let i = 0; i < contacts.length; i++) {
-    const firstLetter = contacts[i]["firstname"].charAt(0);
-
+    const firstLetter = contacts[i]["firstname"].charAt(0).toUpperCase();
     if (!letters.includes(firstLetter)) {
       letters.push(firstLetter);
       renderLetters(firstLetter);
@@ -105,13 +125,12 @@ function renderLetters(firstLetter) {
 
 function renderContactCard(firstLetter) {
   let content = document.getElementById(`contact-card-${firstLetter}`);
-
   contacts.forEach((element) => {
       const fullname = element.fullname;
       const email = element.email;
       const color = element.color;
       const initials = element.initials;
-    if (element.firstname.charAt(0) == firstLetter) {
+    if (element.firstname.charAt(0).toUpperCase() == firstLetter) {
       content.innerHTML += renderContactCardHTML(
         fullname,
         email,
@@ -137,3 +156,108 @@ function renderContactCardHTML(fullname, email, color, initials) {
                 </div>
               </div>`;
 }
+
+function openContactsContainer() {
+  document.getElementById("contacts-background").classList.remove("d-none");
+  document.body.classList.add("contacts-background-fixed");
+}
+function closeContactsContainer() {
+  document.getElementById("contacts-background").classList.add("d-none");
+  document.body.classList.remove("contacts-background-fixed");
+}
+
+function dontClose() {
+  event.stopPropagation();
+}
+
+function addContactsToStorage(){
+  let nameInput = document.getElementById("add_contacts_name").value.split(" ");
+  let name = document.getElementById("add_contacts_name");
+  let email = document.getElementById("add_contacts_email");
+  let phone = document.getElementById("add_contacts_phone");
+  let lastName;
+  let initials = nameInput[0][0] + nameInput[nameInput.length - 1][0];
+  nameInput.length > 1
+    ? (lastName = nameInput[nameInput.length - 1])
+    : (lastName = "");
+  let firstName = nameInput[0];
+  let color = getRandomColor();
+
+  let JSONToPush = {
+    firstname: firstName,
+    lastname: lastName,
+    fullname: name.value,
+    initials: initials,
+    email: email.value,
+    phone: phone.value,
+    color: color,
+    id: contacts.length,
+    taskassigned: false,
+  };
+
+  contacts.push(JSONToPush);
+
+  name.value = "";
+  email.value = "";
+  phone.value = "";
+
+closeContactsContainer();
+saveContactsToLocalStorage();
+pushLetters();
+}
+
+function getRandomColor(color) {
+  var letters = "0123456789ABCDEF";
+  var color = "#";
+  for (var i = 0; i < 6; i++) {
+    color += letters[Math.floor(Math.random() * 16)];
+  }
+  return color;
+}
+
+
+function saveContactsToLocalStorage() {
+  sortContacts();
+  localStorage.setItem("contacts", JSON.stringify(contacts));
+}
+
+function loadContactsFromLocalStorage() {
+  let storageAsText = localStorage.getItem("contacts");
+
+  if (storageAsText) {
+    contacts = JSON.parse(storageAsText);
+  }
+}
+
+
+
+// function addTasksToStorage() {
+//   let title = document.getElementById("task-title");
+//   let description = document.getElementById("task-description");
+//   let date = document.getElementById("datePicker");
+
+//   let JSONToPush = {
+//     categoryboard: "todo",
+//     category: "JSONPUSHTEST",
+//     title: title.value,
+//     description: description.value,
+//     dueDate: date.value,
+//     prio: taskpriority,
+//     subtasks: ["1", "2", "3"],
+//     assignedTo: ["XY", "ZA", "BC"],
+//   };
+
+//   tasks.push(JSONToPush);
+//   title.value = "";
+//   description.value = "";
+//   date.value = "";
+
+//   // FORMVALIDATION MIT IF ELSE ABFRAGE
+
+//   taskAddedCompleteText();
+
+//   //
+
+//   console.log(tasks);
+//   saveToLocalStorage();
+// }

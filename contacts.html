@@ -9,22 +9,44 @@
     <link rel="stylesheet" href="./styles/fonts.css" />
     <link rel="stylesheet" href="./styles/style.css" />
     <link rel="stylesheet" href="./styles/contacts.css" />
+    <link rel="stylesheet" href="./styles/board.css" />
     <script src="./js/login.js"></script>
     <script src="./js/templates.js"></script>
     <script src="./js/script.js"></script>
     <script src="./js/classesSidebar.js"></script>
     <script src="./js/eventListener.js"></script>
     <script src="./js/TEMP_contacts.js"></script>
+    <script src="./js/board.js"></script>
     <link rel="icon" type="image" href="./img/join-favicon.svg" />
   </head>
   <body onload="includeHTMLInit(`Contacts`), pushLetters()">
     <nav w3-include-html="./templates/header.html"></nav>
     <div class="content-container">
       <div class="container" id="content">
+        <!-- d-none hinzufügen -->
+        <div
+          class="contacts-background d-none"
+          id="contacts-background"
+          onclick="closeContactsContainer()"
+        >
+          <div class="contacts-card" onclick="dontClose()">
+            <button onclick="closeContactsContainer()">X</button>
+            <form onsubmit="addContactsToStorage(); return false;" class="add-contacts-form">
+            <input type="text" placeholder="name" class="add-contact-name" id="add_contacts_name">
+            <input type="email" placeholder="email" class="add-contact-email" id="add_contacts_email">
+            <input type="tel" placeholder="phone" class="add-contact-phone" id="add_contacts_phone">
+            <button>Create Contact</button>
+            <div onclick="closeContactsContainer()" class="add-contact-cancel">Cancel</div>
+
+
+            </form>
+
+          </div>
+        </div>
         <div>
           <div class="frame-97">
             <div class="addContact">
-              <div class="primary-contact">
+              <div class="primary-contact" onclick="openContactsContainer()">
                 <div class="text-wrapper">Add new contact</div>
                 <img class="person-add" src="img/person_add.svg" />
               </div>
