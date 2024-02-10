@@ -1,11 +1,11 @@
 let contacts = [
   {
-    firstname: "Anton",
-    lastname: "Mayer",
-    fullname: "Anton Mayer",
-    initials: "AM",
-    email: "antom@gmail.com",
-    phone: "+49 1111 1111 11",
+    firstname: "Alexander",
+    lastname: "Luft",
+    fullname: "Alexander Luft",
+    initials: "AL",
+    email: "alex@alex.com",
+    phone: "+49 1234 5678 90",
     color: "#F5E227",
     id: "1",
     taskassigned: false,
@@ -44,6 +44,17 @@ let contacts = [
     taskassigned: false,
   },
   {
+    firstname: "Lukas",
+    lastname: "Nolting",
+    fullname: "Lukas Nolting",
+    initials: "LN",
+    email: "lukas@lukas.com",
+    phone: "+49 2345 6789 01",
+    color: "#2F546E",
+    id: "4",
+    taskassigned: false,
+  },
+  {
     firstname: "Marcel",
     lastname: "Bauer",
     fullname: "Marcel Bauer",
@@ -51,6 +62,17 @@ let contacts = [
     email: "bauer@gmail.com",
     phone: "+49 1111 1111 11",
     color: "#2F546E",
+    id: "6",
+    taskassigned: false,
+  },
+  {
+    firstname: "Steffen",
+    lastname: "Schumann",
+    fullname: "Steffen Schumann",
+    initials: "SS",
+    email: "steffen@steffen.com",
+    phone: "+49 3456 7890 12",
+    color: "#61C3DD",
     id: "6",
     taskassigned: false,
   },
@@ -174,7 +196,9 @@ function addContactsToStorage() {
   let email = document.getElementById("add_contacts_email");
   let phone = document.getElementById("add_contacts_phone");
   let lastName;
-  let initials = nameInput[0][0] + nameInput[nameInput.length - 1][0];
+  let initials =
+    nameInput[0][0].toUpperCase() +
+    nameInput[nameInput.length - 1][0].toUpperCase();
   nameInput.length > 1
     ? (lastName = nameInput[nameInput.length - 1])
     : (lastName = "");
