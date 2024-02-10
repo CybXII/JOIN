@@ -78,9 +78,9 @@ let contacts = [
   },
 ];
 
+loadContactsFromLocalStorage();
 
-
-function sortContacts(){
+function sortContacts() {
   let sortedContacts = contacts.sort((a, b) => {
     const nameA = a.firstname.toUpperCase();
     const nameB = b.firstname.toUpperCase();
@@ -92,8 +92,6 @@ function sortContacts(){
     }
     return 0;
   });
-
-  console.log(sortedContacts);
 }
 
 let letters = [];
@@ -101,7 +99,8 @@ let letters = [];
 function pushLetters() {
   let letterbox = document.getElementById("renderedContent");
   letterbox.innerHTML = "";
-  loadContactsFromLocalStorage();
+  sortContacts();
+  letters = [];
   for (let i = 0; i < contacts.length; i++) {
     const firstLetter = contacts[i]["firstname"].charAt(0).toUpperCase();
     if (!letters.includes(firstLetter)) {
@@ -114,10 +113,9 @@ function pushLetters() {
 
 function renderLetters(firstLetter) {
   let letterbox = document.getElementById("renderedContent");
-  // letterbox.innerHTML = "";
 
-    const letter = firstLetter;
-    letterbox.innerHTML += `
+  const letter = firstLetter;
+  letterbox.innerHTML += `
     <div class="div-wrapper"><div class="div">${letter}</div></div>
               <img class="img" src="img/seperator_contacts.svg" />
               <div id="contact-card-${letter}"></div>`;
@@ -126,10 +124,10 @@ function renderLetters(firstLetter) {
 function renderContactCard(firstLetter) {
   let content = document.getElementById(`contact-card-${firstLetter}`);
   contacts.forEach((element) => {
-      const fullname = element.fullname;
-      const email = element.email;
-      const color = element.color;
-      const initials = element.initials;
+    const fullname = element.fullname;
+    const email = element.email;
+    const color = element.color;
+    const initials = element.initials;
     if (element.firstname.charAt(0).toUpperCase() == firstLetter) {
       content.innerHTML += renderContactCardHTML(
         fullname,
@@ -170,7 +168,7 @@ function dontClose() {
   event.stopPropagation();
 }
 
-function addContactsToStorage(){
+function addContactsToStorage() {
   let nameInput = document.getElementById("add_contacts_name").value.split(" ");
   let name = document.getElementById("add_contacts_name");
   let email = document.getElementById("add_contacts_email");
@@ -201,9 +199,9 @@ function addContactsToStorage(){
   email.value = "";
   phone.value = "";
 
-closeContactsContainer();
-saveContactsToLocalStorage();
-pushLetters();
+  closeContactsContainer();
+  saveContactsToLocalStorage();
+  pushLetters();
 }
 
 function getRandomColor(color) {
@@ -214,7 +212,6 @@ function getRandomColor(color) {
   }
   return color;
 }
-
 
 function saveContactsToLocalStorage() {
   sortContacts();
@@ -228,36 +225,3 @@ function loadContactsFromLocalStorage() {
     contacts = JSON.parse(storageAsText);
   }
 }
-
-
-
-// function addTasksToStorage() {
-//   let title = document.getElementById("task-title");
-//   let description = document.getElementById("task-description");
-//   let date = document.getElementById("datePicker");
-
-//   let JSONToPush = {
-//     categoryboard: "todo",
-//     category: "JSONPUSHTEST",
-//     title: title.value,
-//     description: description.value,
-//     dueDate: date.value,
-//     prio: taskpriority,
-//     subtasks: ["1", "2", "3"],
-//     assignedTo: ["XY", "ZA", "BC"],
-//   };
-
-//   tasks.push(JSONToPush);
-//   title.value = "";
-//   description.value = "";
-//   date.value = "";
-
-//   // FORMVALIDATION MIT IF ELSE ABFRAGE
-
-//   taskAddedCompleteText();
-
-//   //
-
-//   console.log(tasks);
-//   saveToLocalStorage();
-// }
