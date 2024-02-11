@@ -204,15 +204,15 @@ function addContactListeners() {
       var nameContainer = contact.querySelector('.div-2 .div');
       var contactName = nameContainer.textContent.trim();
       console.log("Kontaktname:", contactName);
-      openContact(contactName);
+      // openContact(contactName);
 
       contact.id = 'active-contact';
 
       // Animation für .contact_info auslösen
-      let contactInfo = document.querySelector('.contact_info'); // Sttelt sicher, dass die Klasse koreckt ist
-      if (contactInfo) {
-        contactInfo.classList.toggle('show');
-      }
+      // let contactInfo = document.querySelector('.contact_info'); // Sttelt sicher, dass die Klasse koreckt ist
+      // if (contactInfo) {
+      //   contactInfo.classList.toggle('show');
+      // }
     });
   });
 }

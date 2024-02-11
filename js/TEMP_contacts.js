@@ -150,19 +150,21 @@ function renderContactCard(firstLetter) {
     const email = element.email;
     const color = element.color;
     const initials = element.initials;
+    const phone = element.phone;
     if (element.firstname.charAt(0).toUpperCase() == firstLetter) {
       content.innerHTML += renderContactCardHTML(
         fullname,
         email,
         color,
-        initials
+        initials,
+        phone
       );
     }
   });
 }
 
-function renderContactCardHTML(fullname, email, color, initials) {
-  return /*html*/ `<div class="contact-name">
+function renderContactCardHTML(fullname, email, color, initials, phone) {
+  return /*html*/ `<div class="contact-name" onclick="openContact('${fullname}', '${email}', '${color}', '${initials}', '${phone}')">
                 <div class="profile-badge">
                   <div class="group">
                     <div class="overlap-group" style="background-color: ${color}">
@@ -194,7 +196,8 @@ function addContactsToStorage() {
   let nameInput = document.getElementById("add_contacts_name").value.split(" ");
   let name = document.getElementById("add_contacts_name");
   let email = document.getElementById("add_contacts_email");
-  let phone = document.getElementById("add_contacts_phone");
+    let phone = formatPhoneNumber();
+
   let lastName;
   let initials =
     nameInput[0][0].toUpperCase() +
@@ -211,7 +214,7 @@ function addContactsToStorage() {
     fullname: name.value,
     initials: initials,
     email: email.value,
-    phone: phone.value,
+    phone: phone,
     color: color,
     id: contacts.length,
     taskassigned: false,
@@ -227,6 +230,30 @@ function addContactsToStorage() {
   saveContactsToLocalStorage();
   pushLetters();
 }
+
+function formatPhoneNumber() {
+    let phoneNumber = document.getElementById("add_contacts_phone").value;
+    // Entferne alle Nicht-Ziffern
+    phoneNumber = phoneNumber.replace(/\D/g, '');
+    
+    // Füge die Ländervorwahl hinzu, falls nicht bereits vorhanden
+    if (phoneNumber.length === 10) {
+        phoneNumber = '49' + phoneNumber;
+    } else if (phoneNumber.length === 11 && phoneNumber.startsWith('0')) {
+        phoneNumber = '49' + phoneNumber.slice(1);
+    }
+    else if (phoneNumber.length === 12 && phoneNumber.startsWith('0')) {
+        phoneNumber = '49' + phoneNumber.slice(1);
+    }
+    
+    // Füge Leerzeichen ein
+    phoneNumber = phoneNumber.replace(/(\d{2})(\d{4})(\d{4})(\d{2})/, '+$1 $2 $3 $4');
+    
+    console.log(phoneNumber); // Ausgabe: "+49 1234 5678 97"
+    return phoneNumber;
+}
+
+// Beispielaufruf
 
 function getRandomColor(color) {
   var letters = "0123456789ABCDEF";

@@ -114,9 +114,14 @@ async function includeHTML() {
   }
 }
 
-function openContact(contactName) {
-  document.getElementById("contact_info").innerHTML =
-    renderContactInfo(contactName);
+function openContact(fullname, email, color, initials, phone) {
+  document.getElementById("contact_info").innerHTML = renderContactInfo(
+    fullname,
+    email,
+    color,
+    initials,
+    phone
+  );
 }
 
 // RANDOM COLOR CONTACTS

@@ -203,16 +203,16 @@ function renderLoginHTML() {
         </div>`;
 }
 
-function renderContactInfo(contactName) {
+function renderContactInfo(fullname, email, color, initials, phone) {
   return /*html*/ `  
   <div class="frame-105">
     <div class="frame-79">
       <div class="group">
-        <div class="circle"><div class="text-wrapper-circle">AM</div></div>
+        <div class="circle" style="background-color:${color};"><div class="text-wrapper-circle">${initials}</div></div>
       </div>
     </div>
     <div class="frame-104">
-      <div class="frame-81">${contactName}</div>
+      <div class="frame-81">${fullname}</div>
       <div class="frame-204">
         <div class="frame-108"><img src="./img/pen.svg" alt=""><p>Edit</p></div>
         <div class="delete"><img src="./img/trash.svg" alt=""><p>Delete</p></div>
@@ -226,11 +226,11 @@ function renderContactInfo(contactName) {
   <div class="frame-101">
     <div class="frame-102">
       <p class="email">Email</p>
-      <a >anton@gmail.com</a>
+      <a >${email}</a>
     </div>
     <div class="frame-103">
       <p class="Phone">Phone</p>
-      <a href="#+491111 111 11 1">+49 1111 111 11 1</a>
+      <a href="tel:${phone}">${phone}</a>
     </div>
   </div>
 

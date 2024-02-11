@@ -494,7 +494,6 @@ overflow-x: hidden;
  .circle{
   height: 120px;
   width: 120px;
-  background-color: #ff4646;
   border-radius: 50%;
   display: flex;
   justify-content: center;
