@@ -31,16 +31,36 @@
         >
           <div class="contacts-card" onclick="dontClose()">
             <button onclick="closeContactsContainer()">X</button>
-            <form onsubmit="addContactsToStorage(); return false;" class="add-contacts-form">
-            <input type="text" placeholder="name" class="add-contact-name" id="add_contacts_name">
-            <input type="email" placeholder="email" class="add-contact-email" id="add_contacts_email">
-            <input type="tel" placeholder="phone" class="add-contact-phone" id="add_contacts_phone">
-            <button>Create Contact</button>
-            <div onclick="closeContactsContainer()" class="add-contact-cancel">Cancel</div>
-
-
+            <form
+              onsubmit="addContactsToStorage(); return false;"
+              class="add-contacts-form"
+            >
+              <input
+                type="text"
+                placeholder="name"
+                class="add-contact-name"
+                id="add_contacts_name"
+              />
+              <input
+                type="email"
+                placeholder="email"
+                class="add-contact-email"
+                id="add_contacts_email"
+              />
+              <input
+                type="tel"
+                placeholder="phone"
+                class="add-contact-phone"
+                id="add_contacts_phone"
+              />
+              <button>Create Contact</button>
+              <div
+                onclick="closeContactsContainer()"
+                class="add-contact-cancel"
+              >
+                Cancel
+              </div>
             </form>
-
           </div>
         </div>
         <div>
@@ -59,7 +79,9 @@
               <img src="./img/separation-blue.svg" alt="separation-blue" />
               <p>Better with a team</p>
             </div>
-            <div id="contact_info" class="contact_info"></div>
+          </div>
+          <div id="contact_info_bg" class="contact_info-bg d-none">
+            <div class="contact-info-content" id="contact_info"></div>
           </div>
         </div>
       </div>

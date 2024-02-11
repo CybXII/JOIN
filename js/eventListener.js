@@ -195,6 +195,7 @@ function addContactListeners() {
         c.classList.remove('active_contact');
         c.classList.add('contact-name');
       });
+      animateContacts();
 
       // Hinzufügen der 'active_contact'-Klasse zum angeklickten Elemnt
       contact.classList.add('active_contact');
@@ -207,6 +208,7 @@ function addContactListeners() {
       // openContact(contactName);
 
       contact.id = 'active-contact';
+      
 
       // Animation für .contact_info auslösen
       // let contactInfo = document.querySelector('.contact_info'); // Sttelt sicher, dass die Klasse koreckt ist

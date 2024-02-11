@@ -288,6 +288,16 @@ function loadContactsFromLocalStorage() {
   }
 }
 
+function animateContacts() {
+  document.getElementById("contact_info_bg").classList.add("d-none");
+  document.getElementById("contact_info_bg").classList.remove("d-none");
+}
+
+
+
+
+
+
 function deleteContact(userid) {
   console.log(userid + " gelöscht!");
   // Filtere das JSON-Array und entferne das Element mit der entsprechenden ID
@@ -304,3 +314,8 @@ function deleteContact(userid) {
 function editContact(userid) {
   console.log(userid + " wird gerade editiert!");
 }
+
+
+
+
+
