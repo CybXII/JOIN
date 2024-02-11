@@ -203,7 +203,7 @@ function renderLoginHTML() {
         </div>`;
 }
 
-function renderContactInfo(fullname, email, color, initials, phone) {
+function renderContactInfo(fullname, email, color, initials, phone, userid) {
   return /*html*/ `  
   <div class="frame-105">
     <div class="frame-79">
@@ -215,7 +215,7 @@ function renderContactInfo(fullname, email, color, initials, phone) {
       <div class="frame-81">${fullname}</div>
       <div class="frame-204">
         <div class="frame-108"><img src="./img/pen.svg" alt=""><p>Edit</p></div>
-        <div class="delete"><img src="./img/trash.svg" alt=""><p>Delete</p></div>
+        <div class="delete" onclick="deleteContact('${userid}')"><img src="./img/trash.svg" alt=""><p>Delete</p></div>
       </div>
     </div>
   </div>

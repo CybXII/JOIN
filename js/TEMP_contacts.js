@@ -151,20 +151,22 @@ function renderContactCard(firstLetter) {
     const color = element.color;
     const initials = element.initials;
     const phone = element.phone;
+    const userid = element.id;
     if (element.firstname.charAt(0).toUpperCase() == firstLetter) {
       content.innerHTML += renderContactCardHTML(
         fullname,
         email,
         color,
         initials,
-        phone
+        phone,
+        userid
       );
     }
   });
 }
 
-function renderContactCardHTML(fullname, email, color, initials, phone) {
-  return /*html*/ `<div class="contact-name" onclick="openContact('${fullname}', '${email}', '${color}', '${initials}', '${phone}')">
+function renderContactCardHTML(fullname, email, color, initials, phone, userid) {
+  return /*html*/ `<div class="contact-name" onclick="openContact('${fullname}', '${email}', '${color}', '${initials}', '${phone}', '${userid}')">
                 <div class="profile-badge">
                   <div class="group">
                     <div class="overlap-group" style="background-color: ${color}">
@@ -275,4 +277,8 @@ function loadContactsFromLocalStorage() {
   if (storageAsText) {
     contacts = JSON.parse(storageAsText);
   }
+}
+
+function deleteContact(userid){
+  console.log(userid + " gelöscht!");
 }

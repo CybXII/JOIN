@@ -114,13 +114,14 @@ async function includeHTML() {
   }
 }
 
-function openContact(fullname, email, color, initials, phone) {
+function openContact(fullname, email, color, initials, phone, userid) {
   document.getElementById("contact_info").innerHTML = renderContactInfo(
     fullname,
     email,
     color,
     initials,
-    phone
+    phone, 
+    userid
   );
 }
 
