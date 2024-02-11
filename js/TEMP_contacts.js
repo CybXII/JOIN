@@ -165,7 +165,14 @@ function renderContactCard(firstLetter) {
   });
 }
 
-function renderContactCardHTML(fullname, email, color, initials, phone, userid) {
+function renderContactCardHTML(
+  fullname,
+  email,
+  color,
+  initials,
+  phone,
+  userid
+) {
   return /*html*/ `<div class="contact-name" onclick="openContact('${fullname}', '${email}', '${color}', '${initials}', '${phone}', '${userid}')">
                 <div class="profile-badge">
                   <div class="group">
@@ -198,7 +205,7 @@ function addContactsToStorage() {
   let nameInput = document.getElementById("add_contacts_name").value.split(" ");
   let name = document.getElementById("add_contacts_name");
   let email = document.getElementById("add_contacts_email");
-    let phone = formatPhoneNumber();
+  let phone = formatPhoneNumber();
 
   let lastName;
   let initials =
@@ -234,25 +241,27 @@ function addContactsToStorage() {
 }
 
 function formatPhoneNumber() {
-    let phoneNumber = document.getElementById("add_contacts_phone").value;
-    // Entferne alle Nicht-Ziffern
-    phoneNumber = phoneNumber.replace(/\D/g, '');
-    
-    // Füge die Ländervorwahl hinzu, falls nicht bereits vorhanden
-    if (phoneNumber.length === 10) {
-        phoneNumber = '49' + phoneNumber;
-    } else if (phoneNumber.length === 11 && phoneNumber.startsWith('0')) {
-        phoneNumber = '49' + phoneNumber.slice(1);
-    }
-    else if (phoneNumber.length === 12 && phoneNumber.startsWith('0')) {
-        phoneNumber = '49' + phoneNumber.slice(1);
-    }
-    
-    // Füge Leerzeichen ein
-    phoneNumber = phoneNumber.replace(/(\d{2})(\d{4})(\d{4})(\d{2})/, '+$1 $2 $3 $4');
-    
-    console.log(phoneNumber); // Ausgabe: "+49 1234 5678 97"
-    return phoneNumber;
+  let phoneNumber = document.getElementById("add_contacts_phone").value;
+  // Entferne alle Nicht-Ziffern
+  phoneNumber = phoneNumber.replace(/\D/g, "");
+
+  // Füge die Ländervorwahl hinzu, falls nicht bereits vorhanden
+  if (phoneNumber.length === 10) {
+    phoneNumber = "49" + phoneNumber;
+  } else if (phoneNumber.length === 11 && phoneNumber.startsWith("0")) {
+    phoneNumber = "49" + phoneNumber.slice(1);
+  } else if (phoneNumber.length === 12 && phoneNumber.startsWith("0")) {
+    phoneNumber = "49" + phoneNumber.slice(1);
+  }
+
+  // Füge Leerzeichen ein
+  phoneNumber = phoneNumber.replace(
+    /(\d{2})(\d{4})(\d{4})(\d{2})/,
+    "+$1 $2 $3 $4"
+  );
+
+  console.log(phoneNumber); // Ausgabe: "+49 1234 5678 97"
+  return phoneNumber;
 }
 
 // Beispielaufruf
@@ -285,9 +294,13 @@ function deleteContact(userid) {
   const updatedContacts = contacts.filter((contact) => contact.id !== userid);
   contacts.splice(0, contacts.length); // Leere das contacts-Array
   contacts.push(...updatedContacts); // Füge die aktualisierten Kontakte hinzu
-  saveContactsToLocalStorage();
   pushLetters();
+  saveContactsToLocalStorage();
 
-  document.getElementById("contact_info").innerHTML = '';
+  document.getElementById("contact_info").innerHTML = "";
   console.log(updatedContacts);
+}
+
+function editContact(userid) {
+  console.log(userid + " wird gerade editiert!");
 }

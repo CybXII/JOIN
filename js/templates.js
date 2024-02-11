@@ -214,7 +214,7 @@ function renderContactInfo(fullname, email, color, initials, phone, userid) {
     <div class="frame-104">
       <div class="frame-81">${fullname}</div>
       <div class="frame-204">
-        <div class="frame-108"><img src="./img/pen.svg" alt=""><p>Edit</p></div>
+        <div class="frame-108" onclick="editContact('${userid}')"><img src="./img/pen.svg" alt=""><p>Edit</p></div>
         <div class="delete" onclick="deleteContact('${userid}')"><img src="./img/trash.svg" alt=""><p>Delete</p></div>
       </div>
     </div>
