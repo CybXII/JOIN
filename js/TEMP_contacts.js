@@ -51,7 +51,7 @@ let contacts = [
     email: "lukas@lukas.com",
     phone: "+49 2345 6789 01",
     color: "#2F546E",
-    id: "4",
+    id: "5",
     taskassigned: false,
   },
   {
@@ -73,7 +73,7 @@ let contacts = [
     email: "steffen@steffen.com",
     phone: "+49 3456 7890 12",
     color: "#61C3DD",
-    id: "6",
+    id: "7",
     taskassigned: false,
   },
   {
@@ -84,7 +84,7 @@ let contacts = [
     email: "wolf@gmail.com",
     phone: "+49 1111 1111 11",
     color: "#EF1835",
-    id: "7",
+    id: "8",
     taskassigned: false,
   },
   {
@@ -95,7 +95,7 @@ let contacts = [
     email: "eva@gmail.com",
     phone: "+49 1111 1111 11",
     color: "#0E3E99",
-    id: "5",
+    id: "9",
     taskassigned: false,
   },
 ];
@@ -279,6 +279,15 @@ function loadContactsFromLocalStorage() {
   }
 }
 
-function deleteContact(userid){
+function deleteContact(userid) {
   console.log(userid + " gelöscht!");
+  // Filtere das JSON-Array und entferne das Element mit der entsprechenden ID
+  const updatedContacts = contacts.filter((contact) => contact.id !== userid);
+  contacts.splice(0, contacts.length); // Leere das contacts-Array
+  contacts.push(...updatedContacts); // Füge die aktualisierten Kontakte hinzu
+  saveContactsToLocalStorage();
+  pushLetters();
+
+  document.getElementById("contact_info").innerHTML = '';
+  console.log(updatedContacts);
 }
