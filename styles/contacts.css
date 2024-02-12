@@ -472,14 +472,14 @@ overflow-x: hidden;
   gap:  30px;
  }
 
-/* .contact_info {
+.contact_info {
   transition: 0.5s ease-in-out;
   transform: translateX(5000px);
 }
 
-.contact_info.show {
+.show {
   transform: translateX(0);
- } */
+ }
 
  .frame-40{
   flex-direction: column;
