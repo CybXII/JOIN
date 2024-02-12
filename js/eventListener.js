@@ -205,6 +205,10 @@ function addContactListeners() {
       var contactName = nameContainer.textContent.trim();
       console.log("Kontaktname:", contactName);
       // openContact(contactName);
+      setTimeout(() => {
+        contactAnimation();
+        
+      }, 1);
 
       contact.id = 'active-contact';
       

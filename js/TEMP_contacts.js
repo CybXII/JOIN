@@ -290,18 +290,7 @@ function loadContactsFromLocalStorage() {
 
 function contactAnimation() {
   let element = document.getElementById('contact_info');
-  // element.classList.toggle('show');
   element.classList.add("contact-info-content");
-
-  let clickCount = 0;
-
-  clickCount++
-  if (clickCount === 1) {
-    element.classList.toggle('show');
-  } else  {
-    clickCount = 0;
-  }   
-
 }
 
 

@@ -118,7 +118,6 @@ function openContact(fullname, email, color, initials, phone, userid) {
   let element = document.getElementById("contact_info");
   element.classList.remove("contact-info-content");
   element.classList.remove("contact-info");
-  contactAnimation();
   document.getElementById("contact_info").innerHTML = renderContactInfo(
     fullname,
     email,
