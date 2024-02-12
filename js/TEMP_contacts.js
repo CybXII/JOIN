@@ -290,9 +290,23 @@ function loadContactsFromLocalStorage() {
 
 function contactAnimation() {
   let element = document.getElementById('contact_info');
+<<<<<<< HEAD
   // element.classList.toggle('show');
   element.classList.add("contact-info-content");
+=======
+  let cklickCount = 0;
+
+  cklickCount++
+  if (cklickCount === 1) {
+    element.classList.toggle('show');
+  } else if (cklickCount === 2) {
+    window.location.reload();
+    
+  }   
+
+>>>>>>> 14dc7eb9209132f7f5f1eac03300ea734c7e4b4a
 }
+
 
 function deleteContact(userid) {
   console.log(userid + " gelöscht!");
