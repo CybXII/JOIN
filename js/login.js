@@ -26,14 +26,13 @@ function login(event){
     event.preventDefault();
   let email = document.getElementById("email");
   let password = document.getElementById("login_password");
-  let user = active_user.find(
+  let user = users.find(
     (u) => u.email == email.value && u.password == password.value
   );
   console.log(user);
   if (user) {
     console.log("user gefunden");
     window.location.href= "summary.html"
-    saveContactsToLocalStorage();
   } else {
     console.log("Wrong password Ups! Try again.");
     alert("Wrong password Ups! Try again.");

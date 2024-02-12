@@ -237,7 +237,9 @@ function addContactsToStorage() {
 
   closeContactsContainer();
   saveContactsToLocalStorage();
-  pushLetters();
+  setTimeout(() => {
+    pushLetters(); 
+  }, 1);
 }
 
 function formatPhoneNumber() {

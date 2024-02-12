@@ -1,6 +1,6 @@
 let privacyChecker;
 let login_remember = false;
-let active_user = [];
+let users = [];
 
 async function addUser(event) {
   event.preventDefault();
@@ -8,9 +8,8 @@ async function addUser(event) {
 }
 
 async function loadUser() {
-  loadUsersFromLocalStorage();
   try {
-    active_user = JSON.parse(await getItem("active_user"));
+    users = JSON.parse(await getItem("users"));
   } catch (e) {
     console.error("Loading error:", e);
   }
@@ -22,12 +21,12 @@ async function signUpSuccessfull() {
   let password = document.getElementById("password-su").value;
 
   
-  active_user.push({
+  users.push({
     name: Name,
     email: email,
     password: password,
   });
-  await setItem("active_user", JSON.stringify(active_user));
+  await setItem("users", JSON.stringify(users));
   setTimeout(() => {
     renderLogin();
   }, 2000);
