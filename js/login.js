@@ -25,7 +25,7 @@ function login(event){
     // Das Standardverhalten des Formulars unterdrücken
     event.preventDefault();
   let email = document.getElementById("email");
-  let password = document.getElementById("password");
+  let password = document.getElementById("login_password");
   let user = active_user.find(
     (u) => u.email == email.value && u.password == password.value
   );
@@ -33,6 +33,7 @@ function login(event){
   if (user) {
     console.log("user gefunden");
     window.location.href= "summary.html"
+    saveContactsToLocalStorage();
   } else {
     console.log("Wrong password Ups! Try again.");
     alert("Wrong password Ups! Try again.");

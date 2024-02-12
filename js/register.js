@@ -8,6 +8,7 @@ async function addUser(event) {
 }
 
 async function loadUser() {
+  loadUsersFromLocalStorage();
   try {
     active_user = JSON.parse(await getItem("active_user"));
   } catch (e) {
@@ -20,13 +21,13 @@ async function signUpSuccessfull() {
   let email = document.getElementById("email").value;
   let password = document.getElementById("password-su").value;
 
+  
   active_user.push({
     name: Name,
     email: email,
     password: password,
   });
   await setItem("active_user", JSON.stringify(active_user));
-
   setTimeout(() => {
     renderLogin();
   }, 2000);
@@ -75,5 +76,17 @@ function toogleChecker(input) {
     login_remember = !login_remember;
   } else if (input === "privacy") {
     privacyChecker = !privacyChecker;
+  }
+}
+
+function saveUsersToLocalStorage() {
+  localStorage.setItem("users", JSON.stringify(active_user));
+}
+
+function loadUsersFromLocalStorage() {
+  let storageAsText = localStorage.getItem("users");
+
+  if (storageAsText) {
+    contacts = JSON.parse(storageAsText);
   }
 }

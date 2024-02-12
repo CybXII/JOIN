@@ -290,9 +290,8 @@ function loadContactsFromLocalStorage() {
 
 function contactAnimation() {
   let element = document.getElementById('contact_info');
-
-  element.classList.toggle('show');
-  element.classList.add('contact_info');
+  // element.classList.toggle('show');
+  element.classList.add("contact-info-content");
 }
 
 function deleteContact(userid) {
