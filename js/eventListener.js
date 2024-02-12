@@ -208,7 +208,7 @@ function addContactListeners() {
       setTimeout(() => {
         contactAnimation();
         
-      }, 1);
+      }, 100);
 
       contact.id = 'active-contact';
       
