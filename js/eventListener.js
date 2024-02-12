@@ -195,7 +195,7 @@ function addContactListeners() {
         c.classList.remove('active_contact');
         c.classList.add('contact-name');
       });
-      animateContacts();
+      contactAnimation();
 
       // Hinzufügen der 'active_contact'-Klasse zum angeklickten Elemnt
       contact.classList.add('active_contact');

@@ -3,14 +3,11 @@ h1 {
     cursor: pointer;
 }
 
-.contact-info {
-    position: absolute;
-    right: -100%; /* Startet außerhalb des Bildschirms */
-    transition: right 0.5s ease-in-out; /* Glätet die Bewegung */
-}
-
-/* Die .show-Klasse wird durch Javascript hinzugefügt  */
-.contact-info.show {
-    top: 250px;
-    right: 1800px; /* Bewwegt sich ins Bild */
-}
+contact_info {
+    transition: 0.5s ease-in-out;
+    transform: translateX(0);
+  }
+  
+   .contact_info.show {
+    transform: translateX(5000px) !important;
+   }

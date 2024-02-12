@@ -66,7 +66,7 @@
         <div>
           <div class="frame-97">
             <div class="addContact">
-              <div class="primary-contact" onclick="openContactsContainer()">
+              <div class="primary-contact" onclick="openContactsContainer(), contactAnimation()">
                 <div class="text-wrapper">Add new contact</div>
                 <img class="person-add" src="img/person_add.svg" />
               </div>
@@ -79,9 +79,7 @@
               <img src="./img/separation-blue.svg" alt="separation-blue" />
               <p>Better with a team</p>
             </div>
-          </div>
-          <div id="contact_info_bg" class="contact_info-bg d-none">
-            <div class="contact-info-content" id="contact_info"></div>
+            <div class="contact_info" id="contact_info"></div>
           </div>
         </div>
       </div>

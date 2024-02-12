@@ -288,15 +288,12 @@ function loadContactsFromLocalStorage() {
   }
 }
 
-function animateContacts() {
-  document.getElementById("contact_info_bg").classList.add("d-none");
-  document.getElementById("contact_info_bg").classList.remove("d-none");
+function contactAnimation() {
+  let element = document.getElementById('contact_info');
+
+  element.classList.toggle('show');
+  element.classList.add('contact_info');
 }
-
-
-
-
-
 
 function deleteContact(userid) {
   console.log(userid + " gelöscht!");

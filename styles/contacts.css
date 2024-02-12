@@ -472,13 +472,13 @@ overflow-x: hidden;
   gap:  30px;
  }
 
- .contact_info{
+.contact_info {
   transition: 0.5s ease-in-out;
-  transform: translateX(0);
- }
+  transform: translateX(5000px);
+}
 
- .contact_info.show {
-  transform: translateX(5000px) !important;
+.contact_info.show {
+  transform: translateX(0);
  }
 
  .frame-40{
@@ -744,7 +744,7 @@ text-align: left;
 }
 
 .contact-info-content {
-  margin-left: 500px;
+  /* margin-left: 500px; */
   /* position: absolute; */
   /* border-radius: 20px; */
   /* background: var(--Version-2-main-color, #2a3647); */
