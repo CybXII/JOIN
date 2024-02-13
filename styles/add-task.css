@@ -655,6 +655,7 @@ textarea{
 }
 
 .disclaimer {
+    margin-top: revert;
     width: 170px;
     height: 27px;
     flex-shrink: 0;
@@ -1264,9 +1265,10 @@ select {
     .frame-27 {
         align-items: center;
         position: fixed;
-        top: unset;
+        /* top: unset; */
+        top: 940px;
         left: 0;
-        right: 0;
+        right: -90px;
         bottom: 96px;
         /* width: 428px; */
         justify-content: center;
@@ -1279,10 +1281,17 @@ select {
     }
 
     .disclaimer{
-        position: relative;
-        /* top: 0; */
-        left: 0;
-        margin-top: 35px;
+        /* position: fixed;
+        top: 1055px;
+        left: 230px; */
+
+
+        position: fixed;
+        top: 1055px;
+        right: 0;
+        left: 230px;
+        bottom: 96px;
+        justify-content: center;
     }
     }
 }
