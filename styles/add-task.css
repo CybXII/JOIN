@@ -1097,7 +1097,19 @@ select {
     }
     .addTask_helper {
         align-items: flex-start;
-        padding: 0 0 80px 0;
+        /* padding: 0 0 80px 0; */
+}
+
+/* Problemauflösung */
+@media (max-width: 967px) {
+
+    .frame-27 {
+        margin-left: 125px;
+    }
+
+    .disclaimer {
+        padding-top: 35px;
+    }
 }
 
 @media (max-width: 900px) {
@@ -1282,6 +1294,18 @@ select {
         top: 0;
         left: 0;
     }
+    }
+}
+
+/* Problem Bereich */
+@media (max-width: 675px) {
+
+    .frame-27 {
+
+    }
+
+    .disclaimer {
+
     }
 }
 

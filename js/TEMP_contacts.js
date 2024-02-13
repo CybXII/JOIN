@@ -296,6 +296,7 @@ function contactAnimation() {
 }
 
 
+
 function deleteContact(userid) {
   console.log(userid + " gelöscht!");
   // Filtere das JSON-Array und entferne das Element mit der entsprechenden ID
