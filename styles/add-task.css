@@ -1281,17 +1281,11 @@ select {
     }
 
     .disclaimer{
-        /* position: fixed;
-        top: 1055px;
-        left: 230px; */
-
-
         position: fixed;
         top: 1055px;
         right: 0;
-        left: 230px;
+        left: 25px;
         bottom: 96px;
-        justify-content: center;
     }
     }
 }
@@ -1319,6 +1313,18 @@ select {
 
     .subtask-v1-reconstrution {
         width: 300px;
+    }
+
+    .disclaimer {
+        /* position: fixed;
+        top: 1055px;
+        left: 230px; */
+        position: fixed;
+        top: 1055px;
+        right: 0;
+        left: 47px;
+        bottom: 96px;
+        justify-content: center;
     }
 }
 
