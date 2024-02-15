@@ -876,3 +876,40 @@ body{
       text-align: center;
     }
   }
+
+  @media (max-width: 320px) {
+
+    .board_window {
+      overflow-y: auto;
+      height: 403px;
+      display: flex;
+      justify-content: flex-start;
+    }
+
+    .frame-65 {
+      width: 300px;
+      margin-left: 43.6px;
+    }
+
+    .urgency-summary-v1 {
+      width: 300px;
+      margin-left: 43.6px;
+    }
+
+    .frame-64 {
+      width: 300px;
+      margin-left: 43.6px;
+    }
+
+    .square-button-v1 {
+      width: 20px;
+    }
+
+    .frame-61 {
+
+    }
+
+    .frame-40 {
+
+    }
+  }
