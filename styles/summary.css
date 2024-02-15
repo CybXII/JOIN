@@ -695,7 +695,6 @@ body{
       background-color: #fff;
       box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.1);
       box-sizing: border-box;
-      margin-bottom: 18px;
       width: 100%;
       cursor: pointer;
     }
@@ -768,7 +767,6 @@ body{
       justify-content: space-between;
       height: 110px;
       width: 396px;
-      margin-bottom: 28px
     }
 
     
@@ -899,7 +897,6 @@ body{
 
     .frame-71{
       width: 396px;
-      gap: unset;
     }
 
     .frame-64{
