@@ -1288,7 +1288,7 @@ a {
   .square-button-v1 {
     width: 116px;
     height: 116px;
-    padding: 25px 0px 25px 0px;
+    /* padding: 25px 0px 25px 0px; */
     border-radius: 20px;
     gap: 13px;
   }
