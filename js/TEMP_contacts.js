@@ -201,47 +201,6 @@ function dontClose() {
   event.stopPropagation();
 }
 
-function addContactsToStorage() {
-  let nameInput = document.getElementById("add_contacts_name").value.split(" ");
-  let name = document.getElementById("add_contacts_name");
-  let email = document.getElementById("add_contacts_email");
-  let phone = formatPhoneNumber();
-
-  let lastName;
-  let initials =
-    nameInput[0][0].toUpperCase() +
-    nameInput[nameInput.length - 1][0].toUpperCase();
-  nameInput.length > 1
-    ? (lastName = nameInput[nameInput.length - 1])
-    : (lastName = "");
-  let firstName = nameInput[0];
-  let color = getRandomColor();
-
-  let JSONToPush = {
-    firstname: firstName,
-    lastname: lastName,
-    fullname: name.value,
-    initials: initials,
-    email: email.value,
-    phone: phone,
-    color: color,
-    id: contacts.length,
-    taskassigned: false,
-  };
-
-  contacts.push(JSONToPush);
-
-  name.value = "";
-  email.value = "";
-  phone.value = "";
-
-  closeContactsContainer();
-  saveContactsToLocalStorage();
-  setTimeout(() => {
-    pushLetters(); 
-  }, 1);
-}
-
 function formatPhoneNumber() {
   let phoneNumber = document.getElementById("add_contacts_phone").value;
   // Entferne alle Nicht-Ziffern
@@ -277,18 +236,7 @@ function getRandomColor(color) {
   return color;
 }
 
-function saveContactsToLocalStorage() {
-  sortContacts();
-  localStorage.setItem("contacts", JSON.stringify(contacts));
-}
 
-function loadContactsFromLocalStorage() {
-  let storageAsText = localStorage.getItem("contacts");
-
-  if (storageAsText) {
-    contacts = JSON.parse(storageAsText);
-  }
-}
 
 function contactAnimation() {
   let element = document.getElementById('contact_info');

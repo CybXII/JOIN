@@ -89,37 +89,6 @@ function renderLow() {
   document.getElementById("prio-urgent-img").src = "./img/urgent_nofill.svg";
 }
 
-function addTasksToStorage() {
-  let title = document.getElementById("task-title");
-  let description = document.getElementById("task-description");
-  let date = document.getElementById("datePicker");
-
-  let JSONToPush = {
-    categoryboard: "todo",
-    category: "JSONPUSHTEST",
-    title: title.value,
-    description: description.value,
-    dueDate: date.value,
-    prio: taskpriority,
-    subtasks: ["1", "2", "3"],
-    assignedTo: ["XY", "ZA", "BC"],
-  };
-
-  tasks.push(JSONToPush);
-  title.value = "";
-  description.value = "";
-  date.value = "";
-
-  // FORMVALIDATION MIT IF ELSE ABFRAGE
-
-  taskAddedCompleteText();
-
-  //
-
-  console.log(tasks);
-  saveToLocalStorage();
-}
-
 function taskAddedCompleteText() {
   document.getElementById("msgBox-bg").classList.remove("d-none");
   document.querySelector("form").noValidate = true;
