@@ -1,32 +1,73 @@
+// GLOBAL
+
+let STORAGE_TOKEN = [];
+const STORAGE_URL = `https://remote-storage.developerakademie.org/item`;
+
+async function loadToken() {
+  let resp = await fetch("./json/token.json");
+  token = await resp.json();
+  STORAGE_TOKEN = token[0]["token"];
+}
+
+async function setItem(key, value) {
+  await loadToken();
+  const payload = { key, value, token: STORAGE_TOKEN };
+  return fetch(STORAGE_URL, {
+    method: "POST",
+    body: JSON.stringify(payload),
+  }).then((res) => res.json());
+}
+
+async function getItem(key) {
+  await loadToken();
+  const url = `${STORAGE_URL}?key=${key}&token=${STORAGE_TOKEN}`;
+  return fetch(url)
+    .then((res) => res.json())
+    .then((res) => {
+      if (res.data) {
+        return res.data.value;
+      }
+      throw `Could not find data with key "${key}".`;
+    });
+}
+
 // SIGN UP
 
-// LOGIN
-
-// SUMMARY
-
-// BOARD
-
-// CONTACTS
-
-function saveUsersToLocalStorage() {
-  localStorage.setItem("users", JSON.stringify(active_user));
-}
-
-function loadUsersFromLocalStorage() {
-  let storageAsText = localStorage.getItem("users");
-
-  if (storageAsText) {
-    contacts = JSON.parse(storageAsText);
-  }
-}
-
-let login_remember = false;
 let users = [];
 
-async function addUser(event) {
-  event.preventDefault();
-  signUpPasswordChecker();
+async function signUpSuccessfull() {
+  await loadUser();
+  let Name = document.getElementById("name").value;
+  let email = document.getElementById("email").value;
+  let password = document.getElementById("password-su").value;
+  let nameInput = document.getElementById("name").value.split(" ");
+  let lastName;
+  let initials = nameInput[0][0].toUpperCase() + nameInput[nameInput.length - 1][0].toUpperCase();
+      nameInput.length > 1
+      ? (lastName = nameInput[nameInput.length - 1])
+      : (lastName = "");
+    let firstName = nameInput[0];
+    let color = getRandomColor();
+
+  users.push({
+    id: users.length,
+    name: Name,
+    email: email,
+    password: password,
+    initials: initials,
+    firstName: firstName,
+    lastName: lastName,
+    color: color,
+  });
+  await setItem("users", JSON.stringify(users));
+  setTimeout(() => {
+    renderLogin();
+  }, 2000);
+  setItem('users', users);
+  users = [];
 }
+
+// LOGIN
 
 async function loadUser() {
   try {
@@ -36,24 +77,8 @@ async function loadUser() {
   }
 }
 
-async function signUpSuccessfull() {
-  let Name = document.getElementById("name").value;
-  let email = document.getElementById("email").value;
-  let password = document.getElementById("password-su").value;
-
-  users.push({
-    name: Name,
-    email: email,
-    password: password,
-  });
-  await setItem("users", JSON.stringify(users));
-  setTimeout(() => {
-    renderLogin();
-  }, 2000);
-}
-
-function login(event) {
-  // Das Standardverhalten des Formulars unterdrücken
+async function login(event) {
+  await loadUser();
   event.preventDefault();
   let email = document.getElementById("email");
   let password = document.getElementById("login_password");
@@ -63,11 +88,41 @@ function login(event) {
   console.log(user);
   if (user) {
     console.log("user gefunden");
+    users = [];
+    users.push(user);
+    users[0].password = 'HIDDEN';
+    saveUsersToLocalStorage();
     window.location.href = "summary.html";
   } else {
     console.log("Wrong password Ups! Try again.");
     alert("Wrong password Ups! Try again.");
   }
+}
+
+
+// SUMMARY
+
+// BOARD
+
+// CONTACTS
+
+function saveUsersToLocalStorage() {
+  localStorage.setItem("users", JSON.stringify(users));
+}
+
+function loadUsersFromLocalStorage() {
+  let storageAsText = localStorage.getItem("users");
+
+  if (storageAsText) {
+    users = JSON.parse(storageAsText);
+  }
+}
+
+let login_remember = false;
+
+async function addUser(event) {
+  event.preventDefault();
+  signUpPasswordChecker();
 }
 
 function addTasksToStorage() {
@@ -127,6 +182,7 @@ function addContactsToStorage() {
     color: color,
     id: contacts.length,
     taskassigned: false,
+    contactAssignedTo: users[0].id,
   };
 
   contacts.push(JSONToPush);
@@ -153,35 +209,4 @@ function loadContactsFromLocalStorage() {
   if (storageAsText) {
     contacts = JSON.parse(storageAsText);
   }
-}
-
-let STORAGE_TOKEN = [];
-const STORAGE_URL = `https://remote-storage.developerakademie.org/item`;
-
-async function loadToken() {
-  let resp = await fetch("./json/token.json");
-  token = await resp.json();
-  STORAGE_TOKEN = token[0]["token"];
-}
-
-async function setItem(key, value) {
-  await loadToken();
-  const payload = { key, value, token: STORAGE_TOKEN };
-  return fetch(STORAGE_URL, {
-    method: "POST",
-    body: JSON.stringify(payload),
-  }).then((res) => res.json());
-}
-
-async function getItem(key) {
-  await loadToken();
-  const url = `${STORAGE_URL}?key=${key}&token=${STORAGE_TOKEN}`;
-  return fetch(url)
-    .then((res) => res.json())
-    .then((res) => {
-      if (res.data) {
-        return res.data.value;
-      }
-      throw `Could not find data with key "${key}".`;
-    });
 }

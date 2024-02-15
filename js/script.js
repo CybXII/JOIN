@@ -7,6 +7,7 @@ function registerCompleteText() {
 }
 
 function renderSummary() {
+  loadUsersFromLocalStorage();
   setAmounts();
 
   // Filtern und sortieren der Daten
@@ -48,22 +49,26 @@ function renderSummary() {
   document.getElementById("summ-tasks-board").innerHTML = tasks.length;
   document.getElementById("summ-tasks-progress").innerHTML = tasksInProgress;
   document.getElementById("summ-tasks-feedback").innerHTML = tasksAwaitFeedback;
+  document.getElementById("summary-fullname").innerHTML = users[0].name;
 
   classesSummary();
   renderGreetingTime();
 }
 
 function renderAddTask() {
+  loadUsersFromLocalStorage();
   classesAddTask();
   document.querySelector("form").noValidate = false;
 }
 
 function renderBoardTasks() {
+  loadUsersFromLocalStorage();
   updateHTML();
   classesBoard();
 }
 
 function renderContacts() {
+  loadUsersFromLocalStorage();
   classesContacts();
   addContactListeners();
 }
@@ -136,8 +141,8 @@ function getRandomColor() {
   for (var i = 0; i < 6; i++) {
     color += letters[Math.floor(Math.random() * 16)];
   }
-  // return color;
-  console.log(color);
+  return color;
+  // console.log(color);
 }
 
 // Greeting Time Summary

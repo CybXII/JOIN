@@ -4,10 +4,12 @@ async function includeHTMLInit(input) {
   let functionName = `render${input}`;
   await includeHTML();
   
+  
 
   // Überprüfen, ob die Funktion im globalen Kontext vorhanden ist
   if (typeof window[functionName] === "function") {
     window[functionName]();
+    document.getElementById("header-initials").innerHTML = users[0].initials;
   } else {
     console.error(`Die Funktion ${functionName} wurde nicht gefunden.`);
   }
