@@ -857,7 +857,7 @@ body{
       width: 116px;
       height: 116px;
       border-radius: 20px;
-      gap: 13px;
+      gap: 0px;
     }
 
     .frame-61 span{
@@ -876,6 +876,7 @@ body{
       line-height: 17px;
       letter-spacing: 0em;
       text-align: center;
+      width: 80%;
     }
   }
 
