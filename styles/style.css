@@ -1089,7 +1089,7 @@ a {
 
 .LogOutBox {
   position: absolute;
-  right: 100px;
+  right: 20px;
   margin-top: 280px;
   width: 150px;
   height: 158px;
@@ -1145,12 +1145,17 @@ a {
 }
 
 @media (max-width: 900px) {
+
   .header_logo {
     display: block;
     background-image: url("../img/join-favicon.svg");
     background-size: cover;
     width: 32px;
     height: 39px;
+  }
+
+  .LogOutBox{
+    right: 10px;
   }
 
   .footer {
