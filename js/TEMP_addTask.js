@@ -201,5 +201,3 @@ function addClassOnCheckboxChange(userid) {
     }
   });
 }
-
-
