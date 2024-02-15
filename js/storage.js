@@ -196,6 +196,7 @@ function addContactsToStorage() {
   setTimeout(() => {
     pushLetters();
   }, 1);
+  addContactListeners();
 }
 
 function saveContactsToLocalStorage() {

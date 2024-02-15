@@ -253,9 +253,9 @@ function deleteContact(userid) {
   contacts.push(...updatedContacts); // Füge die aktualisierten Kontakte hinzu
   pushLetters();
   saveContactsToLocalStorage();
-
   document.getElementById("contact_info").innerHTML = "";
   console.log(updatedContacts);
+  addContactListeners();
 }
 
 function editContact(userid) {
