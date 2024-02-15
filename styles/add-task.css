@@ -654,15 +654,6 @@ textarea{
     height: 24px;
 }
 
-.disclaimer {
-    position: absolute;
-    width: 170px;
-    height: 27px;
-    flex-shrink: 0;
-    top: 695px;
-    left: 100px;
-}
-
 .disclaimer span {
     color: #FF8190;
     font-family: Inter;
@@ -688,9 +679,9 @@ textarea{
     justify-content: center;
     align-items: center;
     gap: 16px;
-    top: 793px;
+    /* top: 793px;
     left: 550px;
-    margin-left: 125px;
+    margin-left: 125px; */
 }
 
 .secondary {
