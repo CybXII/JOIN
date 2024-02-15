@@ -377,6 +377,10 @@ textarea{
     gap: 16px;
 }
 
+.priority div {
+    width: 136px;
+}
+
 .frame-16:hover {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
@@ -387,7 +391,7 @@ textarea{
     justify-content: center;
     align-items: center;
     gap: 8px;
-    flex: 1 0 0;
+    /* flex: 1 0 0; */
     border-radius: 10px;
     background-color: #fff;
     box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.10);
@@ -414,7 +418,7 @@ textarea{
     justify-content: center;
     align-items: center;
     gap: 8px;
-    flex: 1  00;
+    /* flex: 1  00; */
     border-radius: 10px;
     background-color: #FF3D00;
     cursor: pointer;
@@ -447,7 +451,7 @@ textarea{
     justify-content: center;
     align-items: center;
     gap: 8px;
-    flex: 1  00;
+    /* flex: 1  00; */
     border-radius: 10px;
     background-color: #fff;
     cursor: pointer;
@@ -475,7 +479,7 @@ textarea{
     justify-content: center;
     align-items: center;
     gap: 8px;
-    flex: 1  00;
+    /* flex: 1  00; */
     border-radius: 10px;
     background-color: #FFA800;
     cursor: pointer;
@@ -507,7 +511,7 @@ textarea{
     justify-content: center;
     align-items: center;
     gap: 8px;
-    flex: 1 0 0;
+    /* flex: 1 0 0; */
     border-radius: 10px;
     background-color: #fff;
     box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.10);
@@ -547,7 +551,7 @@ textarea{
     justify-content: center;
     align-items: center;
     gap: 8px;
-    flex: 1 0 0;
+    /* flex: 1 0 0; */
     border-radius: 10px;
     background-color: #7AE229;
     box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.10);
@@ -1260,8 +1264,9 @@ select {
         width: 100%;
     }
 
-    .priority{
+    .priority {
         width: 100%;
+        justify-content: space-between;
     }
 
     .category{
@@ -1298,6 +1303,21 @@ select {
     }
 }
 
+@media (max-width: 530px) {
+
+
+.priority {
+    width: 100%;
+    flex-direction: column;
+    padding: 0 16px;
+    box-sizing: border-box;
+}
+
+.priority div{
+    width: 100%;
+}
+
+}
 
 @media (max-width: 400) {
     .input-title {
