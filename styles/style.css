@@ -147,7 +147,7 @@ input {
   color: black;
   /* Version 2/t6 */
   font-family: Inter;
-  font-size: 20px;
+  /* font-size: 20px; */
   font-style: normal;
   font-weight: 400;
   line-height: 120%; /* 24px */

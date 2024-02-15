@@ -63,7 +63,7 @@ textarea{
 
 .frame-219 {
     display: flex;
-    width: 440px;
+    width: 100%;
     flex-direction: column;
     align-items: flex-start;
     gap: 16px;
@@ -146,7 +146,7 @@ textarea{
 
 .description-v1 {
     display: flex;
-    width: 440px;
+    width: 100%;
     flex-direction: column;
     align-items: flex-start;
     gap: 8px;
@@ -163,6 +163,10 @@ textarea{
     line-height: 24px;
 }
 
+.frame-14{
+    width: 100%;
+}
+
 .frame-207 {
     display: flex;
     flex-direction: column;
@@ -171,9 +175,9 @@ textarea{
     align-self: stretch;
 }
 
-/* .frame-17 {
-    Serves only as a teacher container
-} */
+.frame-17 {
+    width: 100%;
+}
 
 .frame-17 textarea {
     flex: 1 0 0;
@@ -212,7 +216,7 @@ textarea{
 .asigned-to-v1 {
     margin-top: 16px;
     display: flex;
-    width: 440px;
+    width: 100%;
     height: 80px;
     flex-direction: column;
     align-items: flex-start;
@@ -249,6 +253,9 @@ textarea{
     font-style: normal;
     font-weight: 400;
     line-height: 24px;
+}
+.frame-15{
+    width: 100%;
 }
 
 .frame-74 img {
@@ -339,12 +346,18 @@ textarea{
     line-height: 14.4px;
 }
 
+
 .frame-28 {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     gap: 8px;
     margin-top: 24px;
+    width: 100%;
+}
+
+.dropdown-radio-list{
+    width: 100%;
 }
 
 .frame-28 label {
@@ -794,6 +807,7 @@ box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   display: inline-block;
   align-items: center;
   height: 100px;
+  width: 100%;
 }
 
 .dropdown-check-list .anchor {
@@ -1078,6 +1092,15 @@ select {
 
 @media (max-width: 1290px) {
 
+    .frame-27{
+        width: 440px;
+        justify-content: space-between;
+    }
+
+    .secondary{
+        display: none;
+    }
+
     .input-fields{
         display: flex;
         flex-direction: column;
@@ -1103,7 +1126,7 @@ select {
     }
 
     .dropdown-check-list .anchor {
-        width: 396px;
+        width: 100%;
     }
 
     .header-text {
@@ -1111,7 +1134,7 @@ select {
     }
 
     select.moreMinimal{
-        width: 396px;
+        width: 100%;
         margin-top: 10px;
     }
 
@@ -1208,79 +1231,69 @@ select {
         margin-bottom: 0;
     }
 
-    .frame-219{
-        width: 396px;
-    }
+    /* .frame-219{
+        width: 100%;
+    } */
 
     .title-v1{
-        width: 396px;
+        width: 100%;
     }
 
     .frame-203{
-        width: 396px;
+        width: 100%;
     }
 
     .input-title {
-        width: 396px;
+        width: 100%;
     }
 
     .frame-74{
-        width: 396px;
+        width: 100%;
     }
 
     .frame-39{
         margin-left: 0;
-        width: 396px;
+        width: 100%;
     }
 
     .due-date-v1{
-        width: 396px;
+        width: 100%;
     }
 
     .priority{
-        width: 396px;
+        width: 100%;
     }
 
     .category{
-        width: 396px;
+        width: 100%;
     }
 
     .frame-75{
-        width: 396px;
+        width: 100%;
     }
 
     .subtask-v1-reconstrution{
-        width: 396px;
+        width: 100%;
     }
 
     .frame-18 {
-        width: 396px;
+        width: 100%;
     }
     
     .frame-27 {
         align-items: center;
         position: fixed;
-        /* top: unset; */
-        top: 990px;
         left: 0;
         right: -90px;
         bottom: 96px;
-        /* width: 428px; */
-        justify-content: center;
+        width: 100%;
+        justify-content: space-between;
         box-sizing: border-box;
-        /* padding: 0 16px;*/  
+        padding: 0 16px;  
     }
 
     .secondary{
         display: none;
-    }
-
-    .disclaimer {
-        /* position: absolute;         */
-        top: 997px;
-        /* right: 0; */
-        left: 0px;
-        /* bottom: 96px; */
     }
     }
 }
