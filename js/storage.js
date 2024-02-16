@@ -1,6 +1,6 @@
 // GLOBAL
 
-let STORAGE_TOKEN = [];
+let STORAGE_TOKEN = ["Q6FYXF4QQJ24OOCABGKOYPDGXFYC0J7W7TCVUIZY"];
 const STORAGE_URL = `https://remote-storage.developerakademie.org/item`;
 
 async function loadToken() {
@@ -34,6 +34,7 @@ async function getItem(key) {
 // SIGN UP
 
 let users = [];
+let remembered_user = [];
 
 async function signUpSuccessfull() {
   await loadUser();
@@ -42,12 +43,14 @@ async function signUpSuccessfull() {
   let password = document.getElementById("password-su").value;
   let nameInput = document.getElementById("name").value.split(" ");
   let lastName;
-  let initials = nameInput[0][0].toUpperCase() + nameInput[nameInput.length - 1][0].toUpperCase();
-      nameInput.length > 1
-      ? (lastName = nameInput[nameInput.length - 1])
-      : (lastName = "");
-    let firstName = nameInput[0];
-    let color = getRandomColor();
+  let initials =
+    nameInput[0][0].toUpperCase() +
+    nameInput[nameInput.length - 1][0].toUpperCase();
+  nameInput.length > 1
+    ? (lastName = nameInput[nameInput.length - 1])
+    : (lastName = "");
+  let firstName = nameInput[0];
+  let color = getRandomColor();
 
   users.push({
     id: users.length,
@@ -58,12 +61,12 @@ async function signUpSuccessfull() {
     firstName: firstName,
     lastName: lastName,
     color: color,
+    rememberlogin: false,
   });
   await setItem("users", JSON.stringify(users));
   setTimeout(() => {
     renderLogin();
   }, 2000);
-  setItem('users', users);
   users = [];
 }
 
@@ -90,7 +93,7 @@ async function login(event) {
     console.log("user gefunden");
     users = [];
     users.push(user);
-    users[0].password = 'HIDDEN';
+    users[0].rememberlogin = login_remember;
     saveUsersToLocalStorage();
     window.location.href = "summary.html";
   } else {
@@ -98,7 +101,6 @@ async function login(event) {
     alert("Wrong password Ups! Try again.");
   }
 }
-
 
 // SUMMARY
 
@@ -116,6 +118,52 @@ function loadUsersFromLocalStorage() {
   if (storageAsText) {
     users = JSON.parse(storageAsText);
   }
+}
+
+function loadRememberedUsersFromLocalStorage() {
+  let storageAsText = localStorage.getItem("users");
+
+  if (storageAsText) {
+    remembered_user = JSON.parse(storageAsText);
+  }
+}
+
+function rememberMeLogin() {
+  if (remembered_user.length > 0 && remembered_user[0].rememberlogin == true) {
+    document.getElementById("email").value = remembered_user[0].email;
+    document.getElementById("login_password").value =
+      remembered_user[0].password;
+    login_remember = document.getElementById("signUpCheck").checked =
+      remembered_user[0].rememberlogin;
+    login(event);
+    renderSummary();
+  } else {
+    renderLogin();
+  }
+}
+
+function userLogout() {
+  localStorage.removeItem("users");
+  window.location.href = "login.html";
+}
+
+function guestLogin() {
+
+    let color = getRandomColor();
+
+  users.push({
+    id: 999,
+    name: 'Guest Login',
+    email: 'guest@guest.de',
+    password: 'hidden',
+    initials: 'GL',
+    firstName: 'Guest',
+    lastName: 'Login',
+    color: color,
+    rememberlogin: false,
+  });
+  saveUsersToLocalStorage();
+  window.location.href = "summary.html";
 }
 
 let login_remember = false;

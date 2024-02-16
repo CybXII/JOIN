@@ -17,7 +17,7 @@
     <script src="./js/eventListener.js"></script>
     <link rel="icon" type="image" href="./img/join-favicon.svg" />
   </head>
-  <body onload="move(), renderLogin(), getItem('users')" id="body">
+  <body onload="move(), renderLogin(), loadRememberedUsersFromLocalStorage(), rememberMeLogin()" id="body">
     <div class="log-in">
       <div class="logo">
         <div id="logo_container" class="big_size logo_container background">

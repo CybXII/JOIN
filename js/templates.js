@@ -200,7 +200,7 @@ function renderLoginHTML() {
             <button class="button">Log in</button>
           </div>
           <div class="button-seconday-wo">
-            <button class="button-2">Guest Log in</button>
+            <button class="button-2" onclick="guestLogin()">Guest Log in</button>
           </div>
         </div>`;
 }
