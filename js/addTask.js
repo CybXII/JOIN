@@ -54,13 +54,12 @@ function clearFields() {
 
 function renderAssignedTo() {
   let assigncontent = document.getElementById("assigned-list");
-  remoteuserAssign.forEach((element) => {
+  remoteuserAssign.forEach((element, i) => {
     const fullname = element.name;
     const initials = element.initials;
     const color = element.color;
-    const userid = element.id;
 
-    assigncontent.innerHTML += /*html*/ `<li id="catergory_list_${userid}">
+    assigncontent.innerHTML += /*html*/ `<li id="catergory_list_${i}">
   <div class="active_contact">
     <div class="profile-badge">
       <div class="group">
@@ -69,8 +68,8 @@ function renderAssignedTo() {
         </div>
       </div>
     </div>
-    <span  id="fullname-addtask-dd-${userid}">${fullname}</span>
-    <input id="checkbox${userid}" type="checkbox" class="checkbox" onclick="addClassOnCheckboxChange(${userid})" />
+    <span  id="fullname-addtask-dd-${i}">${fullname}</span>
+    <input id="checkbox${i}" type="checkbox" class="checkbox" onclick="addClassOnCheckboxChange(${i})" />
   </div>
 </li>
 `;
@@ -109,6 +108,7 @@ function addClassOnCheckboxChange(userid) {
     parentDivElement.classList.add("contact_background");
     if (!usersassignedto.includes(userid)) {
       usersassignedto.push(userid);
+      usersassignedto.sort();
     }
   } else {
     divElement.classList.remove("white");
@@ -116,15 +116,17 @@ function addClassOnCheckboxChange(userid) {
     const index = usersassignedto.indexOf(userid);
     if (index !== -1) {
       usersassignedto.splice(index, 1);
+      usersassignedto.sort();
     }
   }
 }
 
 function renderAssignedUserAddTask() {
-  for (let i = 1; i - 1 < usersassignedto.length; i++) {
-    if (usersassignedto.includes(i)) {
-      document.getElementById(`checkbox${i}`).checked = true;
-      addClassOnCheckboxChange(i);
+  for (let i = 0; i < usersassignedto.length; i++) {
+    let index = usersassignedto[i];
+    if (usersassignedto.includes(index)) {
+      document.getElementById(`checkbox${index}`).checked = true;
+      addClassOnCheckboxChange(index);
     }
   }
 }
