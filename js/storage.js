@@ -153,12 +153,12 @@ function guestLogin() {
 
   users.push({
     id: 999,
-    name: 'Guest Login',
+    name: 'Guest',
     email: 'guest@guest.de',
     password: 'hidden',
-    initials: 'GL',
+    initials: 'G',
     firstName: 'Guest',
-    lastName: 'Login',
+    lastName: '',
     color: color,
     rememberlogin: false,
   });

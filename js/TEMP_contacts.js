@@ -8,7 +8,7 @@ let contacts = [
     phone: "+49 1234 5678 90",
     color: "#F5E227",
     id: "1",
-    taskassigned: false,
+    userassigned: "999",
   },
   {
     firstname: "Anja",
@@ -19,7 +19,7 @@ let contacts = [
     phone: "+49 1111 1111 11",
     color: "#D5C809",
     id: "2",
-    taskassigned: false,
+    userassigned: "999",
   },
   {
     firstname: "Benedikt",
@@ -30,7 +30,7 @@ let contacts = [
     phone: "+49 1111 1111 11",
     color: "#61C3DD",
     id: "3",
-    taskassigned: false,
+    userassigned: "999",
   },
   {
     firstname: "David",
@@ -41,7 +41,7 @@ let contacts = [
     phone: "+49 1111 1111 11",
     color: "#D8EF5A",
     id: "4",
-    taskassigned: false,
+    userassigned: "999",
   },
   {
     firstname: "Lukas",
@@ -52,7 +52,7 @@ let contacts = [
     phone: "+49 2345 6789 01",
     color: "#2F546E",
     id: "5",
-    taskassigned: false,
+    userassigned: "999",
   },
   {
     firstname: "Marcel",
@@ -63,7 +63,7 @@ let contacts = [
     phone: "+49 1111 1111 11",
     color: "#2F546E",
     id: "6",
-    taskassigned: false,
+    userassigned: "999",
   },
   {
     firstname: "Steffen",
@@ -74,7 +74,7 @@ let contacts = [
     phone: "+49 3456 7890 12",
     color: "#61C3DD",
     id: "7",
-    taskassigned: false,
+    userassigned: "999",
   },
   {
     firstname: "Tatjana",
@@ -85,7 +85,7 @@ let contacts = [
     phone: "+49 1111 1111 11",
     color: "#EF1835",
     id: "8",
-    taskassigned: false,
+    userassigned: "999",
   },
   {
     firstname: "Eva",
@@ -96,7 +96,7 @@ let contacts = [
     phone: "+49 1111 1111 11",
     color: "#0E3E99",
     id: "9",
-    taskassigned: false,
+    userassigned: "999",
   },
 ];
 

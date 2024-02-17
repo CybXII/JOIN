@@ -15,21 +15,21 @@ function configureDatePicker() {
   }
 
   // Funktion 2: Setzt das Standerddatum auf das heutige Datum
-  function setDefaultDate() {
-    var today = new Date();
-    var day = ("0" + today.getDate()).slice(-2);
-    var month = ("0" + (today.getMonth() + 1)).slice(-2);
-    var formattedDate = today.getFullYear() + "-" + month + "-" + day;
+  // function setDefaultDate() {
+  //   var today = new Date();
+  //   var day = ("0" + today.getDate()).slice(-2);
+  //   var month = ("0" + (today.getMonth() + 1)).slice(-2);
+  //   var formattedDate = today.getFullYear() + "-" + month + "-" + day;
 
-    var datePicker = document.getElementById("datePicker");
-    datePicker.setAttribute("value", formattedDate);
+  //   // var datePicker = document.getElementById("datePicker");
+  //   // datePicker.setAttribute("placeholder", 'yyyy');
 
-    // Gibt das Standartddatum in der Konsole aus
-    console.log("Standarddatum gesetzt auf: ", formattedDate);
-  }
+  //   // Gibt das Standartddatum in der Konsole aus
+  //   console.log("Standarddatum gesetzt auf: ", formattedDate);
+  // }
 
   setMinDate(); // Aufruf von Function 1
-  setDefaultDate(); // Aufruf von Funktion 2
+  // setDefaultDate(); // Aufruf von Funktion 2
 }
 
 // Event-Listener, der darauf wartet, dass das DOM geladen wird
@@ -42,6 +42,7 @@ function taskPriorityChoosed(i) {
 
   taskPriorityActive();
 }
+
 
 function taskPriorityActive() {
   if (taskpriority == "urgent") {
