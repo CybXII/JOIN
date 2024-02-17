@@ -6,7 +6,7 @@ async function signUpPasswordChecker() {
 
   if (password === confirm_password) {
     if (privacyChecker == true) {
-      signUpSuccessfull();
+      await signUpSuccessfull();
       registerCompleteText();
     } else {
     }

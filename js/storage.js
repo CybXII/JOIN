@@ -1,6 +1,6 @@
 // GLOBAL
 
-let STORAGE_TOKEN = ["Q6FYXF4QQJ24OOCABGKOYPDGXFYC0J7W7TCVUIZY"];
+let STORAGE_TOKEN = [];
 const STORAGE_URL = `https://remote-storage.developerakademie.org/item`;
 
 async function loadToken() {
