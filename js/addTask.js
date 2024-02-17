@@ -1,9 +1,13 @@
 let taskpriority = "medium";
+let remoteuser = [];
+let remoteuserAssign = [];
+let usersassignedto = [];
 
 function renderAddTask() {
   loadUsersFromLocalStorage();
   classesAddTask();
   document.querySelector("form").noValidate = false;
+  loadRemoteUser();
 }
 
 function configureDatePicker() {
@@ -50,8 +54,8 @@ function clearFields() {
 
 function renderAssignedTo() {
   let assigncontent = document.getElementById("assigned-list");
-  contacts.forEach((element) => {
-    const fullname = element.fullname;
+  remoteuserAssign.forEach((element) => {
+    const fullname = element.name;
     const initials = element.initials;
     const color = element.color;
     const userid = element.id;
@@ -71,37 +75,58 @@ function renderAssignedTo() {
 </li>
 `;
   }, (assigncontent.innerHTML = ""));
-}
+    
+  }
 
 function openAssignTo() {
+  // renderAssignedUserAddTask();
   let logoutBox = document.getElementById("list1");
+
+  // Überprüfe, ob die Klasse "visible" nicht enthalten ist, füge sie hinzu
   if (!logoutBox.classList.contains("visible")) {
     logoutBox.classList.add("visible");
+    renderAssignedUserAddTask();
   } else {
+    // Wenn "visible" enthalten ist, entferne es
     logoutBox.classList.remove("visible");
-    window.addEventListener("click", function (e) {
-      if (document.getElementById("list1").contains(e.target)) {
-      } else {
-        document.getElementById("list1").classList.remove("visible");
-      }
-    });
   }
+
+  // Überwache Klicks im Fenster, um die Liste zu verstecken, wenn außerhalb geklickt wird
+  window.addEventListener("click", function (e) {
+    if (!logoutBox.contains(e.target)) {
+      logoutBox.classList.remove("visible");
+      window.removeEventListener("click", arguments.callee); // Entferne den Event-Listener nach Ausführung
+    }
+  });
 }
 
 function addClassOnCheckboxChange(userid) {
+
   const checkbox = document.getElementById(`checkbox${userid}`);
   const divElement = document.getElementById(`fullname-addtask-dd-${userid}`);
   const parentDivElement = document.getElementById(`catergory_list_${userid}`);
 
-  checkbox.addEventListener("change", function () {
     if (checkbox.checked) {
       divElement.classList.add("white");
       parentDivElement.classList.add("contact_background");
+      if (!usersassignedto.includes(userid)){usersassignedto.push(userid)}
     } else {
       divElement.classList.remove("white");
       parentDivElement.classList.remove("contact_background");
+      const index = usersassignedto.indexOf(userid);
+      if (index !== -1) {
+        usersassignedto.splice(index, 1);
+      }
     }
-  });
+}
+
+function renderAssignedUserAddTask() {
+  for (let i = 1; i - 1 < usersassignedto.length; i++) {
+    if (usersassignedto.includes(i)) {
+      document.getElementById(`checkbox${i}`).checked = true;
+      addClassOnCheckboxChange(i);
+    }
+  }
 }
 
 function addTasksToStorage() {

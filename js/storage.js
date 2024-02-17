@@ -1,5 +1,7 @@
+
 let STORAGE_TOKEN = [];
 const STORAGE_URL = `https://remote-storage.developerakademie.org/item`;
+
 
 async function loadToken() {
   let resp = await fetch("./json/token.json");
@@ -32,6 +34,21 @@ async function getItem(key) {
 async function loadUser() {
   try {
     users = JSON.parse(await getItem("users"));
+  } catch (e) {
+    console.error("Loading error:", e);
+  }
+}
+
+async function loadRemoteUser() {
+  try {
+    remoteuser = JSON.parse(await getItem("users"));
+    for (let i = 0; i < remoteuser.length; i++) {
+      if (remoteuser[i].id !== 999) {
+        remoteuserAssign.push(remoteuser[i]);
+      }
+      
+    }
+    remoteuser = [];
   } catch (e) {
     console.error("Loading error:", e);
   }
