@@ -50,6 +50,7 @@ function renderSummary() {
   document.getElementById("summ-tasks-progress").innerHTML = tasksInProgress;
   document.getElementById("summ-tasks-feedback").innerHTML = tasksAwaitFeedback;
   document.getElementById("summary-fullname").innerHTML = users[0].name;
+  document.getElementById("summary-fullname-resp").innerHTML = users[0].name;
 
   classesSummary();
   renderGreetingTime();
