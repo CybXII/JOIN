@@ -75,8 +75,7 @@ function renderAssignedTo() {
 </li>
 `;
   }, (assigncontent.innerHTML = ""));
-    
-  }
+}
 
 function openAssignTo() {
   // renderAssignedUserAddTask();
@@ -101,23 +100,24 @@ function openAssignTo() {
 }
 
 function addClassOnCheckboxChange(userid) {
-
   const checkbox = document.getElementById(`checkbox${userid}`);
   const divElement = document.getElementById(`fullname-addtask-dd-${userid}`);
   const parentDivElement = document.getElementById(`catergory_list_${userid}`);
 
-    if (checkbox.checked) {
-      divElement.classList.add("white");
-      parentDivElement.classList.add("contact_background");
-      if (!usersassignedto.includes(userid)){usersassignedto.push(userid)}
-    } else {
-      divElement.classList.remove("white");
-      parentDivElement.classList.remove("contact_background");
-      const index = usersassignedto.indexOf(userid);
-      if (index !== -1) {
-        usersassignedto.splice(index, 1);
-      }
+  if (checkbox.checked) {
+    divElement.classList.add("white");
+    parentDivElement.classList.add("contact_background");
+    if (!usersassignedto.includes(userid)) {
+      usersassignedto.push(userid);
     }
+  } else {
+    divElement.classList.remove("white");
+    parentDivElement.classList.remove("contact_background");
+    const index = usersassignedto.indexOf(userid);
+    if (index !== -1) {
+      usersassignedto.splice(index, 1);
+    }
+  }
 }
 
 function renderAssignedUserAddTask() {
