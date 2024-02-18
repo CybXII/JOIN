@@ -39,6 +39,10 @@ body {
 }
 
 .frame-40 {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin: 0;
     color: #000;
     font-family: Inter;
     font-size: 61px;
