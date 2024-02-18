@@ -1090,6 +1090,19 @@ select {
 .assigned-to-add-task-list{
     border: 1px solid red;
     width: 100%;
+    margin-bottom: 10px;
+}
+
+.assigned-to-add-task-user{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    border: 2px solid white;
+    background-color: red;
+    color: white;
 }
 
 

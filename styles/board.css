@@ -317,9 +317,11 @@
 }
 
 .group-9-text {
+    border: 2px solid white;
+  height: 32px;
+  width: 32px;
   display: flex;
-  width: 21.333px;
-  height: 7.619px;
+  border-radius: 50%;
   flex-direction: column;
   justify-content: center;
   color: #fff;
