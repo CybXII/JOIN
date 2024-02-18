@@ -286,6 +286,7 @@
 .frame-217 {
   display: flex;
   align-items: flex-start;
+  translate: 8px;
 }
 
 .card-board-profile-batch {
@@ -317,7 +318,7 @@
 }
 
 .group-9-text {
-    border: 2px solid white;
+  border: 2px solid white;
   height: 32px;
   width: 32px;
   display: flex;
@@ -331,7 +332,6 @@
   font-size: 12px;
   font-style: normal;
   font-weight: 400;
-  position: absolute;
 }
 
 .card-board-priority {

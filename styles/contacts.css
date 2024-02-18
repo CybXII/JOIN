@@ -225,7 +225,7 @@ overflow-x: hidden;
   cursor: pointer;
 }
 
-.frame-97 .profile-badge {
+/* .frame-97 .profile-badge {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -234,7 +234,7 @@ overflow-x: hidden;
   flex: 0 0 auto;
   background-color: var(--white);
   border-radius: 45px;
-}
+} */
 
 .frame-97 .group {
   position: relative;
@@ -244,29 +244,25 @@ overflow-x: hidden;
 }
 
 .frame-97 .overlap-group {
-  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 42px;
   height: 42px;
   /* background-color: #ff7a00; */
-  border-radius: 21px;
+  border-radius: 50%;
   border: 2px solid;
   border-color: var(--white);
   box-sizing: border-box;
 }
 
 .frame-97 .text-wrapper-2 {
-  position: absolute;
-  width: 28px;
-  height: 10px;
-  top: 14px;
-  left: 5px;
   font-family: var(--version-2-t7-font-family);
   font-weight: var(--version-2-t7-font-weight);
   color: var(--white);
   font-size: var(--version-2-t7-font-size);
   text-align: center;
   letter-spacing: var(--version-2-t7-letter-spacing);
-  line-height: var(--version-2-t7-line-height);
   white-space: nowrap;
   font-style: var(--version-2-t7-font-style);
 }
