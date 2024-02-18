@@ -54,6 +54,7 @@ body {
 
 input{
     box-sizing: border-box;
+    align-self: end;
 }
 
 textarea{
@@ -767,6 +768,8 @@ color: var(--ligth-blue);
 }
 .primary-check-button:hover {
 box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+background: var(--ligth-blue);
+border-color: var(--ligth-blue);
 }
 
 .primary-check-button span {
