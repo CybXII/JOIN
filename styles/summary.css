@@ -15,7 +15,6 @@ body{
   left: 232px;
   right: 0;
   padding: 80px;
-  gap: 30px;
 }
 
 .board_window::-webkit-scrollbar {
