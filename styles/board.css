@@ -430,6 +430,15 @@
   cursor: grabbing;
 }
 
+@media (max-width: 1290px) {
+
+  .containerAdjustment {
+      width: 100%;
+      height: 650px;
+      overflow: auto;
+  }
+}
+
 @media (max-width: 1090px) {
   .frame-192 {
     display: block; 
@@ -599,28 +608,17 @@
   .add-task-board-background {
     left: 0;
   }
-}
-
-@media (max-width: 1290px) {
-
-  .containerAdjustment {
-      width: 100%;
-      height: 650px;
-      overflow: auto;
-  }
-}
-
-@media (max-width: 900px) {
 
   .containerAdjustment {
     width: 100%;
     height: 500px;
-    overflow: auto;
+    overflow-y: auto;
   }
-
 }
 
+
 @media (max-width: 600px) {
+
   .add-task-board-card {
     margin: 0 0px;
 }
@@ -630,7 +628,7 @@
 
   .containerAdjustment {
     width: 100%;
-    height: 200px;
+    height: 300px;
     overflow-y: auto;
   }
 
