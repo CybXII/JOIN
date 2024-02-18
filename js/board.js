@@ -133,11 +133,21 @@ function updateHTML() {
       <div class="frame-217" id="assigned-to${i}">
       </div>
       <div class="card-board-priority">
-        <img src="./img/prio-baja-board.svg" class="card-board-priority-img" />
+        <img src="./img/prio-baja-board.svg" id="prio-svg${i}" class="card-board-priority-img" />
       </div>
     </div>
   </div>
 </div>`;
+    if (task.prio == "urgent") {
+      document.getElementById(`prio-svg${i}`).src = "./img/urgent_nofill.svg";
+    } else if (task.prio == "medium") {
+      document.getElementById(`prio-svg${i}`).src = "./img/medium_nofill.svg";
+    } else if (task.prio == "low") {
+      document.getElementById(`prio-svg${i}`).src = "./img/low_nofill.svg";
+    }
+
+
+
     let assigned = document.getElementById(`assigned-to${i}`);
     for (let j = 0; j < task["assignedTo"].length; j++) {
       const assign = task["assignedTo"][j];

@@ -111,7 +111,7 @@
 }
 
 .board-dist {
-  padding: 0 64px 0 64px;
+  padding: 0 64px 64px 64px;
   /* width: 1208px; */
   display: flex;
   gap: 26px;
