@@ -368,9 +368,10 @@
   box-sizing: border-box;
   background-color: white;
   height: 670px;
-  width: 1116px;
+  width: 100%;
   padding: 40px;
   border-radius: 30px;
+  margin: 0 40px;
 }
 
 .background-fixed {
@@ -574,4 +575,14 @@
       width: 32px;
       height: 32px;
   }
+
+  .add-task-board-background {
+    left: 0;
+  }
+}
+
+@media (max-width: 600px) {
+  .add-task-board-card {
+    margin: 0 0px;
+}
 }
