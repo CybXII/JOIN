@@ -107,7 +107,7 @@ function updateHTML() {
   tasks.forEach(function (task, i) {
     document.getElementById(
       task.categoryboard
-    ).innerHTML += `<div class="card-board" draggable="true" ondragstart="moveToLocation(${i}),highlight()" id="board-card${i}" onmousedown="rotateCardStart(${i})" onmouseup="rotateCardEnd()">
+    ).innerHTML += `<div class="card-board" draggable="true" ondragstart="rotateCardStart(${i}),moveToLocation(${i}),highlight()" id="board-card${i}" onclick="openCard(${i})" ondragend="rotateCardEnd()">
   <div class="frame-119">
     <div class="card-board-user-story">
       <span class="card-board-user-story-text">${task.category}</span>
@@ -218,3 +218,17 @@ function rotateCardEnd() {
   console.log(card + " losgelassen");
   document.getElementById(`board-card${card}`).classList.remove("rotate-card");
 }
+
+function openCard(i) {
+  console.log("öffne Card "+ i);
+}
+
+function openCardContainer() {
+  document.getElementById("board-background").classList.remove("d-none");
+  document.body.classList.add("background-fixed");
+}
+function closeCardContainer() {
+  document.getElementById("board-background").classList.add("d-none");
+  document.body.classList.remove("background-fixed");
+}
+
