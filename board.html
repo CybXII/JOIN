@@ -13,6 +13,7 @@
   <link rel="stylesheet" href="./styles/add-task.css">
   <script src="./js/templates.js"></script>
   <script src="./js/login.js"></script>
+  <script src="./js/addTask.js"></script>
   <script src="./js/script.js"></script>
   <script src="./js/classesSidebar.js"></script>
   <script src="./js/board.js"></script>
@@ -30,11 +31,11 @@
       
       <div class="add-task-board-background d-none" id="board-background" onclick="closeAddTaskContainer()">
         <div class="add-task-board-card" onclick="dontClose()">
-          <!-- <button onclick="closeAddTaskContainer()">X</button> -->
+          <!-- <button class="closeButton" onclick="closeAddTaskContainer()">X</button> -->
 
           <div class="containerAdjustment">
-            <button onclick="closeAddTaskContainer()">X</button>
             <div class="content-container">
+              <button class="closeButton" onclick="closeAddTaskContainer()">X</button>
               <div class="container-task" id="content">
                 <div class="frame-40">
                   <h1>Add Task</h1>
