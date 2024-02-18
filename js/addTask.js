@@ -72,7 +72,7 @@ function renderAssignedTo() {
       </div>
     </div>
     <span  id="fullname-addtask-dd-${i}">${fullname}</span>
-    <input id="checkbox${i}" type="checkbox" class="checkbox" onclick="addClassOnCheckboxChange(${i})" />
+    <input id="checkbox${i}" type="checkbox" class="checkbox" onclick="addClassOnCheckboxChange(${i}), setBadgesAddTask()" />
   </div>
 </li>
 `;
@@ -138,6 +138,34 @@ function setInitials() {
   // addTasksToStorage();
 }
 
+let userInitialsAssignedtoBadges = [];
+let userColorsAssignedtoBadges = [];
+
+function setBadgesAddTask() {
+  userInitialsAssignedtoBadges = [];
+  userColorsAssignedtoBadges = [];
+  document.getElementById("assigned-to-add-task-list").innerHTML = "";
+  for (let i = 0; i < usersassignedto.length; i++) {
+    let index = usersassignedto[i];
+    let initialsremote = remoteuserAssign[index].initials;
+    let colorremote = remoteuserAssign[index].color;
+    // let idremote = remoteuserAssign[i]["id"];
+    if (remoteuserAssign[index]["id"] == index + 1) {
+      userInitialsAssignedtoBadges.push(initialsremote);
+      userColorsAssignedtoBadges.push(colorremote);
+    }
+  }
+  renderBadgesAddTask();
+}
+
+function renderBadgesAddTask() {
+  for (let i = 0; i < userInitialsAssignedtoBadges.length; i++) {
+    const initials = userInitialsAssignedtoBadges[i];
+    const color = userColorsAssignedtoBadges[i];
+    let content = document.getElementById("assigned-to-add-task-list");
+    content.innerHTML += /*html*/ `<div class="assigned-to-add-task-user" style="background-color: ${color}">${initials}</div>`;
+  }
+}
 
 function renderAssignedUserAddTask() {
   for (let i = 0; i < usersassignedto.length; i++) {
@@ -175,10 +203,7 @@ function addTasksToStorage() {
   date.value = "";
 
   taskAddedCompleteText();
-
 }
-
-
 
 function renderUrgent() {
   document.getElementById("prio-urgent").classList.remove("frame-16");
