@@ -369,11 +369,11 @@
 .add-task-board-card {
   box-sizing: border-box;
   background-color: white;
-  height: 670px;
   width: 100%;
   padding: 40px;
   border-radius: 30px;
   margin: 0 40px;
+  width: 1050px;
 }
 
 .closeButton {
@@ -392,7 +392,7 @@
 .containerAdjustment {
   display: flex;
   align-items: center;
-  justify-content: center;
+  /* justify-content: center; */
   flex-direction: column;
   margin-top: -30px;
   z-index: 100;
@@ -401,7 +401,7 @@
 .bord-40 {
   display: flex;
   justify-content: space-between;
-  width: 520px;
+  width: 970px;
   margin: 20px 0;
   color: #000;
     font-family: Inter;
@@ -453,6 +453,14 @@
       width: 100%;
       height: 650px;
       overflow: auto;
+  }
+
+  .bord-40 {
+    width: 440px;
+  }
+
+  .add-task-board-card {
+    width: 600px;
   }
 }
 
