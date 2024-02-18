@@ -56,7 +56,6 @@ function dontClose() {
   event.stopPropagation();
 }
 
-
 function initializeLoginListeners() {
   let emailInput = document.getElementById("email");
   let passwordInput = document.getElementById("login_password");
