@@ -380,7 +380,8 @@
   width: 13.15px;
   height: 13.15px;
   color: #2a3647;
-  background-image: url(./)
+  background-image: url(../img/close.svg);
+  background-size: cover;
 
 }
 

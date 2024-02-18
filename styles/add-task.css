@@ -715,14 +715,34 @@ textarea{
     border:  1px solid #2A3647;
     background: #F6F7F8;
     cursor: pointer;
+    color: #2A3647;
 }
 
 .secondary:hover {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    }
+    border-color: var(--ligth-blue);
+}
+
+.secondary:hover span{
+color: var(--ligth-blue);
+}
+
+.secondary:hover .close{
+    background-image: url(../img/close-blue.svg);
+    background-size: contain;
+    height: 10.49px;
+    width: 10.49px;
+}
+
+
+.close{
+    background-image: url(../img/close.svg);
+    background-size: contain;
+    height: 10.49px;
+    width: 10.49px;
+}
 
 .secondary span {
-    color: #2A3647;
     font-family: Inter;
     font-size: 20px;
     font-style: normal;
