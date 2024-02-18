@@ -221,15 +221,19 @@ function rotateCardEnd() {
 }
 
 function openCard(i) {
-  console.log("öffne Card "+ i);
+  openCardContainer();
+  renderCardInfo(i);
 }
 
 function openCardContainer() {
-  document.getElementById("board-background").classList.remove("d-none");
+  document.getElementById("card-background").classList.remove("d-none");
   document.body.classList.add("background-fixed");
 }
 function closeCardContainer() {
-  document.getElementById("board-background").classList.add("d-none");
+  document.getElementById("card-background").classList.add("d-none");
   document.body.classList.remove("background-fixed");
 }
 
+function renderCardInfo(i){
+  console.log('render Card')
+}
