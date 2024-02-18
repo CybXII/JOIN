@@ -1,7 +1,5 @@
-
 let STORAGE_TOKEN = [];
 const STORAGE_URL = `https://remote-storage.developerakademie.org/item`;
-
 
 async function loadToken() {
   let resp = await fetch("./json/token.json");
@@ -46,7 +44,6 @@ async function loadRemoteUser() {
       if (remoteuser[i].id !== 999) {
         remoteuserAssign.push(remoteuser[i]);
       }
-      
     }
     remoteuser = [];
   } catch (e) {

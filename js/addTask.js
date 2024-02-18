@@ -2,6 +2,7 @@ let taskpriority = "medium";
 let remoteuser = [];
 let remoteuserAssign = [];
 let usersassignedto = [];
+let userInitialsAssignedto = [];
 
 function renderAddTask() {
   loadUsersFromLocalStorage();
