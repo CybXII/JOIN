@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="./styles/style.css" />
   <link rel="stylesheet" href="./styles/fonts.css" />
   <link rel="stylesheet" href="./styles/board.css" />
+  <link rel="stylesheet" href="./styles/add-task.css">
   <script src="./js/templates.js"></script>
   <script src="./js/login.js"></script>
   <script src="./js/script.js"></script>
@@ -29,7 +30,179 @@
       
       <div class="add-task-board-background d-none" id="board-background" onclick="closeAddTaskContainer()">
         <div class="add-task-board-card" onclick="dontClose()">
-          <button onclick="closeAddTaskContainer()">X</button>
+          <!-- <button onclick="closeAddTaskContainer()">X</button> -->
+
+          <div class="containerAdjustment">
+            <button onclick="closeAddTaskContainer()">X</button>
+            <div class="content-container">
+              <div class="container-task" id="content">
+                <div class="frame-40">
+                  <h1>Add Task</h1>
+                </div>
+        
+                <form class="addTask_helper" onsubmit="addTasksToStorage(event); return false;">
+                  <div class="input-fields">
+                    <div class="frame-219">
+                      <div class="title-v1">
+                        <div class="title">Title<span>*</span></div>
+                        <div class="frame-203">
+                          <div class="frame-14">
+                            <input
+                              class="input-title"
+                              placeholder="Enter a title"
+                              type="text"
+                              name="title"
+                              id="task-title"
+                              required
+                            />
+                          </div>
+                          <span class="warning-info-1" style="display: none"
+                            >This field is required</span
+                          >
+                        </div>
+                      </div>
+                      <div class="description-v1">
+                        <span>Description</span>
+                        <div class="frame-207">
+                          <div class="frame-17">
+                            <textarea
+                              class="input-title"
+                              placeholder="Enter a Description"
+                              type="text"
+                              name="description"
+                              id="task-description"
+                            ></textarea>
+                          </div>
+                          <!-- des volgende Feld soll nur erscheinen wenn nix im input field steht -->
+                          <span class="warning-info-2" style="display: none"
+                            >This field is required</span
+                          >
+                        </div>
+                      </div>
+                      <div class="asigned-to-v1">
+                        <span class="assigned-to">Assigned to</span>
+                        <div id="list1" class="dropdown-check-list" tabindex="100">
+                          <div onclick="renderAssignedTo(), openAssignTo()">
+                          <span class="anchor">Select contacts to assign</span>
+                          </div>
+                          <ul class="items">
+                            <div id="assigned-list">
+                          </div>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                    <img
+                      class="vertical-line"
+                      src="././img/vertical-line.svg"
+                      alt="vertical-line"
+                    />
+                    <div class="frame-39">
+                      <div class="due-date-v1">
+                        <div for="title">Due date<span>*</span></div>
+                        <div class="frame-211">
+                          <div class="frame-15">
+                            <input
+                              class="input-title"
+                              type="date"
+                              id="datePicker"
+                            />
+                          </div>
+                          <!-- des volgende Feld soll nur erscheinen wenn nix im input field steht -->
+                          <span class="warning-info-3" style="display: none"
+                            >This field is required.</span
+                          >
+                        </div>
+                      </div>
+                      <div class="frame-28">
+                        <div for="title">Prio</div>
+                        <div class="priority">
+                          <div
+                            class="frame-16"
+                            id="prio-urgent"
+                            onclick="taskPriorityChoosed('urgent');"
+                          >
+                            <span>Urgent</span>
+                            <img
+                              id="prio-urgent-img"
+                              src="./img/urgent_nofill.svg"
+                              alt="prio-alta-red"
+                            />
+                          </div>
+                          <div
+                            class="frame-25-active"
+                            id="prio-medium"
+                            onclick="taskPriorityChoosed('medium');"
+                          >
+                            <span>Medium</span>
+                            <img
+                              id="prio-medium-img"
+                              src="./img/medium_fill.svg"
+                              alt="prio-media"
+                            />
+                          </div>
+                          <div
+                            class="frame-26"
+                            id="prio-low"
+                            onclick="taskPriorityChoosed('low');"
+                          >
+                            <span>Low</span>
+                            <img
+                              id="prio-low-img"
+                              src="./img/low_nofill.svg"
+                              alt="prio-baja"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                      <div class="category">
+                        <div for="title">Category<span>*</span></div>
+                            <div id="list2" class="dropdown-radio-list" tabindex="100">
+                              <!-- <select required class="anchor" name="resistors">
+                                <option class="d-none" value="" disabled selected>Select task category</option>
+                                <option class="test" value="Technical Task">Technical Task</option>
+                                <option class="test" value="User Story">User Story</option>
+                              </select> -->
+                              <select class="moreMinimal">
+                                <option class="d-none" value="" disabled selected>Select task category</option>
+                                <option class="test" value="Technical Task">Technical Task</option>
+                                <option class="test" value="User Story">User Story</option>
+                              </select>
+                          </div>
+                        <!-- <img src="././img/arrow-drop-downaa.svg" alt="drop-downas" /> -->
+                      </div>
+                      <div class="subtask-v1-reconstrution">
+                        <div for="subtasks">Subtasks</div>
+                        <div class="frame-18">
+                          <input class="subtasks" placeholder="Add new subtask" />
+                          <img
+                            src="././img/subtasks-icons-11.svg"
+                            alt="subtasks-icon"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="frame-27">
+                    <p class="disclaimer" for="disclaimer">
+                      <span>*</span>This field is required
+                    </p>
+                    <div onclick="clearFields()" class="secondary">
+                      <span>Clear</span>
+                      <img src="././img/iconoir-cancel.svg" alt="cancel-icon" />
+                    </div>
+                    <button class="primary-check-button" type="submit">
+                      <span>Create Task</span>
+                      <img src="././img/check-out-wheite.svg" alt="check-out-wheite" />
+                    </button>
+                  </div>
+                </form>
+                  <!-- <p class="disclaimer" for="disclaimer">
+                  <span>*</span>This field is required
+                </p>  -->
+              </div>
+            </div>
+          </div>
         </div>
       </div>
 
