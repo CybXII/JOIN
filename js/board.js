@@ -51,6 +51,7 @@ let tasks = [
 
 function renderBoardTasks() {
   loadUsersFromLocalStorage();
+  loadTasksFromLocalStorage();
   updateHTML();
   classesBoard();
 }
