@@ -13,9 +13,9 @@
     <script src="./js/script.js"></script>
     <script src="./js/templates.js"></script>
     <script src="./js/board.js"></script>
+    <script src="./js/summary.js"></script>
     <script src="./js/storage.js"></script>
     <script src="./js/classesSidebar.js"></script>
-    <script src="./js/eventListener.js"></script>
     <link rel="icon" type="image" href="../img/join-favicon.svg" />
   </head>
   <body onload="includeHTMLInit(`Summary`), greetSummaryAnimation()">
@@ -121,11 +121,11 @@
             </div>
             <div class="frame-69">
               <span class="header-text" id="summary-greeting"></span>
-              <span class="footer-text" id="summary-fullname">Sofia Müller</span>
+              <span class="footer-text" id="summary-fullname"></span>
             </div>
             <div id="frame-69_responsiv" class="frame-69_responsiv frame-69_responsiv_background"">
               <span class="header-text" id="summary-greeting-resp"></span>
-              <span class="footer-text">Sofia Müller</span>
+              <span class="footer-text" id="summary-fullname-resp"></span>
             </div>
 
           </div>

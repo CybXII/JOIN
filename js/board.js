@@ -1,5 +1,10 @@
 let currentDraggedElement;
 let currentCardDragged;
+let tasksTodo;
+let tasksDone;
+let tasksInProgress;
+let tasksAwaitFeedback;
+let tasksUrgent;
 
 let tasks = [
   {
@@ -44,13 +49,11 @@ let tasks = [
   },
 ];
 
-loadFromLocalStorage();
-
-let tasksTodo;
-let tasksDone;
-let tasksInProgress;
-let tasksAwaitFeedback;
-let tasksUrgent;
+function renderBoardTasks() {
+  loadUsersFromLocalStorage();
+  updateHTML();
+  classesBoard();
+}
 
 function moveToLocation(taskId) {
   currentDraggedElement = taskId;
@@ -90,7 +93,7 @@ function highlight() {
 function moveTo(category) {
   tasks[currentDraggedElement]["categoryboard"] = category;
   updateHTML();
-  saveToLocalStorage();
+  saveTasksToLocalStorage();
   console.log(tasks[currentDraggedElement]["categoryboard"]);
   console.log("moveto");
 }
@@ -154,10 +157,6 @@ function closeAddTaskContainer() {
   document.body.classList.remove("background-fixed");
 }
 
-function dontClose() {
-  event.stopPropagation();
-}
-
 function setAmounts() {
   amountOfTasks = tasks.length;
   tasksTodo = 0;
@@ -183,7 +182,8 @@ function setAmounts() {
       default:
         break;
     }
-    if (tasks[i].prio == "urgent" && tasks[i].categoryboard != "done") tasksUrgent += 1;
+    if (tasks[i].prio == "urgent" && tasks[i].categoryboard != "done")
+      tasksUrgent += 1;
   }
   if (window.location.pathname == "/board.html") {
     noTasksToDo();
@@ -207,10 +207,6 @@ function noTasksToDoHtml(id) {
   return `<div class="card-board-empty" id='no-task-${id}'>No tasks To do</div>`;
 }
 
-function logEvent() {
-  console.log("LOGEVENT");
-}
-
 function rotateCardStart(i) {
   console.log(i + " aufgenommen");
   currentCardDragged = i;
@@ -222,19 +218,3 @@ function rotateCardEnd() {
   console.log(card + " losgelassen");
   document.getElementById(`board-card${card}`).classList.remove("rotate-card");
 }
-
-// #### Übergangsweise Local Storage ####
-
-function saveToLocalStorage() {
-  localStorage.setItem("tasks", JSON.stringify(tasks));
-}
-
-function loadFromLocalStorage() {
-  let storageAsText = localStorage.getItem("tasks");
-
-  if (storageAsText) {
-    tasks = JSON.parse(storageAsText);
-  }
-}
-
-// ######################################

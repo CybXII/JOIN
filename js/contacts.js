@@ -1,3 +1,5 @@
+let letters = [];
+
 let contacts = [
   {
     firstname: "Alexander",
@@ -8,7 +10,7 @@ let contacts = [
     phone: "+49 1234 5678 90",
     color: "#F5E227",
     id: "1",
-    taskassigned: false,
+    userassigned: "999",
   },
   {
     firstname: "Anja",
@@ -19,7 +21,7 @@ let contacts = [
     phone: "+49 1111 1111 11",
     color: "#D5C809",
     id: "2",
-    taskassigned: false,
+    userassigned: "999",
   },
   {
     firstname: "Benedikt",
@@ -30,7 +32,7 @@ let contacts = [
     phone: "+49 1111 1111 11",
     color: "#61C3DD",
     id: "3",
-    taskassigned: false,
+    userassigned: "999",
   },
   {
     firstname: "David",
@@ -41,7 +43,7 @@ let contacts = [
     phone: "+49 1111 1111 11",
     color: "#D8EF5A",
     id: "4",
-    taskassigned: false,
+    userassigned: "999",
   },
   {
     firstname: "Lukas",
@@ -52,7 +54,7 @@ let contacts = [
     phone: "+49 2345 6789 01",
     color: "#2F546E",
     id: "5",
-    taskassigned: false,
+    userassigned: "999",
   },
   {
     firstname: "Marcel",
@@ -63,7 +65,7 @@ let contacts = [
     phone: "+49 1111 1111 11",
     color: "#2F546E",
     id: "6",
-    taskassigned: false,
+    userassigned: "999",
   },
   {
     firstname: "Steffen",
@@ -74,7 +76,7 @@ let contacts = [
     phone: "+49 3456 7890 12",
     color: "#61C3DD",
     id: "7",
-    taskassigned: false,
+    userassigned: "999",
   },
   {
     firstname: "Tatjana",
@@ -85,7 +87,7 @@ let contacts = [
     phone: "+49 1111 1111 11",
     color: "#EF1835",
     id: "8",
-    taskassigned: false,
+    userassigned: "999",
   },
   {
     firstname: "Eva",
@@ -96,11 +98,17 @@ let contacts = [
     phone: "+49 1111 1111 11",
     color: "#0E3E99",
     id: "9",
-    taskassigned: false,
+    userassigned: "999",
   },
 ];
 
 loadContactsFromLocalStorage();
+
+function renderContacts() {
+  loadUsersFromLocalStorage();
+  classesContacts();
+  addContactListeners();
+}
 
 function sortContacts() {
   let sortedContacts = contacts.sort((a, b) => {
@@ -115,8 +123,6 @@ function sortContacts() {
     return 0;
   });
 }
-
-let letters = [];
 
 function pushLetters() {
   let letterbox = document.getElementById("renderedContent");
@@ -197,16 +203,10 @@ function closeContactsContainer() {
   document.body.classList.remove("contacts-background-fixed");
 }
 
-function dontClose() {
-  event.stopPropagation();
-}
-
 function formatPhoneNumber() {
   let phoneNumber = document.getElementById("add_contacts_phone").value;
-  // Entferne alle Nicht-Ziffern
   phoneNumber = phoneNumber.replace(/\D/g, "");
 
-  // Füge die Ländervorwahl hinzu, falls nicht bereits vorhanden
   if (phoneNumber.length === 10) {
     phoneNumber = "49" + phoneNumber;
   } else if (phoneNumber.length === 11 && phoneNumber.startsWith("0")) {
@@ -215,46 +215,25 @@ function formatPhoneNumber() {
     phoneNumber = "49" + phoneNumber.slice(1);
   }
 
-  // Füge Leerzeichen ein
   phoneNumber = phoneNumber.replace(
     /(\d{2})(\d{4})(\d{4})(\d{2})/,
     "+$1 $2 $3 $4"
   );
-
-  console.log(phoneNumber); // Ausgabe: "+49 1234 5678 97"
   return phoneNumber;
 }
 
-// Beispielaufruf
-
-function getRandomColor(color) {
-  var letters = "0123456789ABCDEF";
-  var color = "#";
-  for (var i = 0; i < 6; i++) {
-    color += letters[Math.floor(Math.random() * 16)];
-  }
-  return color;
-}
-
-
-
 function contactAnimation() {
-  let element = document.getElementById('contact_info');
+  let element = document.getElementById("contact_info");
   element.classList.add("contact-info-content");
 }
 
-
-
 function deleteContact(userid) {
-  console.log(userid + " gelöscht!");
-  // Filtere das JSON-Array und entferne das Element mit der entsprechenden ID
   const updatedContacts = contacts.filter((contact) => contact.id !== userid);
-  contacts.splice(0, contacts.length); // Leere das contacts-Array
-  contacts.push(...updatedContacts); // Füge die aktualisierten Kontakte hinzu
+  contacts.splice(0, contacts.length);
+  contacts.push(...updatedContacts);
   pushLetters();
   saveContactsToLocalStorage();
   document.getElementById("contact_info").innerHTML = "";
-  console.log(updatedContacts);
   addContactListeners();
 }
 
@@ -262,7 +241,92 @@ function editContact(userid) {
   console.log(userid + " wird gerade editiert!");
 }
 
+function addContactsToStorage() {
+  let nameInput = document.getElementById("add_contacts_name").value.split(" ");
+  let name = document.getElementById("add_contacts_name");
+  let email = document.getElementById("add_contacts_email");
+  let phone = formatPhoneNumber();
 
+  let lastName;
+  let initials =
+    nameInput[0][0].toUpperCase() +
+    nameInput[nameInput.length - 1][0].toUpperCase();
+  nameInput.length > 1
+    ? (lastName = nameInput[nameInput.length - 1])
+    : (lastName = "");
+  let firstName = nameInput[0];
+  let color = getRandomColor();
 
+  let JSONToPush = {
+    firstname: firstName,
+    lastname: lastName,
+    fullname: name.value,
+    initials: initials,
+    email: email.value,
+    phone: phone,
+    color: color,
+    id: contacts.length,
+    taskassigned: false,
+    contactAssignedTo: users[0].id,
+  };
 
+  contacts.push(JSONToPush);
 
+  name.value = "";
+  email.value = "";
+  phone.value = "";
+
+  closeContactsContainer();
+  saveContactsToLocalStorage();
+  setTimeout(() => {
+    pushLetters();
+  }, 1);
+  addContactListeners();
+}
+
+function openContact(fullname, email, color, initials, phone, userid) {
+  let element = document.getElementById("contact_info");
+  element.classList.remove("contact-info-content");
+  element.classList.remove("contact-info");
+  document.getElementById("contact_info").innerHTML = renderContactInfo(
+    fullname,
+    email,
+    color,
+    initials,
+    phone,
+    userid
+  );
+}
+
+function renderContactInfo(fullname, email, color, initials, phone, userid) {
+  return /*html*/ `  
+  <div class="frame-105">
+    <div class="frame-79">
+      <div class="group">
+        <div class="circle" style="background-color:${color};"><div class="text-wrapper-circle">${initials}</div></div>
+      </div>
+    </div>
+    <div class="frame-104">
+      <div class="frame-81">${fullname}</div>
+      <div class="frame-204">
+        <div class="frame-108" onclick="editContact('${userid}')"><img src="./img/pen.svg" alt=""><p>Edit</p></div>
+        <div class="delete" onclick="deleteContact('${userid}')"><img src="./img/trash.svg" alt=""><p>Delete</p></div>
+      </div>
+    </div>
+  </div>
+  <div class="frame-106">
+    <span>Contact Information</span>
+    <p></p>
+  </div>
+  <div class="frame-101">
+    <div class="frame-102">
+      <p class="email">Email</p>
+      <a >${email}</a>
+    </div>
+    <div class="frame-103">
+      <p class="Phone">Phone</p>
+      <a href="tel:${phone}">${phone}</a>
+    </div>
+  </div>
+`;
+}

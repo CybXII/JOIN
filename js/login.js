@@ -1,4 +1,6 @@
-// Login-Screen
+let login_remember;
+let users = [];
+let remembered_user = [];
 
 function move() {
   setTimeout(() => {
@@ -6,42 +8,76 @@ function move() {
     document.getElementById("join_logo").classList.remove("background");
     document.getElementById("join_logo2").classList.remove("background");
     document.getElementById("logo_container").classList.remove("big_size");
-    document.getElementById("join_logo2").classList.remove("join_logo_start_responsiv");
-    document.getElementById("join_logo2").classList.add("join_logo_start_responsiv2");  
+    document
+      .getElementById("join_logo2")
+      .classList.remove("join_logo_start_responsiv");
+    document
+      .getElementById("join_logo2")
+      .classList.add("join_logo_start_responsiv2");
   }, 1000);
-
 }
 
-// Register & Login
+function renderLogin() {
+  document.getElementById("frame-153").innerHTML = renderLoginHTML();
+  document.getElementById("frame-156").classList.remove("d-none");
+  initializeLoginListeners();
+}
 
+async function login(event) {
+  await loadUser();
+  event.preventDefault();
+  let email = document.getElementById("email");
+  let password = document.getElementById("login_password");
+  let user = users.find(
+    (u) => u.email == email.value && u.password == password.value
+  );
+  console.log(user);
+  if (user) {
+    console.log("user gefunden");
+    users = [];
+    users.push(user);
+    users[0].rememberlogin = login_remember;
+    saveUsersToLocalStorage();
+    window.location.href = "summary.html";
+  } else {
+    console.log("Wrong password Ups! Try again.");
+    alert("Wrong password Ups! Try again.");
+  }
+}
 
-// function addUser(event) {
-//   // Das Standardverhalten des Formulars unterdrücken
+function rememberMeLogin() {
+  if (remembered_user.length > 0 && remembered_user[0].rememberlogin == true) {
+    document.getElementById("email").value = remembered_user[0].email;
+    document.getElementById("login_password").value =
+      remembered_user[0].password;
+    login_remember = document.getElementById("signUpCheck").checked =
+      remembered_user[0].rememberlogin;
+    login(event);
+    renderSummary();
+  } else {
+    renderLogin();
+  }
+}
 
-// }
+function guestLogin() {
+  let color = getRandomColor();
 
+  users.push({
+    id: 999,
+    name: "Guest",
+    email: "guest@guest.de",
+    password: "hidden",
+    initials: "G",
+    firstName: "Guest",
+    lastName: "",
+    color: color,
+    rememberlogin: false,
+  });
+  saveUsersToLocalStorage();
+  window.location.href = "summary.html";
+}
 
-
-// REMOTESTORAGE
-
-// let STORAGE_TOKEN = [];
-// let STORAGE_URL = `https://remote-storage.developerakademie.org/item`;
-
-// async function loadToken() {
-//   let resp = await fetch("./json/token.json");
-//   token = await resp.json();
-//   STORAGE_TOKEN.push(token[0]["token"]);
-// }
-
-// async function setItem(key, value) {
-//   const payload = { key, value, token: STORAGE_TOKEN };
-//   return fetch(STORAGE_URL, {
-//     method: "POST",
-//     body: JSON.stringify(payload),
-//   }).then((res) => res.json());
-// }
-
-// async function getItem(key) {
-//   const url = `${STORAGE_URL}?key=${key}&token=${STORAGE_TOKEN}`;
-//   return fetch(url).then((res) => res.json());
-// }
+function userLogout() {
+  localStorage.removeItem("users");
+  window.location.href = "login.html";
+}

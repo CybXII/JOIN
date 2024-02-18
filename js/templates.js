@@ -3,8 +3,6 @@
 async function includeHTMLInit(input) {
   let functionName = `render${input}`;
   await includeHTML();
-  
-  
 
   // Überprüfen, ob die Funktion im globalen Kontext vorhanden ist
   if (typeof window[functionName] === "function") {
@@ -200,41 +198,7 @@ function renderLoginHTML() {
             <button class="button">Log in</button>
           </div>
           <div class="button-seconday-wo">
-            <button class="button-2">Guest Log in</button>
+            <button class="button-2" onclick="guestLogin()">Guest Log in</button>
           </div>
         </div>`;
-}
-
-function renderContactInfo(fullname, email, color, initials, phone, userid) {
-  return /*html*/ `  
-  <div class="frame-105">
-    <div class="frame-79">
-      <div class="group">
-        <div class="circle" style="background-color:${color};"><div class="text-wrapper-circle">${initials}</div></div>
-      </div>
-    </div>
-    <div class="frame-104">
-      <div class="frame-81">${fullname}</div>
-      <div class="frame-204">
-        <div class="frame-108" onclick="editContact('${userid}')"><img src="./img/pen.svg" alt=""><p>Edit</p></div>
-        <div class="delete" onclick="deleteContact('${userid}')"><img src="./img/trash.svg" alt=""><p>Delete</p></div>
-      </div>
-    </div>
-  </div>
-  <div class="frame-106">
-    <span>Contact Information</span>
-    <p></p>
-  </div>
-  <div class="frame-101">
-    <div class="frame-102">
-      <p class="email">Email</p>
-      <a >${email}</a>
-    </div>
-    <div class="frame-103">
-      <p class="Phone">Phone</p>
-      <a href="tel:${phone}">${phone}</a>
-    </div>
-  </div>
-
-`;
 }

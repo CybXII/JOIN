@@ -14,10 +14,9 @@
     <script src="./js/storage.js"></script>
     <script src="./js/script.js"></script>
     <script src="./js/classesSidebar.js"></script>
-    <script src="./js/eventListener.js"></script>
     <link rel="icon" type="image" href="./img/join-favicon.svg" />
   </head>
-  <body onload="move(), renderLogin(), getItem('users')" id="body">
+  <body onload="move(), renderLogin(), loadRememberedUsersFromLocalStorage(), rememberMeLogin()" id="body">
     <div class="log-in">
       <div class="logo">
         <div id="logo_container" class="big_size logo_container background">
@@ -30,7 +29,7 @@
           <span id="msgBox" class="register-comp-text">You Signed Up successfully</span>
         </div>
       </div>
-      <form class="frame-153" id="frame-153" onsubmit="login(event)"></form>
+      <form class="frame-153" id="frame-153" onsubmit="login(event); return false;"></form>
       <div class="frame-156" id="frame-156">
         <div class="text-wrapper-5">Not a Join user?</div>
         <div class="button-wrapper" onclick="renderSignUp()">
