@@ -7,7 +7,6 @@ body {
     display: flex;
     flex-direction: column;
     display: flex;
-    /* gap: 60px; */
     justify-content: flex-start;
     align-items: flex-start;
     position: fixed;
@@ -16,7 +15,7 @@ body {
     right: 0;
     bottom: 0;
     overflow-y: scroll;
-
+    overflow-x: hidden;
   }
 
   .container-task::-webkit-scrollbar {
@@ -1122,6 +1121,8 @@ select {
         top: 1110px;
         left: 82px;
     }
+
+    
 
 @media (max-width: 900px) {
     body{

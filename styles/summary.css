@@ -131,6 +131,16 @@ body{
     cursor: pointer;
   }
 
+  .pencil-rectangle-button-v1 p {
+    color: #2A3647;
+  }
+
+  .pencil-rectangle-button-v1:hover p {
+    color: #fff;
+  }
+
+
+
   .todo_picture{
     background-image: url(../img/stift.svg);
     width: 69px;
@@ -182,6 +192,7 @@ body{
   }
 
   .frame-62 p {
+    /* color:#2A3647; */
     font-family: Inter;
     font-size: 20px;
     font-style: normal;
@@ -200,7 +211,7 @@ body{
   }
   
   .frame p {
-    color: #2a3647;
+    
     font-family: Inter;
     font-size: 20px;
     font-style: normal;
@@ -718,6 +729,7 @@ body{
       padding: 38px 19px 38px 19px;
       gap: 10px;
     }
+
     
     .pencil-rectangle-button-v1{
       width: 186px;
@@ -874,6 +886,7 @@ body{
     }
 
     .frame-62 p{
+      color:#2A3647;
       font-family: Inter;
       font-size: 14px;
       font-weight: 400;
