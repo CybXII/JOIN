@@ -382,7 +382,6 @@
 }
 
 .closeButton {
-  margin-top: 30px;
   width: 13.15px;
   height: 13.15px;
   color: #2a3647;
@@ -396,7 +395,25 @@
 }
 
 .containerAdjustment {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
   margin-top: -30px;
+  z-index: 100;
+}
+
+.bord-40 {
+  display: flex;
+  justify-content: space-between;
+  width: 520px;
+  margin: 20px 0;
+  color: #000;
+    font-family: Inter;
+    font-size: 61px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 73.2px;  
 }
 
 .background-fixed {
@@ -614,11 +631,7 @@
     left: 0;
   }
 
-  .containerAdjustment {
-    width: 100%;
-    height: 500px;
-    overflow-y: auto;
-  }
+
 }
 
 
@@ -627,14 +640,4 @@
   .add-task-board-card {
     margin: 0 0px;
 }
-}
-
-@media (max-width: 530px) {
-
-  .containerAdjustment {
-    width: 100%;
-    height: 300px;
-    overflow-y: auto;
-  }
-
 }

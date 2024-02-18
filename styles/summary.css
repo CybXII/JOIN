@@ -15,7 +15,6 @@ body{
   left: 232px;
   right: 0;
   padding: 80px;
-  overflow-x: hidden;
 }
 
 .board_window::-webkit-scrollbar {
@@ -73,7 +72,6 @@ body{
     justify-content: flex-start;
     align-items: center;
     gap: 30px;
-    margin-bottom: 80px;
   }
 
   .summary_helper{
