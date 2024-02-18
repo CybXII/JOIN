@@ -3,6 +3,8 @@ let remoteuser = [];
 let remoteuserAssign = [];
 let usersassignedto = [];
 let userInitialsAssignedto = [];
+let userColorsAssignedto = [];
+let taskCategory = [];
 
 function renderAddTask() {
   loadUsersFromLocalStorage();
@@ -122,6 +124,21 @@ function addClassOnCheckboxChange(userid) {
   }
 }
 
+function setInitials() {
+  for (let i = 0; i < usersassignedto.length; i++) {
+    let index = usersassignedto[i];
+    let initialsremote = remoteuserAssign[index].initials;
+    let colorremote = remoteuserAssign[index].color;
+    // let idremote = remoteuserAssign[i]["id"];
+    if (remoteuserAssign[index]["id"] == index + 1) {
+      userInitialsAssignedto.push(initialsremote);
+      userColorsAssignedto.push(colorremote);
+    }
+  }
+  // addTasksToStorage();
+}
+
+
 function renderAssignedUserAddTask() {
   for (let i = 0; i < usersassignedto.length; i++) {
     let index = usersassignedto[i];
@@ -132,7 +149,10 @@ function renderAssignedUserAddTask() {
   }
 }
 
-function addTasksToStorage() {
+function addTasksToStorage(event) {
+  event.preventDefault;
+  debugger;
+  setInitials();
   let title = document.getElementById("task-title");
   let description = document.getElementById("task-description");
   let date = document.getElementById("datePicker");
@@ -145,19 +165,22 @@ function addTasksToStorage() {
     dueDate: date.value,
     prio: taskpriority,
     subtasks: ["1", "2", "3"],
-    assignedTo: ["XY", "ZA", "BC"],
+    assignedTo: userInitialsAssignedto,
+    colors: userColorsAssignedto,
   };
 
   tasks.push(JSONToPush);
+  saveTasksToLocalStorage();
+  console.log(tasks);
   title.value = "";
   description.value = "";
   date.value = "";
 
-  taskAddedCompleteText();
+  // taskAddedCompleteText();
 
-  console.log(tasks);
-  // saveToLocalStorage();
 }
+
+
 
 function renderUrgent() {
   document.getElementById("prio-urgent").classList.remove("frame-16");
