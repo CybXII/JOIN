@@ -1087,6 +1087,11 @@ select {
       
 
 
+.assigned-to-add-task-list{
+    border: 1px solid red;
+    width: 100%;
+}
+
 
 
 @media (max-width: 1290px) {
