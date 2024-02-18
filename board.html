@@ -31,16 +31,12 @@
       
       <div class="add-task-board-background d-none" id="board-background" onclick="closeAddTaskContainer()">
         <div class="add-task-board-card" onclick="dontClose()">
-          <!-- <button class="closeButton" onclick="closeAddTaskContainer()">X</button> -->
 
-          <div class="containerAdjustment">
-            <div class="content-container">
-              <button class="closeButton" onclick="closeAddTaskContainer()">X</button>
-              <div class="container-task" id="content">
+              <div class="containerAdjustment">
                 <div class="frame-40">
                   <h1>Add Task</h1>
+                  <div class="closeButton" onclick="closeAddTaskContainer()"></div>
                 </div>
-        
                 <form class="addTask_helper" onsubmit="addTasksToStorage(event); return false;">
                   <div class="input-fields">
                     <div class="frame-219">
@@ -198,11 +194,7 @@
                     </button>
                   </div>
                 </form>
-                  <!-- <p class="disclaimer" for="disclaimer">
-                  <span>*</span>This field is required
-                </p>  -->
               </div>
-            </div>
           </div>
         </div>
       </div>
