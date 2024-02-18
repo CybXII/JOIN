@@ -58,6 +58,11 @@
   cursor: pointer;
 }
 
+.frame-123-btn:hover{
+  background: var(--ligth-blue);
+  border-color: var(--ligth-blue);
+}
+
 .frame-123-btn img {
   width: 32px;
   height: 32px;

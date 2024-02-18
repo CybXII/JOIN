@@ -51,6 +51,8 @@ body {
     line-height: 73.2px;
 }
 
+
+
 input{
     box-sizing: border-box;
     align-self: end;
@@ -734,6 +736,18 @@ color: var(--ligth-blue);
     width: 10.49px;
 }
 
+.secondary_button {
+background-image: url('../img/iconoir-cancel.svg');
+width: 24px;
+height: 24px;
+}
+
+.primary-check-button_img{
+    background-image: url('../img/check-out-wheite.svg');
+    width: 24px;
+    height: 24px;
+}
+
 
 .close{
     background-image: url(../img/close.svg);
@@ -748,11 +762,6 @@ color: var(--ligth-blue);
     font-style: normal;
     font-weight: 400;
     line-height: 24px;
-}
-
-.secondary img {
-    width: 24px;
-    height: 24px;
 }
 
 .primary-check-button {
