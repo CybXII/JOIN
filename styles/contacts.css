@@ -225,7 +225,7 @@ overflow-x: hidden;
   cursor: pointer;
 }
 
-/* .frame-97 .profile-badge {
+.frame-97 .profile-badge {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -234,7 +234,7 @@ overflow-x: hidden;
   flex: 0 0 auto;
   background-color: var(--white);
   border-radius: 45px;
-} */
+}
 
 .frame-97 .group {
   position: relative;

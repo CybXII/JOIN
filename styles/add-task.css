@@ -1065,7 +1065,9 @@ select {
 
       .overlap-group {
         background-color: #6e52ff;
-        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
         width: 42px;
         height: 42px;
         border-radius: 21px;
@@ -1081,7 +1083,7 @@ select {
         gap: 8px;
       }
       .text-wrapper-2{
-        color: #000;
+        color: white;
       }
       
 

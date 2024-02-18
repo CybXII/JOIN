@@ -602,12 +602,9 @@ input:focus-visible {
 
 .frame-31 {
   display: flex;
-  width: 48px;
-  height: 48px;
   justify-content: center;
   align-items: center;
   cursor: pointer;
-  gap: 10px;
   flex-shrink: 0;
   border-radius: 559px;
   background: var(--white, #fff);
@@ -617,18 +614,17 @@ input:focus-visible {
   background-color: #0c2e621f;
 }
 
-.ellipse-3 {
+.group-9 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 56px;
   height: 56px;
   flex-shrink: 0;
-  stroke-width: 3px;
-  position: absolute;
-}
-
-.group-9 {
-  width: 27.944px;
-  height: 14.238px;
-  flex-shrink: 0;
+  border: 3px solid #2A3647;
+  border-radius: 50%;
+  color: #29ABE2;
+  font-weight: 700;
 }
 
 .frame-3 {
