@@ -763,6 +763,11 @@ text-align: left;
 
 
 @media (max-width: 900px) {
+
+  .contacts-background {
+    left: 0;
+  }
+
   .content-container{
     margin-top: 0;
   }
