@@ -1063,11 +1063,6 @@ select {
     }
 
     .text-wrapper-2 {
-        position: absolute;
-        width: 28px;
-        height: 10px;
-        top: 14px;
-        left: 5px;
         font-family: var(--version-2-t7-font-family);
         font-weight: var(--version-2-t7-font-weight);
         color: var(--white);
@@ -1112,9 +1107,11 @@ select {
 
 
 .assigned-to-add-task-list{
-    border: 1px solid red;
+    display: flex;
     width: 100%;
     margin-bottom: 10px;
+    overflow-y: hidden;
+    height: 42px;
 }
 
 .assigned-to-add-task-user{
@@ -1125,8 +1122,9 @@ select {
     width: 40px;
     border-radius: 50%;
     border: 2px solid white;
-    background-color: red;
     color: white;
+    margin-left: -12px;
+    translate: 12px;
 }
 
 
