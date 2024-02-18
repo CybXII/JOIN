@@ -15,6 +15,7 @@ body{
   left: 232px;
   right: 0;
   padding: 80px;
+  overflow-x: hidden;
 }
 
 .board_window::-webkit-scrollbar {
