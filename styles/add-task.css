@@ -1090,6 +1090,13 @@ select {
 
 
 @media (max-width: 1290px) {
+    .container-task{
+        align-items: center;
+    }
+
+    .frame-40{
+        width: 440px;
+    }
 
     .frame-27{
         width: 440px;
@@ -1148,7 +1155,7 @@ select {
         top: 80px;
         left: 0;
         right: 0;
-        justify-content: center;
+        justify-content: flex-start;
     }
     
     .container-task{
