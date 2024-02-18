@@ -111,7 +111,7 @@
 }
 
 .board-dist {
-  padding: 0 64px 0 64px;
+  padding: 0 64px 64px 64px;
   /* width: 1208px; */
   display: flex;
   gap: 26px;
@@ -372,6 +372,22 @@
   padding: 40px;
   border-radius: 30px;
   margin: 0 40px;
+}
+
+.closeButton {
+  height: 30px;
+  width: 30px;
+  font-weight: bold;
+  font-size: 25px;
+}
+
+/* Container nicht rauslaufen */
+.container-task {
+  margin-top: 120px;
+  margin-left: 100px;
+  height: 1000px;
+  width: 1400px;
+  box-sizing: border-box;
 }
 
 .background-fixed {

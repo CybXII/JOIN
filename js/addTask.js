@@ -149,9 +149,7 @@ function renderAssignedUserAddTask() {
   }
 }
 
-function addTasksToStorage(event) {
-  event.preventDefault;
-  debugger;
+function addTasksToStorage() {
   setInitials();
   let title = document.getElementById("task-title");
   let description = document.getElementById("task-description");
@@ -176,7 +174,7 @@ function addTasksToStorage(event) {
   description.value = "";
   date.value = "";
 
-  // taskAddedCompleteText();
+  taskAddedCompleteText();
 
 }
 

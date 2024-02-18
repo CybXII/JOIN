@@ -16,6 +16,7 @@ let tasks = [
     prio: "medium",
     subtasks: ["Subtask1", "Subtask2", "Subtask3"],
     assignedTo: ["AB", "CD", "EF"],
+    colors: ["#10C6E8", "#7851CC", "#726129"],
   },
   {
     categoryboard: "in-progress",
@@ -26,6 +27,7 @@ let tasks = [
     prio: "urgent",
     subtasks: ["Subtask4", "Subtask5", "Subtask6"],
     assignedTo: ["GH", "IJ", "KL"],
+    colors: ["#10C6E8", "#7851CC", "#726129"],
   },
   {
     categoryboard: "await-feedback",
@@ -36,6 +38,7 @@ let tasks = [
     prio: "urgent",
     subtasks: ["Subtask4", "Subtask5", "Subtask6"],
     assignedTo: ["GH", "IJ", "KL"],
+    colors: ["#10C6E8", "#7851CC", "#726129"],
   },
   {
     categoryboard: "done",
@@ -46,6 +49,7 @@ let tasks = [
     prio: "urgent",
     subtasks: ["Subtask4", "Subtask5", "Subtask6"],
     assignedTo: ["GH", "IJ", "KL"],
+    colors: ["#10C6E8", "#7851CC", "#726129"],
   },
 ];
 
@@ -129,19 +133,29 @@ function updateHTML() {
       <div class="frame-217" id="assigned-to${i}">
       </div>
       <div class="card-board-priority">
-        <img src="./img/prio-baja-board.svg" class="card-board-priority-img" />
+        <img src="./img/prio-baja-board.svg" id="prio-svg${i}" class="card-board-priority-img" />
       </div>
     </div>
   </div>
 </div>`;
+    if (task.prio == "urgent") {
+      document.getElementById(`prio-svg${i}`).src = "./img/urgent_nofill.svg";
+    } else if (task.prio == "medium") {
+      document.getElementById(`prio-svg${i}`).src = "./img/medium_nofill.svg";
+    } else if (task.prio == "low") {
+      document.getElementById(`prio-svg${i}`).src = "./img/low_nofill.svg";
+    }
+
+
+
     let assigned = document.getElementById(`assigned-to${i}`);
     for (let j = 0; j < task["assignedTo"].length; j++) {
       const assign = task["assignedTo"][j];
+      const colorbg = task["colors"][j];
       assigned.innerHTML += `
 <div class="card-board-profile-batch">
   <div class="group-9-board">
-    <img src="./img/ellipse-5.svg" class="ellipse-5" />
-    <div class="group-9-text">${assign}</div>
+    <div class="group-9-text" style="background-color: ${colorbg}">${assign}</div>
   </div>
 </div>`;
     }
