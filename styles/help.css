@@ -507,6 +507,7 @@ h1{
 
 nav{
     position: fixed;
+    z-index: 100;
 }
 
 }

@@ -12,14 +12,17 @@ function getRandomColor(color) {
 }
 
 function renderPrivacyPolicy() {
+  loadUsersFromLocalStorage()
   classesPrivacyPolicy();
 }
 
 function renderHelp() {
+  loadUsersFromLocalStorage()
   classesHelp();
 }
 
 function renderLegalNotice() {
+  loadUsersFromLocalStorage()
   classesLegalNotice();
 }
 
