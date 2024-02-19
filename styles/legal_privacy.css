@@ -101,8 +101,9 @@ h1{
     white-space: wrap;
 }
 
-nav{
+nav {
     position: fixed;
+    z-index: 100;
 }
 
 }

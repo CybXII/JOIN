@@ -51,6 +51,11 @@ function taskAddedCompleteText() {
   }, 2000);
 }
 
+function fillInputField(inputString){
+  document.getElementById('category-list2').value = `${inputString}`;
+  openCategory()
+}
+
 function clearFields() {
   console.log("funktion zum leeren der Input felder oder neu laden der Seite");
 }
@@ -100,6 +105,32 @@ function openAssignTo() {
     }
   });
 }
+
+function openCategory() {
+  // renderAssignedUserAddTask();
+  let categoryBox = document.getElementById("list2");
+  let categoryInput = document.getElementById("category-list2");
+
+  // Überprüfe, ob die Klasse "visible" nicht enthalten ist, füge sie hinzu
+  if (!categoryBox.classList.contains("visible")) {
+    categoryBox.classList.add("visible");
+    categoryInput.setAttribute("disabled","" )
+    renderAssignedUserAddTask();
+  } else {
+    // Wenn "visible" enthalten ist, entferne es
+    categoryBox.classList.remove("visible");
+    categoryInput.removeAttribute("disabled","" )
+  }
+
+  // Überwache Klicks im Fenster, um die Liste zu verstecken, wenn außerhalb geklickt wird
+  window.addEventListener("click", function (e) {
+    if (!logoutBox.contains(e.target)) {
+      logoutBox.classList.remove("visible");
+      window.removeEventListener("click", arguments.callee); // Entferne den Event-Listener nach Ausführung
+    }
+  });
+}
+
 
 function addClassOnCheckboxChange(userid) {
   const checkbox = document.getElementById(`checkbox${userid}`);

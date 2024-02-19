@@ -76,11 +76,11 @@
                 <span class="assigned-to">Assigned to</span>
                 <div id="list1" class="dropdown-check-list" tabindex="100">
                   <div onclick="renderAssignedTo(), openAssignTo()">
-                  <span class="anchor">Select contacts to assign</span>
+                    <span class="anchor">Select contacts to assign</span>
                   </div>
                   <ul class="items">
                     <div id="assigned-list">
-                  </div>
+                    </div>
                   </ul>
                 </div>
               </div>
@@ -152,17 +152,28 @@
               </div>
               <div class="category">
                 <div for="title">Category<span>*</span></div>
-                    <div id="list2" class="dropdown-radio-list" tabindex="100">
+                    <div id="list2" class="dropdown-check-list2" tabindex="100">
+                      <div onclick="openCategory()">
+                        <span class="anchor">
+                          <input id="category-list2" type="text"  placeholder="Select Task Category">
+                        </span>  
+                      </div>
+                      <ul class="items">
+                        <div id="category-list2-items">
+                          <li onclick="fillInputField('Technical Task')">Technical Task</li>
+                          <li onclick="fillInputField('User Story')">User Story</li>
+                        </div>
+                      </ul>
                       <!-- <select required class="anchor" name="resistors">
                         <option class="d-none" value="" disabled selected>Select task category</option>
                         <option class="test" value="Technical Task">Technical Task</option>
                         <option class="test" value="User Story">User Story</option>
                       </select> -->
-                      <select class="moreMinimal">
+                      <!-- <select class="moreMinimal">
                         <option class="d-none" value="" disabled selected>Select task category</option>
                         <option class="test" value="Technical Task">Technical Task</option>
                         <option class="test" value="User Story">User Story</option>
-                      </select>
+                      </select> -->
                   </div>
                 <!-- <img src="././img/arrow-drop-downaa.svg" alt="drop-downas" /> -->
               </div>
@@ -185,7 +196,7 @@
                 </div>
                 <button class="primary-check-button" type="submit">
                   <span>Create Task</span>
-                  <img src="././img/check-out-wheite.svg" alt="check-out-wheite" />
+                  <img src="../img/check-out-wheite.svg" alt="check-out-wheite" />
                 </button>
               </div>  
             </div>
