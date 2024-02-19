@@ -590,7 +590,7 @@ body{
   }
 }
   
-  @media (max-width: 910px) {
+  @media (max-width: 900px) {
 
     .frame-40{
       gap: 16px;

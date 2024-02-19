@@ -117,7 +117,7 @@
 
 .board-dist {
   padding: 0 64px 64px 64px;
-  /* width: 1208px; */
+  max-width: 1440px;
   display: flex;
   gap: 26px;
   flex-wrap: wrap;
