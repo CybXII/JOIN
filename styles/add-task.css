@@ -280,7 +280,6 @@ textarea{
     display: flex;
     width: 440px;
     flex-direction: column;
-    justify-content: center;
     align-items: flex-start;
     gap: 24px;
     margin-left: 48px;
@@ -661,7 +660,7 @@ textarea{
     background-color: #fff;
     box-sizing: border-box;
     background-repeat: no-repeat;
-    background-position-x: right;
+    background-position-x: 97%;
     background-position-y:  center;
 }
 
@@ -742,9 +741,9 @@ color: var(--ligth-blue);
 }
 
 .secondary_button {
-background-image: url('../img/iconoir-cancel.svg');
-width: 24px;
-height: 24px;
+    background-image: url('../img/iconoir-cancel.svg');
+    width: 24px;
+    height: 24px;
 }
 
 .primary-check-button_img{
@@ -780,9 +779,9 @@ height: 24px;
     cursor: pointer;
 }
 .primary-check-button:hover {
-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-background: var(--ligth-blue);
-border-color: var(--ligth-blue);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    background: var(--ligth-blue);
+    border-color: var(--ligth-blue);
 }
 
 .primary-check-button span {
@@ -882,6 +881,7 @@ border-color: var(--ligth-blue);
   height: 10px;
   width: 10px;
   background-position-y: center;
+  background-position-x: 97%;
 }
 .dropdown-check-list.visible .anchor::after {
     position: absolute;
@@ -892,6 +892,7 @@ border-color: var(--ligth-blue);
     height: 10px;
     width: 10px;
     background-position-y: center;
+    background-position-x: 97%;
 }
 
 .anchor span{
@@ -993,18 +994,11 @@ select {
         margin: 0;      
         cursor: pointer;
         border: none;
-      
-          /* -webkit-box-sizing: border-box;
-          -moz-box-sizing: border-box;
-          box-sizing: border-box;
-          -webkit-appearance: none;
-          -moz-appearance: none; */
-          /* appearance: none ; */
         }
       
       select.moreMinimal {
         background-image: url(../img/arrow_drop_down.svg);
-          background-position-x: right;
+          background-position-x: 97%;
           background-position-y: center;
           background-size: 24px;
           background-repeat: no-repeat;
@@ -1021,7 +1015,6 @@ select {
         background-image: url(../img/arrow-drop-downaa.svg);
           background-size: 24px;
           background-repeat: no-repeat;
-          /* outline: 0; */
      }
 
      .items div{
@@ -1145,8 +1138,6 @@ select {
     translate: 12px;
 }
 
-
-
 @media (max-width: 1290px) {
     .container-task{
         align-items: center;
@@ -1177,8 +1168,7 @@ select {
     }
     .addTask_helper {
         align-items: flex-start;
-        /* padding: 0 0 80px 0; */
-}
+    }
     .disclaimer {
         top: 1110px;
         left: 82px;
@@ -1296,10 +1286,6 @@ select {
         display: flex;
         margin-bottom: 0;
     }
-
-    /* .frame-219{
-        width: 100%;
-    } */
 
     .title-v1{
         width: 100%;
