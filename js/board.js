@@ -251,3 +251,17 @@ function closeCardContainer() {
 function renderCardInfo(i){
   console.log('render Card')
 }
+
+function redirectOnWidth() {
+  // Prüfen die Fensterbreite
+  if (window.innerWidth <= 900) {
+    // Weiterleitung zu AddTask Seite
+    window.location.href = "./../addtask.html";
+  }
+}
+
+// Führt die Function aus sobalt das Document vollständig geladen ist
+document.addEventListener('DOMContentLoaded', redirectOnWidth);
+
+// Führt die Function aus, wenn das Fenster neu skaliert wird
+window.addEventListener('resize', redirectOnWidth);
