@@ -265,7 +265,7 @@ function addContactsToStorage() {
     email: email.value,
     phone: phone,
     color: color,
-    id: contacts.length,
+    id: `${contacts.length}`,
     taskassigned: false,
     contactAssignedTo: users[0].id,
   };

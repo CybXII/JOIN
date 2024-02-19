@@ -252,8 +252,6 @@ function addContactListeners() {
       setTimeout(() => {
         contactAnimation();
       }, 100);
-
-      contact.id = "active-contact";
     });
   });
 }
