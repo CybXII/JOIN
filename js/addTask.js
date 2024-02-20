@@ -4,7 +4,6 @@ let remoteuserAssign = [];
 let usersassignedto = [];
 let userInitialsAssignedto = [];
 let userColorsAssignedto = [];
-let taskCategory = [];
 
 function renderAddTask() {
   loadUsersFromLocalStorage();
@@ -215,15 +214,23 @@ function renderAssignedUserAddTask() {
   }
 }
 
-function addTasksToStorage() {
+function pushCategoryToJSON(){
+  let taskCategory = document.getElementById("category-list2").innerHTML;
+  return taskCategory;
+}
+
+async function addTasksToStorage() {
+  loadTasks();
   setInitials();
+  pushCategoryToJSON();
   let title = document.getElementById("task-title");
   let description = document.getElementById("task-description");
   let date = document.getElementById("datePicker");
+  let categoryTask = pushCategoryToJSON();
 
   let JSONToPush = {
     categoryboard: "todo",
-    category: "JSONPUSHTEST",
+    category: categoryTask,
     title: title.value,
     description: description.value,
     dueDate: date.value,
@@ -234,7 +241,7 @@ function addTasksToStorage() {
   };
 
   tasks.push(JSONToPush);
-  saveTasksToLocalStorage();
+  await setItem("tasks", JSON.stringify(tasks));
   console.log(tasks);
   title.value = "";
   description.value = "";
