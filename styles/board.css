@@ -509,6 +509,14 @@
     overflow: hidden;
   }
 
+  .content-container{
+    display: none;
+  }
+
+  .add-task-board-background{
+    display: none;
+  }
+
   .frame-191 {
     height: unset;
     margin-bottom: 40px;

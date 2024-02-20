@@ -71,17 +71,23 @@ overflow-x: hidden;
 /* overflow-y: scroll; */
 }
 
+.headline div{
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
 
 .frame-40 {
-    position: relative;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    flex-direction: column;
-    gap: 30px;
-    margin-top: 120px;
-    left: 513px;
-  }
+  position: fixed;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  gap: 30px;
+  margin-top: 120px;
+  left: 745px;
+  right: 0;
+}
   
   .frame-40 span {
     color: #000;
@@ -757,8 +763,23 @@ text-align: left;
   animation: moveRightToLeft 1s ease forwards;
 }
 
+@media (max-width: 1320px) {
 
+  .headline{
+    flex-direction: column; 
+  }
 
+  .frame-105{
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+
+  .frame-81{
+    word-wrap: break-word;
+  }
+
+}
 
 
 
