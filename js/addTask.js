@@ -52,7 +52,7 @@ function taskAddedCompleteText() {
 }
 
 function fillInputField(inputString){
-  document.getElementById('category-list2').value = `${inputString}`;
+  document.getElementById('category-list2').innerHTML = `${inputString}`;
   openCategory()
 }
 
@@ -124,8 +124,8 @@ function openCategory() {
 
   // Überwache Klicks im Fenster, um die Liste zu verstecken, wenn außerhalb geklickt wird
   window.addEventListener("click", function (e) {
-    if (!logoutBox.contains(e.target)) {
-      logoutBox.classList.remove("visible");
+    if (!categoryBox.contains(e.target)) {
+      categoryBox.classList.remove("visible");
       window.removeEventListener("click", arguments.callee); // Entferne den Event-Listener nach Ausführung
     }
   });

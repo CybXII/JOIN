@@ -603,6 +603,10 @@ textarea{
     line-height: 24px;
 }
 
+#category-list2{
+    color: #000;
+}
+
 .frame-75 {
     display: flex;
     width: 440px;
