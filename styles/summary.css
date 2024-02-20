@@ -34,38 +34,6 @@ body{
   border-radius: 5px;
 }
 
-
-/* .container {
-  position: fixed;
-  padding: 80px 20px 0 80px;
-  overflow-y: scroll;
-  top: 96px;
-  left: 232px;
-  right: 0;
-  bottom: 0;
-  margin: 0;
-}
-
-.container::-webkit-scrollbar {
-  position: absolute;
-  width: 10px;
-  height: 10px;
-  z-index: 20;
-}
-  
-.container::-webkit-scrollbar-track {
-  border-radius: 0.5vw;
-  width: 1px;  
-  height: 53px;
-  z-index: 20;
-}
-
-.container-task::-webkit-scrollbar-thumb {
-  background: #A8A8A8; 
-  border-radius: 5px;
-  z-index: 20;
-} */
-
 .frame-40 {
     display: flex;
     display: inline-flex;

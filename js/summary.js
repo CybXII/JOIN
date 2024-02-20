@@ -1,5 +1,6 @@
-function renderSummary() {
+async function renderSummary() {
   loadUsersFromLocalStorage();
+  await loadTasks();
   setAmounts();
   let filteredDueDates = tasks
     .filter((task) => task.prio === "urgent" && task.categoryboard !== "done")
