@@ -66,6 +66,10 @@ function clearFields() {
   taskPriorityActive();
 }
 
+function resetSubtasks(){
+  document.getElementById('subtasks').value =``;
+}
+
 function renderAssignedTo() {
   let assigncontent = document.getElementById("assigned-list");
   remoteuserAssign.forEach((element, i) => {
@@ -239,9 +243,9 @@ function addTasksToStorage() {
   taskAddedCompleteText();
 }
 
-function changeButtons(){
+function changeButtons(event){
+  event.preventDefault()
   parent_div = document.getElementById('parent_subtasks');
-  inputField = document.getElementById('parent_subtasks').value;
 
   document.getElementById('subtask_add_button').classList.add('d-none');
   document.getElementById('subtask_seperator').classList.remove('d-none');
@@ -250,14 +254,15 @@ function changeButtons(){
 
   window.addEventListener("click", function (e) {
     if (!parent_div.contains(e.target)) {
-      if (inputField===undefined) {
+      inputField = document.getElementById('subtasks').value;
+      if (!inputField||inputField=="") {
         document.getElementById('subtask_add_button').classList.remove('d-none');
         document.getElementById('subtask_seperator').classList.add('d-none');
         document.getElementById('subtask_accept_button').classList.add('d-none');
         document.getElementById('subtask_cancel_button').classList.add('d-none');
         window.removeEventListener("click", arguments.callee);
       }
-      else{
+      else if( inputField.length<0){
         window.removeEventListener("click", arguments.callee);
       }
     }
