@@ -53,10 +53,10 @@ let tasks = [];
 //   },
 // ];
 
-function renderBoardTasks() {
-  loadTasks();
+async function renderBoardTasks() {
   loadUsersFromLocalStorage();
-  loadTasksFromLocalStorage();
+  // loadTasksFromLocalStorage();
+  await loadTasks();
   updateHTML();
   classesBoard();
 }
