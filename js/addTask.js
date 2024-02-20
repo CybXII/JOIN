@@ -56,8 +56,15 @@ function fillInputField(inputString){
   openCategory()
 }
 
-function clearFields() {
-  console.log("funktion zum leeren der Input felder oder neu laden der Seite");
+function clearFields(prio) {
+  document.getElementById('addTaskForm').reset(); 
+  document.getElementById('category-list2').innerHTML=`Select Task Category`;
+  document.getElementById('assigned-to-add-task-list').innerHTML=``;
+  usersassignedto = [];
+  renderAssignedTo();
+  taskpriority = "medium";
+  taskPriorityActive();
+
 }
 
 function renderAssignedTo() {
