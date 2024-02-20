@@ -104,7 +104,7 @@ function moveTo(category) {
   console.log("moveto");
 }
 
-function updateHTML() {
+async function updateHTML() {
   document.getElementById("todo").innerHTML = "";
   document.getElementById("in-progress").innerHTML = "";
   document.getElementById("await-feedback").innerHTML = "";
@@ -161,6 +161,7 @@ function updateHTML() {
 </div>`;
     }
   });
+  await setItem("tasks", JSON.stringify(tasks));
   setAmounts();
 }
 
