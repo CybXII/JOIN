@@ -56,7 +56,13 @@ function fillInputField(inputString){
 }
 
 function clearFields() {
-  console.log("funktion zum leeren der Input felder oder neu laden der Seite");
+  document.getElementById('addTaskForm').reset(); 
+  document.getElementById('category-list2').innerHTML=`Select Task Category`;
+  document.getElementById('assigned-to-add-task-list').innerHTML=``;
+  usersassignedto = [];
+  renderAssignedTo();
+  taskpriority = "medium";
+  taskPriorityActive();
 }
 
 function renderAssignedTo() {
@@ -263,7 +269,6 @@ function changeButtons(){
       }
     }
   });
-
 }
 
 function renderUrgent() {
