@@ -237,10 +237,29 @@ function addTasksToStorage() {
 }
 
 function changeButtons(){
+  parent_div = document.getElementById('parent_subtasks');
+  inputField = document.getElementById('parent_subtasks').value;
+
   document.getElementById('subtask_add_button').classList.add('d-none');
   document.getElementById('subtask_seperator').classList.remove('d-none');
   document.getElementById('subtask_accept_button').classList.remove('d-none');
   document.getElementById('subtask_cancel_button').classList.remove('d-none');
+
+  window.addEventListener("click", function (e) {
+    if (!parent_div.contains(e.target)) {
+      if (inputField===undefined) {
+        document.getElementById('subtask_add_button').classList.remove('d-none');
+        document.getElementById('subtask_seperator').classList.add('d-none');
+        document.getElementById('subtask_accept_button').classList.add('d-none');
+        document.getElementById('subtask_cancel_button').classList.add('d-none');
+        window.removeEventListener("click", arguments.callee);
+      }
+      else{
+        window.removeEventListener("click", arguments.callee);
+      }
+    }
+  });
+
 }
 
 function renderUrgent() {
