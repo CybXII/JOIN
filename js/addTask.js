@@ -107,26 +107,23 @@ function openAssignTo() {
 }
 
 function openCategory() {
-  // renderAssignedUserAddTask();
   let categoryBox = document.getElementById("list2");
   let categoryInput = document.getElementById("category-list2");
 
-  // Überprüfe, ob die Klasse "visible" nicht enthalten ist, füge sie hinzu
   if (!categoryBox.classList.contains("visible")) {
     categoryBox.classList.add("visible");
     categoryInput.setAttribute("disabled","" )
     renderAssignedUserAddTask();
   } else {
-    // Wenn "visible" enthalten ist, entferne es
+
     categoryBox.classList.remove("visible");
     categoryInput.removeAttribute("disabled","" )
   }
 
-  // Überwache Klicks im Fenster, um die Liste zu verstecken, wenn außerhalb geklickt wird
   window.addEventListener("click", function (e) {
     if (!categoryBox.contains(e.target)) {
       categoryBox.classList.remove("visible");
-      window.removeEventListener("click", arguments.callee); // Entferne den Event-Listener nach Ausführung
+      window.removeEventListener("click", arguments.callee);
     }
   });
 }
