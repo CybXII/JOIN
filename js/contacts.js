@@ -278,9 +278,7 @@ function addContactsToStorage() {
 
   closeContactsContainer();
   saveContactsToLocalStorage();
-  setTimeout(() => {
-    pushLetters();
-  }, 1);
+  pushLetters();
   addContactListeners();
 }
 

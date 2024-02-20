@@ -55,6 +55,7 @@ let tasks = [];
 
 async function renderBoardTasks() {
   loadUsersFromLocalStorage();
+  loadRemoteUser();
   // loadTasksFromLocalStorage();
   await loadTasks();
   updateHTML();
