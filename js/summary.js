@@ -60,9 +60,16 @@ function renderGreetingTime() {
 
 function greetSummaryAnimation() {
   setTimeout(() => {
-    document
-      .getElementById("frame-69_responsiv")
-      .classList.remove("frame-69_responsiv_background");
-    document.getElementById("frame-69_responsiv").classList.add("transparent");
-  }, 2000);
+    document.getElementById("summary-greeting-resp").classList.add("transparent");
+    document.getElementById("summary-fullname-resp").classList.add("transparent");
+    removeBackground();
+  },1500);
+  
+}
+
+function removeBackground(){
+  setTimeout(() => {
+    document.getElementById("frame-69_responsiv").classList.remove("frame-69_responsiv_background");
+  }, 300);
+
 }
