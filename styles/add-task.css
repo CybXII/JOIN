@@ -1243,6 +1243,22 @@ select {
     translate: 12px;
 }
 
+
+.subtasks-container{
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    height: 60px;
+}
+
+.subtask-task{
+    font-size: 16px;
+    text-align: center;
+}
+
+
 @media (max-width: 1290px) {
     .container-task{
         align-items: center;
