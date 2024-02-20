@@ -220,7 +220,7 @@ function pushCategoryToJSON(){
 }
 
 async function addTasksToStorage() {
-  loadTasks();
+  await loadTasks();
   setInitials();
   pushCategoryToJSON();
   let title = document.getElementById("task-title");
