@@ -56,7 +56,7 @@ function fillInputField(inputString){
   openCategory()
 }
 
-function clearFields(prio) {
+function clearFields() {
   document.getElementById('addTaskForm').reset(); 
   document.getElementById('category-list2').innerHTML=`Select Task Category`;
   document.getElementById('assigned-to-add-task-list').innerHTML=``;
@@ -64,7 +64,6 @@ function clearFields(prio) {
   renderAssignedTo();
   taskpriority = "medium";
   taskPriorityActive();
-
 }
 
 function renderAssignedTo() {
