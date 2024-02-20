@@ -628,12 +628,22 @@ textarea{
     line-height: 24px;
 }
 
+.frame-18 input{
+    width: 100%;
+}
+
 .frame-75 img {
     color: #2A3647;
     width: 24px;
     height: 24px;
     flex-shrink: 0;
 }
+
+.subtasks_buttons{
+    display: flex;
+}
+
+
 
 .subtask-v1-reconstrution {
     display: flex;
@@ -653,7 +663,6 @@ textarea{
 }
 
 .frame-18 {
-    background-image: url(../img/subtasks-icons-11.svg);
     display: flex;
     padding: 12px 16px;
     justify-content: space-between;
@@ -663,9 +672,6 @@ textarea{
     border-radius: 10px;
     background-color: #fff;
     box-sizing: border-box;
-    background-repeat: no-repeat;
-    background-position-x: 97%;
-    background-position-y:  center;
 }
 
 .subtasks::placeholder {
@@ -755,7 +761,6 @@ color: var(--ligth-blue);
     width: 24px;
     height: 24px;
 }
-
 
 .close{
     background-image: url(../img/close.svg);
@@ -938,8 +943,8 @@ color: var(--ligth-blue);
 .dropdown-check-list2 {
     display: inline-block;
     align-items: center;
-    height: 100px;
     width: 100%;
+    height: 50px;
   }
   
   .dropdown-check-list2 .anchor {
@@ -999,6 +1004,7 @@ color: var(--ligth-blue);
     
     .dropdown-check-list2.visible .items {
         display: block;
+        width: 438px;
         position: relative;
         z-index: 10;
         top: -8px;
@@ -1278,6 +1284,9 @@ select {
     body{
         overflow: hidden;
     }
+    .dropdown-check-list2 .anchor {
+        width: 100%;
+    }
 
     .dropdown-check-list .anchor {
         width: 100%;
@@ -1285,11 +1294,6 @@ select {
 
     .header-text {
         width: unset;
-    }
-
-    select.moreMinimal{
-        width: 100%;
-        margin-top: 10px;
     }
 
     .frame-40{
@@ -1481,7 +1485,7 @@ select {
         width: 300px;
     }
 
-    select.moreMinimal {
+    .dropdown-check-list2 .anchor {
         width: 300px;
     }
 

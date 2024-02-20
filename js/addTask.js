@@ -236,6 +236,13 @@ function addTasksToStorage() {
   taskAddedCompleteText();
 }
 
+function changeButtons(){
+  document.getElementById('subtask_add_button').classList.add('d-none');
+
+  document.getElementById('subtask_accept_button').classList.remove('d-none');
+  document.getElementById('subtask_cancel_button').classList.remove('d-none');
+}
+
 function renderUrgent() {
   document.getElementById("prio-urgent").classList.remove("frame-16");
   document.getElementById("prio-urgent").classList.add("frame-16-active");
