@@ -165,14 +165,14 @@
                   </div>
               </div>
               <div class="subtask-v1-reconstrution">
-                <div for="subtasks">
+                <div>
                   Subtasks
                 </div>
                 <div id="parent_subtasks" class="frame-18">
-                  <input id="subtasks" onclick="changeButtons()" class="subtasks" placeholder="Add new subtask" />
+                  <input id="subtasks" type="text" onclick="changeButtons(event)" class="subtasks" placeholder="Add new subtask" />
                   <div class="subtasks_buttons">
                     <img id="subtask_add_button" class="subtask_add_button" src="../img/add_icon.svg" alt="">
-                    <img id="subtask_cancel_button" class="subtask_add_button d-none" src="../img/cancel.svg" alt="">
+                    <img id="subtask_cancel_button" onclick="resetSubtasks()" class="subtask_add_button d-none" src="../img/cancel.svg" alt="">
                     <img id="subtask_seperator" class="subtask_add_button d-none" src="../img/subtask_seperator.svg" alt="">
                     <img id="subtask_accept_button" class="subtask_add_button d-none" src="../img/subtasks_add.svg" alt="">
                   </div>
