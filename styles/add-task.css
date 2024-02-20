@@ -672,6 +672,7 @@ textarea{
     border-radius: 10px;
     background-color: #fff;
     box-sizing: border-box;
+    border: 1px solid #D1D1D1;
 }
 
 .subtasks::placeholder {

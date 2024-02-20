@@ -238,7 +238,7 @@ function addTasksToStorage() {
 
 function changeButtons(){
   document.getElementById('subtask_add_button').classList.add('d-none');
-
+  document.getElementById('subtask_seperator').classList.remove('d-none');
   document.getElementById('subtask_accept_button').classList.remove('d-none');
   document.getElementById('subtask_cancel_button').classList.remove('d-none');
 }
