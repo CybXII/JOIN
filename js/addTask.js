@@ -4,6 +4,7 @@ let remoteuserAssign = [];
 let usersassignedto = [];
 let userInitialsAssignedto = [];
 let userColorsAssignedto = [];
+let subtasksAdd = [];
 
 function renderAddTask() {
   loadUsersFromLocalStorage();
@@ -137,6 +138,20 @@ function openCategory() {
   });
 }
 
+function addSubtasks(){
+  let subtaskstoadd = document.getElementById("subtasks").value;
+  subtasksAdd.push(subtaskstoadd);
+  document.getElementById("subtasks").value = "";
+  renderAddSubtasks();
+}
+
+function renderAddSubtasks(){
+  for (let i = 0; i < subtasksAdd.length; i++) {
+    const element = subtasksAdd[i];
+    let content = document.getElementById("subtasks-container");
+    content.innerHTML += /*html*/ `<span class="subtask-task" id="subtask${i}">⦁ ${element}</span>`;
+  }
+}
 
 function addClassOnCheckboxChange(userid) {
   const checkbox = document.getElementById(`checkbox${userid}`);
