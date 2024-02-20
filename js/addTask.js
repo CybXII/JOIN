@@ -253,12 +253,14 @@ async function addTasksToStorage() {
 function changeButtons(event){
   event.preventDefault()
   parent_div = document.getElementById('parent_subtasks');
-
   document.getElementById('subtask_add_button').classList.add('d-none');
   document.getElementById('subtask_seperator').classList.remove('d-none');
   document.getElementById('subtask_accept_button').classList.remove('d-none');
   document.getElementById('subtask_cancel_button').classList.remove('d-none');
+  setEventListenerSubtask(parent_div)
+}
 
+function setEventListenerSubtask(parent_div){
   window.addEventListener("click", function (e) {
     if (!parent_div.contains(e.target)) {
       inputField = document.getElementById('subtasks').value;
