@@ -924,7 +924,7 @@ color: var(--ligth-blue);
       z-index: 10;
       top: -8px;
       background: var(--white, #fff);
-      padding: 7px 0 7px 0;
+      padding: 10px 0 7px 0;
       height: 224px;
       overflow-y: scroll;
   }
