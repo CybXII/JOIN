@@ -81,12 +81,16 @@ overflow-x: hidden;
   position: fixed;
   display: flex;
   justify-content: flex-start;
-  align-items: center;
+  align-items: flex-start;
   flex-direction: column;
   gap: 30px;
-  margin-top: 120px;
+  padding: 120px 0 20px 0;
+  top: 96px;
   left: 745px;
   right: 0;
+  bottom: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
   
   .frame-40 span {
@@ -146,7 +150,6 @@ overflow-x: hidden;
     background-color: #ffffff;
     position: fixed;
     z-index: 20;
-    padding-left: 28px;
     box-sizing: border-box;
 }
 
@@ -483,11 +486,6 @@ overflow-x: hidden;
   transform: translateX(0);
  }
 
- .frame-40{
-  flex-direction: column;
-  align-items: flex-start;
- }
-
  .group{
   height: 120px;
   width: 120px;
@@ -794,6 +792,8 @@ text-align: left;
   border: 1px solid black;
  }
 
+ contact-list
+
 
 /* #################### */
 
@@ -855,7 +855,37 @@ text-align: left;
 
 }
 
+@media (max-width: 1040px) {
+  .frame-40 {
+    padding: 20px 0 20px 0;
+    left: 600px;
+}  
+  
+  .addContact {
+    width: 350px;
+    padding-left: 0;
+}
 
+
+.frame-97 {
+  width: 360px;
+}
+
+  .active_contact {
+    width: 286px;
+  }
+
+  .frame-97 .contact-list {
+    padding: 0 0 32px 8px;
+    width: 340px;
+    align-items: flex-start;
+  }
+
+  .frame-97 .primary-contact {
+    width: 320px;
+  }
+ 
+}
 
 @media (max-width: 900px) {
 
@@ -884,7 +914,7 @@ text-align: left;
   .frame-97 .contact-list {
    position: relative;
    top: 0;
-   padding: 0;
+   padding: 0 0 0 8px;
   }
 
   .primary-contact{
