@@ -7,9 +7,9 @@ body{
 .board_window {
   position: fixed;
   display: flex;
-  justify-content: flex-start;
+  justify-content: space-between;
   flex-direction: column;
-  top: 96px;
+  top: 60px;
   bottom: 0px;
   overflow-y: auto;
   left: 232px;
@@ -40,7 +40,7 @@ body{
     justify-content: flex-start;
     align-items: center;
     gap: 30px;
-    margin-bottom: 30px;
+    padding: 20px 0 20px 0;
   }
 
   .summary_helper{
