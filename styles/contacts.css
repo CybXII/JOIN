@@ -837,6 +837,12 @@ text-align: left;
   color: #2a3647;
 }
 
+.add-contact-cancel:hover {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  border-color: var(--ligth-blue);
+  color: var(--ligth-blue);
+}
+
 .createContact {
   background-color: #2a3647;
   border-radius: 10px;
@@ -855,6 +861,12 @@ text-align: left;
   padding-right: 50px;
   white-space: nowrap;
   cursor: pointer;
+}
+
+.createContact:hover {
+  background-color: var(--ligth-blue);
+  border-color: var(--ligth-blue);
+  box-shadow: var(--stronger);
 }
 
 .add-contact-name{
