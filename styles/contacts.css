@@ -706,8 +706,8 @@ text-align: left;
   display: flex;
   justify-content: center;
   flex-direction: column;
-  top: 154px;
-  left: 45.5px;
+  padding-top: 154px;
+  padding-left: 45.5px;
 }
 
 .joinLogo {
