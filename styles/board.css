@@ -362,14 +362,13 @@
 .add-task-board-background {
   z-index: 4;
   background-color: rgba(65, 63, 63, 0.466);
-  top: 0;
-  bottom: 0;
-  left: 232px;
-  right: 0;
   position: fixed;
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 200;
+  width: 100vw;
+  height: 100vh;
 }
 
 .add-task-board-card {
@@ -378,7 +377,6 @@
   width: 100%;
   padding: 40px;
   border-radius: 30px;
-  margin: 0 40px;
   width: 1050px;
 }
 

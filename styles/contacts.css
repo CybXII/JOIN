@@ -81,12 +81,36 @@ overflow-x: hidden;
   position: fixed;
   display: flex;
   justify-content: flex-start;
-  align-items: center;
+  align-items: flex-start;
   flex-direction: column;
   gap: 30px;
-  margin-top: 90px;
+  padding: 120px 0 20px 0;
+  top: 96px;
   left: 745px;
   right: 0;
+  bottom: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+} 
+
+.frame-40::-webkit-scrollbar {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  z-index: 20;
+}
+  
+.frame-40::-webkit-scrollbar-track {
+  border-radius: 0.5vw;
+  width: 1px;  
+  height: 53px;
+  z-index: 20;
+}
+
+.frame-40::-webkit-scrollbar-thumb {
+  background: #A8A8A8; 
+  border-radius: 5px;
+  z-index: 20;
 }
   
   .frame-40 span {
@@ -146,7 +170,6 @@ overflow-x: hidden;
     background-color: #ffffff;
     position: fixed;
     z-index: 20;
-    padding-left: 28px;
     box-sizing: border-box;
 }
 
@@ -483,11 +506,6 @@ overflow-x: hidden;
   transform: translateX(0);
  }
 
- .frame-40{
-  flex-direction: column;
-  align-items: flex-start;
- }
-
  .group{
   height: 120px;
   width: 120px;
@@ -688,8 +706,8 @@ text-align: left;
   display: flex;
   justify-content: center;
   flex-direction: column;
-  margin-top: 154px;
-  margin-left: 45.5px;
+  top: 154px;
+  left: 45.5px;
 }
 
 .joinLogo {
@@ -705,7 +723,7 @@ text-align: left;
   line-height: 73.2px;
   height: 73px;
   width: 361px;
-  margin-top: 30px;
+  top: 30px;
 }
 
 .underlineBlue {
@@ -714,10 +732,13 @@ text-align: left;
 }
 
 .closeImg {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
   height: 14px;
   width: 14px;
-  margin-top: 48px;
-  margin-left: 680px;
+  top: 48px;
+  left: 680px;
 }
 
 .rightSide {
@@ -725,7 +746,7 @@ text-align: left;
   justify-content: center;
   align-items: center;
   gap: 40px;
-  margin-left: -581px;
+  left: -581px;
 }
 
 .FNandSN {
@@ -797,23 +818,28 @@ text-align: left;
 }
 
 .add-contact-name{
+  text-indent: 10px;
   border: 1px solid black;
   background-image: url(./../img/person-su.svg);
   background-repeat: no-repeat;
   background-position: right 10px center;
  }
  .add-contact-email{
+  text-indent: 10px;
   border: 1px solid black;
   background-image: url(./../img/mail.svg);
   background-repeat: no-repeat;
   background-position: right 10px center;
  }
  .add-contact-phone{
+  text-indent: 10px;
   border: 1px solid black;
   background-image: url(./../img/call.svg);
   background-repeat: no-repeat;
   background-position: right 10px center;
  }
+
+ contact-list
 
 
 /* #################### */
@@ -876,7 +902,37 @@ text-align: left;
 
 }
 
+@media (max-width: 1040px) {
+  .frame-40 {
+    padding: 20px 0 20px 0;
+    left: 600px;
+}  
+  
+  .addContact {
+    width: 350px;
+    padding-left: 0;
+}
 
+
+.frame-97 {
+  width: 360px;
+}
+
+  .active_contact {
+    width: 286px;
+  }
+
+  .frame-97 .contact-list {
+    padding: 0 0 32px 8px;
+    width: 340px;
+    align-items: flex-start;
+  }
+
+  .frame-97 .primary-contact {
+    width: 320px;
+  }
+ 
+}
 
 @media (max-width: 900px) {
 
@@ -905,7 +961,7 @@ text-align: left;
   .frame-97 .contact-list {
    position: relative;
    top: 0;
-   padding: 0;
+   padding: 0 0 0 8px;
   }
 
   .primary-contact{
