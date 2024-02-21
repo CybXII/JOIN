@@ -797,18 +797,21 @@ text-align: left;
 }
 
 .add-contact-name{
+  text-indent: 10px;
   border: 1px solid black;
   background-image: url(./../img/person-su.svg);
   background-repeat: no-repeat;
   background-position: right 10px center;
  }
  .add-contact-email{
+  text-indent: 10px;
   border: 1px solid black;
   background-image: url(./../img/mail.svg);
   background-repeat: no-repeat;
   background-position: right 10px center;
  }
  .add-contact-phone{
+  text-indent: 10px;
   border: 1px solid black;
   background-image: url(./../img/call.svg);
   background-repeat: no-repeat;
