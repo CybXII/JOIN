@@ -143,6 +143,10 @@ overflow-x: hidden;
     z-index: 3;
   }
 
+  input:focus-visible {
+    border: 1px solid #29ABE2;
+  }
+
 .seperator_contacts{
     display: flex;
     padding: 8px 0px;
