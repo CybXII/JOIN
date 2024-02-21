@@ -810,11 +810,36 @@ text-align: left;
   color: #d1d1d1;
 }
 
+.underButton {
+  display: flex;
+  justify-content: flex-start;
+  gap: 20px;
+}
+
 .add-contact-cancel{
   border: 1px solid black;
   padding: 5px;
   cursor: pointer;
   text-align: center;
+}
+
+.createContact {
+  background-color: #2a3647;
+  border-radius: 10px;
+  padding: 16px;
+  gap: 4px;
+  width: 230px;
+  height: 57px;
+  font-family: Inter;
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 21px;
+  line-height: 25.2px;
+  background-image: url(./../img/check-out-wheite.svg);
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  padding-right: 50px;
+  white-space: nowrap;
 }
 
 .add-contact-name{
