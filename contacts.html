@@ -29,37 +29,48 @@
           onclick="closeContactsContainer()"
         >
           <div class="contacts-card" onclick="dontClose()">
-            <button onclick="closeContactsContainer()">X</button>
-            <form
-              onsubmit="addContactsToStorage(); return false;"
-              class="add-contacts-form"
-            >
-              <input
-                type="text"
-                placeholder="name"
-                class="add-contact-name"
-                id="add_contacts_name"
-              />
-              <input
-                type="email"
-                placeholder="email"
-                class="add-contact-email"
-                id="add_contacts_email"
-              />
-              <input
-                type="tel"
-                placeholder="phone"
-                class="add-contact-phone"
-                id="add_contacts_phone"
-              />
-              <button>Create Contact</button>
-              <div
-                onclick="closeContactsContainer()"
-                class="add-contact-cancel"
-              >
-                Cancel
+
+              <div class="leftSide">
+                <div class="testContainer">
+                  <img class="joinLogo" src="./img/capa-2.svg" alt="Join-Logo">
+                  <h1>Edit contact</h1>
+                  <img class="underlineBlue" src="./img/vector-5.svg" alt="underline-blue">
+                </div>
               </div>
-            </form>
+
+              <div class="rightSide">
+                <img class="closeImg" src="./img/close.svg" onclick="closeContactsContainer()">
+                <form
+                  onsubmit="addContactsToStorage(); return false;"
+                  class="add-contacts-form"
+                >
+                  <input
+                    type="text"
+                    placeholder="name"
+                    class="add-contact-name"
+                    id="add_contacts_name"
+                  />
+                  <input
+                    type="email"
+                    placeholder="email"
+                    class="add-contact-email"
+                    id="add_contacts_email"
+                  />
+                  <input
+                    type="tel"
+                    placeholder="phone"
+                    class="add-contact-phone"
+                    id="add_contacts_phone"
+                  />
+                  <button>Create Contact</button>
+                  <div
+                    onclick="closeContactsContainer()"
+                    class="add-contact-cancel"
+                  >
+                    Cancel
+                  </div>
+                </form>
+              </div>
           </div>
         </div>
         <div>

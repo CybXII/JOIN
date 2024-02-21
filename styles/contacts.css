@@ -665,18 +665,58 @@ text-align: left;
 
 .contacts-card {
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   box-sizing: border-box;
   background-color: white;
-  height: 670px;
-  width: 1116px;
-  padding: 40px;
+  height: 592px;
+  width: 1212px;
   border-radius: 30px;
 }
 
 .contacts-card > button {
   width: 30px;
 }
+
+.leftSide {
+  background-color: #2a3647;
+  width: 453px;
+  height: 592px;
+  border-radius: 30px 0 0 30px;
+}
+
+.testContainer {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 154px;
+  margin-left: 45.5px;
+}
+
+.joinLogo {
+  width: 53.93px;
+  height: 66.48px;
+}
+
+.testContainer h1 {
+  font-family: Inter;
+  font-weight: 700;
+  color: #ffffff;
+  font-size: 61px;
+  line-height: 73.2px;
+  height: 73px;
+  width: 361px;
+  margin-top: 30px;
+}
+
+.underlineBlue {
+  height: 20px;
+  width: 90px;
+}
+
+.rightSide {
+  
+}
+
 
 .contacts-background-fixed {
   margin: 0;
@@ -701,6 +741,8 @@ text-align: left;
   flex-direction: column;
   gap: 20px;
   width: 280px;
+  left: 742px;
+  right: 48px;
 }
 
 .add-contact-cancel{
