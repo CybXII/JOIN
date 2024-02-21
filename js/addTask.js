@@ -253,7 +253,7 @@ async function addTasksToStorage() {
     description: description.value,
     dueDate: date.value,
     prio: taskpriority,
-    subtasks: ["1", "2", "3"],
+    subtasks: subtasksAdd,
     assignedTo: userInitialsAssignedto,
     colors: userColorsAssignedto,
   };
