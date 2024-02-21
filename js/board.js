@@ -239,6 +239,7 @@ function rotateCardEnd() {
 
 function openCard(i) {
   openCardContainer();
+  console.log(tasks[i]);
   renderCardInfo(i);
 }
 
