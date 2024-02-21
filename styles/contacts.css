@@ -91,6 +91,26 @@ overflow-x: hidden;
   bottom: 0;
   overflow-y: auto;
   overflow-x: hidden;
+} 
+
+.frame-40::-webkit-scrollbar {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  z-index: 20;
+}
+  
+.frame-40::-webkit-scrollbar-track {
+  border-radius: 0.5vw;
+  width: 1px;  
+  height: 53px;
+  z-index: 20;
+}
+
+.frame-40::-webkit-scrollbar-thumb {
+  background: #A8A8A8; 
+  border-radius: 5px;
+  z-index: 20;
 }
   
   .frame-40 span {
