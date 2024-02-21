@@ -10,7 +10,7 @@ body {
     justify-content: flex-start;
     align-items: flex-start;
     position: fixed;
-    top: 60px;
+    top: 96px;
     left: 232px;
     right: 0;
     bottom: 0;
@@ -710,7 +710,6 @@ textarea{
 }
 
 .frame-27 {
-    margin-top: 30px;
     display: inline-flex;
     justify-content: space-between;
     align-items: center;
@@ -1247,12 +1246,12 @@ select {
 
 .subtasks-container{
     display: flex;
-    flex-direction: column;
     gap: 4px;
-    align-items: flex-start;
-    flex-wrap: wrap;
-    height: 60px;
+    height: 80px;
+    flex-direction: column;
     width: 100%;
+    overflow-y: auto;
+    margin-bottom: 10px;
 }
 
 .subtask-task{
@@ -1260,6 +1259,39 @@ select {
     text-align: center;
 }
 
+.subtask-comp{
+    display: flex;
+    align-items: center;
+    height: 20px;
+    justify-content: space-between;
+    padding: 4px 16px 4px 16px;
+    cursor: pointer;
+}
+
+.subtask-icon{
+    width: 16px;
+    cursor: pointer;
+    animation: ease-out;
+    animation-duration: 100ms; 
+
+}
+
+
+.subtask-background{
+    background: #EEEEEE;
+    border-radius: 10px;
+}
+
+.sub-icons{
+    display: flex;
+    align-items: center;
+    gap: 7px;
+}
+.subtask-icon:hover{
+    width: 16px;
+    cursor: pointer;
+    padding-bottom: 2px;
+}
 
 @media (max-width: 1290px) {
     .container-task{
