@@ -769,10 +769,22 @@ text-align: left;
 }
 
 .add-contacts-form input {
+  display: flex;
+  justify-content: space-between;
   width: 422px;
   height: 40px;
   gap: 8px;
   border-radius: 10px;
+}
+
+.add-contacts-form::placeholder {
+  width: 56px;
+  height: 24px;
+  font-family: Inter;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 24px;
+  color: #d1d1d1;
 }
 
 .add-contact-cancel{
@@ -782,14 +794,26 @@ text-align: left;
   text-align: center;
 }
 
- .add-contact-name{
+.add-contact-name{
+  text-indent: 10px;
   border: 1px solid black;
+  background-image: url(./../img/person-su.svg);
+  background-repeat: no-repeat;
+  background-position: right 10px center;
  }
  .add-contact-email{
+  text-indent: 10px;
   border: 1px solid black;
+  background-image: url(./../img/mail.svg);
+  background-repeat: no-repeat;
+  background-position: right 10px center;
  }
  .add-contact-phone{
+  text-indent: 10px;
   border: 1px solid black;
+  background-image: url(./../img/call.svg);
+  background-repeat: no-repeat;
+  background-position: right 10px center;
  }
 
  contact-list

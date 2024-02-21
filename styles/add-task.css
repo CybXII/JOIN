@@ -10,7 +10,7 @@ body {
     justify-content: flex-start;
     align-items: flex-start;
     position: fixed;
-    top: 96px;
+    top: 60px;
     left: 232px;
     right: 0;
     bottom: 0;
@@ -49,6 +49,7 @@ body {
     font-style: normal;
     font-weight: 700;
     line-height: 73.2px;
+    padding-bottom: 40px;
 }
 
 

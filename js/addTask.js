@@ -264,7 +264,6 @@ async function addTasksToStorage() {
   title.value = "";
   description.value = "";
   date.value = "";
-
   taskAddedCompleteText();
 }
 
