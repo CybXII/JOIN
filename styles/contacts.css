@@ -816,11 +816,24 @@ text-align: left;
   gap: 20px;
 }
 
-.add-contact-cancel{
-  border: 1px solid black;
-  padding: 5px;
+.add-contact-cancel {
+  border-radius: 10px;
+  background-color: #fff;
+  padding: 16px;
+  width: 126px;
+  height: 56px;
+  border: 1px solid #2a3647;
+  padding: 16px;
   cursor: pointer;
-  text-align: center;
+  /* text-align: center; */
+  background-image: url(./../img/cancel.svg);
+  background-repeat: no-repeat;
+  background-attachment: right 10px center;
+  font-family: Inter;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 24px;
+  color: #2a3647;
 }
 
 .createContact {
@@ -840,6 +853,7 @@ text-align: left;
   background-position: right 10px center;
   padding-right: 50px;
   white-space: nowrap;
+  cursor: pointer;
 }
 
 .add-contact-name{
