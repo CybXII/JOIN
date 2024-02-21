@@ -706,8 +706,8 @@ text-align: left;
   display: flex;
   justify-content: center;
   flex-direction: column;
-  margin-top: 154px;
-  margin-left: 45.5px;
+  top: 154px;
+  left: 45.5px;
 }
 
 .joinLogo {
@@ -723,7 +723,7 @@ text-align: left;
   line-height: 73.2px;
   height: 73px;
   width: 361px;
-  margin-top: 30px;
+  top: 30px;
 }
 
 .underlineBlue {
@@ -732,10 +732,13 @@ text-align: left;
 }
 
 .closeImg {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
   height: 14px;
   width: 14px;
-  margin-top: 48px;
-  margin-left: 680px;
+  top: 48px;
+  left: 680px;
 }
 
 .rightSide {
@@ -743,7 +746,7 @@ text-align: left;
   justify-content: center;
   align-items: center;
   gap: 40px;
-  margin-left: -581px;
+  left: -581px;
 }
 
 .FNandSN {
