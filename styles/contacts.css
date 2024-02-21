@@ -853,6 +853,12 @@ text-align: left;
   cursor: pointer;
 }
 
+.createContact:hover {
+  background-color: var(--ligth-blue);
+  border-color: var(--ligth-blue);
+  box-shadow: var(--stronger);
+}
+
 .add-contact-name{
   text-indent: 10px;
   border: 1px solid black;
