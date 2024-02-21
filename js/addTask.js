@@ -32,6 +32,31 @@ function taskPriorityChoosed(i) {
   taskPriorityActive();
 }
 
+function deleteSubtask(i){
+    let subtasks = subtasksAdd[i];
+    subtasksAdd.splice(i, 1);
+    // subtasksAdd.push(subtasks);
+    renderAddSubtasks();
+}
+
+function editSubtask(i){
+  console.log('subtask '+ i + ' wird gerade editiert');
+
+}
+
+function showSubtaskIcons(i){
+  document.getElementById(`subtask-icons-${i}`).classList.remove('d-none');
+  document.getElementById(`subtask-comp-${i}`).classList.add("subtask-background");
+
+}
+
+function hideSubtaskIcons(i){
+   document.getElementById(`subtask-icons-${i}`).classList.add("d-none");
+   document.getElementById(`subtask-comp-${i}`).classList.remove("subtask-background");
+
+}
+
+
 function taskPriorityActive() {
   if (taskpriority == "urgent") {
     renderUrgent();
@@ -152,7 +177,29 @@ function renderAddSubtasks(){
   for (let i = 0; i < subtasksAdd.length; i++) {
     const element = subtasksAdd[i];
     let content = document.getElementById("subtasks-container");
-    content.innerHTML += /*html*/ `<span class="subtask-task" id="subtask${i}">⦁ ${element}</span>`;
+    content.innerHTML += /*html*/ `
+    <div class="subtask-comp" id="subtask-comp-${i}"
+     onmouseover="showSubtaskIcons(${i})" onmouseleave="hideSubtaskIcons(${i})" >
+                    <span class="subtask-task" id='subtask${i}' onclick="editSubtask(${i})" 
+                      >⦁ ${element}</span
+                    >
+                    <div class="sub-icons d-none" id="subtask-icons-${i}">
+                      <img
+                        src="./img/edit.svg"
+                        alt=""
+                        onclick="editSubtask(${i})"
+                        class="subtask-icon"
+                      />
+                      <img src="./img/Vector 19.svg" alt="" />
+                      <img
+                        src="./img/delete.svg"
+                        alt=""
+                        onclick="deleteSubtask(${i})"
+                        class="subtask-icon"
+                      />
+                    </div>
+                  </div>
+                  </div>`;
   }
 }
 

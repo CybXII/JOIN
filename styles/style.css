@@ -441,7 +441,7 @@ input:focus-visible {
 
 .scroll_container {
   position: fixed;
-  top: 60px;
+  top: 96px;
   bottom: 0;
   right: 0;
   padding-top: 42px;

@@ -9,7 +9,7 @@ body{
   display: flex;
   justify-content: space-between;
   flex-direction: column;
-  top: 60px;
+  top: 96px;
   bottom: 0px;
   overflow-y: auto;
   left: 232px;
@@ -40,7 +40,7 @@ body{
     justify-content: flex-start;
     align-items: center;
     gap: 30px;
-    padding: 20px 0 20px 0;
+    padding-bottom: 20px;
   }
 
   .summary_helper{
