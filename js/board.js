@@ -128,7 +128,7 @@ async function updateHTML() {
         <div class="card-board-progress-bar-filler"></div>
       </div>
       <span class="card-board-count-progress">
-        1/2 Subtasks
+        1/${task.subtasks.length} Subtasks
       </span>
     </div>
     <div class="frame-139">
