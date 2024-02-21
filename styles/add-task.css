@@ -1251,6 +1251,7 @@ select {
     align-items: flex-start;
     flex-wrap: wrap;
     height: 60px;
+    width: 100%;
 }
 
 .subtask-task{

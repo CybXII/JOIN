@@ -64,6 +64,8 @@ function clearFields() {
   renderAssignedTo();
   taskpriority = "medium";
   taskPriorityActive();
+  subtasksAdd = [];
+  renderAddSubtasks();
 }
 
 function resetSubtasks(){
@@ -146,6 +148,7 @@ function addSubtasks(){
 }
 
 function renderAddSubtasks(){
+  document.getElementById("subtasks-container").innerHTML = '';
   for (let i = 0; i < subtasksAdd.length; i++) {
     const element = subtasksAdd[i];
     let content = document.getElementById("subtasks-container");
