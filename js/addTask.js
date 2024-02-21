@@ -177,9 +177,10 @@ function renderAddSubtasks(){
   for (let i = 0; i < subtasksAdd.length; i++) {
     const element = subtasksAdd[i];
     let content = document.getElementById("subtasks-container");
-    content.innerHTML += /*html*/ `<div class="subtask-comp" id="subtask-comp-${i}"
-     onclick="editSubtask(${i})" onmouseover="showSubtaskIcons(${i})" onmouseleave="hideSubtaskIcons(${i})" >
-                    <span class="subtask-task" id='subtask${i}'
+    content.innerHTML += /*html*/ `
+    <div class="subtask-comp" id="subtask-comp-${i}"
+     onmouseover="showSubtaskIcons(${i})" onmouseleave="hideSubtaskIcons(${i})" >
+                    <span class="subtask-task" id='subtask${i}' onclick="editSubtask(${i})" 
                       >⦁ ${element}</span
                     >
                     <div class="sub-icons d-none" id="subtask-icons-${i}">
@@ -197,7 +198,8 @@ function renderAddSubtasks(){
                         class="subtask-icon"
                       />
                     </div>
-                  </div></div>`;
+                  </div>
+                  </div>`;
   }
 }
 

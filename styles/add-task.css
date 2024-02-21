@@ -1257,6 +1257,8 @@ select {
 .subtask-task{
     font-size: 16px;
     text-align: center;
+    flex: 1;
+    display: flex;
 }
 
 .subtask-comp{
@@ -1271,9 +1273,6 @@ select {
 .subtask-icon{
     width: 16px;
     cursor: pointer;
-    animation: ease-out;
-    animation-duration: 100ms; 
-
 }
 
 
