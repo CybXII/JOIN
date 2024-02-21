@@ -37,7 +37,7 @@
               </div>
 
               <img class="closeImg" src="./img/close.svg" onclick="closeContactsContainer()">
-              
+
               <div class="rightSide">
                 <!-- Zum test wird später dynamisch erzeugt -->
                 <div class="FNandSN">TW</div>
@@ -64,13 +64,18 @@
                     class="add-contact-phone"
                     id="add_contacts_phone"
                   />
-                  <button>Create Contact</button>
-                  <div
+                  
+                  <div class="underButton">
+                    <button onclick="closeContactsContainer()" class="add-contact-cancel">Cansel</button>
+                    <button class="createContact">Create contact</button>
+                  </div>
+                  <!-- <button>Create Contact</button> -->
+                  <!-- <div
                     onclick="closeContactsContainer()"
                     class="add-contact-cancel"
                   >
                     Cancel
-                  </div>
+                  </div> -->
                 </form>
               </div>
           </div>
