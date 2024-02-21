@@ -746,6 +746,7 @@ text-align: left;
   justify-content: space-around;
   align-items: center;
   gap: 60px;
+  transform: translate(75px, -40px);
 }
 
 .FNandSN {
@@ -759,6 +760,7 @@ text-align: left;
   width: 120px;
   background-color: red;
   border-radius: 100%;
+  transform: translateY(-20px);
 }
 
 
