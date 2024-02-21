@@ -732,13 +732,10 @@ text-align: left;
 }
 
 .closeImg {
-  display: flex;
-  justify-content: flex-end;
-  align-items: flex-start;
   height: 14px;
   width: 14px;
   top: 48px;
-  left: 680px;
+  
 }
 
 .rightSide {
@@ -756,9 +753,9 @@ text-align: left;
   color: #fff;font-family: Inter;
   font-weight: 500;
   font-size: 47px;
-  margin-top: 100px;
   height: 120px;
   width: 120px;
+  left: 30px;
   background-color: red;
   border-radius: 100%;
 }
