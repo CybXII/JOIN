@@ -727,12 +727,13 @@ text-align: left;
   line-height: 73.2px;
   height: 73px;
   width: 361px;
-  top: 30px;
+  transform: translateY(20px);
 }
 
 .underlineBlue {
   height: 20px;
   width: 90px;
+  transform: translateY(20px);
 }
 
 .closeImg {
