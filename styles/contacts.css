@@ -798,12 +798,21 @@ text-align: left;
 
 .add-contact-name{
   border: 1px solid black;
+  background-image: url(./../img/person-su.svg);
+  background-repeat: no-repeat;
+  background-position: right 10px center;
  }
  .add-contact-email{
   border: 1px solid black;
+  background-image: url(./../img/mail.svg);
+  background-repeat: no-repeat;
+  background-position: right 10px center;
  }
  .add-contact-phone{
   border: 1px solid black;
+  background-image: url(./../img/call.svg);
+  background-repeat: no-repeat;
+  background-position: right 10px center;
  }
 
 
