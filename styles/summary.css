@@ -7,7 +7,7 @@ body{
 .board_window {
   position: fixed;
   display: flex;
-  justify-content: space-between;
+  /* justify-content: space-between; weg damit Lukas :D */
   flex-direction: column;
   top: 96px;
   bottom: 0px;

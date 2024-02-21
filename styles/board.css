@@ -83,19 +83,30 @@
 .frame-123-inp {
   display: flex;
   width: 312px;
-  padding: 8px 16px;
   align-items: center;
   gap: 10px;
   border-radius: 10px;
-  border: 1px solid var(--icon, #a8a8a8);
   background: #fff;
 }
 
+#search_board{
+  padding: 8px 16px;
+  border-radius: 10px;
+  border: 1px solid var(--icon, #a8a8a8);
+}
+#search_board:focus-visible{
+  border: 1px solid #29ABE2;
+}
+
+
 .frame-122 {
+  position: absolute;
   display: flex;
   justify-content: flex-end;
   align-items: center;
   gap: 16px;
+  z-index: 10;
+  right: 14px;
 }
 
 .frame-121 {
@@ -103,6 +114,7 @@
   justify-content: space-between;
   align-items: center;
   flex: 1 0 0;
+  position: relative;
 }
 
 .vector-3-board {
