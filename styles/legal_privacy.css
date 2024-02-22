@@ -75,6 +75,12 @@ body{
     overflow: hidden;
 }
 
+.arrow-left-line{
+    right: 16px;
+    left: unset;
+    top: 72px;
+  }
+
 .container{
     padding:  48px 16px;
     overflow-y: scroll;
