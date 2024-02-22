@@ -509,14 +509,17 @@
     display: block; 
     justify-content: flex-start;
     width: unset;
-    /* height: 73px; */
-    /* gap: 24px; */
-}
+  }
 }
 
 @media (max-width: 900px) {
   body {
     overflow: hidden;
+  }
+
+  .card-board-empty {
+    width: 252px;
+    padding: 0 16px;
   }
 
   .content-container{
