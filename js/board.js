@@ -214,16 +214,20 @@ function renderCardInfo(i){
   console.log('render Card')
 }
 
-// function redirectOnWidth() {
-//   // Prüfen die Fensterbreite
-//   if (window.innerWidth <= 900) {
-//     // Weiterleitung zu AddTask Seite
-//     window.location.href = "./../addtask.html";
-//   }
-// }
+function filterTaskBoard(){
+  let searchInput = document.getElementById('search_board').value;
+  let categorys = ['todo','in-progress','await-feedback','done']
+  categorys.forEach(element => {
+    clearBoardCategory(element)  
+    filterCategory(element)
+    console.log(`startfilter ${searchInput}` )
+  });
+}
 
-// // Führt die Function aus sobalt das Document vollständig geladen ist
-// document.addEventListener('DOMContentLoaded', redirectOnWidth);
+function clearBoardCategory(categorys){
+  document.getElementById(categorys).innerHTML ="";
+}
 
-// // Führt die Function aus, wenn das Fenster neu skaliert wird
-// window.addEventListener('resize', redirectOnWidth);
+function filterCategory(categorys){
+  console.log(`filter Category ${categorys}` )
+}

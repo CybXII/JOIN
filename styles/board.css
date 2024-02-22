@@ -37,8 +37,6 @@
 
 .frame-123 input {
   width: 100%;
-  color: var(--Style, #d1d1d1);
-
   /* Version 2/t6 */
   font-family: Inter;
   font-size: 20px;
