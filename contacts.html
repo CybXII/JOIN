@@ -42,7 +42,7 @@
                 <!-- Zum test wird später dynamisch erzeugt -->
                 <div class="FNandSN">TW</div>
                 <!-- <img class="closeImg" src="./img/close.svg" onclick="closeContactsContainer()"> -->
-                <form
+                <form id="contact_Form"
                   onsubmit="addContactsToStorage(); return false;"
                   class="add-contacts-form"
                 >
@@ -66,7 +66,7 @@
                   />
                   
                   <div class="underButton">
-                    <button class="add-contact-cancel" onclick="closeContactsContainer()">Cansel</button>
+                    <button class="add-contact-cancel" onclick="closeContactsContainer()">Delete</button>
                     <button class="createContact">Create contact</button>
                   </div>
                   <!-- <button>Create Contact</button> -->
