@@ -219,7 +219,7 @@ function filterTaskBoard(){
   let categorys = ['todo','in-progress','await-feedback','done']
   categorys.forEach(element => {
     clearBoardCategory(element)  
-    filterCategory(element)
+    filterCategory(element,searchInput,)
     console.log(`startfilter ${searchInput}` )
   });
 }
@@ -228,6 +228,45 @@ function clearBoardCategory(categorys){
   document.getElementById(categorys).innerHTML ="";
 }
 
-function filterCategory(categorys){
-  console.log(`filter Category ${categorys}` )
+function filterCategory(categorys,searchInput){
+  tasks.forEach(function (task, i) {
+    let checkTitlel = task['title'];
+    let checkInfos = task['description'];
+    if (task.categoryboard===categorys){
+      if (checkTitlel.includes(searchInput)||checkInfos.includes(searchInput)){
+        renderFilteredCard(task,i,categorys);
+      }
+    }
+  });
+}
+
+function renderFilteredCard(task,i,categorys){
+  document.getElementById(categorys).innerHTML+=`
+  <div class="card-board" draggable="true" ondragstart="rotateCardStart(${i}),moveToLocation(${i}),highlight()" id="board-card${i}" onclick="openCard(${i})" ondragend="rotateCardEnd()">
+    <div class="frame-119">
+      <div class="card-board-user-story">
+        <span class="card-board-user-story-text">${task.category}</span>
+      </div>
+      <div class="frame-114">
+        <span class="card-board-title">${task.title}</span>
+        <span class="card-board-content">${task.description}</span>
+      </div>
+      <div class="card-board-progress">
+        <div class="card-board-progress-bar">
+          <div class="card-board-progress-bar-filler"></div>
+        </div>
+        <span class="card-board-count-progress">
+          1/${task.subtasks.length} Subtasks
+        </span>
+      </div>
+      <div class="frame-139">
+        <div class="frame-217" id="assigned-to${i}">
+        </div>
+        <div class="card-board-priority">
+          <img src="./img/prio-baja-board.svg" id="prio-svg${i}" class="card-board-priority-img" />
+        </div>
+      </div>
+    </div>
+  </div>`;
+
 }
