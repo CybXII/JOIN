@@ -508,10 +508,10 @@ input:focus{
     justify-content: center;
     align-items: center;
     gap: 8px;
-    /* flex: 1  00; */
     border-radius: 10px;
     background-color: #fff;
     cursor: pointer;
+    box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.10);
 }
 
 .frame-25 span {
