@@ -740,6 +740,7 @@ text-align: left;
   height: 14px;
   width: 14px;
   transform: translate(680px, 48px);
+  cursor: pointer;
 }
 
 .rightSide {
