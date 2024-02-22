@@ -293,24 +293,52 @@ function checkInputFields(){
   let date = document.getElementById('datePicker').value;
   let category = document.getElementById('category-list2').innerHTML;
 
-  if(category==="Select Task Category"){
-      document.getElementById('category-border').classList.add("redBorder");
-      document.getElementById('warning-info-2').style='display: block';
-    }
-  if(date ==="" ){
-    document.getElementById('datePicker').classList.add("redBorder");
-    document.getElementById('warning-info-3').style='display: block';
-    }
-  if(title===""){
-    document.getElementById('warning-info-1').style='display: block';
-    document.getElementById('task-title').classList.add("redBorder");
-  }
+ checkBeforChange(title,date,category);
+}
+
+function checkBeforChange(title,date,category){
   if (date !="" && title !="" && category!="Select Task Category" ){
     setInitials();
     pushCategoryToJSON();  
     addTasktoBoard();
+  } else{
+    changeStateCategoryInput(category);
+    changeStateDateInput(date);
+    changeStateTitleInput(title);  
   }
 }
+
+
+function changeStateCategoryInput(category){
+  if(category==="Select Task Category"){
+    document.getElementById('category-border').classList.add("redBorder");
+    document.getElementById('warning-info-2').style='display: block';
+  }else if (category !=""){
+    document.getElementById('warning-info-1').style='display: none';
+    document.getElementById('task-title').classList.remove("redBorder");
+  }
+}
+
+function changeStateDateInput(date){
+  if(date ==="" ){
+    document.getElementById('datePicker').classList.add("redBorder");
+    document.getElementById('warning-info-3').style='display: block';
+  }else if (date !=""){
+    document.getElementById('warning-info-1').style='display: none';
+    document.getElementById('task-title').classList.remove("redBorder");
+  }
+}
+
+function changeStateTitleInput(title){
+  if(title===""){
+    document.getElementById('warning-info-1').style='display: block';
+    document.getElementById('task-title').classList.add("redBorder");
+  }else if (title !=""){
+    document.getElementById('warning-info-1').style='display: none';
+    document.getElementById('task-title').classList.remove("redBorder");
+  }
+}
+
 
 async function addTasktoBoard(){
   await loadTasks();
