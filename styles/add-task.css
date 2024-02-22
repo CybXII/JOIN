@@ -1176,8 +1176,9 @@ select {
         cursor: pointer;
         width: 100%;
         background-repeat: no-repeat;
-        background-position: 374px center;
+        background-position: 96%;
         z-index: 10;
+        border: none !important;
       }
       .checkbox:checked {
         background-image: url(../img/Check_button.svg);
