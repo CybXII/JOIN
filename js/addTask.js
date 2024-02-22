@@ -284,15 +284,40 @@ function pushCategoryToJSON(){
   return taskCategory;
 }
 
-async function addTasksToStorage() {
+function addTasksToStorage() {
+  checkInputFields();
+}
+
+function checkInputFields(){
+  let title = document.getElementById('task-title').value;
+  let date = document.getElementById('datePicker').value;
+  let category = document.getElementById('category-list2').innerHTML;
+
+  if(category==="Select Task Category"){
+      document.getElementById('category-border').classList.add("redBorder");
+      document.getElementById('warning-info-2').style='display: block';
+    }
+  if(date ==="" ){
+    document.getElementById('datePicker').classList.add("redBorder");
+    document.getElementById('warning-info-3').style='display: block';
+    }
+  if(title===""){
+    document.getElementById('warning-info-1').style='display: block';
+    document.getElementById('task-title').classList.add("redBorder");
+  }
+  if (date !="" && title !="" && category!="Select Task Category" ){
+    setInitials();
+    pushCategoryToJSON();  
+    addTasktoBoard();
+  }
+}
+
+async function addTasktoBoard(){
   await loadTasks();
-  setInitials();
-  pushCategoryToJSON();
   let title = document.getElementById("task-title");
   let description = document.getElementById("task-description");
   let date = document.getElementById("datePicker");
   let categoryTask = pushCategoryToJSON();
-
   let JSONToPush = {
     categoryboard: "todo",
     category: categoryTask,
@@ -313,6 +338,8 @@ async function addTasksToStorage() {
   date.value = "";
   taskAddedCompleteText();
 }
+
+
 
 function changeButtons(event){
   event.preventDefault()

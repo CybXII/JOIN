@@ -96,14 +96,14 @@ input:focus{
     line-height: 24px;
 }
 
-.title-v1 span {
+/* .title-v1 span {
     color: #FF8190;
     font-family: Inter;
     font-size: 20px;
     font-style: normal;
     font-weight: 400;
     line-height: 24px;
-}
+} */
 
 .frame-203 {
     display: flex;
@@ -144,13 +144,13 @@ input:focus{
 }
 
 .warning-info-1 {
-    color: red;
-    width: 119px;
-    height: 12px;
+    color: #FF8190;
     font-family: Inter;
-    font-style: normal;
+    font-size: 12px;
     font-weight: 400;
-    line-height: 14.4px;
+    line-height: 14px;
+    letter-spacing: 0em;
+    text-align: left;
 }
 
 .description-v1 {
@@ -222,13 +222,13 @@ input:focus{
 }
 
 .warning-info-2 {
-        color: red;
-        width: 119px;
-        height: 12px;
-        font-family: Inter;
-        font-style: normal;
-        font-weight: 400;
-        line-height: 14.4px;
+    color: #FF8190;
+    font-family: Inter;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 14px;
+    letter-spacing: 0em;
+    text-align: left;
 }
 
 .asigned-to-v1 {
@@ -314,14 +314,14 @@ input:focus{
     line-height: 24px;
 }
 
-.due-date-v1 span {
+/* .due-date-v1 span {
     color: #FF8190;
     font-family: Inter;
     font-size: 20px;
     font-style: normal;
     font-weight: 400;
     line-height: 24px;
-}
+} */
 
 .frame-211 {
     display: flex;
@@ -354,14 +354,14 @@ input:focus{
 } */
 
 .warning-info-3 {
-    color: red;
-    width: 119px;
-    height: 12px;
+    color: #FF8190;
     font-family: Inter;
-    font-style: normal;
+    font-size: 12px;
     font-weight: 400;
-    line-height: 14.4px;
-}
+    line-height: 14px;
+    letter-spacing: 0em;
+    text-align: left;
+    }
 
 
 .frame-28 {
@@ -606,14 +606,22 @@ input:focus{
     line-height: 24px;
 }
 
-.category span {
+.redBorder{
+    border-color: #FF3D00 !important;
+}
+
+.redBorder:focus-visible{
+    border-color: #29ABE2 !important;
+}
+
+/* .category span {
     color: #FF8190;
     font-family: Inter;
     font-size: 20px;
     font-style: normal;
     font-weight: 400;
     line-height: 24px;
-}
+} */
 
 #category-list2{
     color: #000;
