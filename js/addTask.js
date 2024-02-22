@@ -339,7 +339,55 @@ async function addTasktoBoard(){
   taskAddedCompleteText();
 }
 
-
+async function resetTasksBoard(){
+  tasks = [
+  {
+    categoryboard: "todo",
+    category: "to do Task",
+    title: "Contact Form & Imprint",
+    description: "Create a contact form and imprint page...",
+    dueDate: "2024-02-15",
+    prio: "medium",
+    subtasks: ["Subtask1", "Subtask2", "Subtask3"],
+    assignedTo: ["AB", "CD", "EF"],
+    colors: ["#10C6E8", "#7851CC", "#726129"],
+  },
+  {
+    categoryboard: "in-progress",
+    category: "in progress Task",
+    title: "Test Technical Task Title",
+    description: "Test Technical Task Description",
+    dueDate: "2024-02-23",
+    prio: "urgent",
+    subtasks: ["Subtask4", "Subtask5", "Subtask6"],
+    assignedTo: ["GH", "IJ", "KL"],
+    colors: ["#10C6E8", "#7851CC", "#726129"],
+  },
+  {
+    categoryboard: "await-feedback",
+    category: "feedback Task",
+    title: "Test Technical Task Title",
+    description: "Test Technical Task Description",
+    dueDate: "2024-02-25",
+    prio: "urgent",
+    subtasks: ["Subtask4", "Subtask5", "Subtask6"],
+    assignedTo: ["GH", "IJ", "KL"],
+    colors: ["#10C6E8", "#7851CC", "#726129"],
+  },
+  {
+    categoryboard: "done",
+    category: "done Task",
+    title: "Test Technical Task Title",
+    description: "Test Technical Task Description",
+    dueDate: "2024-01-01",
+    prio: "urgent",
+    subtasks: ["Subtask4", "Subtask5", "Subtask6"],
+    assignedTo: ["GH", "IJ", "KL"],
+    colors: ["#10C6E8", "#7851CC", "#726129"],
+  },
+];
+  await setItem("tasks", JSON.stringify(tasks));
+}
 
 function changeButtons(event){
   event.preventDefault()

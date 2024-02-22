@@ -710,8 +710,8 @@ text-align: left;
   display: flex;
   justify-content: center;
   flex-direction: column;
-  top: 154px;
-  left: 45.5px;
+  padding-top: 165px;
+  padding-left: 45.5px;
 }
 
 .joinLogo {
@@ -727,27 +727,27 @@ text-align: left;
   line-height: 73.2px;
   height: 73px;
   width: 361px;
-  top: 30px;
+  transform: translateY(20px);
 }
 
 .underlineBlue {
   height: 20px;
   width: 90px;
+  transform: translateY(20px);
 }
 
 .closeImg {
   height: 14px;
   width: 14px;
-  top: 48px;
-  
+  transform: translate(680px, 48px);
 }
 
 .rightSide {
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
-  gap: 40px;
-  left: -581px;
+  gap: 60px;
+  transform: translate(75px, -40px);
 }
 
 .FNandSN {
@@ -759,9 +759,9 @@ text-align: left;
   font-size: 47px;
   height: 120px;
   width: 120px;
-  left: 30px;
   background-color: red;
   border-radius: 100%;
+  transform: translateY(-20px);
 }
 
 
@@ -829,7 +829,8 @@ text-align: left;
   /* text-align: center; */
   background-image: url(./../img/cancel.svg);
   background-repeat: no-repeat;
-  background-attachment: right 10px center;
+  background-position: right 10px center;
+  padding-right: 40px;
   font-family: Inter;
   font-weight: 400;
   font-size: 20px;
