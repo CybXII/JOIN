@@ -103,7 +103,6 @@ function renderAssignedTo() {
     const fullname = element.name;
     const initials = element.initials;
     const color = element.color;
-
     assigncontent.innerHTML += /*html*/ `<li id="catergory_list_${i}">
   <div class="active_contact">
     <div class="profile-badge">
@@ -265,7 +264,19 @@ function renderBadgesAddTask() {
     const initials = userInitialsAssignedtoBadges[i];
     const color = userColorsAssignedtoBadges[i];
     let content = document.getElementById("assigned-to-add-task-list");
+    renderBadges(initials,color,content);
+  }
+}
+
+function renderBadges(initials,color,content){
+  if (i<=3){
     content.innerHTML += /*html*/ `<div class="assigned-to-add-task-user" style="background-color: ${color}">${initials}</div>`;
+  }
+  if (i == 4){
+    content.innerHTML += /*html*/ `<div id="grey_badge" class="assigned-to-add-task-user" style="background-color: grey">+${i-3}</div>`;
+  }
+  if (i > 4){
+    document.getElementById('grey_badge').innerHTML = /*html*/ `+${i-3}</div>`;
   }
 }
 
