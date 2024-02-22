@@ -5,6 +5,10 @@ let usersassignedto = [];
 let userInitialsAssignedto = [];
 let userColorsAssignedto = [];
 let subtasksAdd = [];
+let userInitialsAssignedtoBadges = [];
+let userColorsAssignedtoBadges = [];
+
+
 
 function renderAddTask() {
   loadUsersFromLocalStorage();
@@ -104,20 +108,20 @@ function renderAssignedTo() {
     const initials = element.initials;
     const color = element.color;
     assigncontent.innerHTML += /*html*/ `<li id="catergory_list_${i}">
-  <div class="active_contact">
-    <div class="profile-badge">
-      <div class="group">
-        <div class="overlap-group" style="background-color: ${color}">
-          <div class="text-wrapper-2">${initials}</div>
+      <div class="active_contact">
+        <div class="profile-badge">
+          <div class="group">
+            <div class="overlap-group" style="background-color: ${color}">
+              <div class="text-wrapper-2">${initials}</div>
+            </div>
+          </div>
         </div>
+        <span  id="fullname-addtask-dd-${i}">${fullname}</span>
+        <input id="checkbox${i}" type="checkbox" class="checkbox" onclick="addClassOnCheckboxChange(${i}), setBadgesAddTask()" />
       </div>
-    </div>
-    <span  id="fullname-addtask-dd-${i}">${fullname}</span>
-    <input id="checkbox${i}" type="checkbox" class="checkbox" onclick="addClassOnCheckboxChange(${i}), setBadgesAddTask()" />
-  </div>
-</li>
-`;
-  }, (assigncontent.innerHTML = ""));
+    </li>
+    `;
+}, (assigncontent.innerHTML = ""));
 }
 
 function openAssignTo() {
@@ -239,9 +243,6 @@ function setInitials() {
   // addTasksToStorage();
 }
 
-let userInitialsAssignedtoBadges = [];
-let userColorsAssignedtoBadges = [];
-
 function setBadgesAddTask() {
   userInitialsAssignedtoBadges = [];
   userColorsAssignedtoBadges = [];
@@ -264,11 +265,11 @@ function renderBadgesAddTask() {
     const initials = userInitialsAssignedtoBadges[i];
     const color = userColorsAssignedtoBadges[i];
     let content = document.getElementById("assigned-to-add-task-list");
-    renderBadges(initials,color,content);
+    renderBadges(initials,color,content,i);
   }
 }
 
-function renderBadges(initials,color,content){
+function renderBadges(initials,color,content,i){
   if (i<=3){
     content.innerHTML += /*html*/ `<div class="assigned-to-add-task-user" style="background-color: ${color}">${initials}</div>`;
   }
@@ -295,23 +296,23 @@ function pushCategoryToJSON(){
   return taskCategory;
 }
 
-function addTasksToStorage() {
-  checkInputFields();
+function addTasksToStorage(categoryInput) {
+  checkInputFields(categoryInput);
 }
 
-function checkInputFields(){
+function checkInputFields(categoryInput){
   let title = document.getElementById('task-title').value;
   let date = document.getElementById('datePicker').value;
   let category = document.getElementById('category-list2').innerHTML;
 
- checkBeforChange(title,date,category);
+ checkBeforChange(title,date,category,categoryInput);
 }
 
-function checkBeforChange(title,date,category){
+function checkBeforChange(title,date,category,categoryInput){
   if (date !="" && title !="" && category!="Select Task Category" ){
     setInitials();
     pushCategoryToJSON();  
-    addTasktoBoard();
+    addTasktoBoard(categoryInput);
   } else{
     changeStateCategoryInput(category);
     changeStateDateInput(date);
@@ -351,14 +352,14 @@ function changeStateTitleInput(title){
 }
 
 
-async function addTasktoBoard(){
+async function addTasktoBoard(input){
   await loadTasks();
   let title = document.getElementById("task-title");
   let description = document.getElementById("task-description");
   let date = document.getElementById("datePicker");
   let categoryTask = pushCategoryToJSON();
   let JSONToPush = {
-    categoryboard: "todo",
+    categoryboard: input,
     category: categoryTask,
     title: title.value,
     description: description.value,

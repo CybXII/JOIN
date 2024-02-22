@@ -121,10 +121,13 @@ async function updateHTML() {
   setAmounts();
 }
 
-function openAddTaskContainer() {
+function openAddTaskContainer(categoryInput) {
   document.getElementById("board-background").classList.remove("d-none");
   document.body.classList.add("background-fixed");
+  document.getElementById("addTaskForm").setAttribute("onsubmit",`addTasksToStorage('${categoryInput}'); return false;`);
+  
 }
+
 function closeAddTaskContainer() {
   document.getElementById("board-background").classList.add("d-none");
   document.body.classList.remove("background-fixed");

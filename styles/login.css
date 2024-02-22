@@ -126,9 +126,10 @@
 
     .log-in .frame-153 {
         width: 90%;
-        padding: 32px;
+        height: fit-content;
+        padding: 20px;
         box-sizing: border-box;
-        gap: 24px;
+        gap: 12px;
         display: flex;
         justify-content: space-between;
     }
@@ -138,6 +139,16 @@
     }
     .log-in .frame-14 {
         width: 50%;
+    }
+
+    .log-in .form_div {
+        gap: 16px;
+        height: unset;
+    }
+
+    .log-in .frame-6 {
+        display: flex;
+        justify-content: center;
     }
 
     .log-in .frame-250 {

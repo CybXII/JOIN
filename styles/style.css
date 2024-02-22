@@ -85,7 +85,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 20px;
+  /* gap: 20px; */
   position: relative;
   align-self: stretch;
   width: 100%;
@@ -1142,6 +1142,16 @@ a {
 }
 
 @media (max-width: 900px) {
+
+  .log-in .frame-176 {
+    gap: 8px;
+  }  
+
+  .log-in .frame-159 {
+
+    gap: 0px;
+
+}
 
   .header_logo {
     display: block;

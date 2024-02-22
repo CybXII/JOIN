@@ -22,6 +22,11 @@
 </head>
 
 <body onload="includeHTMLInit(`BoardTasks`)">
+  <div class="task-comp-bg d-none" id="msgBox-bg">
+    <div class="task-comp">
+      <span id="msgBox" class="task-comp-text">Task added to Board</span>
+    </div>
+  </div>
   <nav w3-include-html="./templates/header.html"></nav>
   <div class="content-container">
     <div class="add-task-board-background d-none" id="board-background" onclick="closeAddTaskContainer()">
@@ -34,7 +39,7 @@
           <form
           id="addTaskForm"
           class="addTask_helper"
-          onsubmit="addTasksToStorage(); return false;"
+          onsubmit="addTasksToStorage('todo'); return false;"
         >
           <div class="input-fields">
             <div class="frame-219">
@@ -246,7 +251,7 @@
               </div>
             </div>
           </div>
-          <div class="frame-123-btn" onclick="openAddTaskContainer()">
+          <div class="frame-123-btn" onclick="openAddTaskContainer('todo')">
             <span>Add task</span>
             <img src="./img/secondary-plus.svg" alt="" />
           </div>
@@ -261,7 +266,7 @@
         <div class="category-board">
           <span class="board-sections-headline">To do</span>
           <div class="plus-board-container">
-            <img src="./img/plus-board.svg" />
+            <img src="./img/plus-board.svg" onclick="openAddTaskContainer('todo')"/>
           </div>
         </div>
         <div class="categorys" id="todo">
@@ -274,7 +279,7 @@
         <div class="category-board">
           <span class="board-sections-headline">In Progress</span>
           <div class="plus-board-container">
-            <img src="./img/plus-board.svg" />
+            <img src="./img/plus-board.svg" onclick="openAddTaskContainer('in-progress')"/>
           </div>
         </div>
         <div class="categorys" id="in-progress">
@@ -286,7 +291,7 @@
         <div class="category-board">
           <span class="board-sections-headline">Await Feedback</span>
           <div class="plus-board-container">
-            <img src="./img/plus-board.svg" />
+            <img src="./img/plus-board.svg" onclick="openAddTaskContainer('await-feedback')"/>
           </div>
         </div>
         <div class="categorys" id="await-feedback">
