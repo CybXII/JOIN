@@ -549,6 +549,10 @@ input:focus{
     height: 14.509px;
 }
 
+.red{
+    color: #FF8190;
+}
+
 .frame-16:hover {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }

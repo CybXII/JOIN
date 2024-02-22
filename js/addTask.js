@@ -314,8 +314,8 @@ function changeStateCategoryInput(category){
     document.getElementById('category-border').classList.add("redBorder");
     document.getElementById('warning-info-2').style='display: block';
   }else if (category !=""){
-    document.getElementById('warning-info-1').style='display: none';
-    document.getElementById('task-title').classList.remove("redBorder");
+    document.getElementById('warning-info-2').style='display: none';
+    document.getElementById('category-border').classList.remove("redBorder");
   }
 }
 
@@ -324,8 +324,8 @@ function changeStateDateInput(date){
     document.getElementById('datePicker').classList.add("redBorder");
     document.getElementById('warning-info-3').style='display: block';
   }else if (date !=""){
-    document.getElementById('warning-info-1').style='display: none';
-    document.getElementById('task-title').classList.remove("redBorder");
+    document.getElementById('warning-info-3').style='display: none';
+    document.getElementById('datePicker').classList.remove("redBorder");
   }
 }
 
