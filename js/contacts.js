@@ -319,7 +319,7 @@ function renderContactInfo(fullname, email, color, initials, phone, userid) {
   <div class="frame-101">
     <div class="frame-102">
       <p class="email">Email</p>
-      <a >${email}</a>
+      <a href="mailto:${email}">${email}</a>
     </div>
     <div class="frame-103">
       <p class="Phone">Phone</p>
