@@ -101,7 +101,7 @@ function renderSignUpHTML() {
               id="confirm_password"
               autocomplete="new-password"
               placeholder="Confirm Password"
-              required
+
               onkeyup="signUpPasswordValidation()"
             />
             <img id="confirm_locker" class="img" src="img/lock.svg" onclick="changeLockerPicture('parent_confirm_password')" alt="lockerspicture" />
@@ -118,7 +118,7 @@ function renderSignUpHTML() {
         id="parent_signUpCheck"
         onclick="toogleChecker('privacy')"
       >
-        <input id="signUpCheck" type="checkbox" class="checkbox" required />
+        <input id="signUpCheck" type="checkbox" class="checkbox"/>
       </div>
       <span class="privacy-check-su-text">I accept the</span>
       <div class="privacy-check-su-text-underlined">

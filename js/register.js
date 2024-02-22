@@ -24,10 +24,18 @@ async function signUpPasswordChecker() {
       await signUpSuccessfull();
       registerCompleteText();
     } else {
+      acceptPrivacyChecker();
     }
   } else {
     passwordDontMatch();
   }
+}
+
+function acceptPrivacyChecker(){
+  document.getElementById("privacybox-bg").classList.remove("d-none");
+  setTimeout(() => {
+    document.getElementById("privacybox-bg").classList.add("d-none");
+  }, 2000);
 }
 
 function registerCompleteText() {
