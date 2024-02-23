@@ -44,11 +44,6 @@ function deleteSubtask(i){
     renderAddSubtasks();
 }
 
-function editSubtask(i){
-  console.log('subtask '+ i + ' wird gerade editiert');
-
-}
-
 function showSubtaskIcons(i){
   document.getElementById(`subtask-icons-${i}`).classList.remove('d-none');
   document.getElementById(`subtask-comp-${i}`).classList.add("subtask-background");
@@ -182,8 +177,8 @@ function renderAddSubtasks(){
     const element = subtasksAdd[i];
     let content = document.getElementById("subtasks-container");
     content.innerHTML += /*html*/ `
-    <div class="subtask-comp" id="subtask-comp-${i}"
-     onmouseover="showSubtaskIcons(${i})" onmouseleave="hideSubtaskIcons(${i})" >
+    <div id="subtask-comp-${i}">
+    <div class="subtask-comp" onmouseover="showSubtaskIcons(${i})" onmouseleave="hideSubtaskIcons(${i})">
                     <span class="subtask-task" id='subtask${i}' onclick="editSubtask(${i})" 
                       >⦁ ${element}</span
                     >
@@ -203,8 +198,38 @@ function renderAddSubtasks(){
                       />
                     </div>
                   </div>
-                  </div>`;
+                  </div>
+  </div>`;
   }
+}
+
+function editSubtask(i) {
+  let container = document.getElementById(`subtask-comp-${i}`);
+  // let nr = findSubtaskPosition(id);
+  let textContent = subtasksAdd[i];
+  container.innerHTML = editSubTaskHtml(textContent, i);
+  hideSubtaskIcons(i);
+}
+
+function editSubTaskHtml(textContent, i) {
+  return /*html*/ `
+      <div class="editSubTaskButtonBox" id="subtask-icons-${i}"></div> 
+    <div class="subtask-edit-container">
+      <input id="editSubTaskInput" type="text" class="sub-edit-input" value=${textContent} />
+      <div class="sub-icons">
+      <img src="./img/delete.svg" class="subtask-icon-edit" onclick="deleteSubtask(${i})"/>
+        <span class="subTaskInputImg-vertical-edit"></span>
+        <img src="./img/check.svg" alt="check" class="subtask-icon-edit" onclick="addEditSubTask(${i})"/>
+        </div>
+      </div>
+    </div>
+  `;
+}
+
+function addEditSubTask(i) {
+  let subTaskInput = document.getElementById("editSubTaskInput");
+  subtasksAdd[i] = subTaskInput.value;
+  renderAddSubtasks();
 }
 
 function addClassOnCheckboxChange(userid) {

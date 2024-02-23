@@ -1353,7 +1353,12 @@ select {
     width: 16px;
     cursor: pointer;
 }
-
+.subtask-icon-edit{
+    width: 16px;
+    cursor: pointer;
+    padding: 3px;
+    height: 16px;
+}
 
 .subtask-background{
     background: #EEEEEE;
@@ -1365,10 +1370,32 @@ select {
     align-items: center;
     gap: 7px;
 }
+
 .subtask-icon:hover{
     width: 16px;
     cursor: pointer;
     padding-bottom: 2px;
+}
+.subtask-icon-edit:hover{
+    width: 16px;
+    cursor: pointer;
+    background-color: lightgrey;
+    border-radius: 15px;
+    margin-bottom: 3px;
+
+}
+
+.sub-edit-input{
+    border:none !important;
+}
+
+.subtask-edit-container{
+    display: flex;
+    justify-content: space-between;
+    padding: 3px 15px;
+    box-sizing: border-box;
+    background-color: white;
+    border-bottom: 2px solid #29ABE2;
 }
 
 @media (max-width: 1290px) {
