@@ -103,8 +103,6 @@ async function updateHTML() {
       document.getElementById(`prio-svg${i}`).src = "./img/low_nofill.svg";
     }
 
-
-
     let assigned = document.getElementById(`assigned-to${i}`);
     for (let j = 0; j < task["assignedTo"].length; j++) {
       const assign = task["assignedTo"][j];
@@ -124,8 +122,12 @@ async function updateHTML() {
 function openAddTaskContainer(categoryInput) {
   document.getElementById("board-background").classList.remove("d-none");
   document.body.classList.add("background-fixed");
-  document.getElementById("addTaskForm").setAttribute("onsubmit",`addTasksToStorage('${categoryInput}'); return false;`);
-  
+  document
+    .getElementById("addTaskForm")
+    .setAttribute(
+      "onsubmit",
+      `addTasksToStorage('${categoryInput}'); return false;`
+    );
 }
 
 function closeAddTaskContainer() {
@@ -210,38 +212,41 @@ function closeCardContainer() {
   document.body.classList.remove("background-fixed");
 }
 
-function renderCardInfo(i){
-  console.log('render Card')
+function renderCardInfo(i) {
+  console.log("render Card");
 }
 
-function filterTaskBoard(){
-  let searchInput = document.getElementById('search_board').value;
-  let categorys = ['todo','in-progress','await-feedback','done']
-  categorys.forEach(element => {
-    clearBoardCategory(element)  
-    filterCategory(element,searchInput,)
-    console.log(`startfilter ${searchInput}` )
+function filterTaskBoard() {
+  let searchInput = document.getElementById("search_board").value;
+  let categorys = ["todo", "in-progress", "await-feedback", "done"];
+  categorys.forEach((element) => {
+    clearBoardCategory(element);
+    filterCategory(element, searchInput);
+    console.log(`startfilter ${searchInput}`);
   });
 }
 
-function clearBoardCategory(categorys){
-  document.getElementById(categorys).innerHTML ="";
+function clearBoardCategory(categorys) {
+  document.getElementById(categorys).innerHTML = "";
 }
 
-function filterCategory(categorys,searchInput){
+function filterCategory(categorys, searchInput) {
   tasks.forEach(function (task, i) {
-    let checkTitlel = task['title'];
-    let checkInfos = task['description'];
-    if (task.categoryboard===categorys){
-      if (checkTitlel.includes(searchInput)||checkInfos.includes(searchInput)){
-        renderFilteredCard(task,i,categorys);
+    let checkTitlel = task["title"];
+    let checkInfos = task["description"];
+    if (task.categoryboard === categorys) {
+      if (
+        checkTitlel.includes(searchInput) ||
+        checkInfos.includes(searchInput)
+      ) {
+        renderFilteredCard(task, i, categorys);
       }
     }
   });
 }
 
-function renderFilteredCard(task,i,categorys){
-  document.getElementById(categorys).innerHTML+=`
+function renderFilteredCard(task, i, categorys) {
+  document.getElementById(categorys).innerHTML += `
   <div class="card-board" draggable="true" ondragstart="rotateCardStart(${i}),moveToLocation(${i}),highlight()" id="board-card${i}" onclick="openCard(${i})" ondragend="rotateCardEnd()">
     <div class="frame-119">
       <div class="card-board-user-story">
@@ -268,5 +273,45 @@ function renderFilteredCard(task,i,categorys){
       </div>
     </div>
   </div>`;
-
 }
+
+function openCard(i) {
+  let category = tasks[i].category;
+  let assignedTo = tasks[i].assignedTo;
+  let assignuserIDs = tasks[i].assignuserIDs;
+  let categoryboard = tasks[i].categoryboard;
+  let priority = tasks[i].prio;
+  let dueDate = tasks[i].dueDate;
+  let colors = tasks[i].colors;
+  let description = tasks[i].description;
+  let subtasks = tasks[i].subtasks;
+  let title = tasks[i].title;
+
+  // document.getElementById('').innerHTML = ``;
+
+  renderCard(
+    category,
+    assignedTo,
+    assignuserIDs,
+    categoryboard,
+    priority,
+    dueDate,
+    colors,
+    description,
+    subtasks,
+    title
+  );
+}
+
+function renderCard(
+  category,
+  assignedTo,
+  assignuserIDs,
+  categoryboard,
+  priority,
+  dueDate,
+  colors,
+  description,
+  subtasks,
+  title
+) {}

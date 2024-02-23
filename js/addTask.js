@@ -3,6 +3,7 @@ let remoteuser = [];
 let remoteuserAssign = [];
 let usersassignedto = [];
 let userInitialsAssignedto = [];
+let userInitialsAssignedtoID = [];
 let userColorsAssignedto = [];
 let subtasksAdd = [];
 let userInitialsAssignedtoBadges = [];
@@ -233,10 +234,11 @@ function setInitials() {
   for (let i = 0; i < usersassignedto.length; i++) {
     let index = usersassignedto[i];
     let initialsremote = remoteuserAssign[index].initials;
+    let usersremoteID = remoteuserAssign[index].id;
     let colorremote = remoteuserAssign[index].color;
-    // let idremote = remoteuserAssign[i]["id"];
     if (remoteuserAssign[index]["id"] == index + 1) {
       userInitialsAssignedto.push(initialsremote);
+      userInitialsAssignedtoID.push(usersremoteID);
       userColorsAssignedto.push(colorremote);
     }
   }
@@ -367,6 +369,7 @@ async function addTasktoBoard(input){
     prio: taskpriority,
     subtasks: subtasksAdd,
     assignedTo: userInitialsAssignedto,
+    assignedToID: userInitialsAssignedtoID,
     colors: userColorsAssignedto,
   };
 
