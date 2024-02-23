@@ -218,7 +218,8 @@ function renderCardInfo(i) {
   let day = parseInt(parts[2]);
   let formattedDate =
     ("0" + day).slice(-2) + "." + ("0" + (month + 1)).slice(-2) + "." + year;
-  content.innerHTML = /*html*/ `<div class="card" onclick="dontClose()">
+
+content.innerHTML = /*html*/ `<div class="card" onclick="dontClose()">
       <div class="card_header">
         <div class="card-board-user-story">
           <span class="card-board-user-story-text" id="card_category">${tasks[i].category}</span>
@@ -234,30 +235,12 @@ function renderCardInfo(i) {
       <div class="card_assigned">
         <p>Assigned To:</p>
         <div class="card_assignedTo" id="card_assignedTo">
-          <div class="contact">
-            <div id="contact_color" class="overlap-group" style="background-color: #D5C809">
-              <div class="text-wrapper-2">AS</div>
-            </div>
-            <div class="assigned_name">Anja Schulz</div>
-          </div>
-          <div class="contact">
-            <div id="contact_color" class="overlap-group" style="background-color: #D5C809">
-              <div class="text-wrapper-2">AS</div>
-            </div>
-            <div class="assigned_name">Anja Schulz</div>
-          </div>
+          
         </div>
       </div>
       <div class="card_subtasks">
         <p>Subtasks</p>
-        <div class="card_subtasks_item">
-          <input id="subtask1" type="checkbox" class="card_checkbox">
-          <p>Implement Recipe Recommendation</p>
-        </div>
-        <div class="card_subtasks_item">
-          <input id="subtask2" type="checkbox" class="card_checkbox">
-          <p>Start Page Layout</p>
-        </div>
+        <div id="subtask-items"></div>
       </div>
       <div class="card_buttons">
         <div class="card_div" onclick="editCard()">
@@ -270,6 +253,43 @@ function renderCardInfo(i) {
         </div>
       </div>
     </div>`;
+
+      let subtasks = tasks[i].subtasks;
+
+      for (let i = 0; i < subtasks.length; i++) {
+        const element = subtasks[i].subtaskName;
+        let subtasksTask = document.getElementById("subtask-items");
+        subtasksTask.innerHTML += /*html*/ `<div class="card_subtasks_item">
+          <input id="subtask1" type="checkbox" class="card_checkbox">
+          <p>${element}</p>
+        </div>`;
+      }
+
+      
+      let assignedTask = tasks[i].assignedTo;
+      let colorsTask = tasks[i].colors;
+      let userid = tasks[i].assignedToID;
+      for (let i = 0; i < assignedTask.length; i++) {
+        const initials = assignedTask[i];
+        const colors = colorsTask[i];
+        let assignNames = usersAssignTask(userid[i]);
+        let assignTask = document.getElementById("card_assignedTo");
+        assignTask.innerHTML += /*html*/ `<div class="contact">
+            <div id="contact_color" class="overlap-group" style="background-color: ${colors}">
+              <div class="text-wrapper-2">${initials}</div>
+            </div>
+            <div class="assigned_name">${assignNames}</div>
+          </div>`; 
+      }
+}
+
+function usersAssignTask(userid){
+
+    for (let i = 0; i < remoteuserAssign.length; i++) {
+      if (remoteuserAssign[i].id === userid) {
+        return remoteuserAssign[i].name;
+      }
+    }
 }
 
 function prioImg(i) {

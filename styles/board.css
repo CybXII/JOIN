@@ -518,6 +518,7 @@
   border: none;
   background-color: #FFFFFF;
   border-radius: 12px;
+  cursor: pointer;
 }
 
 .close_card:hover{ 

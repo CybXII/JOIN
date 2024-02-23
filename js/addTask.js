@@ -165,7 +165,7 @@ function addSubtasks() {
   let JSONToPush = {
     subtaskName: subtaskstoadd,
     subtaskStatus: false,
-  }
+  };
   subtasksAdd.push(JSONToPush);
   document.getElementById("subtasks").value = "";
   renderAddSubtasks();
@@ -418,7 +418,20 @@ async function resetTasksBoard() {
       description: "Create a contact form and imprint page...",
       dueDate: "2024-02-15",
       prio: "medium",
-      subtasks: ["Subtask1", "Subtask2", "Subtask3"],
+      subtasks: [
+        {
+          subtaskName: "subtask1",
+          subtaskStatus: false,
+        },
+        {
+          subtaskName: "subtask2",
+          subtaskStatus: false,
+        },
+        {
+          subtaskName: "subtask3",
+          subtaskStatus: false,
+        },
+      ],
       assignedTo: ["AB", "CD", "EF"],
       assignedToID: ["0", "1", "2"],
       colors: ["#10C6E8", "#7851CC", "#726129"],
@@ -430,7 +443,20 @@ async function resetTasksBoard() {
       description: "Test Technical Task Description",
       dueDate: "2024-02-23",
       prio: "urgent",
-      subtasks: ["Subtask4", "Subtask5", "Subtask6"],
+      subtasks: [
+        {
+          subtaskName: "subtask4",
+          subtaskStatus: false,
+        },
+        {
+          subtaskName: "subtask5",
+          subtaskStatus: false,
+        },
+        {
+          subtaskName: "subtask6",
+          subtaskStatus: false,
+        },
+      ],
       assignedTo: ["GH", "IJ", "KL"],
       assignedToID: ["0", "1", "2"],
       colors: ["#10C6E8", "#7851CC", "#726129"],
@@ -442,7 +468,20 @@ async function resetTasksBoard() {
       description: "Test Technical Task Description",
       dueDate: "2024-02-25",
       prio: "urgent",
-      subtasks: ["Subtask4", "Subtask5", "Subtask6"],
+      subtasks: [
+        {
+          subtaskName: "subtask7",
+          subtaskStatus: false,
+        },
+        {
+          subtaskName: "subtask8",
+          subtaskStatus: false,
+        },
+        {
+          subtaskName: "subtask9",
+          subtaskStatus: false,
+        },
+      ],
       assignedTo: ["GH", "IJ", "KL"],
       assignedToID: ["0", "1", "2"],
       colors: ["#10C6E8", "#7851CC", "#726129"],
@@ -454,7 +493,20 @@ async function resetTasksBoard() {
       description: "Test Technical Task Description",
       dueDate: "2024-01-01",
       prio: "urgent",
-      subtasks: ["Subtask4", "Subtask5", "Subtask6"],
+      subtasks: [
+        {
+          subtaskName: "subtask10",
+          subtaskStatus: false,
+        },
+        {
+          subtaskName: "subtask11",
+          subtaskStatus: false,
+        },
+        {
+          subtaskName: "subtask12",
+          subtaskStatus: false,
+        },
+      ],
       assignedTo: ["GH", "IJ", "KL"],
       assignedToID: ["0", "1", "2"],
       colors: ["#10C6E8", "#7851CC", "#726129"],
