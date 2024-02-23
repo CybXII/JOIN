@@ -748,8 +748,10 @@ text-align: left;
   display: flex;
   justify-content: space-around;
   align-items: center;
+  position: relative;
   gap: 60px;
   height: 592px;
+  left: 80px;
 }
 
 .FNandSN {
@@ -763,7 +765,6 @@ text-align: left;
   width: 120px;
   background-color: red;
   border-radius: 100%;
-  transform: translateY(-20px);
 }
 
 
