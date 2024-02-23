@@ -687,6 +687,7 @@ text-align: left;
 
 .contacts-card {
   display: flex;
+  align-items: stretch;
   /* justify-content: space-between; */
   box-sizing: border-box;
   background-color: white;
@@ -748,7 +749,7 @@ text-align: left;
   justify-content: space-around;
   align-items: center;
   gap: 60px;
-  transform: translate(75px, -40px);
+  height: 592px;
 }
 
 .FNandSN {
