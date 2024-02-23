@@ -818,6 +818,7 @@ text-align: left;
   display: flex;
   justify-content: flex-start;
   gap: 20px;
+  width: 360px;
 }
 
 .add-contact-cancel {
