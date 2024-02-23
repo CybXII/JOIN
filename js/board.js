@@ -9,8 +9,8 @@ let tasksUrgent;
 let tasks = [];
 
 async function renderBoardTasks() {
-  loadUsersFromLocalStorage();
-  loadRemoteUser();
+  await loadUsersFromLocalStorage();
+  await loadRemoteUser();
   await loadTasks();
   updateHTML();
   classesBoard();
@@ -64,7 +64,7 @@ async function updateHTML() {
   document.getElementById("await-feedback").innerHTML = "";
   document.getElementById("done").innerHTML = "";
 
-  tasks.forEach(function(task, i) {
+  tasks.forEach(function (task, i) {
     document.getElementById(
       task.categoryboard
     ).innerHTML += `<div class="card-board" draggable="true" ondragstart="rotateCardStart(${i}),moveToLocation(${i}),highlight()" id="board-card${i}" onclick="openCard(${i})" ondragend="rotateCardEnd()">
@@ -170,13 +170,11 @@ function noTasksToDo() {
   if (tasksTodo == 0)
     document.getElementById("todo").innerHTML = noTasksToDoHtml("todo");
   if (tasksInProgress == 0)
-    document.getElementById("in-progress").innerHTML = noTasksToDoHtml(
-      "in-progress"
-    );
+    document.getElementById("in-progress").innerHTML =
+      noTasksToDoHtml("in-progress");
   if (tasksAwaitFeedback == 0)
-    document.getElementById("await-feedback").innerHTML = noTasksToDoHtml(
-      "await-feedback"
-    );
+    document.getElementById("await-feedback").innerHTML =
+      noTasksToDoHtml("await-feedback");
   if (tasksDone == 0)
     document.getElementById("done").innerHTML = noTasksToDoHtml("done");
 }
@@ -199,7 +197,6 @@ function rotateCardEnd() {
 
 function openCard(i) {
   openCardContainer();
-  console.log(tasks[i]);
   renderCardInfo(i);
 }
 
@@ -213,13 +210,82 @@ function closeCardContainer() {
 }
 
 function renderCardInfo(i) {
-  console.log("render Card");
+  let content = document.getElementById("card-background");
+  let prioimg = prioImg(i);
+  let parts = tasks[i].dueDate.split("-");
+  let year = parseInt(parts[0]);
+  let month = parseInt(parts[1]) - 1;
+  let day = parseInt(parts[2]);
+  let formattedDate =
+    ("0" + day).slice(-2) + "." + ("0" + (month + 1)).slice(-2) + "." + year;
+  content.innerHTML = /*html*/ `<div class="card" onclick="dontClose()">
+      <div class="card_header">
+        <div class="card-board-user-story">
+          <span class="card-board-user-story-text" id="card_category">${tasks[i].category}</span>
+        </div>        
+        <button class="close_card" onclick="closeCardContainer()"></button>
+      </div>
+      <div id="card_title" class="card_title">
+        ${tasks[i].title}
+      </div>
+      <p id="card_description" class="card_description">${tasks[i].description}</p>
+      <div class="main_infos_card"><p>Due date:</p><span>${formattedDate}</span></div>
+      <div class="main_infos_card"><p>Priority:</p><span>${tasks[i].prio}</span><img src=${prioimg} alt=""></div>
+      <div class="card_assigned">
+        <p>Assigned To:</p>
+        <div class="card_assignedTo" id="card_assignedTo">
+          <div class="contact">
+            <div id="contact_color" class="overlap-group" style="background-color: #D5C809">
+              <div class="text-wrapper-2">AS</div>
+            </div>
+            <div class="assigned_name">Anja Schulz</div>
+          </div>
+          <div class="contact">
+            <div id="contact_color" class="overlap-group" style="background-color: #D5C809">
+              <div class="text-wrapper-2">AS</div>
+            </div>
+            <div class="assigned_name">Anja Schulz</div>
+          </div>
+        </div>
+      </div>
+      <div class="card_subtasks">
+        <p>Subtasks</p>
+        <div class="card_subtasks_item">
+          <input id="subtask1" type="checkbox" class="card_checkbox">
+          <p>Implement Recipe Recommendation</p>
+        </div>
+        <div class="card_subtasks_item">
+          <input id="subtask2" type="checkbox" class="card_checkbox">
+          <p>Start Page Layout</p>
+        </div>
+      </div>
+      <div class="card_buttons">
+        <div class="card_div" onclick="editCard()">
+          <img src="./img/pen.svg" alt=""/>
+          <p>Edit</p>  
+        </div>
+        <div class="card_div" onclick="deleteTask(${i})">
+          <img src="./img/trash.svg" alt=""/>
+          <p>Delete</p>  
+        </div>
+      </div>
+    </div>`;
+}
+
+function prioImg(i) {
+  if (tasks[i].prio == "medium") {
+    return `./img/medium_nofill.svg`;
+  } else if (tasks[i].prio == "urgent") {
+    return `./img/urgent_nofill.svg`;
+  } else if (tasks[i].prio == "low") {
+    return `./img/low_nofill.svg`;
+  }
 }
 
 function filterTaskBoard() {
   let searchInput = document.getElementById("search_board").value;
   let categorys = ["todo", "in-progress", "await-feedback", "done"];
-  categorys.forEach(element => {
+  categorys.forEach((element) => {
     clearBoardCategory(element);
     filterCategory(element, searchInput);
     console.log(`startfilter ${searchInput}`);
@@ -231,7 +297,7 @@ function clearBoardCategory(categorys) {
 }
 
 function filterCategory(categorys, searchInput) {
-  tasks.forEach(function(task, i) {
+  tasks.forEach(function (task, i) {
     let checkTitlel = task["title"];
     let checkInfos = task["description"];
     if (task.categoryboard === categorys) {
@@ -275,16 +341,9 @@ function renderFilteredCard(task, i, categorys) {
   </div>`;
 }
 
-function renderCard(i) {
-  document.getElementById('').innerHTML = ``;
-  let assignedTo = tasks[i].assignedTo;
-  let assignuserIDs = tasks[i].assignuserIDs;
-  let categoryboard = tasks[i].categoryboard;
-  let priority = tasks[i].prio;
-  let dueDate = tasks[i].dueDate;
-  let colors = tasks[i].colors;
-  let description = tasks[i].description;
-  let subtasks = tasks[i].subtasks;
-  let title = tasks[i].title;
-
+async function deleteTask(i) {
+  tasks.splice(i, 1);
+  await setItem("tasks", JSON.stringify(tasks));
+  updateHTML();
+  closeCardContainer();
 }

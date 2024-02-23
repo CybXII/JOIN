@@ -9,20 +9,20 @@ let subtasksAdd = [];
 let userInitialsAssignedtoBadges = [];
 let userColorsAssignedtoBadges = [];
 
-function renderAddTask() {
-  loadUsersFromLocalStorage();
+async function renderAddTask() {
+  await loadUsersFromLocalStorage();
   classesAddTask();
   document.querySelector("form").noValidate = false;
-  loadRemoteUser();
+  await loadRemoteUser();
 }
 
 function configureDatePicker() {
   function setMinDate() {
-    var today = new Date();
-    var day = ("0" + today.getDate()).slice(-2);
-    var month = ("0" + (today.getMonth() + 1)).slice(-2);
-    var formattedDate = today.getFullYear() + "-" + month + "-" + day;
-    var datePicker = document.getElementById("datePicker");
+    let today = new Date();
+    let day = ("0" + today.getDate()).slice(-2);
+    let month = ("0" + (today.getMonth() + 1)).slice(-2);
+    let formattedDate = today.getFullYear() + "-" + month + "-" + day;
+    let datePicker = document.getElementById("datePicker");
     datePicker.setAttribute("min", formattedDate);
   }
   setMinDate();
@@ -36,9 +36,7 @@ function taskPriorityChoosed(i) {
 }
 
 function deleteSubtask(i) {
-  let subtasks = subtasksAdd[i];
   subtasksAdd.splice(i, 1);
-  // subtasksAdd.push(subtasks);
   renderAddSubtasks();
 }
 
