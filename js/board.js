@@ -11,7 +11,6 @@ let tasks = [];
 async function renderBoardTasks() {
   loadUsersFromLocalStorage();
   loadRemoteUser();
-  // loadTasksFromLocalStorage();
   await loadTasks();
   updateHTML();
   classesBoard();
@@ -55,7 +54,6 @@ function highlight() {
 function moveTo(category) {
   tasks[currentDraggedElement]["categoryboard"] = category;
   updateHTML();
-  saveTasksToLocalStorage();
   console.log(tasks[currentDraggedElement]["categoryboard"]);
   console.log("moveto");
 }

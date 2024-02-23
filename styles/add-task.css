@@ -98,7 +98,8 @@ body {
 input{
     box-sizing: border-box;
     align-self: end;
-    min-width: 230px;    
+    min-width: 230px;  
+    border: 1px solid lightgray;  
 }
 input:focus{
     border: 1px solid #29ABE2;
@@ -740,7 +741,6 @@ input:focus{
     border-radius: 10px;
     background-color: #fff;
     box-sizing: border-box;
-    border: 1px solid #D1D1D1;
 }
 
 .subtasks{
@@ -1353,7 +1353,12 @@ select {
     width: 16px;
     cursor: pointer;
 }
-
+.subtask-icon-edit{
+    width: 16px;
+    cursor: pointer;
+    padding: 3px;
+    height: 16px;
+}
 
 .subtask-background{
     background: #EEEEEE;
@@ -1365,10 +1370,32 @@ select {
     align-items: center;
     gap: 7px;
 }
+
 .subtask-icon:hover{
     width: 16px;
     cursor: pointer;
     padding-bottom: 2px;
+}
+.subtask-icon-edit:hover{
+    width: 16px;
+    cursor: pointer;
+    background-color: lightgrey;
+    border-radius: 15px;
+    margin-bottom: 3px;
+
+}
+
+.sub-edit-input{
+    border:none !important;
+}
+
+.subtask-edit-container{
+    display: flex;
+    justify-content: space-between;
+    padding: 3px 15px;
+    box-sizing: border-box;
+    background-color: white;
+    border-bottom: 2px solid #29ABE2;
 }
 
 @media (max-width: 1290px) {

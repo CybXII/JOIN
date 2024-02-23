@@ -9,8 +9,6 @@ let subtasksAdd = [];
 let userInitialsAssignedtoBadges = [];
 let userColorsAssignedtoBadges = [];
 
-
-
 function renderAddTask() {
   loadUsersFromLocalStorage();
   classesAddTask();
@@ -37,30 +35,26 @@ function taskPriorityChoosed(i) {
   taskPriorityActive();
 }
 
-function deleteSubtask(i){
-    let subtasks = subtasksAdd[i];
-    subtasksAdd.splice(i, 1);
-    // subtasksAdd.push(subtasks);
-    renderAddSubtasks();
+function deleteSubtask(i) {
+  let subtasks = subtasksAdd[i];
+  subtasksAdd.splice(i, 1);
+  // subtasksAdd.push(subtasks);
+  renderAddSubtasks();
 }
 
-function editSubtask(i){
-  console.log('subtask '+ i + ' wird gerade editiert');
-
+function showSubtaskIcons(i) {
+  document.getElementById(`subtask-icons-${i}`).classList.remove("d-none");
+  document
+    .getElementById(`subtask-comp-${i}`)
+    .classList.add("subtask-background");
 }
 
-function showSubtaskIcons(i){
-  document.getElementById(`subtask-icons-${i}`).classList.remove('d-none');
-  document.getElementById(`subtask-comp-${i}`).classList.add("subtask-background");
-
+function hideSubtaskIcons(i) {
+  document.getElementById(`subtask-icons-${i}`).classList.add("d-none");
+  document
+    .getElementById(`subtask-comp-${i}`)
+    .classList.remove("subtask-background");
 }
-
-function hideSubtaskIcons(i){
-   document.getElementById(`subtask-icons-${i}`).classList.add("d-none");
-   document.getElementById(`subtask-comp-${i}`).classList.remove("subtask-background");
-
-}
-
 
 function taskPriorityActive() {
   if (taskpriority == "urgent") {
@@ -81,15 +75,15 @@ function taskAddedCompleteText() {
   }, 2000);
 }
 
-function fillInputField(inputString){
-  document.getElementById('category-list2').innerHTML = `${inputString}`;
-  openCategory()
+function fillInputField(inputString) {
+  document.getElementById("category-list2").innerHTML = `${inputString}`;
+  openCategory();
 }
 
 function clearFields() {
-  document.getElementById('addTaskForm').reset(); 
-  document.getElementById('category-list2').innerHTML=`Select Task Category`;
-  document.getElementById('assigned-to-add-task-list').innerHTML=``;
+  document.getElementById("addTaskForm").reset();
+  document.getElementById("category-list2").innerHTML = `Select Task Category`;
+  document.getElementById("assigned-to-add-task-list").innerHTML = ``;
   usersassignedto = [];
   renderAssignedTo();
   taskpriority = "medium";
@@ -98,8 +92,8 @@ function clearFields() {
   renderAddSubtasks();
 }
 
-function resetSubtasks(){
-  document.getElementById('subtasks').value =``;
+function resetSubtasks() {
+  document.getElementById("subtasks").value = ``;
 }
 
 function renderAssignedTo() {
@@ -122,7 +116,7 @@ function renderAssignedTo() {
       </div>
     </li>
     `;
-}, (assigncontent.innerHTML = ""));
+  }, (assigncontent.innerHTML = ""));
 }
 
 function openAssignTo() {
@@ -153,12 +147,11 @@ function openCategory() {
 
   if (!categoryBox.classList.contains("visible")) {
     categoryBox.classList.add("visible");
-    categoryInput.setAttribute("disabled","" )
+    categoryInput.setAttribute("disabled", "");
     renderAssignedUserAddTask();
   } else {
-
     categoryBox.classList.remove("visible");
-    categoryInput.removeAttribute("disabled","" )
+    categoryInput.removeAttribute("disabled", "");
   }
 
   window.addEventListener("click", function (e) {
@@ -169,22 +162,22 @@ function openCategory() {
   });
 }
 
-function addSubtasks(){
+function addSubtasks() {
   let subtaskstoadd = document.getElementById("subtasks").value;
   subtasksAdd.push(subtaskstoadd);
   document.getElementById("subtasks").value = "";
   renderAddSubtasks();
 }
 
-function renderAddSubtasks(){
-  document.getElementById("subtasks-container").innerHTML = '';
+function renderAddSubtasks() {
+  document.getElementById("subtasks-container").innerHTML = "";
   for (let i = 0; i < subtasksAdd.length; i++) {
     const element = subtasksAdd[i];
     let content = document.getElementById("subtasks-container");
     content.innerHTML += /*html*/ `
-    <div class="subtask-comp" id="subtask-comp-${i}"
-     onmouseover="showSubtaskIcons(${i})" onmouseleave="hideSubtaskIcons(${i})" >
-                    <span class="subtask-task" id='subtask${i}' onclick="editSubtask(${i})" 
+    <div id="subtask-comp-${i}">
+    <div class="subtask-comp" onmouseover="showSubtaskIcons(${i})" onmouseleave="hideSubtaskIcons(${i})">
+                    <span class="subtask-task" id='subtask${i}' ondblclick="editSubtask(${i})" 
                       >⦁ ${element}</span
                     >
                     <div class="sub-icons d-none" id="subtask-icons-${i}">
@@ -203,8 +196,38 @@ function renderAddSubtasks(){
                       />
                     </div>
                   </div>
-                  </div>`;
+                  </div>
+  </div>`;
   }
+}
+
+function editSubtask(i) {
+  let container = document.getElementById(`subtask-comp-${i}`);
+  // let nr = findSubtaskPosition(id);
+  let textContent = subtasksAdd[i];
+  container.innerHTML = editSubTaskHtml(textContent, i);
+  hideSubtaskIcons(i);
+}
+
+function editSubTaskHtml(textContent, i) {
+  return /*html*/ `
+      <div class="editSubTaskButtonBox" id="subtask-icons-${i}"></div> 
+    <div class="subtask-edit-container">
+      <input id="editSubTaskInput" type="text" class="sub-edit-input" value=${textContent} />
+      <div class="sub-icons">
+      <img src="./img/delete.svg" class="subtask-icon-edit" onclick="deleteSubtask(${i})"/>
+        <img src="./img/Vector 19.svg" alt="" />
+        <img src="./img/check.svg" alt="check" class="subtask-icon-edit" onclick="addEditSubTask(${i})"/>
+        </div>
+      </div>
+    </div>
+  `;
+}
+
+function addEditSubTask(i) {
+  let subTaskInput = document.getElementById("editSubTaskInput");
+  subtasksAdd[i] = subTaskInput.value;
+  renderAddSubtasks();
 }
 
 function addClassOnCheckboxChange(userid) {
@@ -267,19 +290,23 @@ function renderBadgesAddTask() {
     const initials = userInitialsAssignedtoBadges[i];
     const color = userColorsAssignedtoBadges[i];
     let content = document.getElementById("assigned-to-add-task-list");
-    renderBadges(initials,color,content,i);
+    renderBadges(initials, color, content, i);
   }
 }
 
-function renderBadges(initials,color,content,i){
-  if (i<=3){
+function renderBadges(initials, color, content, i) {
+  if (i <= 3) {
     content.innerHTML += /*html*/ `<div class="assigned-to-add-task-user" style="background-color: ${color}">${initials}</div>`;
   }
-  if (i == 4){
-    content.innerHTML += /*html*/ `<div id="grey_badge" class="assigned-to-add-task-user" style="background-color: grey">+${i-3}</div>`;
+  if (i == 4) {
+    content.innerHTML += /*html*/ `<div id="grey_badge" class="assigned-to-add-task-user" style="background-color: grey">+${
+      i - 3
+    }</div>`;
   }
-  if (i > 4){
-    document.getElementById('grey_badge').innerHTML = /*html*/ `+${i-3}</div>`;
+  if (i > 4) {
+    document.getElementById("grey_badge").innerHTML = /*html*/ `+${
+      i - 3
+    }</div>`;
   }
 }
 
@@ -293,7 +320,7 @@ function renderAssignedUserAddTask() {
   }
 }
 
-function pushCategoryToJSON(){
+function pushCategoryToJSON() {
   let taskCategory = document.getElementById("category-list2").innerHTML;
   return taskCategory;
 }
@@ -302,59 +329,57 @@ function addTasksToStorage(categoryInput) {
   checkInputFields(categoryInput);
 }
 
-function checkInputFields(categoryInput){
-  let title = document.getElementById('task-title').value;
-  let date = document.getElementById('datePicker').value;
-  let category = document.getElementById('category-list2').innerHTML;
+function checkInputFields(categoryInput) {
+  let title = document.getElementById("task-title").value;
+  let date = document.getElementById("datePicker").value;
+  let category = document.getElementById("category-list2").innerHTML;
 
- checkBeforChange(title,date,category,categoryInput);
+  checkBeforChange(title, date, category, categoryInput);
 }
 
-function checkBeforChange(title,date,category,categoryInput){
-  if (date !="" && title !="" && category!="Select Task Category" ){
+function checkBeforChange(title, date, category, categoryInput) {
+  if (date != "" && title != "" && category != "Select Task Category") {
     setInitials();
-    pushCategoryToJSON();  
+    pushCategoryToJSON();
     addTasktoBoard(categoryInput);
-  } else{
+  } else {
     changeStateCategoryInput(category);
     changeStateDateInput(date);
-    changeStateTitleInput(title);  
+    changeStateTitleInput(title);
   }
 }
 
-
-function changeStateCategoryInput(category){
-  if(category==="Select Task Category"){
-    document.getElementById('category-border').classList.add("redBorder");
-    document.getElementById('warning-info-2').style='display: block';
-  }else if (category !=""){
-    document.getElementById('warning-info-2').style='display: none';
-    document.getElementById('category-border').classList.remove("redBorder");
+function changeStateCategoryInput(category) {
+  if (category === "Select Task Category") {
+    document.getElementById("category-border").classList.add("redBorder");
+    document.getElementById("warning-info-2").style = "display: block";
+  } else if (category != "") {
+    document.getElementById("warning-info-2").style = "display: none";
+    document.getElementById("category-border").classList.remove("redBorder");
   }
 }
 
-function changeStateDateInput(date){
-  if(date ==="" ){
-    document.getElementById('datePicker').classList.add("redBorder");
-    document.getElementById('warning-info-3').style='display: block';
-  }else if (date !=""){
-    document.getElementById('warning-info-3').style='display: none';
-    document.getElementById('datePicker').classList.remove("redBorder");
+function changeStateDateInput(date) {
+  if (date === "") {
+    document.getElementById("datePicker").classList.add("redBorder");
+    document.getElementById("warning-info-3").style = "display: block";
+  } else if (date != "") {
+    document.getElementById("warning-info-3").style = "display: none";
+    document.getElementById("datePicker").classList.remove("redBorder");
   }
 }
 
-function changeStateTitleInput(title){
-  if(title===""){
-    document.getElementById('warning-info-1').style='display: block';
-    document.getElementById('task-title').classList.add("redBorder");
-  }else if (title !=""){
-    document.getElementById('warning-info-1').style='display: none';
-    document.getElementById('task-title').classList.remove("redBorder");
+function changeStateTitleInput(title) {
+  if (title === "") {
+    document.getElementById("warning-info-1").style = "display: block";
+    document.getElementById("task-title").classList.add("redBorder");
+  } else if (title != "") {
+    document.getElementById("warning-info-1").style = "display: none";
+    document.getElementById("task-title").classList.remove("redBorder");
   }
 }
 
-
-async function addTasktoBoard(input){
+async function addTasktoBoard(input) {
   await loadTasks();
   let title = document.getElementById("task-title");
   let description = document.getElementById("task-description");
@@ -382,78 +407,87 @@ async function addTasktoBoard(input){
   taskAddedCompleteText();
 }
 
-async function resetTasksBoard(){
+async function resetTasksBoard() {
   tasks = [
-  {
-    categoryboard: "todo",
-    category: "to do Task",
-    title: "Contact Form & Imprint",
-    description: "Create a contact form and imprint page...",
-    dueDate: "2024-02-15",
-    prio: "medium",
-    subtasks: ["Subtask1", "Subtask2", "Subtask3"],
-    assignedTo: ["AB", "CD", "EF"],
-    colors: ["#10C6E8", "#7851CC", "#726129"],
-  },
-  {
-    categoryboard: "in-progress",
-    category: "in progress Task",
-    title: "Test Technical Task Title",
-    description: "Test Technical Task Description",
-    dueDate: "2024-02-23",
-    prio: "urgent",
-    subtasks: ["Subtask4", "Subtask5", "Subtask6"],
-    assignedTo: ["GH", "IJ", "KL"],
-    colors: ["#10C6E8", "#7851CC", "#726129"],
-  },
-  {
-    categoryboard: "await-feedback",
-    category: "feedback Task",
-    title: "Test Technical Task Title",
-    description: "Test Technical Task Description",
-    dueDate: "2024-02-25",
-    prio: "urgent",
-    subtasks: ["Subtask4", "Subtask5", "Subtask6"],
-    assignedTo: ["GH", "IJ", "KL"],
-    colors: ["#10C6E8", "#7851CC", "#726129"],
-  },
-  {
-    categoryboard: "done",
-    category: "done Task",
-    title: "Test Technical Task Title",
-    description: "Test Technical Task Description",
-    dueDate: "2024-01-01",
-    prio: "urgent",
-    subtasks: ["Subtask4", "Subtask5", "Subtask6"],
-    assignedTo: ["GH", "IJ", "KL"],
-    colors: ["#10C6E8", "#7851CC", "#726129"],
-  },
-];
+    {
+      categoryboard: "todo",
+      category: "to do Task",
+      title: "Contact Form & Imprint",
+      description: "Create a contact form and imprint page...",
+      dueDate: "2024-02-15",
+      prio: "medium",
+      subtasks: ["Subtask1", "Subtask2", "Subtask3"],
+      assignedTo: ["AB", "CD", "EF"],
+      assignedToID: ["0", "1", "2"],
+      colors: ["#10C6E8", "#7851CC", "#726129"],
+    },
+    {
+      categoryboard: "in-progress",
+      category: "in progress Task",
+      title: "Test Technical Task Title",
+      description: "Test Technical Task Description",
+      dueDate: "2024-02-23",
+      prio: "urgent",
+      subtasks: ["Subtask4", "Subtask5", "Subtask6"],
+      assignedTo: ["GH", "IJ", "KL"],
+      assignedToID: ["0", "1", "2"],
+      colors: ["#10C6E8", "#7851CC", "#726129"],
+    },
+    {
+      categoryboard: "await-feedback",
+      category: "feedback Task",
+      title: "Test Technical Task Title",
+      description: "Test Technical Task Description",
+      dueDate: "2024-02-25",
+      prio: "urgent",
+      subtasks: ["Subtask4", "Subtask5", "Subtask6"],
+      assignedTo: ["GH", "IJ", "KL"],
+      assignedToID: ["0", "1", "2"],
+      colors: ["#10C6E8", "#7851CC", "#726129"],
+    },
+    {
+      categoryboard: "done",
+      category: "done Task",
+      title: "Test Technical Task Title",
+      description: "Test Technical Task Description",
+      dueDate: "2024-01-01",
+      prio: "urgent",
+      subtasks: ["Subtask4", "Subtask5", "Subtask6"],
+      assignedTo: ["GH", "IJ", "KL"],
+      assignedToID: ["0", "1", "2"],
+      colors: ["#10C6E8", "#7851CC", "#726129"],
+    },
+  ];
   await setItem("tasks", JSON.stringify(tasks));
 }
 
-function changeButtons(event){
-  event.preventDefault()
-  parent_div = document.getElementById('parent_subtasks');
-  document.getElementById('subtask_add_button').classList.add('d-none');
-  document.getElementById('subtask_seperator').classList.remove('d-none');
-  document.getElementById('subtask_accept_button').classList.remove('d-none');
-  document.getElementById('subtask_cancel_button').classList.remove('d-none');
-  setEventListenerSubtask(parent_div)
+function changeButtons(event) {
+  event.preventDefault();
+  parent_div = document.getElementById("parent_subtasks");
+  document.getElementById("subtask_add_button").classList.add("d-none");
+  document.getElementById("subtask_seperator").classList.remove("d-none");
+  document.getElementById("subtask_accept_button").classList.remove("d-none");
+  document.getElementById("subtask_cancel_button").classList.remove("d-none");
+  setEventListenerSubtask(parent_div);
 }
 
-function setEventListenerSubtask(parent_div){
+function setEventListenerSubtask(parent_div) {
   window.addEventListener("click", function (e) {
     if (!parent_div.contains(e.target)) {
-      inputField = document.getElementById('subtasks').value;
-      if (!inputField||inputField=="") {
-        document.getElementById('subtask_add_button').classList.remove('d-none');
-        document.getElementById('subtask_seperator').classList.add('d-none');
-        document.getElementById('subtask_accept_button').classList.add('d-none');
-        document.getElementById('subtask_cancel_button').classList.add('d-none');
+      inputField = document.getElementById("subtasks").value;
+      if (!inputField || inputField == "") {
+        document
+          .getElementById("subtask_add_button")
+          .classList.remove("d-none");
+        document.getElementById("subtask_seperator").classList.add("d-none");
+        document
+          .getElementById("subtask_accept_button")
+          .classList.add("d-none");
+        document
+          .getElementById("subtask_cancel_button")
+          .classList.add("d-none");
         window.removeEventListener("click", arguments.callee);
-      }
-      else if( inputField.length<0){
+      } else if (inputField.length < 0) {
         window.removeEventListener("click", arguments.callee);
       }
     }
