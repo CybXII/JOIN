@@ -24,6 +24,13 @@ body {
     height: 10px;
     z-index: 20;
 }
+
+.card_checkbox input{
+    width: 24px;
+    min-width: none !important;
+  }
+
+ 
     
 .container-task::-webkit-scrollbar-track {
     border-radius: 0.5vw;

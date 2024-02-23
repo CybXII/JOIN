@@ -61,13 +61,24 @@
       <div class="card_subtasks">
         <p>Subtasks</p>
         <div class="card_subtasks_item">
-          <img src="./img/checkbox-checked.svg" alt="">
+          <input id="subtask1" type="checkbox" class="card_checkbox">
           <p>Implement Recipe Recommendation</p>
         </div>
         <div class="card_subtasks_item">
-          <img src="./img/checkbox-checked.svg" alt="">
+          <input id="subtask2" type="checkbox" class="card_checkbox">
           <p>Start Page Layout</p>
         </div>
+      </div>
+      <div class="card_buttons">
+        <div class="card_div" onclick="editCard()">
+          <img src="./img/pen.svg" alt=""/>
+          <p>Edit</p>  
+        </div>
+        <div class="card_div" onclick="deleteCard()">
+          <img src="./img/trash.svg" alt=""/>
+          <p>Delete</p>  
+        </div>
+
       </div>
 
     </div>
