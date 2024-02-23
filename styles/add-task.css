@@ -98,7 +98,8 @@ body {
 input{
     box-sizing: border-box;
     align-self: end;
-    min-width: 230px;    
+    min-width: 230px;  
+    border: 1px solid lightgray;  
 }
 input:focus{
     border: 1px solid #29ABE2;
@@ -740,7 +741,6 @@ input:focus{
     border-radius: 10px;
     background-color: #fff;
     box-sizing: border-box;
-    border: 1px solid #D1D1D1;
 }
 
 .subtasks{

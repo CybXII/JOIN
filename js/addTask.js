@@ -218,7 +218,7 @@ function editSubTaskHtml(textContent, i) {
       <input id="editSubTaskInput" type="text" class="sub-edit-input" value=${textContent} />
       <div class="sub-icons">
       <img src="./img/delete.svg" class="subtask-icon-edit" onclick="deleteSubtask(${i})"/>
-        <span class="subTaskInputImg-vertical-edit"></span>
+        <img src="./img/Vector 19.svg" alt="" />
         <img src="./img/check.svg" alt="check" class="subtask-icon-edit" onclick="addEditSubTask(${i})"/>
         </div>
       </div>
