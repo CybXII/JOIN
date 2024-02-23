@@ -164,7 +164,11 @@ function openCategory() {
 
 function addSubtasks() {
   let subtaskstoadd = document.getElementById("subtasks").value;
-  subtasksAdd.push(subtaskstoadd);
+  let JSONToPush = {
+    subtaskName: subtaskstoadd,
+    subtaskStatus: false,
+  }
+  subtasksAdd.push(JSONToPush);
   document.getElementById("subtasks").value = "";
   renderAddSubtasks();
 }
@@ -172,7 +176,7 @@ function addSubtasks() {
 function renderAddSubtasks() {
   document.getElementById("subtasks-container").innerHTML = "";
   for (let i = 0; i < subtasksAdd.length; i++) {
-    const element = subtasksAdd[i];
+    const element = subtasksAdd[i].subtaskName;
     let content = document.getElementById("subtasks-container");
     content.innerHTML += /*html*/ `
     <div id="subtask-comp-${i}">
@@ -204,7 +208,7 @@ function renderAddSubtasks() {
 function editSubtask(i) {
   let container = document.getElementById(`subtask-comp-${i}`);
   // let nr = findSubtaskPosition(id);
-  let textContent = subtasksAdd[i];
+  let textContent = subtasksAdd[i].subtaskName;
   container.innerHTML = editSubTaskHtml(textContent, i);
   hideSubtaskIcons(i);
 }
@@ -226,7 +230,7 @@ function editSubTaskHtml(textContent, i) {
 
 function addEditSubTask(i) {
   let subTaskInput = document.getElementById("editSubTaskInput");
-  subtasksAdd[i] = subTaskInput.value;
+  subtasksAdd[i].subtaskName = subTaskInput.value;
   renderAddSubtasks();
 }
 
