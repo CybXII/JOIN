@@ -790,7 +790,7 @@ text-align: left;
   display: flex;
   flex-direction: column;
   gap: 20px;
-  width: 280px;
+  width: 425px;
   left: 742px;
   right: 48px;
 }
@@ -818,6 +818,7 @@ text-align: left;
   display: flex;
   justify-content: flex-start;
   gap: 20px;
+  width: 360px;
 }
 
 .add-contact-cancel {
