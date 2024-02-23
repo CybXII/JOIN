@@ -43,6 +43,13 @@ async function loadTasks() {
     console.error("Loading error:", e);
   }
 }
+async function loadContacts() {
+  try {
+    contacts = JSON.parse(await getItem("contacts"));
+  } catch (e) {
+    console.error("Loading error:", e);
+  }
+}
 
 async function loadRemoteUser() {
   try {
@@ -78,27 +85,15 @@ function loadRememberedUsersFromLocalStorage() {
   }
 }
 
-function saveContactsToLocalStorage() {
-  sortContacts();
-  localStorage.setItem("contacts", JSON.stringify(contacts));
-}
+// function saveContactsToLocalStorage() {
+//   sortContacts();
+//   localStorage.setItem("contacts", JSON.stringify(contacts));
+// }
 
-function loadContactsFromLocalStorage() {
-  let storageAsText = localStorage.getItem("contacts");
+// function loadContactsFromLocalStorage() {
+//   let storageAsText = localStorage.getItem("contacts");
 
-  if (storageAsText) {
-    contacts = JSON.parse(storageAsText);
-  }
-}
-
-function saveTasksToLocalStorage() {
-  localStorage.setItem("tasks", JSON.stringify(tasks));
-}
-
-function loadTasksFromLocalStorage() {
-  let storageAsText = localStorage.getItem("tasks");
-
-  if (storageAsText) {
-    tasks = JSON.parse(storageAsText);
-  }
-}
+//   if (storageAsText) {
+//     contacts = JSON.parse(storageAsText);
+//   }
+// }

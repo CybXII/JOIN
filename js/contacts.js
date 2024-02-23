@@ -1,112 +1,13 @@
 let letters = [];
 
-let contacts = [
-  {
-    firstname: "Alexander",
-    lastname: "Luft",
-    fullname: "Alexander Luft",
-    initials: "AL",
-    email: "alex@alex.com",
-    phone: "+49 1234 5678 90",
-    color: "#F5E227",
-    id: "1",
-    userassigned: "999",
-  },
-  {
-    firstname: "Anja",
-    lastname: "Schulz",
-    fullname: "Anja Schulz",
-    initials: "AS",
-    email: "schulz@hotmail.com",
-    phone: "+49 1111 1111 11",
-    color: "#D5C809",
-    id: "2",
-    userassigned: "999",
-  },
-  {
-    firstname: "Benedikt",
-    lastname: "Ziegler",
-    fullname: "Benedikt Ziegler",
-    initials: "BZ",
-    email: "benedikt@gmail.com",
-    phone: "+49 1111 1111 11",
-    color: "#61C3DD",
-    id: "3",
-    userassigned: "999",
-  },
-  {
-    firstname: "David",
-    lastname: "Eisenberg",
-    fullname: "David Eisenberg",
-    initials: "DE",
-    email: "davidberg@gmail.com",
-    phone: "+49 1111 1111 11",
-    color: "#D8EF5A",
-    id: "4",
-    userassigned: "999",
-  },
-  {
-    firstname: "Lukas",
-    lastname: "Nolting",
-    fullname: "Lukas Nolting",
-    initials: "LN",
-    email: "lukas@lukas.com",
-    phone: "+49 2345 6789 01",
-    color: "#2F546E",
-    id: "5",
-    userassigned: "999",
-  },
-  {
-    firstname: "Marcel",
-    lastname: "Bauer",
-    fullname: "Marcel Bauer",
-    initials: "MB",
-    email: "bauer@gmail.com",
-    phone: "+49 1111 1111 11",
-    color: "#2F546E",
-    id: "6",
-    userassigned: "999",
-  },
-  {
-    firstname: "Steffen",
-    lastname: "Schumann",
-    fullname: "Steffen Schumann",
-    initials: "SS",
-    email: "steffen@steffen.com",
-    phone: "+49 3456 7890 12",
-    color: "#61C3DD",
-    id: "7",
-    userassigned: "999",
-  },
-  {
-    firstname: "Tatjana",
-    lastname: "Wolf",
-    fullname: "Tatjana Wolf",
-    initials: "TW",
-    email: "wolf@gmail.com",
-    phone: "+49 1111 1111 11",
-    color: "#EF1835",
-    id: "8",
-    userassigned: "999",
-  },
-  {
-    firstname: "Eva",
-    lastname: "Fischer",
-    fullname: "Eva Fischer",
-    initials: "EF",
-    email: "eva@gmail.com",
-    phone: "+49 1111 1111 11",
-    color: "#0E3E99",
-    id: "9",
-    userassigned: "999",
-  },
-];
+let contacts = [];
 
-loadContactsFromLocalStorage();
+loadUsersFromLocalStorage();
 
-function renderContacts() {
-  loadUsersFromLocalStorage();
+async function renderContacts() {
+  await loadContacts();
   classesContacts();
+  pushLetters();
   addContactListeners();
 }
 
@@ -227,12 +128,12 @@ function contactAnimation() {
   element.classList.add("contact-info-content");
 }
 
-function deleteContact(userid) {
+async function deleteContact(userid) {
   const updatedContacts = contacts.filter((contact) => contact.id !== userid);
-  contacts.splice(0, contacts.length);
+  contacts.splice(updatedContacts, contacts.length);
   contacts.push(...updatedContacts);
   pushLetters();
-  saveContactsToLocalStorage();
+  await setItem("contacts", JSON.stringify(contacts));
   document.getElementById("contact_info").innerHTML = "";
   addContactListeners();
 }
@@ -241,7 +142,7 @@ function editContact(userid) {
   console.log(userid + " wird gerade editiert!");
 }
 
-function addContactsToStorage() {
+async function addContactsToStorage() {
   let nameInput = document.getElementById("add_contacts_name").value.split(" ");
   let name = document.getElementById("add_contacts_name");
   let email = document.getElementById("add_contacts_email");
@@ -277,7 +178,7 @@ function addContactsToStorage() {
   phone.value = "";
 
   closeContactsContainer();
-  saveContactsToLocalStorage();
+  await setItem("contacts", JSON.stringify(contacts));
   pushLetters();
   addContactListeners();
 }
