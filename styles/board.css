@@ -481,6 +481,138 @@
   z-index: 20;
 }
 
+.card-background{
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  background-color: #00000070;
+  z-index: 100; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card{
+  width:525px;
+  padding: 48px 40px 48px 40px;
+  border-radius: 30px;
+  gap: 24px;
+  background-color: #FFFFFF;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+.card_header{
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.close_card{ 
+  background-image: url(../img/cancel.svg);
+  background-size: 24px;
+  background-position: center;
+  height: 26px;
+  width: 26px;
+  border: none;
+  background-color: #FFFFFF;
+  border-radius: 12px;
+}
+
+.close_card:hover{ 
+  background-color: #EEEEEE;
+}
+
+.card_title{
+  font-family: Inter;
+  font-size: 61px;
+  font-weight: 700;
+  line-height: 73px;
+  letter-spacing: 0em;
+  text-align: left;
+}
+
+.card_description{
+font-family: Inter;
+font-size: 20px;
+font-weight: 400;
+line-height: 24px;
+letter-spacing: 0em;
+text-align: left;
+}
+
+.main_infos_card{
+font-family: Inter;
+font-size: 20px;
+font-weight: 400;
+line-height: 24px;
+letter-spacing: 0em;
+text-align: left;
+color: #2A3647;
+gap: 24px;
+width: 100%;
+display: flex;
+}
+
+.main_infos_card span{
+  color: #000;
+}
+
+.card_assigned{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 8px
+}
+
+.card_assignedTo{
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.assigned_name{
+font-family: Open Sans;
+font-size: 19px;
+font-weight: 400;
+line-height: 23px;
+letter-spacing: 0em;
+text-align: left;
+}
+
+.card_subtasks{
+  display: flex;
+  flex-direction: column;
+}
+
+.card_subtasks_item{
+  display: flex;
+  width: 100%;
+  align-items: center;
+  gap: 24px;
+  padding: 6px 16px 6px 16px;
+}
+
+.card_subtasks_item p{
+  font-family: Inter;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 19px;
+  letter-spacing: 0em;
+  text-align: left;
+}
+
+.card_subtasks img{
+  width: 24px;
+}
+
+.contact{
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
 @media (max-width: 1290px) {
 
   .containerAdjustment {

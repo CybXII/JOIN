@@ -66,7 +66,7 @@ async function updateHTML() {
   document.getElementById("await-feedback").innerHTML = "";
   document.getElementById("done").innerHTML = "";
 
-  tasks.forEach(function (task, i) {
+  tasks.forEach(function(task, i) {
     document.getElementById(
       task.categoryboard
     ).innerHTML += `<div class="card-board" draggable="true" ondragstart="rotateCardStart(${i}),moveToLocation(${i}),highlight()" id="board-card${i}" onclick="openCard(${i})" ondragend="rotateCardEnd()">
@@ -172,11 +172,13 @@ function noTasksToDo() {
   if (tasksTodo == 0)
     document.getElementById("todo").innerHTML = noTasksToDoHtml("todo");
   if (tasksInProgress == 0)
-    document.getElementById("in-progress").innerHTML =
-      noTasksToDoHtml("in-progress");
+    document.getElementById("in-progress").innerHTML = noTasksToDoHtml(
+      "in-progress"
+    );
   if (tasksAwaitFeedback == 0)
-    document.getElementById("await-feedback").innerHTML =
-      noTasksToDoHtml("await-feedback");
+    document.getElementById("await-feedback").innerHTML = noTasksToDoHtml(
+      "await-feedback"
+    );
   if (tasksDone == 0)
     document.getElementById("done").innerHTML = noTasksToDoHtml("done");
 }
@@ -219,7 +221,7 @@ function renderCardInfo(i) {
 function filterTaskBoard() {
   let searchInput = document.getElementById("search_board").value;
   let categorys = ["todo", "in-progress", "await-feedback", "done"];
-  categorys.forEach((element) => {
+  categorys.forEach(element => {
     clearBoardCategory(element);
     filterCategory(element, searchInput);
     console.log(`startfilter ${searchInput}`);
@@ -231,7 +233,7 @@ function clearBoardCategory(categorys) {
 }
 
 function filterCategory(categorys, searchInput) {
-  tasks.forEach(function (task, i) {
+  tasks.forEach(function(task, i) {
     let checkTitlel = task["title"];
     let checkInfos = task["description"];
     if (task.categoryboard === categorys) {
@@ -275,8 +277,8 @@ function renderFilteredCard(task, i, categorys) {
   </div>`;
 }
 
-function openCard(i) {
-  let category = tasks[i].category;
+function renderCard(i) {
+  document.getElementById('').innerHTML = ``;
   let assignedTo = tasks[i].assignedTo;
   let assignuserIDs = tasks[i].assignuserIDs;
   let categoryboard = tasks[i].categoryboard;
@@ -287,31 +289,4 @@ function openCard(i) {
   let subtasks = tasks[i].subtasks;
   let title = tasks[i].title;
 
-  // document.getElementById('').innerHTML = ``;
-
-  renderCard(
-    category,
-    assignedTo,
-    assignuserIDs,
-    categoryboard,
-    priority,
-    dueDate,
-    colors,
-    description,
-    subtasks,
-    title
-  );
 }
-
-function renderCard(
-  category,
-  assignedTo,
-  assignuserIDs,
-  categoryboard,
-  priority,
-  dueDate,
-  colors,
-  description,
-  subtasks,
-  title
-) {}
