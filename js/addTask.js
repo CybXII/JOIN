@@ -179,7 +179,7 @@ function renderAddSubtasks(){
     content.innerHTML += /*html*/ `
     <div id="subtask-comp-${i}">
     <div class="subtask-comp" onmouseover="showSubtaskIcons(${i})" onmouseleave="hideSubtaskIcons(${i})">
-                    <span class="subtask-task" id='subtask${i}' onclick="editSubtask(${i})" 
+                    <span class="subtask-task" id='subtask${i}' ondblclick="editSubtask(${i})" 
                       >⦁ ${element}</span
                     >
                     <div class="sub-icons d-none" id="subtask-icons-${i}">
