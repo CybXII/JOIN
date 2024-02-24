@@ -105,12 +105,24 @@ async function updateHTML() {
     for (let j = 0; j < task["assignedTo"].length; j++) {
       const assign = task["assignedTo"][j];
       const colorbg = task["colors"][j];
-      assigned.innerHTML += `
-<div class="card-board-profile-batch">
-  <div class="group-9-board">
-    <div class="group-9-text" style="background-color: ${colorbg}">${assign}</div>
-  </div>
-</div>`;
+      if (j <= 3) {
+        assigned.innerHTML += `
+        <div class="card-board-profile-batch">
+          <div class="group-9-board">
+            <div class="group-9-text" style="background-color: ${colorbg}">${assign}</div>
+          </div>
+        </div>`;
+      } else if (j == 4) {
+        assigned.innerHTML += `
+        <div class="card-board-profile-batch">
+          <div class="group-9-board">
+            <div id="grey_badge" class="group-9-text" style="background-color: grey;">+${j-3}</div>
+          </div>
+        </div>`;
+      }
+      else if(j>=5){
+        document.getElementById('grey_badge').innerHTML = `+${j-3}`;
+      }
     }
   });
   await setItem("tasks", JSON.stringify(tasks));
