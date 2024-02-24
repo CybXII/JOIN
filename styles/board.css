@@ -167,6 +167,7 @@
   flex-shrink: 0;
   border-radius: 8px;
   border: 2px solid var(--Version-2-main-color, #2a3647);
+  cursor: pointer;
 }
 
 .card-board {
@@ -550,6 +551,7 @@
   border-radius: 30px;
   background-color: #FFFFFF;
   display: flex;
+  gap: 8px;
   flex-direction: column;
   box-sizing: border-box;
 }
