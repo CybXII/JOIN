@@ -267,17 +267,7 @@ content.innerHTML = /*html*/ `<div class="card" onclick="dontClose()">
         </div>
       </div>
 `;
-
-      let subtasks = tasks[i].subtasks;
-
-      for (let j = 0; j < subtasks.length; j++) {
-        const element = subtasks[j].subtaskName;
-        let subtasksTask = document.getElementById("subtask-items");
-        subtasksTask.innerHTML += /*html*/ `<div class="card_subtasks_item">
-          <input id="subtask${j}" type="checkbox" class="card_checkbox" onclick="checkSubtasks(${i},${j})">
-          <p>${element}</p>
-        </div>`;
-      }
+  renderSubtasksInfos(i);
 
       
       let assignedTask = tasks[i].assignedTo;
@@ -295,6 +285,29 @@ content.innerHTML = /*html*/ `<div class="card" onclick="dontClose()">
             <div class="assigned_name">${assignNames}</div>
           </div>`; 
       }
+}
+
+function renderSubtasksInfos(i){
+let subtasks = tasks[i].subtasks;
+
+for (let j = 0; j < subtasks.length; j++) {
+  const element = subtasks[j].subtaskName;
+  if(subtasks[j]["subtaskStatus"]===false){
+    let subtasksTask = document.getElementById("subtask-items");
+    subtasksTask.innerHTML += /*html*/ `<div class="card_subtasks_item">
+      <input id="subtask${j}" type="checkbox" class="card_checkbox" onclick="checkSubtasks(${i},${j})">
+      <p>${element}</p>
+    </div>`;  
+  } else{
+    let subtasksTask = document.getElementById("subtask-items");
+    subtasksTask.innerHTML += /*html*/ `<div class="card_subtasks_item">
+      <input checked id="subtask${j}" type="checkbox" class="card_checkbox" onclick="checkSubtasks(${i},${j})">
+      <p>${element}</p>
+    </div>`;  
+  }
+
+}
+
 }
 
 function usersAssignTask(userid){
@@ -384,6 +397,10 @@ async function deleteTask(i) {
 
 
 function checkSubtasks(i, j){
-  tasks[i].subtasks[j]["subtaskStatus"] !== tasks[i].subtasks[j]["subtaskStatus"];
+  tasks[i].subtasks[j]["subtaskStatus"] != tasks[i].subtasks[j]["subtaskStatus"];
+  let testbool = tasks[i].subtasks[j]["subtaskStatus"];
+  console.log(tasks[i].subtasks[j]["subtaskStatus"]);
+  console.log(testbool);
+
   // await setItem("tasks", JSON.stringify(tasks));
 }
