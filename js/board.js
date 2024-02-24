@@ -79,10 +79,9 @@ async function updateHTML() {
       </div>
       <div class="card-board-progress">
       <div class="card-board-progress-bar">
-      <div class="card-board-progress-bar-filler"></div>
+      <div class="card-board-progress-bar-filler" id="progress-bar-${i}"></div>
       </div>
       <span class="card-board-count-progress" id="subtask-counter${i}">
-
       </span>
       </div>
       <div class="frame-139">
@@ -325,17 +324,13 @@ function finishedSubtasks(tasksid) {
     // return finishcounter;
   });
   let percent = finishcounter / tasks[tasksid].subtasks.length * 100;
-  renderSubtasksBar(percent.toFixed(0));
+  document.getElementById(`progress-bar-${tasksid}`).style = `width:"${percent.toFixed(0)}";`;
 }
 
-function renderSubtasksBar(percent){
-  console.log(percent);
-}
 
 function renderFinishCounter(id){
 document.getElementById(`subtask-counter${id}`).innerHTML = 
 `${finishcounter}/${tasks[id]["subtasks"].length} Subtasks`;
-
 }
 
 
@@ -429,4 +424,5 @@ async function checkSubtasks(i, j){
   let status = document.getElementById(`subtask${j}`).checked;
   tasks[i].subtasks[j]["subtaskStatus"] = status;
   await setItem("tasks", JSON.stringify(tasks));
+  updateHTML();
 }

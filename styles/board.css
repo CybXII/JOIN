@@ -318,7 +318,6 @@
 .card-board-progress-bar {
   display: flex;
   width: 128px;
-  padding-right: 64px;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
