@@ -260,7 +260,7 @@ content.innerHTML = /*html*/ `<div class="card" onclick="dontClose()">
         const element = subtasks[i].subtaskName;
         let subtasksTask = document.getElementById("subtask-items");
         subtasksTask.innerHTML += /*html*/ `<div class="card_subtasks_item">
-          <input id="subtask1" type="checkbox" class="card_checkbox">
+          <input id="subtask${i}" type="checkbox" class="card_checkbox" onclick="checkSubtasks(${i})">
           <p>${element}</p>
         </div>`;
       }
@@ -366,4 +366,15 @@ async function deleteTask(i) {
   await setItem("tasks", JSON.stringify(tasks));
   updateHTML();
   closeCardContainer();
+}
+
+
+async function checkSubtasks(i){
+
+  let subtasksAll = tasks[i].subtasks
+  let status = document.getElementById(`subtask${i}`).checked;
+  for (let j = 0; j < subtasksAll.length; j++) {
+    tasks[i].subtasks[j].subtaskStatus == status;
+  } 
+  await setItem("tasks", JSON.stringify(tasks));
 }
