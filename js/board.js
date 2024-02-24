@@ -374,8 +374,8 @@ function filterCategory(categorys, searchInput) {
     let checkInfos = task["description"];
     if (task.categoryboard === categorys) {
       if (
-        checkTitlel.includes(searchInput) ||
-        checkInfos.includes(searchInput)
+        checkTitlel.toUpperCase().includes(searchInput.toUpperCase()) ||
+        checkInfos.toUpperCase().includes(searchInput.toUpperCase())
       ) {
         renderFilteredCard(task, i, categorys);
       }
