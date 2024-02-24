@@ -324,7 +324,8 @@ function finishedSubtasks(tasksid) {
     // return finishcounter;
   });
   let percent = finishcounter / tasks[tasksid].subtasks.length * 100;
-  document.getElementById(`progress-bar-${tasksid}`).style = `width:"${percent.toFixed(0)}";`;
+  let percenttwo = percent.toFixed(0);
+  document.getElementById(`progress-bar-${tasksid}`).style = `width: ${percenttwo}%;`;
 }
 
 
