@@ -271,11 +271,11 @@ content.innerHTML = /*html*/ `<div class="card" onclick="dontClose()">
 
       let subtasks = tasks[i].subtasks;
 
-      for (let i = 0; i < subtasks.length; i++) {
-        const element = subtasks[i].subtaskName;
+      for (let j = 0; j < subtasks.length; j++) {
+        const element = subtasks[j].subtaskName;
         let subtasksTask = document.getElementById("subtask-items");
         subtasksTask.innerHTML += /*html*/ `<div class="card_subtasks_item">
-          <input id="subtask${i}" type="checkbox" class="card_checkbox" onclick="checkSubtasks(${i})">
+          <input id="subtask${j}" type="checkbox" class="card_checkbox" onclick="checkSubtasks(${j})">
           <p>${element}</p>
         </div>`;
       }
@@ -284,10 +284,10 @@ content.innerHTML = /*html*/ `<div class="card" onclick="dontClose()">
       let assignedTask = tasks[i].assignedTo;
       let colorsTask = tasks[i].colors;
       let userid = tasks[i].assignedToID;
-      for (let i = 0; i < assignedTask.length; i++) {
-        const initials = assignedTask[i];
-        const colors = colorsTask[i];
-        let assignNames = usersAssignTask(userid[i]);
+      for (let x = 0; x < assignedTask.length; x++) {
+        const initials = assignedTask[x];
+        const colors = colorsTask[x];
+        let assignNames = usersAssignTask(userid[x]);
         let assignTask = document.getElementById("card_assignedTo");
         assignTask.innerHTML += /*html*/ `<div class="contact">
             <div id="contact_color" class="overlap-group" style="background-color: ${colors}">
