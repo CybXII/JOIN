@@ -266,7 +266,6 @@ content.innerHTML = /*html*/ `<div class="card" onclick="dontClose()">
           <p>Delete</p>  
         </div>
       </div>
-
 `;
 
       let subtasks = tasks[i].subtasks;
