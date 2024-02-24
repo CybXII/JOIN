@@ -295,7 +295,6 @@ content.innerHTML = /*html*/ `<div class="card" onclick="dontClose()">
 
 function renderSubtasksInfos(i){
 let subtasks = tasks[i].subtasks;
-
 for (let j = 0; j < subtasks.length; j++) {
   const element = subtasks[j].subtaskName;
   if(subtasks[j]["subtaskStatus"]===false){
@@ -311,9 +310,7 @@ for (let j = 0; j < subtasks.length; j++) {
       <p>${element}</p>
     </div>`;  
   }
-
 }
-
 }
 
 function finishedSubtasks(tasksid) {
@@ -432,5 +429,4 @@ async function checkSubtasks(i, j){
   let status = document.getElementById(`subtask${j}`).checked;
   tasks[i].subtasks[j]["subtaskStatus"] = status;
   await setItem("tasks", JSON.stringify(tasks));
-  // renderCardInfo(i);
 }
