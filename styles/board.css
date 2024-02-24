@@ -255,6 +255,8 @@
   box-sizing: border-box;
   overflow-x:hidden;
   gap: 24px;
+  display: flex;
+  flex-direction: column;
 }
 
 .card-board-title {
