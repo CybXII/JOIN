@@ -263,7 +263,7 @@
   font-size: 16px;
   font-style: normal;
   font-weight: 700;
-  line-height: 120%; /* 19.2px */
+  line-height: 120%;
 }
 
 .frame-114 {
@@ -273,22 +273,41 @@
   gap: 8px;
   align-self: stretch;
   border-radius: 10px;
-  /* overflow-y: auto  ; */
+
 }
 
 .card-board-content {
   align-self: stretch;
   color: var(--icon, #a8a8a8);
-
-  /* Version 2/body */
   font-family: Inter;
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
-  line-height: 120%; /* 19.2px */
+  line-height: 120%;
   max-height: 60px;
   overflow-y: auto;
 }
+
+.card-board-content::-webkit-scrollbar {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  z-index: 20;
+}
+
+.card-board-content::-webkit-scrollbar-track {
+  border-radius: 0.5vw;
+  width: 1px;
+  height: 53px;
+  z-index: 20;
+}
+
+.card-board-content::-webkit-scrollbar-thumb {
+  background: #a8a8a8;
+  border-radius: 5px;
+  z-index: 20;
+}
+
 
 .card-board-progress {
   display: flex;
