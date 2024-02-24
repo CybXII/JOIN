@@ -232,12 +232,13 @@ function renderCardInfo(i) {
     ("0" + day).slice(-2) + "." + ("0" + (month + 1)).slice(-2) + "." + year;
 
 content.innerHTML = /*html*/ `<div class="card" onclick="dontClose()">
-      <div class="card_header">
+        <div class="card_header">
         <div class="card-board-user-story">
           <span class="card-board-user-story-text" id="card_category">${tasks[i].category}</span>
         </div>        
         <button class="close_card" onclick="closeCardContainer()"></button>
       </div>
+    <div class=card_limiter>
       <div id="card_title" class="card_title">
         ${tasks[i].title}
       </div>
@@ -254,7 +255,8 @@ content.innerHTML = /*html*/ `<div class="card" onclick="dontClose()">
         <p>Subtasks</p>
         <div id="subtask-items"></div>
       </div>
-      <div class="card_buttons">
+    </div>
+    <div class="card_buttons">
         <div class="card_div" onclick="editCard()">
           <img src="./img/pen.svg" alt=""/>
           <p>Edit</p>  
@@ -264,7 +266,8 @@ content.innerHTML = /*html*/ `<div class="card" onclick="dontClose()">
           <p>Delete</p>  
         </div>
       </div>
-    </div>`;
+
+`;
 
       let subtasks = tasks[i].subtasks;
 

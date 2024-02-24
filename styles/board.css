@@ -224,6 +224,38 @@
   align-self: stretch;
 }
 
+.card{
+  max-height: 75%;
+}
+
+.card_limiter::-webkit-scrollbar {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  z-index: 20;
+}
+
+.card_limiter::-webkit-scrollbar-track {
+  border-radius: 0.5vw;
+  width: 1px;
+  height: 53px;
+  z-index: 20;
+}
+
+.card_limiter::-webkit-scrollbar-thumb {
+  background: #a8a8a8;
+  border-radius: 5px;
+  z-index: 20;
+}
+
+.card_limiter{
+  overflow-y: auto;
+  width: 100%;
+  box-sizing: border-box;
+  overflow-x:hidden;
+  gap: 24px;
+}
+
 .card-board-title {
   align-self: stretch;
   color: var(--Version-2-main-color, #2a3647);
@@ -497,12 +529,13 @@
   width:525px;
   padding: 48px 40px 48px 40px;
   border-radius: 30px;
-  gap: 24px;
   background-color: #FFFFFF;
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
 }
+
+
 
 .card_header{
   display: flex;
