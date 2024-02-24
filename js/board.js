@@ -396,11 +396,9 @@ async function deleteTask(i) {
 }
 
 
-function checkSubtasks(i, j){
-  tasks[i].subtasks[j]["subtaskStatus"] != tasks[i].subtasks[j]["subtaskStatus"];
-  let testbool = tasks[i].subtasks[j]["subtaskStatus"];
-  console.log(tasks[i].subtasks[j]["subtaskStatus"]);
-  console.log(testbool);
-
-  // await setItem("tasks", JSON.stringify(tasks));
+async function checkSubtasks(i, j){
+  let status = document.getElementById(`subtask${j}`).checked;
+  tasks[i].subtasks[j]["subtaskStatus"] = status;
+  await setItem("tasks", JSON.stringify(tasks));
+  // renderCardInfo(i);
 }
