@@ -275,7 +275,7 @@ content.innerHTML = /*html*/ `<div class="card" onclick="dontClose()">
         const element = subtasks[j].subtaskName;
         let subtasksTask = document.getElementById("subtask-items");
         subtasksTask.innerHTML += /*html*/ `<div class="card_subtasks_item">
-          <input id="subtask${j}" type="checkbox" class="card_checkbox" onclick="checkSubtasks(${j})">
+          <input id="subtask${j}" type="checkbox" class="card_checkbox" onclick="checkSubtasks(${i},${j})">
           <p>${element}</p>
         </div>`;
       }
@@ -384,12 +384,7 @@ async function deleteTask(i) {
 }
 
 
-async function checkSubtasks(i){
-
-  let subtasksAll = tasks[i].subtasks
-  let status = document.getElementById(`subtask${i}`).checked;
-  for (let j = 0; j < subtasksAll.length; j++) {
-    tasks[i].subtasks[j].subtaskStatus == status;
-  } 
-  await setItem("tasks", JSON.stringify(tasks));
+function checkSubtasks(i, j){
+  tasks[i].subtasks[j]["subtaskStatus"] !== tasks[i].subtasks[j]["subtaskStatus"];
+  // await setItem("tasks", JSON.stringify(tasks));
 }
