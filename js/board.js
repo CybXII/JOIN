@@ -5,6 +5,7 @@ let tasksDone;
 let tasksInProgress;
 let tasksAwaitFeedback;
 let tasksUrgent;
+let finishcounter = 0;
 
 let tasks = [];
 
@@ -67,71 +68,76 @@ async function updateHTML() {
   tasks.forEach(function (task, i) {
     document.getElementById(
       task.categoryboard
-    ).innerHTML += `<div class="card-board" draggable="true" ondragstart="rotateCardStart(${i}),moveToLocation(${i}),highlight()" id="board-card${i}" onclick="openCard(${i})" ondragend="rotateCardEnd()">
-  <div class="frame-119">
-    <div class="card-board-user-story">
+      ).innerHTML += `<div class="card-board" draggable="true" ondragstart="rotateCardStart(${i}),moveToLocation(${i}),highlight()" id="board-card${i}" onclick="openCard(${i})" ondragend="rotateCardEnd()">
+      <div class="frame-119">
+      <div class="card-board-user-story">
       <span class="card-board-user-story-text">${task.category}</span>
-    </div>
-    <div class="frame-114">
+      </div>
+      <div class="frame-114">
       <span class="card-board-title">${task.title}</span>
       <span class="card-board-content">${task.description}</span>
-    </div>
-    <div class="card-board-progress">
-      <div class="card-board-progress-bar">
-        <div class="card-board-progress-bar-filler"></div>
       </div>
-      <span class="card-board-count-progress">
-        1/${task.subtasks.length} Subtasks
+      <div class="card-board-progress">
+      <div class="card-board-progress-bar">
+      <div class="card-board-progress-bar-filler"></div>
+      </div>
+      <span class="card-board-count-progress" id="subtask-counter${i}">
+
       </span>
-    </div>
-    <div class="frame-139">
+      </div>
+      <div class="frame-139">
       <div class="frame-217" id="assigned-to${i}">
       </div>
       <div class="card-board-priority">
         <img src="./img/prio-baja-board.svg" id="prio-svg${i}" class="card-board-priority-img" />
-      </div>
-    </div>
-  </div>
-</div>`;
-    if (task.prio == "urgent") {
-      document.getElementById(`prio-svg${i}`).src = "./img/urgent_nofill.svg";
-    } else if (task.prio == "medium") {
-      document.getElementById(`prio-svg${i}`).src = "./img/medium_nofill.svg";
-    } else if (task.prio == "low") {
-      document.getElementById(`prio-svg${i}`).src = "./img/low_nofill.svg";
-    }
-
-    let assigned = document.getElementById(`assigned-to${i}`);
-    for (let j = 0; j < task["assignedTo"].length; j++) {
-      const assign = task["assignedTo"][j];
-      const colorbg = task["colors"][j];
-      if (j <= 3) {
-        assigned.innerHTML += `
-        <div class="card-board-profile-batch">
-          <div class="group-9-board">
+        </div>
+        </div>
+        </div>
+        </div>`;
+        if (task.prio == "urgent") {
+          document.getElementById(`prio-svg${i}`).src = "./img/urgent_nofill.svg";
+        } else if (task.prio == "medium") {
+          document.getElementById(`prio-svg${i}`).src = "./img/medium_nofill.svg";
+        } else if (task.prio == "low") {
+          document.getElementById(`prio-svg${i}`).src = "./img/low_nofill.svg";
+        }
+        
+        let assigned = document.getElementById(`assigned-to${i}`);
+        for (let j = 0; j < task["assignedTo"].length; j++) {
+          const assign = task["assignedTo"][j];
+          const colorbg = task["colors"][j];
+          if (j <= 3) {
+            assigned.innerHTML += `
+            <div class="card-board-profile-batch">
+            <div class="group-9-board">
             <div class="group-9-text" style="background-color: ${colorbg}">${assign}</div>
-          </div>
-        </div>`;
-      } else if (j == 4) {
-        assigned.innerHTML += `
+            </div>
+            </div>`;
+          } else if (j == 4) {
+            assigned.innerHTML += `
         <div class="card-board-profile-batch">
-          <div class="group-9-board">
+        <div class="group-9-board">
             <div id="grey_badge" class="group-9-text" style="background-color: grey;">+${j-3}</div>
-          </div>
-        </div>`;
+            </div>
+            </div>`;
+          }
+          else if(j>=5){
+            document.getElementById('grey_badge').innerHTML = `+${j-3}`;
+          }
+          
+        }
+        finishedSubtasks(i);
+        renderFinishCounter(i);
+        finishcounter = 0;
       }
-      else if(j>=5){
-        document.getElementById('grey_badge').innerHTML = `+${j-3}`;
-      }
+      );
+      await setItem("tasks", JSON.stringify(tasks));
+      setAmounts();
     }
-  });
-  await setItem("tasks", JSON.stringify(tasks));
-  setAmounts();
-}
-
-function openAddTaskContainer(categoryInput) {
-  document.getElementById("board-background").classList.remove("d-none");
-  document.body.classList.add("background-fixed");
+    
+    function openAddTaskContainer(categoryInput) {
+      document.getElementById("board-background").classList.remove("d-none");
+      document.body.classList.add("background-fixed");
   document
     .getElementById("addTaskForm")
     .setAttribute(
@@ -309,6 +315,32 @@ for (let j = 0; j < subtasks.length; j++) {
 }
 
 }
+
+function finishedSubtasks(tasksid) {
+  
+  
+  tasks[tasksid].subtasks.forEach((subtask) => {
+    
+    if (subtask["subtaskStatus"] == true){
+      finishcounter++
+    }
+    // 
+    // return finishcounter;
+  });
+  let percent = finishcounter / tasks[tasksid].subtasks.length * 100;
+  renderSubtasksBar(percent.toFixed(0));
+}
+
+function renderSubtasksBar(percent){
+  console.log(percent);
+}
+
+function renderFinishCounter(id){
+document.getElementById(`subtask-counter${id}`).innerHTML = 
+`${finishcounter}/${tasks[id]["subtasks"].length} Subtasks`;
+
+}
+
 
 function usersAssignTask(userid){
 
