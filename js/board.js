@@ -300,10 +300,74 @@ function editTasksfromStorage(){
   console.log('Hier kommt die save Edit funcion');
 }
 
-function editSubtasks(){
-  console.log('Hier kommt die save Edit funcion');
+function editSubtasks(i){
+  // let container = document.getElementById(`edit-subtasks-container-${i}`);
+  subtasksAdd.push(tasks[i].subtasks);
+  subtasksAddCard = [];
+  subtasksAddCard.push(subtasksAdd[0]);
+
+  document.getElementById(`edit-subtasks-container-${i}`).innerHTML = "";
+  for (let j = 0; j < subtasksAddCard[0].length; j++) {
+    const element = subtasksAddCard[0][j].subtaskName;
+    let content = document.getElementById(`edit-subtasks-container-${i}`);
+    content.innerHTML += /*html*/ `
+    <div id="subtask-comp-${j}">
+    <div class="subtask-comp" onmouseover="showSubtaskIcons(${j})" onmouseleave="hideSubtaskIcons(${j})">
+                    <span class="subtask-task" id='subtask${j}' ondblclick="editSubtaskCard(${i},${j})" 
+                      >⦁ ${element}</span
+                    >
+                    <div class="sub-icons d-none" id="subtask-icons-${j}">
+                      <img
+                        src="./img/edit.svg"
+                        alt=""
+                        onclick="editSubtaskCard(${i},${j})"
+                        class="subtask-icon"
+                      />
+                      <img src="./img/Vector 19.svg" alt="" />
+                      <img
+                        src="./img/delete.svg"
+                        alt=""
+                        onclick="deleteSubtask(${j})"
+                        class="subtask-icon"
+                      />
+                    </div>
+                  </div>
+                  </div>
+  </div>`;}
+
+  subtasksAdd = [];
+
 }
 
+function editSubtaskCard(i, j) {
+  let container = document.getElementById(`subtask-comp-${j}`);
+  let textContent = subtasksAddCard[0][j].subtaskName;
+  container.innerHTML = editSubTaskHtmlCard(textContent, i, j);
+  hideSubtaskIcons(j);
+}
+
+async function addEditSubTaskCard(i, j) {
+  let subTaskInput = document.getElementById("editSubTaskInput");
+  subtasksAddCard[0][i].subtaskName = subTaskInput.value;
+  tasks[i].subtasks[j].subtaskName = subTaskInput.value;
+  await setItem("tasks", JSON.stringify(tasks));
+  editSubtasks(i);
+}
+
+function editSubTaskHtmlCard(textContent, i, j) {
+  return /*html*/ `
+      <div class="editSubTaskButtonBox" id="subtask-icons-${i}"></div> 
+    <div class="subtask-edit-container">
+      <input id="editSubTaskInput" type="text" class="sub-edit-input" value=${textContent} />
+      <div class="sub-icons">
+      <img src="./img/delete.svg" class="subtask-icon-edit" onclick="deleteSubtaskCard(${i})"/>
+        <img src="./img/Vector 19.svg" alt="" />
+        <img src="./img/check.svg" alt="check" class="subtask-icon-edit" onclick="addEditSubTaskCard(${i},${j})"/>
+        </div>
+      </div>
+    </div>
+  `;
+}
 
 function openEditAssignTo(){
     // renderAssignedUserAddTask();

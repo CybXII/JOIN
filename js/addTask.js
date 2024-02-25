@@ -6,6 +6,7 @@ let userInitialsAssignedto = [];
 let userInitialsAssignedtoID = [];
 let userColorsAssignedto = [];
 let subtasksAdd = [];
+let subtasksAddCard = [];
 let userInitialsAssignedtoBadges = [];
 let userColorsAssignedtoBadges = [];
 
