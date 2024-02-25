@@ -417,7 +417,7 @@ function renderAssigned(i){
 function renderEditCard(content,i){
   content.innerHTML = `
   <div class="edit-card" onclick="dontClose()">
-  <div class="cose_button_div">
+  <div class="close_button_div">
   <button class="close_card" onclick="closeCardContainer()"></button>
   </div> 
   <form

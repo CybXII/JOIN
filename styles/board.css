@@ -36,7 +36,9 @@
 }
 
 .close_button_div{
-
+  width: 100%;
+  justify-content: end;
+  display: flex;
 }
 
 .edit-frame-219{

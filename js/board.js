@@ -302,10 +302,6 @@ function editSubtasks(){
   console.log('Hier kommt die save Edit funcion');
 }
 
-// function renderEditAssignedTo(){
-// renderAssignedTo
-
-// }
 
 function openEditAssignTo(){
     // renderAssignedUserAddTask();
