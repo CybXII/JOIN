@@ -702,7 +702,7 @@ text-align: left;
 
 .leftSide {
   background-color: #2a3647;
-  width: 453px;
+  width: 35%;
   height: 592px;
   border-radius: 30px 0 0 30px;
 }
@@ -740,7 +740,9 @@ text-align: left;
 .closeImg {
   position: absolute;
   background-image: url(./../img/close.svg);
-  right: 0;
+  background-repeat: no-repeat;
+  background-size: cover;
+  right: 60px;
   top: 48px;
   height: 14px;
   width: 14px;
@@ -757,9 +759,10 @@ text-align: left;
   justify-content: space-around;
   align-items: center;
   position: relative;
-  gap: 60px;
+  gap: 40px;
   height: 592px;
-  left: 45px;
+  width: 759px;
+  left: 4px;
 }
 
 .FNandSN {
@@ -965,20 +968,6 @@ text-align: left;
     word-wrap: break-word;
   }
 
-  .contacts-card {
-    transform: scale(0.95);
-  }
-
-  .rightSide {
-    transform: scale(0.95);
-    gap: 40px;
-    left: 10px;
-  }
-
-  .closeImg {
-    transform: translate(570px, 48px);
-  }
-
 }
 
 @media (max-width: 1040px) {
@@ -1011,20 +1000,6 @@ text-align: left;
     width: 320px;
   }
 
-  .contacts-card {
-    transform: scale(0.9);
-  }
-
-  .rightSide {
-    transform: scale(0.9);
-    gap: 30px;
-    left: 6px;
-  }
-  .closeImg {
-    transform: translate(530px, 48px);
-  }
-
- 
 }
 
 @media (max-width: 900px) {
@@ -1078,70 +1053,6 @@ text-align: left;
     bottom: 100px;
   }
 
-  .contacts-card {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    width: 396px;
-    height: 760px;
-  }
-
-  .leftSide {
-    width: 396px;
-    height: 351px;
-    border-radius: 30px 30px 0 0;
-  }
-
-  .testContainer {
-    padding-top: 80px;
-  }
-
-  .testContainer h1 {
-    font-size: 47px;
-  }
-
-  .joinLogo {
-    display: none;
-  }
-
-  .underlineBlue {
-    width: 90px;
-    height: 10px;
-  }
-
-  .closeImg {
-    display: none;
-  }
-
-  .newImg {
-    height: 14px;
-    width: 14px;
-    background-image: url(./../img/close-white.svg);
-    display: flex;
-    justify-content: flex-end;
-    align-items: flex-start;
-  }
-
-  .rightSide {
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    width: 396px;
-    position: relative;
-    left: -30px;
-    top: -30px;
-  }
-
-  .FNandSN {
-      
-  }
-
-  .add-contacts-form {
-    margin-top: 10px;
-    width: 364px;
-  }
-
 }
 
 @media (max-width: 420px) {
@@ -1153,8 +1064,5 @@ text-align: left;
     width: 248px;
   }
 
-  .contacts-card {
-    transform: scale(0.8);
-  }
 }
  
