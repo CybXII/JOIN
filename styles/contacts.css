@@ -974,8 +974,8 @@ text-align: left;
   }
 
   .contacts-card {
-    margin-right: 20px;
     margin-left: 20px;
+    margin-right: 20px;
   }
 
   .twoLine {
@@ -994,6 +994,8 @@ text-align: left;
   .add-contacts-form input {
     width: 370px;
   }
+
+
 
 }
 
@@ -1028,8 +1030,8 @@ text-align: left;
   }
 
   .contacts-card {
-    margin-right: 20px;
-    margin-left: 20px;
+    margin-left: 40px;
+    margin-right: 40px;
   }
 
   .twoLine {
@@ -1048,6 +1050,8 @@ text-align: left;
   .add-contacts-form input {
     width: 370px;
   }
+
+
 
 }
 
@@ -1136,6 +1140,7 @@ text-align: left;
     align-items: center;
     flex-direction: column;
     top: -90px;
+    left: -1px;
   }
 
   .closeImg {
@@ -1147,7 +1152,7 @@ text-align: left;
   }
 
   .add-contacts-form {
-    margin-left: 25px;
+    margin-left: 55px;
   }
 
   .add-contacts-form input {
@@ -1206,7 +1211,7 @@ text-align: left;
   }
 
   .add-contacts-form {
-    margin-left: 100px;
+    margin-left: 120px;
   }
 
   .add-contacts-form input {
@@ -1261,7 +1266,7 @@ text-align: left;
   }
 
   .add-contacts-form {
-    margin-left: 160px;
+    margin-left: 170px;
   }
 
   .add-contacts-form input {

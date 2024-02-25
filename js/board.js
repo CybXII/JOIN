@@ -118,6 +118,7 @@ function renderUpdateAssigned(task,i){
 
 
 function closeAddTaskContainer() {
+  usersassignedto=[];
   document.getElementById("board-background").classList.add("d-none");
   document.body.classList.remove("background-fixed");
 }
@@ -210,6 +211,7 @@ function openCardContainer() {
 
 
 function closeCardContainer() {
+  usersassignedto=[];
   document.getElementById("card-background").classList.add("d-none");
   document.body.classList.remove("background-fixed");
   document.getElementById("card-background").innerHTML ="";
