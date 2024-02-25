@@ -974,7 +974,8 @@ text-align: left;
   }
 
   .contacts-card {
-    width: 90%;
+    margin-right: 20px;
+    margin-left: 20px;
   }
 
   .twoLine {
@@ -983,6 +984,15 @@ text-align: left;
 
   .rightSide {
     width: 90%;
+    left: 15px;
+  }
+
+  .add-contacts-form {
+    margin-left: 30px;
+  }
+
+  .add-contacts-form input {
+    width: 370px;
   }
 
 }
@@ -1017,8 +1027,26 @@ text-align: left;
     width: 320px;
   }
 
-   .contacts-card {
+  .contacts-card {
+    margin-right: 20px;
+    margin-left: 20px;
+  }
+
+  .twoLine {
+    display: none;
+  }
+
+  .rightSide {
     width: 90%;
+    left: 15px;
+  }
+
+  .add-contacts-form {
+    margin-left: 30px;
+  }
+
+  .add-contacts-form input {
+    width: 370px;
   }
 
 }
