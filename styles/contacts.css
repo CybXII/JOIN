@@ -974,11 +974,15 @@ text-align: left;
   }
 
   .contacts-card {
-    width: 95%;
+    width: 90%;
   }
 
   .twoLine {
     display: none;
+  }
+
+  .rightSide {
+    width: 90%;
   }
 
 }
@@ -1013,14 +1017,8 @@ text-align: left;
     width: 320px;
   }
 
-  .contacts-card {
-    position: relative;
-    z-index: 300;
+   .contacts-card {
     width: 90%;
-  }
-
-  .twoLine {
-    display: none;
   }
 
 }
@@ -1117,7 +1115,7 @@ text-align: left;
     width: 32px;
     height: 32px;
     top: -170px;
-    right: 220px;
+    right: 30px;
   }
 
   .add-contacts-form {
@@ -1179,11 +1177,6 @@ text-align: left;
     top: -60px;
   }
 
-  .closeImg {
-    margin-right: 50px;
-    margin-top: 0;
-  }
-
   .add-contacts-form {
     margin-left: 100px;
   }
@@ -1237,10 +1230,6 @@ text-align: left;
 
   .rightSide {
     top: -60px;
-  }
-
-  .closeImg {
-    margin-right: 50px;
   }
 
   .add-contacts-form {
