@@ -80,9 +80,14 @@ function taskAddedCompleteText() {
   }, 2000);
 }
 
-function fillInputField(inputString) {
-  document.getElementById("category-list2").innerHTML = `${inputString}`;
-  openCategory();
+function fillInputField(inputString,handler) {
+  if(handler=== "edit-"){
+    document.getElementById(`${handler}category-list2`).innerHTML = `${inputString}`;
+    openEditCategory();
+  }else {
+    document.getElementById(`category-list2`).innerHTML = `${inputString}`;
+    openCategory();
+  }
 }
 
 function clearFields() {
@@ -101,13 +106,18 @@ function resetSubtasks() {
   document.getElementById("subtasks").value = ``;
 }
 
-function renderAssignedTo() {
-  let assigncontent = document.getElementById("assigned-list");
+function renderAssignedTo(handler) {
+  if (handler==="edit"){
+  }
+  else{
+    handler ='';
+  }
+  let assigncontent = document.getElementById(`${handler}assigned-list`);
   remoteuserAssign.forEach((element, i) => {
     const fullname = element.name;
     const initials = element.initials;
     const color = element.color;
-    assigncontent.innerHTML += /*html*/ `<li id="edit_catergory_list_${i}">
+    assigncontent.innerHTML += /*html*/ `<li id="${handler}catergory_list_${i}">
       <div class="active_contact">
         <div class="profile-badge">
           <div class="group">
@@ -116,8 +126,8 @@ function renderAssignedTo() {
             </div>
           </div>
         </div>
-        <span  id="fullname-addtask-dd-${i}">${fullname}</span>
-        <input id="checkbox${i}" type="checkbox" class="checkbox" onclick="addClassOnCheckboxChange(${i}), setBadgesAddTask()" />
+        <span  id="${handler}fullname-addtask-dd-${i}">${fullname}</span>
+        <input id="${handler}checkbox${i}" type="checkbox" class="checkbox" onclick="addClassOnCheckboxChange(${i}), setBadgesAddTask()" />
       </div>
     </li>
     `;
@@ -239,10 +249,19 @@ function addEditSubTask(i) {
   renderAddSubtasks();
 }
 
-function addClassOnCheckboxChange(userid) {
-  const checkbox = document.getElementById(`checkbox${userid}`);
-  const divElement = document.getElementById(`fullname-addtask-dd-${userid}`);
-  const parentDivElement = document.getElementById(`catergory_list_${userid}`);
+function addClassOnCheckboxChange(userid, handler) {
+  if(handler === "edit-"){
+    setCheckBoxes(userid,handler);
+  } else{
+    handler='';
+    setCheckBoxes(userid,handler);
+  }
+}
+
+function setCheckBoxes(userid,handler){
+  const checkbox = document.getElementById(`${handler}checkbox${userid}`);
+  const divElement = document.getElementById(`${handler}fullname-addtask-dd-${userid}`);
+  const parentDivElement = document.getElementById(`${handler}catergory_list_${userid}`);
 
   if (checkbox.checked) {
     divElement.classList.add("white");
@@ -260,7 +279,10 @@ function addClassOnCheckboxChange(userid) {
       usersassignedto.sort();
     }
   }
+
 }
+
+
 
 function setInitials() {
   for (let i = 0; i < usersassignedto.length; i++) {
@@ -319,13 +341,25 @@ function renderBadges(initials, color, content, i) {
   }
 }
 
-function renderAssignedUserAddTask() {
-  for (let i = 0; i < usersassignedto.length; i++) {
-    let index = usersassignedto[i];
-    if (usersassignedto.includes(index)) {
-      document.getElementById(`checkbox${index}`).checked = true;
-      addClassOnCheckboxChange(index);
+function renderAssignedUserAddTask(handler) {
+  if (handler==="edit-"){
+    for (let i = 0; i < usersassignedto.length; i++) {
+      let index = usersassignedto[i];
+      if (usersassignedto.includes(index)) {
+        document.getElementById(`${handler}checkbox${index}`).checked = true;
+        addClassOnCheckboxChange(index);
+      }
     }
+
+  }
+  else{
+    for (let i = 0; i < usersassignedto.length; i++) {
+      let index = usersassignedto[i];
+      if (usersassignedto.includes(index)) {
+        document.getElementById(`checkbox${index}`).checked = true;
+        addClassOnCheckboxChange(index);
+      }
+    }  
   }
 }
 

@@ -259,7 +259,7 @@ function renderAssigned(i){
       const fullname = element.name;
       const initials = element.initials;
       const color = element.color;
-      assigncontent.innerHTML += /*html*/ `<li id="catergory_list_${i}">
+      assigncontent.innerHTML += /*html*/ `<li id="edit-catergory_list_${i}">
         <div class="active_contact">
           <div class="profile-badge">
             <div class="group">
@@ -268,8 +268,8 @@ function renderAssigned(i){
               </div>
             </div>
           </div>
-          <span  id="fullname-addtask-dd-${i}">${fullname}</span>
-          <input id="checkbox${i}" type="checkbox" class="checkbox" onclick="addClassOnCheckboxChange(${i}), setBadgesAddTask()" />
+          <span  id="edit-fullname-addtask-dd-${i}">${fullname}</span>
+          <input id="edit-checkbox${i}" type="checkbox" class="checkbox" onclick="addClassOnCheckboxChange(${i},'edit-'), setBadgesAddTask()" />
         </div>
       </li>
       `;
@@ -459,7 +459,7 @@ function renderEditCard(content,i){
         <div class="asigned-to-v1">
           <span class="assigned-to">Assigned to</span>
           <div id="edit-list1" class="dropdown-check-list" tabindex="100">
-            <div onclick="renderEditAssignedTo(), openEditAssignTo()">
+            <div onclick="renderEditAssignedTo(''), openEditAssignTo()">
               <span class="anchor">Select contacts to assign</span>
             </div>
             <ul class="items">
@@ -530,17 +530,17 @@ function renderEditCard(content,i){
         <div class="category">
           <div for="title">Category<span class="red">*</span></div>
           <div id="edit-list2" class="dropdown-check-list2" tabindex="100">
-            <div onclick="openCategory()">
+            <div onclick="openEditCategory()">
               <span id="edit-category-border" class="anchor">
                 <span id="edit-category-list2">${tasks[i]["category"]}</span>
               </span>
             </div>
             <ul class="items">
               <div id="edit-category-list2-items">
-                <li onclick="fillInputField('Technical Task')">
+                <li onclick="fillInputField('Technical Task'),"edit-">
                   Technical Task
                 </li>
-                <li onclick="fillInputField('User Story')">
+                <li onclick="fillInputField('User Story',"edit-")">
                   User Story
                 </li>
               </div>

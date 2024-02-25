@@ -212,6 +212,7 @@ function openCardContainer() {
 function closeCardContainer() {
   document.getElementById("card-background").classList.add("d-none");
   document.body.classList.remove("background-fixed");
+  document.getElementById("card-background").innerHTML ="";
 }
 
 
@@ -457,7 +458,7 @@ function openEditAssignTo(){
     // Überprüfe, ob die Klasse "visible" nicht enthalten ist, füge sie hinzu
     if (!assingBox.classList.contains("visible")) {
       assingBox.classList.add("visible");
-      renderAssignedUserAddTask();
+      renderAssignedUserAddTask("edit-");
     } else {
       // Wenn "visible" enthalten ist, entferne es
       assingBox.classList.remove("visible");
@@ -470,4 +471,25 @@ function openEditAssignTo(){
         window.removeEventListener("click", arguments.callee); // Entferne den Event-Listener nach Ausführung
       }
     });
+}
+
+function openEditCategory() {
+  let categoryBox = document.getElementById("edit-list2");
+  let categoryInput = document.getElementById("edit-category-list2");
+
+  if (!categoryBox.classList.contains("visible")) {
+    categoryBox.classList.add("visible");
+    categoryInput.setAttribute("disabled", "");
+    renderAssignedUserAddTask();
+  } else {
+    categoryBox.classList.remove("visible");
+    categoryInput.removeAttribute("disabled", "");
+  }
+
+  window.addEventListener("click", function (e) {
+    if (!categoryBox.contains(e.target)) {
+      categoryBox.classList.remove("visible");
+      window.removeEventListener("click", arguments.callee);
+    }
+  });
 }
