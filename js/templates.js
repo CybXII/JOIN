@@ -454,6 +454,7 @@ function renderEditCard(content,i){
                 class="input-title"
                 type="date"
                 id="edit-datePicker"
+                value="${tasks[i]['dueDate']}"
               />
             </div>
           </div>
