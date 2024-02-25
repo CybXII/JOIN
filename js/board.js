@@ -321,7 +321,7 @@ function editSubtasks(i){
     let content = document.getElementById(`edit-subtasks-container`);
     content.innerHTML += /*html*/ `
     <div id="subtask-comp-${j}">
-    <div class="subtask-comp" onmouseover="showSubtaskIcons(${j})" onmouseleave="hideSubtaskIcons(${j})">
+    <div class="subtask-comp" onmouseover="showSubtaskIconsCard(${j})" onmouseleave="hideSubtaskIconsCard(${j})">
                     <span class="subtask-task" id='subtask${j}' ondblclick="editSubtaskCard(${i},${j})" 
                       >⦁ ${element}</span
                     >
@@ -349,17 +349,17 @@ function editSubtasks(i){
 }
 
 function editSubtaskCard(i, j) {
-  let container = document.getElementById(`subtask-comp-${j}`);
-  let textContent = currentTask.subtasks[j].subtaskName;
+  let container = document.getElementById(`subtask-comp-${i}`);
+  let textContent = currentTask.subtasks[i].subtaskName;
   container.innerHTML = editSubTaskHtmlCard(textContent, i, j);
-  hideSubtaskIcons(i);
+  hideSubtaskIconsCard(j);
 }
 
 async function addEditSubTaskCard(i, j) {
   let subTaskInput = document.getElementById("editSubTaskInput");
-  currentTask.subtasks[j].subtaskName = subTaskInput.value;
+  currentTask.subtasks[i].subtaskName = subTaskInput.value;
   editSubtaskCard(i, j);
-  renderAddSubtasksCard(j);
+  renderAddSubtasksCard(i);
 }
 
 function editSubTaskHtmlCard(textContent, i, j) {
@@ -377,7 +377,7 @@ function editSubTaskHtmlCard(textContent, i, j) {
   `;
 }
 
-function addSubtasksCard() {
+function addSubtasksCard(i) {
   let subtaskstoadd = document.getElementById("edit-subtasks").value;
   let JSONToPush = {
     subtaskName: subtaskstoadd,
@@ -385,7 +385,7 @@ function addSubtasksCard() {
   };
   currentTask.subtasks.push(JSONToPush);
   document.getElementById("edit-subtasks").value = "";
-  renderAddSubtasksCard();
+  renderAddSubtasksCard(i);
 }
 
 function renderAddSubtasksCard(i) {
@@ -395,22 +395,22 @@ function renderAddSubtasksCard(i) {
     let content = document.getElementById("edit-subtasks-container");
     content.innerHTML += /*html*/ `
     <div id="subtask-comp-${j}">
-    <div class="subtask-comp" onmouseover="showSubtaskIconsCard(${i},${j})" onmouseleave="hideSubtaskIconsCard(${i},${j})">
-                    <span class="subtask-task" id='subtask${j}' ondblclick="editSubtaskCard(${i},${j})" 
+    <div class="subtask-comp" onmouseover="showSubtaskIconsCard(${j},${i})" onmouseleave="hideSubtaskIconsCard(${j},${i})">
+                    <span class="subtask-task" id='subtask${j}' ondblclick="editSubtaskCard(${j},${i})" 
                       >⦁ ${element}</span
                     >
                     <div class="sub-icons d-none" id="subtask-icons-${j}">
                       <img
                         src="./img/edit.svg"
                         alt=""
-                        onclick="editSubtaskCard(${i},${j})"
+                        onclick="editSubtaskCard(${j},${i})"
                         class="subtask-icon"
                       />
                       <img src="./img/Vector 19.svg" alt="" />
                       <img
                         src="./img/delete.svg"
                         alt=""
-                        onclick="deleteSubtaskCard(${i},${j})"
+                        onclick="deleteSubtaskCard(${j},${i})"
                         class="subtask-icon"
                       />
                     </div>
@@ -421,22 +421,22 @@ function renderAddSubtasksCard(i) {
 }
 
 
-function deleteSubtaskCard(i) {
+function deleteSubtaskCard(i, j) {
   currentTask.subtasks.splice(i, 1);
   renderAddSubtasksCard(i);
 }
 
 function showSubtaskIconsCard(i, j) {
-  document.getElementById(`subtask-icons-${j}`).classList.remove("d-none");
+  document.getElementById(`subtask-icons-${i}`).classList.remove("d-none");
   document
-    .getElementById(`subtask-comp-${j}`)
+    .getElementById(`subtask-comp-${i}`)
     .classList.add("subtask-background");
 }
 
 function hideSubtaskIconsCard(i, j) {
-  document.getElementById(`subtask-icons-${j}`).classList.add("d-none");
+  document.getElementById(`subtask-icons-${i}`).classList.add("d-none");
   document
-    .getElementById(`subtask-comp-${j}`)
+    .getElementById(`subtask-comp-${i}`)
     .classList.remove("subtask-background");
 }
 
