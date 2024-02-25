@@ -342,7 +342,7 @@ function renderAssigned(i){
         </div>
       </div>
       <div class="card_buttons">
-          <div class="card_div" onclick="editCard(${i})">
+          <div class="card_div" onclick="editCard(${i}), editSubtasks(${i})">
             <img src="./img/pen.svg" alt=""/>
             <p>Edit</p>  
           </div>
@@ -423,7 +423,7 @@ function renderEditCard(content,i){
   <form
     id="editTaskForm"
     class="edit-addTask_helper"
-    onsubmit="editTasksfromStorage(${tasks[i]['categoryboard']}]); return false;"
+    onsubmit="editTasksfromStorage(${tasks[i]["categoryboard"]}]); return false;"
     >
     <div class="edit-input-fields">
       <div class="edit-frame-219">
@@ -481,7 +481,7 @@ function renderEditCard(content,i){
                 class="input-title"
                 type="date"
                 id="edit-datePicker"
-                value="${tasks[i]['dueDate']}"
+                value="${tasks[i]["dueDate"]}"
               />
             </div>
           </div>
@@ -532,7 +532,7 @@ function renderEditCard(content,i){
           <div id="edit-list2" class="dropdown-check-list2" tabindex="100">
             <div onclick="openEditCategory()">
               <span id="edit-category-border" class="anchor">
-                <span id="edit-category-list2">${tasks[i]['category']}</span>
+                <span id="edit-category-list2">${tasks[i]["category"]}</span>
               </span>
             </div>
             <ul class="items">
@@ -582,13 +582,13 @@ function renderEditCard(content,i){
                 class="subtask_add_button d-none"
                 src="../img/subtasks_add.svg"
                 alt=""
-                onclick="editSubtasks()"
+                onclick="editSubtasks(${i})"
               />
             </div>
           </div>
           <div
             class="subtasks-container"
-            id="edit-subtasks-container"
+            id="edit-subtasks-container-${i}"
           ></div>
         </div>
       </div>
