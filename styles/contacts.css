@@ -1110,8 +1110,11 @@ text-align: left;
   }
 
   .add-contacts-form {
-    left: 10px;
-    right: 100px;
+    margin-left: 45px;
+  }
+
+  .add-contacts-form input {
+    width: 364px;
   }
 
   .underButton {
