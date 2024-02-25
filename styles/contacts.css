@@ -673,11 +673,11 @@ text-align: left;
 /* Fenster AddContact */
 
 .contacts-background {
-  z-index: 4;
+  z-index: 55;
   background-color: rgba(65, 63, 63, 0.466);
   top: 0;
   bottom: 0;
-  left: 232px;
+  left: 0;
   right: 0;
   position: fixed;
   display: flex;
@@ -973,6 +973,7 @@ text-align: left;
     word-wrap: break-word;
   }
 
+
   .contacts-card {
     margin-left: 20px;
     margin-right: 20px;
@@ -1027,83 +1028,6 @@ text-align: left;
 
   .frame-97 .primary-contact {
     width: 320px;
-  }
-
-  .contacts-card {
-    margin-left: 40px;
-    margin-right: 40px;
-  }
-
-  .twoLine {
-    display: none;
-  }
-
-  .rightSide {
-    width: 90%;
-    left: 15px;
-  }
-
-  .add-contacts-form {
-    margin-left: 30px;
-  }
-
-  .add-contacts-form input {
-    width: 370px;
-  }
-
-
-
-}
-
-@media (max-width: 900px) {
-
-  .contacts-background {
-    left: 0;
-  }
-
-  .content-container{
-    margin-top: 0;
-  }
-
-  .frame-40{
-    display: none;
-  }
-
-  .frame-97{
-    z-index: 0;
-    padding: 0px;
-    width: 100%;
-    top: 80px;
-    bottom: 80px;
-    justify-content: center;
-    display: flex;
-  }
-
-  .frame-97 .contact-list {
-   position: relative;
-   top: 0;
-   padding: 0 0 0 8px;
-  }
-
-  .primary-contact{
-    width: 32px;
-  }
-
-  .primary-contact .text-wrapper{
-    display: none;
-  }
-
-  .addContact{
-    height: 0;
-  }
-
-  .frame-97 .primary-contact {
-    width: 56px;
-    height: 56px;
-    padding: 0;
-    border-radius: 46px;
-    right: 12px;
-    bottom: 100px;
   }
 
   .contacts-card {
@@ -1173,6 +1097,153 @@ text-align: left;
   .twoLine {
     display: none;
   }
+
+
+  /* .contacts-card {
+    margin-left: 40px;
+    margin-right: 40px;
+    
+  }
+
+  .twoLine {
+    display: none;
+  }
+
+  .rightSide {
+    width: 90%;
+    left: 15px;
+  }
+
+  .add-contacts-form {
+    margin-left: 30px;
+  }
+
+  .add-contacts-form input {
+    width: 370px;
+  } */
+
+
+
+}
+
+@media (max-width: 900px) {
+
+  .contacts-background {
+    left: 0;
+  }
+
+  .content-container{
+    margin-top: 0;
+  }
+
+  .frame-40{
+    display: none;
+  }
+
+  .frame-97{
+    z-index: 0;
+    padding: 0px;
+    width: 100%;
+    top: 80px;
+    bottom: 80px;
+    justify-content: center;
+    display: flex;
+  }
+
+  .frame-97 .contact-list {
+   position: relative;
+   top: 0;
+   padding: 0 0 0 8px;
+  }
+
+  .primary-contact{
+    width: 32px;
+  }
+
+  .primary-contact .text-wrapper{
+    display: none;
+  }
+
+  .addContact{
+    height: 0;
+  }
+
+  .frame-97 .primary-contact {
+    width: 56px;
+    height: 56px;
+    padding: 0;
+    border-radius: 46px;
+    right: 12px;
+    bottom: 100px;
+  }
+
+  /* .contacts-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 760px;
+    width: 396px;
+  }
+
+  .leftSide {
+    width: 396px;
+    height: 351px;
+    border-radius: 30px 30px 0 0;
+  }
+
+  .testContainer {
+    padding-top: 80px;
+    padding-left: 40px;
+  }
+
+
+  .joinLogo {
+    display: none;
+  }
+
+  .underlineBlue {
+    width: 100px;
+  }
+
+  .rightSide {
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    top: -90px;
+    left: -1px;
+  }
+
+  .closeImg {
+    background-image: url(./../img/close-white.svg);
+    width: 32px;
+    height: 32px;
+    top: -170px;
+    right: 30px;
+  }
+
+  .add-contacts-form {
+    margin-left: 55px;
+  }
+
+  .add-contacts-form input {
+    width: 364px;
+  }
+
+  .underButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+  }
+
+  .add-contact-cancel {
+    display: none;
+  }
+
+  .twoLine {
+    display: none;
+  } */
 
 }
 
