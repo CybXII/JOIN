@@ -885,6 +885,7 @@ color: var(--ligth-blue);
     font-style: normal;
     font-weight: 700;
     line-height: 25.2px;
+    width: 124px;
 }
 
 .primary-check-button img {
