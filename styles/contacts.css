@@ -731,6 +731,10 @@ text-align: left;
   transform: translateY(20px);
 }
 
+.twoLine {
+  display: none;
+}
+
 .underlineBlue {
   height: 20px;
   width: 90px;
@@ -971,7 +975,10 @@ text-align: left;
 
   .contacts-card {
     width: 95%;
+  }
 
+  .twoLine {
+    display: none;
   }
 
 }
@@ -1010,7 +1017,10 @@ text-align: left;
     position: relative;
     z-index: 300;
     width: 90%;
+  }
 
+  .twoLine {
+    display: none;
   }
 
 }
@@ -1086,6 +1096,7 @@ text-align: left;
     padding-left: 40px;
   }
 
+
   .joinLogo {
     display: none;
   }
@@ -1128,6 +1139,10 @@ text-align: left;
     display: none;
   }
 
+  .twoLine {
+    display: none;
+  }
+
 }
 
 @media (max-width: 420px) {
@@ -1139,5 +1154,111 @@ text-align: left;
     width: 248px;
   }
 
+  .contacts-card {
+    width: 90%;
+    height: 710px;
+  }
+
+  .leftSide {
+    width: 100%;
+  }
+
+  .testContainer {
+    padding-top: 20px;
+  }
+
+  .testContainer h1 {
+    line-height: 1.55;
+  }
+
+  .twoLine {
+    display: inline;
+  }
+
+  .rightSide {
+    top: -60px;
+  }
+
+  .closeImg {
+    margin-right: 50px;
+    margin-top: 0;
+  }
+
+  .add-contacts-form {
+    margin-left: 100px;
+  }
+
+  .add-contacts-form input {
+    width: 300px;
+  }
+
+  .underButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .createContact {
+    margin-left: -60px;
+  }
+
+}
+
+@media (max-width: 320px) {
+
+  .frame-97 .contact-name {
+    width: 248px;
+  }  
+
+  .active_contact {
+    width: 248px;
+  }
+
+  .contacts-card {
+    width: 90%;
+    height: 720px;
+  }
+
+  .leftSide {
+    width: 100%;
+  }
+
+  .testContainer {
+    padding-top: 20px;
+  }
+
+  .testContainer h1 {
+    line-height: 1.55;
+  }
+
+  .twoLine {
+    display: inline;
+  }
+
+  .rightSide {
+    top: -60px;
+  }
+
+  .closeImg {
+    margin-right: 50px;
+  }
+
+  .add-contacts-form {
+    margin-left: 160px;
+  }
+
+  .add-contacts-form input {
+    width: 250px;
+  }
+
+  .underButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .createContact {
+    margin-left: -105px;
+  }
 }
  
