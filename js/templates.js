@@ -202,3 +202,194 @@ function renderLoginHTML() {
           </div>
         </div>`;
 }
+
+
+function renderFilteredCard(task, i, categorys) {
+  document.getElementById(categorys).innerHTML += `
+  <div class="card-board" draggable="true" ondragstart="rotateCardStart(${i}),moveToLocation(${i}),highlight()" id="board-card${i}" onclick="openCard(${i})" ondragend="rotateCardEnd()">
+    <div class="frame-119">
+      <div class="card-board-user-story">
+        <span class="card-board-user-story-text">${task.category}</span>
+      </div>
+      <div class="frame-114">
+        <span class="card-board-title">${task.title}</span>
+        <span class="card-board-content">${task.description}</span>
+      </div>
+      <div class="card-board-progress">
+        <div class="card-board-progress-bar">
+          <div class="card-board-progress-bar-filler"></div>
+        </div>
+        <span class="card-board-count-progress">
+          1/${task.subtasks.length} Subtasks
+        </span>
+      </div>
+      <div class="frame-139">
+        <div class="frame-217" id="assigned-to${i}">
+        </div>
+        <div class="card-board-priority">
+          <img src="./img/prio-baja-board.svg" id="prio-svg${i}" class="card-board-priority-img" />
+        </div>
+      </div>
+    </div>
+  </div>`;
+}
+
+
+function renderAssigned(i){
+  let assignedTask = tasks[i].assignedTo;
+  let colorsTask = tasks[i].colors;
+  let userid = tasks[i].assignedToID;
+  for (let x = 0; x < assignedTask.length; x++) {
+      const initials = assignedTask[x];
+      const colors = colorsTask[x];
+      let assignNames = usersAssignTask(userid[x]);
+      let assignTask = document.getElementById("card_assignedTo");
+      assignTask.innerHTML += /*html*/ `<div class="contact">
+          <div id="contact_color" class="overlap-group" style="background-color: ${colors}">
+            <div class="text-wrapper-2">${initials}</div>
+          </div>
+          <div class="assigned_name">${assignNames}</div>
+        </div>`; 
+    }
+  }
+
+
+  function renderFinishCounter(id){
+    document.getElementById(`subtask-counter${id}`).innerHTML = 
+    `${finishcounter}/${tasks[id]["subtasks"].length} Subtasks`;
+  }
+
+
+  function renderSubtasksInfos(i){
+    let subtasks = tasks[i].subtasks;
+    for (let j = 0; j < subtasks.length; j++) {
+      const element = subtasks[j].subtaskName;
+      if(subtasks[j]["subtaskStatus"]===false){
+        let subtasksTask = document.getElementById("subtask-items");
+        subtasksTask.innerHTML += /*html*/ `<div class="card_subtasks_item">
+          <input id="subtask${j}" type="checkbox" class="card_checkbox" onclick="checkSubtasks(${i},${j})">
+          <p>${element}</p>
+        </div>`;  
+      } else{
+        let subtasksTask = document.getElementById("subtask-items");
+        subtasksTask.innerHTML += /*html*/ `<div class="card_subtasks_item">
+          <input checked id="subtask${j}" type="checkbox" class="card_checkbox" onclick="checkSubtasks(${i},${j})">
+          <p>${element}</p>
+        </div>`;  
+      }
+    }
+  }
+
+
+  function renderCardInfo(i) {
+    let content = document.getElementById("card-background");
+    let prioimg = prioImg(i);
+    let parts = tasks[i].dueDate.split("-");
+    let year = parseInt(parts[0]);
+    let month = parseInt(parts[1]) - 1;
+    let day = parseInt(parts[2]);
+    let formattedDate =
+      ("0" + day).slice(-2) + "." + ("0" + (month + 1)).slice(-2) + "." + year;
+  
+  content.innerHTML = /*html*/ `
+  <div class="card" onclick="dontClose()">
+          <div class="card_header">
+          <div class="card-board-user-story">
+            <span class="card-board-user-story-text" id="card_category">${tasks[i].category}</span>
+          </div>        
+          <button class="close_card" onclick="closeCardContainer()"></button>
+        </div>
+      <div class=card_limiter>
+        <div id="card_title" class="card_title">
+          ${tasks[i].title}
+        </div>
+        <p id="card_description" class="card_description">${tasks[i].description}</p>
+        <div class="main_infos_card"><p>Due date:</p><span>${formattedDate}</span></div>
+        <div class="main_infos_card"><p>Priority:</p><span>${tasks[i].prio}</span><img src=${prioimg} alt=""></div>
+        <div class="card_assigned">
+          <p>Assigned To:</p>
+          <div class="card_assignedTo" id="card_assignedTo">
+            
+          </div>
+        </div>
+        <div class="card_subtasks">
+          <p>Subtasks</p>
+          <div id="subtask-items"></div>
+        </div>
+      </div>
+      <div class="card_buttons">
+          <div class="card_div" onclick="editCard()">
+            <img src="./img/pen.svg" alt=""/>
+            <p>Edit</p>  
+          </div>
+          <div class="card_div" onclick="deleteTask(${i})">
+            <img src="./img/trash.svg" alt=""/>
+            <p>Delete</p>  
+          </div>
+      </div>`;
+  
+    renderSubtasksInfos(i);
+    renderAssigned(i);
+  }
+
+
+  function renderUpdateGreyBadge(assigned,j){
+    assigned.innerHTML += `
+    <div class="card-board-profile-batch">
+    <div class="group-9-board">
+        <div id="grey_badge" class="group-9-text" style="background-color: grey;">+${j-3}</div>
+        </div>
+        </div>`;
+  }
+  
+
+  function renderUpdateColoredBadges(assigned,colorbg,assign){
+    assigned.innerHTML += `
+    <div class="card-board-profile-batch">
+    <div class="group-9-board">
+    <div class="group-9-text" style="background-color: ${colorbg}">${assign}</div>
+    </div>
+    </div>`;
+  }
+  
+  
+  function renderUpdateHTML(task,i){
+        document.getElementById(
+        task.categoryboard
+        ).innerHTML += `<div class="card-board" draggable="true" ondragstart="rotateCardStart(${i}),moveToLocation(${i}),highlight()" id="board-card${i}" onclick="openCard(${i})" ondragend="rotateCardEnd()">
+        <div class="frame-119">
+        <div class="card-board-user-story">
+        <span class="card-board-user-story-text">${task.category}</span>
+        </div>
+        <div class="frame-114">
+        <span class="card-board-title">${task.title}</span>
+        <span class="card-board-content">${task.description}</span>
+        </div>
+        <div class="card-board-progress">
+        <div class="card-board-progress-bar">
+        <div class="card-board-progress-bar-filler" id="progress-bar-${i}"></div>
+        </div>
+        <span class="card-board-count-progress" id="subtask-counter${i}">
+        </span>
+        </div>
+        <div class="frame-139">
+        <div class="frame-217" id="assigned-to${i}">
+        </div>
+        <div class="card-board-priority">
+          <img src="./img/prio-baja-board.svg" id="prio-svg${i}" class="card-board-priority-img" />
+          </div>
+          </div>
+          </div>
+          </div>`;
+          if (task.prio == "urgent") {
+            document.getElementById(`prio-svg${i}`).src = "./img/urgent_nofill.svg";
+          } else if (task.prio == "medium") {
+            document.getElementById(`prio-svg${i}`).src = "./img/medium_nofill.svg";
+          } else if (task.prio == "low") {
+            document.getElementById(`prio-svg${i}`).src = "./img/low_nofill.svg";
+          }
+  }
+  
+  
+  
+  
