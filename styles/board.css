@@ -18,7 +18,8 @@
 
 .edit-card {
   width: 525px;
-  padding: 48px 40px 48px 40px;
+  height: 75%;
+  padding: 48px 0;
   border-radius: 30px;
   background-color: #FFFFFF;
   display: flex;
@@ -29,16 +30,18 @@
 
 .edit-addTask_helper{
     display: flex;
-    /* justify-content: center; */
     flex-direction: column;
     overflow-y: auto;
     height: fit-content;
+    padding: 0 40px;
 }
 
 .close_button_div{
   width: 100%;
   justify-content: end;
   display: flex;
+  padding: 0 40px;
+  box-sizing: border-box;
 }
 
 .edit-frame-219{
@@ -973,6 +976,12 @@ text-align: left;
   }
 
   .card {
+    width: 90%;
+  }
+}
+
+@media (max-width: 530px) {
+  .edit-card {
     width: 90%;
   }
 }
