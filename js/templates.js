@@ -417,7 +417,7 @@ function renderAssigned(i){
 function renderEditCard(content,i){
   content.innerHTML = `
   <div class="edit-card" onclick="dontClose()">
-  <div class="cose_button_div">
+  <div class="close_button_div">
   <button class="close_card" onclick="closeCardContainer()"></button>
   </div> 
   <form
@@ -492,7 +492,7 @@ function renderEditCard(content,i){
             <div
               class="frame-16"
               id="edit-prio-urgent"
-              onclick="taskPriorityChoosed('urgent');"
+              onclick="taskPriorityChoosed('urgent','edit-');"
             >
               <span>Urgent</span>
               <img
@@ -504,7 +504,7 @@ function renderEditCard(content,i){
             <div
               class="frame-25-active"
               id="edit-prio-medium"
-              onclick="taskPriorityChoosed('medium');"
+              onclick="taskPriorityChoosed('medium','edit-');"
             >
               <span>Medium</span>
               <img
@@ -516,7 +516,7 @@ function renderEditCard(content,i){
             <div
               class="frame-26"
               id="edit-prio-low"
-              onclick="taskPriorityChoosed('low');"
+              onclick="taskPriorityChoosed('low','edit-');"
             >
               <span>Low</span>
               <img

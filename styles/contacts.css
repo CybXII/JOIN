@@ -702,7 +702,7 @@ text-align: left;
 
 .leftSide {
   background-color: #2a3647;
-  width: 35%;
+  width: 453px;
   height: 592px;
   border-radius: 30px 0 0 30px;
 }
@@ -731,27 +731,14 @@ text-align: left;
   transform: translateY(20px);
 }
 
+.twoLine {
+  display: none;
+}
+
 .underlineBlue {
   height: 20px;
   width: 90px;
   transform: translateY(20px);
-}
-
-.closeImg {
-  position: absolute;
-  background-image: url(./../img/close.svg);
-  background-repeat: no-repeat;
-  background-size: cover;
-  right: 60px;
-  top: 48px;
-  height: 14px;
-  width: 14px;
-  cursor: pointer;
-  border-radius: 100%;
-}
-
-.closeImg:hover {
-  background-color: #d1d1d1;
 }
 
 .rightSide {
@@ -759,7 +746,7 @@ text-align: left;
   justify-content: space-around;
   align-items: center;
   position: relative;
-  gap: 40px;
+  gap: 5px;
   height: 592px;
   width: 759px;
   left: 4px;
@@ -776,6 +763,24 @@ text-align: left;
   width: 120px;
   background-color: red;
   border-radius: 100%;
+}
+
+.closeImg {
+  position: absolute;
+  margin-right: 0;
+  background-image: url(./../img/close.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  right: 60px;
+  top: 48px;
+  height: 14px;
+  width: 14px;
+  cursor: pointer;
+  border-radius: 100%;
+}
+
+.closeImg:hover {
+  background-color: #d1d1d1;
 }
 
 
@@ -968,6 +973,14 @@ text-align: left;
     word-wrap: break-word;
   }
 
+  .contacts-card {
+    width: 95%;
+  }
+
+  .twoLine {
+    display: none;
+  }
+
 }
 
 @media (max-width: 1040px) {
@@ -998,6 +1011,16 @@ text-align: left;
 
   .frame-97 .primary-contact {
     width: 320px;
+  }
+
+  .contacts-card {
+    position: relative;
+    z-index: 300;
+    width: 90%;
+  }
+
+  .twoLine {
+    display: none;
   }
 
 }
@@ -1053,6 +1076,73 @@ text-align: left;
     bottom: 100px;
   }
 
+  .contacts-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 760px;
+    width: 396px;
+  }
+
+  .leftSide {
+    width: 396px;
+    height: 351px;
+    border-radius: 30px 30px 0 0;
+  }
+
+  .testContainer {
+    padding-top: 80px;
+    padding-left: 40px;
+  }
+
+
+  .joinLogo {
+    display: none;
+  }
+
+  .underlineBlue {
+    width: 100px;
+  }
+
+  .rightSide {
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    top: -90px;
+  }
+
+  .closeImg {
+    background-image: url(./../img/close-white.svg);
+    width: 32px;
+    height: 32px;
+    top: -170px;
+    right: 220px;
+  }
+
+  .add-contacts-form {
+    margin-left: 45px;
+  }
+
+  .add-contacts-form input {
+    width: 364px;
+  }
+
+  .underButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+  }
+
+  .add-contact-cancel {
+    display: none;
+  }
+
+  .twoLine {
+    display: none;
+  }
+
 }
 
 @media (max-width: 420px) {
@@ -1064,5 +1154,111 @@ text-align: left;
     width: 248px;
   }
 
+  .contacts-card {
+    width: 90%;
+    height: 710px;
+  }
+
+  .leftSide {
+    width: 100%;
+  }
+
+  .testContainer {
+    padding-top: 20px;
+  }
+
+  .testContainer h1 {
+    line-height: 1.55;
+  }
+
+  .twoLine {
+    display: inline;
+  }
+
+  .rightSide {
+    top: -60px;
+  }
+
+  .closeImg {
+    margin-right: 50px;
+    margin-top: 0;
+  }
+
+  .add-contacts-form {
+    margin-left: 100px;
+  }
+
+  .add-contacts-form input {
+    width: 300px;
+  }
+
+  .underButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .createContact {
+    margin-left: -60px;
+  }
+
+}
+
+@media (max-width: 320px) {
+
+  .frame-97 .contact-name {
+    width: 248px;
+  }  
+
+  .active_contact {
+    width: 248px;
+  }
+
+  .contacts-card {
+    width: 90%;
+    height: 720px;
+  }
+
+  .leftSide {
+    width: 100%;
+  }
+
+  .testContainer {
+    padding-top: 20px;
+  }
+
+  .testContainer h1 {
+    line-height: 1.55;
+  }
+
+  .twoLine {
+    display: inline;
+  }
+
+  .rightSide {
+    top: -60px;
+  }
+
+  .closeImg {
+    margin-right: 50px;
+  }
+
+  .add-contacts-form {
+    margin-left: 160px;
+  }
+
+  .add-contacts-form input {
+    width: 250px;
+  }
+
+  .underButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .createContact {
+    margin-left: -105px;
+  }
 }
  

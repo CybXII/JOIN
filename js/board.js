@@ -7,6 +7,8 @@ let tasksAwaitFeedback;
 let tasksUrgent;
 let finishcounter = 0;
 let tasks = [];
+let editTaskPriority;
+
 
 
 async function renderBoardTasks() {
