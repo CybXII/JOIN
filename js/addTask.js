@@ -11,6 +11,10 @@ let userInitialsAssignedtoBadges = [];
 let userColorsAssignedtoBadges = [];
 let editingCard;
 
+/**
+ * Asynchronously renders the add task functionality.
+ *
+ */
 async function renderAddTask() {
   await loadUsersFromLocalStorage();
   classesAddTask();
@@ -18,6 +22,10 @@ async function renderAddTask() {
   await loadRemoteUser();
 }
 
+/**
+ * Configures the date picker by setting the minimum date allowed.
+ *
+ */
 function configureDatePicker() {
   function setMinDate() {
     let today = new Date();
@@ -32,6 +40,13 @@ function configureDatePicker() {
 
 document.addEventListener("DOMContentLoaded", configureDatePicker);
 
+/**
+ * A function to handle the priority of a task.
+ *
+ * @param {number} i - the priority value
+ * @param {string} handler - the handler type
+ * @return {void}
+ */
 function taskPriorityChoosed(i, handler) {
   if (handler === "edit-") {
     taskpriority = i;
@@ -43,12 +58,24 @@ function taskPriorityChoosed(i, handler) {
   }
 }
 
+/**
+ * Edit a card.
+ *
+ * @param {number} i - the index of the card to edit
+ * @return {undefined} 
+ */
 function editCard(i){
   let content = document.getElementById("card-background");
   editingCard=i;
   renderEditCard(content,i);
 }
 
+/**
+ * Set checkboxes for editing a card.
+ *
+ * @param {Object} editingCard - the card being edited
+ * @return {undefined} 
+ */
 function setCheckBoxesEdit(editingCard){
   tasks[editingCard]['assignedToID'].forEach((element) => {
     const checkbox = document.getElementById(`edit-checkbox${element}`);
@@ -66,11 +93,23 @@ function setCheckBoxesEdit(editingCard){
 
 }
 
+/**
+ * Deletes a subtask at the specified index.
+ *
+ * @param {number} i - The index of the subtask to delete
+ * @return {void} 
+ */
 function deleteSubtask(i) {
   subtasksAdd.splice(i, 1);
   renderAddSubtasks();
 }
 
+/**
+ * Shows subtask icons and adds a background to the specified subtask.
+ *
+ * @param {number} i - The index of the subtask
+ * @return {void} 
+ */
 function showSubtaskIcons(i) {
   document.getElementById(`subtask-icons-${i}`).classList.remove("d-none");
   document
@@ -78,6 +117,12 @@ function showSubtaskIcons(i) {
     .classList.add("subtask-background");
 }
 
+/**
+ * Hides the subtask icons and removes the subtask background for the given index.
+ *
+ * @param {number} i - The index of the subtask
+ * @return {void}
+ */
 function hideSubtaskIcons(i) {
   document.getElementById(`subtask-icons-${i}`).classList.add("d-none");
   document
@@ -85,6 +130,12 @@ function hideSubtaskIcons(i) {
     .classList.remove("subtask-background");
 }
 
+/**
+ * Function to handle task priority and render corresponding UI.
+ *
+ * @param {function} handler - The handler function for rendering UI.
+ * @return {void} 
+ */
 function taskPriorityActive(handler) {
   if (taskpriority == "urgent") {
     renderUrgent(handler);
@@ -95,6 +146,12 @@ function taskPriorityActive(handler) {
   }
 }
 
+/**
+ * Function to show a message box, set form validation to false, then redirect to the board page after a delay.
+ *
+ * @param {} - No parameters
+ * @return {} - No return value
+ */
 function taskAddedCompleteText() {
   document.getElementById("msgBox-bg").classList.remove("d-none");
   document.querySelector("form").noValidate = true;
@@ -104,6 +161,12 @@ function taskAddedCompleteText() {
   }, 2000);
 }
 
+/**
+ * Fill the input field with the given string and call the corresponding handler function.
+ *
+ * @param {string} inputString - The string to fill the input field with.
+ * @param {string} handler - The handler to determine which function to call.
+ */
 function fillInputField(inputString, handler) {
   if (handler === "edit-") {
     document.getElementById(
@@ -116,6 +179,9 @@ function fillInputField(inputString, handler) {
   }
 }
 
+/**
+ * Clears the fields in the add task form, including resetting the form, resetting the category list, clearing the assigned-to list, and resetting various task-related variables.
+ */
 function clearFields() {
   document.getElementById("addTaskForm").reset();
   document.getElementById("category-list2").innerHTML = `Select Task Category`;
@@ -128,10 +194,20 @@ function clearFields() {
   renderAddSubtasks();
 }
 
+/**
+ * Resets the value of the subtasks input field to an empty string.
+ *
+ */
 function resetSubtasks() {
   document.getElementById("subtasks").value = ``;
 }
 
+/**
+ * Render the assigned users based on the handler type.
+ *
+ * @param {string} handler - the type of handler
+ * @return {void} 
+ */
 function renderAssignedTo(handler) {
   if (handler === "edit-") {
     let assigncontent = document.getElementById("edit-assigned-list");
@@ -179,6 +255,10 @@ function renderAssignedTo(handler) {
   }
 }
 
+/**
+ * Opens the assign-to dropdown and adds event listeners to handle click events.
+ *
+ */
 function openAssignTo() {
   // renderAssignedUserAddTask();
   let logoutBox = document.getElementById("list1");
@@ -201,6 +281,9 @@ function openAssignTo() {
   });
 }
 
+/**
+ * Opens the category box and handles the UI changes based on its visibility.
+ */
 function openCategory() {
   let categoryBox = document.getElementById("list2");
   let categoryInput = document.getElementById("category-list2");
@@ -222,6 +305,12 @@ function openCategory() {
   });
 }
 
+/**
+ * Adds subtasks to the subtasksAdd array and renders the updated list of subtasks.
+ *
+ * @param {type} subtaskstoadd - the subtask to be added
+ * @return {type} undefined
+ */
 function addSubtasks() {
   let subtaskstoadd = document.getElementById("subtasks").value;
 
@@ -236,6 +325,12 @@ function addSubtasks() {
   }
 }
 
+/**
+ * Renders and updates the subtasks in the subtasks-container element.
+ *
+ * @param {type} paramName - description of parameter
+ * @return {type} description of return value
+ */
 function renderAddSubtasks() {
   document.getElementById("subtasks-container").innerHTML = "";
   for (let i = 0; i < subtasksAdd.length; i++) {
@@ -268,6 +363,12 @@ function renderAddSubtasks() {
   }
 }
 
+/**
+ * Edit a subtask in the DOM.
+ *
+ * @param {number} i - The index of the subtask to be edited
+ * @return {void} 
+ */
 function editSubtask(i) {
   let container = document.getElementById(`subtask-comp-${i}`);
   // let nr = findSubtaskPosition(id);
@@ -276,6 +377,13 @@ function editSubtask(i) {
   hideSubtaskIcons(i);
 }
 
+/**
+ * Function to edit subtask HTML.
+ *
+ * @param {string} textContent - the text content to be edited
+ * @param {number} i - index of the subtask
+ * @return {string} the edited HTML content
+ */
 function editSubTaskHtml(textContent, i) {
   return /*html*/ `
       <div class="editSubTaskButtonBox" id="subtask-icons-${i}"></div> 
@@ -291,12 +399,25 @@ function editSubTaskHtml(textContent, i) {
   `;
 }
 
+/**
+ * Updates a subtask at the specified index and re-renders the list of subtasks.
+ *
+ * @param {number} i - The index of the subtask to be updated.
+ * @return {void} 
+ */
 function addEditSubTask(i) {
   let subTaskInput = document.getElementById("editSubTaskInput");
   subtasksAdd[i].subtaskName = subTaskInput.value;
   renderAddSubtasks();
 }
 
+/**
+ * A function that adds a class when the checkbox is changed.
+ *
+ * @param {type} userid - the id of the user
+ * @param {type} handler - the handler for the checkbox change
+ * @return {type} undefined
+ */
 function addClassOnCheckboxChange(userid, handler) {
   if (handler === "edit-") {
     setCheckBoxes(userid, handler);
@@ -306,6 +427,12 @@ function addClassOnCheckboxChange(userid, handler) {
   }
 }
 
+/**
+ * Sets the checkboxes for a given user ID based on the handler.
+ *
+ * @param {string} userid - The user ID
+ * @param {string} handler - The handler for the checkboxes
+ */
 function setCheckBoxes(userid, handler) {
   const checkbox = document.getElementById(`${handler}checkbox${userid}`);
   const divElement = document.getElementById(
@@ -333,6 +460,10 @@ function setCheckBoxes(userid, handler) {
   }
 }
 
+/**
+ * Iterates through the users assigned to and retrieves their initials, ID, and color from the remote user assignments. 
+ * If the remote user ID matches the index, the user initials, ID, and color are added to their respective arrays.
+ */
 function setInitials() {
   for (let i = 0; i < usersassignedto.length; i++) {
     let index = usersassignedto[i];
@@ -348,6 +479,13 @@ function setInitials() {
   // addTasksToStorage();
 }
 
+/**
+ * Sets the initial assigned badges and colors, clears the assigned-to-add-task-list,
+ * loops through the usersassignedto array to collect initials and colors, and renders the badges for adding a task.
+ *
+ * @param {type} paramName - description of parameter
+ * @return {type} description of return value
+ */
 function setBadgesAddTask() {
   userInitialsAssignedtoBadges = [];
   userColorsAssignedtoBadges = [];
@@ -365,6 +503,12 @@ function setBadgesAddTask() {
   renderBadgesAddTask();
 }
 
+/**
+ * Renders badges for adding tasks.
+ *
+ * @param {type} paramName - description of parameter
+ * @return {type} description of return value
+ */
 function renderBadgesAddTask() {
   for (let i = 0; i < userInitialsAssignedtoBadges.length; i++) {
     const initials = userInitialsAssignedtoBadges[i];
@@ -374,6 +518,14 @@ function renderBadgesAddTask() {
   }
 }
 
+/**
+ * Renders badges based on the provided initials, color, content, and index.
+ *
+ * @param {string} initials - The initials to be displayed on the badge
+ * @param {string} color - The background color of the badge
+ * @param {HTMLElement} content - The HTML element to which the badges will be rendered
+ * @param {number} i - The index used to determine badge rendering logic
+ */
 function renderBadges(initials, color, content, i) {
   if (i <= 3) {
     content.innerHTML += /*html*/ `<div class="assigned-to-add-task-user" style="background-color: ${color}">${initials}</div>`;
@@ -390,6 +542,12 @@ function renderBadges(initials, color, content, i) {
   }
 }
 
+/**
+ * Render assigned user task handler
+ *
+ * @param {string} handler - the handler type
+ * @return {void} 
+ */
 function renderAssignedUserAddTask(handler) {
   if (handler === "edit-") {
     for (let i = 0; i < usersassignedto.length; i++) {
@@ -410,15 +568,35 @@ function renderAssignedUserAddTask(handler) {
   }
 }
 
+/**
+ * Function to push category to JSON.
+ *
+ * @return {string} The task category from the "category-list2" element.
+ */
 function pushCategoryToJSON() {
   let taskCategory = document.getElementById("category-list2").innerHTML;
   return taskCategory;
 }
 
+/**
+ * Add tasks to storage.
+ *
+ * @param {type} categoryInput - input for category
+ * @return {type} 
+ */
 function addTasksToStorage(categoryInput) {
   checkInputFields(categoryInput);
 }
 
+/**
+ * Performs a check before making changes based on the provided title, date, category, and category input.
+ *
+ * @param {string} title - The title parameter
+ * @param {string} date - The date parameter
+ * @param {string} category - The category parameter
+ * @param {string} categoryInput - The category input parameter
+ * @return {void} 
+ */
 function checkInputFields(categoryInput) {
   let title = document.getElementById("task-title").value;
   let date = document.getElementById("datePicker").value;
@@ -427,6 +605,15 @@ function checkInputFields(categoryInput) {
   checkBeforChange(title, date, category, categoryInput);
 }
 
+/**
+ * Check before making changes based on the provided title, date, category, and category input.
+ *
+ * @param {string} title - The title input
+ * @param {string} date - The date input
+ * @param {string} category - The selected category
+ * @param {string} categoryInput - The category input
+ * @return {void} 
+ */
 function checkBeforChange(title, date, category, categoryInput) {
   if (date != "" && title != "" && category != "Select Task Category") {
     setInitials();
@@ -439,6 +626,12 @@ function checkBeforChange(title, date, category, categoryInput) {
   }
 }
 
+/**
+ * Change the state of the category input based on the selected category.
+ *
+ * @param {string} category - The selected category
+ * @return {void} 
+ */
 function changeStateCategoryInput(category) {
   if (category === "Select Task Category") {
     document.getElementById("category-border").classList.add("redBorder");
@@ -449,6 +642,12 @@ function changeStateCategoryInput(category) {
   }
 }
 
+/**
+ * Changes the state of the date input based on the provided date.
+ *
+ * @param {string} date - The date input value
+ * @return {void} 
+ */
 function changeStateDateInput(date) {
   if (date === "") {
     document.getElementById("datePicker").classList.add("redBorder");
@@ -459,6 +658,12 @@ function changeStateDateInput(date) {
   }
 }
 
+/**
+ * Function to change the state of the title input based on the input value.
+ *
+ * @param {string} title - The input title value
+ * @return {void} No return value
+ */
 function changeStateTitleInput(title) {
   if (title === "") {
     document.getElementById("warning-info-1").style = "display: block";
@@ -469,6 +674,12 @@ function changeStateTitleInput(title) {
   }
 }
 
+/**
+ * Adds a task to the specified board.
+ *
+ * @param {type} input - description of the input parameter
+ * @return {type} description of the return value
+ */
 async function addTasktoBoard(input) {
   await loadTasks();
   let title = document.getElementById("task-title");
@@ -497,6 +708,11 @@ async function addTasktoBoard(input) {
   taskAddedCompleteText();
 }
 
+/**
+ * Reset the tasks board by updating the tasks array and then storing it in the local storage.
+ *
+ * @return {Promise<void>} A Promise that resolves when the tasks array is successfully stored in the local storage.
+ */
 async function resetTasksBoard() {
   tasks = [
     {
@@ -603,6 +819,12 @@ async function resetTasksBoard() {
   await setItem("tasks", JSON.stringify(tasks));
 }
 
+/**
+ * Change the buttons and set an event listener for subtasks.
+ *
+ * @param {Event} event - The event object
+ * @return {void} 
+ */
 function changeButtons(event) {
   event.preventDefault();
   parent_div = document.getElementById("parent_subtasks");
@@ -613,6 +835,11 @@ function changeButtons(event) {
   setEventListenerSubtask(parent_div);
 }
 
+/**
+ * Set event listener on the parent div to handle click events outside of the div.
+ *
+ * @param {Object} parent_div - the parent div to attach the event listener to
+ */
 function setEventListenerSubtask(parent_div) {
   window.addEventListener("click", function (e) {
     if (!parent_div.contains(e.target)) {
@@ -636,6 +863,12 @@ function setEventListenerSubtask(parent_div) {
   });
 }
 
+/**
+ * Function to render urgent priority for the given handler.
+ *
+ * @param {string} handler - The identifier for the element
+ * @return {void} 
+ */
 function renderUrgent(handler) {
   document.getElementById(`${handler}prio-urgent`).classList.remove("frame-16");
   document
@@ -657,6 +890,12 @@ function renderUrgent(handler) {
     "./img/low_nofill.svg";
 }
 
+/**
+ * Function to render the medium priority handler.
+ *
+ * @param {string} handler - The handler to be rendered
+ * @return {void} 
+ */
 function renderMedium(handler) {
   document.getElementById(`${handler}prio-medium`).classList.remove("frame-25");
   document
@@ -678,6 +917,12 @@ function renderMedium(handler) {
     "./img/urgent_nofill.svg";
 }
 
+/**
+ * Function to render the low priority handler.
+ *
+ * @param {handler} handler - The handler for which the low priority should be rendered
+ * @return {void} This function does not return anything
+ */
 function renderLow(handler) {
   document.getElementById(`${handler}prio-low`).classList.remove("frame-26");
   document
