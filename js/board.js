@@ -74,7 +74,7 @@ async function updateHTML() {
   document.getElementById("done").innerHTML = "";
   tasks.forEach(function (task, i) {
       renderUpdateHTML(task,i);
-      renderUpdateAssigned(task);
+      renderUpdateAssigned(task,i);
       finishedSubtasks(i);
       renderFinishCounter(i);
       finishcounter = 0;
@@ -97,7 +97,7 @@ function openAddTaskContainer(categoryInput) {
 }
 
 
-function renderUpdateAssigned(task){
+function renderUpdateAssigned(task,i){
   let assigned = document.getElementById(`assigned-to${i}`);
   for (let j = 0; j < task["assignedTo"].length; j++) {
     const assign = task["assignedTo"][j];
