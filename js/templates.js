@@ -423,7 +423,7 @@ function renderEditCard(content,i){
   <form
     id="editTaskForm"
     class="edit-addTask_helper"
-    onsubmit="editTasksfromStorage(${tasks[i]["categoryboard"]}]); return false;"
+    onsubmit="editTasksfromStorage(${tasks[i]["categoryboard"]},${i}]); return false;"
     >
     <div class="edit-input-fields">
       <div class="edit-frame-219">
@@ -553,7 +553,7 @@ function renderEditCard(content,i){
             <input
               id="edit-subtasks"
               type="text"
-              onclick="changeButtons(event)"
+              onclick="changeButtonsCard(event)"
               class="subtasks"
               placeholder="Add new subtask"
             />
@@ -566,7 +566,7 @@ function renderEditCard(content,i){
               />
               <img
                 id="edit-subtask_cancel_button"
-                onclick="resetSubtasks()"
+                onclick="resetSubtasksCard()"
                 class="subtask_add_button d-none"
                 src="../img/cancel.svg"
                 alt=""
@@ -582,19 +582,19 @@ function renderEditCard(content,i){
                 class="subtask_add_button d-none"
                 src="../img/subtasks_add.svg"
                 alt=""
-                onclick="editSubtasks(${i})"
+                onclick="addSubtasksCard()"
               />
             </div>
           </div>
           <div
             class="subtasks-container"
-            id="edit-subtasks-container-${i}"
+            id="edit-subtasks-container"
           ></div>
         </div>
       </div>
     </div>
     <div class="edit-frame-27">
-        <button class="primary-check-button" type="submit">
+        <button class="primary-check-button" type="submit" onclick="editTasksfromStorage(${i}); return false; closeCardContainer()">
           <span>OK</span>
           <img
             src="../img/check-out-wheite.svg"
