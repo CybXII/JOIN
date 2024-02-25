@@ -1,5 +1,12 @@
 // TODO: NUR DYNAMISCHEN INHALT RENDERN
 
+/**
+ * Initializes the function with the specified input, checks if the function is in the global context,
+ * and executes it if found; otherwise, logs an error.
+ *
+ * @param {string} input - The input to be used for function initialization.
+ * @return {Promise<void>} A Promise that resolves once the function has been executed or an error has been logged.
+ */
 async function includeHTMLInit(input) {
   let functionName = `render${input}`;
   await includeHTML();
@@ -13,6 +20,11 @@ async function includeHTMLInit(input) {
   }
 }
 
+/**
+ * Renders the HTML for the sign-up form.
+ *
+ * @return {string} The HTML content for the sign-up form
+ */
 function renderSignUpHTML() {
   return /*html*/ `
   <div class="frame-159-su">
@@ -136,6 +148,11 @@ function renderSignUpHTML() {
 `;
 }
 
+/**
+ * Renders the HTML for the login form.
+ *
+ * @return {string} The HTML for the login form
+ */
 function renderLoginHTML() {
   return /*html*/ `        <div class="frame-159">
           <div class="text-wrapper">Log in</div>
@@ -204,6 +221,13 @@ function renderLoginHTML() {
 }
 
 
+/**
+ * Render a filtered card to the specified category.
+ *
+ * @param {Object} task - The task object to render
+ * @param {number} i - The index of the card
+ * @param {string} categorys - The category to render the card in
+ */
 function renderFilteredCard(task, i, categorys) {
   document.getElementById(categorys).innerHTML += `
   <div class="card-board" draggable="true" ondragstart="rotateCardStart(${i}),moveToLocation(${i}),highlight()" id="board-card${i}" onclick="openCard(${i})" ondragend="rotateCardEnd()">
@@ -235,6 +259,11 @@ function renderFilteredCard(task, i, categorys) {
 }
 
 
+/**
+ * Renders the assigned tasks for a given index.
+ *
+ * @param {number} i - The index of the task to render
+ */
 function renderAssigned(i){
   let assignedTask = tasks[i].assignedTo;
   let colorsTask = tasks[i].colors;
@@ -253,37 +282,25 @@ function renderAssigned(i){
     }
   }
 
-  // function renderEditAssignedTo() {
-  //   let assigncontent = document.getElementById("edit-assigned-list");
-  //   remoteuserAssign.forEach((element, i) => {
-  //     const fullname = element.name;
-  //     const initials = element.initials;
-  //     const color = element.color;
-  //     assigncontent.innerHTML += /*html*/ `<li id="edit-catergory_list_${i}">
-  //       <div class="active_contact">
-  //         <div class="profile-badge">
-  //           <div class="group">
-  //             <div class="overlap-group" style="background-color: ${color}">
-  //               <div class="text-wrapper-2">${initials}</div>
-  //             </div>
-  //           </div>
-  //         </div>
-  //         <span  id="edit-fullname-addtask-dd-${i}">${fullname}</span>
-  //         <input id="edit-checkbox${i}" type="checkbox" class="checkbox" onclick="addClassOnCheckboxChange(${i},'edit-'), setBadgesAddTask()" />
-  //       </div>
-  //     </li>
-  //     `;
-  //   }, (assigncontent.innerHTML = ""));
-  // }
-  
 
-
+  /**
+   * Renders the finish counter for a specific ID.
+   *
+   * @param {type} id - the ID of the element
+   * @return {type} undefined
+   */
   function renderFinishCounter(id){
     document.getElementById(`subtask-counter${id}`).innerHTML = 
     `${finishcounter}/${tasks[id]["subtasks"].length} Subtasks`;
   }
 
 
+  /**
+   * Render subtask information for a given task.
+   *
+   * @param {number} i - Index of the task
+   * @return {undefined} This function does not return anything
+   */
   function renderSubtasksInfos(i){
     let subtasks = tasks[i].subtasks;
     for (let j = 0; j < subtasks.length; j++) {
@@ -304,7 +321,12 @@ function renderAssigned(i){
     }
   }
 
-
+  
+  /**
+   * Renders the card information based on the given index.
+   *
+   * @param {number} i - The index of the card to render
+   */
   function renderCardInfo(i) {
     let content = document.getElementById("card-background");
     let prioimg = prioImg(i);
@@ -354,6 +376,13 @@ function renderAssigned(i){
   }
 
 
+  /**
+   * Renders and updates the grey badge on the assigned element.
+   *
+   * @param {HTMLElement} assigned - the element to which the grey badge will be added
+   * @param {number} j - the value used to update the grey badge
+   * @return {void} 
+   */
   function renderUpdateGreyBadge(assigned,j){
     assigned.innerHTML += `
     <div class="card-board-profile-batch">
@@ -363,7 +392,15 @@ function renderAssigned(i){
         </div>`;
   }
   
-
+  
+  /**
+   * Renders and updates colored badges on the assigned element.
+   *
+   * @param {HTMLElement} assigned - the element to which the colored badges will be added
+   * @param {string} colorbg - the background color for the badge
+   * @param {string} assign - the content of the badge
+   * @return {void}
+   */
   function renderUpdateColoredBadges(assigned,colorbg,assign){
     assigned.innerHTML += `
     <div class="card-board-profile-batch">
@@ -374,6 +411,13 @@ function renderAssigned(i){
   }
   
   
+  /**
+   * Renders and updates the HTML for a task.
+   *
+   * @param {type} task - the task object to render
+   * @param {type} i - the index of the task
+   * @return {type} undefined
+   */
   function renderUpdateHTML(task,i){
         document.getElementById(
         task.categoryboard
@@ -411,6 +455,13 @@ function renderAssigned(i){
           }
   }
 
+/**
+ * Renders the edit card with the given content and index.
+ *
+ * @param {HTMLElement} content - the content to be rendered in the edit card
+ * @param {number} i - the index of the edit card
+ * @return {void} 
+ */
 function renderEditCard(content,i){
   content.innerHTML = `
   <div class="edit-card" onclick="dontClose()">
