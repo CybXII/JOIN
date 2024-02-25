@@ -10,6 +10,42 @@
   padding: 0 64px 0 64px;
 }
 
+.edit-input-fields{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.edit-card {
+  width: 525px;
+  padding: 48px 40px 48px 40px;
+  border-radius: 30px;
+  background-color: #FFFFFF;
+  display: flex;
+  gap: 8px;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+.edit-addTask_helper{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.edit-frame-27{
+  display: flex;
+  justify-content: end;
+}
+
+.edit-frame-39 {
+  display: flex;
+  width: 440px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 24px;
+}
+
 .frame-192 {
   display: flex;
   justify-content: space-between;

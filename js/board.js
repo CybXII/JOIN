@@ -288,3 +288,16 @@ async function checkSubtasks(i, j){
   await setItem("tasks", JSON.stringify(tasks));
   updateHTML();
 }
+
+function editCard(i){
+  let content = document.getElementById("card-background");
+  renderEditCard(content,i);
+}
+
+function editTasksfromStorage(){
+  console.log('Hier kommt die save Edit funcion');
+}
+
+function editSubtasks(){
+  console.log('Hier kommt die save Edit funcion');
+}

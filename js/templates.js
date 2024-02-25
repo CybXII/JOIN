@@ -318,7 +318,7 @@ function renderAssigned(i){
         </div>
       </div>
       <div class="card_buttons">
-          <div class="card_div" onclick="editCard()">
+          <div class="card_div" onclick="editCard(${i})">
             <img src="./img/pen.svg" alt=""/>
             <p>Edit</p>  
           </div>
@@ -389,6 +389,195 @@ function renderAssigned(i){
             document.getElementById(`prio-svg${i}`).src = "./img/low_nofill.svg";
           }
   }
+
+function renderEditCard(content,i){
+  content.innerHTML = `
+  <div class="edit-card" onclick="dontClose()">
+  <form
+    id="editTaskForm"
+    class="edit-addTask_helper"
+    onsubmit="editTasksfromStorage(${tasks[i]['categoryboard']}]); return false;"
+    >
+    <div class="edit-input-fields">
+      <div class="edit-frame-219">
+        <div class="title-v1">
+          <div class="title">Title<span class="red">*</span></div>
+          <div class="frame-203">
+            <div class="frame-14">
+              <input
+                class="input-title"
+                placeholder="Enter a title"
+                type="text"
+                name="title"
+                id="edit-task-title"
+                value="${tasks[i]["title"]}"
+              />
+            </div>
+          </div>
+        </div>
+        <div class="description-v1">
+          <span>Description</span>
+          <div class="frame-207">
+            <div class="frame-17">
+              <textarea
+                class="input-title"
+                placeholder="Enter a Description"
+                type="text"
+                name="description"
+                id="edit-task-description"
+              >${tasks[i]["description"]}</textarea>
+            </div>
+          </div>
+        </div>
+        <div class="asigned-to-v1">
+          <span class="assigned-to">Assigned to</span>
+          <div id="edit-list1" class="dropdown-check-list" tabindex="100">
+            <div onclick="renderAssignedTo(), openAssignTo()">
+              <span class="anchor">Select contacts to assign</span>
+            </div>
+            <ul class="items">
+              <div id="edit-assigned-list"></div>
+            </ul>
+          </div>
+        </div>
+        <div
+          class="assigned-to-add-task-list"
+          id="edit-assigned-to-add-task-list"
+        ></div>
+      </div>
+      <div class="edit-frame-39">
+        <div class="due-date-v1">
+          <div for="title">Due date<span class="red">*</span></div>
+          <div class="frame-211">
+            <div class="frame-15">
+              <input
+                class="input-title"
+                type="date"
+                id="edit-datePicker"
+              />
+            </div>
+          </div>
+        </div>
+        <div class="frame-28">
+          <div for="title">Prio</div>
+          <div class="priority">
+            <div
+              class="frame-16"
+              id="edit-prio-urgent"
+              onclick="taskPriorityChoosed('urgent');"
+            >
+              <span>Urgent</span>
+              <img
+                id="edit-prio-urgent-img"
+                src="./img/urgent_nofill.svg"
+                alt="prio-alta-red"
+              />
+            </div>
+            <div
+              class="frame-25-active"
+              id="edit-prio-medium"
+              onclick="taskPriorityChoosed('medium');"
+            >
+              <span>Medium</span>
+              <img
+                id="edit-prio-medium-img"
+                src="./img/medium_fill.svg"
+                alt="prio-media"
+              />
+            </div>
+            <div
+              class="frame-26"
+              id="edit-prio-low"
+              onclick="taskPriorityChoosed('low');"
+            >
+              <span>Low</span>
+              <img
+                id="edit-prio-low-img"
+                src="./img/low_nofill.svg"
+                alt="prio-baja"
+              />
+            </div>
+          </div>
+        </div>
+        <div class="category">
+          <div for="title">Category<span class="red">*</span></div>
+          <div id="edit-list2" class="dropdown-check-list2" tabindex="100">
+            <div onclick="openCategory()">
+              <span id="edit-category-border" class="anchor">
+                <span id="edit-category-list2">${tasks[i]['category']}</span>
+              </span>
+            </div>
+            <ul class="items">
+              <div id="edit-category-list2-items">
+                <li onclick="fillInputField('Technical Task')">
+                  Technical Task
+                </li>
+                <li onclick="fillInputField('User Story')">
+                  User Story
+                </li>
+              </div>
+            </ul>
+          </div>
+        </div>
+        <div class="subtask-v1-reconstrution">
+          <div>Subtasks</div>
+          <div id="edit-parent_subtasks" class="frame-18">
+            <input
+              id="edit-subtasks"
+              type="text"
+              onclick="changeButtons(event)"
+              class="subtasks"
+              placeholder="Add new subtask"
+            />
+            <div class="subtasks_buttons">
+              <img
+                id="edit-subtask_add_button"
+                class="subtask_add_button"
+                src="../img/add_icon.svg"
+                alt=""
+              />
+              <img
+                id="edit-subtask_cancel_button"
+                onclick="resetSubtasks()"
+                class="subtask_add_button d-none"
+                src="../img/cancel.svg"
+                alt=""
+              />
+              <img
+                id="edit-subtask_seperator"
+                class="subtask_add_button d-none"
+                src="../img/subtask_seperator.svg"
+                alt=""
+              />
+              <img
+                id="edit-subtask_accept_button"
+                class="subtask_add_button d-none"
+                src="../img/subtasks_add.svg"
+                alt=""
+                onclick="editSubtasks()"
+              />
+            </div>
+          </div>
+          <div
+            class="subtasks-container"
+            id="edit-subtasks-container"
+          ></div>
+        </div>
+      </div>
+    </div>
+    <div class="edit-frame-27">
+        <button class="primary-check-button" type="submit">
+          <span>OK</span>
+          <img
+            src="../img/check-out-wheite.svg"
+            alt="check-out-wheite"
+          />
+        </button>
+    </div>
+  </form>
+  </div>
+`;
+}
   
   
   
