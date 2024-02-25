@@ -745,6 +745,11 @@ text-align: left;
   height: 14px;
   width: 14px;
   cursor: pointer;
+  border-radius: 100%;
+}
+
+.closeImg:hover {
+  background-color: #d1d1d1;
 }
 
 .rightSide {
