@@ -300,9 +300,11 @@ async function checkSubtasks(i, j){
 }
 
 
-function editTasksfromStorage(i){
+async function editTasksfromStorage(i){
   tasks[i] = currentTask;
-  // setItem("tasks", JSON.stringify(tasks));
+  closeCardContainer();
+  await setItem("tasks", JSON.stringify(tasks));
+  updateHTML();
 }
 
 function editSubtasks(i){
@@ -312,12 +314,12 @@ function editSubtasks(i){
   subtasksAddCard.push(subtasksAdd[0]);
 
   document.getElementById(`edit-subtasks-container`).innerHTML = "";
-  for (let j = 0; j < subtasksAddCard[0].length; j++) {
-    const element = subtasksAddCard[0][j].subtaskName;
+  for (let j = 0; j < currentTask.subtasks.length; j++) {
+    const element = currentTask.subtasks[j].subtaskName;
     let content = document.getElementById(`edit-subtasks-container`);
     content.innerHTML += /*html*/ `
     <div id="subtask-comp-${j}">
-    <div class="subtask-comp" onmouseover="showSubtaskIcons(${j})" onmouseleave="hideSubtaskIcons(${j})">
+    <div class="subtask-comp" onmouseover="showSubtaskIconsCard(${j})" onmouseleave="hideSubtaskIconsCard(${j})">
                     <span class="subtask-task" id='subtask${j}' ondblclick="editSubtaskCard(${i},${j})" 
                       >⦁ ${element}</span
                     >
@@ -345,17 +347,17 @@ function editSubtasks(i){
 }
 
 function editSubtaskCard(i, j) {
-  let container = document.getElementById(`subtask-comp-${j}`);
-  let textContent = subtasksAddCard[0][j].subtaskName;
+  let container = document.getElementById(`subtask-comp-${i}`);
+  let textContent = currentTask.subtasks[i].subtaskName;
   container.innerHTML = editSubTaskHtmlCard(textContent, i, j);
-  hideSubtaskIcons(j);
+  hideSubtaskIconsCard(j);
 }
 
 async function addEditSubTaskCard(i, j) {
   let subTaskInput = document.getElementById("editSubTaskInput");
-  subtasksAddCard[0][i].subtaskName = subTaskInput.value;
-  currentTask.subtasks[j].subtaskName = subTaskInput.value;
-  editSubtasks(i);
+  currentTask.subtasks[i].subtaskName = subTaskInput.value;
+  editSubtaskCard(i, j);
+  renderAddSubtasksCard(i);
 }
 
 function editSubTaskHtmlCard(textContent, i, j) {
@@ -364,7 +366,7 @@ function editSubTaskHtmlCard(textContent, i, j) {
     <div class="subtask-edit-container">
       <input id="editSubTaskInput" type="text" class="sub-edit-input" value=${textContent} />
       <div class="sub-icons">
-      <img src="./img/delete.svg" class="subtask-icon-edit" onclick="deleteSubtaskCard(${i})"/>
+      <img src="./img/delete.svg" class="subtask-icon-edit" onclick="deleteSubtaskCard(${i},${j})"/>
         <img src="./img/Vector 19.svg" alt="" />
         <img src="./img/check.svg" alt="check" class="subtask-icon-edit" onclick="addEditSubTaskCard(${i},${j})"/>
         </div>
@@ -373,7 +375,7 @@ function editSubTaskHtmlCard(textContent, i, j) {
   `;
 }
 
-function addSubtasksCard() {
+function addSubtasksCard(i) {
   let subtaskstoadd = document.getElementById("edit-subtasks").value;
   let JSONToPush = {
     subtaskName: subtaskstoadd,
@@ -381,32 +383,32 @@ function addSubtasksCard() {
   };
   currentTask.subtasks.push(JSONToPush);
   document.getElementById("edit-subtasks").value = "";
-  renderAddSubtasksCard();
+  renderAddSubtasksCard(i);
 }
 
-function renderAddSubtasksCard() {
+function renderAddSubtasksCard(i) {
   document.getElementById("edit-subtasks-container").innerHTML = "";
-  for (let i = 0; i < currentTask.subtasks.length; i++) {
-    const element = currentTask.subtasks[i].subtaskName;
+  for (let j = 0; j < currentTask.subtasks.length; j++) {
+    const element = currentTask.subtasks[j].subtaskName;
     let content = document.getElementById("edit-subtasks-container");
     content.innerHTML += /*html*/ `
-    <div id="subtask-comp-${i}">
-    <div class="subtask-comp" onmouseover="showSubtaskIcons(${i})" onmouseleave="hideSubtaskIcons(${i})">
-                    <span class="subtask-task" id='subtask${i}' ondblclick="editSubtask(${i})" 
+    <div id="subtask-comp-${j}">
+    <div class="subtask-comp" onmouseover="showSubtaskIconsCard(${j},${i})" onmouseleave="hideSubtaskIconsCard(${j},${i})">
+                    <span class="subtask-task" id='subtask${j}' ondblclick="editSubtaskCard(${j},${i})" 
                       >⦁ ${element}</span
                     >
-                    <div class="sub-icons d-none" id="subtask-icons-${i}">
+                    <div class="sub-icons d-none" id="subtask-icons-${j}">
                       <img
                         src="./img/edit.svg"
                         alt=""
-                        onclick="editSubtask(${i})"
+                        onclick="editSubtaskCard(${j},${i})"
                         class="subtask-icon"
                       />
                       <img src="./img/Vector 19.svg" alt="" />
                       <img
                         src="./img/delete.svg"
                         alt=""
-                        onclick="deleteSubtaskCard(${i})"
+                        onclick="deleteSubtaskCard(${j},${i})"
                         class="subtask-icon"
                       />
                     </div>
@@ -418,18 +420,18 @@ function renderAddSubtasksCard() {
 
 
 function deleteSubtaskCard(i, j) {
-  currentTask.subtasks.splice(j, 1);
-  editSubtaskCard(i);
+  currentTask.subtasks.splice(i, 1);
+  renderAddSubtasksCard(i);
 }
 
-function showSubtaskIconsCard(i) {
+function showSubtaskIconsCard(i, j) {
   document.getElementById(`subtask-icons-${i}`).classList.remove("d-none");
   document
     .getElementById(`subtask-comp-${i}`)
     .classList.add("subtask-background");
 }
 
-function hideSubtaskIconsCard(i) {
+function hideSubtaskIconsCard(i, j) {
   document.getElementById(`subtask-icons-${i}`).classList.add("d-none");
   document
     .getElementById(`subtask-comp-${i}`)
