@@ -91,7 +91,7 @@ function clearFields() {
   usersassignedto = [];
   renderAssignedTo();
   taskpriority = "medium";
-  taskPriorityActive();
+  taskPriorityActive("");
   subtasksAdd = [];
   renderAddSubtasks();
 }
