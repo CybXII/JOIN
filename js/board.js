@@ -8,6 +8,7 @@ let tasksUrgent;
 let finishcounter = 0;
 let tasks = [];
 let editTaskPriority;
+let currentTask = [];
 
 
 
@@ -194,7 +195,9 @@ function rotateCardEnd() {
 }
 
 
-function openCard(i) {
+async function openCard(i) {
+  await loadTasks();
+  currentTask = tasks[i];
   openCardContainer();
   renderCardInfo(i);
 }
@@ -286,7 +289,7 @@ async function deleteTask(i) {
 
 async function checkSubtasks(i, j){
   let status = document.getElementById(`subtask${j}`).checked;
-  tasks[i].subtasks[j]["subtaskStatus"] = status;
+  currentTask.subtasks[j]["subtaskStatus"] = status;
   await setItem("tasks", JSON.stringify(tasks));
   updateHTML();
 }
@@ -296,8 +299,9 @@ function editCard(i){
   renderEditCard(content,i);
 }
 
-function editTasksfromStorage(){
-  console.log('Hier kommt die save Edit funcion');
+function editTasksfromStorage(i){
+  tasks[i] = currentTask;
+  // setItem("tasks", JSON.stringify(tasks));
 }
 
 function editSubtasks(i){
@@ -306,10 +310,10 @@ function editSubtasks(i){
   subtasksAddCard = [];
   subtasksAddCard.push(subtasksAdd[0]);
 
-  document.getElementById(`edit-subtasks-container-${i}`).innerHTML = "";
+  document.getElementById(`edit-subtasks-container`).innerHTML = "";
   for (let j = 0; j < subtasksAddCard[0].length; j++) {
     const element = subtasksAddCard[0][j].subtaskName;
-    let content = document.getElementById(`edit-subtasks-container-${i}`);
+    let content = document.getElementById(`edit-subtasks-container`);
     content.innerHTML += /*html*/ `
     <div id="subtask-comp-${j}">
     <div class="subtask-comp" onmouseover="showSubtaskIcons(${j})" onmouseleave="hideSubtaskIcons(${j})">
@@ -327,7 +331,7 @@ function editSubtasks(i){
                       <img
                         src="./img/delete.svg"
                         alt=""
-                        onclick="deleteSubtask(${j})"
+                        onclick="deleteSubtaskCard(${i},${j})"
                         class="subtask-icon"
                       />
                     </div>
@@ -349,8 +353,7 @@ function editSubtaskCard(i, j) {
 async function addEditSubTaskCard(i, j) {
   let subTaskInput = document.getElementById("editSubTaskInput");
   subtasksAddCard[0][i].subtaskName = subTaskInput.value;
-  tasks[i].subtasks[j].subtaskName = subTaskInput.value;
-  await setItem("tasks", JSON.stringify(tasks));
+  currentTask.subtasks[j].subtaskName = subTaskInput.value;
   editSubtasks(i);
 }
 
@@ -367,6 +370,84 @@ function editSubTaskHtmlCard(textContent, i, j) {
       </div>
     </div>
   `;
+}
+
+function addSubtasksCard() {
+  let subtaskstoadd = document.getElementById("edit-subtasks").value;
+  let JSONToPush = {
+    subtaskName: subtaskstoadd,
+    subtaskStatus: false,
+  };
+  currentTask.subtasks.push(JSONToPush);
+  document.getElementById("edit-subtasks").value = "";
+  renderAddSubtasksCard();
+}
+
+function renderAddSubtasksCard() {
+  document.getElementById("edit-subtasks-container").innerHTML = "";
+  for (let i = 0; i < currentTask.subtasks.length; i++) {
+    const element = currentTask.subtasks[i].subtaskName;
+    let content = document.getElementById("edit-subtasks-container");
+    content.innerHTML += /*html*/ `
+    <div id="subtask-comp-${i}">
+    <div class="subtask-comp" onmouseover="showSubtaskIcons(${i})" onmouseleave="hideSubtaskIcons(${i})">
+                    <span class="subtask-task" id='subtask${i}' ondblclick="editSubtask(${i})" 
+                      >⦁ ${element}</span
+                    >
+                    <div class="sub-icons d-none" id="subtask-icons-${i}">
+                      <img
+                        src="./img/edit.svg"
+                        alt=""
+                        onclick="editSubtask(${i})"
+                        class="subtask-icon"
+                      />
+                      <img src="./img/Vector 19.svg" alt="" />
+                      <img
+                        src="./img/delete.svg"
+                        alt=""
+                        onclick="deleteSubtaskCard(${i})"
+                        class="subtask-icon"
+                      />
+                    </div>
+                  </div>
+                  </div>
+  </div>`;
+  }
+}
+
+
+function deleteSubtaskCard(i, j) {
+  currentTask.subtasks.splice(j, 1);
+  editSubtaskCard(i);
+}
+
+function showSubtaskIconsCard(i) {
+  document.getElementById(`subtask-icons-${i}`).classList.remove("d-none");
+  document
+    .getElementById(`subtask-comp-${i}`)
+    .classList.add("subtask-background");
+}
+
+function hideSubtaskIconsCard(i) {
+  document.getElementById(`subtask-icons-${i}`).classList.add("d-none");
+  document
+    .getElementById(`subtask-comp-${i}`)
+    .classList.remove("subtask-background");
+}
+
+
+function changeButtonsCard(event) {
+  event.preventDefault();
+  parent_div = document.getElementById("edit-parent_subtasks");
+  document.getElementById("edit-subtask_add_button").classList.add("d-none");
+  document.getElementById("edit-subtask_seperator").classList.remove("d-none");
+  document.getElementById("edit-subtask_accept_button").classList.remove("d-none");
+  document.getElementById("edit-subtask_cancel_button").classList.remove("d-none");
+  setEventListenerSubtask(parent_div);
+}
+
+function resetSubtasksCard() {
+  document.getElementById("edit-subtasks").value = ``;
 }
 
 function openEditAssignTo(){
