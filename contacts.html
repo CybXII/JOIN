@@ -28,6 +28,10 @@
         >
           <div class="contacts-card" onclick="dontClose()">
 
+            <!-- <div class="closeImg">
+              <img class="newImg" src="./img/close.svg" onclick="closeAddTaskContainer()">
+            </div> -->
+
               <div class="leftSide">
                 <div class="testContainer">
                   <img class="joinLogo" src="./img/capa-2.svg" alt="Join-Logo">
@@ -36,12 +40,12 @@
                 </div>
               </div>
 
-              <img class="closeImg" src="./img/close.svg" onclick="closeContactsContainer()">
-
               <div class="rightSide">
                 <!-- Zum test wird später dynamisch erzeugt -->
                 <div class="FNandSN">TW</div>
-                <!-- <img class="closeImg" src="./img/close.svg" onclick="closeContactsContainer()"> -->
+
+                <img class="closeImg" onclick="closeContactsContainer()">
+                
                 <form id="contact_Form"
                   onsubmit="addContactsToStorage(); return false;"
                   class="add-contacts-form"
