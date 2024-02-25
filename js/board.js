@@ -201,6 +201,8 @@ async function openCard(i) {
   currentTask = tasks[i];
   openCardContainer();
   renderCardInfo(i);
+  renderSubtasksInfos(i);
+  renderAssigned(i);
 }
 
 
@@ -297,10 +299,6 @@ async function checkSubtasks(i, j){
   updateHTML();
 }
 
-function editCard(i){
-  let content = document.getElementById("card-background");
-  renderEditCard(content,i);
-}
 
 async function editTasksfromStorage(i){
   tasks[i] = currentTask;

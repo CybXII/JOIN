@@ -9,6 +9,7 @@ let subtasksAdd = [];
 let subtasksAddCard = [];
 let userInitialsAssignedtoBadges = [];
 let userColorsAssignedtoBadges = [];
+let editingCard;
 
 async function renderAddTask() {
   await loadUsersFromLocalStorage();
@@ -40,6 +41,29 @@ function taskPriorityChoosed(i, handler) {
     taskpriority = i;
     taskPriorityActive(handler);
   }
+}
+
+function editCard(i){
+  let content = document.getElementById("card-background");
+  editingCard=i;
+  renderEditCard(content,i);
+}
+
+function setCheckBoxesEdit(editingCard){
+  tasks[editingCard]['assignedToID'].forEach((element) => {
+    const checkbox = document.getElementById(`edit-checkbox${element}`);
+    const divElement = document.getElementById(`edit-fullname-addtask-dd-${element}`);
+    const parentDivElement = document.getElementById(`edit-catergory_list_${element}`);
+    checkbox.checked;
+    divElement.classList.add("white");
+    parentDivElement.classList.add("contact_background");
+    if (!usersassignedto.includes(element,editingCard)) {
+      usersassignedto.push(element,editingCard);
+      usersassignedto.sort();
+    }
+
+  });
+
 }
 
 function deleteSubtask(i) {

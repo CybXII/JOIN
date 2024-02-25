@@ -351,9 +351,6 @@ function renderAssigned(i){
             <p>Delete</p>  
           </div>
       </div>`;
-  
-    renderSubtasksInfos(i);
-    renderAssigned(i);
   }
 
 
@@ -459,7 +456,8 @@ function renderEditCard(content,i){
         <div class="asigned-to-v1">
           <span class="assigned-to">Assigned to</span>
           <div id="edit-list1" class="dropdown-check-list" tabindex="100">
-            <div onclick="renderAssignedTo('edit-'), openEditAssignTo()">
+            <div onclick="renderAssignedTo('edit-'),
+            setCheckBoxesEdit(${i}), openEditAssignTo()">
               <span class="anchor">Select contacts to assign</span>
             </div>
             <ul class="items">
