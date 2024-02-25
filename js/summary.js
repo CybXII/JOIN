@@ -1,10 +1,12 @@
+/**
+ * Render the summary of tasks and user details on the page.
+ *
+ * @return {Promise<void>} A promise that resolves when the summary is rendered.
+ */
 async function renderSummary() {
   loadUsersFromLocalStorage();
   await loadTasks();
   setAmounts();
-
-
-  
   document.getElementById("summ-tasks-todo").innerHTML = tasksTodo;
   document.getElementById("summ-tasks-done").innerHTML = tasksDone;
   document.getElementById("summ-tasks-urgent").innerHTML = tasksUrgent;
@@ -18,7 +20,9 @@ async function renderSummary() {
   renderUrgent();
 }
 
-
+/**
+ * Renders the upcoming urgent tasks and their due dates.
+ */
 function renderUrgent() {
   let filteredDueDates = tasks
     .filter((task) => task.prio === "urgent" && task.categoryboard !== "done")
@@ -27,13 +31,19 @@ function renderUrgent() {
   filteredDueDates.sort((a, b) => a - b);
 
   if (filteredDueDates.length === 0) {
-    document.getElementById("summ-upcoming").innerHTML = `No Urgent Tasks`
-    document.getElementById("urgent-tasks").classList.add('d-none');
+    document.getElementById("summ-upcoming").innerHTML = `No Urgent Tasks`;
+    document.getElementById("urgent-tasks").classList.add("d-none");
     return;
   }
 
   let smallestDueDate = filteredDueDates[0];
 
+  /**
+   * Formats the given date into a string with the format "Month Day, Year".
+   *
+   * @param {Date} date - the date to format
+   * @return {string} the formatted date string
+   */
   function formatDate(date) {
     const months = [
       "January",
@@ -59,38 +69,11 @@ function renderUrgent() {
     formatDate(smallestDueDate);
 }
 
-
-// function renderUrgent(){
-  
-//   let filteredDueDates = tasks
-//   .filter((task) => task.prio === "urgent" && task.categoryboard !== "done")
-//   .map((task) => new Date(task.dueDate));
-//   filteredDueDates.sort((a, b) => a - b);
-//   let smallestDueDate = filteredDueDates[0];
-//   function formatDate(date) {
-//     const months = [
-//       "January",
-//       "February",
-//       "March",
-//       "April",
-//       "May",
-//       "June",
-//       "July",
-//       "August",
-//       "September",
-//       "October",
-//       "November",
-//       "December",
-//     ];
-//     const month = months[date.getMonth()];
-//     const day = date.getDate();
-//     const year = date.getFullYear();
-//     return `${month} ${day}, ${year}`;
-//   }
-//   document.getElementById("summ-upcoming").innerHTML =
-//     formatDate(smallestDueDate);
-// }
-
+/**
+ * Determines the appropriate greeting based on the current time of day.
+ *
+ * @return {string} the appropriate greeting for the time of day
+ */
 function greetingTime() {
   let currentTime = new Date();
   let currentHour = currentTime.getHours();
@@ -102,23 +85,39 @@ function greetingTime() {
   } else return "Good evening,";
 }
 
+/**
+ * Renders the greeting time on the summary section.
+ *
+ */
 function renderGreetingTime() {
   document.getElementById("summary-greeting").innerHTML = greetingTime();
   document.getElementById("summary-greeting-resp").innerHTML = greetingTime();
 }
 
+/**
+ * Function to perform a summary greeting animation by adding a "transparent" class to specific elements and removing the background after a delay of 1500ms.
+ *
+ */
 function greetSummaryAnimation() {
   setTimeout(() => {
-    document.getElementById("summary-greeting-resp").classList.add("transparent");
-    document.getElementById("summary-fullname-resp").classList.add("transparent");
+    document
+      .getElementById("summary-greeting-resp")
+      .classList.add("transparent");
+    document
+      .getElementById("summary-fullname-resp")
+      .classList.add("transparent");
     removeBackground();
-  },1500);
-  
+  }, 1500);
 }
 
-function removeBackground(){
+/**
+ * Removes the background of the specified element after a delay.
+ *
+ */
+function removeBackground() {
   setTimeout(() => {
-    document.getElementById("frame-69_responsiv").classList.remove("frame-69_responsiv_background");
+    document
+      .getElementById("frame-69_responsiv")
+      .classList.remove("frame-69_responsiv_background");
   }, 300);
-
 }

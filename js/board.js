@@ -377,13 +377,18 @@ function editSubTaskHtmlCard(textContent, i, j) {
 
 function addSubtasksCard(i) {
   let subtaskstoadd = document.getElementById("edit-subtasks").value;
-  let JSONToPush = {
-    subtaskName: subtaskstoadd,
-    subtaskStatus: false,
-  };
-  currentTask.subtasks.push(JSONToPush);
-  document.getElementById("edit-subtasks").value = "";
-  renderAddSubtasksCard(i);
+
+  if (subtaskstoadd) {
+    
+    
+    let JSONToPush = {
+      subtaskName: subtaskstoadd,
+      subtaskStatus: false,
+    };
+    currentTask.subtasks.push(JSONToPush);
+    document.getElementById("edit-subtasks").value = "";
+    renderAddSubtasksCard(i);
+  }
 }
 
 function renderAddSubtasksCard(i) {
@@ -419,9 +424,9 @@ function renderAddSubtasksCard(i) {
 }
 
 
-function deleteSubtaskCard(i, j) {
-  currentTask.subtasks.splice(i, 1);
-  renderAddSubtasksCard(i);
+function deleteSubtaskCard(j, i) {
+  currentTask.subtasks.splice(j, 1);
+  renderAddSubtasksCard(j);
 }
 
 function showSubtaskIconsCard(i, j) {
