@@ -253,28 +253,28 @@ function renderAssigned(i){
     }
   }
 
-  function renderEditAssignedTo() {
-    let assigncontent = document.getElementById("edit-assigned-list");
-    remoteuserAssign.forEach((element, i) => {
-      const fullname = element.name;
-      const initials = element.initials;
-      const color = element.color;
-      assigncontent.innerHTML += /*html*/ `<li id="edit-catergory_list_${i}">
-        <div class="active_contact">
-          <div class="profile-badge">
-            <div class="group">
-              <div class="overlap-group" style="background-color: ${color}">
-                <div class="text-wrapper-2">${initials}</div>
-              </div>
-            </div>
-          </div>
-          <span  id="edit-fullname-addtask-dd-${i}">${fullname}</span>
-          <input id="edit-checkbox${i}" type="checkbox" class="checkbox" onclick="addClassOnCheckboxChange(${i},'edit-'), setBadgesAddTask()" />
-        </div>
-      </li>
-      `;
-    }, (assigncontent.innerHTML = ""));
-  }
+  // function renderEditAssignedTo() {
+  //   let assigncontent = document.getElementById("edit-assigned-list");
+  //   remoteuserAssign.forEach((element, i) => {
+  //     const fullname = element.name;
+  //     const initials = element.initials;
+  //     const color = element.color;
+  //     assigncontent.innerHTML += /*html*/ `<li id="edit-catergory_list_${i}">
+  //       <div class="active_contact">
+  //         <div class="profile-badge">
+  //           <div class="group">
+  //             <div class="overlap-group" style="background-color: ${color}">
+  //               <div class="text-wrapper-2">${initials}</div>
+  //             </div>
+  //           </div>
+  //         </div>
+  //         <span  id="edit-fullname-addtask-dd-${i}">${fullname}</span>
+  //         <input id="edit-checkbox${i}" type="checkbox" class="checkbox" onclick="addClassOnCheckboxChange(${i},'edit-'), setBadgesAddTask()" />
+  //       </div>
+  //     </li>
+  //     `;
+  //   }, (assigncontent.innerHTML = ""));
+  // }
   
 
 
@@ -459,7 +459,7 @@ function renderEditCard(content,i){
         <div class="asigned-to-v1">
           <span class="assigned-to">Assigned to</span>
           <div id="edit-list1" class="dropdown-check-list" tabindex="100">
-            <div onclick="renderEditAssignedTo(''), openEditAssignTo()">
+            <div onclick="renderAssignedTo('edit-'), openEditAssignTo()">
               <span class="anchor">Select contacts to assign</span>
             </div>
             <ul class="items">
