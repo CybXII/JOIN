@@ -107,31 +107,52 @@ function resetSubtasks() {
 }
 
 function renderAssignedTo(handler) {
-  if (handler==="edit"){
+  if (handler==="edit-"){
+    let assigncontent = document.getElementById("edit-assigned-list");
+    remoteuserAssign.forEach((element, i) => {
+      const fullname = element.name;
+      const initials = element.initials;
+      const color = element.color;
+      assigncontent.innerHTML += /*html*/ `<li id="edit-catergory_list_${i}">
+        <div class="active_contact">
+          <div class="profile-badge">
+            <div class="group">
+              <div class="overlap-group" style="background-color: ${color}">
+                <div class="text-wrapper-2">${initials}</div>
+              </div>
+            </div>
+          </div>
+          <span  id="edit-fullname-addtask-dd-${i}">${fullname}</span>
+          <input id="edit-checkbox${i}" type="checkbox" class="checkbox" onclick="addClassOnCheckboxChange(${i},'edit-'), setBadgesAddTask()" />
+        </div>
+      </li>
+      `;
+    }, (assigncontent.innerHTML = ""));
   }
   else{
     handler ='';
-  }
-  let assigncontent = document.getElementById(`${handler}assigned-list`);
-  remoteuserAssign.forEach((element, i) => {
-    const fullname = element.name;
-    const initials = element.initials;
-    const color = element.color;
-    assigncontent.innerHTML += /*html*/ `<li id="${handler}catergory_list_${i}">
-      <div class="active_contact">
-        <div class="profile-badge">
-          <div class="group">
-            <div class="overlap-group" style="background-color: ${color}">
-              <div class="text-wrapper-2">${initials}</div>
+    let assigncontent = document.getElementById(`${handler}assigned-list`);
+    remoteuserAssign.forEach((element, i) => {
+      const fullname = element.name;
+      const initials = element.initials;
+      const color = element.color;
+      assigncontent.innerHTML += /*html*/ `<li id="${handler}catergory_list_${i}">
+        <div class="active_contact">
+          <div class="profile-badge">
+            <div class="group">
+              <div class="overlap-group" style="background-color: ${color}">
+                <div class="text-wrapper-2">${initials}</div>
+              </div>
             </div>
           </div>
+          <span  id="${handler}fullname-addtask-dd-${i}">${fullname}</span>
+          <input id="${handler}checkbox${i}" type="checkbox" class="checkbox" onclick="addClassOnCheckboxChange(${i}), setBadgesAddTask()" />
         </div>
-        <span  id="${handler}fullname-addtask-dd-${i}">${fullname}</span>
-        <input id="${handler}checkbox${i}" type="checkbox" class="checkbox" onclick="addClassOnCheckboxChange(${i}), setBadgesAddTask()" />
-      </div>
-    </li>
-    `;
-  }, (assigncontent.innerHTML = ""));
+      </li>
+      `;
+    }, (assigncontent.innerHTML = ""));
+  
+  }
 }
 
 function openAssignTo() {
@@ -347,7 +368,7 @@ function renderAssignedUserAddTask(handler) {
       let index = usersassignedto[i];
       if (usersassignedto.includes(index)) {
         document.getElementById(`${handler}checkbox${index}`).checked = true;
-        addClassOnCheckboxChange(index);
+        addClassOnCheckboxChange(index,handler);
       }
     }
 
