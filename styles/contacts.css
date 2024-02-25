@@ -738,9 +738,12 @@ text-align: left;
 }
 
 .closeImg {
+  position: absolute;
+  background-image: url(./../img/close.svg);
+  right: 0;
+  top: 48px;
   height: 14px;
   width: 14px;
-  transform: translate(650px, 48px);
   cursor: pointer;
 }
 
@@ -1071,9 +1074,68 @@ text-align: left;
   }
 
   .contacts-card {
-    transform: scale(0.85);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 396px;
+    height: 760px;
   }
 
+  .leftSide {
+    width: 396px;
+    height: 351px;
+    border-radius: 30px 30px 0 0;
+  }
+
+  .testContainer {
+    padding-top: 80px;
+  }
+
+  .testContainer h1 {
+    font-size: 47px;
+  }
+
+  .joinLogo {
+    display: none;
+  }
+
+  .underlineBlue {
+    width: 90px;
+    height: 10px;
+  }
+
+  .closeImg {
+    display: none;
+  }
+
+  .newImg {
+    height: 14px;
+    width: 14px;
+    background-image: url(./../img/close-white.svg);
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+  }
+
+  .rightSide {
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 396px;
+    position: relative;
+    left: -30px;
+    top: -30px;
+  }
+
+  .FNandSN {
+      
+  }
+
+  .add-contacts-form {
+    margin-top: 10px;
+    width: 364px;
+  }
 
 }
 
