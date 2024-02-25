@@ -235,7 +235,13 @@ function renderFilteredCard(task, i, categorys) {
 }
 
 
-function renderAssigned(i){
+function renderAssigned(i,handler){
+  let setHandler= handler
+  if(handler === "edit-"){
+    
+  }else{
+    setHandler = "";
+  }
   let assignedTask = tasks[i].assignedTo;
   let colorsTask = tasks[i].colors;
   let userid = tasks[i].assignedToID;
@@ -243,9 +249,9 @@ function renderAssigned(i){
       const initials = assignedTask[x];
       const colors = colorsTask[x];
       let assignNames = usersAssignTask(userid[x]);
-      let assignTask = document.getElementById("card_assignedTo");
+      let assignTask = document.getElementById(`${setHandler}card_assignedTo`);
       assignTask.innerHTML += /*html*/ `<div class="contact">
-          <div id="contact_color" class="overlap-group" style="background-color: ${colors}">
+          <div id="${handler}contact_color" class="overlap-group" style="background-color: ${colors}">
             <div class="text-wrapper-2">${initials}</div>
           </div>
           <div class="assigned_name">${assignNames}</div>
@@ -456,8 +462,8 @@ function renderEditCard(content,i){
         <div class="asigned-to-v1">
           <span class="assigned-to">Assigned to</span>
           <div id="edit-list1" class="dropdown-check-list" tabindex="100">
-            <div onclick="renderAssignedTo('edit-'),
-            setCheckBoxesEdit(${i}), openEditAssignTo()">
+            <div onclick="renderAssignedTo('edit-'),openEditAssignTo(),
+            setCheckBoxesEdit(${i})">
               <span class="anchor">Select contacts to assign</span>
             </div>
             <ul class="items">

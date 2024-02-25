@@ -47,20 +47,41 @@ function editCard(i){
   let content = document.getElementById("card-background");
   editingCard=i;
   renderEditCard(content,i);
+  renderAssigned(i, "edit-");
 }
 
 function setCheckBoxesEdit(editingCard){
   tasks[editingCard]['assignedToID'].forEach((element) => {
-    const checkbox = document.getElementById(`edit-checkbox${element}`);
-    const divElement = document.getElementById(`edit-fullname-addtask-dd-${element}`);
-    const parentDivElement = document.getElementById(`edit-catergory_list_${element}`);
-    checkbox.checked;
+    let id = element-1;
+    const checkbox = document.getElementById(`edit-checkbox${id}`);
+    const divElement = document.getElementById(`edit-fullname-addtask-dd-${id}`);
+    const parentDivElement = document.getElementById(`edit-catergory_list_${id}`);
+    checkbox.checked=true;
+    usersassignedto.push(element);
     divElement.classList.add("white");
     parentDivElement.classList.add("contact_background");
-    if (!usersassignedto.includes(element,editingCard)) {
-      usersassignedto.push(element,editingCard);
-      usersassignedto.sort();
+    if (!usersassignedto.includes(element)) {
+      usersassignedto.push(element);
+      // usersassignedto.sort();
     }
+    if (checkbox.checked) {
+      divElement.classList.add("white");
+      parentDivElement.classList.add("contact_background");
+      if (!usersassignedto.includes(element)) {
+        usersassignedto.push(element);
+        // usersassignedto.sort();
+      }
+    } 
+    else {
+      // divElement.classList.remove("white");
+      // parentDivElement.classList.remove("contact_background");
+      // const index = usersassignedto.indexOf(element);
+      // if (index !== -1) {
+      //   usersassignedto.splice(index, 1);
+      //   // usersassignedto.sort();
+      // }
+    }
+    
 
   });
 
