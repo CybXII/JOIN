@@ -1204,7 +1204,7 @@ text-align: left;
 
 }
 
-@media (max-width: 320px) {
+@media (max-width: 360px) {
 
   .frame-97 .contact-name {
     width: 248px;
