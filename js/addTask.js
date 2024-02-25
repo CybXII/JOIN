@@ -100,7 +100,7 @@ function renderAssignedTo() {
     const fullname = element.name;
     const initials = element.initials;
     const color = element.color;
-    assigncontent.innerHTML += /*html*/ `<li id="catergory_list_${i}">
+    assigncontent.innerHTML += /*html*/ `<li id="edit_catergory_list_${i}">
       <div class="active_contact">
         <div class="profile-badge">
           <div class="group">

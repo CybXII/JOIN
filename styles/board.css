@@ -28,9 +28,19 @@
 }
 
 .edit-addTask_helper{
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
+    display: flex;
+    /* justify-content: center; */
+    flex-direction: column;
+    overflow-y: auto;
+    height: fit-content;
+}
+
+.close_button_div{
+
+}
+
+.edit-frame-219{
+  width: 100%;
 }
 
 .edit-frame-27{
@@ -40,7 +50,7 @@
 
 .edit-frame-39 {
   display: flex;
-  width: 440px;
+  width: 100%;
   flex-direction: column;
   align-items: flex-start;
   gap: 24px;

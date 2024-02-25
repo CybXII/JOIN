@@ -301,3 +301,30 @@ function editTasksfromStorage(){
 function editSubtasks(){
   console.log('Hier kommt die save Edit funcion');
 }
+
+// function renderEditAssignedTo(){
+// renderAssignedTo
+
+// }
+
+function openEditAssignTo(){
+    // renderAssignedUserAddTask();
+    let assingBox = document.getElementById("edit-list1");
+  
+    // Überprüfe, ob die Klasse "visible" nicht enthalten ist, füge sie hinzu
+    if (!assingBox.classList.contains("visible")) {
+      assingBox.classList.add("visible");
+      renderAssignedUserAddTask();
+    } else {
+      // Wenn "visible" enthalten ist, entferne es
+      assingBox.classList.remove("visible");
+    }
+  
+    // Überwache Klicks im Fenster, um die Liste zu verstecken, wenn außerhalb geklickt wird
+    window.addEventListener("click", function (e) {
+      if (!assingBox.contains(e.target)) {
+        assingBox.classList.remove("visible");
+        window.removeEventListener("click", arguments.callee); // Entferne den Event-Listener nach Ausführung
+      }
+    });
+}

@@ -253,6 +253,30 @@ function renderAssigned(i){
     }
   }
 
+  function renderEditAssignedTo() {
+    let assigncontent = document.getElementById("edit-assigned-list");
+    remoteuserAssign.forEach((element, i) => {
+      const fullname = element.name;
+      const initials = element.initials;
+      const color = element.color;
+      assigncontent.innerHTML += /*html*/ `<li id="catergory_list_${i}">
+        <div class="active_contact">
+          <div class="profile-badge">
+            <div class="group">
+              <div class="overlap-group" style="background-color: ${color}">
+                <div class="text-wrapper-2">${initials}</div>
+              </div>
+            </div>
+          </div>
+          <span  id="fullname-addtask-dd-${i}">${fullname}</span>
+          <input id="checkbox${i}" type="checkbox" class="checkbox" onclick="addClassOnCheckboxChange(${i}), setBadgesAddTask()" />
+        </div>
+      </li>
+      `;
+    }, (assigncontent.innerHTML = ""));
+  }
+  
+
 
   function renderFinishCounter(id){
     document.getElementById(`subtask-counter${id}`).innerHTML = 
@@ -393,6 +417,9 @@ function renderAssigned(i){
 function renderEditCard(content,i){
   content.innerHTML = `
   <div class="edit-card" onclick="dontClose()">
+  <div class="cose_button_div">
+  <button class="close_card" onclick="closeCardContainer()"></button>
+  </div> 
   <form
     id="editTaskForm"
     class="edit-addTask_helper"
@@ -432,7 +459,7 @@ function renderEditCard(content,i){
         <div class="asigned-to-v1">
           <span class="assigned-to">Assigned to</span>
           <div id="edit-list1" class="dropdown-check-list" tabindex="100">
-            <div onclick="renderAssignedTo(), openAssignTo()">
+            <div onclick="renderEditAssignedTo(), openEditAssignTo()">
               <span class="anchor">Select contacts to assign</span>
             </div>
             <ul class="items">
