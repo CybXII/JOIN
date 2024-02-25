@@ -556,6 +556,7 @@ function renderEditCard(content,i){
               onclick="changeButtonsCard(event)"
               class="subtasks"
               placeholder="Add new subtask"
+              required
             />
             <div class="subtasks_buttons">
               <img

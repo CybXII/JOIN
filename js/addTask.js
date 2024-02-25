@@ -31,14 +31,14 @@ function configureDatePicker() {
 
 document.addEventListener("DOMContentLoaded", configureDatePicker);
 
-function taskPriorityChoosed(i,handler) {
-  if(handler==="edit-"){
+function taskPriorityChoosed(i, handler) {
+  if (handler === "edit-") {
     taskpriority = i;
     taskPriorityActive(handler);
-  }else {
-    handler="";
+  } else {
+    handler = "";
     taskpriority = i;
-    taskPriorityActive(handler);  
+    taskPriorityActive(handler);
   }
 }
 
@@ -80,11 +80,13 @@ function taskAddedCompleteText() {
   }, 2000);
 }
 
-function fillInputField(inputString,handler) {
-  if(handler=== "edit-"){
-    document.getElementById(`${handler}category-list2`).innerHTML = `${inputString}`;
+function fillInputField(inputString, handler) {
+  if (handler === "edit-") {
+    document.getElementById(
+      `${handler}category-list2`
+    ).innerHTML = `${inputString}`;
     openEditCategory();
-  }else {
+  } else {
     document.getElementById(`category-list2`).innerHTML = `${inputString}`;
     openCategory();
   }
@@ -107,7 +109,7 @@ function resetSubtasks() {
 }
 
 function renderAssignedTo(handler) {
-  if (handler==="edit-"){
+  if (handler === "edit-") {
     let assigncontent = document.getElementById("edit-assigned-list");
     remoteuserAssign.forEach((element, i) => {
       const fullname = element.name;
@@ -128,9 +130,8 @@ function renderAssignedTo(handler) {
       </li>
       `;
     }, (assigncontent.innerHTML = ""));
-  }
-  else{
-    handler ='';
+  } else {
+    handler = "";
     let assigncontent = document.getElementById(`${handler}assigned-list`);
     remoteuserAssign.forEach((element, i) => {
       const fullname = element.name;
@@ -151,7 +152,6 @@ function renderAssignedTo(handler) {
       </li>
       `;
     }, (assigncontent.innerHTML = ""));
-  
   }
 }
 
@@ -200,13 +200,16 @@ function openCategory() {
 
 function addSubtasks() {
   let subtaskstoadd = document.getElementById("subtasks").value;
-  let JSONToPush = {
-    subtaskName: subtaskstoadd,
-    subtaskStatus: false,
-  };
-  subtasksAdd.push(JSONToPush);
-  document.getElementById("subtasks").value = "";
-  renderAddSubtasks();
+
+  if (subtaskstoadd) {
+    let JSONToPush = {
+      subtaskName: subtaskstoadd,
+      subtaskStatus: false,
+    };
+    subtasksAdd.push(JSONToPush);
+    document.getElementById("subtasks").value = "";
+    renderAddSubtasks();
+  }
 }
 
 function renderAddSubtasks() {
@@ -271,18 +274,22 @@ function addEditSubTask(i) {
 }
 
 function addClassOnCheckboxChange(userid, handler) {
-  if(handler === "edit-"){
-    setCheckBoxes(userid,handler);
-  } else{
-    handler='';
-    setCheckBoxes(userid,handler);
+  if (handler === "edit-") {
+    setCheckBoxes(userid, handler);
+  } else {
+    handler = "";
+    setCheckBoxes(userid, handler);
   }
 }
 
-function setCheckBoxes(userid,handler){
+function setCheckBoxes(userid, handler) {
   const checkbox = document.getElementById(`${handler}checkbox${userid}`);
-  const divElement = document.getElementById(`${handler}fullname-addtask-dd-${userid}`);
-  const parentDivElement = document.getElementById(`${handler}catergory_list_${userid}`);
+  const divElement = document.getElementById(
+    `${handler}fullname-addtask-dd-${userid}`
+  );
+  const parentDivElement = document.getElementById(
+    `${handler}catergory_list_${userid}`
+  );
 
   if (checkbox.checked) {
     divElement.classList.add("white");
@@ -300,10 +307,7 @@ function setCheckBoxes(userid,handler){
       usersassignedto.sort();
     }
   }
-
 }
-
-
 
 function setInitials() {
   for (let i = 0; i < usersassignedto.length; i++) {
@@ -363,24 +367,22 @@ function renderBadges(initials, color, content, i) {
 }
 
 function renderAssignedUserAddTask(handler) {
-  if (handler==="edit-"){
+  if (handler === "edit-") {
     for (let i = 0; i < usersassignedto.length; i++) {
       let index = usersassignedto[i];
       if (usersassignedto.includes(index)) {
         document.getElementById(`${handler}checkbox${index}`).checked = true;
-        addClassOnCheckboxChange(index,handler);
+        addClassOnCheckboxChange(index, handler);
       }
     }
-
-  }
-  else{
+  } else {
     for (let i = 0; i < usersassignedto.length; i++) {
       let index = usersassignedto[i];
       if (usersassignedto.includes(index)) {
         document.getElementById(`checkbox${index}`).checked = true;
         addClassOnCheckboxChange(index);
       }
-    }  
+    }
   }
 }
 
@@ -612,37 +614,62 @@ function setEventListenerSubtask(parent_div) {
 
 function renderUrgent(handler) {
   document.getElementById(`${handler}prio-urgent`).classList.remove("frame-16");
-  document.getElementById(`${handler}prio-urgent`).classList.add("frame-16-active");
-  document.getElementById(`${handler}prio-urgent-img`).src = "./img/urgent_fill.svg";
-  document.getElementById(`${handler}prio-medium`).classList.remove("frame-25-active");
+  document
+    .getElementById(`${handler}prio-urgent`)
+    .classList.add("frame-16-active");
+  document.getElementById(`${handler}prio-urgent-img`).src =
+    "./img/urgent_fill.svg";
+  document
+    .getElementById(`${handler}prio-medium`)
+    .classList.remove("frame-25-active");
   document.getElementById(`${handler}prio-medium`).classList.add("frame-25");
-  document.getElementById(`${handler}prio-medium-img`).src = "./img/medium_nofill.svg";
-  document.getElementById(`${handler}prio-low`).classList.remove("frame-26-active");
+  document.getElementById(`${handler}prio-medium-img`).src =
+    "./img/medium_nofill.svg";
+  document
+    .getElementById(`${handler}prio-low`)
+    .classList.remove("frame-26-active");
   document.getElementById(`${handler}prio-low`).classList.add("frame-26");
-  document.getElementById(`${handler}prio-low-img`).src = "./img/low_nofill.svg";
+  document.getElementById(`${handler}prio-low-img`).src =
+    "./img/low_nofill.svg";
 }
 
 function renderMedium(handler) {
   document.getElementById(`${handler}prio-medium`).classList.remove("frame-25");
-  document.getElementById(`${handler}prio-medium`).classList.add("frame-25-active");
-  document.getElementById(`${handler}prio-medium-img`).src = "./img/medium_fill.svg";
-  document.getElementById(`${handler}prio-low`).classList.remove("frame-26-active");
+  document
+    .getElementById(`${handler}prio-medium`)
+    .classList.add("frame-25-active");
+  document.getElementById(`${handler}prio-medium-img`).src =
+    "./img/medium_fill.svg";
+  document
+    .getElementById(`${handler}prio-low`)
+    .classList.remove("frame-26-active");
   document.getElementById(`${handler}prio-low`).classList.add("frame-26");
-  document.getElementById(`${handler}prio-low-img`).src = "./img/low_nofill.svg";
+  document.getElementById(`${handler}prio-low-img`).src =
+    "./img/low_nofill.svg";
   document.getElementById(`${handler}prio-urgent`).classList.add("frame-16");
-  document.getElementById(`${handler}prio-urgent`).classList.remove("frame-16-active");
-  document.getElementById(`${handler}prio-urgent-img`).src = "./img/urgent_nofill.svg";
+  document
+    .getElementById(`${handler}prio-urgent`)
+    .classList.remove("frame-16-active");
+  document.getElementById(`${handler}prio-urgent-img`).src =
+    "./img/urgent_nofill.svg";
 }
 
 function renderLow(handler) {
   document.getElementById(`${handler}prio-low`).classList.remove("frame-26");
-  document.getElementById(`${handler}prio-low`).classList.add("frame-26-active");
+  document
+    .getElementById(`${handler}prio-low`)
+    .classList.add("frame-26-active");
   document.getElementById(`${handler}prio-low-img`).src = "./img/low_fill.svg";
-  document.getElementById(`${handler}prio-medium`).classList.remove("frame-25-active");
+  document
+    .getElementById(`${handler}prio-medium`)
+    .classList.remove("frame-25-active");
   document.getElementById(`${handler}prio-medium`).classList.add("frame-25");
-  document.getElementById(`${handler}prio-medium-img`).src = "./img/medium_nofill.svg";
+  document.getElementById(`${handler}prio-medium-img`).src =
+    "./img/medium_nofill.svg";
   document.getElementById(`${handler}prio-urgent`).classList.add("frame-16");
-  document.getElementById(`${handler}prio-urgent`).classList.remove("frame-16-active");
-  document.getElementById(`${handler}prio-urgent-img`).src = "./img/urgent_nofill.svg";
+  document
+    .getElementById(`${handler}prio-urgent`)
+    .classList.remove("frame-16-active");
+  document.getElementById(`${handler}prio-urgent-img`).src =
+    "./img/urgent_nofill.svg";
 }
-
