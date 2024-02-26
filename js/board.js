@@ -487,7 +487,7 @@ function openEditCategory() {
   if (!categoryBox.classList.contains("visible")) {
     categoryBox.classList.add("visible");
     categoryInput.setAttribute("disabled", "");
-    renderAssignedUserAddTask();
+    // renderAssignedUserAddTask();
   } else {
     categoryBox.classList.remove("visible");
     categoryInput.removeAttribute("disabled", "");

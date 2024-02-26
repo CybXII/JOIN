@@ -586,10 +586,10 @@ function renderEditCard(content,i){
             </div>
             <ul class="items">
               <div id="edit-category-list2-items">
-                <li onclick="fillInputField('Technical Task'),"edit-">
+                <li onclick="fillInputField('Technical Task','edit-')">
                   Technical Task
                 </li>
-                <li onclick="fillInputField('User Story',"edit-")">
+                <li onclick="fillInputField('User Story','edit-')">
                   User Story
                 </li>
               </div>
