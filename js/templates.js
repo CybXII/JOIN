@@ -272,9 +272,9 @@ function renderAssigned(i){
       const initials = assignedTask[x];
       const colors = colorsTask[x];
       let assignNames = usersAssignTask(userid[x]);
-      let assignTask = document.getElementById(`${setHandler}card_assignedTo`);
+      let assignTask = document.getElementById(`card_assignedTo`);
       assignTask.innerHTML += /*html*/ `<div class="contact">
-          <div id="${handler}contact_color" class="overlap-group" style="background-color: ${colors}">
+          <div id="contact_color" class="overlap-group" style="background-color: ${colors}">
             <div class="text-wrapper-2">${initials}</div>
           </div>
           <div class="assigned_name">${assignNames}</div>
