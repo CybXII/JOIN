@@ -27,33 +27,22 @@
           onclick="closeContactsContainer()"
         >
           <div class="contacts-card" onclick="dontClose()">
-
             <!-- <div class="closeImg">
               <img class="newImg" src="./img/close.svg" onclick="closeAddTaskContainer()">
             </div> -->
 
-              <div class="leftSide">
-                <div class="testContainer">
-                  <img class="joinLogo" src="./img/capa-2.svg" alt="Join-Logo">
-                  <h1>Edit<br class="twoLine"> contact</h1>
-                  <img class="underlineBlue" src="./img/vector-5.svg" alt="underline-blue">
-                </div>
-              </div>
+            <div class="leftSide" id="left-side"></div>
 
-              <div class="rightSide">
-                <!-- Zum test wird später dynamisch erzeugt -->
-                <div class="FNandSN" id="initialsUserEdit">TW</div>
-
-                <img class="closeImg" onclick="closeContactsContainer()">
-                
-                <div id="editContactCard"></div>
-              </div>
+            <div class="rightSide" id="right-side">
+              <!-- Zum test wird später dynamisch erzeugt -->
+              
+            </div>
           </div>
         </div>
         <div>
           <div class="frame-97">
             <div class="addContact">
-              <div class="primary-contact" onclick="openContactsContainer()">
+              <div class="primary-contact" onclick="openContactsContainerAdd()">
                 <div class="text-wrapper">Add new contact</div>
                 <img class="person-add" src="img/person_add.svg" />
               </div>
@@ -65,7 +54,7 @@
               <span>Contacts</span>
               <div>
                 <img src="./img/separation-blue.svg" alt="separation-blue" />
-                <p>Better with a team</p>  
+                <p>Better with a team</p>
               </div>
             </div>
             <div class="contact_info" id="contact_info"></div>

@@ -101,8 +101,71 @@ function renderContactCardHTML(
 function openContactsContainer() {
   document.getElementById("contacts-background").classList.remove("d-none");
   document.body.classList.add("contacts-background-fixed");
+    document.getElementById(
+      "left-side"
+    ).innerHTML = `<div class="testContainer">
+                  <img class="joinLogo" src="./img/capa-2.svg" alt="Join-Logo">
+                  <h1>Edit contact</h1>
+                  <img class="underlineBlue" src="./img/vector-5.svg" alt="underline-blue">
+                </div>`;
+     document.getElementById(
+       "right-side"
+     ).innerHTML = `<div class="FNandSN" id="initialsUserEdit">TW</div>
+
+              <img class="closeImg" onclick="closeContactsContainerAdd()" />
+
+              <div id="editContactCard">
+              </div>`;              
+}
+function openContactsContainerAdd() {
+  document.getElementById("contacts-background").classList.remove("d-none");
+  document.body.classList.add("contacts-background-fixed");
+  document.getElementById("left-side").innerHTML = `<div class="testContainer">
+                  <img class="joinLogo" src="./img/capa-2.svg" alt="Join-Logo">
+                  <h1>Add contact</h1>
+                  <img class="underlineBlue" src="./img/vector-5.svg" alt="underline-blue">
+                </div>`;
+  document.getElementById(
+    "right-side"
+  ).innerHTML = `<div class="FNandSN" id="initialsUserEdit">TW</div>
+
+              <img class="closeImg" onclick="closeContactsContainerAdd()" />
+
+              <div id="editContactCard">
+              <form id="contact_Form"
+                  onsubmit='addContactsToStorage(); return false;'
+                  class="add-contacts-form"
+                >
+                  <input
+                    type="text"
+                    placeholder="Name"
+                    class="add-contact-name"
+                    id="add_contacts_name"
+                  />
+                  <input
+                    type="email"
+                    placeholder="Email"
+                    class="add-contact-email"
+                    id="add_contacts_email"
+                  />
+                  <input
+                    type="tel"
+                    placeholder="Phone"
+                    class="add-contact-phone"
+                    id="add_contacts_phone"
+                  />
+                  
+                  <div class="underButton">
+                    <div class="add-contact-cancel" onclick="closeContactsContainerAdd()">Cancel</div>
+                    <button class="createContact">Create Contact</button>
+                  </div>
+                </form></div>`; 
 }
 function closeContactsContainer() {
+  document.getElementById("contacts-background").classList.add("d-none");
+  document.body.classList.remove("contacts-background-fixed");
+}
+function closeContactsContainerAdd() {
   document.getElementById("contacts-background").classList.add("d-none");
   document.body.classList.remove("contacts-background-fixed");
 }
@@ -142,20 +205,21 @@ async function deleteContact(userid) {
 }
 
 function editContact(userid, i) {
-  openContactsContainer(userid);
+  openContactsContainer(userid, i);
   renderEditContact(userid, i);
   let color = currentcontact.color;
   document.getElementById("initialsUserEdit").innerHTML = currentcontact.initials;
   document.getElementById("initialsUserEdit").style = `background-color: ${color}`;
-  document.getElementById("add_contacts_name").value = currentcontact.fullname;
-  document.getElementById("add_contacts_email").value = currentcontact.email;
-  document.getElementById("add_contacts_phone").value = currentcontact.phone;
+  document.getElementById("edit_contacts_name").value = currentcontact.fullname;
+  document.getElementById("edit_contacts_email").value = currentcontact.email;
+  document.getElementById("edit_contacts_phone").value = currentcontact.phone;
 }
 
 
-function renderEditContact(i){
-  document.getElementById("editContactCard").innerHTML =
-  `<form id="contact_Form"
+function renderEditContact(userid, i){
+  document.getElementById(
+    "editContactCard"
+  ).innerHTML = `<form id="contact_Form"
                   onsubmit='addEditContact(${i}); return false;'
                   class="add-contacts-form"
                 >
@@ -163,35 +227,32 @@ function renderEditContact(i){
                     type="text"
                     placeholder="Name"
                     class="add-contact-name"
-                    id="add_contacts_name"
+                    id="edit_contacts_name"
                   />
                   <input
                     type="email"
                     placeholder="Email"
                     class="add-contact-email"
-                    id="add_contacts_email"
+                    id="edit_contacts_email"
                   />
                   <input
                     type="tel"
                     placeholder="Phone"
                     class="add-contact-phone"
-                    id="add_contacts_phone"
+                    id="edit_contacts_phone"
                   />
-                  
                   <div class="underButton">
-                    <button class="add-contact-cancel" onclick="closeContactsContainer()">Delete</button>
-                    <button class="createContact">Create contact</button>
+                    <div class="add-contact-cancel" onclick="deleteContact('${userid}', '${i}'), closeContactsContainer()">Delete</div>
+                    <button class="createContact">Save</button>
                   </div>
-                  <!-- <button>Create Contact</button> -->
-                  <!-- <div onclick="closeContactsContainer()" class="add-contact-cancel">Cancel</div> -->
                 </form>`; 
 }
 
 
 async function addEditContact(i){
-  currentcontact.fullname = document.getElementById("add_contacts_name").value;
-  currentcontact.email = document.getElementById("add_contacts_email").value;
-  currentcontact.phone = document.getElementById("add_contacts_phone").value;
+  currentcontact.fullname = document.getElementById("edit_contacts_name").value;
+  currentcontact.email = document.getElementById("edit_contacts_email").value;
+  currentcontact.phone = document.getElementById("edit_contacts_phone").value;
   contacts[i] = currentcontact;
   await setItem("contacts", JSON.stringify(contacts));
   closeContactsContainer();
