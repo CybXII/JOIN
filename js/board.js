@@ -260,6 +260,9 @@ function filterTaskBoard() {
     filterCategory(element, searchInput);
     console.log(`startfilter ${searchInput}`);
   });
+  if (searchInput.length == 0) {
+    renderBoardTasks();    
+  }
 }
 
 
