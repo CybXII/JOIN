@@ -771,13 +771,16 @@ text-align: left;
   margin-right: 0;
   background-image: url(./../img/close.svg);
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: 15px;
+  background-color: white;
+  background-position: center;
   right: 60px;
   top: 48px;
-  height: 14px;
-  width: 14px;
+  height: 20px;
+  width: 20px;
   cursor: pointer;
-  border-radius: 100%;
+  border-radius: 50%;
+  padding: 5px;
 }
 
 .closeImg:hover {
@@ -843,7 +846,6 @@ text-align: left;
   background-color: #fff;
   padding: 16px;
   width: 126px;
-  height: 56px;
   border: 1px solid #2a3647;
   padding: 16px;
   cursor: pointer;

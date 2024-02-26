@@ -110,9 +110,9 @@ function openContactsContainer() {
                 </div>`;
      document.getElementById(
        "right-side"
-     ).innerHTML = `<div class="FNandSN" id="initialsUserEdit">TW</div>
+     ).innerHTML = `<div class="FNandSN" id="initialsUserEdit"></div>
 
-              <img class="closeImg" onclick="closeContactsContainerAdd()" />
+              <div class="closeImg" onclick="closeContactsContainer()"></div>
 
               <div id="editContactCard">
               </div>`;              
@@ -127,9 +127,9 @@ function openContactsContainerAdd() {
                 </div>`;
   document.getElementById(
     "right-side"
-  ).innerHTML = `<div class="FNandSN" id="initialsUserEdit">TW</div>
+  ).innerHTML = `<img src="./img/addUserBadge.svg"></div>
 
-              <img class="closeImg" onclick="closeContactsContainerAdd()" />
+              <div class="closeImg" onclick="closeContactsContainerAdd()"></div>
 
               <div id="editContactCard">
               <form id="contact_Form"
@@ -141,18 +141,21 @@ function openContactsContainerAdd() {
                     placeholder="Name"
                     class="add-contact-name"
                     id="add_contacts_name"
+                    required
                   />
                   <input
                     type="email"
                     placeholder="Email"
                     class="add-contact-email"
                     id="add_contacts_email"
+                    required
                   />
                   <input
                     type="tel"
                     placeholder="Phone"
                     class="add-contact-phone"
                     id="add_contacts_phone"
+                    required
                   />
                   
                   <div class="underButton">
@@ -195,13 +198,14 @@ function contactAnimation() {
 }
 
 async function deleteContact(userid) {
-  const updatedContacts = contacts.filter((contact) => contact.id !== userid);
-  contacts = [];
-  contacts.push(...updatedContacts);
-  await setItem("contacts", JSON.stringify(contacts));
-  renderContacts();
-  document.getElementById("contact_info").innerHTML = "";
-  addContactListeners();
+  const indexToDelete = contacts.findIndex((contact) => contact.id === userid);
+  if (indexToDelete !== -1) {
+    contacts.splice(indexToDelete, 1);
+    await setItem("contacts", JSON.stringify(contacts));
+    renderContacts();
+    document.getElementById("contact_info").innerHTML = "";
+    addContactListeners();
+  }
 }
 
 function editContact(userid, i) {
@@ -228,18 +232,21 @@ function renderEditContact(userid, i){
                     placeholder="Name"
                     class="add-contact-name"
                     id="edit_contacts_name"
+                    required
                   />
                   <input
                     type="email"
                     placeholder="Email"
                     class="add-contact-email"
                     id="edit_contacts_email"
+                    required
                   />
                   <input
                     type="tel"
                     placeholder="Phone"
                     class="add-contact-phone"
                     id="edit_contacts_phone"
+                    required
                   />
                   <div class="underButton">
                     <div class="add-contact-cancel" onclick="deleteContact('${userid}', '${i}'), closeContactsContainer()">Delete</div>
