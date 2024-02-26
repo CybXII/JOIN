@@ -301,6 +301,8 @@ async function checkSubtasks(i, j){
 
 
 async function editTasksfromStorage(i){
+  // usersAssignedToHelp();
+  setInitialsEdit();
   // let assignedUserID;
   currentTask['title'] = document.getElementById('edit-task-title').value
   currentTask['dueDate'] = document.getElementById('edit-datePicker').value
@@ -513,3 +515,19 @@ function openEditCategory() {
     }
   });
 }
+
+
+
+
+
+
+function usersAssignedToHelp(){
+
+  currentTask['assignedToID'] = [];
+  for (let i = 0; i < usersassignedto.length; i++) {
+    let element = usersassignedto[i];
+    element = element + 1;
+    currentTask['assignedToID'].push(element);
+  }
+}
+

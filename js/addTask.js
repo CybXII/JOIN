@@ -79,12 +79,12 @@ function editCard(i){
  * @return {undefined} 
  */
 function setCheckBoxesEdit(editingCard){
-  tasks[editingCard]['assignedToID'].forEach((element) => {
+  currentTask['assignedToID'].forEach((element) => {
     let id = element-1;
     const checkbox = document.getElementById(`edit-checkbox${id}`);
     const divElement = document.getElementById(`edit-fullname-addtask-dd-${id}`);
     const parentDivElement = document.getElementById(`edit-catergory_list_${id}`);
-    checkbox.checked=true;
+    checkbox.checked = true;
     divElement.classList.add("white");
     parentDivElement.classList.add("contact_background");
     if (!usersassignedto.includes(id)) {
@@ -495,6 +495,25 @@ function setInitials() {
       userInitialsAssignedto.push(initialsremote);
       userInitialsAssignedtoID.push(usersremoteID);
       userColorsAssignedto.push(colorremote);
+    }
+  }
+  // addTasksToStorage();
+}
+
+function setInitialsEdit() {
+  currentTask["assignedTo"] = [];
+  currentTask['assignedToID'] = [];
+  currentTask["colors"] = [];
+
+  for (let i = 0; i < usersassignedto.length; i++) {
+    let index = usersassignedto[i];
+    let initialsremote = remoteuserAssign[index].initials;
+    let usersremoteID = remoteuserAssign[index].id;
+    let colorremote = remoteuserAssign[index].color;
+    if (remoteuserAssign[index]["id"] == index + 1) {
+      currentTask["assignedTo"].push(initialsremote);
+      currentTask["assignedToID"].push(usersremoteID);
+      currentTask["colors"].push(colorremote);
     }
   }
   // addTasksToStorage();
