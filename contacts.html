@@ -42,45 +42,11 @@
 
               <div class="rightSide">
                 <!-- Zum test wird später dynamisch erzeugt -->
-                <div class="FNandSN">TW</div>
+                <div class="FNandSN" id="initialsUserEdit">TW</div>
 
                 <img class="closeImg" onclick="closeContactsContainer()">
                 
-                <form id="contact_Form"
-                  onsubmit="addContactsToStorage(); return false;"
-                  class="add-contacts-form"
-                >
-                  <input
-                    type="text"
-                    placeholder="Name"
-                    class="add-contact-name"
-                    id="add_contacts_name"
-                  />
-                  <input
-                    type="email"
-                    placeholder="Email"
-                    class="add-contact-email"
-                    id="add_contacts_email"
-                  />
-                  <input
-                    type="tel"
-                    placeholder="Phone"
-                    class="add-contact-phone"
-                    id="add_contacts_phone"
-                  />
-                  
-                  <div class="underButton">
-                    <button class="add-contact-cancel" onclick="closeContactsContainer()">Delete</button>
-                    <button class="createContact">Create contact</button>
-                  </div>
-                  <!-- <button>Create Contact</button> -->
-                  <!-- <div
-                    onclick="closeContactsContainer()"
-                    class="add-contact-cancel"
-                  >
-                    Cancel
-                  </div> -->
-                </form>
+                <div id="editContactCard"></div>
               </div>
           </div>
         </div>

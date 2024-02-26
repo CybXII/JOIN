@@ -1,6 +1,7 @@
 let letters = [];
 
 let contacts = [];
+let currentcontact = [];
 
 loadUsersFromLocalStorage();
 
@@ -50,9 +51,9 @@ function renderLetters(firstLetter) {
               <div id="contact-card-${letter}"></div>`;
 }
 
-function renderContactCard(firstLetter) {
+function renderContactCard(firstLetter, i) {
   let content = document.getElementById(`contact-card-${firstLetter}`);
-  contacts.forEach((element) => {
+  contacts.forEach((element, i) => {
     const fullname = element.fullname;
     const email = element.email;
     const color = element.color;
@@ -66,7 +67,8 @@ function renderContactCard(firstLetter) {
         color,
         initials,
         phone,
-        userid
+        userid,
+        i
       );
     }
   });
@@ -78,9 +80,10 @@ function renderContactCardHTML(
   color,
   initials,
   phone,
-  userid
+  userid, 
+  i
 ) {
-  return /*html*/ `<div class="contact-name" onclick="openContact('${fullname}', '${email}', '${color}', '${initials}', '${phone}', '${userid}')">
+  return /*html*/ `<div class="contact-name" onclick="openContact('${fullname}', '${email}', '${color}', '${initials}', '${phone}', '${userid}', '${i}')">
                 <div class="profile-badge">
                   <div class="group">
                     <div class="overlap-group" style="background-color: ${color}">
@@ -130,17 +133,74 @@ function contactAnimation() {
 
 async function deleteContact(userid) {
   const updatedContacts = contacts.filter((contact) => contact.id !== userid);
-  contacts.splice(updatedContacts, contacts.length);
+  contacts = [];
   contacts.push(...updatedContacts);
-  pushLetters();
   await setItem("contacts", JSON.stringify(contacts));
+  renderContacts();
   document.getElementById("contact_info").innerHTML = "";
   addContactListeners();
 }
 
-function editContact(userid) {
-  console.log(userid + " wird gerade editiert!");
+function editContact(userid, i) {
+  openContactsContainer(userid);
+  renderEditContact(userid, i);
+  let color = currentcontact.color;
+  document.getElementById("initialsUserEdit").innerHTML = currentcontact.initials;
+  document.getElementById("initialsUserEdit").style = `background-color: ${color}`;
+  document.getElementById("add_contacts_name").value = currentcontact.fullname;
+  document.getElementById("add_contacts_email").value = currentcontact.email;
+  document.getElementById("add_contacts_phone").value = currentcontact.phone;
 }
+
+
+function renderEditContact(i){
+  document.getElementById("editContactCard").innerHTML =
+  `<form id="contact_Form"
+                  onsubmit='addEditContact(${i}); return false;'
+                  class="add-contacts-form"
+                >
+                  <input
+                    type="text"
+                    placeholder="Name"
+                    class="add-contact-name"
+                    id="add_contacts_name"
+                  />
+                  <input
+                    type="email"
+                    placeholder="Email"
+                    class="add-contact-email"
+                    id="add_contacts_email"
+                  />
+                  <input
+                    type="tel"
+                    placeholder="Phone"
+                    class="add-contact-phone"
+                    id="add_contacts_phone"
+                  />
+                  
+                  <div class="underButton">
+                    <button class="add-contact-cancel" onclick="closeContactsContainer()">Delete</button>
+                    <button class="createContact">Create contact</button>
+                  </div>
+                  <!-- <button>Create Contact</button> -->
+                  <!-- <div onclick="closeContactsContainer()" class="add-contact-cancel">Cancel</div> -->
+                </form>`; 
+}
+
+
+async function addEditContact(i){
+  currentcontact.fullname = document.getElementById("add_contacts_name").value;
+  currentcontact.email = document.getElementById("add_contacts_email").value;
+  currentcontact.phone = document.getElementById("add_contacts_phone").value;
+  contacts[i] = currentcontact;
+  await setItem("contacts", JSON.stringify(contacts));
+  closeContactsContainer();
+  renderContacts();
+  openContact(currentcontact.fullname, currentcontact.email,
+    currentcontact.color, currentcontact.initials, currentcontact.phone, currentcontact.userid, i);
+  contactAnimation();  
+}
+
 
 async function addContactsToStorage() {
   let nameInput = document.getElementById("add_contacts_name").value.split(" ");
@@ -183,7 +243,8 @@ async function addContactsToStorage() {
   addContactListeners();
 }
 
-function openContact(fullname, email, color, initials, phone, userid) {
+function openContact(fullname, email, color, initials, phone, userid, i) {
+  currentcontact = contacts[i];
   let element = document.getElementById("contact_info");
   element.classList.remove("contact-info-content");
   element.classList.remove("contact-info");
@@ -193,11 +254,12 @@ function openContact(fullname, email, color, initials, phone, userid) {
     color,
     initials,
     phone,
-    userid
+    userid,
+    i
   );
 }
 
-function renderContactInfo(fullname, email, color, initials, phone, userid) {
+function renderContactInfo(fullname, email, color, initials, phone, userid, i) {
   return /*html*/ `  
   <div class="frame-105">
     <div class="frame-79">
@@ -208,8 +270,8 @@ function renderContactInfo(fullname, email, color, initials, phone, userid) {
     <div class="frame-104">
       <div class="frame-81">${fullname}</div>
       <div class="frame-204">
-        <div class="frame-108" onclick="editContact('${userid}')"><img src="./img/pen.svg" alt=""><p>Edit</p></div>
-        <div class="delete" onclick="deleteContact('${userid}')"><img src="./img/trash.svg" alt=""><p>Delete</p></div>
+        <div class="frame-108" onclick="editContact('${userid}', '${i}')"><img src="./img/pen.svg" alt=""><p>Edit</p></div>
+        <div class="delete" onclick="deleteContact('${userid}', '${i}')"><img src="./img/trash.svg" alt=""><p>Delete</p></div>
       </div>
     </div>
   </div>
@@ -227,5 +289,4 @@ function renderContactInfo(fullname, email, color, initials, phone, userid) {
       <a href="tel:${phone}">${phone}</a>
     </div>
   </div>
-`;
-}
+`}
