@@ -301,13 +301,20 @@ async function checkSubtasks(i, j){
 
 
 async function editTasksfromStorage(i){
+  // let assignedUserID;
   currentTask['title'] = document.getElementById('edit-task-title').value
   currentTask['dueDate'] = document.getElementById('edit-datePicker').value
   currentTask['description'] = document.getElementById('edit-task-description').value
   currentTask['category'] = document.getElementById('parent-edit_items').innerHTML;
   currentTask['prio'] = taskpriority;
+  // usersassignedto.forEach(element => { @Lukas funktioniert nicht 
+  //   assignedUserID = element-1;
+  //   currentTask['assignedToID'].push(assignedUserID)
+  // });
+  currentTask['assignedToID'].push(assignedUserID)
   console.log(currentTask)
   tasks[i] = currentTask;
+
   closeCardContainer();
   await setItem("tasks", JSON.stringify(tasks));
   updateHTML();
