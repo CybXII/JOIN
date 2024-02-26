@@ -471,7 +471,7 @@ function renderEditCard(content,i){
   <form
     id="editTaskForm"
     class="edit-addTask_helper"
-    onsubmit="editTasksfromStorage(${tasks[i]["categoryboard"]},${i}]); return false;"
+    onsubmit="editTasksfromStorage(${i}); return false; closeCardContainer(); return false;"
     >
     <div class="edit-input-fields">
       <div class="edit-frame-219">
@@ -508,7 +508,7 @@ function renderEditCard(content,i){
           <span class="assigned-to">Assigned to</span>
           <div id="edit-list1" class="dropdown-check-list" tabindex="100">
             <div onclick="renderAssignedTo('edit-'),openEditAssignTo(),
-            setCheckBoxesEdit(${i})">
+            setCheckBoxesEdit(${i}, 'edit-')">
               <span class="anchor">Select contacts to assign</span>
             </div>
             <ul class="items">
@@ -581,7 +581,7 @@ function renderEditCard(content,i){
           <div id="edit-list2" class="dropdown-check-list2" tabindex="100">
             <div onclick="openEditCategory()">
               <span id="edit-category-border" class="anchor">
-                <span id="edit-category-list2">${tasks[i]["category"]}</span>
+                <span id="parent-edit_items">${tasks[i]["category"]}</span>
               </span>
             </div>
             <ul class="items">
@@ -605,7 +605,6 @@ function renderEditCard(content,i){
               onclick="changeButtonsCard(event)"
               class="subtasks"
               placeholder="Add new subtask"
-              required
             />
             <div class="subtasks_buttons">
               <img
@@ -644,7 +643,7 @@ function renderEditCard(content,i){
       </div>
     </div>
     <div class="edit-frame-27">
-        <button class="primary-check-button" type="submit" onclick="editTasksfromStorage(${i}); return false; closeCardContainer()">
+        <button class="primary-check-button" type="submit" onclick="">
           <span>OK</span>
           <img
             src="../img/check-out-wheite.svg"

@@ -67,7 +67,9 @@ function taskPriorityChoosed(i, handler) {
 function editCard(i){
   let content = document.getElementById("card-background");
   editingCard=i;
+  taskpriority = tasks[i]['prio']
   renderEditCard(content,i);
+  taskPriorityChoosed(taskpriority,'edit-');
 }
 
 /**
@@ -83,29 +85,28 @@ function setCheckBoxesEdit(editingCard){
     const divElement = document.getElementById(`edit-fullname-addtask-dd-${id}`);
     const parentDivElement = document.getElementById(`edit-catergory_list_${id}`);
     checkbox.checked=true;
-    usersassignedto.push(element);
     divElement.classList.add("white");
     parentDivElement.classList.add("contact_background");
-    if (!usersassignedto.includes(element)) {
-      usersassignedto.push(element);
-      // usersassignedto.sort();
+    if (!usersassignedto.includes(id)) {
+      usersassignedto.push(id);
+      usersassignedto.sort();
     }
     if (checkbox.checked) {
       divElement.classList.add("white");
       parentDivElement.classList.add("contact_background");
-      if (!usersassignedto.includes(element)) {
-        usersassignedto.push(element);
-        // usersassignedto.sort();
+      if (!usersassignedto.includes(id)) {
+        usersassignedto.push(id);
+        usersassignedto.sort();
       }
     } 
     else {
-      // divElement.classList.remove("white");
-      // parentDivElement.classList.remove("contact_background");
-      // const index = usersassignedto.indexOf(element);
-      // if (index !== -1) {
-      //   usersassignedto.splice(index, 1);
-      //   // usersassignedto.sort();
-      // }
+      divElement.classList.remove("white");
+      parentDivElement.classList.remove("contact_background");
+      const index = usersassignedto.indexOf(id);
+      if (index !== -1) {
+        usersassignedto.splice(index, 1);
+        usersassignedto.sort();
+      }
     }
     
 
@@ -190,7 +191,7 @@ function taskAddedCompleteText() {
 function fillInputField(inputString, handler) {
   if (handler === "edit-") {
     document.getElementById(
-      `${handler}category-list2`
+      `parent-edit_items`
     ).innerHTML = `${inputString}`;
     openEditCategory();
   } else {

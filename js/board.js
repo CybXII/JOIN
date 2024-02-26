@@ -301,6 +301,12 @@ async function checkSubtasks(i, j){
 
 
 async function editTasksfromStorage(i){
+  currentTask['title'] = document.getElementById('edit-task-title').value
+  currentTask['dueDate'] = document.getElementById('edit-datePicker').value
+  currentTask['description'] = document.getElementById('edit-task-description').value
+  currentTask['category'] = document.getElementById('parent-edit_items').innerHTML;
+  currentTask['prio'] = taskpriority;
+  console.log(currentTask)
   tasks[i] = currentTask;
   closeCardContainer();
   await setItem("tasks", JSON.stringify(tasks));
@@ -482,7 +488,7 @@ function openEditAssignTo(){
 
 function openEditCategory() {
   let categoryBox = document.getElementById("edit-list2");
-  let categoryInput = document.getElementById("edit-category-list2");
+  let categoryInput = document.getElementById("parent-edit_items");
 
   if (!categoryBox.classList.contains("visible")) {
     categoryBox.classList.add("visible");
