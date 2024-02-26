@@ -933,10 +933,10 @@ color: var(--ligth-blue);
 }
 
 .addTask_helper{
-        display: flex;
+    display: flex;
     flex-direction: column;
     align-items: flex-end;
-    width: 100%;
+    max-width: 970px;
 }
 
 /* DROPDOWN */
@@ -1092,7 +1092,6 @@ color: var(--ligth-blue);
     
     .dropdown-check-list2.visible .items {
         display: block;
-        width: 438px;
         position: relative;
         z-index: 10;
         top: -8px;
