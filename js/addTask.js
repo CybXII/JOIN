@@ -68,7 +68,6 @@ function editCard(i){
   let content = document.getElementById("card-background");
   editingCard=i;
   renderEditCard(content,i);
-  renderAssigned(i, "edit-");
 }
 
 /**
