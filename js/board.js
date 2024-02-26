@@ -311,7 +311,7 @@ async function editTasksfromStorage(i){
   //   assignedUserID = element-1;
   //   currentTask['assignedToID'].push(assignedUserID)
   // });
-  currentTask['assignedToID'].push(assignedUserID)
+  // currentTask['assignedToID'].push(assignedUserID)
   console.log(currentTask)
   tasks[i] = currentTask;
 
@@ -360,22 +360,22 @@ function editSubtasks(i){
 }
 
 function editSubtaskCard(i, j) {
-  let container = document.getElementById(`subtask-comp-${i}`);
-  let textContent = currentTask.subtasks[i].subtaskName;
+  let container = document.getElementById(`subtask-comp-${j}`);
+  let textContent = currentTask.subtasks[j].subtaskName;
   container.innerHTML = editSubTaskHtmlCard(textContent, i, j);
   hideSubtaskIconsCard(j);
 }
 
 async function addEditSubTaskCard(i, j) {
   let subTaskInput = document.getElementById("editSubTaskInput");
-  currentTask.subtasks[i].subtaskName = subTaskInput.value;
+  currentTask.subtasks[j].subtaskName = subTaskInput.value;
   editSubtaskCard(i, j);
   renderAddSubtasksCard(i);
 }
 
 function editSubTaskHtmlCard(textContent, i, j) {
   return /*html*/ `
-      <div class="editSubTaskButtonBox" id="subtask-icons-${i}"></div> 
+      <div class="editSubTaskButtonBox" id="subtask-icons-${j}"></div> 
     <div class="subtask-edit-container">
       <input id="editSubTaskInput" type="text" class="sub-edit-input" value=${textContent} />
       <div class="sub-icons">
@@ -412,21 +412,21 @@ function renderAddSubtasksCard(i) {
     content.innerHTML += /*html*/ `
     <div id="subtask-comp-${j}">
     <div class="subtask-comp" onmouseover="showSubtaskIconsCard(${j},${i})" onmouseleave="hideSubtaskIconsCard(${j},${i})">
-                    <span class="subtask-task" id='subtask${j}' ondblclick="editSubtaskCard(${j},${i})" 
+                    <span class="subtask-task" id='subtask${j}' ondblclick="editSubtaskCard(${i},${j})" 
                       >⦁ ${element}</span
                     >
                     <div class="sub-icons d-none" id="subtask-icons-${j}">
                       <img
                         src="./img/edit.svg"
                         alt=""
-                        onclick="editSubtaskCard(${j},${i})"
+                        onclick="editSubtaskCard(${i},${j})"
                         class="subtask-icon"
                       />
                       <img src="./img/Vector 19.svg" alt="" />
                       <img
                         src="./img/delete.svg"
                         alt=""
-                        onclick="deleteSubtaskCard(${j},${i})"
+                        onclick="deleteSubtaskCard(${i},${j})"
                         class="subtask-icon"
                       />
                     </div>
@@ -437,7 +437,7 @@ function renderAddSubtasksCard(i) {
 }
 
 
-function deleteSubtaskCard(j, i) {
+function deleteSubtaskCard(i, j) {
   currentTask.subtasks.splice(j, 1);
   renderAddSubtasksCard(j);
 }
