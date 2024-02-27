@@ -945,6 +945,7 @@ body{
 
     .frame-40 {
       width: 300px;
+      margin-bottom: 30px;
     }
 
     .board_window {
