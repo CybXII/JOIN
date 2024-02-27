@@ -95,7 +95,6 @@ function renderSignUpHTML() {
             required
             oninvalid="this.setCustomValidity('Geben sie ihr Passwort ein!')"
             oninput="this.setCustomValidity('')"
-            onkeyup="signUpPasswordValidation()"
           />
           <img id="password_locker" class="img" src="img/lock.svg" onclick="changeLockerPicture('parent_password')" alt="locker spicture" />
         </div>
@@ -113,8 +112,6 @@ function renderSignUpHTML() {
               id="confirm_password"
               autocomplete="new-password"
               placeholder="Confirm Password"
-
-              onkeyup="signUpPasswordValidation()"
             />
             <img id="confirm_locker" class="img" src="img/lock.svg" onclick="changeLockerPicture('parent_confirm_password')" alt="lockerspicture" />
             </div>
