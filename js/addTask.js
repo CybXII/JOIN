@@ -281,28 +281,19 @@ function renderAssignedTo(handler) {
  *
  */
 function openAssignTo() {
-  // renderAssignedUserAddTask();
   let logoutBox = document.getElementById("list1");
 
-  // Überprüfe, ob die Klasse "visible" nicht enthalten ist, füge sie hinzu
   if (!logoutBox.classList.contains("visible")) {
     logoutBox.classList.add("visible");
     renderAssignedUserAddTask();
   } else {
-    // Wenn "visible" enthalten ist, entferne es
     logoutBox.classList.remove("visible");
   }
 
   setBoxListener(logoutBox);
-
-  // Überwache Klicks im Fenster, um die Liste zu verstecken, wenn außerhalb geklickt wird
-  // window.addEventListener("click", function (e) {
-  //   if (!logoutBox.contains(e.target)) {
-  //     logoutBox.classList.remove("visible");
-  //     window.removeEventListener("click", arguments.callee); // Entferne den Event-Listener nach Ausführung
-  //   }
-  // });
 }
+
+
 function setBoxListener(box){
   window.addEventListener("click", function (e) {
     if (!box.contains(e.target)) {
@@ -339,6 +330,7 @@ function openCategory() {
   });
 }
 
+
 /**
  * Adds subtasks to the subtasksAdd array and renders the updated list of subtasks.
  *
@@ -358,6 +350,7 @@ function addSubtasks() {
     renderAddSubtasks();
   }
 }
+
 
 /**
  * Renders and updates the subtasks in the subtasks-container element.
@@ -397,6 +390,7 @@ function renderAddSubtasks() {
   }
 }
 
+
 /**
  * Edit a subtask in the DOM.
  *
@@ -410,6 +404,7 @@ function editSubtask(i) {
   container.innerHTML = editSubTaskHtml(textContent, i);
   hideSubtaskIcons(i);
 }
+
 
 /**
  * Function to edit subtask HTML.
@@ -433,6 +428,7 @@ function editSubTaskHtml(textContent, i) {
   `;
 }
 
+
 /**
  * Updates a subtask at the specified index and re-renders the list of subtasks.
  *
@@ -444,6 +440,7 @@ function addEditSubTask(i) {
   subtasksAdd[i].subtaskName = subTaskInput.value;
   renderAddSubtasks();
 }
+
 
 /**
  * A function that adds a class when the checkbox is changed.
@@ -460,6 +457,7 @@ function addClassOnCheckboxChange(userid, handler) {
     setCheckBoxes(userid, handler);
   }
 }
+
 
 /**
  * Sets the checkboxes for a given user ID based on the handler.
@@ -494,6 +492,7 @@ function setCheckBoxes(userid, handler) {
   }
 }
 
+
 /**
  * Iterates through the users assigned to and retrieves their initials, ID, and color from the remote user assignments. 
  * If the remote user ID matches the index, the user initials, ID, and color are added to their respective arrays.
@@ -513,6 +512,7 @@ function setInitials() {
   // addTasksToStorage();
 }
 
+
 function setInitialsEdit() {
   currentTask["assignedTo"] = [];
   currentTask['assignedToID'] = [];
@@ -531,6 +531,7 @@ function setInitialsEdit() {
   }
   // addTasksToStorage();
 }
+
 
 /**
  * Sets the initial assigned badges and colors, clears the assigned-to-add-task-list,
@@ -556,6 +557,7 @@ function setBadgesAddTask() {
   renderBadgesAddTask();
 }
 
+
 /**
  * Renders badges for adding tasks.
  *
@@ -570,6 +572,7 @@ function renderBadgesAddTask() {
     renderBadges(initials, color, content, i);
   }
 }
+
 
 /**
  * Renders badges based on the provided initials, color, content, and index.
@@ -594,6 +597,7 @@ function renderBadges(initials, color, content, i) {
     }</div>`;
   }
 }
+
 
 /**
  * Render assigned user task handler
@@ -621,6 +625,7 @@ function renderAssignedUserAddTask(handler) {
   }
 }
 
+
 /**
  * Function to push category to JSON.
  *
@@ -631,6 +636,7 @@ function pushCategoryToJSON() {
   return taskCategory;
 }
 
+
 /**
  * Add tasks to storage.
  *
@@ -640,6 +646,7 @@ function pushCategoryToJSON() {
 function addTasksToStorage(categoryInput) {
   checkInputFields(categoryInput);
 }
+
 
 /**
  * Performs a check before making changes based on the provided title, date, category, and category input.
@@ -657,6 +664,7 @@ function checkInputFields(categoryInput) {
 
   checkBeforChange(title, date, category, categoryInput);
 }
+
 
 /**
  * Check before making changes based on the provided title, date, category, and category input.
@@ -679,6 +687,7 @@ function checkBeforChange(title, date, category, categoryInput) {
   }
 }
 
+
 /**
  * Change the state of the category input based on the selected category.
  *
@@ -697,6 +706,7 @@ function changeStateCategoryInput(category) {
   }
 }
 
+
 /**
  * Changes the state of the date input based on the provided date.
  *
@@ -714,6 +724,7 @@ function changeStateDateInput(date) {
   }
 }
 
+
 /**
  * Function to change the state of the title input based on the input value.
  *
@@ -730,6 +741,7 @@ function changeStateTitleInput(title) {
     document.getElementById("task-title").classList.remove("redBorder");
   }
 }
+
 
 /**
  * Adds a task to the specified board.
@@ -764,6 +776,7 @@ async function addTasktoBoard(input) {
   date.value = "";
   taskAddedCompleteText();
 }
+
 
 /**
  * Reset the tasks board by updating the tasks array and then storing it in the local storage.
@@ -876,6 +889,7 @@ async function resetTasksBoard() {
   await setItem("tasks", JSON.stringify(tasks));
 }
 
+
 /**
  * Change the buttons and set an event listener for subtasks.
  *
@@ -891,6 +905,7 @@ function changeButtons(event) {
   document.getElementById("subtask_cancel_button").classList.remove("d-none");
   setEventListenerSubtask(parent_div);
 }
+
 
 /**
  * Set event listener on the parent div to handle click events outside of the div.
@@ -920,6 +935,7 @@ function setEventListenerSubtask(parent_div) {
   });
 }
 
+
 /**
  * Function to render urgent priority for the given handler.
  *
@@ -947,6 +963,7 @@ function renderUrgent(handler) {
     "./img/low_nofill.svg";
 }
 
+
 /**
  * Function to render the medium priority handler.
  *
@@ -973,6 +990,7 @@ function renderMedium(handler) {
   document.getElementById(`${handler}prio-urgent-img`).src =
     "./img/urgent_nofill.svg";
 }
+
 
 /**
  * Function to render the low priority handler.
