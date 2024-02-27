@@ -727,9 +727,6 @@ text-align: left;
   color: #ffffff;
   font-size: 53px;
   line-height: 73.2px;
-  height: 73px;
-  width: 361px;
-  transform: translateY(20px);
 }
 
 .twoLine {
@@ -739,7 +736,6 @@ text-align: left;
 .underlineBlue {
   height: 20px;
   width: 90px;
-  transform: translateY(20px);
 }
 
 .rightSide {
