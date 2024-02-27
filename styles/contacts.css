@@ -1044,8 +1044,7 @@ text-align: left;
   }
 
   .testContainer {
-    padding-top: 80px;
-    padding-left: 40px;
+    padding: 80px 40px;
   }
 
 
