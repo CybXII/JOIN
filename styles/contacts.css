@@ -771,8 +771,7 @@ text-align: left;
   margin-right: 0;
   background-image: url(./../img/close.svg);
   background-repeat: no-repeat;
-  background-size: 15px;
-  background-color: white;
+  background-size: 25px;
   background-position: center;
   right: 60px;
   top: 48px;
@@ -1075,8 +1074,16 @@ text-align: left;
     width: 32px;
     height: 32px;
     top: -170px;
-    right: 30px;
+    right: 0px;
   }
+
+  .closeImg:hover {
+  background: rgba(255, 255, 255, 0);
+  background-image: url(./../img/close-white.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  object-fit: cover;
+}
 
   .add-contacts-form {
     margin-left: 55px;
