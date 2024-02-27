@@ -482,16 +482,13 @@ function resetSubtasksCard() {
 
 
 function openEditAssignTo(i, handler){
-    // renderAssignedUserAddTask();
     let assingBox = document.getElementById("edit-list1");
   
-    // Überprüfe, ob die Klasse "visible" nicht enthalten ist, füge sie hinzu
     if (!assingBox.classList.contains("visible")) {
       assingBox.classList.add("visible");
       renderAssignedUserAddTask(handler);
       setCheckBoxesEdit(i, handler)
     } else {
-      // Wenn "visible" enthalten ist, entferne es
       assingBox.classList.remove("visible");
     }
     setBoxListener(assingBox);
@@ -570,10 +567,6 @@ function renderBadgesEdit(initials, color, content, i) {
 }
 
 
-
-
-
-
 function setAssignedUserHelp(editingCard) {
   currentTask["assignedToID"].forEach((element) => {
     let id = element - 1;
@@ -589,42 +582,32 @@ function setAssignedUserHelp(editingCard) {
   });
 }
 
+
 function openBurgerBoard(event, i){
   console.log("burgermenu " + i + " geöffnet");
   event.stopPropagation();
 }
 
 
-
-
 function openAssignToEdit() {
-  // renderAssignedUserAddTask();
   let logoutBox = document.getElementById("edit-list1");
 
-  // Überprüfe, ob die Klasse "visible" nicht enthalten ist, füge sie hinzu
   if (!logoutBox.classList.contains("visible")) {
     logoutBox.classList.add("visible");
     renderAssignedUserAddTask();
   } else {
-    // Wenn "visible" enthalten ist, entferne es
     logoutBox.classList.remove("visible");
   }
 
   setBoxListenerEdit(logoutBox);
-
-  // Überwache Klicks im Fenster, um die Liste zu verstecken, wenn außerhalb geklickt wird
-  // window.addEventListener("click", function (e) {
-  //   if (!logoutBox.contains(e.target)) {
-  //     logoutBox.classList.remove("visible");
-  //     window.removeEventListener("click", arguments.callee); // Entferne den Event-Listener nach Ausführung
-  //   }
-  // });
 }
+
+
 function setBoxListenerEdit(box) {
   window.addEventListener("click", function (e) {
     if (!box.contains(e.target)) {
       box.classList.remove("visible");
-      window.removeEventListener("click", arguments.callee); // Entferne den Event-Listener nach Ausführung
+      window.removeEventListener("click", arguments.callee);
     }
   });
 }
