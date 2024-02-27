@@ -203,6 +203,7 @@ async function openCard(i) {
   renderCardInfo(i);
   renderSubtasksInfos(i);
   renderAssigned(i);
+  setAssignedUserHelp(editingCard);
 }
 
 
@@ -568,4 +569,46 @@ function renderBadgesEdit(initials, color, content, i) {
       i - 3
     }</div>`;
   }
+}
+
+
+
+
+
+
+function setAssignedUserHelp(editingCard) {
+  currentTask["assignedToID"].forEach((element) => {
+    let id = element - 1;
+    // const checkbox = document.getElementById(`edit-checkbox${id}`);
+    // const divElement = document.getElementById(
+    //   `edit-fullname-addtask-dd-${id}`
+    // );
+    // const parentDivElement = document.getElementById(
+    //   `edit-catergory_list_${id}`
+    // );
+    // checkbox.checked = true;
+    // divElement.classList.add("white");
+    // parentDivElement.classList.add("contact_background");
+    if (!usersassignedto.includes(id)) {
+      usersassignedto.push(id);
+      usersassignedto.sort();
+    }
+    // if (checkbox.checked) {
+      // divElement.classList.add("white");
+      // parentDivElement.classList.add("contact_background");
+      if (!usersassignedto.includes(id)) {
+        usersassignedto.push(id);
+        usersassignedto.sort();
+      // }
+    } 
+    // else {
+    //   // divElement.classList.remove("white");
+    //   // parentDivElement.classList.remove("contact_background");
+    //   const index = usersassignedto.indexOf(id);
+    //   if (index !== -1) {
+    //     usersassignedto.splice(index, 1);
+    //     usersassignedto.sort();
+    //   }
+    // }
+  });
 }

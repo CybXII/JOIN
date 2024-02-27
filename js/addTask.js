@@ -81,8 +81,8 @@ function editCard(i){
  * @return {undefined} 
  */
 function setCheckBoxesEdit(editingCard){
-  currentTask['assignedToID'].forEach((element) => {
-    let id = element-1;
+  usersassignedto.forEach((element) => {
+    let id = element;
     const checkbox = document.getElementById(`edit-checkbox${id}`);
     const divElement = document.getElementById(`edit-fullname-addtask-dd-${id}`);
     const parentDivElement = document.getElementById(`edit-catergory_list_${id}`);
@@ -110,10 +110,8 @@ function setCheckBoxesEdit(editingCard){
         usersassignedto.sort();
       }
     }
-    
 
   });
-
 }
 
 
@@ -253,6 +251,7 @@ function renderAssignedTo(handler) {
         </div>
       </li>
       `;
+      setBadgesAddTaskEdit();
     }, (assigncontent.innerHTML = ""));
   } else {
     handler = "";
