@@ -612,3 +612,8 @@ function setAssignedUserHelp(editingCard) {
     // }
   });
 }
+
+function openBurgerBoard(event, i){
+  console.log("burgermenu " + i + " geöffnet");
+  event.stopPropagation();
+}

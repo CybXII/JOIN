@@ -423,8 +423,11 @@ function renderAssigned(i){
         task.categoryboard
         ).innerHTML += `<div class="card-board" draggable="true" ondragstart="rotateCardStart(${i}),moveToLocation(${i}),highlight()" id="board-card${i}" onclick="openCard(${i})" ondragend="rotateCardEnd()">
         <div class="frame-119">
-        <div class="card-board-user-story">
+        <div class="frame-119-flex">
+        <div class="card-board-user-story" id="card-board-category${i}">
         <span class="card-board-user-story-text">${task.category}</span>
+        </div>
+        <div class="frame-119-burger" id="frame-119-burger${i}" onclick="openBurgerBoard(event, ${i})"></div>
         </div>
         <div class="frame-114">
         <span class="card-board-title">${task.title}</span>
@@ -452,6 +455,12 @@ function renderAssigned(i){
             document.getElementById(`prio-svg${i}`).src = "./img/medium_nofill.svg";
           } else if (task.prio == "low") {
             document.getElementById(`prio-svg${i}`).src = "./img/low_nofill.svg";
+          }
+          if (task.category == 'User Story') {
+            document.getElementById(`card-board-category${i}`).style = "background: #0038FF";
+          }
+          else {
+            document.getElementById(`card-board-category${i}`).style = "background: #1FD7C1";
           }
   }
 
