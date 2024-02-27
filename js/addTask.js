@@ -191,12 +191,10 @@ function taskAddedCompleteText() {
  */
 function fillInputField(inputString, handler) {
   if (handler === "edit-") {
-    document.getElementById(
-      `parent-edit_items`
-    ).innerHTML = `${inputString}`;
+    document.getElementById(`parent-edit_items`).innerHTML = `${inputString}`;
     openEditCategory();
   } else {
-    document.getElementById(`category-list2`).innerHTML = `${inputString}`;
+    document.getElementById(`category-list2`).value = `${inputString}`;
     openCategory();
   }
 }
@@ -322,7 +320,7 @@ function setBoxListener(box){
 function openCategory() {
   let categoryBox = document.getElementById("list2");
   let categoryInput = document.getElementById("category-list2");
-
+  changeStateCategoryInput();
   if (!categoryBox.classList.contains("visible")) {
     categoryBox.classList.add("visible");
     categoryInput.setAttribute("disabled", "");
@@ -331,13 +329,14 @@ function openCategory() {
     categoryBox.classList.remove("visible");
     categoryInput.removeAttribute("disabled", "");
   }
-  setBoxListener(categoryBox);
-  // window.addEventListener("click", function (e) {
-  //   if (!categoryBox.contains(e.target)) {
-  //     categoryBox.classList.remove("visible");
-  //     window.removeEventListener("click", arguments.callee);
-  //   }
-  // });
+  window.addEventListener("click", function (e) {
+    if (!categoryBox.contains(e.target)) {
+      categoryBox.classList.remove("visible");
+      categoryInput.removeAttribute("disabled", "");
+
+      window.removeEventListener("click", arguments.callee);
+    }
+  });
 }
 
 /**
@@ -654,7 +653,7 @@ function addTasksToStorage(categoryInput) {
 function checkInputFields(categoryInput) {
   let title = document.getElementById("task-title").value;
   let date = document.getElementById("datePicker").value;
-  let category = document.getElementById("category-list2").innerHTML;
+  let category = document.getElementById("category-list2").value;
 
   checkBeforChange(title, date, category, categoryInput);
 }
@@ -689,8 +688,10 @@ function checkBeforChange(title, date, category, categoryInput) {
 function changeStateCategoryInput(category) {
   if (category === "Select Task Category") {
     document.getElementById("category-border").classList.add("redBorder");
-    document.getElementById("warning-info-2").style = "display: block";
-  } else if (category != "") {
+    document.getElementById("warning-info-2").style = "display: block";  
+    document.getElementById('category-list2').setAttribute('onfocusout',`checkInputFields('todo')`)
+  
+  } else if (category != "" && category != "Select Task Category") {
     document.getElementById("warning-info-2").style = "display: none";
     document.getElementById("category-border").classList.remove("redBorder");
   }
@@ -706,6 +707,7 @@ function changeStateDateInput(date) {
   if (date === "") {
     document.getElementById("datePicker").classList.add("redBorder");
     document.getElementById("warning-info-3").style = "display: block";
+    document.getElementById('datePicker').setAttribute('onchange',`checkInputFields('todo')`)
   } else if (date != "") {
     document.getElementById("warning-info-3").style = "display: none";
     document.getElementById("datePicker").classList.remove("redBorder");
@@ -722,6 +724,7 @@ function changeStateTitleInput(title) {
   if (title === "") {
     document.getElementById("warning-info-1").style = "display: block";
     document.getElementById("task-title").classList.add("redBorder");
+    document.getElementById('task-title').setAttribute('onkeyup',`checkInputFields('todo')`)
   } else if (title != "") {
     document.getElementById("warning-info-1").style = "display: none";
     document.getElementById("task-title").classList.remove("redBorder");
