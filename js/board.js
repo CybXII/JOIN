@@ -259,8 +259,6 @@ function filterTaskBoard() {
   categorys.forEach((element) => {
     clearBoardCategory(element);
     filterCategory(element, searchInput);
-    renderFinishCounter(i);
-
   });
   if (searchInput.length == 0) {
     renderBoardTasks();    
