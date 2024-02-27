@@ -11,6 +11,7 @@ let userInitialsAssignedtoBadges = [];
 let userColorsAssignedtoBadges = [];
 let editingCard;
 
+
 /**
  * Asynchronously renders the add task functionality.
  *
@@ -21,6 +22,7 @@ async function renderAddTask() {
   document.querySelector("form").noValidate = false;
   await loadRemoteUser();
 }
+
 
 /**
  * Configures the date picker by setting the minimum date allowed.
@@ -113,6 +115,7 @@ function setCheckBoxesEdit(editingCard){
   });
 
 }
+
 
 /**
  * Deletes a subtask at the specified index.

@@ -507,8 +507,7 @@ function renderEditCard(content,i){
         <div class="asigned-to-v1">
           <span class="assigned-to">Assigned to</span>
           <div id="edit-list1" class="dropdown-check-list" tabindex="100">
-            <div onclick="renderAssignedTo('edit-'),openEditAssignTo(),
-            setCheckBoxesEdit(${i}, 'edit-')">
+            <div onclick="renderAssignedTo('edit-'),openEditAssignTo(${i}, 'edit-')">
               <span class="anchor">Select contacts to assign</span>
             </div>
             <ul class="items">

@@ -491,14 +491,15 @@ function resetSubtasksCard() {
 }
 
 
-function openEditAssignTo(){
+function openEditAssignTo(i, handler){
     // renderAssignedUserAddTask();
     let assingBox = document.getElementById("edit-list1");
   
     // Überprüfe, ob die Klasse "visible" nicht enthalten ist, füge sie hinzu
     if (!assingBox.classList.contains("visible")) {
       assingBox.classList.add("visible");
-      renderAssignedUserAddTask("edit-");
+      renderAssignedUserAddTask(handler);
+      setCheckBoxesEdit(i, handler)
     } else {
       // Wenn "visible" enthalten ist, entferne es
       assingBox.classList.remove("visible");
