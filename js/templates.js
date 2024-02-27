@@ -364,7 +364,7 @@ function renderAssigned(i){
         </div>
       </div>
       <div class="card_buttons">
-          <div class="card_div" onclick="editCard(${i}), editSubtasks(${i})">
+          <div class="card_div" onclick="editCard(${i}), editSubtasks(${i}), setBadgesAddTaskEdit()">
             <img src="./img/pen.svg" alt=""/>
             <p>Edit</p>  
           </div>

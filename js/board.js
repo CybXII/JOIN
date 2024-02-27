@@ -317,13 +317,13 @@ async function editTasksfromStorage(i){
   tasks[i] = currentTask;
   setInitialsEdit();
   closeCardContainer();
-
   await setItem("tasks", JSON.stringify(tasks));
   updateHTML();
 }
 
 
 function editSubtasks(i){
+  // renderBadgesAddTaskEdit();
   subtasksAdd.push(tasks[i].subtasks);
   subtasksAddCard = [];
   subtasksAddCard.push(subtasksAdd[0]);
@@ -524,3 +524,48 @@ function usersAssignedToHelp(){
   }
 }
 
+
+function setBadgesAddTaskEdit() {
+  userInitialsAssignedtoBadges = [];
+  userColorsAssignedtoBadges = [];
+  document.getElementById("edit-assigned-to-add-task-list").innerHTML = "";
+  for (let i = 0; i < usersassignedto.length; i++) {
+    let index = usersassignedto[i];
+    let initialsremote = remoteuserAssign[index].initials;
+    let colorremote = remoteuserAssign[index].color;
+    // let idremote = remoteuserAssign[i]["id"];
+    if (remoteuserAssign[index]["id"] == index + 1) {
+      userInitialsAssignedtoBadges.push(initialsremote);
+      userColorsAssignedtoBadges.push(colorremote);
+    }
+  }
+  renderBadgesAddTaskEdit();
+}
+
+
+
+function renderBadgesAddTaskEdit() {
+  for (let i = 0; i < userInitialsAssignedtoBadges.length; i++) {
+    const initials = userInitialsAssignedtoBadges[i];
+    const color = userColorsAssignedtoBadges[i];
+    let content = document.getElementById("edit-assigned-to-add-task-list");
+    renderBadgesEdit(initials, color, content, i);
+  }
+}
+
+
+function renderBadgesEdit(initials, color, content, i) {
+  if (i <= 3) {
+    content.innerHTML += /*html*/ `<div class="assigned-to-add-task-user" style="background-color: ${color}">${initials}</div>`;
+  }
+  if (i == 4) {
+    content.innerHTML += /*html*/ `<div id="grey_badge" class="assigned-to-add-task-user" style="background-color: grey">+${
+      i - 3
+    }</div>`;
+  }
+  if (i > 4) {
+    document.getElementById("grey_badge").innerHTML = /*html*/ `+${
+      i - 3
+    }</div>`;
+  }
+}
