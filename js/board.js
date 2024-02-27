@@ -309,30 +309,21 @@ async function checkSubtasks(i, j){
 
 
 async function editTasksfromStorage(i){
-  // usersAssignedToHelp();
-  setInitialsEdit();
-  // let assignedUserID;
   currentTask['title'] = document.getElementById('edit-task-title').value
   currentTask['dueDate'] = document.getElementById('edit-datePicker').value
   currentTask['description'] = document.getElementById('edit-task-description').value
   currentTask['category'] = document.getElementById('parent-edit_items').innerHTML;
   currentTask['prio'] = taskpriority;
-  // usersassignedto.forEach(element => { @Lukas funktioniert nicht 
-  //   assignedUserID = element-1;
-  //   currentTask['assignedToID'].push(assignedUserID)
-  // });
-  // currentTask['assignedToID'].push(assignedUserID)
-  console.log(currentTask)
   tasks[i] = currentTask;
-
+  setInitialsEdit();
   closeCardContainer();
+
   await setItem("tasks", JSON.stringify(tasks));
   updateHTML();
 }
 
 
 function editSubtasks(i){
-  // let container = document.getElementById(`edit-subtasks-container-${i}`);
   subtasksAdd.push(tasks[i].subtasks);
   subtasksAddCard = [];
   subtasksAddCard.push(subtasksAdd[0]);
@@ -505,13 +496,6 @@ function openEditAssignTo(i, handler){
       assingBox.classList.remove("visible");
     }
     setBoxListener(assingBox);
-    // Überwache Klicks im Fenster, um die Liste zu verstecken, wenn außerhalb geklickt wird
-    // window.addEventListener("click", function (e) {
-    //   if (!assingBox.contains(e.target)) {
-    //     assingBox.classList.remove("visible");
-    //     window.removeEventListener("click", arguments.callee); // Entferne den Event-Listener nach Ausführung
-    //   }
-    // });
 }
 
 
@@ -527,12 +511,6 @@ function openEditCategory() {
     categoryInput.removeAttribute("disabled", "");
   }
   setBoxListener(categoryBox)
-  // window.addEventListener("click", function (e) {
-  //   if (!categoryBox.contains(e.target)) {
-  //     categoryBox.classList.remove("visible");
-  //     window.removeEventListener("click", arguments.callee);
-  //   }
-  // });
 }
 
 
