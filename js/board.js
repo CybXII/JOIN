@@ -9,7 +9,7 @@ let finishcounter = 0;
 let tasks = [];
 let editTaskPriority;
 let currentTask = [];
-
+let filteredTasks
 
 
 async function renderBoardTasks() {
@@ -258,7 +258,8 @@ function filterTaskBoard() {
   categorys.forEach((element) => {
     clearBoardCategory(element);
     filterCategory(element, searchInput);
-    console.log(`startfilter ${searchInput}`);
+    renderFinishCounter(i);
+
   });
   if (searchInput.length == 0) {
     renderBoardTasks();    
@@ -280,8 +281,12 @@ function filterCategory(categorys, searchInput) {
         checkTitlel.toUpperCase().includes(searchInput.toUpperCase()) ||
         checkInfos.toUpperCase().includes(searchInput.toUpperCase())
       ) {
-        renderFilteredCard(task, i, categorys);
-      }
+        renderUpdateHTML(task,i);
+        renderUpdateAssigned(task,i);
+        finishedSubtasks(i);
+        renderFinishCounter(i);
+        finishcounter = 0;
+        }
     }
   });
 }
@@ -325,6 +330,7 @@ async function editTasksfromStorage(i){
   updateHTML();
 }
 
+
 function editSubtasks(i){
   // let container = document.getElementById(`edit-subtasks-container-${i}`);
   subtasksAdd.push(tasks[i].subtasks);
@@ -364,6 +370,7 @@ function editSubtasks(i){
 
 }
 
+
 function editSubtaskCard(i, j) {
   let container = document.getElementById(`subtask-comp-${j}`);
   let textContent = currentTask.subtasks[j].subtaskName;
@@ -371,12 +378,14 @@ function editSubtaskCard(i, j) {
   hideSubtaskIconsCard(j);
 }
 
+
 async function addEditSubTaskCard(i, j) {
   let subTaskInput = document.getElementById("editSubTaskInput");
   currentTask.subtasks[j].subtaskName = subTaskInput.value;
   editSubtaskCard(i, j);
   renderAddSubtasksCard(i);
 }
+
 
 function editSubTaskHtmlCard(textContent, i, j) {
   return /*html*/ `
@@ -393,6 +402,7 @@ function editSubTaskHtmlCard(textContent, i, j) {
   `;
 }
 
+
 function addSubtasksCard(i) {
   let subtaskstoadd = document.getElementById("edit-subtasks").value;
 
@@ -408,6 +418,7 @@ function addSubtasksCard(i) {
     renderAddSubtasksCard(i);
   }
 }
+
 
 function renderAddSubtasksCard(i) {
   document.getElementById("edit-subtasks-container").innerHTML = "";
@@ -447,12 +458,14 @@ function deleteSubtaskCard(i, j) {
   renderAddSubtasksCard(j);
 }
 
+
 function showSubtaskIconsCard(i, j) {
   document.getElementById(`subtask-icons-${i}`).classList.remove("d-none");
   document
     .getElementById(`subtask-comp-${i}`)
     .classList.add("subtask-background");
 }
+
 
 function hideSubtaskIconsCard(i, j) {
   document.getElementById(`subtask-icons-${i}`).classList.add("d-none");
@@ -472,9 +485,11 @@ function changeButtonsCard(event) {
   setEventListenerSubtask(parent_div);
 }
 
+
 function resetSubtasksCard() {
   document.getElementById("edit-subtasks").value = ``;
 }
+
 
 function openEditAssignTo(){
     // renderAssignedUserAddTask();
@@ -488,15 +503,16 @@ function openEditAssignTo(){
       // Wenn "visible" enthalten ist, entferne es
       assingBox.classList.remove("visible");
     }
-  
+    setBoxListener(assingBox);
     // Überwache Klicks im Fenster, um die Liste zu verstecken, wenn außerhalb geklickt wird
-    window.addEventListener("click", function (e) {
-      if (!assingBox.contains(e.target)) {
-        assingBox.classList.remove("visible");
-        window.removeEventListener("click", arguments.callee); // Entferne den Event-Listener nach Ausführung
-      }
-    });
+    // window.addEventListener("click", function (e) {
+    //   if (!assingBox.contains(e.target)) {
+    //     assingBox.classList.remove("visible");
+    //     window.removeEventListener("click", arguments.callee); // Entferne den Event-Listener nach Ausführung
+    //   }
+    // });
 }
+
 
 function openEditCategory() {
   let categoryBox = document.getElementById("edit-list2");
@@ -505,23 +521,18 @@ function openEditCategory() {
   if (!categoryBox.classList.contains("visible")) {
     categoryBox.classList.add("visible");
     categoryInput.setAttribute("disabled", "");
-    // renderAssignedUserAddTask();
   } else {
     categoryBox.classList.remove("visible");
     categoryInput.removeAttribute("disabled", "");
   }
-
-  window.addEventListener("click", function (e) {
-    if (!categoryBox.contains(e.target)) {
-      categoryBox.classList.remove("visible");
-      window.removeEventListener("click", arguments.callee);
-    }
-  });
+  setBoxListener(categoryBox)
+  // window.addEventListener("click", function (e) {
+  //   if (!categoryBox.contains(e.target)) {
+  //     categoryBox.classList.remove("visible");
+  //     window.removeEventListener("click", arguments.callee);
+  //   }
+  // });
 }
-
-
-
-
 
 
 function usersAssignedToHelp(){

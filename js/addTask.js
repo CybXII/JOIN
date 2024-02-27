@@ -293,14 +293,26 @@ function openAssignTo() {
     logoutBox.classList.remove("visible");
   }
 
+  setBoxListener(logoutBox);
+
   // Überwache Klicks im Fenster, um die Liste zu verstecken, wenn außerhalb geklickt wird
+  // window.addEventListener("click", function (e) {
+  //   if (!logoutBox.contains(e.target)) {
+  //     logoutBox.classList.remove("visible");
+  //     window.removeEventListener("click", arguments.callee); // Entferne den Event-Listener nach Ausführung
+  //   }
+  // });
+}
+function setBoxListener(box){
   window.addEventListener("click", function (e) {
-    if (!logoutBox.contains(e.target)) {
-      logoutBox.classList.remove("visible");
+    if (!box.contains(e.target)) {
+      box.classList.remove("visible");
       window.removeEventListener("click", arguments.callee); // Entferne den Event-Listener nach Ausführung
     }
   });
+  
 }
+
 
 /**
  * Opens the category box and handles the UI changes based on its visibility.
@@ -317,13 +329,13 @@ function openCategory() {
     categoryBox.classList.remove("visible");
     categoryInput.removeAttribute("disabled", "");
   }
-
-  window.addEventListener("click", function (e) {
-    if (!categoryBox.contains(e.target)) {
-      categoryBox.classList.remove("visible");
-      window.removeEventListener("click", arguments.callee);
-    }
-  });
+  setBoxListener(categoryBox);
+  // window.addEventListener("click", function (e) {
+  //   if (!categoryBox.contains(e.target)) {
+  //     categoryBox.classList.remove("visible");
+  //     window.removeEventListener("click", arguments.callee);
+  //   }
+  // });
 }
 
 /**
