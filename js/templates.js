@@ -662,5 +662,50 @@ function renderEditCard(content,i){
 }
   
   
-  
+function renderMoveToOptions(){
+  document.getElementById('card-background').innerHTML=`
+  <div class="card" onclick="dontClose()">
+    <div class="card_header">
+      <h1>Select the Category to move</h1>     
+      <button class="close_card" onclick="closeCardContainer()"></button>
+    </div>
+    <div class="card_limiter">
+        <div id="moveButtons"></div>
+    </div>
+
+  </div>
+  `;
+}
+
+function renderMoveToButtons(taskID){
+  let buttons = document.getElementById('moveButtons');
+  if(tasks[taskID]['categoryboard'] === 'todo'){
+    buttons.innerHTML=`
+    <button class="move_btn" onclick="moveTo('in-progress')">In Progress</button>
+    <button class="move_btn" onclick="moveTo('await-feedback')">Await Feedback</button>
+    <button class="move_btn" onclick="moveTo('done')">Done</button>
+    `
+  }
+  else if((tasks[taskID]['categoryboard'] === 'in-progress')){
+    buttons.innerHTML=`
+    <button class="move_btn" onclick="moveTo('todo')">Todo</button>
+    <button class="move_btn" onclick="moveTo('await-feedback')">Await Feedback</button>
+    <button class="move_btn" onclick="moveTo('done')">Done</button>
+    `
+  }
+  else if((tasks[taskID]['categoryboard'] === 'await-feedback')){
+    buttons.innerHTML=`
+    <button class="move_btn" onclick="moveTo('todo')">Todo</button>
+    <button class="move_btn" onclick="moveTo('in-progress')">In Progress</button>
+    <button class="move_btn" onclick="moveTo('done')">Done</button>
+    `
+  }  else if((tasks[taskID]['categoryboard'] === 'done')){
+    buttons.innerHTML=`
+    <button class="move_btn" onclick="moveTo('todo')">Todo</button>
+    <button class="move_btn" onclick="moveTo('in-progress')">In Progress</button>
+    <button class="move_btn" onclick="moveTo('await-feedback')">Await Feedback</button>
+    `
+  }
+}
+
   

@@ -67,6 +67,7 @@ function moveTo(category) {
   updateHTML();
   console.log(tasks[currentDraggedElement]["categoryboard"]);
   console.log("moveto");
+  closeCardContainer();
 }
 
 
@@ -585,8 +586,13 @@ function setAssignedUserHelp(editingCard) {
 
 function openBurgerBoard(event, i){
   console.log("burgermenu " + i + " geöffnet");
+  currentDraggedElement = i;
   event.stopPropagation();
+  openCardContainer();
+  renderMoveToOptions();
+  renderMoveToButtons(i);
 }
+
 
 
 function openAssignToEdit() {
