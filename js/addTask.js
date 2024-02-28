@@ -98,6 +98,11 @@ function openAssignTo() {
 }
 
 
+/**
+ * Adds a click event listener to the window that hides the given box element if a click occurs outside of it.
+ *
+ * @param {Element} box - The box element to be monitored
+ */
 function setBoxListener(box) {
   window.addEventListener("click", function(e) {
     if (!box.contains(e.target)) {
@@ -129,6 +134,13 @@ function openCategory() {
 }
 
 
+/**
+ * Sets a window listener to hide the category box and enable the category input when the user clicks outside the category box.
+ *
+ * @param {Element} categoryBox - the category box element
+ * @param {Element} categoryInput - the category input element
+ * @param {Event} e - the event object
+ */
 function setWindowListener(categoryBox,categoryInput,e){
   if (!categoryBox.contains(e.target)) {
     categoryBox.classList.remove("visible");
@@ -243,6 +255,14 @@ function setCheckBoxes(userid, handler) {
 }
 
 
+/**
+ * Change the status of the checkbox and update the user list accordingly.
+ *
+ * @param {string} userid - The unique identifier of the user
+ * @param {HTMLInputElement} checkbox - The checkbox element
+ * @param {HTMLElement} divElement - The div element associated with the checkbox
+ * @param {HTMLElement} parentDivElement - The parent div element of the checkbox
+ */
 function changeCheckboxStatus(userid,checkbox,divElement,parentDivElement){
   if (checkbox.checked) {
     divElement.classList.add("white");
@@ -370,6 +390,15 @@ async function addTasktoBoard(input) {
 }
 
 
+/**
+ * Adds a new JSON object to the tasks array.
+ *
+ * @param {type} input - description of input parameter
+ * @param {type} title - description of title parameter
+ * @param {type} description - description of description parameter
+ * @param {type} date - description of date parameter
+ * @param {type} categoryTask - description of categoryTask parameter
+ */
 function setJson(input,title,description,date,categoryTask){
   let JSONToPush = {
     categoryboard: input,
