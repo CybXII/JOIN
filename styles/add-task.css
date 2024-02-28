@@ -138,15 +138,6 @@ input:focus {
   line-height: 24px;
 }
 
-/* .title-v1 span {
-    color: #FF8190;
-    font-family: Inter;
-    font-size: 20px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 24px;
-} */
-
 .frame-203 {
   display: flex;
   flex-direction: column;
@@ -154,10 +145,6 @@ input:focus {
   gap: 4px;
   align-self: stretch;
 }
-
-/* .frame-14 {
-    Serves only as a teacher container
-} */
 
 .input-title::placeholder {
   flex: 1 0 0;
@@ -356,15 +343,6 @@ input:focus {
   line-height: 24px;
 }
 
-/* .due-date-v1 span {
-    color: #FF8190;
-    font-family: Inter;
-    font-size: 20px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 24px;
-} */
-
 .frame-211 {
   display: flex;
   flex-direction: column;
@@ -372,10 +350,6 @@ input:focus {
   gap: 4px;
   align-self: stretch;
 }
-
-/* .frame-15 {
-    Serves only as a teacher container 
-} */
 
 .frame-15 input {
   background-position: 392px;
@@ -388,12 +362,6 @@ input:focus {
   font-weight: 400;
   line-height: 24px;
 }
-
-/* .frame-15 input::placeholder {
-    color: #D1D1D1;
-    padding-left: 8px;
-    font-family: Inter;
-} */
 
 .warning-info-3 {
   color: #ff8190;
@@ -449,7 +417,6 @@ input:focus {
   justify-content: center;
   align-items: center;
   gap: 8px;
-  /* flex: 1 0 0; */
   border-radius: 10px;
   background-color: #fff;
   box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.1);
@@ -475,7 +442,6 @@ input:focus {
   padding: 16px 10px;
   justify-content: center;
   align-items: center;
-  /* flex: 1  00; */
   border-radius: 10px;
   background-color: #ff3d00;
   cursor: pointer;
@@ -535,7 +501,6 @@ input:focus {
   justify-content: center;
   align-items: center;
   gap: 8px;
-  /* flex: 1  00; */
   border-radius: 10px;
   background-color: #ffa800;
   cursor: pointer;
@@ -567,7 +532,6 @@ input:focus {
   justify-content: center;
   align-items: center;
   gap: 8px;
-  /* flex: 1 0 0; */
   border-radius: 10px;
   background-color: #fff;
   box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.1);
@@ -610,7 +574,6 @@ input:focus {
   justify-content: center;
   align-items: center;
   gap: 8px;
-  /* flex: 1 0 0; */
   border-radius: 10px;
   background-color: #7ae229;
   box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.1);
@@ -655,15 +618,6 @@ input:focus {
 .redBorder:focus-visible {
   border-color: #29abe2 !important;
 }
-
-/* .category span {
-    color: #FF8190;
-    font-family: Inter;
-    font-size: 20px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 24px;
-} */
 
 #category-list2 {
   color: #000;
@@ -926,8 +880,6 @@ input:focus {
   max-width: 970px;
 }
 
-/* DROPDOWN */
-
 .dropdown-check-list {
   display: inline-block;
   align-items: center;
@@ -1010,8 +962,6 @@ input:focus {
   padding: 0 8px;
   height: 50px;
 }
-
-/* DROPDOWN 2 */
 
 .dropdown-check-list2 {
   display: inline-block;
@@ -1132,7 +1082,6 @@ input:focus {
 }
 
 select {
-  /* styling */
   background-color: white;
   border-radius: 4px;
   display: inline-block;
@@ -1140,9 +1089,6 @@ select {
   line-height: 1.5em;
   width: 440px;
   padding: 12px 16px;
-
-  /* reset */
-
   margin: 0;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;

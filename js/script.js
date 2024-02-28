@@ -2,6 +2,7 @@ let pass_visible = false;
 let confirmPass_visible = false;
 let loginPass_visible = false;
 
+
 function getRandomColor(color) {
   var letters = "123456789ABCDE";
   var color = "#";
@@ -11,20 +12,24 @@ function getRandomColor(color) {
   return color;
 }
 
+
 function renderPrivacyPolicy() {
   loadUsersFromLocalStorage()
   classesPrivacyPolicy();
 }
+
 
 function renderHelp() {
   loadUsersFromLocalStorage()
   classesHelp();
 }
 
+
 function renderLegalNotice() {
   loadUsersFromLocalStorage()
   classesLegalNotice();
 }
+
 
 async function includeHTML() {
   let includeElements = document.querySelectorAll("[w3-include-html]");
@@ -39,6 +44,7 @@ async function includeHTML() {
     }
   }
 }
+
 
 function openLogOutBox() {
   let logoutBox = document.getElementById("LogOutBoxCSS");
@@ -55,9 +61,11 @@ function openLogOutBox() {
   }
 }
 
+
 function dontClose() {
   event.stopPropagation();
 }
+
 
 function initializeLoginListeners() {
   let emailInput = document.getElementById("email");
@@ -67,6 +75,7 @@ function initializeLoginListeners() {
     setBlurListener(inputElement);
   });
 }
+
 
 function setFocusListener(inputElement) {
   inputElement.addEventListener("focus", function () {
@@ -90,6 +99,7 @@ function setFocusListener(inputElement) {
   });
 }
 
+
 function setBlurListener(inputElement) {
   inputElement.addEventListener("blur", function () {
     let parentWrapper = inputElement.closest(".frame-wrapper");
@@ -112,6 +122,7 @@ function setBlurListener(inputElement) {
   });
 }
 
+
 function initializeSignUPListeners() {
   document.addEventListener("DOMContentLoaded", function () {});
   let nameInput = document.getElementById("name");
@@ -125,6 +136,7 @@ function initializeSignUPListeners() {
     setBlurListener(inputElement);
   });
 }
+
 
 function changeLocker(input) {
   if (input === "parent_confirm_password") {
@@ -170,6 +182,7 @@ function changeLocker(input) {
   }
 }
 
+
 function changeLockerPictureBack(parentWrapperId) {
   if (parentWrapperId === "parent_login_password") {
     if (loginPass_visible === false) {
@@ -211,6 +224,7 @@ function changeLockerPictureBack(parentWrapperId) {
   }
 }
 
+
 function changeLockerPicture(input) {
   if (input === "parent_confirm_password") {
     confirmPass_visible = !confirmPass_visible;
@@ -236,6 +250,7 @@ function changeLockerPicture(input) {
   }
 }
 
+
 function addContactListeners() {
   var contactList = document.getElementById("renderedContent");
   var contactNames = contactList.querySelectorAll(".contact-name");
@@ -256,5 +271,15 @@ function addContactListeners() {
         contactAnimation();
       }, 100);
     });
+  });
+}
+
+
+function setBoxListenerEdit(box) {
+  window.addEventListener("click", function (e) {
+    if (!box.contains(e.target)) {
+      box.classList.remove("visible");
+      window.removeEventListener("click", arguments.callee);
+    }
   });
 }

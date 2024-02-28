@@ -401,71 +401,70 @@
     line-height: var(--version-2-t1-line-height);
     white-space: nowrap;
     font-style: var(--version-2-t1-font-style);
-}
-
-.container {
-    padding: 80px 20px 80px 80px;
-    display: flex;
-    flex-direction: column;
-    gap: 0;
-    margin: 0;
-    position: fixed;
-    top: 96px;
-    left: 232px;
-    right: 0;
-    bottom: 0;
-    overflow-y: scroll;
-}
-
-main{
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    background-color: var(--version-2main-color);
-    z-index: 30;
-}
-
-.text-wrapper-6 {
-  /* border: 1px solid red; */  
-  position: relative;
-  width: fit-content;
-  margin-top: -1px;
-  font-family: var(--version-2-body-font-family);
-  font-weight: var(--version-2-body-font-weight);
-  color: var(--icon);
-  font-size: var(--version-2-body-font-size);
-  letter-spacing: var(--version-2-body-letter-spacing);
-  line-height: var(--version-2-body-line-height);
-  white-space: nowrap;
-  font-style: var(--version-2-body-font-style);
-  cursor: pointer;
-
-}
-
-.container::-webkit-scrollbar {
-    position: absolute;
-    width: 10px;
-    height: 10px;
-    z-index: 20;
-}
-    
-.container::-webkit-scrollbar-track {
-    border-radius: 0.5vw;
-    width: 1px;  
-    height: 53px;
-    z-index: 20;
   }
-  
-  .container::-webkit-scrollbar-thumb {
-    background: #A8A8A8; 
-    border-radius: 5px;
-    z-index: 20;
-}
+
+  .container {
+      padding: 80px 20px 80px 80px;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      margin: 0;
+      position: fixed;
+      top: 96px;
+      left: 232px;
+      right: 0;
+      bottom: 0;
+      overflow-y: scroll;
+  }
+
+  main{
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      background-color: var(--version-2main-color);
+      z-index: 30;
+  }
+
+  .text-wrapper-6 {
+    position: relative;
+    width: fit-content;
+    margin-top: -1px;
+    font-family: var(--version-2-body-font-family);
+    font-weight: var(--version-2-body-font-weight);
+    color: var(--icon);
+    font-size: var(--version-2-body-font-size);
+    letter-spacing: var(--version-2-body-letter-spacing);
+    line-height: var(--version-2-body-line-height);
+    white-space: nowrap;
+    font-style: var(--version-2-body-font-style);
+    cursor: pointer;
+
+  }
+
+  .container::-webkit-scrollbar {
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      z-index: 20;
+  }
+      
+  .container::-webkit-scrollbar-track {
+      border-radius: 0.5vw;
+      width: 1px;  
+      height: 53px;
+      z-index: 20;
+    }
+    
+    .container::-webkit-scrollbar-thumb {
+      background: #A8A8A8; 
+      border-radius: 5px;
+      z-index: 20;
+  }
 
 
-body{
-overflow: hidden;
-}
+  body{
+  overflow: hidden;
+  }
 
 @media (max-width: 900px) {
     main{
@@ -475,45 +474,44 @@ overflow: hidden;
         background-color: var(--version-2main-color);
     }
 
-body{
-    overflow: hidden;
-}
+  body{
+      overflow: hidden;
+  }
 
-.arrow-left-line{
-  right: 16px;
-  left: unset;
-  top: 72px;
-}
+  .arrow-left-line{
+    right: 16px;
+    left: unset;
+    top: 72px;
+  }
 
-.container{
-    padding:  48px 16px;
-    overflow-y: scroll;
-    top: 80px;
-    left: 0;
-    bottom: 80px;
-    position: fixed;
-    width: 100%;
-    box-sizing: border-box;
-}
+  .container{
+      padding:  48px 16px;
+      overflow-y: scroll;
+      top: 80px;
+      left: 0;
+      bottom: 80px;
+      position: fixed;
+      width: 100%;
+      box-sizing: border-box;
+  }
 
-.content-container {
-    margin: 0px;
-    top: 80px;
-    bottom: 80px;
-    position: fixed;
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-    width: 100%;
-}
+  .content-container {
+      margin: 0px;
+      top: 80px;
+      bottom: 80px;
+      position: fixed;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      width: 100%;
+  }
 
-h1{
-    white-space: wrap;
-}
+  h1{
+      white-space: wrap;
+  }
 
-nav{
-    position: fixed;
-    z-index: 100;
-}
-
+  nav{
+      position: fixed;
+      z-index: 100;
+  }
 }

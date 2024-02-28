@@ -38,15 +38,15 @@ main{
     height: 10px;
     z-index: 20;
 }
-    
+
 .container::-webkit-scrollbar-track {
     border-radius: 0.5vw;
     width: 1px;  
     height: 53px;
     z-index: 20;
-  }
-  
-  .container::-webkit-scrollbar-thumb {
+}
+
+.container::-webkit-scrollbar-thumb {
     background: #A8A8A8; 
     border-radius: 5px;
     z-index: 20;
@@ -71,45 +71,44 @@ overflow: hidden;
         background-color: var(--version-2main-color);
     }
 
-body{
-    overflow: hidden;
-}
+    body{
+        overflow: hidden;
+    }
 
-.arrow-left-line{
-    right: 16px;
-    left: unset;
-    top: 72px;
-  }
+    .arrow-left-line{
+        right: 16px;
+        left: unset;
+        top: 72px;
+    }
 
-.container{
-    padding:  48px 16px;
-    overflow-y: scroll;
-    top: 80px;
-    left: 0;
-    bottom: 80px;
-    position: fixed;
-    width: 100%;
-    box-sizing: border-box;
-}
+    .container{
+        padding:  48px 16px;
+        overflow-y: scroll;
+        top: 80px;
+        left: 0;
+        bottom: 80px;
+        position: fixed;
+        width: 100%;
+        box-sizing: border-box;
+    }
 
-.content-container {
-    margin: 0px;
-    top: 80px;
-    bottom: 80px;
-    position: fixed;
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-    width: 100%;
-}
+    .content-container {
+        margin: 0px;
+        top: 80px;
+        bottom: 80px;
+        position: fixed;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
 
-h1{
-    white-space: wrap;
-}
+    h1{
+        white-space: wrap;
+    }
 
-nav {
-    position: fixed;
-    z-index: 100;
-}
-
+    nav {
+        position: fixed;
+        z-index: 100;
+    }
 }

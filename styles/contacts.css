@@ -1,74 +1,5 @@
-/* .header {
-  box-sizing: border-box;
-  display: flex;
-  width: 100%;
-  padding: 20px 40px 20px 28vw;
-  justify-content: space-between;
-  align-items: center;
-  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.1);
-  position: fixed;
-  z-index: 10;
-  top: 0;
-  height: 10vh;
-  background-color: #f6f7f8;
-}
-
-
-.frame-3 {
-  display: flex;
-  width: 20vw;
-  height: 100vh;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  flex-shrink: 0;
-  background: #2a3647;
-  box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.1);
-  position: fixed;
-  z-index: 3;
-}
-
-.container {
-  display: flex;
-  padding: 0;
-  gap: 60px;
-  justify-content: flex-start;
-  align-items: flex-start;
-  position: relative;
-  top: 10vh;
-  left: 20vw;
-  width: 80vw;
-} */
-
-/* .frame-10_helper {
-  width: 11vw;
-  display: flex;
-  gap: 8px;
-  align-items: center;
-} */
-
-/* .frame-10 {
-  display: flex;
-  width: 18vw;
-  height: 46px;
-  align-items: center;
-  gap: 8px;
-  color: #cdcdcd;
-  justify-content: center;
-} */
-
-/* .menu{
-  width: 18vw;
-
-} */
-
-/* 
-Die Oberen sind zwecks zum Testen und vor zeigen
-*/
-
 .container {
 overflow-x: hidden;
-/* overflow-y: scroll; */
 }
 
 .headline div{
@@ -298,7 +229,6 @@ overflow-x: hidden;
   padding: 15px 24px;
   position: relative;
   flex: 0 0 auto;
-  /* background-color: #ffffff; */
   border-radius: 10px;
   cursor: pointer;
 }
@@ -327,7 +257,6 @@ overflow-x: hidden;
   justify-content: center;
   width: 42px;
   height: 42px;
-  /* background-color: #ff7a00; */
   border-radius: 50%;
   border: 2px solid;
   border-color: var(--white);
@@ -715,9 +644,6 @@ text-align: left;
   color: var(--ligth-blue);
 }
 
-/* Fenster AddContact */
-
-
 .contacts-background {
   z-index: 55;
   background-color: rgba(65, 63, 63, 0.466);
@@ -734,7 +660,6 @@ text-align: left;
 .contacts-card {
   display: flex;
   align-items: stretch;
-  /* justify-content: space-between; */
   box-sizing: border-box;
   background-color: white;
   height: 592px;
@@ -889,7 +814,6 @@ text-align: left;
   border: 1px solid #2a3647;
   padding: 16px;
   cursor: pointer;
-  /* text-align: center; */
   background-image: url(./../img/cancel.svg);
   background-repeat: no-repeat;
   background-position: right 10px center;
@@ -958,20 +882,10 @@ text-align: left;
  contact-list
 
 
-/* #################### */
+
 
 .contact_info-bg {
   color: #f0f0f000;
-  /* position: absolute; */
-  /* top: 0; */
-  /* bottom: 0; */
-  /* left: 0; */
-  /* right: 0; */
-  /* background-color: #2a364765; */
-  /* z-index: 999; */
-  /* display: flex; */
-  /* align-items: center; */
-  /* justify-content: center; */
 }
 
 @keyframes moveRightToLeft {
@@ -984,19 +898,6 @@ text-align: left;
 }
 
 .contact-info-content {
-  /* margin-left: 500px; */
-  /* position: absolute; */
-  /* border-radius: 20px; */
-  /* background: var(--Version-2-main-color, #2a3647); */
-  /* box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.15); */
-  /* display: flex; */
-  /* height: 74px; */
-  /* padding: 0px 25px; */
-  /* justify-content: center; */
-  /* align-items: center; */
-  /* margin-left: auto; */
-  /* margin-top: auto; */
-  /* z-index: 999; */
   animation: moveRightToLeft 1s ease forwards;
 }
 
@@ -1150,33 +1051,6 @@ text-align: left;
   .twoLine {
     display: none;
   }
-
-
-  /* .contacts-card {
-    margin-left: 40px;
-    margin-right: 40px;
-    
-  }
-
-  .twoLine {
-    display: none;
-  }
-
-  .rightSide {
-    width: 90%;
-    left: 15px;
-  }
-
-  .add-contacts-form {
-    margin-left: 30px;
-  }
-
-  .add-contacts-form input {
-    width: 370px;
-  } */
-
-
-
 }
 
 @media (max-width: 900px) {
@@ -1284,75 +1158,6 @@ text-align: left;
     right: 12px;
     bottom: 100px;
   }
-
-  /* .contacts-card {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    height: 760px;
-    width: 396px;
-  }
-
-  .leftSide {
-    width: 396px;
-    height: 351px;
-    border-radius: 30px 30px 0 0;
-  }
-
-  .testContainer {
-    padding-top: 80px;
-    padding-left: 40px;
-  }
-
-
-  .joinLogo {
-    display: none;
-  }
-
-  .underlineBlue {
-    width: 100px;
-  }
-
-  .rightSide {
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    top: -90px;
-    left: -1px;
-  }
-
-  .closeImg {
-    background-image: url(./../img/close-white.svg);
-    width: 32px;
-    height: 32px;
-    top: -170px;
-    right: 30px;
-  }
-
-  .add-contacts-form {
-    margin-left: 55px;
-  }
-
-  .add-contacts-form input {
-    width: 364px;
-  }
-
-  .underButton {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 20px;
-  }
-
-  .add-contact-cancel {
-    display: none;
-  }
-
-  .twoLine {
-    display: none;
-  } */
-
 }
 
 @media (max-width: 420px) {
@@ -1462,4 +1267,3 @@ text-align: left;
     margin-left: -105px;
   }
 }
- 

@@ -59,8 +59,6 @@ function highlight() {
   console.log("highlight");
 }
 
-function hideHighligts(){}
-
 
 function moveTo(category) {
   tasks[currentDraggedElement]["categoryboard"] = category;
@@ -101,23 +99,6 @@ function openAddTaskContainer(categoryInput) {
 }
 
 
-function renderUpdateAssigned(task,i){
-  let assigned = document.getElementById(`assigned-to${i}`);
-  for (let j = 0; j < task["assignedTo"].length; j++) {
-    const assign = task["assignedTo"][j];
-    const colorbg = task["colors"][j];
-    if (j <= 3) {
-      renderUpdateColoredBadges(assigned,colorbg,assign);
-    } else if (j == 4) {
-      renderUpdateGreyBadge(assigned,j);
-    }
-    else if(j>=5){
-      document.getElementById('grey_badge').innerHTML = `+${j-3}`;
-    } 
-  }
-}
-
-
 function closeAddTaskContainer() {
   usersassignedto=[];
   document.getElementById("board-background").classList.add("d-none");
@@ -134,7 +115,6 @@ function setAmounts() {
   tasksUrgent = 0;
   for (let i = 0; i < tasks.length; i++) {
   checkCases(tasks,i);
-
   if (tasks[i].prio == "urgent" && tasks[i].categoryboard != "done")
     tasksUrgent += 1;
   }
@@ -308,98 +288,9 @@ async function checkSubtasks(i, j){
 }
 
 
-async function editTasksfromStorage(i){
-  currentTask['title'] = document.getElementById('edit-task-title').value
-  currentTask['dueDate'] = document.getElementById('edit-datePicker').value
-  currentTask['description'] = document.getElementById('edit-task-description').value
-  currentTask['category'] = document.getElementById('parent-edit_items').innerHTML;
-  currentTask['prio'] = taskpriority;
-  tasks[i] = currentTask;
-  setInitialsEdit();
-  closeCardContainer();
-  await setItem("tasks", JSON.stringify(tasks));
-  updateHTML();
-}
-
-
-function editSubtasks(i){
-  // renderBadgesAddTaskEdit();
-  subtasksAdd.push(tasks[i].subtasks);
-  subtasksAddCard = [];
-  subtasksAddCard.push(subtasksAdd[0]);
-
-  document.getElementById(`edit-subtasks-container`).innerHTML = "";
-  for (let j = 0; j < currentTask.subtasks.length; j++) {
-    const element = currentTask.subtasks[j].subtaskName;
-    let content = document.getElementById(`edit-subtasks-container`);
-    content.innerHTML += /*html*/ `
-    <div id="subtask-comp-${j}">
-    <div class="subtask-comp" onmouseover="showSubtaskIconsCard(${j})" onmouseleave="hideSubtaskIconsCard(${j})">
-                    <span class="subtask-task" id='subtask${j}' ondblclick="editSubtaskCard(${i},${j})" 
-                      >⦁ ${element}</span
-                    >
-                    <div class="sub-icons d-none" id="subtask-icons-${j}">
-                      <img
-                        src="./img/edit.svg"
-                        alt=""
-                        onclick="editSubtaskCard(${i},${j})"
-                        class="subtask-icon"
-                      />
-                      <img src="./img/Vector 19.svg" alt="" />
-                      <img
-                        src="./img/delete.svg"
-                        alt=""
-                        onclick="deleteSubtaskCard(${i},${j})"
-                        class="subtask-icon"
-                      />
-                    </div>
-                  </div>
-                  </div>
-  </div>`;}
-
-  subtasksAdd = [];
-
-}
-
-
-function editSubtaskCard(i, j) {
-  let container = document.getElementById(`subtask-comp-${j}`);
-  let textContent = currentTask.subtasks[j].subtaskName;
-  container.innerHTML = editSubTaskHtmlCard(textContent, i, j);
-  hideSubtaskIconsCard(j);
-}
-
-
-async function addEditSubTaskCard(i, j) {
-  let subTaskInput = document.getElementById("editSubTaskInput");
-  currentTask.subtasks[j].subtaskName = subTaskInput.value;
-  editSubtaskCard(i, j);
-  renderAddSubtasksCard(i);
-}
-
-
-function editSubTaskHtmlCard(textContent, i, j) {
-  return /*html*/ `
-      <div class="editSubTaskButtonBox" id="subtask-icons-${j}"></div> 
-    <div class="subtask-edit-container">
-      <input id="editSubTaskInput" type="text" class="sub-edit-input" value=${textContent} />
-      <div class="sub-icons">
-      <img src="./img/delete.svg" class="subtask-icon-edit" onclick="deleteSubtaskCard(${i},${j})"/>
-        <img src="./img/Vector 19.svg" alt="" />
-        <img src="./img/check.svg" alt="check" class="subtask-icon-edit" onclick="addEditSubTaskCard(${i},${j})"/>
-        </div>
-      </div>
-    </div>
-  `;
-}
-
-
 function addSubtasksCard(i) {
   let subtaskstoadd = document.getElementById("edit-subtasks").value;
-
   if (subtaskstoadd) {
-    
-    
     let JSONToPush = {
       subtaskName: subtaskstoadd,
       subtaskStatus: false,
@@ -407,39 +298,6 @@ function addSubtasksCard(i) {
     currentTask.subtasks.push(JSONToPush);
     document.getElementById("edit-subtasks").value = "";
     renderAddSubtasksCard(i);
-  }
-}
-
-
-function renderAddSubtasksCard(i) {
-  document.getElementById("edit-subtasks-container").innerHTML = "";
-  for (let j = 0; j < currentTask.subtasks.length; j++) {
-    const element = currentTask.subtasks[j].subtaskName;
-    let content = document.getElementById("edit-subtasks-container");
-    content.innerHTML += /*html*/ `
-    <div id="subtask-comp-${j}">
-    <div class="subtask-comp" onmouseover="showSubtaskIconsCard(${j},${i})" onmouseleave="hideSubtaskIconsCard(${j},${i})">
-                    <span class="subtask-task" id='subtask${j}' ondblclick="editSubtaskCard(${i},${j})" 
-                      >⦁ ${element}</span
-                    >
-                    <div class="sub-icons d-none" id="subtask-icons-${j}">
-                      <img
-                        src="./img/edit.svg"
-                        alt=""
-                        onclick="editSubtaskCard(${i},${j})"
-                        class="subtask-icon"
-                      />
-                      <img src="./img/Vector 19.svg" alt="" />
-                      <img
-                        src="./img/delete.svg"
-                        alt=""
-                        onclick="deleteSubtaskCard(${i},${j})"
-                        class="subtask-icon"
-                      />
-                    </div>
-                  </div>
-                  </div>
-  </div>`;
   }
 }
 
@@ -466,104 +324,17 @@ function hideSubtaskIconsCard(i, j) {
 }
 
 
-function changeButtonsCard(event) {
-  event.preventDefault();
-  parent_div = document.getElementById("edit-parent_subtasks");
-  document.getElementById("edit-subtask_add_button").classList.add("d-none");
-  document.getElementById("edit-subtask_seperator").classList.remove("d-none");
-  document.getElementById("edit-subtask_accept_button").classList.remove("d-none");
-  document.getElementById("edit-subtask_cancel_button").classList.remove("d-none");
-  setEventListenerSubtask(parent_div);
-}
-
-
 function resetSubtasksCard() {
   document.getElementById("edit-subtasks").value = ``;
 }
 
 
-function openEditAssignTo(i, handler){
-    let assingBox = document.getElementById("edit-list1");
-  
-    if (!assingBox.classList.contains("visible")) {
-      assingBox.classList.add("visible");
-      renderAssignedUserAddTask(handler);
-      setCheckBoxesEdit(i, handler)
-    } else {
-      assingBox.classList.remove("visible");
-    }
-    setBoxListener(assingBox);
-}
-
-
-function openEditCategory() {
-  let categoryBox = document.getElementById("edit-list2");
-  let categoryInput = document.getElementById("parent-edit_items");
-
-  if (!categoryBox.classList.contains("visible")) {
-    categoryBox.classList.add("visible");
-    categoryInput.setAttribute("disabled", "");
-  } else {
-    categoryBox.classList.remove("visible");
-    categoryInput.removeAttribute("disabled", "");
-  }
-  setBoxListener(categoryBox)
-}
-
-
 function usersAssignedToHelp(){
-
   currentTask['assignedToID'] = [];
   for (let i = 0; i < usersassignedto.length; i++) {
     let element = usersassignedto[i];
     element = element + 1;
     currentTask['assignedToID'].push(element);
-  }
-}
-
-
-function setBadgesAddTaskEdit() {
-  userInitialsAssignedtoBadges = [];
-  userColorsAssignedtoBadges = [];
-  document.getElementById("edit-assigned-to-add-task-list").innerHTML = "";
-  for (let i = 0; i < usersassignedto.length; i++) {
-    let index = usersassignedto[i];
-    let initialsremote = remoteuserAssign[index].initials;
-    let colorremote = remoteuserAssign[index].color;
-    // let idremote = remoteuserAssign[i]["id"];
-    if (remoteuserAssign[index]["id"] == index + 1) {
-      userInitialsAssignedtoBadges.push(initialsremote);
-      userColorsAssignedtoBadges.push(colorremote);
-    }
-  }
-  renderBadgesAddTaskEdit();
-}
-
-
-
-function renderBadgesAddTaskEdit() {
-  for (let i = 0; i < userInitialsAssignedtoBadges.length; i++) {
-    const initials = userInitialsAssignedtoBadges[i];
-    const color = userColorsAssignedtoBadges[i];
-    let content = document.getElementById("edit-assigned-to-add-task-list");
-    renderBadgesEdit(initials, color, content, i);
-  }
-}
-
-
-function renderBadgesEdit(initials, color, content, i) {
-  if (i <= 3) {
-    content.innerHTML += /*html*/ `<div class="assigned-to-add-task-user" style="background-color: ${color}">${initials}</div>`;
-  }
-  if (i == 4) {
-    content.innerHTML += /*html*/ `<div id="grey_badge" class="assigned-to-add-task-user" style="background-color: grey">+${
-      i - 3
-    }</div>`;
-  }
-  if (i > 4) {
-    document.getElementById("grey_badge").innerHTML = /*html*/ `+${
-      i - 3
-    }</div>`;
   }
 }
 
@@ -579,7 +350,6 @@ function setAssignedUserHelp(editingCard) {
         usersassignedto.push(id);
         usersassignedto.sort();
     } 
-
   });
 }
 
@@ -593,27 +363,3 @@ function openBurgerBoard(event, i){
   renderMoveToButtons(i);
 }
 
-
-
-function openAssignToEdit() {
-  let logoutBox = document.getElementById("edit-list1");
-
-  if (!logoutBox.classList.contains("visible")) {
-    logoutBox.classList.add("visible");
-    renderAssignedUserAddTask();
-  } else {
-    logoutBox.classList.remove("visible");
-  }
-
-  setBoxListenerEdit(logoutBox);
-}
-
-
-function setBoxListenerEdit(box) {
-  window.addEventListener("click", function (e) {
-    if (!box.contains(e.target)) {
-      box.classList.remove("visible");
-      window.removeEventListener("click", arguments.callee);
-    }
-  });
-}

@@ -1,16 +1,14 @@
 .log-in .frame-156 {
-    /* border: 1px solid red; */
     display: inline-flex;
     align-items: center;
     gap: 35px;
     position: absolute;
     top: 60px;
     right: 60px;
-  }
+}
 
-  .log-in .frame-153 {
+.log-in .frame-153 {
     position: relative;
-    /* border: 1px solid red; */
     display: inline-flex;
     flex-direction: column;
     align-items: center;
@@ -20,21 +18,21 @@
     border-radius: 30px;
     overflow: hidden;
     box-shadow: var(--shadoe-backlog-box);
-  } 
+} 
 
-  .join_logo_start_responsiv{
+.join_logo_start_responsiv{
     display: none;
-  }
+}
 
-  #join_logo2{
+#join_logo2{
     display: none;
-  }
+}
 
-  .join_logo_start_responsiv{
+.join_logo_start_responsiv{
     display: none;
-  }
-  
-  .text-wrapper-6 {
+}
+
+.text-wrapper-6 {
     font-family: Inter;
     font-size: 16px;
     font-weight: 400;
@@ -43,21 +41,20 @@
     text-align: left;
     white-space: nowrap;
     color: #A8A8A8;
-      }
+}
 
-  .text-wrapper-6:hover {
+.text-wrapper-6:hover {
     font-size: 16px;
     font-weight: 700;
     line-height: 19px;
     letter-spacing: 0em;
     text-align: left;
     color: #1aa7e4 !important;
-  }
+}
 
 
 
 @media (max-width: 1150px) {
-    
     .log-in .capa {
         width: 64px;
         height: 78px;
@@ -74,7 +71,7 @@
 
     #join_logo2{
         display: block;
-      }
+    }
 
     .join_logo_start_responsiv{
         display: block;
@@ -89,7 +86,6 @@
         display: block;
         z-index: 10;
     }
-
 
     .logo_container{    
         background-color: var(--version-2main-color);

@@ -1,8 +1,3 @@
-/* 
-*{
-    border: 1px solid red !important;
-} */
-
 .frame-191 {
   height: 190px;
   display: flex;
@@ -96,7 +91,7 @@
   font-size: 61px;
   font-style: normal;
   font-weight: 700;
-  line-height: 120%; /* 73.2px */
+  line-height: 120%;
 }
 
 .frame-123 {
@@ -108,12 +103,11 @@
 
 .frame-123 input {
   width: 100%;
-  /* Version 2/t6 */
   font-family: Inter;
   font-size: 20px;
   font-style: normal;
   font-weight: 400;
-  line-height: 120%; /* 24px */
+  line-height: 120%; 
 }
 
 .frame-123-btn {
@@ -146,7 +140,7 @@
   font-size: 21px;
   font-style: normal;
   font-weight: 700;
-  line-height: 120%; /* 25.2px */
+  line-height: 120%;
 }
 
 .frame-123-inp {
@@ -208,7 +202,6 @@
 
 .frame-136 {
   width: 270px;
-  /* height auf 0 setzen, wenn fertig! */
 }
 
 .board-sections-headline {
@@ -217,7 +210,7 @@
   font-size: 20px;
   font-style: normal;
   font-weight: 700;
-  line-height: 120%; /* 24px */
+  line-height: 120%;
 }
 
 .category-board {
@@ -274,7 +267,6 @@
   align-items: flex-start;
   gap: 10px;
   border-radius: 8px;
-  /* background: #0038ff; */
   width: auto;
 }
 
@@ -411,13 +403,11 @@
 
 .card-board-count-progress {
   color: #000;
-
-  /* Version 2/t7 */
   font-family: Inter;
   font-size: 12px;
   font-style: normal;
   font-weight: 400;
-  line-height: 120%; /* 14.4px */
+  line-height: 120%;
 }
 
 .frame-139 {
@@ -471,7 +461,6 @@
   justify-content: center;
   color: #fff;
   text-align: center;
-  /* Version 2/t7 */
   font-family: Inter;
   font-size: 12px;
   font-style: normal;
@@ -481,7 +470,6 @@
 .card-board-priority {
   display: flex;
   width: 32px;
-  /* padding: 10px 404px; */
   justify-content: center;
   align-items: center;
   gap: 10px;
@@ -893,7 +881,6 @@ text-align: left;
   }
 
   .add-task-board-background{
-    /* display: none; */
     z-index: 100;
     position: fixed;
     background-color: white;
@@ -1050,17 +1037,10 @@ text-align: left;
       width: 32px;
       height: 32px;
   }
-
-  /* .add-task-board-background {
-    left: 0;
-  } */
-
-
 }
 
 
 @media (max-width: 600px) {
-
   .add-task-board-card {
     margin: 0 0px;
   }

@@ -2,20 +2,18 @@ let login_remember;
 let users = [];
 let remembered_user = [];
 
+
 function move() {
   setTimeout(() => {
     document.getElementById("logo_container").classList.remove("background");
     document.getElementById("join_logo").classList.remove("background");
     document.getElementById("join_logo2").classList.remove("background");
     document.getElementById("logo_container").classList.remove("big_size");
-    document
-      .getElementById("join_logo2")
-      .classList.remove("join_logo_start_responsiv");
-    document
-      .getElementById("join_logo2")
-      .classList.add("join_logo_start_responsiv2");
+    document.getElementById("join_logo2").classList.remove("join_logo_start_responsiv");
+    document.getElementById("join_logo2").classList.add("join_logo_start_responsiv2");
   }, 1000);
 }
+
 
 function renderLogin() {
   document.getElementById("frame-153").innerHTML = renderLoginHTML();
@@ -23,27 +21,24 @@ function renderLogin() {
   initializeLoginListeners();
 }
 
+
 async function login(event) {
   await loadUser();
   event.preventDefault();
   let email = document.getElementById("email");
   let password = document.getElementById("login_password");
-  let user = users.find(
-    (u) => u.email == email.value && u.password == password.value
-  );
-  console.log(user);
+  let user = users.find((u) => u.email == email.value && u.password == password.value);
   if (user) {
-    console.log("user gefunden");
     users = [];
     users.push(user);
     users[0].rememberlogin = login_remember;
     saveUsersToLocalStorage();
     window.location.href = "summary.html";
   } else {
-    console.log("Wrong password Ups! Try again.");
     alert("Wrong password Ups! Try again.");
   }
 }
+
 
 function rememberMeLogin() {
   if (remembered_user.length > 0 && remembered_user[0].rememberlogin == true) {
@@ -59,9 +54,9 @@ function rememberMeLogin() {
   }
 }
 
+
 function guestLogin() {
   let color = getRandomColor();
-
   users.push({
     id: 999,
     name: "Guest",
@@ -76,6 +71,7 @@ function guestLogin() {
   saveUsersToLocalStorage();
   window.location.href = "summary.html";
 }
+
 
 function userLogout() {
   localStorage.removeItem("users");

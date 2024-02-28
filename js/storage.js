@@ -1,11 +1,13 @@
 let STORAGE_TOKEN = [];
 const STORAGE_URL = `https://remote-storage.developerakademie.org/item`;
 
+
 async function loadToken() {
   let resp = await fetch("./json/token.json");
   token = await resp.json();
   STORAGE_TOKEN = token[0]["token"];
 }
+
 
 async function setItem(key, value) {
   await loadToken();
@@ -15,6 +17,7 @@ async function setItem(key, value) {
     body: JSON.stringify(payload),
   }).then((res) => res.json());
 }
+
 
 async function getItem(key) {
   await loadToken();
@@ -29,6 +32,7 @@ async function getItem(key) {
     });
 }
 
+
 async function loadUser() {
   try {
     users = JSON.parse(await getItem("users"));
@@ -36,6 +40,8 @@ async function loadUser() {
     console.error("Loading error:", e);
   }
 }
+
+
 async function loadTasks() {
   try {
     tasks = JSON.parse(await getItem("tasks"));
@@ -43,6 +49,8 @@ async function loadTasks() {
     console.error("Loading error:", e);
   }
 }
+
+
 async function loadContacts() {
   try {
     contacts = JSON.parse(await getItem("contacts"));
@@ -50,6 +58,7 @@ async function loadContacts() {
     console.error("Loading error:", e);
   }
 }
+
 
 async function loadRemoteUser() {
   try {
@@ -65,9 +74,11 @@ async function loadRemoteUser() {
   }
 }
 
+
 function saveUsersToLocalStorage() {
   localStorage.setItem("users", JSON.stringify(users));
 }
+
 
 function loadUsersFromLocalStorage() {
   let storageAsText = localStorage.getItem("users");
@@ -77,6 +88,7 @@ function loadUsersFromLocalStorage() {
   }
 }
 
+
 function loadRememberedUsersFromLocalStorage() {
   let storageAsText = localStorage.getItem("users");
 
@@ -84,16 +96,3 @@ function loadRememberedUsersFromLocalStorage() {
     remembered_user = JSON.parse(storageAsText);
   }
 }
-
-// function saveContactsToLocalStorage() {
-//   sortContacts();
-//   localStorage.setItem("contacts", JSON.stringify(contacts));
-// }
-
-// function loadContactsFromLocalStorage() {
-//   let storageAsText = localStorage.getItem("contacts");
-
-//   if (storageAsText) {
-//     contacts = JSON.parse(storageAsText);
-//   }
-// }
