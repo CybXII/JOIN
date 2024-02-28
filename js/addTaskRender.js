@@ -2,7 +2,6 @@
  * Render the assigned users based on the handler type.
  *
  * @param {string} handler - the type of handler
- * @return {void} 
  */
 function renderAssignedTo(handler) {
   if (handler === "edit-") {
@@ -93,7 +92,6 @@ function renderBadges(initials, color, content, i) {
    * Render assigned user task handler
    *
    * @param {string} handler - the handler type
-   * @return {void} 
    */
 function renderAssignedUserAddTask(handler) {
   if (handler === "edit-") {
@@ -127,7 +125,6 @@ function renderStandartAssignedUser(i) {
  * Function to render the medium priority handler.
  *
  * @param {string} handler - The handler to be rendered
- * @return {void} 
  */
 function renderMedium(handler) {
   document.getElementById(`${handler}prio-medium`).classList.remove("frame-25");
@@ -154,7 +151,6 @@ function renderMedium(handler) {
    * Function to render the low priority handler.
    *
    * @param {handler} handler - The handler for which the low priority should be rendered
-   * @return {void} This function does not return anything
    */
 function renderLow(handler) {
   document.getElementById(`${handler}prio-low`).classList.remove("frame-26");
