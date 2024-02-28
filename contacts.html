@@ -18,6 +18,27 @@
     <link rel="icon" type="image" href="./img/join-favicon.svg" />
   </head>
   <body onload="includeHTMLInit(`Contacts`), pushLetters()">
+    <div class="contact_info_resp_background d-none" id="contact_info_resp_background" onclick="closeRespContactContainer()">
+
+      <div class="frame-40-resp">
+        <div class="contact_resp_headline_container">
+          <div class="headline_resp">
+            <span>Contacts</span>
+            <div class="second_headline_resp">
+              <img src="./img/separation-blue.svg" alt="separation-blue" />
+              <p>Better with a team</p>
+            </div>  
+          </div>
+
+          <div onclick="closeRespContactContainer()"><img
+            src="./img/arrow-left-line.svg"
+            class="arrow-left-line-contacts"/>
+          </div>
+
+        </div>
+        <div class="contact_info_resp" id="contact_info_resp"></div>
+      </div>
+    </div>
     <nav w3-include-html="./templates/header.html"></nav>
     <div class="content-container">
       <div class="container" id="content">

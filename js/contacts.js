@@ -83,7 +83,9 @@ function renderContactCardHTML(
   userid, 
   i
 ) {
-  return /*html*/ `<div class="contact-name" onclick="openContact('${fullname}', '${email}', '${color}', '${initials}', '${phone}', '${userid}', '${i}')">
+  return /*html*/ `
+                <div class="responsiv_Overlay" onclick="openRespContactContainer()"></div>  
+                <div class="contact-name" onclick="openContact('${fullname}', '${email}', '${color}', '${initials}', '${phone}', '${userid}', '${i}')">
                 <div class="profile-badge">
                   <div class="group">
                     <div class="overlap-group" style="background-color: ${color}">
@@ -325,6 +327,17 @@ function openContact(fullname, email, color, initials, phone, userid, i) {
     userid,
     i
   );
+  openRespContactContainer();
+  document.getElementById("contact_info_resp").innerHTML = renderContactInfo(
+    fullname,
+    email,
+    color,
+    initials,
+    phone,
+    userid,
+    i
+  );
+
 }
 
 function renderContactInfo(fullname, email, color, initials, phone, userid, i) {
@@ -358,3 +371,13 @@ function renderContactInfo(fullname, email, color, initials, phone, userid, i) {
     </div>
   </div>
 `}
+
+
+
+function openRespContactContainer(){
+  document.getElementById('contact_info_resp_background').classList.remove('d-none');
+}
+
+function closeRespContactContainer(){
+  document.getElementById('contact_info_resp_background').classList.add('d-none');
+}
