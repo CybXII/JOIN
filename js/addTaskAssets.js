@@ -22,7 +22,6 @@ function configureDatePicker() {
  *
  * @param {number} i - the priority value
  * @param {string} handler - the handler type
- * @return {void}
  */
 function taskPriorityChoosed(i, handler) {
   if (handler === "edit-") {
@@ -40,7 +39,6 @@ function taskPriorityChoosed(i, handler) {
    * Deletes a subtask at the specified index.
    *
    * @param {number} i - The index of the subtask to delete
-   * @return {void} 
    */
 function deleteSubtask(i) {
   subtasksAdd.splice(i, 1);
@@ -52,7 +50,6 @@ function deleteSubtask(i) {
    * Shows subtask icons and adds a background to the specified subtask.
    *
    * @param {number} i - The index of the subtask
-   * @return {void} 
    */
 function showSubtaskIcons(i) {
   document.getElementById(`subtask-icons-${i}`).classList.remove("d-none");
@@ -66,7 +63,6 @@ function showSubtaskIcons(i) {
    * Hides the subtask icons and removes the subtask background for the given index.
    *
    * @param {number} i - The index of the subtask
-   * @return {void}
    */
 function hideSubtaskIcons(i) {
   document.getElementById(`subtask-icons-${i}`).classList.add("d-none");
@@ -80,7 +76,6 @@ function hideSubtaskIcons(i) {
    * Function to handle task priority and render corresponding UI.
    *
    * @param {function} handler - The handler function for rendering UI.
-   * @return {void} 
    */
 function taskPriorityActive(handler) {
   if (taskpriority == "urgent") {
@@ -129,7 +124,6 @@ function setEventListenerSubtask(parent_div) {
  * @param {string} date - The date input
  * @param {string} category - The selected category
  * @param {string} categoryInput - The category input
- * @return {void} 
  */
 function checkBeforChange(title, date, category, categoryInput) {
   if (date != "" && title != "" && category != "Select Task Category") {
@@ -148,7 +142,6 @@ function checkBeforChange(title, date, category, categoryInput) {
    * Change the state of the category input based on the selected category.
    *
    * @param {string} category - The selected category
-   * @return {void} 
    */
 function changeStateCategoryInput(category) {
   if (category === "Select Task Category") {
@@ -168,7 +161,6 @@ function changeStateCategoryInput(category) {
  * Changes the state of the date input based on the provided date.
  *
  * @param {string} date - The date input value
- * @return {void} 
  */
 function changeStateDateInput(date) {
   if (date === "") {
@@ -188,7 +180,6 @@ function changeStateDateInput(date) {
    * Function to change the state of the title input based on the input value.
    *
    * @param {string} title - The input title value
-   * @return {void} No return value
    */
 function changeStateTitleInput(title) {
   if (title === "") {
@@ -208,7 +199,6 @@ function changeStateTitleInput(title) {
  * Change the buttons and set an event listener for subtasks.
  *
  * @param {Event} event - The event object
- * @return {void} 
  */
 function changeButtons(event) {
     event.preventDefault();
