@@ -24,7 +24,6 @@ function renderAssignedTo(handler) {
           </div>
         </li>
         `;
-      setBadgesAddTaskEdit();
     }, (assigncontent.innerHTML = ""));
   } else {
     handler = "";
@@ -79,12 +78,10 @@ function renderBadges(initials, color, content, i) {
     content.innerHTML += /*html*/ `<div class="assigned-to-add-task-user" style="background-color: ${color}">${initials}</div>`;
   }
   if (i == 4) {
-    content.innerHTML += /*html*/ `<div id="grey_badge" class="assigned-to-add-task-user" style="background-color: grey">+${i -
-      3}</div>`;
+    content.innerHTML += /*html*/ `<div id="grey_badge" class="assigned-to-add-task-user" style="background-color: grey">+${i -3}</div>`;
   }
   if (i > 4) {
-    document.getElementById("grey_badge").innerHTML = /*html*/ `+${i -
-      3}</div>`;
+    document.getElementById("grey_badge").innerHTML = /*html*/ `+${i -3}</div>`;
   }
 }
 

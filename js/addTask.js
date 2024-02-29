@@ -128,6 +128,7 @@ function openCategory() {
     categoryBox.classList.remove("visible");
     categoryInput.removeAttribute("disabled", "");
   }
+
   window.addEventListener("click", function(e) {
     setWindowListener(categoryBox,categoryInput,e)
   });
@@ -147,7 +148,6 @@ function setWindowListener(Box,Input,e){
     Input.removeAttribute("disabled", "");
     window.removeEventListener("click", arguments.callee);
   }
-
 }
 
 
@@ -339,7 +339,7 @@ function setBadgesAddTask() {
  * @return {string} The task category from the "category-list2" element.
  */
 function pushCategoryToJSON() {
-  let taskCategory = document.getElementById("category-list2").innerHTML;
+  let taskCategory = document.getElementById("category-list2").value;
   return taskCategory;
 }
 

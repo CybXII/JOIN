@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="./styles/style.css" />
   <link rel="stylesheet" href="../styles/fonts.css" />
   <link rel="stylesheet" href="./styles/add-task.css" />
+  <script src="./js/login.js"></script>
   <script src="./js/globalRender.js"></script>
   <script src="./js/script.js"></script>
   <script src="./js/storage.js"></script>
@@ -99,9 +100,9 @@
             <div class="category">
               <div for="title">Category<span class="red">*</span></div>
               <div id="list2" class="dropdown-check-list2" tabindex="100">
-                <div onclick="openCategory()">
+                <div onblur="openCategory()" onclick="openCategory()">
                   <span id="category-border" class="anchor">
-                    <input id="category-list2" value="Select Task Category"></input>
+                    <input id="category-list2"  value="Select Task Category"></input>
                   </span>
                 </div>
                 <ul class="items">

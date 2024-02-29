@@ -183,7 +183,7 @@ function changeStateCategoryInput(category) {
     document.getElementById("warning-info-2").style = "display: block";
     document
       .getElementById("category-list2")
-      .setAttribute("", `checkInputFields('todo')`);
+      .setAttribute("onchange", `checkInputFields('todo')`);
   } else if (category != "" && category != "Select Task Category") {
     document.getElementById("warning-info-2").style = "display: none";
     document.getElementById("category-border").classList.remove("redBorder");

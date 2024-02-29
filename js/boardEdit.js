@@ -106,6 +106,7 @@ function setBadgesAddTaskEdit() {
       userInitialsAssignedtoBadges.push(initialsremote);
       userColorsAssignedtoBadges.push(colorremote);
     }
+
   }
   renderBadgesAddTaskEdit();
 }

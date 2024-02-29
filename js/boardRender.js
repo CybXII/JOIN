@@ -377,9 +377,7 @@ function renderCardInfo(i) {
   <div class="card" onclick="dontClose()">
           <div class="card_header">
           <div class="card-board-user-story">
-            <span class="card-board-user-story-text" id="card_category">${tasks[
-              i
-            ].category}</span>
+            <span class="card-board-user-story-text" id="card_category">${tasks[i].category}</span>
           </div>        
           <button class="close_card" onclick="closeCardContainer()"></button>
         </div>
