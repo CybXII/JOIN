@@ -16,6 +16,11 @@ async function editTasksfromStorage(i) {
 }
 
 
+/**
+ * Edit subtasks for a given task.
+ *
+ * @param {number} i - index of the task
+ */
 function editSubtasks(i) {
   subtasksAdd.push(tasks[i].subtasks);
   subtasksAddCard = [];
@@ -31,6 +36,12 @@ function editSubtasks(i) {
 }
 
 
+/**
+ * Edit the subtask card with the specified index.
+ *
+ * @param {number} i - the index of the subtask card
+ * @param {number} j - the index of the subtask
+ */
 function editSubtaskCard(i, j) {
   let container = document.getElementById(`subtask-comp-${j}`);
   let textContent = currentTask.subtasks[j].subtaskName;
@@ -39,6 +50,12 @@ function editSubtaskCard(i, j) {
 }
 
 
+/**
+ * Function to add or edit a subtask card.
+ *
+ * @param {number} i - The index parameter.
+ * @param {number} j - The index parameter.
+ */
 async function addEditSubTaskCard(i, j) {
   let subTaskInput = document.getElementById(`editSubTaskInput${j}`).value;
   if(subTaskInput.length>=1){
@@ -49,6 +66,12 @@ async function addEditSubTaskCard(i, j) {
 }
 
 
+/**
+ * Opens the edit assign box for a given index and handler, and performs necessary actions based on the visibility state of the box.
+ *
+ * @param {number} i - The index for the assignment
+ * @param {string} handler - The handler identifier
+ */
 function openEditAssignTo(i, handler) {
   let assingBox = document.getElementById(`${handler}list1`);
 
@@ -63,6 +86,10 @@ function openEditAssignTo(i, handler) {
 }
 
 
+/**
+ * Opens the edit category box and sets the category input to be disabled or enabled based on the current state of the category box visibility.
+ *
+ */
 function openEditCategory() {
   let categoryBox = document.getElementById("edit-list2");
   let categoryInput = document.getElementById("parent-edit_items");
@@ -78,6 +105,9 @@ function openEditCategory() {
 }
 
 
+/**
+ * Opens the assignment for editing. 
+ */
 function openAssignToEdit() {
   let logoutBox = document.getElementById("list1");
 
@@ -92,6 +122,10 @@ function openAssignToEdit() {
 }
 
 
+/**
+ * Function to set badges for adding and editing tasks.
+ *
+ */
 function setBadgesAddTaskEdit() {
   userInitialsAssignedtoBadges = [];
   userColorsAssignedtoBadges = [];
