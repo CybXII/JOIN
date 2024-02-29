@@ -102,6 +102,12 @@ function renderAssignedUserAddTask(handler) {
   }
 }
 
+/**
+ * Renders the edit for the assigned user at the specified index.
+ *
+ * @param {function} handler - The handler function for the edit
+ * @param {number} i - The index of the assigned user
+ */
 function renderEditAssignedUser(handler, i) {
   let index = usersassignedto[i];
   if (usersassignedto.includes(index)) {
@@ -110,6 +116,11 @@ function renderEditAssignedUser(handler, i) {
   }
 }
 
+/**
+ * Renders the assigned user based on the given index.
+ *
+ * @param {number} i - The index of the user to render
+ */
 function renderStandartAssignedUser(i) {
   let index = usersassignedto[i];
   if (usersassignedto.includes(index)) {

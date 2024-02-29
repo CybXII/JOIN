@@ -23,6 +23,7 @@ async function renderBoardTasks() {
   classesBoard();
 }
 
+
 /**
  * Moves the current dragged element to a specified location.
  *
@@ -32,6 +33,7 @@ function moveToLocation(taskId) {
   currentDraggedElement = taskId;
 }
 
+
 /**
  * Prevents the default behavior when a draggable element is being dragged over a drop target.
  *
@@ -40,6 +42,7 @@ function moveToLocation(taskId) {
 function allowDrop(ev) {
   ev.preventDefault();
 }
+
 
 /**
  * Function to remove highlight from specific elements.
@@ -51,6 +54,7 @@ function removeHighlight() {
   document.getElementById("drag-in-progress").classList.add("d-none");
   document.getElementById("drag-await-feedback").classList.add("d-none");
 }
+
 
 /**
  * Function to highlight certain elements on the page based on the tasks' status.
@@ -71,6 +75,7 @@ function highlight() {
     document.getElementById("no-task-done").classList.add("d-none");
 }
 
+
 /**
  * Move the current dragged element to the specified category.
  *
@@ -81,6 +86,7 @@ function moveTo(category) {
   updateHTML();
   closeCardContainer();
 }
+
 
 /**
  * Asynchronously updates the HTML to reflect the current state of the tasks.
@@ -102,6 +108,7 @@ async function updateHTML() {
   setAmounts();
 }
 
+
 /**
  * Opens the add task container and sets up form submission for adding tasks to storage.
  *
@@ -119,6 +126,7 @@ function openAddTaskContainer(categoryInput) {
     );
 }
 
+
 /**
  * Closes the add task container and resets the usersassignedto array.
  */
@@ -129,6 +137,7 @@ function closeAddTaskContainer() {
 
   document.body.classList.remove("background-fixed");
 }
+
 
 /**
  * Set the amounts of different task statuses and perform additional actions if the current page is board.html.
@@ -152,6 +161,7 @@ function setAmounts() {
     noTasksToDo();
   }
 }
+
 
 /**
  * This function checks the category of a task and increments the corresponding counter.
@@ -178,6 +188,7 @@ function checkCases(tasks, i) {
   }
 }
 
+
 /**
  * Checks the number of tasks in different categories and updates the HTML content if there are no tasks.
  */
@@ -194,6 +205,7 @@ function noTasksToDo() {
     document.getElementById("done").innerHTML = noTasksToDoHtml("done");
 }
 
+
 /**
  * Function to generate HTML for a card board when there are no tasks to do.
  *
@@ -203,6 +215,7 @@ function noTasksToDo() {
 function noTasksToDoHtml(id) {
   return `<div class="card-board-empty" id='no-task-${id}'>No tasks To do</div>`;
 }
+
 
 /**
  * Function to start the rotation of a card.
@@ -214,6 +227,7 @@ function rotateCardStart(i) {
   document.getElementById(`board-card${i}`).classList.add("rotate-card");
 }
 
+
 /**
  * Function to end the rotation of a card.
  */
@@ -221,6 +235,7 @@ function rotateCardEnd() {
   let card = currentCardDragged;
   document.getElementById(`board-card${card}`).classList.remove("rotate-card");
 }
+
 
 /**
  * Opens a card with the given index.
@@ -238,6 +253,7 @@ async function openCard(i) {
   setAssignedUserHelp(editingCard);
 }
 
+
 /**
  * Opens the card container by removing the "d-none" class from the element with the ID "card-background" and adding the "background-fixed" class to the body.
  *
@@ -246,6 +262,7 @@ function openCardContainer() {
   document.getElementById("card-background").classList.remove("d-none");
   document.body.classList.add("background-fixed");
 }
+
 
 /**
  * Closes the card container and clears the users assigned to the card.
@@ -256,6 +273,7 @@ function closeCardContainer() {
   document.body.classList.remove("background-fixed");
   document.getElementById("card-background").innerHTML = "";
 }
+
 
 /**
  * Calculate the percentage of completed subtasks and update the progress bar for the given task ID.
@@ -275,6 +293,7 @@ function finishedSubtasks(tasksid) {
   ).style = `width: ${percenttwo}%;`;
 }
 
+
 /**
  * Finds the name of the user assigned to a task by their user ID.
  *
@@ -288,6 +307,7 @@ function usersAssignTask(userid) {
     }
   }
 }
+
 
 /**
  * A function that returns an image path based on the priority of a task.
@@ -304,6 +324,7 @@ function prioImg(i) {
     return `./img/low_nofill.svg`;
   }
 }
+
 
 /**
  * Filters the task board based on the search input. Clears and filters each category, and renders all board tasks if the search input is empty.
@@ -331,6 +352,7 @@ function clearBoardCategory(categorys) {
   document.getElementById(categorys).innerHTML = "";
 }
 
+
 /**
  * Filter tasks based on a specific category and search input, and update the HTML accordingly.
  *
@@ -356,6 +378,7 @@ function filterCategory(categorys, searchInput) {
   });
 }
 
+
 /**
  * Delete a task from the tasks list, update the stored tasks, update the HTML, and close the card container.
  *
@@ -367,6 +390,7 @@ async function deleteTask(i) {
   updateHTML();
   closeCardContainer();
 }
+
 
 /**
  * Asynchronously checks the status of a subtask and updates the task list in the HTML.
@@ -380,6 +404,7 @@ async function checkSubtasks(i, j) {
   await setItem("tasks", JSON.stringify(tasks));
   updateHTML();
 }
+
 
 /**
  * Adds a subtask to the current task based on the input value from the "edit-subtasks" element.
@@ -400,6 +425,7 @@ function addSubtasksCard(i) {
   }
 }
 
+
 /**
  * Deletes a subtask card from the current task.
  *
@@ -410,6 +436,7 @@ function deleteSubtaskCard(i, j) {
   currentTask.subtasks.splice(j, 1);
   renderAddSubtasksCard(j);
 }
+
 
 /**
  * Function to show subtask icons card.
@@ -424,6 +451,7 @@ function showSubtaskIconsCard(i, j) {
     .classList.add("subtask-background");
 }
 
+
 /**
  * Hides the subtask icons card for a given index.
  *
@@ -437,6 +465,7 @@ function hideSubtaskIconsCard(i, j) {
     .classList.remove("subtask-background");
 }
 
+
 /**
  * Resets the subtasks card by clearing the value of the "edit-subtasks" element.
  *
@@ -444,6 +473,7 @@ function hideSubtaskIconsCard(i, j) {
 function resetSubtasksCard() {
   document.getElementById("edit-subtasks").value = ``;
 }
+
 
 /**
  * Assigns users to help with the current task.
@@ -457,6 +487,7 @@ function usersAssignedToHelp() {
     currentTask["assignedToID"].push(element);
   }
 }
+
 
 /**
  * Sets the assigned user help for the given editing card.
@@ -476,6 +507,7 @@ function setAssignedUserHelp(editingCard) {
     }
   });
 }
+
 
 /**
  * Opens the burger board and performs related actions.
