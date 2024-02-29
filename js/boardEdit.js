@@ -12,7 +12,7 @@ async function editTasksfromStorage(i) {
   setInitialsEdit();
   closeCardContainer();
   await setItem("tasks", JSON.stringify(tasks));
-  updateHTML();
+  renderBoardTasks();
 }
 
 
@@ -41,7 +41,7 @@ function editSubtaskCard(i, j) {
 
 async function addEditSubTaskCard(i, j) {
   let subTaskInput = document.getElementById(`editSubTaskInput${j}`).value;
-  if(subTaskInput.length>=3){
+  if(subTaskInput.length>=1){
     currentTask.subtasks[j].subtaskName = subTaskInput;
     editSubtaskCard(i, j);
     renderAddSubtasksCard(i);  

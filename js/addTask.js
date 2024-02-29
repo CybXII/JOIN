@@ -218,7 +218,7 @@ function editSubTaskHtml(textContent, i) {
  */
 function addEditSubTask(i) {
   let subTaskInput = document.getElementById(`editSubTaskInput${i}`).value;
-  if(subTaskInput.length>=3){
+  if(subTaskInput.length>=1){
     subtasksAdd[i].subtaskName = subTaskInput;
     renderAddSubtasks(i);
   }
