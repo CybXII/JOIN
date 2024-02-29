@@ -9,6 +9,9 @@ let firstName;
 let color;
 
 
+/**
+ * Renders the sign-up form and initializes sign-up listeners.
+ */
 function renderSignUp() {
   privacyChecker = false;
   document.getElementById("frame-153").innerHTML = renderSignUpHTML();
@@ -18,12 +21,22 @@ function renderSignUp() {
 }
 
 
+/**
+ * Asynchronously adds a user.
+ *
+ * @param {Event} event - the event triggering the function
+ * @return {Promise} a promise representing the completion of the user addition
+ */
 async function addUser(event) {
   event.preventDefault();
   signUpPasswordChecker();
 }
 
 
+/**
+ * Asynchronous function for checking the validity of the password during the sign-up process.
+ *
+ */
 async function signUpPasswordChecker() {
   let password = document.getElementById("password-su").value;
   let confirm_password = document.getElementById("confirm_password").value;
@@ -40,6 +53,10 @@ async function signUpPasswordChecker() {
 }
 
 
+/**
+ * Function to accept privacy checker
+ *
+ */
 function acceptPrivacyChecker(){
   document.getElementById("privacybox-bg").classList.remove("d-none");
   setTimeout(() => {
@@ -48,6 +65,10 @@ function acceptPrivacyChecker(){
 }
 
 
+/**
+ * Function to register complete text.
+ *
+ */
 function registerCompleteText() {
   document.getElementById("msgBox-bg").classList.remove("d-none");
   setTimeout(() => {
@@ -57,6 +78,10 @@ function registerCompleteText() {
 }
 
 
+/**
+ * Function to validate sign-up password and confirm password.
+ *
+ */
 function signUpPasswordValidation() {
   let password = document.getElementById("password-su").value;
   let confirm_password = document.getElementById("confirm_password").value;
@@ -71,6 +96,9 @@ function signUpPasswordValidation() {
 }
 
 
+/**
+ * This function handles the case where the passwords do not match. It updates the DOM to reflect the error state and initializes the sign-up listeners.
+ */
 function passwordDontMatch() {
   document.getElementById("pass-match").classList.remove("d-none");
   document.getElementById("parent_password").classList.add("invalid");
@@ -81,6 +109,11 @@ function passwordDontMatch() {
 }
 
 
+/**
+ * Toggles the state of either the login remember or privacy checker based on the input.
+ *
+ * @param {string} input - the input to determine which checker to toggle
+ */
 function toogleChecker(input) {
   if (input === "remember") {
     login_remember = !login_remember;

@@ -16,7 +16,6 @@ let filteredTasks;
  *
  */
 async function renderBoardTasks() {
-  await loadUsersFromLocalStorage();
   await loadRemoteUser();
   await loadTasks();
   updateHTML();

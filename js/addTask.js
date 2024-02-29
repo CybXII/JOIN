@@ -17,7 +17,6 @@ let editingCard;
  *
  */
 async function renderAddTask() {
-  await loadUsersFromLocalStorage();
   classesAddTask();
   document.querySelector("form").noValidate = false;
   await loadRemoteUser();

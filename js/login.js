@@ -2,6 +2,11 @@ let login_remember;
 let users = [];
 let remembered_user = [];
 
+
+/**
+ * Delays the removal of certain classes from specific elements after a certain time period.
+ *
+ */
 function move() {
   setTimeout(() => {
     document.getElementById("logo_container").classList.remove("background");
@@ -17,12 +22,23 @@ function move() {
   }, 1000);
 }
 
+
+/**
+ * Renders the login interface and initializes login listeners.
+ */
+
 function renderLogin() {
   document.getElementById("frame-153").innerHTML = renderLoginHTML();
   document.getElementById("frame-156").classList.remove("d-none");
   initializeLoginListeners();
 }
 
+
+/**
+ * Asynchronous function for user login. 
+ *
+ * @param {Object} event - The event object triggering the login
+ */
 async function login(event) {
   await loadUser();
   event.preventDefault();
@@ -40,6 +56,11 @@ async function login(event) {
   }
 }
 
+
+/**
+ * Function for handling remembered login.
+ *
+ */
 function rememberMeLogin() {
   if (remembered_user.length > 0 && remembered_user[0].rememberlogin == true) {
     document.getElementById("email").value = remembered_user[0].email;
@@ -54,6 +75,11 @@ function rememberMeLogin() {
   }
 }
 
+
+/**
+ * Logs in a guest user, assigns a random color, saves user data, and redirects to the summary page.
+ *
+ */
 function guestLogin() {
   let color = getRandomColor();
   users.push({
@@ -71,6 +97,11 @@ function guestLogin() {
   window.location.href = "summary.html";
 }
 
+
+/**
+ * Function to log the user out by removing user data from local storage and redirecting to the login page.
+ *
+ */
 function userLogout() {
   localStorage.removeItem("users");
   window.location.href = "login.html";

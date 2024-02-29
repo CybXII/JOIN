@@ -117,10 +117,7 @@ function renderSignUpHTML() {
     </div>
     <button class="button-wo-icon-su">
       <span class="button-wo-icon-su-text">Sign up</span>
-    </button>
-  
-  
-  `;
+    </button>`;
 }
 
 

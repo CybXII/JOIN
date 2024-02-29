@@ -12,9 +12,15 @@ let initials;
 let firstName;
 let color;
 
-loadUsersFromLocalStorage();
+// 
 
 
+/**
+ * Sorts the contacts array by the firstname property in ascending order.
+ *
+ * @param {Array} contacts - the array of contacts to be sorted
+ * @return {Array} sortedContacts - the sorted array of contacts
+ */
 function sortContacts() {
   let sortedContacts = contacts.sort((a, b) => {
     const nameA = a.firstname.toUpperCase();
@@ -30,6 +36,10 @@ function sortContacts() {
 }
 
 
+/**
+ * Pushes letters to the rendered content based on the first letter of each contact's first name.
+ *
+ */
 function pushLetters() {
   let letterbox = document.getElementById("renderedContent");
   letterbox.innerHTML = "";
@@ -46,20 +56,31 @@ function pushLetters() {
 }
 
 
-
-
+/**
+ * Closes the contacts container by adding the "d-none" class to the element with id "contacts-background" 
+ * and removing the "contacts-background-fixed" class from the document body.
+ */
 function closeContactsContainer() {
   document.getElementById("contacts-background").classList.add("d-none");
   document.body.classList.remove("contacts-background-fixed");
 }
 
 
+/**
+ * Function to add the "d-none" class to the "contacts-background" element and remove the "contacts-background-fixed" class from the body.
+ */
 function closeContactsContainerAdd() {
   document.getElementById("contacts-background").classList.add("d-none");
   document.body.classList.remove("contacts-background-fixed");
 }
 
 
+/**
+ * Formats the phone number to a specific format.
+ *
+ * @param {string} paramName - The input phone number to be formatted
+ * @return {string} The formatted phone number
+ */
 function formatPhoneNumber() {
   let phoneNumber = document.getElementById("add_contacts_phone").value;
   phoneNumber = phoneNumber.replace(/\D/g, "");
@@ -75,12 +96,20 @@ function formatPhoneNumber() {
 }
 
 
+/**
+ * Function to animate the contact information.
+ */
 function contactAnimation() {
   let element = document.getElementById("contact_info");
   element.classList.add("contact-info-content");
 }
 
 
+/**
+ * Deletes a contact from the contacts array, updates the localStorage, re-renders the contacts, and resets the contact info display.
+ *
+ * @param {string} userid - The id of the contact to be deleted.
+ */
 async function deleteContact(userid) {
   const indexToDelete = contacts.findIndex(contact => contact.id === userid);
   if (indexToDelete !== -1) {
@@ -93,6 +122,12 @@ async function deleteContact(userid) {
 }
 
 
+/**
+ * Edits a contact by opening the contacts container, rendering the edit contact, and updating the contact information fields.
+ *
+ * @param {type} userid - The user ID
+ * @param {type} i - The index of the contact to edit
+ */
 function editContact(userid, i) {
   openContactsContainer(userid, i);
   renderEditContact(userid, i);
@@ -108,6 +143,11 @@ function editContact(userid, i) {
 }
 
 
+/**
+ * Asynchronously adds or edits a contact and performs additional UI updates.
+ *
+ * @param {number} i - The index of the contact to add or edit
+ */
 async function addEditContact(i) {
   let newfull = currentcontact.fullname = document.getElementById("edit_contacts_name").value;
   let newEmail = currentcontact.email = document.getElementById("edit_contacts_email").value;
@@ -125,6 +165,19 @@ newfull,newEmail,newcolor,newinitials,newPhone,currentcontact.userid,i
 }
 
 
+
+/**
+ * Adds contacts to the storage based on the input values.
+ *
+ * @param {type} nameInput - The input value for the contact's name
+ * @param {type} contactName - The input field for the contact's name
+ * @param {type} email - The input field for the contact's email
+ * @param {type} phone - The formatted phone number for the contact
+ * @param {type} lastName - The last name of the contact
+ * @param {type} initials - The initials of the contact
+ * @param {type} firstName - The first name of the contact
+ * @param {type} color - The random color assigned to the contact
+ */
 function addContactsToStorage() {
   nameInput = document.getElementById("add_contacts_name").value.split(" ");
   contactName = document.getElementById("add_contacts_name");
@@ -143,6 +196,11 @@ function addContactsToStorage() {
 }
 
 
+/**
+ * Function to add a new contact.
+ *
+ * @return {Promise<void>} A promise that resolves when the function is complete
+ */
 async function addNewContact(){
   pushContacts();
   closeContactsContainer();
@@ -152,6 +210,11 @@ async function addNewContact(){
 }
 
 
+/**
+ * Pushes a new contact object into the contacts array based on the input fields.
+ *
+ * @param {type} JSONToPush - the JSON object containing contact information to be pushed into the contacts array
+ */
 function pushContacts(){
   let JSONToPush = {
     firstname: firstName,
@@ -172,6 +235,17 @@ function pushContacts(){
 }
 
 
+/**
+ * Opens the contact information for the given contact.
+ *
+ * @param {string} fullname - The full name of the contact
+ * @param {string} email - The email address of the contact
+ * @param {string} color - The color associated with the contact
+ * @param {string} initials - The initials of the contact
+ * @param {string} phone - The phone number of the contact
+ * @param {string} userid - The user ID of the contact
+ * @param {number} i - The index of the contact in the contacts array
+ */
 function openContact(fullname, email, color, initials, phone, userid, i) {
   currentcontact = contacts[i];
   let element = document.getElementById("contact_info");
@@ -185,20 +259,26 @@ function openContact(fullname, email, color, initials, phone, userid, i) {
 }
 
 
+/**
+ * Function to open the contact container in the response section.
+ */
 function openRespContactContainer() {
-  document
-    .getElementById("contact_info_resp_background")
-    .classList.remove("d-none");
+  document.getElementById("contact_info_resp_background").classList.remove("d-none");
 }
 
 
+/**
+ * Closes the contact container for the response.
+ */
 function closeRespContactContainer() {
-  document
-    .getElementById("contact_info_resp_background")
-    .classList.add("d-none");
+  document.getElementById("contact_info_resp_background").classList.add("d-none");
 }
 
 
+/**
+ * Renders the contacts by loading contacts, applying classes, pushing letters, and adding contact listeners.
+ *
+ */
 async function renderContacts() {
   await loadContacts();
   classesContacts();
@@ -207,6 +287,11 @@ async function renderContacts() {
 }
 
 
+/**
+ * Renders the given first letter into the DOM, by appending it to the "renderedContent" element and creating a contact card with the letter as an id.
+ *
+ * @param {string} firstLetter - The first letter to be rendered
+ */
 function renderLetters(firstLetter) {
   let letterbox = document.getElementById("renderedContent");
   const letter = firstLetter;
@@ -217,6 +302,12 @@ function renderLetters(firstLetter) {
 }
 
 
+/**
+ * Renders the contact card based on the first letter of the contact's first name.
+ *
+ * @param {string} firstLetter - The first letter of the contact's first name
+ * @param {number} i - Index parameter
+ */
 function renderContactCard(firstLetter, i) {
   let content = document.getElementById(`contact-card-${firstLetter}`);
   contacts.forEach((element, i) => {
@@ -241,6 +332,18 @@ function renderContactCard(firstLetter, i) {
 }
 
 
+/**
+ * Function to render the HTML for a contact card.
+ *
+ * @param {string} fullname - the full name of the contact
+ * @param {string} email - the email address of the contact
+ * @param {string} color - the color for the contact card
+ * @param {string} initials - the initials of the contact
+ * @param {string} phone - the phone number of the contact
+ * @param {string} userid - the user id of the contact
+ * @param {number} i - the index of the contact
+ * @return {string} the HTML for the contact card
+ */
 function renderContactCardHTML(fullname,email,color,initials,phone,userid,i) {
   return /*html*/ `
                 <div class="responsiv_Overlay" onclick="openRespContactContainer()"></div>  
@@ -260,6 +363,10 @@ function renderContactCardHTML(fullname,email,color,initials,phone,userid,i) {
 }
 
 
+/**
+ * Function to open the contacts container and update the DOM elements.
+ *
+ */
 function openContactsContainer() {
   document.getElementById("contacts-background").classList.remove("d-none");
   document.body.classList.add("contacts-background-fixed");

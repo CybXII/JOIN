@@ -8,6 +8,7 @@
 async function includeHTMLInit(input) {
   let functionName = `render${input}`;
   await includeHTML();
+  loadUsersFromLocalStorage();
   if (typeof window[functionName] === "function") {
     window[functionName]();
     document.getElementById("header-initials").innerHTML = users[0].initials;
@@ -96,7 +97,6 @@ function renderFinishCounter(id) {
    * Render subtask information for a given task.
    *
    * @param {number} i - Index of the task
-   * @return {undefined} This function does not return anything
    */
 function renderSubtasksInfos(i) {
   let subtasks = tasks[i].subtasks;
@@ -124,7 +124,6 @@ function renderSubtasksInfos(i) {
    *
    * @param {HTMLElement} assigned - the element to which the grey badge will be added
    * @param {number} j - the value used to update the grey badge
-   * @return {void} 
    */
 function renderUpdateGreyBadge(assigned, j) {
   assigned.innerHTML += `
@@ -143,7 +142,6 @@ function renderUpdateGreyBadge(assigned, j) {
    * @param {HTMLElement} assigned - the element to which the colored badges will be added
    * @param {string} colorbg - the background color for the badge
    * @param {string} assign - the content of the badge
-   * @return {void}
    */
 function renderUpdateColoredBadges(assigned, colorbg, assign) {
   assigned.innerHTML += `
@@ -160,7 +158,6 @@ function renderUpdateColoredBadges(assigned, colorbg, assign) {
    *
    * @param {type} task - the task object to render
    * @param {type} i - the index of the task
-   * @return {type} undefined
    */
 function renderUpdateHTML(task, i) {
   document.getElementById(task.categoryboard).innerHTML += /*html*/ `
@@ -238,7 +235,6 @@ function renderAddSubtasks() {
  * Function to render urgent priority for the given handler.
  *
  * @param {string} handler - The identifier for the element
- * @return {void} 
  */
 function renderUrgent(handler) {
   document.getElementById(`${handler}prio-urgent`).classList.remove("frame-16");
@@ -262,6 +258,18 @@ function renderUrgent(handler) {
 }
 
 
+/**
+ * Renders the contact information HTML based on the provided parameters.
+ *
+ * @param {string} fullname - The full name of the contact
+ * @param {string} email - The email address of the contact
+ * @param {string} color - The color for the background of the circle
+ * @param {string} initials - The initials to be displayed in the circle
+ * @param {string} phone - The phone number of the contact
+ * @param {string} userid - The user id of the contact
+ * @param {number} i - The index of the contact
+ * @return {string} The rendered HTML for the contact information
+ */
 function renderContactInfo(fullname, email, color, initials, phone, userid, i) {
   return /*html*/ `  
   <div class="frame-105">
@@ -295,6 +303,12 @@ function renderContactInfo(fullname, email, color, initials, phone, userid, i) {
 `}
 
 
+/**
+ * Renders the edit contact form for a specific user.
+ *
+ * @param {number} userid - The user ID
+ * @param {number} i - The index of the contact
+ */
 function renderEditContact(userid, i){
   document.getElementById(
     "editContactCard"
@@ -331,6 +345,9 @@ function renderEditContact(userid, i){
 }
 
 
+/**
+ * Function to open the contacts container for adding a new contact.
+ */
 function openContactsContainerAdd() {
   document.getElementById("contacts-background").classList.remove("d-none");
   document.body.classList.add("contacts-background-fixed");
@@ -378,6 +395,12 @@ function openContactsContainerAdd() {
 }
 
 
+/**
+ * Renders and updates the assigned tasks for a specific task.
+ *
+ * @param {object} task - the task object
+ * @param {number} i - the index of the task
+ */
 function renderUpdateAssigned(task,i){
   let assigned = document.getElementById(`assigned-to${i}`);
   for (let j = 0; j < task["assignedTo"].length; j++) {

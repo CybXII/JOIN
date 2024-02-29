@@ -4,7 +4,6 @@
  * @return {Promise<void>} A promise that resolves when the summary is rendered.
  */
 async function renderSummary() {
-  loadUsersFromLocalStorage();
   await loadTasks();
   setAmounts();
   document.getElementById("summ-tasks-todo").innerHTML = tasksTodo;

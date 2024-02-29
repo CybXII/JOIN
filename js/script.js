@@ -3,6 +3,12 @@ let confirmPass_visible = false;
 let loginPass_visible = false;
 
 
+/**
+ * Generates a random color in hexadecimal format.
+ *
+ * @param {string} color - the base color to start from
+ * @return {string} the randomly generated color
+ */
 function getRandomColor(color) {
   var letters = "123456789ABCDE";
   var color = "#";
@@ -13,24 +19,36 @@ function getRandomColor(color) {
 }
 
 
+/**
+ * Function to render the privacy policy.
+ *
+ */
 function renderPrivacyPolicy() {
-  loadUsersFromLocalStorage()
   classesPrivacyPolicy();
 }
 
 
+/**
+ * Function to render help.
+ *
+ */
 function renderHelp() {
-  loadUsersFromLocalStorage()
   classesHelp();
 }
 
 
+/**
+ * Renders the legal notice by calling the classesLegalNotice function.
+ */
 function renderLegalNotice() {
-  loadUsersFromLocalStorage()
   classesLegalNotice();
 }
 
 
+/**
+ * Asynchronously includes HTML content from the specified files into the matching elements.
+ *
+ */
 async function includeHTML() {
   let includeElements = document.querySelectorAll("[w3-include-html]");
   for (let i = 0; i < includeElements.length; i++) {
@@ -46,6 +64,10 @@ async function includeHTML() {
 }
 
 
+/**
+ * Opens or closes the log out box when called.
+ *
+ */
 function openLogOutBox() {
   let logoutBox = document.getElementById("LogOutBoxCSS");
   if (!logoutBox.classList.contains("d-none")) {
@@ -62,11 +84,22 @@ function openLogOutBox() {
 }
 
 
+/**
+ * Prevents the event from bubbling up the DOM tree, preventing any parent handlers from being notified of the event.
+ *
+ * @param {type} event - the event object
+ */
 function dontClose() {
   event.stopPropagation();
 }
 
 
+/**
+ * Initializes login event listeners for email and password input fields.
+ *
+ * @param {type} paramName - description of parameter
+ * @return {type} description of return value
+ */
 function initializeLoginListeners() {
   let emailInput = document.getElementById("email");
   let passwordInput = document.getElementById("login_password");
@@ -77,6 +110,11 @@ function initializeLoginListeners() {
 }
 
 
+/**
+ * Adds a focus event listener to the input element, and performs certain actions if the parent wrapper meets specific conditions.
+ *
+ * @param {HTMLElement} inputElement - the input element to which the focus listener is added
+ */
 function setFocusListener(inputElement) {
   inputElement.addEventListener("focus", function () {
     let parentWrapper = inputElement.closest(".frame-wrapper");
@@ -100,6 +138,11 @@ function setFocusListener(inputElement) {
 }
 
 
+/**
+ * Adds a blur event listener to the input element, and performs certain actions based on the parent wrapper's ID.
+ *
+ * @param {HTMLElement} inputElement - The input element to which the blur event listener is added
+ */
 function setBlurListener(inputElement) {
   inputElement.addEventListener("blur", function () {
     let parentWrapper = inputElement.closest(".frame-wrapper");
@@ -123,6 +166,10 @@ function setBlurListener(inputElement) {
 }
 
 
+/**
+ * Initializes event listeners for sign-up form inputs and sets focus and blur listeners.
+ *
+ */
 function initializeSignUPListeners() {
   document.addEventListener("DOMContentLoaded", function () {});
   let nameInput = document.getElementById("name");
@@ -138,6 +185,11 @@ function initializeSignUPListeners() {
 }
 
 
+/**
+ * Toggles the visibility of password input fields based on the input parameter.
+ *
+ * @param {string} input - the type of password input field to be toggled
+ */
 function changeLocker(input) {
   if (input === "parent_confirm_password") {
     if (confirmPass_visible === false) {
@@ -183,6 +235,11 @@ function changeLocker(input) {
 }
 
 
+/**
+ * Change the picture of the locker based on the parent wrapper ID.
+ *
+ * @param {string} parentWrapperId - The ID of the parent wrapper
+ */
 function changeLockerPictureBack(parentWrapperId) {
   if (parentWrapperId === "parent_login_password") {
     if (loginPass_visible === false) {
@@ -225,6 +282,11 @@ function changeLockerPictureBack(parentWrapperId) {
 }
 
 
+/**
+ * Function to change the visibility of locker picture based on the input.
+ *
+ * @param {string} input - The type of input to change the visibility of locker picture.
+ */
 function changeLockerPicture(input) {
   if (input === "parent_confirm_password") {
     confirmPass_visible = !confirmPass_visible;
@@ -251,6 +313,12 @@ function changeLockerPicture(input) {
 }
 
 
+/**
+ * Adds event listeners to the contact names in the contact list.
+ *
+ * @param {type} paramName - description of parameter
+ * @return {type} description of return value
+ */
 function addContactListeners() {
   var contactList = document.getElementById("renderedContent");
   var contactNames = contactList.querySelectorAll(".contact-name");
@@ -275,6 +343,11 @@ function addContactListeners() {
 }
 
 
+/**
+ * Adds a click event listener to the window that hides the given box if a click occurs outside of it.
+ *
+ * @param {HTMLElement} box - The box element to be hidden
+ */
 function setBoxListenerEdit(box) {
   window.addEventListener("click", function (e) {
     if (!box.contains(e.target)) {
