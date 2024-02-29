@@ -166,122 +166,15 @@ function setCheckBoxesEdit(editingCard) {
       }
     }
   });
-}
+}  
 
-
+  
 /**
- * Reset the tasks board by updating the tasks array and then storing it in the local storage.
+ * Sets the initials, IDs, and colors for the current task based on the users assigned to it.
  *
- * @return {Promise<void>} A Promise that resolves when the tasks array is successfully stored in the local storage.
+ * @param {type} paramName - description of parameter
+ * @return {type} description of return value
  */
-async function resetTasksBoard() {
-    tasks = [
-      {
-        categoryboard: "todo",
-        category: "to do Task",
-        title: "Contact Form & Imprint",
-        description: "Create a contact form and imprint page...",
-        dueDate: "2024-02-15",
-        prio: "medium",
-        subtasks: [
-          {
-            subtaskName: "subtask1",
-            subtaskStatus: false,
-          },
-          {
-            subtaskName: "subtask2",
-            subtaskStatus: false,
-          },
-          {
-            subtaskName: "subtask3",
-            subtaskStatus: false,
-          },
-        ],
-        assignedTo: ["AB", "CD", "EF"],
-        assignedToID: ["0", "1", "2"],
-        colors: ["#10C6E8", "#7851CC", "#726129"],
-      },
-      {
-        categoryboard: "in-progress",
-        category: "in progress Task",
-        title: "Test Technical Task Title",
-        description: "Test Technical Task Description",
-        dueDate: "2024-02-23",
-        prio: "urgent",
-        subtasks: [
-          {
-            subtaskName: "subtask4",
-            subtaskStatus: false,
-          },
-          {
-            subtaskName: "subtask5",
-            subtaskStatus: false,
-          },
-          {
-            subtaskName: "subtask6",
-            subtaskStatus: false,
-          },
-        ],
-        assignedTo: ["GH", "IJ", "KL"],
-        assignedToID: ["0", "1", "2"],
-        colors: ["#10C6E8", "#7851CC", "#726129"],
-      },
-      {
-        categoryboard: "await-feedback",
-        category: "feedback Task",
-        title: "Test Technical Task Title",
-        description: "Test Technical Task Description",
-        dueDate: "2024-02-25",
-        prio: "urgent",
-        subtasks: [
-          {
-            subtaskName: "subtask7",
-            subtaskStatus: false,
-          },
-          {
-            subtaskName: "subtask8",
-            subtaskStatus: false,
-          },
-          {
-            subtaskName: "subtask9",
-            subtaskStatus: false,
-          },
-        ],
-        assignedTo: ["GH", "IJ", "KL"],
-        assignedToID: ["0", "1", "2"],
-        colors: ["#10C6E8", "#7851CC", "#726129"],
-      },
-      {
-        categoryboard: "done",
-        category: "done Task",
-        title: "Test Technical Task Title",
-        description: "Test Technical Task Description",
-        dueDate: "2024-01-01",
-        prio: "urgent",
-        subtasks: [
-          {
-            subtaskName: "subtask10",
-            subtaskStatus: false,
-          },
-          {
-            subtaskName: "subtask11",
-            subtaskStatus: false,
-          },
-          {
-            subtaskName: "subtask12",
-            subtaskStatus: false,
-          },
-        ],
-        assignedTo: ["GH", "IJ", "KL"],
-        assignedToID: ["0", "1", "2"],
-        colors: ["#10C6E8", "#7851CC", "#726129"],
-      },
-    ];
-    await setItem("tasks", JSON.stringify(tasks));
-  }
-  
-
-  
 function setInitialsEdit() {
     currentTask["assignedTo"] = [];
     currentTask['assignedToID'] = [];
@@ -298,5 +191,4 @@ function setInitialsEdit() {
         currentTask["colors"].push(colorremote);
       }
     }
-    // addTasksToStorage();
   }
