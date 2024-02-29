@@ -5,6 +5,10 @@
   padding: 0 64px 0 64px;
 }
 
+.frame-119-burger{
+  display: none;
+}
+
 .edit-input-fields{
   display: flex;
   flex-direction: column;
@@ -871,6 +875,11 @@ text-align: left;
     overflow: hidden;
   }
 
+  .frame-119-burger{
+    display: block;
+  }
+  
+
   .card-board-empty {
     width: 252px;
     padding: 0 16px;
@@ -961,6 +970,22 @@ text-align: left;
 
   .content-container {
     overflow: hidden;
+    position: fixed;
+  }
+
+  .close_card_header {
+    width: 100%;
+    position: fixed;
+    top: 100px;
+    left: 0;
+    right: 0;
+    padding: 16px;
+    z-index: 200;
+    box-sizing: border-box;
+}
+
+  .overlap{
+    z-index: 100;   
   }
 
   .board-dist::-webkit-scrollbar {

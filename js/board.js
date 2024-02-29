@@ -113,6 +113,7 @@ async function updateHTML() {
  */
 function openAddTaskContainer(categoryInput) {
   document.getElementById("board-background").classList.remove("d-none");
+  document.getElementById("content-container").classList.add("overlap");
   document.body.classList.add("background-fixed");
   document
     .getElementById("addTaskForm")
@@ -128,6 +129,8 @@ function openAddTaskContainer(categoryInput) {
 function closeAddTaskContainer() {
   usersassignedto = [];
   document.getElementById("board-background").classList.add("d-none");
+  document.getElementById("content-container").classList.remove("overlap");
+
   document.body.classList.remove("background-fixed");
 }
 

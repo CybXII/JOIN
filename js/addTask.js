@@ -48,7 +48,7 @@ function taskAddedCompleteText() {
  */
 function fillInputField(inputString, handler) {
   if (handler === "edit-") {
-    document.getElementById(`category-list2`).value = `${inputString}`;
+    document.getElementById(`parent-edit_items`).innerHTML = `${inputString}`;
     openEditCategory();
   } else {
     document.getElementById(`category-list2`).value = `${inputString}`;
@@ -141,12 +141,13 @@ function openCategory() {
  * @param {Element} categoryInput - the category input element
  * @param {Event} e - the event object
  */
-function setWindowListener(categoryBox,categoryInput,e){
-  if (!categoryBox.contains(e.target)) {
-    categoryBox.classList.remove("visible");
-    categoryInput.removeAttribute("disabled", "");
+function setWindowListener(Box,Input,e){
+  if (!Box.contains(e.target)) {
+    Box.classList.remove("visible");
+    Input.removeAttribute("disabled", "");
     window.removeEventListener("click", arguments.callee);
   }
+
 }
 
 
@@ -197,7 +198,7 @@ function editSubTaskHtml(textContent, i) {
   return /*html*/ `
       <div class="editSubTaskButtonBox" id="subtask-icons-${i}"></div> 
     <div class="subtask-edit-container">
-      <input id="editSubTaskInput" type="text" class="sub-edit-input" value=${textContent} />
+      <input id="editSubTaskInput${i}" type="text" class="sub-edit-input" value=${textContent} />
       <div class="sub-icons">
       <img src="./img/delete.svg" class="subtask-icon-edit" onclick="deleteSubtask(${i})"/>
         <img src="./img/Vector 19.svg" alt="" />
@@ -216,9 +217,13 @@ function editSubTaskHtml(textContent, i) {
  * @return {void} 
  */
 function addEditSubTask(i) {
-  let subTaskInput = document.getElementById("editSubTaskInput");
-  subtasksAdd[i].subtaskName = subTaskInput.value;
-  renderAddSubtasks();
+  let subTaskInput = document.getElementById(`editSubTaskInput${i}`).value;
+  if(subTaskInput.length<=2){
+    alert('Minimum 3 Letters')
+  } else{
+    subtasksAdd[i].subtaskName = subTaskInput;
+    renderAddSubtasks(i);
+  }
 }
 
 
@@ -251,7 +256,7 @@ function setCheckBoxes(userid, handler) {
   );
   const parentDivElement = document.getElementById(`${handler}catergory_list_${userid}`
   );
- changeCheckboxStatus(userid,checkbox,divElement,parentDivElement);
+changeCheckboxStatus(userid,checkbox,divElement,parentDivElement);
 }
 
 
@@ -336,34 +341,6 @@ function setBadgesAddTask() {
 function pushCategoryToJSON() {
   let taskCategory = document.getElementById("category-list2").innerHTML;
   return taskCategory;
-}
-
-
-/**
- * Add tasks to storage.
- *
- * @param {type} categoryInput - input for category
- * @return {type} 
- */
-function addTasksToStorage(categoryInput) {
-  checkInputFields(categoryInput);
-}
-
-
-/**
- * Performs a check before making changes based on the provided title, date, category, and category input.
- *
- * @param {string} title - The title parameter
- * @param {string} date - The date parameter
- * @param {string} category - The category parameter
- * @param {string} categoryInput - The category input parameter
- * @return {void} 
- */
-function checkInputFields(categoryInput) {
-  let title = document.getElementById("task-title").value;
-  let date = document.getElementById("datePicker").value;
-  let category = document.getElementById("category-list2").value;
-  checkBeforChange(title, date, category, categoryInput);
 }
 
 

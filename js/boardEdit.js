@@ -15,6 +15,7 @@ async function editTasksfromStorage(i) {
   updateHTML();
 }
 
+
 function editSubtasks(i) {
   subtasksAdd.push(tasks[i].subtasks);
   subtasksAddCard = [];
@@ -29,6 +30,7 @@ function editSubtasks(i) {
   subtasksAdd = [];
 }
 
+
 function editSubtaskCard(i, j) {
   let container = document.getElementById(`subtask-comp-${j}`);
   let textContent = currentTask.subtasks[j].subtaskName;
@@ -36,12 +38,18 @@ function editSubtaskCard(i, j) {
   hideSubtaskIconsCard(j);
 }
 
+
 async function addEditSubTaskCard(i, j) {
-  let subTaskInput = document.getElementById("editSubTaskInput");
-  currentTask.subtasks[j].subtaskName = subTaskInput.value;
-  editSubtaskCard(i, j);
-  renderAddSubtasksCard(i);
+  let subTaskInput = document.getElementById(`editSubTaskInput${j}`).value;
+  if(subTaskInput.length<=2){
+    alert('Minimum 3 Letters')
+  } else{
+    currentTask.subtasks[j].subtaskName = subTaskInput;
+    editSubtaskCard(i, j);
+    renderAddSubtasksCard(i);  
+  }
 }
+
 
 function openEditAssignTo(i, handler) {
   let assingBox = document.getElementById("edit-list1");
@@ -55,6 +63,7 @@ function openEditAssignTo(i, handler) {
   }
   setBoxListener(assingBox);
 }
+
 
 function openEditCategory() {
   let categoryBox = document.getElementById("edit-list2");
@@ -70,6 +79,7 @@ function openEditCategory() {
   setBoxListener(categoryBox);
 }
 
+
 function setBadgesAddTaskEdit() {
   userInitialsAssignedtoBadges = [];
   userColorsAssignedtoBadges = [];
@@ -78,7 +88,6 @@ function setBadgesAddTaskEdit() {
     let index = usersassignedto[i];
     let initialsremote = remoteuserAssign[index].initials;
     let colorremote = remoteuserAssign[index].color;
-    // let idremote = remoteuserAssign[i]["id"];
     if (remoteuserAssign[index]["id"] == index + 1) {
       userInitialsAssignedtoBadges.push(initialsremote);
       userColorsAssignedtoBadges.push(colorremote);
@@ -87,8 +96,9 @@ function setBadgesAddTaskEdit() {
   renderBadgesAddTaskEdit();
 }
 
+
 function openAssignToEdit() {
-  let logoutBox = document.getElementById("edit-list1");
+  let logoutBox = document.getElementById("list1");
 
   if (!logoutBox.classList.contains("visible")) {
     logoutBox.classList.add("visible");
@@ -99,6 +109,7 @@ function openAssignToEdit() {
 
   setBoxListenerEdit(logoutBox);
 }
+
 
 /**
  * Edit a card.
@@ -113,6 +124,7 @@ function editCard(i) {
   renderEditCard(content, i);
   taskPriorityChoosed(taskpriority, "edit-");
 }
+
 
 /**
    * Set checkboxes for editing a card.

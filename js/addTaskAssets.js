@@ -1,3 +1,6 @@
+let inputChecker = false;
+
+
 document.addEventListener("DOMContentLoaded", configureDatePicker);
 
 /**
@@ -118,6 +121,39 @@ function setEventListenerSubtask(parent_div) {
 
 
 /**
+ * Add tasks to storage.
+ *
+ * @param {type} categoryInput - input for category
+ * @return {type} 
+ */
+function addTasksToStorage(categoryInput) {
+  checkInputFields(categoryInput);
+  if(inputChecker === true){
+    setInitials();
+    pushCategoryToJSON();
+    addTasktoBoard(categoryInput);
+  }
+}
+
+
+/**
+ * Performs a check before making changes based on the provided title, date, category, and category input.
+ *
+ * @param {string} title - The title parameter
+ * @param {string} date - The date parameter
+ * @param {string} category - The category parameter
+ * @param {string} categoryInput - The category input parameter
+ * @return {void} 
+ */
+function checkInputFields(categoryInput) {
+  let title = document.getElementById("task-title").value;
+  let date = document.getElementById("datePicker").value;
+  let category = document.getElementById("category-list2").value;
+  checkBeforChange(title, date, category, categoryInput);
+}
+
+
+/**
  * Check before making changes based on the provided title, date, category, and category input.
  *
  * @param {string} title - The title input
@@ -127,9 +163,7 @@ function setEventListenerSubtask(parent_div) {
  */
 function checkBeforChange(title, date, category, categoryInput) {
   if (date != "" && title != "" && category != "Select Task Category") {
-    setInitials();
-    pushCategoryToJSON();
-    addTasktoBoard(categoryInput);
+    inputChecker = true;
   } else {
     changeStateCategoryInput(category);
     changeStateDateInput(date);
@@ -149,7 +183,7 @@ function changeStateCategoryInput(category) {
     document.getElementById("warning-info-2").style = "display: block";
     document
       .getElementById("category-list2")
-      .setAttribute("onfocusout", `checkInputFields('todo')`);
+      .setAttribute("", `checkInputFields('todo')`);
   } else if (category != "" && category != "Select Task Category") {
     document.getElementById("warning-info-2").style = "display: none";
     document.getElementById("category-border").classList.remove("redBorder");
@@ -185,9 +219,7 @@ function changeStateTitleInput(title) {
   if (title === "") {
     document.getElementById("warning-info-1").style = "display: block";
     document.getElementById("task-title").classList.add("redBorder");
-    document
-      .getElementById("task-title")
-      .setAttribute("onkeyup", `checkInputFields('todo')`);
+    document.getElementById("task-title").setAttribute("onkeyup", `checkInputFields('todo')`);
   } else if (title != "") {
     document.getElementById("warning-info-1").style = "display: none";
     document.getElementById("task-title").classList.remove("redBorder");

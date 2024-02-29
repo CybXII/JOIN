@@ -123,7 +123,7 @@ function renderEditCard(content, i) {
             <div id="edit-list2" class="dropdown-check-list2" tabindex="100">
               <div onclick="openEditCategory()">
                 <span id="edit-category-border" class="anchor">
-                  <span id="parent-edit_items">${tasks[i]["category"]}</span>
+                  <spant id="parent-edit_items">${tasks[i]["category"]}</spant>
                 </span>
               </div>
               <ul class="items">
@@ -318,7 +318,7 @@ function editSubTaskHtmlCard(textContent, i, j) {
   return /*html*/ `
         <div class="editSubTaskButtonBox" id="subtask-icons-${j}"></div> 
       <div class="subtask-edit-container">
-        <input id="editSubTaskInput" type="text" class="sub-edit-input" value=${textContent} />
+        <input id="editSubTaskInput${j}" type="text" class="sub-edit-input" minlength="3" maxlength="20" value=${textContent} />
         <div class="sub-icons">
         <img src="./img/delete.svg" class="subtask-icon-edit" onclick="deleteSubtaskCard(${i},${j})"/>
           <img src="./img/Vector 19.svg" alt="" />

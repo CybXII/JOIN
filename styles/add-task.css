@@ -1052,6 +1052,8 @@ input:focus {
 
 .anchor input {
   cursor: pointer;
+  min-width: 220px;
+  width: 220px;
 }
 
 .anchor span {
@@ -1568,31 +1570,8 @@ select.moreMinimal:focus {
 }
 
 @media (max-width: 400px) {
-  .input-title {
-    width: 300px;
-  }
-
-  .input-fields {
-    align-items: flex-start;
-  }
-
-  .edit-addTask_helper {
-    padding: 15px;
-  }
-
-  .dropdown-check-list .anchor {
-    width: 300px;
-  }
-
-  .dropdown-check-list2 .anchor {
-    width: 300px;
-  }
-
-  .frame-18 {
-    width: unset;
-  }
-
-  .subtask-v1-reconstrution {
-    width: 300px;
-  }
+  .close_card_header {
+  padding: 8px;
+  box-sizing: border-box;
+}
 }
