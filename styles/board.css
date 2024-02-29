@@ -880,7 +880,7 @@ text-align: left;
   
 
   .card-board-empty {
-    width: 252px;
+    width: 200px;
     padding: 0 16px;
   }
 
@@ -953,7 +953,7 @@ text-align: left;
   }
 
   .card-board {
-    width: 252px;
+    width: 200px;
     cursor: pointer;
   }
 
