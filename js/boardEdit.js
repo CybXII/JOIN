@@ -52,7 +52,7 @@ async function addEditSubTaskCard(i, j) {
 
 
 function openEditAssignTo(i, handler) {
-  let assingBox = document.getElementById("edit-list1");
+  let assingBox = document.getElementById(`${handler}list1`);
 
   if (!assingBox.classList.contains("visible")) {
     assingBox.classList.add("visible");
@@ -80,6 +80,20 @@ function openEditCategory() {
 }
 
 
+function openAssignToEdit() {
+  let logoutBox = document.getElementById("list1");
+
+  if (!logoutBox.classList.contains("visible")) {
+    logoutBox.classList.add("visible");
+    renderAssignedUserAddTask();
+  } else {
+    logoutBox.classList.remove("visible");
+  }
+
+  setBoxListenerEdit(logoutBox);
+}
+
+
 function setBadgesAddTaskEdit() {
   userInitialsAssignedtoBadges = [];
   userColorsAssignedtoBadges = [];
@@ -94,20 +108,6 @@ function setBadgesAddTaskEdit() {
     }
   }
   renderBadgesAddTaskEdit();
-}
-
-
-function openAssignToEdit() {
-  let logoutBox = document.getElementById("list1");
-
-  if (!logoutBox.classList.contains("visible")) {
-    logoutBox.classList.add("visible");
-    renderAssignedUserAddTask();
-  } else {
-    logoutBox.classList.remove("visible");
-  }
-
-  setBoxListenerEdit(logoutBox);
 }
 
 
