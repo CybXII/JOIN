@@ -76,27 +76,6 @@ function closeContactsContainerAdd() {
 
 
 /**
- * Formats the phone number to a specific format.
- *
- * @param {string} paramName - The input phone number to be formatted
- * @return {string} The formatted phone number
- */
-function formatPhoneNumber() {
-  let phoneNumber = document.getElementById("add_contacts_phone").value;
-  phoneNumber = phoneNumber.replace(/\D/g, "");
-  if (phoneNumber.length === 10) {
-    phoneNumber = "49" + phoneNumber;
-  } else if (phoneNumber.length === 11 && phoneNumber.startsWith("0")) {
-    phoneNumber = "49" + phoneNumber.slice(1);
-  } else if (phoneNumber.length === 12 && phoneNumber.startsWith("0")) {
-    phoneNumber = "49" + phoneNumber.slice(1);
-  }
-  phoneNumber = phoneNumber.replace(/(\d{2})(\d{4})(\d{4})(\d{2})/,"+$1 $2 $3 $4");
-  return phoneNumber;
-}
-
-
-/**
  * Function to animate the contact information.
  */
 function contactAnimation() {
@@ -182,7 +161,7 @@ function addContactsToStorage() {
   nameInput = document.getElementById("add_contacts_name").value.split(" ");
   contactName = document.getElementById("add_contacts_name");
   email = document.getElementById("add_contacts_email");
-  phone = formatPhoneNumber();
+  phone = document.getElementById("add_contacts_phone");
   lastName;
   initials =
     nameInput[0][0].toUpperCase() +

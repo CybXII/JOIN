@@ -117,5 +117,6 @@ function greetSummaryAnimation() {
 function removeBackground() {
   setTimeout(() => {
     document.getElementById("frame-69_responsiv").classList.remove("frame-69_responsiv_background");
+    document.getElementById("frame-69_responsiv").classList.add("d-none");
   }, 300);
 }
