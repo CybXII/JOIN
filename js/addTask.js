@@ -313,7 +313,6 @@ function setBadgesAddTask() {
     let index = usersassignedto[i];
     let initialsremote = remoteuserAssign[index].initials;
     let colorremote = remoteuserAssign[index].color;
-    // let idremote = remoteuserAssign[i]["id"];
     if (remoteuserAssign[index]["id"] == index + 1) {
       userInitialsAssignedtoBadges.push(initialsremote);
       userColorsAssignedtoBadges.push(colorremote);

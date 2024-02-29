@@ -125,11 +125,11 @@ function renderSubtasksInfos(i) {
    * @param {HTMLElement} assigned - the element to which the grey badge will be added
    * @param {number} j - the value used to update the grey badge
    */
-function renderUpdateGreyBadge(assigned, j) {
+function renderUpdateGreyBadge(assigned, j, i) {
   assigned.innerHTML += `
     <div class="card-board-profile-batch">
       <div class="group-9-board">
-        <div id="grey_badge" class="group-9-text" style="background-color: grey;">+${j -
+        <div id="grey_badge${i}" class="group-9-text" style="background-color: grey;">+${j -
           3}</div>
       </div>
     </div>`;
@@ -417,10 +417,10 @@ function renderUpdateAssigned(task,i){
     if (j <= 3) {
       renderUpdateColoredBadges(assigned,colorbg,assign);
     } else if (j == 4) {
-      renderUpdateGreyBadge(assigned,j);
+      renderUpdateGreyBadge(assigned,j, i);
     }
     else if(j>=5){
-      document.getElementById('grey_badge').innerHTML = `+${j-3}`;
+      document.getElementById(`grey_badge${i}`).innerHTML = `+${j-3}`;
     } 
   }
 }
