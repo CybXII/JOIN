@@ -124,7 +124,6 @@ function setEventListenerSubtask(parent_div) {
  * Add tasks to storage.
  *
  * @param {type} categoryInput - input for category
- * @return {type} 
  */
 function addTasksToStorage(categoryInput) {
   checkInputFields(categoryInput);
@@ -143,7 +142,6 @@ function addTasksToStorage(categoryInput) {
  * @param {string} date - The date parameter
  * @param {string} category - The category parameter
  * @param {string} categoryInput - The category input parameter
- * @return {void} 
  */
 function checkInputFields(categoryInput) {
   let title = document.getElementById("task-title").value;
