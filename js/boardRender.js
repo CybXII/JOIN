@@ -3,7 +3,6 @@
  *
  * @param {HTMLElement} content - the content to be rendered in the edit card
  * @param {number} i - the index of the edit card
- * @return {void} 
  */
 function renderEditCard(content, i) {
   content.innerHTML = `
@@ -198,6 +197,10 @@ function renderEditCard(content, i) {
   `;
 }
 
+/**
+ * Renders the move to options in the card background.
+ *
+ */
 function renderMoveToOptions() {
   document.getElementById("card-background").innerHTML = `
     <div class="card" onclick="dontClose()">
@@ -213,6 +216,12 @@ function renderMoveToOptions() {
     `;
 }
 
+
+/**
+ * Renders move-to buttons based on the task's category board.
+ *
+ * @param {number} taskID - The ID of the task
+ */
 function renderMoveToButtons(taskID) {
   let buttons = document.getElementById("moveButtons");
   if (tasks[taskID]["categoryboard"] === "todo") {
@@ -242,6 +251,13 @@ function renderMoveToButtons(taskID) {
   }
 }
 
+
+/**
+ * Renders the add subtasks card with the given index.
+ *
+ * @param {type} i - description of parameter
+ * @return {type} description of return value
+ */
 function renderAddSubtasksCard(i) {
   document.getElementById("edit-subtasks-container").innerHTML = "";
   for (let j = 0; j < currentTask.subtasks.length; j++) {
@@ -274,6 +290,13 @@ function renderAddSubtasksCard(i) {
   }
 }
 
+
+/**
+ * Renders badges for adding and editing tasks.
+ *
+ * @param {type} paramName - description of parameter
+ * @return {type} description of return value
+ */
 function renderBadgesAddTaskEdit() {
   for (let i = 0; i < userInitialsAssignedtoBadges.length; i++) {
     const initials = userInitialsAssignedtoBadges[i];
@@ -284,6 +307,14 @@ function renderBadgesAddTaskEdit() {
 }
 
 
+/**
+ * Function to render badges in the edit mode.
+ *
+ * @param {string} initials - the initials for the badge
+ * @param {string} color - the color of the badge
+ * @param {HTMLElement} content - the HTML element where the badges will be rendered
+ * @param {number} i - the index for rendering the badge
+ */
 function renderBadgesEdit(initials, color, content, i) {
   if (i <= 3) {
     content.innerHTML += /*html*/ `<div class="assigned-to-add-task-user" style="background-color: ${color}">${initials}</div>`;
@@ -299,6 +330,11 @@ function renderBadgesEdit(initials, color, content, i) {
 }
 
 
+/**
+ * Change buttons in the card based on the event triggered.
+ *
+ * @param {Event} event - the event object
+ */
 function changeButtonsCard(event) {
   event.preventDefault();
   parent_div = document.getElementById("edit-parent_subtasks");
@@ -314,6 +350,14 @@ function changeButtonsCard(event) {
 }
 
 
+/**
+ * Edit subtask html card function.
+ *
+ * @param {string} textContent - the text content to be displayed
+ * @param {number} i - the first index
+ * @param {number} j - the second index
+ * @return {string} the html for the subtask card
+ */
 function editSubTaskHtmlCard(textContent, i, j) {
   return /*html*/ `
         <div class="editSubTaskButtonBox" id="subtask-icons-${j}"></div> 
@@ -330,6 +374,14 @@ function editSubTaskHtmlCard(textContent, i, j) {
 }
 
 
+/**
+ * Renders the edit subtasks section in the given element with the provided content, index i, and index j.
+ *
+ * @param {Element} element - the element to render the subtasks in
+ * @param {HTMLElement} content - the content to append the subtask HTML to
+ * @param {number} i - the index of the parent task
+ * @param {number} j - the index of the subtask
+ */
 function renderEditSubtasks(element, content, i, j) {
   content.innerHTML += /*html*/ `
   <div id="subtask-comp-${j}">
@@ -412,4 +464,3 @@ function renderCardInfo(i) {
           </div>
       </div>`;
 }
-
