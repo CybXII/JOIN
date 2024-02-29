@@ -75,7 +75,6 @@ function clearFields() {
 
 /**
  * Resets the value of the subtasks input field to an empty string.
- *
  */
 function resetSubtasks() {
   document.getElementById("subtasks").value = ``;
@@ -84,7 +83,6 @@ function resetSubtasks() {
 
 /**
  * Opens the assign-to dropdown and adds event listeners to handle click events.
- *
  */
 function openAssignTo() {
   let logoutBox = document.getElementById("list1");
@@ -128,7 +126,6 @@ function openCategory() {
     categoryBox.classList.remove("visible");
     categoryInput.removeAttribute("disabled", "");
   }
-
   window.addEventListener("click", function(e) {
     setWindowListener(categoryBox,categoryInput,e)
   });
@@ -176,7 +173,6 @@ function addSubtasks() {
  * Edit a subtask in the DOM.
  *
  * @param {number} i - The index of the subtask to be edited
- * @return {void} 
  */
 function editSubtask(i) {
   let container = document.getElementById(`subtask-comp-${i}`);
@@ -214,7 +210,6 @@ function editSubTaskHtml(textContent, i) {
  * Updates a subtask at the specified index and re-renders the list of subtasks.
  *
  * @param {number} i - The index of the subtask to be updated.
- * @return {void} 
  */
 function addEditSubTask(i) {
   let subTaskInput = document.getElementById(`editSubTaskInput${i}`).value;
@@ -230,7 +225,6 @@ function addEditSubTask(i) {
  *
  * @param {type} userid - the id of the user
  * @param {type} handler - the handler for the checkbox change
- * @return {type} undefined
  */
 function addClassOnCheckboxChange(userid, handler) {
   if (handler === "edit-") {
@@ -302,7 +296,6 @@ function setInitials() {
       userColorsAssignedto.push(colorremote);
     }
   }
-  // addTasksToStorage();
 }
 
 
