@@ -41,9 +41,7 @@ function editSubtaskCard(i, j) {
 
 async function addEditSubTaskCard(i, j) {
   let subTaskInput = document.getElementById(`editSubTaskInput${j}`).value;
-  if(subTaskInput.length<=2){
-    alert('Minimum 3 Letters')
-  } else{
+  if(subTaskInput.length>=3){
     currentTask.subtasks[j].subtaskName = subTaskInput;
     editSubtaskCard(i, j);
     renderAddSubtasksCard(i);  
