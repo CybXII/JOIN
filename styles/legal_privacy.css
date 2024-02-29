@@ -82,14 +82,13 @@ overflow: hidden;
     }
 
     .container{
-        padding:  48px 16px;
-        overflow-y: scroll;
+        padding:  51px 10px;
+        /* overflow-y: scroll; */
         top: 80px;
-        left: 0;
+        left: 10px;
         bottom: 80px;
         position: fixed;
-        width: 100%;
-        box-sizing: border-box;
+        width: 94%;
     }
 
     .content-container {

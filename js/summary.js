@@ -12,8 +12,10 @@ async function renderSummary() {
   document.getElementById("summ-tasks-board").innerHTML = tasks.length;
   document.getElementById("summ-tasks-progress").innerHTML = tasksInProgress;
   document.getElementById("summ-tasks-feedback").innerHTML = tasksAwaitFeedback;
-  document.getElementById("summary-fullname").innerHTML = users[0].name;
-  document.getElementById("summary-fullname-resp").innerHTML = users[0].name;
+  if (users[0].id != 999) {
+    document.getElementById("summary-fullname").innerHTML = users[0].name;
+    document.getElementById("summary-fullname-resp").innerHTML = users[0].name;
+  }
   classesSummary();
   renderGreetingTime();
   renderUrgent();
@@ -80,8 +82,8 @@ function greetingTime() {
   if (currentHour >= 5 && currentHour < 12) {
     return "Good morning,";
   } else if (currentHour >= 12 && currentHour < 18) {
-    return "Good day,";
-  } else return "Good evening,";
+    return "Good day";
+  } else return "Good evening";
 }
 
 

@@ -1,5 +1,6 @@
 .container {
 overflow-x: hidden;
+background-color: white;
 }
 
 .headline div{
@@ -1159,6 +1160,18 @@ text-align: left;
     bottom: 100px;
   }
 }
+
+@media (max-width: 470px) {
+  .frame-97{bottom: 180px;}
+  .frame-97 .primary-contact {
+    width: 270px;
+    height: 56px;
+    padding: 0;
+    border-radius: 46px;
+    bottom: 100px;
+    right: auto;
+}}
+
 
 @media (max-width: 420px) {
   .frame-97 .contact-name {
