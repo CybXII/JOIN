@@ -50,7 +50,6 @@ function removeHighlight() {
   document.getElementById("drag-todo").classList.add("d-none");
   document.getElementById("drag-in-progress").classList.add("d-none");
   document.getElementById("drag-await-feedback").classList.add("d-none");
-  console.log("removehighlight");
 }
 
 /**
@@ -70,7 +69,6 @@ function highlight() {
     document.getElementById("no-task-await-feedback").classList.add("d-none");
   if (tasksDone == 0)
     document.getElementById("no-task-done").classList.add("d-none");
-  console.log("highlight");
 }
 
 /**
@@ -81,8 +79,6 @@ function highlight() {
 function moveTo(category) {
   tasks[currentDraggedElement]["categoryboard"] = category;
   updateHTML();
-  console.log(tasks[currentDraggedElement]["categoryboard"]);
-  console.log("moveto");
   closeCardContainer();
 }
 
@@ -214,7 +210,6 @@ function noTasksToDoHtml(id) {
  * @param {number} i - the index of the card to rotate
  */
 function rotateCardStart(i) {
-  console.log(i + " aufgenommen");
   currentCardDragged = i;
   document.getElementById(`board-card${i}`).classList.add("rotate-card");
 }
@@ -224,7 +219,6 @@ function rotateCardStart(i) {
  */
 function rotateCardEnd() {
   let card = currentCardDragged;
-  console.log(card + " losgelassen");
   document.getElementById(`board-card${card}`).classList.remove("rotate-card");
 }
 
@@ -490,7 +484,6 @@ function setAssignedUserHelp(editingCard) {
  * @param {number} i - The index parameter
  */
 function openBurgerBoard(event, i) {
-  console.log("burgermenu " + i + " geöffnet");
   currentDraggedElement = i;
   event.stopPropagation();
   openCardContainer();

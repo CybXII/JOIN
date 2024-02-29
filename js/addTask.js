@@ -218,9 +218,7 @@ function editSubTaskHtml(textContent, i) {
  */
 function addEditSubTask(i) {
   let subTaskInput = document.getElementById(`editSubTaskInput${i}`).value;
-  if(subTaskInput.length<=2){
-    alert('Minimum 3 Letters')
-  } else{
+  if(subTaskInput.length>=1){
     subtasksAdd[i].subtaskName = subTaskInput;
     renderAddSubtasks(i);
   }
@@ -359,7 +357,6 @@ async function addTasktoBoard(input) {
 
   setJson(input,title,description,date,categoryTask);
   await setItem("tasks", JSON.stringify(tasks));
-  console.log(tasks);
   title.value = "";
   description.value = "";
   date.value = "";
