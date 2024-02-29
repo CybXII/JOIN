@@ -12,7 +12,7 @@ async function editTasksfromStorage(i) {
   setInitialsEdit();
   closeCardContainer();
   await setItem("tasks", JSON.stringify(tasks));
-  renderBoardTasks();
+  await renderBoardTasks();
 }
 
 
