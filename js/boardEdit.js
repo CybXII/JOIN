@@ -1,3 +1,9 @@
+/**
+ * Edit tasks from storage and update the task properties based on the input values.
+ *
+ * @param {number} i - The index of the task to be edited
+ * @return {Promise<void>} A Promise that resolves after updating the tasks in the storage
+ */
 async function editTasksfromStorage(i) {
   currentTask["title"] = document.getElementById("edit-task-title").value;
   currentTask["dueDate"] = document.getElementById("edit-datePicker").value;
