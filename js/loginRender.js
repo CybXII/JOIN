@@ -148,9 +148,7 @@ function renderLoginHTML() {
                     aria-describedby="emailHelp"
                     placeholder="Email"
                     autocomplete="email"
-                    required
-                    oninvalid="this.setCustomValidity('Das ist ein Test')"
-                    oninput="this.setCustomValidity('')"
+                    onkeyup="resetWrongPassword()"
                   />
                   <img src="./img/mail.svg" alt="" />
                 </label>
@@ -163,14 +161,12 @@ function renderLoginHTML() {
                     id="login_password"
                     autocomplete="new-password"
                     placeholder="Password"
-                    required
-                    oninvalid="this.setCustomValidity('Das ist ein Test')"
-                    oninput="this.setCustomValidity('')"
+                    onkeyup="resetWrongPassword()"
                   />
                   <img class="img" onclick="changeLockerPicture('parent_login_password')" id="login_password_locker" src="img/lock.svg" alt="lockerspicture" />
                 </label>
+                <div class="text-wrapper-3" id="wrongPassword">Invalid Password or E-Mail</div>
               </div>
-              <div class="text-wrapper-3">This field is required</div>
             </div>
             <div class="frame-6">
               <div class="frame-7">

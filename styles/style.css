@@ -124,7 +124,7 @@ body {
 
 .log-in .frame-14 {
   display: flex;
-  width: 380px;
+  width: 500px;
   align-items: center;
   justify-content: space-between;
   position: relative;
@@ -198,6 +198,20 @@ input:focus-visible {
   align-self: stretch;
   width: 100%;
   height: 24px;
+  padding-top: 20px;
+}
+
+.wrong-password {
+  border: 1px solid red !important; 
+  outline: none !important;
+}
+
+.wrong-password-text{
+  color: red !important;
+}
+
+.wrong-password-unset{
+  color: transparent !important;
 }
 
 .log-in .frame-7 {

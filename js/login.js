@@ -54,8 +54,24 @@ async function login(event) {
     saveUsersToLocalStorage();
     window.location.href = "summary.html";
   }
+  else {
+    wrongPassword();
+  }
 }
 
+function wrongPassword(){
+  document.getElementById("parent_email").classList.add("wrong-password");
+  document.getElementById("parent_login_password").classList.add("wrong-password");
+  document.getElementById("wrongPassword").classList.remove("wrong-password-unset");
+  document.getElementById("wrongPassword").classList.add("wrong-password-text");
+}
+
+function resetWrongPassword(){
+  document.getElementById("parent_email").classList.remove("wrong-password");
+  document.getElementById("parent_login_password").classList.remove("wrong-password");
+   document.getElementById("wrongPassword").classList.remove("wrong-password-text");
+  document.getElementById("wrongPassword").classList.add("wrong-password-unset");
+}
 
 /**
  * Function for handling remembered login.
