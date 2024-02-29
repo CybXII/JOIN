@@ -984,7 +984,7 @@ text-align: left;
 }
 
   .overlap{
-    z-index: 100;   
+    z-index: 50;   
   }
 
   .board-dist::-webkit-scrollbar {
