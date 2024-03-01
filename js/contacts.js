@@ -277,7 +277,7 @@ function renderLetters(firstLetter) {
   letterbox.innerHTML += `
     <div class="div-wrapper"><div class="div">${letter}</div></div>
               <img class="img" src="img/seperator_contacts.svg" />
-              <div id="contact-card-${letter}"></div>`;
+              <div id="contact-card-${letter}" class="contact-card-letter"></div>`;
 }
 
 
