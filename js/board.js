@@ -133,7 +133,6 @@ function closeAddTaskContainer() {
   usersassignedto = [];
   document.getElementById("board-background").classList.add("d-none");
   document.getElementById("content-container").classList.remove("overlap");
-
   document.body.classList.remove("background-fixed");
 }
 

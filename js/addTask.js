@@ -44,7 +44,6 @@ function taskAddedCompleteText() {
  * @param {} - No parameters
  * @return {} - No return value
  */
-
 function subtasksMessage() {
   document.getElementById("msgBox").innerHTML= 'Minimum 3 Letters';
   document.getElementById("msgBox-bg").classList.remove("d-none");

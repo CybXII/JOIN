@@ -114,23 +114,6 @@ function openEditCategory() {
 
 
 /**
- * Opens the assignment for editing. 
- */
-function openAssignToEdit() {
-  let logoutBox = document.getElementById("list1");
-
-  if (!logoutBox.classList.contains("visible")) {
-    logoutBox.classList.add("visible");
-    renderAssignedUserAddTask();
-  } else {
-    logoutBox.classList.remove("visible");
-  }
-
-  setBoxListenerEdit(logoutBox);
-}
-
-
-/**
  * Function to set badges for adding and editing tasks.
  *
  */
@@ -146,7 +129,6 @@ function setBadgesAddTaskEdit() {
       userInitialsAssignedtoBadges.push(initialsremote);
       userColorsAssignedtoBadges.push(colorremote);
     }
-
   }
   renderBadgesAddTaskEdit();
 }

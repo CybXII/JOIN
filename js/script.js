@@ -85,16 +85,6 @@ function openLogOutBox() {
 
 
 /**
- * Prevents the event from bubbling up the DOM tree, preventing any parent handlers from being notified of the event.
- *
- * @param {type} event - the event object
- */
-function dontClose() {
-  event.stopPropagation();
-}
-
-
-/**
  * Initializes login event listeners for email and password input fields.
  *
  * @param {type} paramName - description of parameter
@@ -118,22 +108,12 @@ function initializeLoginListeners() {
 function setFocusListener(inputElement) {
   inputElement.addEventListener("focus", function () {
     let parentWrapper = inputElement.closest(".frame-wrapper");
-    if (parentWrapper) {
-      let parentWrapperId = parentWrapper.id;
-
-      if (
-        parentWrapperId === "parent_password" ||
-        parentWrapperId === "parent_confirm_password" ||
-        parentWrapperId === "parent_login_password"
-      ) {
-        parentWrapper.classList.add("aktive");
-        parentWrapper.classList.remove("invalid");
-        changeLocker(parentWrapperId);
-      } else {
-        parentWrapper.classList.add("aktive");
-        parentWrapper.classList.remove("invalid");
-      }
-    }
+    if (!parentWrapper) return;
+    let parentWrapperId = parentWrapper.id;
+    let isActive = ["parent_password", "parent_confirm_password", "parent_login_password"].includes(parentWrapperId);
+    parentWrapper.classList.add("aktive");
+    parentWrapper.classList.remove("invalid");
+    if (isActive) changeLocker(parentWrapperId);
   });
 }
 
@@ -146,22 +126,12 @@ function setFocusListener(inputElement) {
 function setBlurListener(inputElement) {
   inputElement.addEventListener("blur", function () {
     let parentWrapper = inputElement.closest(".frame-wrapper");
-    if (parentWrapper) {
-      let parentWrapperId = parentWrapper.id;
-
-      if (
-        parentWrapperId === "parent_password" ||
-        parentWrapperId === "parent_confirm_password" ||
-        parentWrapperId === "parent_login_password"
-      ) {
-        parentWrapper.classList.remove("aktive");
-        parentWrapper.classList.remove("invalid");
-        changeLockerPictureBack(parentWrapperId);
-      } else {
-        parentWrapper.classList.remove("aktive");
-        parentWrapper.classList.remove("invalid");
-      }
+    if (!parentWrapper) return;
+    let parentWrapperId = parentWrapper.id;
+    if (["parent_password", "parent_confirm_password", "parent_login_password"].includes(parentWrapperId)) {
+      changeLockerPictureBack(parentWrapperId);
     }
+    parentWrapper.classList.remove("aktive", "invalid");
   });
 }
 

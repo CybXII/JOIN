@@ -31,11 +31,11 @@
       <span id="msgBox" class="task-comp-text">Task added to Board</span>
     </div>
   </div>
-  <div class="card-background d-none" id="card-background" onclick="closeCardContainer()"></div>
+  <div class="card-background d-none" id="card-background"></div>
   <nav w3-include-html="./templates/header.html"></nav>
   <div id="content-container" class="content-container">
-    <div class="add-task-board-background d-none" id="board-background" onclick="closeAddTaskContainer()">
-      <div class="add-task-board-card" onclick="dontClose()">
+    <div class="add-task-board-background d-none" id="board-background">
+      <div class="add-task-board-card">
         <div class="close_card_header">
           <div class="bord-40">
             <h1>Add Task</h1>
@@ -68,7 +68,7 @@
                 <div class="asigned-to-v1">
                   <span class="assigned-to">Assigned to</span>
                   <div id="list1" class="dropdown-check-list" tabindex="100">
-                    <div onclick="renderAssignedTo(), openAssignToEdit()">
+                    <div onclick="renderAssignedTo(), openAssignTo()">
                       <span class="anchor">Select contacts to assign</span>
                     </div>
                     <ul class="items">
