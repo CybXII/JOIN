@@ -137,13 +137,14 @@ function openCategory() {
     categoryBox.classList.add("visible");
     categoryInput.setAttribute("disabled", "");
     renderAssignedUserAddTask();
+    window.addEventListener("click", function(e) {
+      setWindowListener(categoryBox,categoryInput,e)
+    });
   } else {
+    window.removeEventListener("click", arguments.callee);
     categoryBox.classList.remove("visible");
     categoryInput.removeAttribute("disabled", "");
   }
-  window.addEventListener("click", function(e) {
-    setWindowListener(categoryBox,categoryInput,e)
-  });
 }
 
 
@@ -158,7 +159,6 @@ function setWindowListener(Box,Input,e){
   if (!Box.contains(e.target)) {
     Box.classList.remove("visible");
     Input.removeAttribute("disabled", "");
-    window.removeEventListener("click", arguments.callee);
   }
 }
 

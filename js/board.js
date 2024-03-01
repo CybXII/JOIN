@@ -114,15 +114,45 @@ async function updateHTML() {
  * @param {type} categoryInput - the category input for the task
  */
 function openAddTaskContainer(categoryInput) {
+  console.log("Opening add task container...");
   document.getElementById("board-background").classList.remove("d-none");
   document.getElementById("content-container").classList.add("overlap");
   document.body.classList.add("background-fixed");
-  document
-    .getElementById("addTaskForm")
-    .setAttribute(
-      "onsubmit",
-      `addTasksToStorage('${categoryInput}'); return false;`
-    );
+  document.getElementById("addTaskForm").setAttribute(
+    "onsubmit",
+    `addTasksToStorage('${categoryInput}'); return false;`
+  );
+  setTimeout(function() {
+    console.log('add clickOutside Listener')
+    window.removeEventListener("click", arguments.callee);
+    document.addEventListener('click', clickOutsideHandler);
+  }, 100);
+}
+
+
+/**
+ * Handles click events outside the add task container.
+ * 
+ * @param {Event} event - The click event object.
+ */
+function clickOutsideHandler(event) {
+  var addTaskBoard = document.querySelector('.add-task-board-card');
+  var targetElement = event.target;
+  if (!addTaskBoard.contains(targetElement)) {
+    console.log("Click detected outside the add task container...");
+    closeAddTaskContainer();
+    document.removeEventListener('click', clickOutsideHandler);
+  } else {
+    console.log('Inside click');
+  }
+}
+
+/**
+ * Removes the click outside listener from the document.
+ */
+function removeClickOutsideListener() {
+  console.log("Removing click outside listener...");
+  document.removeEventListener('click', clickOutsideHandler);
 }
 
 
@@ -254,22 +284,37 @@ async function openCard(i) {
 
 /**
  * Opens the card container by removing the "d-none" class from the element with the ID "card-background" and adding the "background-fixed" class to the body.
- *
  */
 function openCardContainer() {
   document.getElementById("card-background").classList.remove("d-none");
   document.body.classList.add("background-fixed");
+
+  // Event-Listener für Klicks auf das Element mit der ID "card-background" hinzufügen
+  document.getElementById("card-background").addEventListener("click", cardBackgroundClickHandler);
 }
 
-
 /**
- * Closes the card container and clears the users assigned to the card.
+ * Closes the card container by adding the "d-none" class to the element with the ID "card-background" and removing the "background-fixed" class from the body.
  */
 function closeCardContainer() {
-  usersassignedto = [];
   document.getElementById("card-background").classList.add("d-none");
   document.body.classList.remove("background-fixed");
-  document.getElementById("card-background").innerHTML = "";
+
+  // Event-Listener für Klicks auf das Element mit der ID "card-background" entfernen
+  document.getElementById("card-background").removeEventListener("click", cardBackgroundClickHandler);
+}
+
+/**
+ * Handles click events on the card background to close the card container.
+ * 
+ * @param {Event} event - The click event object.
+ */
+function cardBackgroundClickHandler(event) {
+  // Überprüfen, ob das Klickereignis auf dem Element mit der ID "card-background" ausgelöst wurde
+  if (event.target.id === "card-background") {
+    // Funktion zum Schließen des Kartencontainers aufrufen
+    closeCardContainer();
+  }
 }
 
 
@@ -348,175 +393,4 @@ function filterTaskBoard() {
  */
 function clearBoardCategory(categorys) {
   document.getElementById(categorys).innerHTML = "";
-}
-
-
-/**
- * Filter tasks based on a specific category and search input, and update the HTML accordingly.
- *
- * @param {array} categorys - The category to filter tasks by
- * @param {string} searchInput - The search input to filter tasks by
- */
-function filterCategory(categorys, searchInput) {
-  tasks.forEach(function (task, i) {
-    let checkTitlel = task["title"];
-    let checkInfos = task["description"];
-    if (task.categoryboard === categorys) {
-      if (
-        checkTitlel.toUpperCase().includes(searchInput.toUpperCase()) ||
-        checkInfos.toUpperCase().includes(searchInput.toUpperCase())
-      ) {
-        renderUpdateHTML(task, i);
-        renderUpdateAssigned(task, i);
-        finishedSubtasks(i);
-        renderFinishCounter(i);
-        finishcounter = 0;
-      }
-    }
-  });
-}
-
-
-/**
- * Delete a task from the tasks list, update the stored tasks, update the HTML, and close the card container.
- *
- * @param {number} i - The index of the task to delete
- */
-async function deleteTask(i) {
-  tasks.splice(i, 1);
-  await setItem("tasks", JSON.stringify(tasks));
-  updateHTML();
-  closeCardContainer();
-}
-
-
-/**
- * Asynchronously checks the status of a subtask and updates the task list in the HTML.
- *
- * @param {number} i - The index of the subtask.
- * @param {number} j - The index of the current task.
- */
-async function checkSubtasks(i, j) {
-  let status = document.getElementById(`subtask${j}`).checked;
-  currentTask.subtasks[j]["subtaskStatus"] = status;
-  await setItem("tasks", JSON.stringify(tasks));
-  updateHTML();
-}
-
-
-/**
- * Adds a subtask to the current task based on the input value from the "edit-subtasks" element.
- *
- * @param {type} i - description of parameter
- * @return {type} description of return value
- */
-function addSubtasksCard(i) {
-  let subtaskstoadd = document.getElementById("edit-subtasks").value;
-  if (subtaskstoadd) {
-    let JSONToPush = {
-      subtaskName: subtaskstoadd,
-      subtaskStatus: false,
-    };
-    currentTask.subtasks.push(JSONToPush);
-    document.getElementById("edit-subtasks").value = "";
-    renderAddSubtasksCard(i);
-  }
-}
-
-
-/**
- * Deletes a subtask card from the current task.
- *
- * @param {number} i - index of the current task
- * @param {number} j - index of the subtask to be deleted
- */
-function deleteSubtaskCard(i, j) {
-  currentTask.subtasks.splice(j, 1);
-  renderAddSubtasksCard(j);
-}
-
-
-/**
- * Function to show subtask icons card.
- *
- * @param {number} i - The first parameter representing some value.
- * @param {number} j - The second parameter representing some value.
- */
-function showSubtaskIconsCard(i, j) {
-  document.getElementById(`subtask-icons-${i}`).classList.remove("d-none");
-  document
-    .getElementById(`subtask-comp-${i}`)
-    .classList.add("subtask-background");
-}
-
-
-/**
- * Hides the subtask icons card for a given index.
- *
- * @param {number} i - The index of the subtask icons card to hide
- * @param {number} j - Another parameter description
- */
-function hideSubtaskIconsCard(i, j) {
-  document.getElementById(`subtask-icons-${i}`).classList.add("d-none");
-  document
-    .getElementById(`subtask-comp-${i}`)
-    .classList.remove("subtask-background");
-}
-
-
-/**
- * Resets the subtasks card by clearing the value of the "edit-subtasks" element.
- *
- */
-function resetSubtasksCard() {
-  document.getElementById("edit-subtasks").value = ``;
-}
-
-
-/**
- * Assigns users to help with the current task.
- *
- */
-function usersAssignedToHelp() {
-  currentTask["assignedToID"] = [];
-  for (let i = 0; i < usersassignedto.length; i++) {
-    let element = usersassignedto[i];
-    element = element + 1;
-    currentTask["assignedToID"].push(element);
-  }
-}
-
-
-/**
- * Sets the assigned user help for the given editing card.
- *
- * @param {Object} editingCard - the editing card for which the assigned user help is being set
- */
-function setAssignedUserHelp(editingCard) {
-  currentTask["assignedToID"].forEach((element) => {
-    let id = element - 1;
-    if (!usersassignedto.includes(id)) {
-      usersassignedto.push(id);
-      usersassignedto.sort();
-    }
-    if (!usersassignedto.includes(id)) {
-      usersassignedto.push(id);
-      usersassignedto.sort();
-    }
-  });
-}
-
-
-/**
- * Opens the burger board and performs related actions.
- *
- * @param {Event} event - The event triggering the function
- * @param {number} i - The index parameter
- */
-function openBurgerBoard(event, i) {
-  currentDraggedElement = i;
-  event.stopPropagation();
-  openCardContainer();
-  renderMoveToOptions();
-  renderMoveToButtons(i);
 }
