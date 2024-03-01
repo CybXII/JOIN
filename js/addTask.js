@@ -38,6 +38,22 @@ function taskAddedCompleteText() {
   }, 2000);
 }
 
+/**
+ * Function to show a message box with a information for the user, then removes the message from to the board after a delay.
+ *
+ * @param {} - No parameters
+ * @return {} - No return value
+ */
+
+function subtasksMessage() {
+  document.getElementById("msgBox").innerHTML= 'Minimum 3 Letters';
+  document.getElementById("msgBox-bg").classList.remove("d-none");
+  setTimeout(() => {
+    document.getElementById("msgBox-bg").classList.add("d-none");
+    document.getElementById("msgBox").innerHTML= 'Task added to Board';
+  }, 2000);
+}
+
 
 /**
  * Fill the input field with the given string and call the corresponding handler function.
@@ -155,7 +171,6 @@ function setWindowListener(Box,Input,e){
  */
 function addSubtasks() {
   let subtaskstoadd = document.getElementById("subtasks").value;
-
   if (subtaskstoadd) {
     let JSONToPush = {
       subtaskName: subtaskstoadd,

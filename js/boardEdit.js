@@ -64,7 +64,9 @@ function editSubtaskCard(i, j) {
  */
 async function addEditSubTaskCard(i, j) {
   let subTaskInput = document.getElementById(`editSubTaskInput${j}`).value;
-  if(subTaskInput.length>=1){
+  if(subTaskInput.length<=2){
+    subtasksMessage();
+  } else{
     currentTask.subtasks[j].subtaskName = subTaskInput;
     editSubtaskCard(i, j);
     renderAddSubtasksCard(i);  
