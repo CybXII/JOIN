@@ -150,46 +150,48 @@ function editCard(i) {
 
 
 /**
-   * Set checkboxes for editing a card.
-   *
-   * @param {Object} editingCard - the card being edited
-   * @return {undefined} 
-   */
-function setCheckBoxesEdit(editingCard) {
-  usersassignedto.forEach(element => {
-    let id = element;
-    const checkbox = document.getElementById(`edit-checkbox${id}`);
-    const divElement = document.getElementById(
-      `edit-fullname-addtask-dd-${id}`
-    );
-    const parentDivElement = document.getElementById(
-      `edit-catergory_list_${id}`
-    );
-    checkbox.checked = true;
+ * Toggles the styling of elements based on checkbox state.
+ * 
+ * @param {string} id - The ID of the element to toggle styling for.
+ * @param {boolean} isChecked - The state of the checkbox.
+ * @return {undefined}
+ */
+function toggleCheckbox(id, isChecked) {
+  const divElement = document.getElementById(`edit-fullname-addtask-dd-${id}`);
+  const parentDivElement = document.getElementById(`edit-catergory_list_${id}`);
+  if (isChecked) {
     divElement.classList.add("white");
     parentDivElement.classList.add("contact_background");
     if (!usersassignedto.includes(id)) {
       usersassignedto.push(id);
       usersassignedto.sort();
     }
-    if (checkbox.checked) {
-      divElement.classList.add("white");
-      parentDivElement.classList.add("contact_background");
-      if (!usersassignedto.includes(id)) {
-        usersassignedto.push(id);
-        usersassignedto.sort();
-      }
-    } else {
-      divElement.classList.remove("white");
-      parentDivElement.classList.remove("contact_background");
-      const index = usersassignedto.indexOf(id);
-      if (index !== -1) {
-        usersassignedto.splice(index, 1);
-        usersassignedto.sort();
-      }
+  } else {
+    divElement.classList.remove("white");
+    parentDivElement.classList.remove("contact_background");
+    const index = usersassignedto.indexOf(id);
+    if (index !== -1) {
+      usersassignedto.splice(index, 1);
+      usersassignedto.sort();
     }
+  }
+}
+
+
+/**
+ * Sets checkboxes for editing a card.
+ *
+ * @param {Object} editingCard - The card being edited.
+ * @return {undefined} 
+ */
+function setCheckBoxesEdit(editingCard) {
+  usersassignedto.forEach(element => {
+    const id = element;
+    const checkbox = document.getElementById(`edit-checkbox${id}`);
+    checkbox.checked = true;
+    toggleCheckbox(id, checkbox.checked);
   });
-}  
+}
 
   
 /**
