@@ -945,10 +945,17 @@ contact-list .contact_info-bg {
 
 @media (max-width: 1040px) {
   .frame-40 {
+<<<<<<< HEAD
     padding: 60px 20px 20px 30px;
     left: 600px;
   }
 
+=======
+    /* padding: 20px 0 20px 0; */
+    left: 650px;
+}  
+  
+>>>>>>> b25b8b00b738e9e6bf041536740adbe2398e20f2
   .addContact {
     width: 350px;
     padding-left: 0;
