@@ -947,8 +947,8 @@ text-align: left;
 
 @media (max-width: 1040px) {
   .frame-40 {
-    padding: 20px 0 20px 0;
-    left: 600px;
+    /* padding: 20px 0 20px 0; */
+    left: 650px;
 }  
   
   .addContact {
