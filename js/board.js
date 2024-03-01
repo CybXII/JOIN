@@ -114,7 +114,6 @@ async function updateHTML() {
  * @param {type} categoryInput - the category input for the task
  */
 function openAddTaskContainer(categoryInput) {
-  console.log("Opening add task container...");
   document.getElementById("board-background").classList.remove("d-none");
   document.getElementById("content-container").classList.add("overlap");
   document.body.classList.add("background-fixed");
@@ -123,7 +122,6 @@ function openAddTaskContainer(categoryInput) {
     `addTasksToStorage('${categoryInput}'); return false;`
   );
   setTimeout(function() {
-    console.log('add clickOutside Listener')
     window.removeEventListener("click", arguments.callee);
     document.addEventListener('click', clickOutsideHandler);
   }, 100);
@@ -139,11 +137,9 @@ function clickOutsideHandler(event) {
   var addTaskBoard = document.querySelector('.add-task-board-card');
   var targetElement = event.target;
   if (!addTaskBoard.contains(targetElement)) {
-    console.log("Click detected outside the add task container...");
     closeAddTaskContainer();
     document.removeEventListener('click', clickOutsideHandler);
   } else {
-    console.log('Inside click');
   }
 }
 
@@ -151,7 +147,6 @@ function clickOutsideHandler(event) {
  * Removes the click outside listener from the document.
  */
 function removeClickOutsideListener() {
-  console.log("Removing click outside listener...");
   document.removeEventListener('click', clickOutsideHandler);
 }
 
