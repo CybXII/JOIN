@@ -48,15 +48,19 @@ async function login(event) {
     (u) => u.email == email.value && u.password == password.value
   );
   if (user) {
-    users = [];
-    users.push(user);
-    users[0].rememberlogin = login_remember;
-    saveUsersToLocalStorage();
-    window.location.href = "summary.html";
+    loginComplete(user)
   }
   else {
     wrongPassword();
   }
+}
+
+function loginComplete(){
+  users = [];
+  users.push(user);
+  users[0].rememberlogin = login_remember;
+  saveUsersToLocalStorage();
+  window.location.href = "summary.html";
 }
 
 function wrongPassword(){
