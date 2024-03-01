@@ -259,26 +259,56 @@ function changeLockerPictureBack(parentWrapperId) {
  */
 function changeLockerPicture(input) {
   if (input === "parent_confirm_password") {
-    confirmPass_visible = !confirmPass_visible;
-    if (confirmPass_visible === false) {
-      changeLockerPictureBack(input);
-    } else {
-      changeLocker(input);
-    }
+    changeParentConfirmPass(input);
   } else if (input === "parent_password") {
-    pass_visible = !pass_visible;
-    if (pass_visible === false) {
-      changeLockerPictureBack(input);
-    } else {
-      changeLocker(input);
-    }
+    changeParentPass(input);
   } else if (input === "parent_login_password") {
-    loginPass_visible = !loginPass_visible;
-    if (loginPass_visible === false) {
-      changeLockerPictureBack(input);
-    } else {
-      changeLocker(input);
-    }
+    changeLoginPass(input);
+  }
+}
+
+
+/**
+ * Toggles the visibility of the confirm password field and updates the locker picture accordingly.
+ * 
+ * @param {HTMLInputElement} input - The input element associated with the confirm password field
+ */
+function changeParentConfirmPass(input) {
+  confirmPass_visible = !confirmPass_visible;
+  if (confirmPass_visible === false) {
+    changeLockerPictureBack(input);
+  } else {
+    changeLocker(input);
+  }
+}
+
+
+/**
+ * Toggles the visibility of the login password field and updates the locker picture accordingly.
+ * 
+ * @param {HTMLInputElement} input - The input element associated with the login password field
+ */
+function changeLoginPass(input) {
+  loginPass_visible = !loginPass_visible;
+  if (loginPass_visible === false) {
+    changeLockerPictureBack(input);
+  } else {
+    changeLocker(input);
+  }
+}
+
+
+/**
+ * Toggles the visibility of the parent password field and updates the locker picture accordingly.
+ * 
+ * @param {HTMLInputElement} input - The input element associated with the parent password field
+ */
+function changeParentPass(input) {
+  pass_visible = !pass_visible;
+  if (pass_visible === false) {
+    changeLockerPictureBack(input);
+  } else {
+    changeLocker(input);
   }
 }
 
@@ -292,22 +322,15 @@ function changeLockerPicture(input) {
 function addContactListeners() {
   var contactList = document.getElementById("renderedContent");
   var contactNames = contactList.querySelectorAll(".contact-name");
-
   contactNames.forEach(function (contact) {
     contact.addEventListener("click", function () {
       contactNames.forEach(function (c) {
         c.classList.remove("active_contact");
         c.classList.add("contact-name");
       });
-
       contact.classList.add("active_contact");
       contact.classList.remove("contact-name");
-
-      var nameContainer = contact.querySelector(".div-2 .div");
-      var contactName = nameContainer.textContent.trim();
-      setTimeout(() => {
-        contactAnimation();
-      }, 100);
+      setTimeout(() => {contactAnimation();}, 100);
     });
   });
 }
