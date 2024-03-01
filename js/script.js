@@ -326,3 +326,13 @@ function setBoxListenerEdit(box) {
     }
   });
 }
+
+
+/**
+ * Prevents the event from bubbling up the DOM tree, preventing any parent handlers from being notified of the event.
+ *
+ * @param {type} event - the event object
+ */
+function dontClose() {
+  event.stopPropagation();
+}
