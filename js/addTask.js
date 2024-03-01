@@ -38,6 +38,7 @@ function taskAddedCompleteText() {
   }, 2000);
 }
 
+
 /**
  * Function to show a message box with a information for the user, then removes the message from to the board after a delay.
  *
@@ -273,23 +274,19 @@ changeCheckboxStatus(userid,checkbox,divElement,parentDivElement);
  * @param {HTMLElement} divElement - The div element associated with the checkbox
  * @param {HTMLElement} parentDivElement - The parent div element of the checkbox
  */
-function changeCheckboxStatus(userid,checkbox,divElement,parentDivElement){
-  if (checkbox.checked) {
-    divElement.classList.add("white");
-    parentDivElement.classList.add("contact_background");
-    if (!usersassignedto.includes(userid)) {
-      usersassignedto.push(userid);
-      usersassignedto.sort();
-    }
-  } else {
-    divElement.classList.remove("white");
-    parentDivElement.classList.remove("contact_background");
-    const index = usersassignedto.indexOf(userid);
-    if (index !== -1) {
-      usersassignedto.splice(index, 1);
-      usersassignedto.sort();
-    }
+function changeCheckboxStatus(userid, checkbox, divElement, parentDivElement) {
+  const isChecked = checkbox.checked;
+  const action = isChecked ? "add" : "remove";
+  divElement.classList[action]("white");
+  parentDivElement.classList[action]("contact_background");
+
+  const index = usersassignedto.indexOf(userid);
+  if (isChecked && index === -1) {
+    usersassignedto.push(userid);
+  } else if (!isChecked && index !== -1) {
+    usersassignedto.splice(index, 1);
   }
+  usersassignedto.sort();
 }
 
 
