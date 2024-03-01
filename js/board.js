@@ -288,8 +288,6 @@ async function openCard(i) {
 function openCardContainer() {
   document.getElementById("card-background").classList.remove("d-none");
   document.body.classList.add("background-fixed");
-
-  // Event-Listener für Klicks auf das Element mit der ID "card-background" hinzufügen
   document.getElementById("card-background").addEventListener("click", cardBackgroundClickHandler);
 }
 
@@ -299,8 +297,6 @@ function openCardContainer() {
 function closeCardContainer() {
   document.getElementById("card-background").classList.add("d-none");
   document.body.classList.remove("background-fixed");
-
-  // Event-Listener für Klicks auf das Element mit der ID "card-background" entfernen
   document.getElementById("card-background").removeEventListener("click", cardBackgroundClickHandler);
 }
 
@@ -310,9 +306,7 @@ function closeCardContainer() {
  * @param {Event} event - The click event object.
  */
 function cardBackgroundClickHandler(event) {
-  // Überprüfen, ob das Klickereignis auf dem Element mit der ID "card-background" ausgelöst wurde
   if (event.target.id === "card-background") {
-    // Funktion zum Schließen des Kartencontainers aufrufen
     closeCardContainer();
   }
 }
