@@ -356,7 +356,6 @@ async function addTasktoBoard(input) {
   let description = document.getElementById("task-description");
   let date = document.getElementById("datePicker");
   let categoryTask = pushCategoryToJSON();
-
   setJson(input,title,description,date,categoryTask);
   await setItem("tasks", JSON.stringify(tasks));
   title.value = "";
