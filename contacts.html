@@ -20,6 +20,15 @@
 </head>
 
 <body onload="includeHTMLInit(`Contacts`), pushLetters()">
+  <div class="contacts-background d-none" id="contacts-background" onclick="closeContactsContainer()">
+    <div class="contact_Card_helper">
+      <div class="contacts-card" onclick="dontClose()">
+        <div class="leftSide" id="left-side"></div>
+        <div class="rightSide" id="right-side"></div>
+      </div>
+    </div>
+  </div>
+
   <div class="contact_info_resp_background d-none" id="contact_info_resp_background"
     onclick="closeRespContactContainer()">
 
@@ -44,20 +53,6 @@
   <nav w3-include-html="./templates/header.html"></nav>
   <div class="content-container">
     <div class="container" id="content">
-      <div class="contacts-background d-none" id="contacts-background" onclick="closeContactsContainer()">
-        <div class="contacts-card" onclick="dontClose()">
-          <!-- <div class="closeImg">
-              <img class="newImg" src="./img/close.svg" onclick="closeAddTaskContainer()">
-            </div> -->
-
-          <div class="leftSide" id="left-side"></div>
-
-          <div class="rightSide" id="right-side">
-            <!-- Zum test wird später dynamisch erzeugt -->
-
-          </div>
-        </div>
-      </div>
       <div>
         <div class="frame-97">
           <div class="addContact">

@@ -360,10 +360,11 @@ function openContactsContainerAdd() {
       <img class="joinLogo" src="./img/capa-2.svg" alt="Join-Logo">
       <h1>Add contact</h1>
       <img class="underlineBlue" src="./img/vector-5.svg" alt="underline-blue">
-    </div>`;
+    </div>
+    <div class="closeImgResp" onclick="closeContactsContainerAdd()"></div>
+    `;
   document.getElementById("right-side").innerHTML = `
   <img src="./img/addUserBadge.svg"></div>
-  <div class="closeImg" onclick="closeContactsContainerAdd()"></div>
   <div id="editContactCard">
     <form id="contact_Form"
       onsubmit='addContactsToStorage(); return false;'
@@ -399,7 +400,9 @@ function openContactsContainerAdd() {
         <button class="createContact">Create Contact</button>
       </div>
     </form>
-  </div>`;
+  </div>
+  <div class="closeImg" onclick="closeContactsContainerAdd()"></div>
+  `;
 }
 
 
