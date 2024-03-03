@@ -646,7 +646,7 @@ input:focus-visible {
 
 .contacts-background {
   z-index: 55;
-  background-color: rgba(65, 63, 63, 0.466);
+  /* background-color: rgba(65, 63, 63, 0.466); */
   top: 0;
   bottom: 0;
   left: 0;
@@ -986,7 +986,7 @@ contact-list .contact_info-bg {
 
 @media (max-width: 1040px) {
     .frame-40 {
-      padding: 20px 0 20px 0;
+      padding: 20px 10px 20px 20px;
       left: 600px;
     }
   
@@ -1018,6 +1018,10 @@ contact-list .contact_info-bg {
 
   .frame-97 {
     width: 360px;
+  }
+
+.frame-97 .contact-name {
+    width: 286px;
   }
 
   .active_contact {
@@ -1118,7 +1122,7 @@ object-fit: cover;
   }
 }
 
-@media (max-width: 940px) {
+@media (max-width: 900px) {
   .frame-40 p {
     font-size: 20px;
   }
@@ -1197,7 +1201,7 @@ object-fit: cover;
     align-items: flex-start;
     flex-direction: column;
     gap: 30px;
-    padding: 120px 20px 20px 20px;
+    padding: 120px 160px 20px 160px;
     top: 96px;
     left: 0;
     right: 0;
