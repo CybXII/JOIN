@@ -55,9 +55,6 @@ function deleteTaskMessage() {
 }
 
 
-
-
-
 /**
  * Edit the subtask card with the specified index.
  *
@@ -190,20 +187,30 @@ function toggleCheckbox(id, isChecked) {
   const divElement = document.getElementById(`edit-fullname-addtask-dd-${id}`);
   const parentDivElement = document.getElementById(`edit-catergory_list_${id}`);
   if (isChecked) {
-    divElement.classList.add("white");
-    parentDivElement.classList.add("contact_background");
-    if (!usersassignedto.includes(id)) {
-      usersassignedto.push(id);
-      usersassignedto.sort();
-    }
+    toggleTrueBox(id);
   } else {
-    divElement.classList.remove("white");
-    parentDivElement.classList.remove("contact_background");
-    const index = usersassignedto.indexOf(id);
-    if (index !== -1) {
-      usersassignedto.splice(index, 1);
-      usersassignedto.sort();
-    }
+    toggleFalseBox(id);
+  }
+}
+
+
+function toggleTrueBox(id){
+  divElement.classList.add("white");
+  parentDivElement.classList.add("contact_background");
+  if (!usersassignedto.includes(id)) {
+    usersassignedto.push(id);
+    usersassignedto.sort();
+  }
+}
+
+
+function toggleFalseBox(id){
+  divElement.classList.remove("white");
+  parentDivElement.classList.remove("contact_background");
+  const index = usersassignedto.indexOf(id);
+  if (index !== -1) {
+    usersassignedto.splice(index, 1);
+    usersassignedto.sort();
   }
 }
 
@@ -323,8 +330,6 @@ function addSubtasksCard(i, event) {
   let subtaskstoadd = document.getElementById("edit-subtasks").value;
         if (event.keyCode == 13) {
         event.preventDefault();
-  
-  
   if (subtaskstoadd) {
     let JSONToPush = {
       subtaskName: subtaskstoadd,
