@@ -9,13 +9,31 @@ async function includeHTMLInit(input) {
   let functionName = `render${input}`;
   await includeHTML();
   loadUsersFromLocalStorage();
-  if (typeof window[functionName] === "function") {
-    window[functionName]();
-    document.getElementById("header-initials").innerHTML = users[0].initials;
-  } else {
-    console.error(`Die Funktion ${functionName} wurde nicht gefunden.`);
+
+  
+  if (users[0] == undefined) {
+    window.location.href = "login.html";
   }
-}
+    if (typeof window[functionName] === "function") {
+      window[functionName]();
+      document.getElementById("header-initials").innerHTML = users[0].initials;
+    } else {
+      console.error(`Die Funktion ${functionName} wurde nicht gefunden.`);
+    }
+    
+  }
+
+
+  
+
+/**
+ * Check if the user is logged in and redirect to the login page if not.
+ *
+ */
+// function loggedIn(){
+
+
+// }
 
 
 /**
