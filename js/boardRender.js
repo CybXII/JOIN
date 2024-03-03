@@ -173,7 +173,7 @@ function renderEditCard(content, i) {
                   class="subtask_add_button d-none"
                   src="../img/subtasks_add.svg"
                   alt=""
-                  onclick="addSubtasksCard(${i})"
+                  onclick="addSubtasksCard(${i},event)"
                 />
               </div>
             </div>
