@@ -141,3 +141,21 @@ function subtasksMessageEditBoard() {
 function noTasksToDoHtml(id) {
   return `<div class="card-board-empty" id='no-task-${id}'>No tasks To do</div>`;
 }
+
+
+/**
+ * Renders filtered tasks with the specified category, task, and index.
+ *
+ * @param {type} categorys - description of categorys
+ * @param {type} task - description of task
+ * @param {type} i - description of i
+ * @return {type} description of return value
+ */
+function renderFilteredTasks(categorys,task,i){
+  clearBoardCategory(categorys);
+  renderUpdateHTML(task, i);
+  renderUpdateAssigned(task, i);
+  finishedSubtasks(i);
+  renderFinishCounter(i);
+  finishcounter = 0;
+}
