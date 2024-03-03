@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: storage.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: storage.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>let STORAGE_TOKEN = [];
+const STORAGE_URL = `https://remote-storage.developerakademie.org/item`;
+
+/**
+ * Asynchronously loads the token from the specified JSON file and sets the STORAGE_TOKEN value.
+ *
+ * @return {Promise&lt;void>} A Promise that resolves when the token is successfully loaded and the STORAGE_TOKEN value is set.
+ */
+async function loadToken() {
+  let resp = await fetch("./json/token.json");
+  token = await resp.json();
+  STORAGE_TOKEN = token[0]["token"];
+}
+
+
+/**
+ * Asynchronously sets an item in the storage.
+ *
+ * @param {string} key - The key of the item to be set.
+ * @param {any} value - The value of the item to be set.
+ * @return {Promise} A Promise that resolves to the result of setting the item in the storage.
+ */
+async function setItem(key, value) {
+  await loadToken();
+  const payload = { key, value, token: STORAGE_TOKEN };
+  return fetch(STORAGE_URL, {
+    method: "POST",
+    body: JSON.stringify(payload),
+  }).then((res) => res.json());
+}
+
+
+/**
+ * Asynchronously retrieves an item from the storage using the provided key.
+ *
+ * @param {string} key - The key of the item to retrieve from the storage.
+ * @return {Promise} A promise that resolves to the value of the retrieved item.
+ */
+async function getItem(key) {
+  await loadToken();
+  const url = `${STORAGE_URL}?key=${key}&amp;token=${STORAGE_TOKEN}`;
+  return fetch(url)
+    .then((res) => res.json())
+    .then((res) => {
+      if (res.data) {
+        return res.data.value;
+      }
+      throw `Could not find data with key "${key}".`;
+    });
+}
+
+
+/**
+ * Asynchronously loads the user data from storage and handles any potential errors.
+ *
+ */
+async function loadUser() {
+  try {
+    users = JSON.parse(await getItem("users"));
+  } catch (e) {
+    console.error("Loading error:", e);
+  }
+}
+
+
+/**
+ * Asynchronously loads tasks from storage and handles any potential errors.
+ *
+ */
+async function loadTasks() {
+  try {
+    tasks = JSON.parse(await getItem("tasks"));
+  } catch (e) {
+    console.error("Loading error:", e);
+  }
+}
+
+
+/**
+ * Asynchronously loads contacts from storage and handles any potential errors.
+ *
+ */
+async function loadContacts() {
+  try {
+    contacts = JSON.parse(await getItem("contacts"));
+  } catch (e) {
+    console.error("Loading error:", e);
+  }
+}
+
+
+/**
+ * Asynchronously loads the remote user data, filters out users with id 999, and clears the remote user data in case of an error.
+ *
+ * @param {type} paramName - description of parameter
+ * @return {type} description of return value
+ */
+async function loadRemoteUser() {
+  try {
+    remoteuser = JSON.parse(await getItem("users"));
+    for (let i = 0; i &lt; remoteuser.length; i++) {
+      if (remoteuser[i].id !== 999) {
+        remoteuserAssign.push(remoteuser[i]);
+      }
+    }
+    remoteuser = [];
+  } catch (e) {
+    console.error("Loading error:", e);
+  }
+}
+
+
+/**
+ * Saves the users array to the local storage.
+ *
+ * @param {string} key - The key under which the users array is saved in local storage.
+ * @param {array} users - The array of users to be saved.
+ */
+function saveUsersToLocalStorage() {
+  localStorage.setItem("users", JSON.stringify(users));
+}
+
+
+/**
+ * Loads users data from local storage and parses it if it exists.
+ *
+ */
+function loadUsersFromLocalStorage() {
+  let storageAsText = localStorage.getItem("users");
+
+  if (storageAsText) {
+    users = JSON.parse(storageAsText);
+  }
+}
+
+
+/**
+ * Loads remembered users from local storage.
+ *
+ * @return {object} The remembered users loaded from local storage.
+ */
+function loadRememberedUsersFromLocalStorage() {
+  let storageAsText = localStorage.getItem("users");
+
+  if (storageAsText) {
+    remembered_user = JSON.parse(storageAsText);
+  }
+}</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#acceptPrivacyChecker">acceptPrivacyChecker</a></li><li><a href="global.html#addClassOnCheckboxChange">addClassOnCheckboxChange</a></li><li><a href="global.html#addContactListeners">addContactListeners</a></li><li><a href="global.html#addContactsToStorage">addContactsToStorage</a></li><li><a href="global.html#addEditContact">addEditContact</a></li><li><a href="global.html#addEditSubTask">addEditSubTask</a></li><li><a href="global.html#addEditSubTaskCard">addEditSubTaskCard</a></li><li><a href="global.html#addNewContact">addNewContact</a></li><li><a href="global.html#addSubtasks">addSubtasks</a></li><li><a href="global.html#addSubtasksCard">addSubtasksCard</a></li><li><a href="global.html#addTasksToStorage">addTasksToStorage</a></li><li><a href="global.html#addTasktoBoard">addTasktoBoard</a></li><li><a href="global.html#addUser">addUser</a></li><li><a href="global.html#allowDrop">allowDrop</a></li><li><a href="global.html#cardBackgroundClickHandler">cardBackgroundClickHandler</a></li><li><a href="global.html#changeButtons">changeButtons</a></li><li><a href="global.html#changeButtonsCard">changeButtonsCard</a></li><li><a href="global.html#changeCheckboxStatus">changeCheckboxStatus</a></li><li><a href="global.html#changeLocker">changeLocker</a></li><li><a href="global.html#changeLockerPicture">changeLockerPicture</a></li><li><a href="global.html#changeLockerPictureBack">changeLockerPictureBack</a></li><li><a href="global.html#changeLockerPictureBackConfirm">changeLockerPictureBackConfirm</a></li><li><a href="global.html#changeLockerPictureBackLogin">changeLockerPictureBackLogin</a></li><li><a href="global.html#changeLoginPass">changeLoginPass</a></li><li><a href="global.html#changeParentConfirmPass">changeParentConfirmPass</a></li><li><a href="global.html#changeParentPass">changeParentPass</a></li><li><a href="global.html#changeStateCategoryInput">changeStateCategoryInput</a></li><li><a href="global.html#changeStateDateInput">changeStateDateInput</a></li><li><a href="global.html#changeStateTitleInput">changeStateTitleInput</a></li><li><a href="global.html#checkBeforChange">checkBeforChange</a></li><li><a href="global.html#checkCases">checkCases</a></li><li><a href="global.html#checkInputFields">checkInputFields</a></li><li><a href="global.html#checkOnKeyDown">checkOnKeyDown</a></li><li><a href="global.html#checkSubtasks">checkSubtasks</a></li><li><a href="global.html#classesAddTask">classesAddTask</a></li><li><a href="global.html#classesBoard">classesBoard</a></li><li><a href="global.html#classesContacts">classesContacts</a></li><li><a href="global.html#classesHelp">classesHelp</a></li><li><a href="global.html#classesLegalNotice">classesLegalNotice</a></li><li><a href="global.html#classesPrivacyPolicy">classesPrivacyPolicy</a></li><li><a href="global.html#classesSummary">classesSummary</a></li><li><a href="global.html#clearAfterPush">clearAfterPush</a></li><li><a href="global.html#clearBoardCategory">clearBoardCategory</a></li><li><a href="global.html#clearFields">clearFields</a></li><li><a href="global.html#clickOutsideHandler">clickOutsideHandler</a></li><li><a href="global.html#closeAddTaskContainer">closeAddTaskContainer</a></li><li><a href="global.html#closeCardContainer">closeCardContainer</a></li><li><a href="global.html#closeContactsContainer">closeContactsContainer</a></li><li><a href="global.html#closeContactsContainerAdd">closeContactsContainerAdd</a></li><li><a href="global.html#closeRespContactContainer">closeRespContactContainer</a></li><li><a href="global.html#configureDatePicker">configureDatePicker</a></li><li><a href="global.html#contactAddedMessage">contactAddedMessage</a></li><li><a href="global.html#contactAnimation">contactAnimation</a></li><li><a href="global.html#contactDeletedMessage">contactDeletedMessage</a></li><li><a href="global.html#contactEditMessage">contactEditMessage</a></li><li><a href="global.html#deleteContact">deleteContact</a></li><li><a href="global.html#deleteSubtask">deleteSubtask</a></li><li><a href="global.html#deleteSubtaskCard">deleteSubtaskCard</a></li><li><a href="global.html#deleteTask">deleteTask</a></li><li><a href="global.html#deleteTaskMessage">deleteTaskMessage</a></li><li><a href="global.html#dontClose">dontClose</a></li><li><a href="global.html#editCard">editCard</a></li><li><a href="global.html#editContact">editContact</a></li><li><a href="global.html#editSubTaskHtml">editSubTaskHtml</a></li><li><a href="global.html#editSubTaskHtmlCard">editSubTaskHtmlCard</a></li><li><a href="global.html#editSubtask">editSubtask</a></li><li><a href="global.html#editSubtaskCard">editSubtaskCard</a></li><li><a href="global.html#editSubtasks">editSubtasks</a></li><li><a href="global.html#editTasksfromStorage">editTasksfromStorage</a></li><li><a href="global.html#fillInputField">fillInputField</a></li><li><a href="global.html#filterCategory">filterCategory</a></li><li><a href="global.html#filterTaskBoard">filterTaskBoard</a></li><li><a href="global.html#finishedSubtasks">finishedSubtasks</a></li><li><a href="global.html#formatDate">formatDate</a></li><li><a href="global.html#getItem">getItem</a></li><li><a href="global.html#getRandomColor">getRandomColor</a></li><li><a href="global.html#greetSummaryAnimation">greetSummaryAnimation</a></li><li><a href="global.html#greetUsername">greetUsername</a></li><li><a href="global.html#greetingTime">greetingTime</a></li><li><a href="global.html#guestLogin">guestLogin</a></li><li><a href="global.html#hideSubtaskIcons">hideSubtaskIcons</a></li><li><a href="global.html#hideSubtaskIconsCard">hideSubtaskIconsCard</a></li><li><a href="global.html#highlight">highlight</a></li><li><a href="global.html#includeHTML">includeHTML</a></li><li><a href="global.html#includeHTMLInit">includeHTMLInit</a></li><li><a href="global.html#initializeLoginListeners">initializeLoginListeners</a></li><li><a href="global.html#initializeSignUPListeners">initializeSignUPListeners</a></li><li><a href="global.html#loadContacts">loadContacts</a></li><li><a href="global.html#loadRememberedUsersFromLocalStorage">loadRememberedUsersFromLocalStorage</a></li><li><a href="global.html#loadRemoteUser">loadRemoteUser</a></li><li><a href="global.html#loadTasks">loadTasks</a></li><li><a href="global.html#loadToken">loadToken</a></li><li><a href="global.html#loadUser">loadUser</a></li><li><a href="global.html#loadUsersFromLocalStorage">loadUsersFromLocalStorage</a></li><li><a href="global.html#login">login</a></li><li><a href="global.html#loginComplete">loginComplete</a></li><li><a href="global.html#loginSuccessfull">loginSuccessfull</a></li><li><a href="global.html#move">move</a></li><li><a href="global.html#moveTo">moveTo</a></li><li><a href="global.html#moveToLocation">moveToLocation</a></li><li><a href="global.html#noTasksToDo">noTasksToDo</a></li><li><a href="global.html#noTasksToDoHtml">noTasksToDoHtml</a></li><li><a href="global.html#openAddTaskContainer">openAddTaskContainer</a></li><li><a href="global.html#openAssignTo">openAssignTo</a></li><li><a href="global.html#openBurgerBoard">openBurgerBoard</a></li><li><a href="global.html#openCard">openCard</a></li><li><a href="global.html#openCardContainer">openCardContainer</a></li><li><a href="global.html#openCategory">openCategory</a></li><li><a href="global.html#openContact">openContact</a></li><li><a href="global.html#openContactsContainer">openContactsContainer</a></li><li><a href="global.html#openContactsContainerAdd">openContactsContainerAdd</a></li><li><a href="global.html#openEditAssignTo">openEditAssignTo</a></li><li><a href="global.html#openEditCategory">openEditCategory</a></li><li><a href="global.html#openLogOutBox">openLogOutBox</a></li><li><a href="global.html#openRespContactContainer">openRespContactContainer</a></li><li><a href="global.html#passwordConfirmVisitibility">passwordConfirmVisitibility</a></li><li><a href="global.html#passwordDontMatch">passwordDontMatch</a></li><li><a href="global.html#passwordLocker">passwordLocker</a></li><li><a href="global.html#passwordVisibility">passwordVisibility</a></li><li><a href="global.html#prioChecker">prioChecker</a></li><li><a href="global.html#prioImg">prioImg</a></li><li><a href="global.html#pushCategoryToJSON">pushCategoryToJSON</a></li><li><a href="global.html#pushContacts">pushContacts</a></li><li><a href="global.html#pushLetters">pushLetters</a></li><li><a href="global.html#pushNewUser">pushNewUser</a></li><li><a href="global.html#registerCompleteText">registerCompleteText</a></li><li><a href="global.html#rememberMeLogin">rememberMeLogin</a></li><li><a href="global.html#removeBackground">removeBackground</a></li><li><a href="global.html#removeClickOutsideListener">removeClickOutsideListener</a></li><li><a href="global.html#removeHighlight">removeHighlight</a></li><li><a href="global.html#renderAddSubtasks">renderAddSubtasks</a></li><li><a href="global.html#renderAddSubtasksCard">renderAddSubtasksCard</a></li><li><a href="global.html#renderAddTask">renderAddTask</a></li><li><a href="global.html#renderAssigned">renderAssigned</a></li><li><a href="global.html#renderAssignedHTML">renderAssignedHTML</a></li><li><a href="global.html#renderAssignedTo">renderAssignedTo</a></li><li><a href="global.html#renderAssignedUserAddTask">renderAssignedUserAddTask</a></li><li><a href="global.html#renderBadges">renderBadges</a></li><li><a href="global.html#renderBadgesAddTask">renderBadgesAddTask</a></li><li><a href="global.html#renderBadgesAddTaskEdit">renderBadgesAddTaskEdit</a></li><li><a href="global.html#renderBadgesEdit">renderBadgesEdit</a></li><li><a href="global.html#renderBoardTasks">renderBoardTasks</a></li><li><a href="global.html#renderCardInfo">renderCardInfo</a></li><li><a href="global.html#renderContactCard">renderContactCard</a></li><li><a href="global.html#renderContactCardHTML">renderContactCardHTML</a></li><li><a href="global.html#renderContactInfo">renderContactInfo</a></li><li><a href="global.html#renderContacts">renderContacts</a></li><li><a href="global.html#renderEditAssignedUser">renderEditAssignedUser</a></li><li><a href="global.html#renderEditCard">renderEditCard</a></li><li><a href="global.html#renderEditContact">renderEditContact</a></li><li><a href="global.html#renderEditSubtasks">renderEditSubtasks</a></li><li><a href="global.html#renderFilteredCard">renderFilteredCard</a></li><li><a href="global.html#renderFilteredTasks">renderFilteredTasks</a></li><li><a href="global.html#renderFinishCounter">renderFinishCounter</a></li><li><a href="global.html#renderGreetingTime">renderGreetingTime</a></li><li><a href="global.html#renderHelp">renderHelp</a></li><li><a href="global.html#renderLegalNotice">renderLegalNotice</a></li><li><a href="global.html#renderLetters">renderLetters</a></li><li><a href="global.html#renderLogin">renderLogin</a></li><li><a href="global.html#renderLoginHTML">renderLoginHTML</a></li><li><a href="global.html#renderLow">renderLow</a></li><li><a href="global.html#renderMedium">renderMedium</a></li><li><a href="global.html#renderMoveToButtons">renderMoveToButtons</a></li><li><a href="global.html#renderMoveToOptions">renderMoveToOptions</a></li><li><a href="global.html#renderNoFilteredFound">renderNoFilteredFound</a></li><li><a href="global.html#renderPrivacyPolicy">renderPrivacyPolicy</a></li><li><a href="global.html#renderSignUp">renderSignUp</a></li><li><a href="global.html#renderSignUpHTML">renderSignUpHTML</a></li><li><a href="global.html#renderStandartAssignedUser">renderStandartAssignedUser</a></li><li><a href="global.html#renderSubtasksInfos">renderSubtasksInfos</a></li><li><a href="global.html#renderSubtasksInfosHTML">renderSubtasksInfosHTML</a></li><li><a href="global.html#renderSubtasksInfosHTMLFalse">renderSubtasksInfosHTMLFalse</a></li><li><a href="global.html#renderSummary">renderSummary</a></li><li><a href="global.html#renderUpdateAssigned">renderUpdateAssigned</a></li><li><a href="global.html#renderUpdateColoredBadges">renderUpdateColoredBadges</a></li><li><a href="global.html#renderUpdateGreyBadge">renderUpdateGreyBadge</a></li><li><a href="global.html#renderUpdateHTML">renderUpdateHTML</a></li><li><a href="global.html#renderUrgent">renderUrgent</a></li><li><a href="global.html#resetSubtasks">resetSubtasks</a></li><li><a href="global.html#resetSubtasksCard">resetSubtasksCard</a></li><li><a href="global.html#resetWrongPassword">resetWrongPassword</a></li><li><a href="global.html#rotateCardEnd">rotateCardEnd</a></li><li><a href="global.html#rotateCardStart">rotateCardStart</a></li><li><a href="global.html#saveUsersToLocalStorage">saveUsersToLocalStorage</a></li><li><a href="global.html#setAmounts">setAmounts</a></li><li><a href="global.html#setAssignedUserHelp">setAssignedUserHelp</a></li><li><a href="global.html#setBadgesAddTask">setBadgesAddTask</a></li><li><a href="global.html#setBadgesAddTaskEdit">setBadgesAddTaskEdit</a></li><li><a href="global.html#setBlurListener">setBlurListener</a></li><li><a href="global.html#setBoxListener">setBoxListener</a></li><li><a href="global.html#setBoxListenerEdit">setBoxListenerEdit</a></li><li><a href="global.html#setCheckBoxes">setCheckBoxes</a></li><li><a href="global.html#setCheckBoxesEdit">setCheckBoxesEdit</a></li><li><a href="global.html#setEventListenerSubtask">setEventListenerSubtask</a></li><li><a href="global.html#setFocusListener">setFocusListener</a></li><li><a href="global.html#setInitials">setInitials</a></li><li><a href="global.html#setInitialsEdit">setInitialsEdit</a></li><li><a href="global.html#setItem">setItem</a></li><li><a href="global.html#setJson">setJson</a></li><li><a href="global.html#setWindowListener">setWindowListener</a></li><li><a href="global.html#showSubtaskIcons">showSubtaskIcons</a></li><li><a href="global.html#showSubtaskIconsCard">showSubtaskIconsCard</a></li><li><a href="global.html#signUpPasswordChecker">signUpPasswordChecker</a></li><li><a href="global.html#signUpPasswordValidation">signUpPasswordValidation</a></li><li><a href="global.html#signUpSuccessfull">signUpSuccessfull</a></li><li><a href="global.html#sortContacts">sortContacts</a></li><li><a href="global.html#subtasksMessage">subtasksMessage</a></li><li><a href="global.html#subtasksMessageEditBoard">subtasksMessageEditBoard</a></li><li><a href="global.html#subtasksOnKeyDown">subtasksOnKeyDown</a></li><li><a href="global.html#subtasksOnKeyDownAddTask">subtasksOnKeyDownAddTask</a></li><li><a href="global.html#taskAddedCompleteText">taskAddedCompleteText</a></li><li><a href="global.html#taskAddedCompleteTextBoard">taskAddedCompleteTextBoard</a></li><li><a href="global.html#taskPriorityActive">taskPriorityActive</a></li><li><a href="global.html#taskPriorityChoosed">taskPriorityChoosed</a></li><li><a href="global.html#toggleCheckbox">toggleCheckbox</a></li><li><a href="global.html#toggleFalseBox">toggleFalseBox</a></li><li><a href="global.html#toggleTrueBox">toggleTrueBox</a></li><li><a href="global.html#toogleChecker">toogleChecker</a></li><li><a href="global.html#updateHTML">updateHTML</a></li><li><a href="global.html#userLogout">userLogout</a></li><li><a href="global.html#usersAssignTask">usersAssignTask</a></li><li><a href="global.html#usersAssignedToHelp">usersAssignedToHelp</a></li><li><a href="global.html#wrongPassword">wrongPassword</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.2</a> on Sun Mar 03 2024 18:41:54 GMT+0100 (Mitteleuropäische Normalzeit)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>
