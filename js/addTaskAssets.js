@@ -3,6 +3,7 @@ let inputChecker = false;
 
 document.addEventListener("DOMContentLoaded", configureDatePicker);
 
+
 /**
  * Configures the date picker by setting the minimum date allowed.
  *
@@ -252,3 +253,34 @@ function changeButtons(event) {
     document.getElementById("subtask_cancel_button").classList.remove("d-none");
     setEventListenerSubtask(parent_div);
   }
+
+  /**
+ * Function to show a message box, set form validation to false, then redirect to the board page after a delay.
+ *
+ * @param {} - No parameters
+ * @return {} - No return value
+ */
+function taskAddedCompleteText() {
+  document.getElementById("msgBox-bg").classList.remove("d-none");
+  document.querySelector("form").noValidate = true;
+  setTimeout(() => {
+    document.getElementById("msgBox-bg").classList.add("d-none");
+    location.href = "./board.html";
+  }, 2000);
+}
+
+
+/**
+ * Function to show a message box with a information for the user, then removes the message from to the board after a delay.
+ *
+ * @param {} - No parameters
+ * @return {} - No return value
+ */
+function subtasksMessage() {
+  document.getElementById("msgBox").innerHTML= 'Minimum 1 Letter';
+  document.getElementById("msgBox-bg").classList.remove("d-none");
+  setTimeout(() => {
+    document.getElementById("msgBox-bg").classList.add("d-none");
+    document.getElementById("msgBox").innerHTML= 'Task added to Board';
+  }, 2000);
+}
