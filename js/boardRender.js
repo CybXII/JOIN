@@ -460,7 +460,6 @@ function renderCardInfo(i) {
         <div class="card_assigned">
           <p>Assigned To:</p>
           <div class="card_assignedTo" id="card_assignedTo">
-            
           </div>
         </div>
         <div class="card_subtasks">
@@ -481,6 +480,11 @@ function renderCardInfo(i) {
 }
 
 
+/**
+ * Renders a message indicating that no tasks were found for the specified category.
+ *
+ * @param {string} categorys - The category for which no tasks were found
+ */
 function renderNoFilteredFound(categorys){
   document.getElementById(`${categorys}`).innerHTML =`
   <div class="card-board-empty" id="no-task-found">No tasks Found</div>
