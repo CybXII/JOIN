@@ -231,17 +231,6 @@ function noTasksToDo() {
 
 
 /**
- * Function to generate HTML for a card board when there are no tasks to do.
- *
- * @param {string} id - The id of the card board
- * @return {string} The HTML for the card board with a message indicating no tasks to do
- */
-function noTasksToDoHtml(id) {
-  return `<div class="card-board-empty" id='no-task-${id}'>No tasks To do</div>`;
-}
-
-
-/**
  * Function to start the rotation of a card.
  *
  * @param {number} i - the index of the card to rotate
@@ -385,4 +374,24 @@ function filterTaskBoard() {
  */
 function clearBoardCategory(categorys) {
   document.getElementById(categorys).innerHTML = "";
+}
+
+
+/**
+ * Sets the assigned user help for the given editing card.
+ *
+ * @param {Object} editingCard - the editing card for which the assigned user help is being set
+ */
+function setAssignedUserHelp(editingCard) {
+  currentTask["assignedToID"].forEach((element) => {
+    let id = element - 1;
+    if (!usersassignedto.includes(id)) {
+      usersassignedto.push(id);
+      usersassignedto.sort();
+    }
+    if (!usersassignedto.includes(id)) {
+      usersassignedto.push(id);
+      usersassignedto.sort();
+    }
+  });
 }
