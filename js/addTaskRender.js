@@ -20,7 +20,7 @@ function renderAssignedTo(handler) {
               </div>
             </div>
             <span  id="edit-fullname-addtask-dd-${i}">${fullname}</span>
-            <input id="edit-checkbox${i}" type="checkbox" class="checkbox" onclick="addClassOnCheckboxChange(${i},'edit-'), setBadgesAddTask()" />
+            <input id="edit-checkbox${i}" type="checkbox" class="checkbox" onclick="addClassOnCheckboxChange(${i},'edit-'), setBadgesAddTaskEdit()" />
           </div>
         </li>
         `;
