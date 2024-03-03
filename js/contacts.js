@@ -361,7 +361,7 @@ function renderContactCard(firstLetter, i) {
     const userid = element.id;
     if (element.firstname.charAt(0).toUpperCase() == firstLetter) {
       content.innerHTML += renderContactCardHTML(fullname,email,
-        color,initials,phone,userid,i
+      color,initials,phone,userid,i
       );
     }
   });
