@@ -182,23 +182,27 @@ function editCard(i) {
  * @param {boolean} isChecked - The state of the checkbox.
  * @return {undefined}
  */
-function toggleCheckbox(id, isChecked) {
+function toggleCheckbox(id,isChecked) {
   const divElement = document.getElementById(`edit-fullname-addtask-dd-${id}`);
   const parentDivElement = document.getElementById(`edit-catergory_list_${id}`);
   if (isChecked) {
-    toggleTrueBox(id);
+    toggleTrueBox(id,divElement,parentDivElement);
   } else {
-    toggleFalseBox(id);
+    toggleFalseBox(id,divElement,parentDivElement);
   }
 }
 
 
+<<<<<<< HEAD
 /**
  * Toggles the true box for the given ID by adding classes to the div element and parent div element. 
  *
  * @param {type} id - The ID of the element to toggle
  */
 function toggleTrueBox(id){
+=======
+function toggleTrueBox(id,divElement,parentDivElement){
+>>>>>>> ba7f73098c504abab3974a45c79bf83c8839c7ba
   divElement.classList.add("white");
   parentDivElement.classList.add("contact_background");
   if (!usersassignedto.includes(id)) {
@@ -208,12 +212,16 @@ function toggleTrueBox(id){
 }
 
 
+<<<<<<< HEAD
 /**
  * Toggles the false box by removing certain classes from elements and updating the usersassignedto array.
  *
  * @param {type} id - The id of the box to toggle
  */
 function toggleFalseBox(id){
+=======
+function toggleFalseBox(id,divElement,parentDivElement){
+>>>>>>> ba7f73098c504abab3974a45c79bf83c8839c7ba
   divElement.classList.remove("white");
   parentDivElement.classList.remove("contact_background");
   const index = usersassignedto.indexOf(id);
