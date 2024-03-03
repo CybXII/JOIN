@@ -646,7 +646,7 @@ input:focus-visible {
 
 .contacts-background {
   z-index: 55;
-  /* background-color: rgba(65, 63, 63, 0.466); */
+  background-color: rgba(65, 63, 63, 0.466);
   top: 0;
   bottom: 0;
   left: 0;
@@ -663,11 +663,9 @@ input:focus-visible {
   justify-content: center;
   box-sizing: border-box;
   position: relative;
-  /* background-color: white; */
   height: 594px;
   width: 100%;
   border-radius: 30px;
-
 }
 
 .contacts-card > button {
