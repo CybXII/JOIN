@@ -143,6 +143,7 @@ function clickOutsideHandler(event) {
   }
 }
 
+
 /**
  * Removes the click outside listener from the document.
  */
@@ -286,6 +287,7 @@ function openCardContainer() {
   document.getElementById("card-background").addEventListener("click", cardBackgroundClickHandler);
 }
 
+
 /**
  * Closes the card container by adding the "d-none" class to the element with the ID "card-background" and removing the "background-fixed" class from the body.
  */
@@ -294,6 +296,7 @@ function closeCardContainer() {
   document.body.classList.remove("background-fixed");
   document.getElementById("card-background").removeEventListener("click", cardBackgroundClickHandler);
 }
+
 
 /**
  * Handles click events on the card background to close the card container.
@@ -373,6 +376,7 @@ function filterTaskBoard() {
     renderBoardTasks();
   }
 }
+
 
 /**
  * Clears the content of the specified board category element.

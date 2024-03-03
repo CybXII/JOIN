@@ -101,16 +101,10 @@ function setEventListenerSubtask(parent_div) {
     if (!parent_div.contains(e.target)) {
       inputField = document.getElementById("subtasks").value;
       if (!inputField || inputField == "") {
-        document
-          .getElementById("subtask_add_button")
-          .classList.remove("d-none");
+        document.getElementById("subtask_add_button").classList.remove("d-none");
         document.getElementById("subtask_seperator").classList.add("d-none");
-        document
-          .getElementById("subtask_accept_button")
-          .classList.add("d-none");
-        document
-          .getElementById("subtask_cancel_button")
-          .classList.add("d-none");
+        document.getElementById("subtask_accept_button").classList.add("d-none");
+        document.getElementById("subtask_cancel_button").classList.add("d-none");
         window.removeEventListener("click", arguments.callee);
       } else if (inputField.length < 0) {
         window.removeEventListener("click", arguments.callee);
@@ -193,9 +187,7 @@ function changeStateCategoryInput(category) {
   if (category === "Select Task Category") {
     document.getElementById("category-border").classList.add("redBorder");
     document.getElementById("warning-info-2").style = "display: block";
-    document
-      .getElementById("category-list2")
-      .setAttribute("onchange", `checkInputFields('todo')`);
+    document.getElementById("category-list2").setAttribute("onchange", `checkInputFields('todo')`);
   } else if (category != "" && category != "Select Task Category") {
     document.getElementById("warning-info-2").style = "display: none";
     document.getElementById("category-border").classList.remove("redBorder");
@@ -212,9 +204,7 @@ function changeStateDateInput(date) {
   if (date === "") {
     document.getElementById("datePicker").classList.add("redBorder");
     document.getElementById("warning-info-3").style = "display: block";
-    document
-      .getElementById("datePicker")
-      .setAttribute("onchange", `checkInputFields('todo')`);
+    document.getElementById("datePicker").setAttribute("onchange", `checkInputFields('todo')`);
   } else if (date != "") {
     document.getElementById("warning-info-3").style = "display: none";
     document.getElementById("datePicker").classList.remove("redBorder");
