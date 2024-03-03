@@ -136,23 +136,14 @@ function renderStandartAssignedUser(i) {
  */
 function renderMedium(handler) {
   document.getElementById(`${handler}prio-medium`).classList.remove("frame-25");
-  document
-    .getElementById(`${handler}prio-medium`)
-    .classList.add("frame-25-active");
-  document.getElementById(`${handler}prio-medium-img`).src =
-    "./img/medium_fill.svg";
-  document
-    .getElementById(`${handler}prio-low`)
-    .classList.remove("frame-26-active");
+  document.getElementById(`${handler}prio-medium`).classList.add("frame-25-active");
+  document.getElementById(`${handler}prio-medium-img`).src ="./img/medium_fill.svg";
+  document.getElementById(`${handler}prio-low`).classList.remove("frame-26-active");
   document.getElementById(`${handler}prio-low`).classList.add("frame-26");
-  document.getElementById(`${handler}prio-low-img`).src =
-    "./img/low_nofill.svg";
+  document.getElementById(`${handler}prio-low-img`).src ="./img/low_nofill.svg";
   document.getElementById(`${handler}prio-urgent`).classList.add("frame-16");
-  document
-    .getElementById(`${handler}prio-urgent`)
-    .classList.remove("frame-16-active");
-  document.getElementById(`${handler}prio-urgent-img`).src =
-    "./img/urgent_nofill.svg";
+  document.getElementById(`${handler}prio-urgent`).classList.remove("frame-16-active");
+  document.getElementById(`${handler}prio-urgent-img`).src ="./img/urgent_nofill.svg";
 }
 
 /**
@@ -162,20 +153,12 @@ function renderMedium(handler) {
    */
 function renderLow(handler) {
   document.getElementById(`${handler}prio-low`).classList.remove("frame-26");
-  document
-    .getElementById(`${handler}prio-low`)
-    .classList.add("frame-26-active");
+  document.getElementById(`${handler}prio-low`).classList.add("frame-26-active");
   document.getElementById(`${handler}prio-low-img`).src = "./img/low_fill.svg";
-  document
-    .getElementById(`${handler}prio-medium`)
-    .classList.remove("frame-25-active");
+  document.getElementById(`${handler}prio-medium`).classList.remove("frame-25-active");
   document.getElementById(`${handler}prio-medium`).classList.add("frame-25");
-  document.getElementById(`${handler}prio-medium-img`).src =
-    "./img/medium_nofill.svg";
+  document.getElementById(`${handler}prio-medium-img`).src ="./img/medium_nofill.svg";
   document.getElementById(`${handler}prio-urgent`).classList.add("frame-16");
-  document
-    .getElementById(`${handler}prio-urgent`)
-    .classList.remove("frame-16-active");
-  document.getElementById(`${handler}prio-urgent-img`).src =
-    "./img/urgent_nofill.svg";
+  document.getElementById(`${handler}prio-urgent`).classList.remove("frame-16-active");
+  document.getElementById(`${handler}prio-urgent-img`).src ="./img/urgent_nofill.svg";
 }
