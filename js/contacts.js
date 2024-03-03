@@ -173,7 +173,6 @@ function addContactsToStorage() {
 /**
  * Function to add a new contact.
  *
- * @return {Promise<void>} A promise that resolves when the function is complete
  */
 async function addNewContact(){
   pushContacts();
@@ -206,6 +205,9 @@ function pushContacts(){
 }
 
 
+/**
+ * Clears input fields after pushing new contact to the contacts array.
+ */
 function clearAfterPush(){
   contacts.push(JSONToPush);
   contactName.value = "";
