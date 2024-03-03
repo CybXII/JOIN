@@ -234,16 +234,26 @@ function filterCategory(categorys, searchInput) {
         checkTitlel.toUpperCase().includes(searchInput.toUpperCase()) ||
         checkInfos.toUpperCase().includes(searchInput.toUpperCase())
       ) {
+        clearBoardCategory(categorys);
         renderUpdateHTML(task, i);
         renderUpdateAssigned(task, i);
         finishedSubtasks(i);
         renderFinishCounter(i);
         finishcounter = 0;
+      }else {
+        clearBoardCategory(categorys);
+        renderNoFilteredFound(categorys)
       }
     }
   });
 }
 
+
+function renderNoFilteredFound(categorys){
+  document.getElementById(`${categorys}`).innerHTML =`
+  <div class="card-board-empty" id="no-task-found">No tasks Found</div>
+  `
+}
 
 /**
  * Delete a task from the tasks list, update the stored tasks, update the HTML, and close the card container.

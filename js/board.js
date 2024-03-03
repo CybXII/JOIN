@@ -367,7 +367,6 @@ function filterTaskBoard() {
   let searchInput = document.getElementById("search_board").value;
   let categorys = ["todo", "in-progress", "await-feedback", "done"];
   categorys.forEach((element) => {
-    clearBoardCategory(element);
     filterCategory(element, searchInput);
   });
   if (searchInput.length == 0) {
