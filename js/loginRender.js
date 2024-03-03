@@ -131,7 +131,6 @@ function renderLoginHTML() {
             <div class="text-wrapper">Log in</div>
             <img src="./img/vector-5.svg" alt="blue seperator" />
           </div>
-          <!-- WENN REGISTRIERUNG ERFOLGT -->
           <div class="frame-250">
             <div class="form_div">
               <div class="frame-155">
