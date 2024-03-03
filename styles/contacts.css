@@ -23,50 +23,7 @@
   bottom: 0;
   overflow-y: auto;
   overflow-x: hidden;
-}
-
-.d-none{
-  display: none;
-}
-
-.task-comp-bg {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background-color: #2a364765;
-  z-index: 999;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.task-comp {
-  position: absolute;
-  border-radius: 20px;
-  background: var(--Version-2-main-color, #2a3647);
-  box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.15);
-  display: flex;
-  height: 74px;
-  padding: 0px 25px;
-  justify-content: center;
-  align-items: center;
-  margin-left: auto;
-  margin-top: auto;
-  z-index: 999;
-  animation: moveUpToCenter 1s ease forwards;
-}
-
-.task-comp-text {
-  color: #fff;
-  font-family: Inter;
-  font-size: 20px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 120%;
-}
-
+} 
 
 .contact-card-letter {
   padding: 3px;

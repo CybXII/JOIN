@@ -59,8 +59,12 @@ function loginComplete(){
   users = [];
   users.push(user);
   users[0].rememberlogin = login_remember;
-  saveUsersToLocalStorage();
-  window.location.href = "summary.html";
+  document.getElementById("msgBox").innerHTML = "Successfully logged in";
+  document.getElementById("msgBox-bg").classList.remove("d-none");
+    setTimeout(() => {      
+      saveUsersToLocalStorage();
+      window.location.href = "summary.html";
+    }, 1500);
 }
 
 function wrongPassword(){
@@ -100,7 +104,7 @@ function rememberMeLogin() {
  * Logs in a guest user, assigns a random color, saves user data, and redirects to the summary page.
  *
  */
-function guestLogin() {
+function guestLogin(event) {
   let color = getRandomColor();
   users.push({
     id: 999,
@@ -113,8 +117,13 @@ function guestLogin() {
     color: color,
     rememberlogin: false,
   });
-  saveUsersToLocalStorage();
-  window.location.href = "summary.html";
+  event.preventDefault();
+    document.getElementById("msgBox").innerHTML = "Successfully logged in";
+    document.getElementById("msgBox-bg").classList.remove("d-none");
+    setTimeout(() => {
+      saveUsersToLocalStorage();
+      window.location.href = "summary.html";
+    }, 1500);
 }
 
 
@@ -123,6 +132,11 @@ function guestLogin() {
  *
  */
 function userLogout() {
-  localStorage.removeItem("users");
-  window.location.href = "login.html";
+  document.getElementById("msgBox").innerHTML = "Successfully logged out";
+  document.getElementById("msgBox-bg").classList.remove("d-none");
+  setTimeout(() => {
+    // document.getElementById("msgBox-bg").classList.add("d-none");
+    localStorage.removeItem("users");
+    window.location.href = "login.html";
+  }, 1500);
 }

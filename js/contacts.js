@@ -137,8 +137,8 @@ async function addEditContact(i) {
   openContact(
 newfull,newEmail,newcolor,newinitials,newPhone,currentcontact.userid,i
 );
-  contactAnimation();
-  contactEditMessage();
+contactEditMessage();
+contactAnimation();
 }
 
 
@@ -199,7 +199,7 @@ function pushContacts(){
     fullname: contactName.value,
     initials: initials,
     email: email.value,
-    phone: phone,
+    phone: phone.value,
     color: color,
     id: `${contacts.length}`,
     taskassigned: false,
@@ -371,7 +371,7 @@ function contactAddedMessage() {
   document.getElementById("msgBox-bg").classList.remove("d-none");
   setTimeout(() => {
     document.getElementById("msgBox-bg").classList.add("d-none");
-  }, 2000);
+  }, 1500);
 }
 
 
@@ -384,7 +384,7 @@ function contactEditMessage() {
   document.getElementById("msgBox-bg").classList.remove("d-none");
   setTimeout(() => {
     document.getElementById("msgBox-bg").classList.add("d-none");
-  }, 2000);
+  }, 1500);
 }
 
 
@@ -397,5 +397,5 @@ function contactDeletedMessage() {
   document.getElementById("msgBox-bg").classList.remove("d-none");
   setTimeout(() => {
     document.getElementById("msgBox-bg").classList.add("d-none");
-  }, 2000);
+  }, 1500);
 }

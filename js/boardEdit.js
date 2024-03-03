@@ -193,16 +193,16 @@ function toggleCheckbox(id,isChecked) {
 }
 
 
-<<<<<<< HEAD
+
 /**
- * Toggles the true box for the given ID by adding classes to the div element and parent div element. 
+ * Function to toggle the true box and add class to elements if necessary, and push and sort id into usersassignedto array if not already included.
  *
- * @param {type} id - The ID of the element to toggle
+ * @param {type} id - description of parameter
+ * @param {type} divElement - description of parameter
+ * @param {type} parentDivElement - description of parameter
+ * @return {type} description of return value
  */
-function toggleTrueBox(id){
-=======
 function toggleTrueBox(id,divElement,parentDivElement){
->>>>>>> ba7f73098c504abab3974a45c79bf83c8839c7ba
   divElement.classList.add("white");
   parentDivElement.classList.add("contact_background");
   if (!usersassignedto.includes(id)) {
@@ -212,16 +212,16 @@ function toggleTrueBox(id,divElement,parentDivElement){
 }
 
 
-<<<<<<< HEAD
+
 /**
- * Toggles the false box by removing certain classes from elements and updating the usersassignedto array.
+ * Remove the "white" class from the divElement and the "contact_background" class from the parentDivElement, 
+ * and remove the id from the usersassignedto array if it exists, then sort the array.
  *
- * @param {type} id - The id of the box to toggle
+ * @param {type} id - description of parameter
+ * @param {type} divElement - description of parameter
+ * @param {type} parentDivElement - description of parameter
  */
-function toggleFalseBox(id){
-=======
 function toggleFalseBox(id,divElement,parentDivElement){
->>>>>>> ba7f73098c504abab3974a45c79bf83c8839c7ba
   divElement.classList.remove("white");
   parentDivElement.classList.remove("contact_background");
   const index = usersassignedto.indexOf(id);
