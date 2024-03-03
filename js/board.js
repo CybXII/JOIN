@@ -281,6 +281,7 @@ function openCardContainer() {
  * Closes the card container by adding the "d-none" class to the element with the ID "card-background" and removing the "background-fixed" class from the body.
  */
 function closeCardContainer() {
+  usersassignedto = [];
   document.getElementById("card-background").classList.add("d-none");
   document.body.classList.remove("background-fixed");
   document.getElementById("card-background").removeEventListener("click", cardBackgroundClickHandler);

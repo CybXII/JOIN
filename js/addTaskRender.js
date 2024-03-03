@@ -10,7 +10,7 @@ function renderAssignedTo(handler) {
       const fullname = element.name;
       const initials = element.initials;
       const color = element.color;
-      assigncontent.innerHTML += /*html*/ `<li id="edit-catergory_list_${i}">
+      assigncontent.innerHTML = /*html*/ `<li id="edit-catergory_list_${i}">
           <div class="active_contact">
             <div class="profile-badge">
               <div class="group">
@@ -32,7 +32,7 @@ function renderAssignedTo(handler) {
       const fullname = element.name;
       const initials = element.initials;
       const color = element.color;
-      assigncontent.innerHTML += /*html*/ `<li id="${handler}catergory_list_${i}">
+      assigncontent.innerHTML = /*html*/ `<li id="${handler}catergory_list_${i}">
           <div class="active_contact">
             <div class="profile-badge">
               <div class="group">
