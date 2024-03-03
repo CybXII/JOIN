@@ -213,7 +213,6 @@ function clearAfterPush(){
   contactName.value = "";
   email.value = "";
   phone.value = "";
-
 }
 
 
