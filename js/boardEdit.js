@@ -239,7 +239,7 @@ function setInitialsEdit() {
 }
 
 
-  /**
+/**
  * Filter tasks based on a specific category and search input, and update the HTML accordingly.
  *
  * @param {array} categorys - The category to filter tasks by
