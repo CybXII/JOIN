@@ -157,9 +157,10 @@ function addSubtasks() {
  */
 function checkOnKeyDown(event){
     if (event.keyCode == 13) {
-        event.preventDefault();
-        addSubtasks();
-}};
+      event.preventDefault();
+      addSubtasks();
+    }
+};
 
 
 /**
@@ -272,7 +273,6 @@ function changeCheckboxStatus(userid, checkbox, divElement, parentDivElement) {
   const action = isChecked ? "add" : "remove";
   divElement.classList[action]("white");
   parentDivElement.classList[action]("contact_background");
-
   const index = usersassignedto.indexOf(userid);
   if (isChecked && index === -1) {
     usersassignedto.push(userid);
