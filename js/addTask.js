@@ -170,7 +170,6 @@ function checkOnKeyDown(event){
  */
 function editSubtask(i) {
   let container = document.getElementById(`subtask-comp-${i}`);
-  // let nr = findSubtaskPosition(id);
   let textContent = subtasksAdd[i].subtaskName;
   container.innerHTML = editSubTaskHtml(textContent, i);
   hideSubtaskIcons(i);
