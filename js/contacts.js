@@ -18,7 +18,7 @@ let color;
  * @return {Array} sortedContacts - the sorted array of contacts
  */
 function sortContacts() {
-  let sortedContacts = contacts.sort((a, b) => {
+contacts.sort((a, b) => {
     const nameA = a.firstname.toUpperCase();
     const nameB = b.firstname.toUpperCase();
     if (nameA < nameB) {
