@@ -12,13 +12,22 @@ async function renderSummary() {
   document.getElementById("summ-tasks-board").innerHTML = tasks.length;
   document.getElementById("summ-tasks-progress").innerHTML = tasksInProgress;
   document.getElementById("summ-tasks-feedback").innerHTML = tasksAwaitFeedback;
-  if (users[0].id != 999) {
-    document.getElementById("summary-fullname").innerHTML = users[0].name;
-    document.getElementById("summary-fullname-resp").innerHTML = users[0].name;
-  }
-  classesSummary();
-  renderGreetingTime();
-  renderUrgent();
+  greetUsername();
+}
+
+
+/**
+ * Function to greet the username by updating the DOM with user information and rendering summary and greeting components.
+ */
+function greetUsername(){
+    if (users[0].id != 999) {
+      document.getElementById("summary-fullname").innerHTML = users[0].name;
+      document.getElementById("summary-fullname-resp").innerHTML =
+        users[0].name;
+    }
+    classesSummary();
+    renderGreetingTime();
+    renderUrgent();
 }
 
 
@@ -47,21 +56,10 @@ function renderUrgent() {
    * @param {Date} date - the date to format
    * @return {string} the formatted date string
    */
-
 function formatDate(date) {
   const months = [
-    "January",
-    "February",
-    "March",
-    "April",
-    "May",
-    "June",
-    "July",
-    "August",
-    "September",
-    "October",
-    "November",
-    "December"
+    "January", "February", "March", "April", "May", "June",
+    "July", "August", "September", "October", "November", "December"
   ];
   const month = months[date.getMonth()];
   const day = date.getDate();
