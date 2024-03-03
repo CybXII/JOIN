@@ -1,8 +1,6 @@
 let letters = [];
-
 let contacts = [];
 let currentcontact = [];
-
 let nameInput;
 let contactName;
 let email;
@@ -11,8 +9,6 @@ let lastName;
 let initials;
 let firstName;
 let color;
-
-// 
 
 
 /**
@@ -98,6 +94,7 @@ async function deleteContact(userid) {
     document.getElementById("contact_info").innerHTML = "";
     addContactListeners();
   }
+  contactDeletedMessage();
 }
 
 
@@ -140,9 +137,9 @@ async function addEditContact(i) {
   openContact(
 newfull,newEmail,newcolor,newinitials,newPhone,currentcontact.userid,i
 );
-  contactAnimation();
+contactEditMessage();
+contactAnimation();
 }
-
 
 
 /**
@@ -172,6 +169,7 @@ function addContactsToStorage() {
   firstName = nameInput[0];
   color = getRandomColor();
   addNewContact();
+  contactAddedMessage();
 }
 
 
@@ -201,7 +199,7 @@ function pushContacts(){
     fullname: contactName.value,
     initials: initials,
     email: email.value,
-    phone: phone,
+    phone: phone.value,
     color: color,
     id: `${contacts.length}`,
     taskassigned: false,
@@ -359,4 +357,45 @@ function openContactsContainer() {
   <div class="FNandSN" id="initialsUserEdit"></div>
   <div class="closeImg" onclick="closeContactsContainer()"></div>
   <div id="editContactCard"></div>`;
+}
+
+
+/**
+ * Updates the message box to display "Contact successfully added", shows the message box, and then hides it after 2 seconds.
+ *
+ * @param {type} paramName - description of parameter
+ * @return {type} description of return value
+ */
+function contactAddedMessage() {
+  document.getElementById("msgBox").innerHTML = "Contact successfully added";
+  document.getElementById("msgBox-bg").classList.remove("d-none");
+  setTimeout(() => {
+    document.getElementById("msgBox-bg").classList.add("d-none");
+  }, 1500);
+}
+
+
+/**
+ * Function to edit a contact message.
+ *
+ */
+function contactEditMessage() {
+  document.getElementById("msgBox").innerHTML = "Contact successfully edited";
+  document.getElementById("msgBox-bg").classList.remove("d-none");
+  setTimeout(() => {
+    document.getElementById("msgBox-bg").classList.add("d-none");
+  }, 1500);
+}
+
+
+/**
+ * Updates the message box with a "Contact successfully deleted" message and displays it for 2 seconds.
+ *
+ */
+function contactDeletedMessage() {
+  document.getElementById("msgBox").innerHTML = "Contact successfully deleted";
+  document.getElementById("msgBox-bg").classList.remove("d-none");
+  setTimeout(() => {
+    document.getElementById("msgBox-bg").classList.add("d-none");
+  }, 1500);
 }

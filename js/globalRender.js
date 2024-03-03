@@ -350,14 +350,15 @@ function renderEditContact(userid, i){
                   />
                   <input
                     type="tel"
-                    inputmode="numeric"
                     placeholder="Phone"
                     class="add-contact-phone"
                     id="edit_contacts_phone"
                     required
-                    pattern="[0-9+/s]{6,20}" 
+                    pattern="[0-9+ ]{6,20}"
                     oninvalid="this.setCustomValidity('Enter a valid phone number e.g. +49 123 34533323. Minimum 6 digits, maximum 20 digits')"
                     oninput="this.setCustomValidity('')"
+                    data-for="phoneNumber"
+                    required
                   />
                   <div class="underButton">
                     <div class="add-contact-cancel" onclick="deleteContact('${userid}', '${i}'), closeContactsContainer()">Delete</div>
@@ -404,11 +405,10 @@ function openContactsContainerAdd() {
       />
       <input
       type="tel"
-      inputmode="numeric"
       placeholder="Phone"
       class="add-contact-phone"
       id="add_contacts_phone"
-      pattern="[0-9+/s]{6,20}" 
+      pattern="[0-9+ ]{6,20}"
       oninvalid="this.setCustomValidity('Enter a valid phone number e.g. +49 123 34533323. Minimum 6 digits, maximum 20 digits')"
       oninput="this.setCustomValidity('')"
       required

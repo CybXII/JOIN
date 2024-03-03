@@ -165,7 +165,6 @@ function setBadgesAddTaskEdit() {
  * Edit a card.
  *
  * @param {number} i - the index of the card to edit
- * @return {undefined} 
  */
 function editCard(i) {
   let content = document.getElementById("card-background");
@@ -194,6 +193,15 @@ function toggleCheckbox(id,isChecked) {
 }
 
 
+
+/**
+ * Function to toggle the true box and add class to elements if necessary, and push and sort id into usersassignedto array if not already included.
+ *
+ * @param {type} id - description of parameter
+ * @param {type} divElement - description of parameter
+ * @param {type} parentDivElement - description of parameter
+ * @return {type} description of return value
+ */
 function toggleTrueBox(id,divElement,parentDivElement){
   divElement.classList.add("white");
   parentDivElement.classList.add("contact_background");
@@ -204,6 +212,15 @@ function toggleTrueBox(id,divElement,parentDivElement){
 }
 
 
+
+/**
+ * Remove the "white" class from the divElement and the "contact_background" class from the parentDivElement, 
+ * and remove the id from the usersassignedto array if it exists, then sort the array.
+ *
+ * @param {type} id - description of parameter
+ * @param {type} divElement - description of parameter
+ * @param {type} parentDivElement - description of parameter
+ */
 function toggleFalseBox(id,divElement,parentDivElement){
   divElement.classList.remove("white");
   parentDivElement.classList.remove("contact_background");

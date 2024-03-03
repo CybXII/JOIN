@@ -23,7 +23,7 @@
   bottom: 0;
   overflow-y: auto;
   overflow-x: hidden;
-}
+} 
 
 .contact-card-letter {
   padding: 3px;
@@ -225,7 +225,7 @@ input:focus-visible {
 
 .frame-97 .contact-name {
   display: flex;
-  width: 286px;
+  width: 352px;
   align-items: flex-start;
   gap: 35px;
   padding: 15px 24px;

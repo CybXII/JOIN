@@ -20,6 +20,11 @@
 </head>
 
 <body onload="includeHTMLInit(`Contacts`), pushLetters()">
+    <div class="task-comp-bg d-none" id="msgBox-bg">
+    <div class="task-comp">
+      <span id="msgBox" class="task-comp-text"></span>
+    </div>
+  </div>
   <div class="contacts-background d-none" id="contacts-background" onclick="closeContactsContainer()">
     <div class="contact_Card_helper">
       <div class="contacts-card" onclick="dontClose()">
