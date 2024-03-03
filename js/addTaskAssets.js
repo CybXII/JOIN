@@ -131,8 +131,21 @@ function addTasksToStorage(categoryInput) {
     setInitials();
     pushCategoryToJSON();
     addTasktoBoard(categoryInput);
+    taskAddedCompleteText();
+    taskAddedCompleteTextBoard();
   }
 }
+
+
+
+function taskAddedCompleteTextBoard() {
+  document.getElementById("msgBox-bg").classList.remove("d-none");
+  setTimeout(() => {
+    document.getElementById("msgBox-bg").classList.add("d-none");
+  }, 2000);
+}
+
+
 
 
 /**

@@ -40,6 +40,25 @@ function editSubtasks(i) {
 
 
 /**
+ * Sets a success message for deleting a task, displays the message box, and then hides it after 2 seconds.
+ *
+ * @param None
+ * @return None
+ */
+function deleteTaskMessage() {
+  document.getElementById("msgBox").innerHTML = "Task sucessfully deleted";
+  document.getElementById("msgBox-bg").classList.remove("d-none");
+  setTimeout(() => {
+    document.getElementById("msgBox-bg").classList.add("d-none");
+    document.getElementById("msgBox").innerHTML = "Task added to Board";
+  }, 2000);
+}
+
+
+
+
+
+/**
  * Edit the subtask card with the specified index.
  *
  * @param {number} i - the index of the subtask card
@@ -276,6 +295,7 @@ async function deleteTask(i) {
   await setItem("tasks", JSON.stringify(tasks));
   updateHTML();
   closeCardContainer();
+  deleteTaskMessage();
 }
 
 
