@@ -108,11 +108,8 @@ function editContact(userid, i) {
   openContactsContainer(userid, i);
   renderEditContact(userid, i);
   let color = currentcontact.color;
-  document.getElementById("initialsUserEdit").innerHTML =
-    currentcontact.initials;
-  document.getElementById(
-    "initialsUserEdit"
-  ).style = `background-color: ${color}`;
+  document.getElementById("initialsUserEdit").innerHTML = currentcontact.initials;
+  document.getElementById("initialsUserEdit").style = `background-color: ${color}`;
   document.getElementById("edit_contacts_name").value = currentcontact.fullname;
   document.getElementById("edit_contacts_email").value = currentcontact.email;
   document.getElementById("edit_contacts_phone").value = currentcontact.phone;
@@ -205,10 +202,16 @@ function pushContacts(){
     taskassigned: false,
     contactAssignedTo: users[0].id
   };
+  clearAfterPush(JSONToPush);
+}
+
+
+function clearAfterPush(){
   contacts.push(JSONToPush);
   contactName.value = "";
   email.value = "";
   phone.value = "";
+
 }
 
 
@@ -249,6 +252,67 @@ function openRespContactContainer() {
  */
 function closeRespContactContainer() {
   document.getElementById("contact_info_resp_background").classList.add("d-none");
+}
+
+
+/**
+ * Updates the message box to display "Contact successfully added", shows the message box, and then hides it after 2 seconds.
+ *
+ * @param {type} paramName - description of parameter
+ * @return {type} description of return value
+ */
+function contactAddedMessage() {
+  document.getElementById("msgBox").innerHTML = "Contact successfully added";
+  document.getElementById("msgBox-bg").classList.remove("d-none");
+  setTimeout(() => {
+    document.getElementById("msgBox-bg").classList.add("d-none");
+  }, 1500);
+}
+
+
+/**
+ * Function to edit a contact message.
+ *
+ */
+function contactEditMessage() {
+  document.getElementById("msgBox").innerHTML = "Contact successfully edited";
+  document.getElementById("msgBox-bg").classList.remove("d-none");
+  setTimeout(() => {
+    document.getElementById("msgBox-bg").classList.add("d-none");
+  }, 1500);
+}
+
+
+/**
+ * Updates the message box with a "Contact successfully deleted" message and displays it for 2 seconds.
+ *
+ */
+function contactDeletedMessage() {
+  document.getElementById("msgBox").innerHTML = "Contact successfully deleted";
+  document.getElementById("msgBox-bg").classList.remove("d-none");
+  setTimeout(() => {
+    document.getElementById("msgBox-bg").classList.add("d-none");
+  }, 1500);
+}
+
+
+/**
+ * Function to open the contacts container and update the DOM elements.
+ *
+ */
+function openContactsContainer() {
+  document.getElementById("contacts-background").classList.remove("d-none");
+  document.body.classList.add("contacts-background-fixed");
+  document.getElementById("left-side").innerHTML = `
+    <div class="testContainer">
+      <img class="joinLogo" src="./img/capa-2.svg" alt="Join-Logo">
+      <h1>Edit contact</h1>
+      <img class="underlineBlue" src="./img/vector-5.svg" alt="underline-blue">
+    </div>`;
+  document.getElementById("right-side").innerHTML = `
+  <div class="FNandSN" id="initialsUserEdit"></div>
+  <div class="closeImg" onclick="closeContactsContainer()"></div>
+  <div id="editContactCard"></div>`;
 }
 
 
@@ -295,14 +359,8 @@ function renderContactCard(firstLetter, i) {
     const phone = element.phone;
     const userid = element.id;
     if (element.firstname.charAt(0).toUpperCase() == firstLetter) {
-      content.innerHTML += renderContactCardHTML(
-        fullname,
-        email,
-        color,
-        initials,
-        phone,
-        userid,
-        i
+      content.innerHTML += renderContactCardHTML(fullname,email,
+        color,initials,phone,userid,i
       );
     }
   });
@@ -337,65 +395,4 @@ function renderContactCardHTML(fullname,email,color,initials,phone,userid,i) {
                   <div class="text-wrapper-3">${email}</div>
                 </div>
               </div>`;
-}
-
-
-/**
- * Function to open the contacts container and update the DOM elements.
- *
- */
-function openContactsContainer() {
-  document.getElementById("contacts-background").classList.remove("d-none");
-  document.body.classList.add("contacts-background-fixed");
-  document.getElementById("left-side").innerHTML = `
-    <div class="testContainer">
-      <img class="joinLogo" src="./img/capa-2.svg" alt="Join-Logo">
-      <h1>Edit contact</h1>
-      <img class="underlineBlue" src="./img/vector-5.svg" alt="underline-blue">
-    </div>`;
-  document.getElementById("right-side").innerHTML = `
-  <div class="FNandSN" id="initialsUserEdit"></div>
-  <div class="closeImg" onclick="closeContactsContainer()"></div>
-  <div id="editContactCard"></div>`;
-}
-
-
-/**
- * Updates the message box to display "Contact successfully added", shows the message box, and then hides it after 2 seconds.
- *
- * @param {type} paramName - description of parameter
- * @return {type} description of return value
- */
-function contactAddedMessage() {
-  document.getElementById("msgBox").innerHTML = "Contact successfully added";
-  document.getElementById("msgBox-bg").classList.remove("d-none");
-  setTimeout(() => {
-    document.getElementById("msgBox-bg").classList.add("d-none");
-  }, 1500);
-}
-
-
-/**
- * Function to edit a contact message.
- *
- */
-function contactEditMessage() {
-  document.getElementById("msgBox").innerHTML = "Contact successfully edited";
-  document.getElementById("msgBox-bg").classList.remove("d-none");
-  setTimeout(() => {
-    document.getElementById("msgBox-bg").classList.add("d-none");
-  }, 1500);
-}
-
-
-/**
- * Updates the message box with a "Contact successfully deleted" message and displays it for 2 seconds.
- *
- */
-function contactDeletedMessage() {
-  document.getElementById("msgBox").innerHTML = "Contact successfully deleted";
-  document.getElementById("msgBox-bg").classList.remove("d-none");
-  setTimeout(() => {
-    document.getElementById("msgBox-bg").classList.add("d-none");
-  }, 1500);
 }
