@@ -299,13 +299,10 @@ function renderAddSubtasksCard(i) {
  * @return {boolean} Returns false to prevent default behavior
  */
 function subtasksOnKeyDown(event, i, j){
-    // $(window).keydown(function (event) {
       if (event.keyCode == 13) {
-        // console.log(event);
         event.preventDefault();
         addEditSubTaskCard(i,j)
       }
-    // });
 }
 
 
