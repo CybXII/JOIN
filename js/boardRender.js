@@ -198,6 +198,7 @@ function renderEditCard(content, i) {
   `;
 }
 
+
 /**
  * Renders the move to options in the card background.
  *
@@ -439,7 +440,6 @@ function renderCardInfo(i) {
   let day = parseInt(parts[2]);
   let formattedDate =
     ("0" + day).slice(-2) + "." + ("0" + (month + 1)).slice(-2) + "." + year;
-
   content.innerHTML = /*html*/ `
   <div class="card" onclick="dontClose()">
           <div class="card_header">
@@ -478,4 +478,52 @@ function renderCardInfo(i) {
             <p>Delete</p>  
           </div>
       </div>`;
+}
+
+
+function renderNoFilteredFound(categorys){
+  document.getElementById(`${categorys}`).innerHTML =`
+  <div class="card-board-empty" id="no-task-found">No tasks Found</div>
+  `
+}
+
+
+/**
+ * Sets a success message for deleting a task, displays the message box, and then hides it after 2 seconds.
+ *
+ * @param None
+ * @return None
+ */
+function deleteTaskMessage() {
+  document.getElementById("msgBox").innerHTML = "Task sucessfully deleted";
+  document.getElementById("msgBox-bg").classList.remove("d-none");
+  setTimeout(() => {
+    document.getElementById("msgBox-bg").classList.add("d-none");
+    document.getElementById("msgBox").innerHTML = "Task added to Board";
+  }, 2000);
+}
+
+
+/**
+ * Function to edit the message on the board for subtasks.
+ *
+ */
+function subtasksMessageEditBoard() {
+  document.getElementById("msgBox").innerHTML = "Task sucessfully edited";
+  document.getElementById("msgBox-bg").classList.remove("d-none");
+  setTimeout(() => {
+    document.getElementById("msgBox-bg").classList.add("d-none");
+    document.getElementById("msgBox").innerHTML = "Task added to Board";
+  }, 2000);
+}
+
+
+/**
+ * Function to generate HTML for a card board when there are no tasks to do.
+ *
+ * @param {string} id - The id of the card board
+ * @return {string} The HTML for the card board with a message indicating no tasks to do
+ */
+function noTasksToDoHtml(id) {
+  return `<div class="card-board-empty" id='no-task-${id}'>No tasks To do</div>`;
 }
