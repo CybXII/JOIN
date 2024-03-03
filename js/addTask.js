@@ -349,7 +349,6 @@ async function addTasktoBoard(input) {
   let date = document.getElementById("datePicker");
   let categoryTask = pushCategoryToJSON();
   setJson(input,title,description,date,categoryTask);
-  await setItem("tasks", JSON.stringify(tasks));
   title.value = "";
   description.value = "";
   date.value = "";
@@ -366,7 +365,7 @@ async function addTasktoBoard(input) {
  * @param {type} date - description of date parameter
  * @param {type} categoryTask - description of categoryTask parameter
  */
-function setJson(input,title,description,date,categoryTask){
+async function setJson(input,title,description,date,categoryTask){
   let JSONToPush = {
     categoryboard: input,
     category: categoryTask,
@@ -380,4 +379,5 @@ function setJson(input,title,description,date,categoryTask){
     colors: userColorsAssignedto
   };
   tasks.push(JSONToPush);
+  await setItem("tasks", JSON.stringify(tasks));
 }
