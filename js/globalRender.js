@@ -10,7 +10,6 @@ async function includeHTMLInit(input) {
   await includeHTML();
   loadUsersFromLocalStorage();
 
-  
   if (users[0] == undefined) {
     window.location.href = "login.html";
   }
@@ -19,21 +18,8 @@ async function includeHTMLInit(input) {
       document.getElementById("header-initials").innerHTML = users[0].initials;
     } else {
       console.error(`Die Funktion ${functionName} wurde nicht gefunden.`);
-    }
-    
+    } 
   }
-
-
-  
-
-/**
- * Check if the user is logged in and redirect to the login page if not.
- *
- */
-// function loggedIn(){
-
-
-// }
 
 
 /**
@@ -88,13 +74,26 @@ function renderAssigned(i) {
     const colors = colorsTask[x];
     let assignNames = usersAssignTask(userid[x]);
     let assignTask = document.getElementById(`card_assignedTo`);
-    assignTask.innerHTML += /*html*/ `<div class="contact">
+    assignTask.innerHTML += renderAssignedHTML(initials, assignNames, colors);
+  }
+}
+
+
+/**
+ * Renders assigned HTML based on initials, assigned names, and colors.
+ *
+ * @param {string} initials - The initials to be displayed.
+ * @param {string} assignNames - The names to be assigned.
+ * @param {string} colors - The color to be used for the background.
+ * @return {string} The rendered HTML.
+ */
+function renderAssignedHTML(initials, assignNames, colors) {
+  return /*html*/ `<div class="contact">
           <div id="contact_color" class="overlap-group" style="background-color: ${colors}">
             <div class="text-wrapper-2">${initials}</div>
           </div>
           <div class="assigned_name">${assignNames}</div>
         </div>`;
-  }
 }
 
 
@@ -105,9 +104,7 @@ function renderAssigned(i) {
    * @return {type} undefined
    */
 function renderFinishCounter(id) {
-  document.getElementById(
-    `subtask-counter${id}`
-  ).innerHTML = `${finishcounter}/${tasks[id]["subtasks"].length} Subtasks`;
+  document.getElementById(`subtask-counter${id}`).innerHTML = `${finishcounter}/${tasks[id]["subtasks"].length} Subtasks`;
 }
 
 
@@ -122,18 +119,44 @@ function renderSubtasksInfos(i) {
     const element = subtasks[j].subtaskName;
     if (subtasks[j]["subtaskStatus"] === false) {
       let subtasksTask = document.getElementById("subtask-items");
-      subtasksTask.innerHTML += /*html*/ `<div class="card_subtasks_item">
-          <input id="subtask${j}" type="checkbox" class="card_checkbox" onclick="checkSubtasks(${i},${j})">
-          <p>${element}</p>
-        </div>`;
+      subtasksTask.innerHTML += renderSubtasksInfosHTML(i, j, element);
     } else {
       let subtasksTask = document.getElementById("subtask-items");
-      subtasksTask.innerHTML += /*html*/ `<div class="card_subtasks_item">
+      subtasksTask.innerHTML += renderSubtasksInfosHTMLFalse(i, j, element);
+    }
+  }
+}
+
+
+/**
+ * Render the HTML for subtasks information with a false value.
+ *
+ * @param {number} i - The first parameter description
+ * @param {number} j - The second parameter description
+ * @param {element} element - The third parameter description
+ * @return {string} The HTML for subtasks information with a false value
+ */
+function renderSubtasksInfosHTMLFalse(i, j, element){
+return /*html*/ `<div class="card_subtasks_item">
           <input checked id="subtask${j}" type="checkbox" class="card_checkbox" onclick="checkSubtasks(${i},${j})">
           <p>${element}</p>
         </div>`;
-    }
-  }
+}
+
+
+/**
+ * Renders the HTML for subtask information.
+ *
+ * @param {number} i - The first parameter description
+ * @param {number} j - The second parameter description
+ * @param {any} element - The third parameter description
+ * @return {string} The rendered HTML for subtask information
+ */
+function renderSubtasksInfosHTML(i, j, element){
+  return /*html*/ `<div class="card_subtasks_item">
+          <input id="subtask${j}" type="checkbox" class="card_checkbox" onclick="checkSubtasks(${i},${j})">
+          <p>${element}</p>
+        </div>`;
 }
 
 
@@ -206,6 +229,17 @@ function renderUpdateHTML(task, i) {
               </div>
             </div>
         </div>`;
+  prioChecker(task, i);
+}
+
+
+/**
+ * Function to check the priority and category of a task and update the corresponding elements in the DOM.
+ *
+ * @param {object} task - The task object containing priority and category information
+ * @param {number} i - The index of the task
+ */
+function prioChecker(task, i){
   if (task.prio == "urgent") {
     document.getElementById(`prio-svg${i}`).src = "./img/urgent_nofill.svg";
   } else if (task.prio == "medium") {
@@ -256,23 +290,14 @@ function renderAddSubtasks() {
  */
 function renderUrgent(handler) {
   document.getElementById(`${handler}prio-urgent`).classList.remove("frame-16");
-  document
-    .getElementById(`${handler}prio-urgent`)
-    .classList.add("frame-16-active");
-  document.getElementById(`${handler}prio-urgent-img`).src =
-    "./img/urgent_fill.svg";
-  document
-    .getElementById(`${handler}prio-medium`)
-    .classList.remove("frame-25-active");
+  document.getElementById(`${handler}prio-urgent`).classList.add("frame-16-active");
+  document.getElementById(`${handler}prio-urgent-img`).src = "./img/urgent_fill.svg";
+  document.getElementById(`${handler}prio-medium`).classList.remove("frame-25-active");
   document.getElementById(`${handler}prio-medium`).classList.add("frame-25");
-  document.getElementById(`${handler}prio-medium-img`).src =
-    "./img/medium_nofill.svg";
-  document
-    .getElementById(`${handler}prio-low`)
-    .classList.remove("frame-26-active");
+  document.getElementById(`${handler}prio-medium-img`).src = "./img/medium_nofill.svg";
+  document.getElementById(`${handler}prio-low`).classList.remove("frame-26-active");
   document.getElementById(`${handler}prio-low`).classList.add("frame-26");
-  document.getElementById(`${handler}prio-low-img`).src =
-    "./img/low_nofill.svg";
+  document.getElementById(`${handler}prio-low-img`).src = "./img/low_nofill.svg";
 }
 
 
