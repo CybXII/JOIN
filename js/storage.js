@@ -1,7 +1,6 @@
 let STORAGE_TOKEN = [];
 const STORAGE_URL = `https://remote-storage.developerakademie.org/item`;
 
-
 /**
  * Asynchronously loads the token from the specified JSON file and sets the STORAGE_TOKEN value.
  *

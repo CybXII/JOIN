@@ -58,9 +58,9 @@ async function login(event) {
  * @param {} 
  * @return {}
  */
-function loginComplete(){
+function loginComplete(user){
   users = [];
-  users.push(users);
+  users.push(user);
   users[0].rememberlogin = login_remember;
   document.getElementById("msgBox").innerHTML = "Successfully logged in";
   document.getElementById("msgBox-bg").classList.remove("d-none");
