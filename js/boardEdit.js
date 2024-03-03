@@ -265,24 +265,6 @@ function filterCategory(categorys, searchInput) {
 
 
 /**
- * Renders filtered tasks with the specified category, task, and index.
- *
- * @param {type} categorys - description of categorys
- * @param {type} task - description of task
- * @param {type} i - description of i
- * @return {type} description of return value
- */
-function renderFilteredTasks(categorys,task,i){
-  clearBoardCategory(categorys);
-  renderUpdateHTML(task, i);
-  renderUpdateAssigned(task, i);
-  finishedSubtasks(i);
-  renderFinishCounter(i);
-  finishcounter = 0;
-}
-
-
-/**
  * Delete a task from the tasks list, update the stored tasks, update the HTML, and close the card container.
  *
  * @param {number} i - The index of the task to delete
