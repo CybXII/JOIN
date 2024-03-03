@@ -96,6 +96,7 @@ async function loadContacts() {
  * @return {type} description of return value
  */
 async function loadRemoteUser() {
+  remoteuserAssign = [];
   try {
     remoteuser = JSON.parse(await getItem("users"));
     for (let i = 0; i < remoteuser.length; i++) {
