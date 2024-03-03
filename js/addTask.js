@@ -362,9 +362,6 @@ async function addTasktoBoard(input) {
   };
   tasks.push(JSONToPush);
   await setItem("tasks", JSON.stringify(tasks));
-  
-  
-  // setJson(input,title,description,date,categoryTask);
   title.value = "";
   description.value = "";
   date.value = "";
