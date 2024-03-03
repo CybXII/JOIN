@@ -13,12 +13,8 @@ function move() {
     document.getElementById("join_logo").classList.remove("background");
     document.getElementById("join_logo2").classList.remove("background");
     document.getElementById("logo_container").classList.remove("big_size");
-    document
-      .getElementById("join_logo2")
-      .classList.remove("join_logo_start_responsiv");
-    document
-      .getElementById("join_logo2")
-      .classList.add("join_logo_start_responsiv2");
+    document.getElementById("join_logo2").classList.remove("join_logo_start_responsiv");
+    document.getElementById("join_logo2").classList.add("join_logo_start_responsiv2");
   }, 1000);
 }
 
@@ -55,9 +51,16 @@ async function login(event) {
   }
 }
 
+
+/**
+ * Function to complete the login process.
+ *
+ * @param {} 
+ * @return {}
+ */
 function loginComplete(){
   users = [];
-  users.push(user);
+  users.push(users);
   users[0].rememberlogin = login_remember;
   document.getElementById("msgBox").innerHTML = "Successfully logged in";
   document.getElementById("msgBox-bg").classList.remove("d-none");
@@ -67,6 +70,10 @@ function loginComplete(){
     }, 1500);
 }
 
+
+/**
+ * This function handles the case of wrong password entry by modifying the classList of specific elements.
+ */
 function wrongPassword(){
   document.getElementById("parent_email").classList.add("wrong-password");
   document.getElementById("parent_login_password").classList.add("wrong-password");
@@ -74,12 +81,16 @@ function wrongPassword(){
   document.getElementById("wrongPassword").classList.add("wrong-password-text");
 }
 
+/**
+ * Resets the wrong password state by removing the "wrong-password" class from specific elements 
+ */
 function resetWrongPassword(){
   document.getElementById("parent_email").classList.remove("wrong-password");
   document.getElementById("parent_login_password").classList.remove("wrong-password");
    document.getElementById("wrongPassword").classList.remove("wrong-password-text");
   document.getElementById("wrongPassword").classList.add("wrong-password-unset");
 }
+
 
 /**
  * Function for handling remembered login.
@@ -117,13 +128,24 @@ function guestLogin(event) {
     color: color,
     rememberlogin: false,
   });
+  loginSuccessfull(event);
+}
+
+
+/**
+ * Function to handle successful login
+ *
+ * @param {} - No parameters
+ * @return {} - No return value
+ */
+function loginSuccessfull(event){
   event.preventDefault();
-    document.getElementById("msgBox").innerHTML = "Successfully logged in";
-    document.getElementById("msgBox-bg").classList.remove("d-none");
-    setTimeout(() => {
-      saveUsersToLocalStorage();
-      window.location.href = "summary.html";
-    }, 1500);
+  document.getElementById("msgBox").innerHTML = "Successfully logged in";
+  document.getElementById("msgBox-bg").classList.remove("d-none");
+  setTimeout(() => {
+    saveUsersToLocalStorage();
+    window.location.href = "summary.html";
+  }, 1500);
 }
 
 
