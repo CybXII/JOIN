@@ -208,7 +208,7 @@ function pushContacts(){
 /**
  * Clears input fields after pushing new contact to the contacts array.
  */
-function clearAfterPush(){
+function clearAfterPush(JSONToPush){
   contacts.push(JSONToPush);
   contactName.value = "";
   email.value = "";

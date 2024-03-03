@@ -110,7 +110,7 @@ function renderAssignedUserAddTask(handler) {
  */
 function renderEditAssignedUser(handler, i) {
   let index = usersassignedto[i];
-  if (usersassignedto.includes(index)) {
+  if (usersassignedto.includes(index + 1)) {
     document.getElementById(`${handler}checkbox${index}`).checked = true;
     addClassOnCheckboxChange(index, handler);
   }
