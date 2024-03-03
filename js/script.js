@@ -162,45 +162,57 @@ function initializeSignUPListeners() {
  */
 function changeLocker(input) {
   if (input === "parent_confirm_password") {
-    if (confirmPass_visible === false) {
-      document
-        .getElementById(`confirm_password`)
-        .setAttribute("type", "password");
-      document
-        .getElementById("confirm_locker")
-        .setAttribute("src", "img/visibility_off.svg");
-    } else {
-      document.getElementById(`confirm_password`).setAttribute("type", "text");
-      document
-        .getElementById("confirm_locker")
-        .setAttribute("src", "img/visibility.svg");
-    }
+    passwordConfirmVisitibility();
   } else if (input === "parent_password") {
-    if (pass_visible === false) {
-      document.getElementById(`password-su`).setAttribute("type", "password");
-      document
-        .getElementById("password_locker")
-        .setAttribute("src", "img/visibility_off.svg");
-    } else {
-      document.getElementById(`password-su`).setAttribute("type", "text");
-      document
-        .getElementById("password_locker")
-        .setAttribute("src", "img/visibility.svg");
-    }
+    passwordVisibility();
   } else if (input === "parent_login_password") {
-    if (loginPass_visible === false) {
-      document
-        .getElementById(`login_password`)
-        .setAttribute("type", "password");
-      document
-        .getElementById("login_password_locker")
-        .setAttribute("src", "img/visibility_off.svg");
-    } else {
-      document.getElementById(`login_password`).setAttribute("type", "text");
-      document
-        .getElementById("login_password_locker")
-        .setAttribute("src", "img/visibility.svg");
-    }
+    passwordLocker();
+  }
+}
+
+
+/**
+ * Toggles the visibility of the login password field and updates the visibility icon accordingly.
+ *
+ */
+function passwordLocker(){
+if (loginPass_visible === false) {
+  document.getElementById(`login_password`).setAttribute("type", "password");
+  document.getElementById("login_password_locker").setAttribute("src", "img/visibility_off.svg");
+} else {
+  document.getElementById(`login_password`).setAttribute("type", "text");
+  document.getElementById("login_password_locker").setAttribute("src", "img/visibility.svg");
+}
+}
+
+
+/**
+ * Controls the visibility of the confirm password input field and its associated locker icon.
+ *
+ * @param {void} -
+ * @return {void} -
+ */
+function passwordConfirmVisitibility(){
+if (confirmPass_visible === false) {
+  document.getElementById(`confirm_password`).setAttribute("type", "password");
+  document.getElementById("confirm_locker").setAttribute("src", "img/visibility_off.svg");
+} else {
+  document.getElementById(`confirm_password`).setAttribute("type", "text");
+  document.getElementById("confirm_locker").setAttribute("src", "img/visibility.svg");
+}
+}
+
+
+/**
+ * Toggles the visibility of the password input field and updates the visibility icon accordingly.
+ */
+function passwordVisibility(){
+  if (pass_visible === false) {
+    document.getElementById(`password-su`).setAttribute("type", "password");
+    document.getElementById("password_locker").setAttribute("src", "img/visibility_off.svg");
+  } else {
+    document.getElementById(`password-su`).setAttribute("type", "text");
+    document.getElementById("password_locker").setAttribute("src", "img/visibility.svg");
   }
 }
 
@@ -212,42 +224,51 @@ function changeLocker(input) {
  */
 function changeLockerPictureBack(parentWrapperId) {
   if (parentWrapperId === "parent_login_password") {
-    if (loginPass_visible === false) {
-      document
-        .getElementById(`login_password`)
-        .setAttribute("type", "password");
-      document
-        .getElementById("login_password_locker")
-        .setAttribute("src", "img/lock.svg");
-    } else {
-      document.getElementById(`login_password`).setAttribute("type", "text");
-      document
-        .getElementById("login_password_locker")
-        .setAttribute("src", "img/visibility.svg");
-    }
+    changeLockerPictureBackLogin();
   } else {
-    if (confirmPass_visible === false) {
-      document.getElementById(`confirm_password`).setAttribute("type", "text");
-      document
-        .getElementById("confirm_locker")
-        .setAttribute("src", "img/lock.svg");
-    } else {
-      document.getElementById(`confirm_password`).setAttribute("type", "text");
-      document
-        .getElementById("confirm_locker")
-        .setAttribute("src", "img/visibility.svg");
-    }
-    if (pass_visible === false) {
-      document.getElementById(`password-su`).setAttribute("type", "password");
-      document
-        .getElementById("password_locker")
-        .setAttribute("src", "img/lock.svg");
-    } else {
-      document.getElementById(`password-su`).setAttribute("type", "text");
-      document
-        .getElementById("password_locker")
-        .setAttribute("src", "img/visibility.svg");
-    }
+    changeLockerPictureBackConfirm();
+  }
+}
+
+
+/**
+ * Change the type of the login password input field and toggle the visibility icon.
+ *
+ * @param {type} paramName - description of parameter
+ * @return {type} description of return value
+ */
+function changeLockerPictureBackLogin() {
+  if (loginPass_visible === false) {
+    document.getElementById(`login_password`).setAttribute("type", "password");
+    document
+      .getElementById("login_password_locker")
+      .setAttribute("src", "img/lock.svg");
+  } else {
+    document.getElementById(`login_password`).setAttribute("type", "text");
+    document
+      .getElementById("login_password_locker")
+      .setAttribute("src", "img/visibility.svg");
+  }
+}
+
+
+/**
+ * Function to change locker picture back confirm based on visibility status.
+ */
+function changeLockerPictureBackConfirm() {
+  if (confirmPass_visible === false) {
+    document.getElementById(`confirm_password`).setAttribute("type", "text");
+    document.getElementById("confirm_locker").setAttribute("src", "img/lock.svg");
+  } else {
+    document.getElementById(`confirm_password`).setAttribute("type", "text");
+    document.getElementById("confirm_locker").setAttribute("src", "img/visibility.svg");
+  }
+  if (pass_visible === false) {
+    document.getElementById(`password-su`).setAttribute("type", "password");
+    document.getElementById("password_locker").setAttribute("src", "img/lock.svg");
+  } else {
+    document.getElementById(`password-su`).setAttribute("type", "text");
+    document.getElementById("password_locker").setAttribute("src", "img/visibility.svg");
   }
 }
 
