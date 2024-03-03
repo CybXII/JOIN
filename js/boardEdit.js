@@ -183,18 +183,18 @@ function editCard(i) {
  * @param {boolean} isChecked - The state of the checkbox.
  * @return {undefined}
  */
-function toggleCheckbox(id, isChecked) {
+function toggleCheckbox(id,isChecked) {
   const divElement = document.getElementById(`edit-fullname-addtask-dd-${id}`);
   const parentDivElement = document.getElementById(`edit-catergory_list_${id}`);
   if (isChecked) {
-    toggleTrueBox(id);
+    toggleTrueBox(id,divElement,parentDivElement);
   } else {
-    toggleFalseBox(id);
+    toggleFalseBox(id,divElement,parentDivElement);
   }
 }
 
 
-function toggleTrueBox(id){
+function toggleTrueBox(id,divElement,parentDivElement){
   divElement.classList.add("white");
   parentDivElement.classList.add("contact_background");
   if (!usersassignedto.includes(id)) {
@@ -204,7 +204,7 @@ function toggleTrueBox(id){
 }
 
 
-function toggleFalseBox(id){
+function toggleFalseBox(id,divElement,parentDivElement){
   divElement.classList.remove("white");
   parentDivElement.classList.remove("contact_background");
   const index = usersassignedto.indexOf(id);
