@@ -1,6 +1,5 @@
 let inputChecker = false;
 
-
 document.addEventListener("DOMContentLoaded", configureDatePicker);
 
 
@@ -138,15 +137,16 @@ function addTasksToStorage(categoryInput) {
 }
 
 
-
+/**
+ * Function to show and then hide the message box background after a delay of 2000 milliseconds.
+ *
+ */
 function taskAddedCompleteTextBoard() {
   document.getElementById("msgBox-bg").classList.remove("d-none");
   setTimeout(() => {
     document.getElementById("msgBox-bg").classList.add("d-none");
   }, 2000);
 }
-
-
 
 
 /**
