@@ -146,6 +146,7 @@ function renderEditCard(content, i) {
                 onclick="changeButtonsCard(event)"
                 class="subtasks"
                 placeholder="Add new subtask"
+                onkeydown="addSubtasksCard(${i}, event)"
               />
               <div class="subtasks_buttons">
                 <img
@@ -292,6 +293,23 @@ function renderAddSubtasksCard(i) {
 
 
 /**
+ * Executes the subtasks function when a key is pressed down.
+ *
+ * @param {event} event - The keydown event object
+ * @return {boolean} Returns false to prevent default behavior
+ */
+function subtasksOnKeyDown(event, i, j){
+    // $(window).keydown(function (event) {
+      if (event.keyCode == 13) {
+        // console.log(event);
+        event.preventDefault();
+        addEditSubTaskCard(i,j)
+      }
+    // });
+}
+
+
+/**
  * Renders badges for adding and editing tasks.
  *
  * @param {type} paramName - description of parameter
@@ -362,7 +380,7 @@ function editSubTaskHtmlCard(textContent, i, j) {
   return /*html*/ `
         <div class="editSubTaskButtonBox" id="subtask-icons-${j}"></div> 
       <div class="subtask-edit-container">
-        <input id="editSubTaskInput${j}" type="text" class="sub-edit-input" minlength="3" maxlength="20" value=${textContent} />
+        <input id="editSubTaskInput${j}" type="text" class="sub-edit-input" minlength="3" maxlength="20" value=${textContent} onkeydown="subtasksOnKeyDown(event,${i},${j})" />
         <div class="sub-icons">
         <img src="./img/delete.svg" class="subtask-icon-edit" onclick="deleteSubtaskCard(${i},${j})"/>
           <img src="./img/Vector 19.svg" alt="" />

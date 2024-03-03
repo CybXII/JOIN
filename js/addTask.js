@@ -167,9 +167,8 @@ function setWindowListener(Box,Input,e){
  * Adds subtasks to the subtasksAdd array and renders the updated list of subtasks.
  *
  * @param {type} subtaskstoadd - the subtask to be added
- * @return {type} undefined
  */
-function addSubtasks() {
+function addSubtasks() {       
   let subtaskstoadd = document.getElementById("subtasks").value;
   if (subtaskstoadd) {
     let JSONToPush = {
@@ -181,6 +180,18 @@ function addSubtasks() {
     renderAddSubtasks();
   }
 }
+
+
+/**
+ * Check if the enter key is pressed and prevent the default behavior if it is. Then add subtasks.
+ *
+ * @param {object} event - the keyboard event object
+ */
+function checkOnKeyDown(event){
+    if (event.keyCode == 13) {
+        event.preventDefault();
+        addSubtasks();
+}};
 
 
 /**
@@ -208,7 +219,7 @@ function editSubTaskHtml(textContent, i) {
   return /*html*/ `
       <div class="editSubTaskButtonBox" id="subtask-icons-${i}"></div> 
     <div class="subtask-edit-container">
-      <input id="editSubTaskInput${i}" type="text" class="sub-edit-input" value=${textContent} />
+      <input id="editSubTaskInput${i}" type="text" class="sub-edit-input" value=${textContent} onkeydown="subtasksOnKeyDownAddTask(event, ${i})" />
       <div class="sub-icons">
       <img src="./img/delete.svg" class="subtask-icon-edit" onclick="deleteSubtask(${i})"/>
         <img src="./img/Vector 19.svg" alt="" />
@@ -217,6 +228,20 @@ function editSubTaskHtml(textContent, i) {
       </div>
     </div>
   `;
+}
+
+
+/**
+ * Listens for key down event and adds a task if the enter key is pressed.
+ *
+ * @param {Object} event - The key down event object
+ * @param {number} i - The index of the task
+ */
+function subtasksOnKeyDownAddTask(event, i) {
+  if (event.keyCode == 13) {
+    event.preventDefault();
+    addEditSubTask(i);
+  }
 }
 
 

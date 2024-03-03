@@ -121,7 +121,7 @@
               <div>Subtasks</div>
               <div id="parent_subtasks" class="frame-18">
                 <input id="subtasks" type="text" onclick="changeButtons(event)" class="subtasks"
-                  placeholder="Add new subtask" />
+                  placeholder="Add new subtask" onkeydown="checkOnKeyDown(event)"/>
                 <div class="subtasks_buttons">
                   <img id="subtask_add_button" class="subtask_add_button" src="../img/add_icon.svg" alt="" />
                   <img id="subtask_cancel_button" onclick="resetSubtasks()" class="subtask_add_button d-none"

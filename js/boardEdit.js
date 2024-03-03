@@ -288,8 +288,12 @@ async function checkSubtasks(i, j) {
  * @param {type} i - description of parameter
  * @return {type} description of return value
  */
-function addSubtasksCard(i) {
+function addSubtasksCard(i, event) {
   let subtaskstoadd = document.getElementById("edit-subtasks").value;
+        if (event.keyCode == 13) {
+        event.preventDefault();
+  
+  
   if (subtaskstoadd) {
     let JSONToPush = {
       subtaskName: subtaskstoadd,
@@ -298,7 +302,7 @@ function addSubtasksCard(i) {
     currentTask.subtasks.push(JSONToPush);
     document.getElementById("edit-subtasks").value = "";
     renderAddSubtasksCard(i);
-  }
+  }}
 }
 
 
