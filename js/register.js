@@ -123,6 +123,11 @@ function toogleChecker(input) {
 }
 
 
+/**
+ * Function to handle successful sign up process.
+ *
+ * @return {Promise} a promise that resolves when the sign up process is completed
+ */
 async function signUpSuccessfull() {
   await loadUser();
   Name = document.getElementById("name").value;
@@ -140,6 +145,11 @@ async function signUpSuccessfull() {
 }
 
 
+/**
+ * Add a new user to the users array, save the updated users array to local storage, and render the login screen after a 2-second delay.
+ *
+ * @return {void} 
+ */
 async function pushNewUser(){
   users.push({
     id: users.length,

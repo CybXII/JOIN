@@ -264,6 +264,14 @@ function filterCategory(categorys, searchInput) {
 }
 
 
+/**
+ * Renders filtered tasks with the specified category, task, and index.
+ *
+ * @param {type} categorys - description of categorys
+ * @param {type} task - description of task
+ * @param {type} i - description of i
+ * @return {type} description of return value
+ */
 function renderFilteredTasks(categorys,task,i){
   clearBoardCategory(categorys);
   renderUpdateHTML(task, i);
