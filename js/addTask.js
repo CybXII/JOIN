@@ -46,7 +46,7 @@ function taskAddedCompleteText() {
  * @return {} - No return value
  */
 function subtasksMessage() {
-  document.getElementById("msgBox").innerHTML= 'Minimum 3 Letters';
+  document.getElementById("msgBox").innerHTML= 'Minimum 1 Letter';
   document.getElementById("msgBox-bg").classList.remove("d-none");
   setTimeout(() => {
     document.getElementById("msgBox-bg").classList.add("d-none");

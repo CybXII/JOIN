@@ -7,18 +7,15 @@
 async function editTasksfromStorage(i) {
   currentTask["title"] = document.getElementById("edit-task-title").value;
   currentTask["dueDate"] = document.getElementById("edit-datePicker").value;
-  currentTask["description"] = document.getElementById(
-    "edit-task-description"
-  ).value;
-  currentTask["category"] = document.getElementById(
-    "parent-edit_items"
-  ).innerHTML;
+  currentTask["description"] = document.getElementById("edit-task-description").value;
+  currentTask["category"] = document.getElementById("parent-edit_items").innerHTML;
   currentTask["prio"] = taskpriority;
   tasks[i] = currentTask;
   setInitialsEdit();
   closeCardContainer();
   await setItem("tasks", JSON.stringify(tasks));
   await renderBoardTasks();
+  subtasksMessageEditBoard();
 }
 
 
@@ -64,13 +61,27 @@ function editSubtaskCard(i, j) {
  */
 async function addEditSubTaskCard(i, j) {
   let subTaskInput = document.getElementById(`editSubTaskInput${j}`).value;
-  if(subTaskInput.length<=2){
+  if(subTaskInput.length<=1){
     subtasksMessage();
   } else{
     currentTask.subtasks[j].subtaskName = subTaskInput;
     editSubtaskCard(i, j);
     renderAddSubtasksCard(i);  
   }
+}
+
+
+/**
+ * Function to edit the message on the board for subtasks.
+ *
+ */
+function subtasksMessageEditBoard() {
+  document.getElementById("msgBox").innerHTML = "Task sucessfully edited";
+  document.getElementById("msgBox-bg").classList.remove("d-none");
+  setTimeout(() => {
+    document.getElementById("msgBox-bg").classList.add("d-none");
+    document.getElementById("msgBox").innerHTML = "Task added to Board";
+  }, 2000);
 }
 
 
