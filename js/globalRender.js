@@ -116,28 +116,14 @@ function renderSubtasksInfos(i) {
     const element = subtasks[j].subtaskName;
     if (subtasks[j]["subtaskStatus"] === false) {
       let subtasksTask = document.getElementById("subtask-items");
-      subtasksTask.innerHTML += renderSubtasksInfosHTML(i, j, element);
+      subtasksTask.innerHTML += renderSubtasksInfosHTML(i, j, element,'');
     } else {
       let subtasksTask = document.getElementById("subtask-items");
-      subtasksTask.innerHTML += renderSubtasksInfosHTMLFalse(i, j, element);
+      subtasksTask.innerHTML += renderSubtasksInfosHTML(i, j, element,'checked');
     }
   }
 }
 
-/**
- * Render the HTML for subtasks information with a false value.
- *
- * @param {number} i - The first parameter description
- * @param {number} j - The second parameter description
- * @param {element} element - The third parameter description
- * @return {string} The HTML for subtasks information with a false value
- */
-function renderSubtasksInfosHTMLFalse(i, j, element) {
-  return /*html*/ `<div class="card_subtasks_item">
-          <input checked id="subtask${j}" type="checkbox" class="card_checkbox" onclick="checkSubtasks(${i},${j})">
-          <p>${element}</p>
-        </div>`;
-}
 
 /**
  * Renders the HTML for subtask information.
@@ -145,11 +131,13 @@ function renderSubtasksInfosHTMLFalse(i, j, element) {
  * @param {number} i - The first parameter description
  * @param {number} j - The second parameter description
  * @param {any} element - The third parameter description
+ * @param {element} check - The checked parameter sets checked if subtask status is true description
  * @return {string} The rendered HTML for subtask information
  */
-function renderSubtasksInfosHTML(i, j, element) {
+function renderSubtasksInfosHTML(i, j, element, check) {
+  let checked = check;
   return /*html*/ `<div class="card_subtasks_item">
-          <input id="subtask${j}" type="checkbox" class="card_checkbox" onclick="checkSubtasks(${i},${j})">
+          <input ${checked} id="subtask${j}" type="checkbox" class="card_checkbox" onclick="checkSubtasks(${i},${j})">
           <p>${element}</p>
         </div>`;
 }
@@ -164,9 +152,7 @@ function renderUpdateGreyBadge(assigned, j, i) {
   assigned.innerHTML += `
     <div class="card-board-profile-batch">
       <div class="group-9-board">
-        <div id="grey_badge${i}" class="group-9-text" style="background-color: grey;">+${
-    j - 3
-  }</div>
+        <div id="grey_badge${i}" class="group-9-text" style="background-color: grey;">+${j-3}</div>
       </div>
     </div>`;
 }
@@ -186,6 +172,7 @@ function renderUpdateColoredBadges(assigned, colorbg, assign) {
       </div>
     </div>`;
 }
+
 
 /**
  * Renders and updates the HTML for a task.
@@ -225,6 +212,7 @@ function renderUpdateHTML(task, i) {
   prioChecker(task, i);
 }
 
+
 /**
  * Function to check the priority and category of a task and update the corresponding elements in the DOM.
  *
@@ -247,6 +235,7 @@ function prioChecker(task, i) {
       "background: #1FD7C1";
   }
 }
+
 
 /**
  * Renders and updates the subtasks in the subtasks-container element.
@@ -273,6 +262,7 @@ function renderAddSubtasks() {
   }
 }
 
+
 /**
  * Function to render urgent priority for the given handler.
  *
@@ -289,6 +279,7 @@ function renderUrgent(handler) {
   document.getElementById(`${handler}prio-low`).classList.add("frame-26");
   document.getElementById(`${handler}prio-low-img`).src = "./img/low_nofill.svg";
 }
+
 
 /**
  * Renders the contact information HTML based on the provided parameters.
@@ -334,6 +325,7 @@ function renderContactInfo(fullname, email, color, initials, phone, userid, i) {
   </div>
 `;
 }
+
 
 /**
  * Renders and updates the assigned tasks for a specific task.
