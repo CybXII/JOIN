@@ -11,6 +11,7 @@ let edittaskpriority;
 let currenttask = [];
 let filteredtasks;
 
+
 /**
  * Renders the board tasks by loading users from local storage, loading remote user, loading tasks, updating HTML, and updating classes of the board.
  *
@@ -22,6 +23,7 @@ async function renderBoardTasks() {
   classesBoard();
 }
 
+
 /**
  * Moves the current dragged element to a specified location.
  *
@@ -31,6 +33,7 @@ function moveToLocation(taskId) {
   currentdraggedelement = taskId;
 }
 
+
 /**
  * Prevents the default behavior when a draggable element is being dragged over a drop target.
  *
@@ -39,6 +42,7 @@ function moveToLocation(taskId) {
 function allowDrop(ev) {
   ev.preventDefault();
 }
+
 
 /**
  * Function to remove highlight from specific elements.
@@ -50,6 +54,7 @@ function removeHighlight() {
   document.getElementById("drag-in-progress").classList.add("d-none");
   document.getElementById("drag-await-feedback").classList.add("d-none");
 }
+
 
 /**
  * Function to highlight certain elements on the page based on the tasks' status.
@@ -70,6 +75,7 @@ function highlight() {
     document.getElementById("no-task-done").classList.add("d-none");
 }
 
+
 /**
  * Move the current dragged element to the specified category.
  *
@@ -80,6 +86,7 @@ function moveTo(category) {
   updateHTML();
   closeCardContainer();
 }
+
 
 /**
  * Asynchronously updates the HTML to reflect the current state of the tasks.
@@ -100,6 +107,7 @@ async function updateHTML() {
   await setItem("tasks", JSON.stringify(tasks));
   setAmounts();
 }
+
 
 /**
  * Opens the add task container and sets up form submission for adding tasks to storage.
@@ -122,6 +130,7 @@ function openAddTaskContainer(categoryinput) {
   }, 100);
 }
 
+
 /**
  * Handles click events outside the add task container.
  *
@@ -137,12 +146,14 @@ function clickOutsideHandler(event) {
   }
 }
 
+
 /**
  * Removes the click outside listener from the document.
  */
 function removeClickOutsideListener() {
   document.removeEventListener("click", clickOutsideHandler);
 }
+
 
 /**
  * Closes the add task container and resets the usersassignedto array.
@@ -153,6 +164,7 @@ function closeAddTaskContainer() {
   document.getElementById("content-container").classList.remove("overlap");
   document.body.classList.remove("background-fixed");
 }
+
 
 /**
  * Set the amounts of different task statuses and perform additional actions if the current page is board.html.
@@ -176,6 +188,7 @@ function setAmounts() {
     noTasksToDo();
   }
 }
+
 
 /**
  * This function checks the category of a task and increments the corresponding counter.
@@ -202,6 +215,7 @@ function checkCases(tasks, i) {
   }
 }
 
+
 /**
  * Checks the number of tasks in different categories and updates the HTML content if there are no tasks.
  */
@@ -218,6 +232,7 @@ function noTasksToDo() {
     document.getElementById("done").innerHTML = noTasksToDoHtml("done");
 }
 
+
 /**
  * Function to start the rotation of a card.
  *
@@ -228,6 +243,7 @@ function rotateCardStart(i) {
   document.getElementById(`board-card${i}`).classList.add("rotate-card");
 }
 
+
 /**
  * Function to end the rotation of a card.
  */
@@ -235,6 +251,7 @@ function rotateCardEnd() {
   let card = currentcarddragged;
   document.getElementById(`board-card${card}`).classList.remove("rotate-card");
 }
+
 
 /**
  * Opens a card with the given index.
@@ -252,6 +269,7 @@ async function openCard(i) {
   setAssignedUserHelp(editingcard);
 }
 
+
 /**
  * Opens the card container by removing the "d-none" class from the element with the ID "card-background" and adding the "background-fixed" class to the body.
  */
@@ -262,6 +280,7 @@ function openCardContainer() {
     .getElementById("card-background")
     .addEventListener("click", cardBackgroundClickHandler);
 }
+
 
 /**
  * Closes the card container by adding the "d-none" class to the element with the ID "card-background" and removing the "background-fixed" class from the body.
@@ -275,6 +294,7 @@ function closeCardContainer() {
     .removeEventListener("click", cardBackgroundClickHandler);
 }
 
+
 /**
  * Handles click events on the card background to close the card container.
  *
@@ -285,6 +305,7 @@ function cardBackgroundClickHandler(event) {
     closeCardContainer();
   }
 }
+
 
 /**
  * Calculate the percentage of completed subtasks and update the progress bar for the given task ID.
@@ -304,6 +325,7 @@ function finishedSubtasks(tasksid) {
   ).style = `width: ${percenttwo}%;`;
 }
 
+
 /**
  * Finds the name of the user assigned to a task by their user ID.
  *
@@ -317,6 +339,7 @@ function usersAssignTask(userid) {
     }
   }
 }
+
 
 /**
  * A function that returns an image path based on the priority of a task.
@@ -334,6 +357,7 @@ function prioImg(i) {
   }
 }
 
+
 /**
  * Filters the task board based on the search input. Clears and filters each category, and renders all board tasks if the search input is empty.
  *
@@ -350,6 +374,7 @@ function filterTaskBoard() {
   }
 }
 
+
 /**
  * Clears the content of the specified board category element.
  *
@@ -358,6 +383,7 @@ function filterTaskBoard() {
 function clearBoardCategory(categorys) {
   document.getElementById(categorys).innerHTML = "";
 }
+
 
 /**
  * Sets the assigned user help for the given editing card.
