@@ -366,6 +366,9 @@ function prioImg(i) {
 function filterTaskBoard() {
   let searchinput = document.getElementById("search_board").value;
   let categorys = ["todo", "in-progress", "await-feedback", "done"];
+  categorys.forEach(element => {
+    renderNoFilteredFound(element);
+  });
   categorys.forEach((element) => {
     filterCategory(element, searchinput);
   });

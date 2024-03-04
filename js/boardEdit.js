@@ -243,9 +243,6 @@ function filterCategory(categorys, searchinput) {
         checkinfos.toUpperCase().includes(searchinput.toUpperCase())
       ) {
         renderFilteredTasks(categorys, task, i);
-      } else {
-        clearBoardCategory(categorys);
-        renderNoFilteredFound(categorys);
       }
     }
   });
