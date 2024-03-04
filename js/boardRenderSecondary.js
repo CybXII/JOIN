@@ -156,6 +156,5 @@ function renderFilteredTasks(categorys,task,i){
   renderUpdateHTML(task, i);
   renderUpdateAssigned(task, i);
   finishedSubtasks(i);
-  renderFinishCounter(i);
   finishcounter = 0;
 }
