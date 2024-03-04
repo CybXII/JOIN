@@ -1,7 +1,6 @@
-let login_remember;
+let loginremember;
 let users = [];
-let remembered_user = [];
-
+let remembereduser = [];
 
 /**
  * Delays the removal of certain classes from specific elements after a certain time period.
@@ -13,11 +12,14 @@ function move() {
     document.getElementById("join_logo").classList.remove("background");
     document.getElementById("join_logo2").classList.remove("background");
     document.getElementById("logo_container").classList.remove("big_size");
-    document.getElementById("join_logo2").classList.remove("join_logo_start_responsiv");
-    document.getElementById("join_logo2").classList.add("join_logo_start_responsiv2");
+    document
+      .getElementById("join_logo2")
+      .classList.remove("join_logo_start_responsiv");
+    document
+      .getElementById("join_logo2")
+      .classList.add("join_logo_start_responsiv2");
   }, 1000);
 }
-
 
 /**
  * Renders the login interface and initializes login listeners.
@@ -29,9 +31,8 @@ function renderLogin() {
   initializeLoginListeners();
 }
 
-
 /**
- * Asynchronous function for user login. 
+ * Asynchronous function for user login.
  *
  * @param {Object} event - The event object triggering the login
  */
@@ -44,72 +45,77 @@ async function login(event) {
     (u) => u.email == email.value && u.password == password.value
   );
   if (user) {
-    loginComplete(user)
-  }
-  else {
+    loginComplete(user);
+  } else {
     wrongPassword();
   }
 }
 
-
 /**
  * Function to complete the login process.
  *
- * @param {} 
+ * @param {}
  * @return {}
  */
-function loginComplete(user){
+function loginComplete(user) {
   users = [];
   users.push(user);
-  users[0].rememberlogin = login_remember;
+  users[0].rememberlogin = loginremember;
   document.getElementById("msgBox").innerHTML = "Successfully logged in";
   document.getElementById("msgBox-bg").classList.remove("d-none");
-    setTimeout(() => {      
-      saveUsersToLocalStorage();
-      window.location.href = "summary.html";
-    }, 1500);
+  setTimeout(() => {
+    saveUsersToLocalStorage();
+    window.location.href = "summary.html";
+  }, 1500);
 }
-
 
 /**
  * This function handles the case of wrong password entry by modifying the classList of specific elements.
  */
-function wrongPassword(){
+function wrongPassword() {
   document.getElementById("parent_email").classList.add("wrong-password");
-  document.getElementById("parent_login_password").classList.add("wrong-password");
-  document.getElementById("wrongPassword").classList.remove("wrong-password-unset");
+  document
+    .getElementById("parent_login_password")
+    .classList.add("wrong-password");
+  document
+    .getElementById("wrongPassword")
+    .classList.remove("wrong-password-unset");
   document.getElementById("wrongPassword").classList.add("wrong-password-text");
 }
 
 /**
- * Resets the wrong password state by removing the "wrong-password" class from specific elements 
+ * Resets the wrong password state by removing the "wrong-password" class from specific elements
  */
-function resetWrongPassword(){
+function resetWrongPassword() {
   document.getElementById("parent_email").classList.remove("wrong-password");
-  document.getElementById("parent_login_password").classList.remove("wrong-password");
-   document.getElementById("wrongPassword").classList.remove("wrong-password-text");
-  document.getElementById("wrongPassword").classList.add("wrong-password-unset");
+  document
+    .getElementById("parent_login_password")
+    .classList.remove("wrong-password");
+  document
+    .getElementById("wrongPassword")
+    .classList.remove("wrong-password-text");
+  document
+    .getElementById("wrongPassword")
+    .classList.add("wrong-password-unset");
 }
-
 
 /**
  * Function for handling remembered login.
  *
  */
 function rememberMeLogin() {
-  if (remembered_user.length > 0 && remembered_user[0].rememberlogin == true) {
-    document.getElementById("email").value = remembered_user[0].email;
+  if (remembereduser.length > 0 && remembereduser[0].rememberlogin == true) {
+    document.getElementById("email").value = remembereduser[0].email;
     document.getElementById("login_password").value =
-      remembered_user[0].password;
-    login_remember = document.getElementById("signUpCheck").checked =
-      remembered_user[0].rememberlogin;
+      remembereduser[0].password;
+    loginremember = document.getElementById("signUpCheck").checked =
+      remembereduser[0].rememberlogin;
     login(event);
     renderSummary();
   } else {
     renderLogin();
   }
 }
-
 
 /**
  * Logs in a guest user, assigns a random color, saves user data, and redirects to the summary page.
@@ -123,14 +129,13 @@ function guestLogin(event) {
     email: "guest@guest.de",
     password: "hidden",
     initials: "G",
-    firstName: "Guest",
-    lastName: "",
+    firstname: "Guest",
+    lastname: "",
     color: color,
     rememberlogin: false,
   });
   loginSuccessfull(event);
 }
-
 
 /**
  * Function to handle successful login
@@ -138,7 +143,7 @@ function guestLogin(event) {
  * @param {} - No parameters
  * @return {} - No return value
  */
-function loginSuccessfull(event){
+function loginSuccessfull(event) {
   event.preventDefault();
   document.getElementById("msgBox").innerHTML = "Successfully logged in";
   document.getElementById("msgBox-bg").classList.remove("d-none");
@@ -147,7 +152,6 @@ function loginSuccessfull(event){
     window.location.href = "summary.html";
   }, 1500);
 }
-
 
 /**
  * Function to log the user out by removing user data from local storage and redirecting to the login page.

@@ -1,7 +1,6 @@
-let pass_visible = false;
-let confirmPass_visible = false;
-let loginPass_visible = false;
-
+let passvisible = false;
+let confirmpassvisible = false;
+let loginpassvisible = false;
 
 /**
  * Generates a random color in hexadecimal format.
@@ -18,7 +17,6 @@ function getRandomColor(color) {
   return color;
 }
 
-
 /**
  * Function to render the privacy policy.
  *
@@ -26,7 +24,6 @@ function getRandomColor(color) {
 function renderPrivacyPolicy() {
   classesPrivacyPolicy();
 }
-
 
 /**
  * Function to render help.
@@ -36,14 +33,12 @@ function renderHelp() {
   classesHelp();
 }
 
-
 /**
  * Renders the legal notice by calling the classesLegalNotice function.
  */
 function renderLegalNotice() {
   classesLegalNotice();
 }
-
 
 /**
  * Asynchronously includes HTML content from the specified files into the matching elements.
@@ -63,17 +58,16 @@ async function includeHTML() {
   }
 }
 
-
 /**
  * Opens or closes the log out box when called.
  *
  */
 function openLogOutBox() {
-  let logoutBox = document.getElementById("LogOutBoxCSS");
-  if (!logoutBox.classList.contains("d-none")) {
-    logoutBox.classList.add("d-none");
+  let logoutbox = document.getElementById("LogOutBoxCSS");
+  if (!logoutbox.classList.contains("d-none")) {
+    logoutbox.classList.add("d-none");
   } else {
-    logoutBox.classList.remove("d-none");
+    logoutbox.classList.remove("d-none");
     window.addEventListener("click", function (e) {
       if (document.getElementById("openLogOutBox").contains(e.target)) {
       } else {
@@ -82,7 +76,6 @@ function openLogOutBox() {
     });
   }
 }
-
 
 /**
  * Initializes login event listeners for email and password input fields.
@@ -99,7 +92,6 @@ function initializeLoginListeners() {
   });
 }
 
-
 /**
  * Adds a focus event listener to the input element, and performs certain actions if the parent wrapper meets specific conditions.
  *
@@ -110,13 +102,16 @@ function setFocusListener(inputElement) {
     let parentWrapper = inputElement.closest(".frame-wrapper");
     if (!parentWrapper) return;
     let parentWrapperId = parentWrapper.id;
-    let isActive = ["parent_password", "parent_confirm_password", "parent_login_password"].includes(parentWrapperId);
+    let isActive = [
+      "parent_password",
+      "parent_confirmpassword",
+      "parent_login_password",
+    ].includes(parentWrapperId);
     parentWrapper.classList.add("aktive");
     parentWrapper.classList.remove("invalid");
     if (isActive) changeLocker(parentWrapperId);
   });
 }
-
 
 /**
  * Adds a blur event listener to the input element, and performs certain actions based on the parent wrapper's ID.
@@ -128,13 +123,18 @@ function setBlurListener(inputElement) {
     let parentWrapper = inputElement.closest(".frame-wrapper");
     if (!parentWrapper) return;
     let parentWrapperId = parentWrapper.id;
-    if (["parent_password", "parent_confirm_password", "parent_login_password"].includes(parentWrapperId)) {
+    if (
+      [
+        "parent_password",
+        "parent_confirmpassword",
+        "parent_login_password",
+      ].includes(parentWrapperId)
+    ) {
       changeLockerPictureBack(parentWrapperId);
     }
     parentWrapper.classList.remove("aktive", "invalid");
   });
 }
-
 
 /**
  * Initializes event listeners for sign-up form inputs and sets focus and blur listeners.
@@ -142,11 +142,11 @@ function setBlurListener(inputElement) {
  */
 function initializeSignUPListeners() {
   document.addEventListener("DOMContentLoaded", function () {});
-  let nameInput = document.getElementById("name");
+  let nameinput = document.getElementById("name");
   let emailInput = document.getElementById("email");
   let passwordInput = document.getElementById("password-su");
-  let confirm_password = document.getElementById("confirm_password");
-  [emailInput, passwordInput, nameInput, confirm_password].forEach(function (
+  let confirmpassword = document.getElementById("confirmpassword");
+  [emailInput, passwordInput, nameinput, confirmpassword].forEach(function (
     inputElement
   ) {
     setFocusListener(inputElement);
@@ -154,14 +154,13 @@ function initializeSignUPListeners() {
   });
 }
 
-
 /**
  * Toggles the visibility of password input fields based on the input parameter.
  *
  * @param {string} input - the type of password input field to be toggled
  */
 function changeLocker(input) {
-  if (input === "parent_confirm_password") {
+  if (input === "parent_confirmpassword") {
     passwordConfirmVisitibility();
   } else if (input === "parent_password") {
     passwordVisibility();
@@ -170,21 +169,23 @@ function changeLocker(input) {
   }
 }
 
-
 /**
  * Toggles the visibility of the login password field and updates the visibility icon accordingly.
  *
  */
-function passwordLocker(){
-if (loginPass_visible === false) {
-  document.getElementById(`login_password`).setAttribute("type", "password");
-  document.getElementById("login_password_locker").setAttribute("src", "img/visibility_off.svg");
-} else {
-  document.getElementById(`login_password`).setAttribute("type", "text");
-  document.getElementById("login_password_locker").setAttribute("src", "img/visibility.svg");
+function passwordLocker() {
+  if (loginpassvisible === false) {
+    document.getElementById(`login_password`).setAttribute("type", "password");
+    document
+      .getElementById("login_password_locker")
+      .setAttribute("src", "img/visibility_off.svg");
+  } else {
+    document.getElementById(`login_password`).setAttribute("type", "text");
+    document
+      .getElementById("login_password_locker")
+      .setAttribute("src", "img/visibility.svg");
+  }
 }
-}
-
 
 /**
  * Controls the visibility of the confirm password input field and its associated locker icon.
@@ -192,30 +193,36 @@ if (loginPass_visible === false) {
  * @param {void} -
  * @return {void} -
  */
-function passwordConfirmVisitibility(){
-if (confirmPass_visible === false) {
-  document.getElementById(`confirm_password`).setAttribute("type", "password");
-  document.getElementById("confirm_locker").setAttribute("src", "img/visibility_off.svg");
-} else {
-  document.getElementById(`confirm_password`).setAttribute("type", "text");
-  document.getElementById("confirm_locker").setAttribute("src", "img/visibility.svg");
+function passwordConfirmVisitibility() {
+  if (confirmpassvisible === false) {
+    document.getElementById(`confirmpassword`).setAttribute("type", "password");
+    document
+      .getElementById("confirm_locker")
+      .setAttribute("src", "img/visibility_off.svg");
+  } else {
+    document.getElementById(`confirmpassword`).setAttribute("type", "text");
+    document
+      .getElementById("confirm_locker")
+      .setAttribute("src", "img/visibility.svg");
+  }
 }
-}
-
 
 /**
  * Toggles the visibility of the password input field and updates the visibility icon accordingly.
  */
-function passwordVisibility(){
-  if (pass_visible === false) {
+function passwordVisibility() {
+  if (passvisible === false) {
     document.getElementById(`password-su`).setAttribute("type", "password");
-    document.getElementById("password_locker").setAttribute("src", "img/visibility_off.svg");
+    document
+      .getElementById("password_locker")
+      .setAttribute("src", "img/visibility_off.svg");
   } else {
     document.getElementById(`password-su`).setAttribute("type", "text");
-    document.getElementById("password_locker").setAttribute("src", "img/visibility.svg");
+    document
+      .getElementById("password_locker")
+      .setAttribute("src", "img/visibility.svg");
   }
 }
-
 
 /**
  * Change the picture of the locker based on the parent wrapper ID.
@@ -230,7 +237,6 @@ function changeLockerPictureBack(parentWrapperId) {
   }
 }
 
-
 /**
  * Change the type of the login password input field and toggle the visibility icon.
  *
@@ -238,7 +244,7 @@ function changeLockerPictureBack(parentWrapperId) {
  * @return {type} description of return value
  */
 function changeLockerPictureBackLogin() {
-  if (loginPass_visible === false) {
+  if (loginpassvisible === false) {
     document.getElementById(`login_password`).setAttribute("type", "password");
     document
       .getElementById("login_password_locker")
@@ -251,27 +257,33 @@ function changeLockerPictureBackLogin() {
   }
 }
 
-
 /**
  * Function to change locker picture back confirm based on visibility status.
  */
 function changeLockerPictureBackConfirm() {
-  if (confirmPass_visible === false) {
-    document.getElementById(`confirm_password`).setAttribute("type", "text");
-    document.getElementById("confirm_locker").setAttribute("src", "img/lock.svg");
+  if (confirmpassvisible === false) {
+    document.getElementById(`confirmpassword`).setAttribute("type", "text");
+    document
+      .getElementById("confirm_locker")
+      .setAttribute("src", "img/lock.svg");
   } else {
-    document.getElementById(`confirm_password`).setAttribute("type", "text");
-    document.getElementById("confirm_locker").setAttribute("src", "img/visibility.svg");
+    document.getElementById(`confirmpassword`).setAttribute("type", "text");
+    document
+      .getElementById("confirm_locker")
+      .setAttribute("src", "img/visibility.svg");
   }
-  if (pass_visible === false) {
+  if (passvisible === false) {
     document.getElementById(`password-su`).setAttribute("type", "password");
-    document.getElementById("password_locker").setAttribute("src", "img/lock.svg");
+    document
+      .getElementById("password_locker")
+      .setAttribute("src", "img/lock.svg");
   } else {
     document.getElementById(`password-su`).setAttribute("type", "text");
-    document.getElementById("password_locker").setAttribute("src", "img/visibility.svg");
+    document
+      .getElementById("password_locker")
+      .setAttribute("src", "img/visibility.svg");
   }
 }
-
 
 /**
  * Function to change the visibility of locker picture based on the input.
@@ -279,7 +291,7 @@ function changeLockerPictureBackConfirm() {
  * @param {string} input - The type of input to change the visibility of locker picture.
  */
 function changeLockerPicture(input) {
-  if (input === "parent_confirm_password") {
+  if (input === "parent_confirmpassword") {
     changeParentConfirmPass(input);
   } else if (input === "parent_password") {
     changeParentPass(input);
@@ -288,51 +300,47 @@ function changeLockerPicture(input) {
   }
 }
 
-
 /**
  * Toggles the visibility of the confirm password field and updates the locker picture accordingly.
- * 
+ *
  * @param {HTMLInputElement} input - The input element associated with the confirm password field
  */
 function changeParentConfirmPass(input) {
-  confirmPass_visible = !confirmPass_visible;
-  if (confirmPass_visible === false) {
+  confirmpassvisible = !confirmpassvisible;
+  if (confirmpassvisible === false) {
     changeLockerPictureBack(input);
   } else {
     changeLocker(input);
   }
 }
-
 
 /**
  * Toggles the visibility of the login password field and updates the locker picture accordingly.
- * 
+ *
  * @param {HTMLInputElement} input - The input element associated with the login password field
  */
 function changeLoginPass(input) {
-  loginPass_visible = !loginPass_visible;
-  if (loginPass_visible === false) {
+  loginpassvisible = !loginpassvisible;
+  if (loginpassvisible === false) {
     changeLockerPictureBack(input);
   } else {
     changeLocker(input);
   }
 }
-
 
 /**
  * Toggles the visibility of the parent password field and updates the locker picture accordingly.
- * 
+ *
  * @param {HTMLInputElement} input - The input element associated with the parent password field
  */
 function changeParentPass(input) {
-  pass_visible = !pass_visible;
-  if (pass_visible === false) {
+  passvisible = !passvisible;
+  if (passvisible === false) {
     changeLockerPictureBack(input);
   } else {
     changeLocker(input);
   }
 }
-
 
 /**
  * Adds event listeners to the contact names in the contact list.
@@ -342,20 +350,21 @@ function changeParentPass(input) {
  */
 function addContactListeners() {
   var contactList = document.getElementById("renderedContent");
-  var contactNames = contactList.querySelectorAll(".contact-name");
-  contactNames.forEach(function (contact) {
+  var contactnames = contactList.querySelectorAll(".contact-name");
+  contactnames.forEach(function (contact) {
     contact.addEventListener("click", function () {
-      contactNames.forEach(function (c) {
+      contactnames.forEach(function (c) {
         c.classList.remove("active_contact");
         c.classList.add("contact-name");
       });
       contact.classList.add("active_contact");
       contact.classList.remove("contact-name");
-      setTimeout(() => {contactAnimation();}, 100);
+      setTimeout(() => {
+        contactAnimation();
+      }, 100);
     });
   });
 }
-
 
 /**
  * Adds a click event listener to the window that hides the given box if a click occurs outside of it.
@@ -370,7 +379,6 @@ function setBoxListenerEdit(box) {
     }
   });
 }
-
 
 /**
  * Prevents the event from bubbling up the DOM tree, preventing any parent handlers from being notified of the event.

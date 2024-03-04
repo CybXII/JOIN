@@ -80,18 +80,18 @@ function renderSignUpHTML() {
         <div class="frame-156-su">
           <div class="frame-14-su">
             <div
-              id="parent_confirm_password"
+              id="parent_confirmpassword"
               for="password"
               class="frame-wrapper"
             >
               <input
                 type="password"
                 class="frame-14"
-                id="confirm_password"
+                id="confirmpassword"
                 autocomplete="new-password"
                 placeholder="Confirm Password"
               />
-              <img id="confirm_locker" class="img" src="img/lock.svg" onclick="changeLockerPicture('parent_confirm_password')" alt="lockerspicture" />
+              <img id="confirm_locker" class="img" src="img/lock.svg" onclick="changeLockerPicture('parent_confirmpassword')" alt="lockerspicture" />
               </div>
             <span class="frame-14-text d-none" id="pass-match">
               Ups! your password don’t match
@@ -120,12 +120,11 @@ function renderSignUpHTML() {
     </button>`;
 }
 
-
 /**
-   * Renders the HTML for the login form.
-   *
-   * @return {string} The HTML for the login form
-   */
+ * Renders the HTML for the login form.
+ *
+ * @return {string} The HTML for the login form
+ */
 function renderLoginHTML() {
   return /*html*/ `        <div class="frame-159">
             <div class="text-wrapper">Log in</div>

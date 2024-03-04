@@ -1,15 +1,14 @@
 let letters = [];
 let contacts = [];
 let currentcontact = [];
-let nameInput;
-let contactName;
+let nameinput;
+let contactname;
 let email;
 let phone;
-let lastName;
+let lastname;
 let initials;
-let firstName;
+let firstname;
 let color;
-
 
 /**
  * Sorts the contacts array by the firstname property in ascending order.
@@ -18,19 +17,18 @@ let color;
  * @return {Array} sortedContacts - the sorted array of contacts
  */
 function sortContacts() {
-contacts.sort((a, b) => {
-    const nameA = a.firstname.toUpperCase();
-    const nameB = b.firstname.toUpperCase();
-    if (nameA < nameB) {
+  contacts.sort((a, b) => {
+    const namea = a.firstname.toUpperCase();
+    const nameb = b.firstname.toUpperCase();
+    if (namea < nameb) {
       return -1;
     }
-    if (nameA > nameB) {
+    if (namea > nameb) {
       return 1;
     }
     return 0;
   });
 }
-
 
 /**
  * Pushes letters to the rendered content based on the first letter of each contact's first name.
@@ -42,25 +40,23 @@ function pushLetters() {
   sortContacts();
   letters = [];
   for (let i = 0; i < contacts.length; i++) {
-    const firstLetter = contacts[i]["firstname"].charAt(0).toUpperCase();
-    if (!letters.includes(firstLetter)) {
-      letters.push(firstLetter);
-      renderLetters(firstLetter);
-      renderContactCard(firstLetter);
+    const firstletter = contacts[i]["firstname"].charAt(0).toUpperCase();
+    if (!letters.includes(firstletter)) {
+      letters.push(firstletter);
+      renderLetters(firstletter);
+      renderContactCard(firstletter);
     }
   }
 }
 
-
 /**
- * Closes the contacts container by adding the "d-none" class to the element with id "contacts-background" 
+ * Closes the contacts container by adding the "d-none" class to the element with id "contacts-background"
  * and removing the "contacts-background-fixed" class from the document body.
  */
 function closeContactsContainer() {
   document.getElementById("contacts-background").classList.add("d-none");
   document.body.classList.remove("contacts-background-fixed");
 }
-
 
 /**
  * Function to add the "d-none" class to the "contacts-background" element and remove the "contacts-background-fixed" class from the body.
@@ -70,7 +66,6 @@ function closeContactsContainerAdd() {
   document.body.classList.remove("contacts-background-fixed");
 }
 
-
 /**
  * Function to animate the contact information.
  */
@@ -79,16 +74,15 @@ function contactAnimation() {
   element.classList.add("contact-info-content");
 }
 
-
 /**
  * Deletes a contact from the contacts array, updates the localStorage, re-renders the contacts, and resets the contact info display.
  *
  * @param {string} userid - The id of the contact to be deleted.
  */
 async function deleteContact(userid) {
-  const indexToDelete = contacts.findIndex(contact => contact.id === userid);
-  if (indexToDelete !== -1) {
-    contacts.splice(indexToDelete, 1);
+  const indextodelete = contacts.findIndex((contact) => contact.id === userid);
+  if (indextodelete !== -1) {
+    contacts.splice(indextodelete, 1);
     await setItem("contacts", JSON.stringify(contacts));
     renderContacts();
     document.getElementById("contact_info").innerHTML = "";
@@ -96,7 +90,6 @@ async function deleteContact(userid) {
   }
   contactDeletedMessage();
 }
-
 
 /**
  * Edits a contact by opening the contacts container, rendering the edit contact, and updating the contact information fields.
@@ -108,13 +101,15 @@ function editContact(userid, i) {
   openContactsContainer(userid, i);
   renderEditContact(userid, i);
   let color = currentcontact.color;
-  document.getElementById("initialsUserEdit").innerHTML = currentcontact.initials;
-  document.getElementById("initialsUserEdit").style = `background-color: ${color}`;
+  document.getElementById("initialsUserEdit").innerHTML =
+    currentcontact.initials;
+  document.getElementById(
+    "initialsUserEdit"
+  ).style = `background-color: ${color}`;
   document.getElementById("edit_contacts_name").value = currentcontact.fullname;
   document.getElementById("edit_contacts_email").value = currentcontact.email;
   document.getElementById("edit_contacts_phone").value = currentcontact.phone;
 }
-
 
 /**
  * Asynchronously adds or edits a contact and performs additional UI updates.
@@ -122,9 +117,14 @@ function editContact(userid, i) {
  * @param {number} i - The index of the contact to add or edit
  */
 async function addEditContact(i) {
-  let newfull = currentcontact.fullname = document.getElementById("edit_contacts_name").value;
-  let newEmail = currentcontact.email = document.getElementById("edit_contacts_email").value;
-  let newPhone = currentcontact.phone = document.getElementById("edit_contacts_phone").value;
+  let newfull = (currentcontact.fullname =
+    document.getElementById("edit_contacts_name").value);
+  let newemail = (currentcontact.email = document.getElementById(
+    "edit_contacts_email"
+  ).value);
+  let newphone = (currentcontact.phone = document.getElementById(
+    "edit_contacts_phone"
+  ).value);
   let newcolor = currentcontact.color;
   let newinitials = currentcontact.initials;
   contacts[i] = currentcontact;
@@ -132,49 +132,53 @@ async function addEditContact(i) {
   closeContactsContainer();
   renderContacts();
   openContact(
-newfull,newEmail,newcolor,newinitials,newPhone,currentcontact.userid,i
-);
-contactEditMessage();
-contactAnimation();
+    newfull,
+    newemail,
+    newcolor,
+    newinitials,
+    newphone,
+    currentcontact.userid,
+    i
+  );
+  contactEditMessage();
+  contactAnimation();
 }
-
 
 /**
  * Adds contacts to the storage based on the input values.
  *
- * @param {type} nameInput - The input value for the contact's name
- * @param {type} contactName - The input field for the contact's name
+ * @param {type} nameinput - The input value for the contact's name
+ * @param {type} contactname - The input field for the contact's name
  * @param {type} email - The input field for the contact's email
  * @param {type} phone - The formatted phone number for the contact
- * @param {type} lastName - The last name of the contact
+ * @param {type} lastname - The last name of the contact
  * @param {type} initials - The initials of the contact
- * @param {type} firstName - The first name of the contact
+ * @param {type} firstname - The first name of the contact
  * @param {type} color - The random color assigned to the contact
  */
 function addContactsToStorage() {
-  nameInput = document.getElementById("add_contacts_name").value.split(" ");
-  contactName = document.getElementById("add_contacts_name");
+  nameinput = document.getElementById("add_contacts_name").value.split(" ");
+  contactname = document.getElementById("add_contacts_name");
   email = document.getElementById("add_contacts_email");
   phone = document.getElementById("add_contacts_phone");
-  lastName;
+  lastname;
   initials =
-    nameInput[0][0].toUpperCase() +
-    nameInput[nameInput.length - 1][0].toUpperCase();
-  nameInput.length > 1
-    ? (lastName = nameInput[nameInput.length - 1])
-    : (lastName = "");
-  firstName = nameInput[0];
+    nameinput[0][0].toUpperCase() +
+    nameinput[nameinput.length - 1][0].toUpperCase();
+  nameinput.length > 1
+    ? (lastname = nameinput[nameinput.length - 1])
+    : (lastname = "");
+  firstname = nameinput[0];
   color = getRandomColor();
   addNewContact();
   contactAddedMessage();
 }
 
-
 /**
  * Function to add a new contact.
  *
  */
-async function addNewContact(){
+async function addNewContact() {
   pushContacts();
   closeContactsContainer();
   await setItem("contacts", JSON.stringify(contacts));
@@ -182,39 +186,36 @@ async function addNewContact(){
   addContactListeners();
 }
 
-
 /**
  * Pushes a new contact object into the contacts array based on the input fields.
  *
- * @param {type} JSONToPush - the JSON object containing contact information to be pushed into the contacts array
+ * @param {type} jsontopush - the JSON object containing contact information to be pushed into the contacts array
  */
-function pushContacts(){
-  let JSONToPush = {
-    firstname: firstName,
-    lastname: lastName,
-    fullname: contactName.value,
+function pushContacts() {
+  let jsontopush = {
+    firstname: firstname,
+    lastname: lastname,
+    fullname: contactname.value,
     initials: initials,
     email: email.value,
     phone: phone.value,
     color: color,
     id: `${contacts.length}`,
     taskassigned: false,
-    contactAssignedTo: users[0].id
+    contactAssignedTo: users[0].id,
   };
-  clearAfterPush(JSONToPush);
+  clearAfterPush(jsontopush);
 }
-
 
 /**
  * Clears input fields after pushing new contact to the contacts array.
  */
-function clearAfterPush(JSONToPush){
-  contacts.push(JSONToPush);
-  contactName.value = "";
+function clearAfterPush(jsontopush) {
+  contacts.push(jsontopush);
+  contactname.value = "";
   email.value = "";
   phone.value = "";
 }
-
 
 /**
  * Opens the contact information for the given contact.
@@ -232,29 +233,44 @@ function openContact(fullname, email, color, initials, phone, userid, i) {
   let element = document.getElementById("contact_info");
   element.classList.remove("contact-info-content");
   element.classList.remove("contact-info");
-  document.getElementById("contact_info").innerHTML = 
-  renderContactInfo(fullname,email,color,initials,phone,userid,i);
+  document.getElementById("contact_info").innerHTML = renderContactInfo(
+    fullname,
+    email,
+    color,
+    initials,
+    phone,
+    userid,
+    i
+  );
   openRespContactContainer();
-  document.getElementById("contact_info_resp").innerHTML = 
-  renderContactInfo(fullname,email,color,initials,phone,userid,i);
+  document.getElementById("contact_info_resp").innerHTML = renderContactInfo(
+    fullname,
+    email,
+    color,
+    initials,
+    phone,
+    userid,
+    i
+  );
 }
-
 
 /**
  * Function to open the contact container in the response section.
  */
 function openRespContactContainer() {
-  document.getElementById("contact_info_resp_background").classList.remove("d-none");
+  document
+    .getElementById("contact_info_resp_background")
+    .classList.remove("d-none");
 }
-
 
 /**
  * Closes the contact container for the response.
  */
 function closeRespContactContainer() {
-  document.getElementById("contact_info_resp_background").classList.add("d-none");
+  document
+    .getElementById("contact_info_resp_background")
+    .classList.add("d-none");
 }
-
 
 /**
  * Updates the message box to display "Contact successfully added", shows the message box, and then hides it after 2 seconds.
@@ -270,7 +286,6 @@ function contactAddedMessage() {
   }, 1500);
 }
 
-
 /**
  * Function to edit a contact message.
  *
@@ -283,7 +298,6 @@ function contactEditMessage() {
   }, 1500);
 }
 
-
 /**
  * Updates the message box with a "Contact successfully deleted" message and displays it for 2 seconds.
  *
@@ -295,7 +309,6 @@ function contactDeletedMessage() {
     document.getElementById("msgBox-bg").classList.add("d-none");
   }, 1500);
 }
-
 
 /**
  * Function to open the contacts container and update the DOM elements.
@@ -316,7 +329,6 @@ function openContactsContainer() {
   <div id="editContactCard"></div>`;
 }
 
-
 /**
  * Renders the contacts by loading contacts, applying classes, pushing letters, and adding contact listeners.
  *
@@ -328,30 +340,28 @@ async function renderContacts() {
   addContactListeners();
 }
 
-
 /**
  * Renders the given first letter into the DOM, by appending it to the "renderedContent" element and creating a contact card with the letter as an id.
  *
- * @param {string} firstLetter - The first letter to be rendered
+ * @param {string} firstletter - The first letter to be rendered
  */
-function renderLetters(firstLetter) {
+function renderLetters(firstletter) {
   let letterbox = document.getElementById("renderedContent");
-  const letter = firstLetter;
+  const letter = firstletter;
   letterbox.innerHTML += `
     <div class="div-wrapper"><div class="div">${letter}</div></div>
               <img class="img" src="img/seperator_contacts.svg" />
               <div id="contact-card-${letter}" class="contact-card-letter"></div>`;
 }
 
-
 /**
  * Renders the contact card based on the first letter of the contact's first name.
  *
- * @param {string} firstLetter - The first letter of the contact's first name
+ * @param {string} firstletter - The first letter of the contact's first name
  * @param {number} i - Index parameter
  */
-function renderContactCard(firstLetter, i) {
-  let content = document.getElementById(`contact-card-${firstLetter}`);
+function renderContactCard(firstletter, i) {
+  let content = document.getElementById(`contact-card-${firstletter}`);
   contacts.forEach((element, i) => {
     const fullname = element.fullname;
     const email = element.email;
@@ -359,14 +369,19 @@ function renderContactCard(firstLetter, i) {
     const initials = element.initials;
     const phone = element.phone;
     const userid = element.id;
-    if (element.firstname.charAt(0).toUpperCase() == firstLetter) {
-      content.innerHTML += renderContactCardHTML(fullname,email,
-      color,initials,phone,userid,i
+    if (element.firstname.charAt(0).toUpperCase() == firstletter) {
+      content.innerHTML += renderContactCardHTML(
+        fullname,
+        email,
+        color,
+        initials,
+        phone,
+        userid,
+        i
       );
     }
   });
 }
-
 
 /**
  * Function to render the HTML for a contact card.
@@ -380,7 +395,15 @@ function renderContactCard(firstLetter, i) {
  * @param {number} i - the index of the contact
  * @return {string} the HTML for the contact card
  */
-function renderContactCardHTML(fullname,email,color,initials,phone,userid,i) {
+function renderContactCardHTML(
+  fullname,
+  email,
+  color,
+  initials,
+  phone,
+  userid,
+  i
+) {
   return /*html*/ `
                 <div class="responsiv_Overlay" onclick="openRespContactContainer()"></div>  
                 <div class="contact-name" onclick="openContact('${fullname}', '${email}', '${color}', '${initials}', '${phone}', '${userid}', '${i}')">

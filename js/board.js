@@ -1,15 +1,15 @@
-let currentDraggedElement;
-let currentCardDragged;
-let tasksTodo;
-let tasksDone;
-let tasksInProgress;
-let tasksAwaitFeedback;
-let tasksUrgent;
+let currentdraggedelement;
+let currentcarddragged;
+let taskstodo;
+let tasksdone;
+let tasksinprogress;
+let tasksawaitfeedback;
+let tasksurgent;
 let finishcounter = 0;
 let tasks = [];
-let editTaskPriority;
-let currentTask = [];
-let filteredTasks;
+let edittaskpriority;
+let currenttask = [];
+let filteredtasks;
 
 /**
  * Renders the board tasks by loading users from local storage, loading remote user, loading tasks, updating HTML, and updating classes of the board.
@@ -22,16 +22,14 @@ async function renderBoardTasks() {
   classesBoard();
 }
 
-
 /**
  * Moves the current dragged element to a specified location.
  *
  * @param {type} taskId - The identifier of the location to move the element to
  */
 function moveToLocation(taskId) {
-  currentDraggedElement = taskId;
+  currentdraggedelement = taskId;
 }
-
 
 /**
  * Prevents the default behavior when a draggable element is being dragged over a drop target.
@@ -41,7 +39,6 @@ function moveToLocation(taskId) {
 function allowDrop(ev) {
   ev.preventDefault();
 }
-
 
 /**
  * Function to remove highlight from specific elements.
@@ -54,7 +51,6 @@ function removeHighlight() {
   document.getElementById("drag-await-feedback").classList.add("d-none");
 }
 
-
 /**
  * Function to highlight certain elements on the page based on the tasks' status.
  */
@@ -64,16 +60,15 @@ function highlight() {
   document.getElementById("drag-in-progress").classList.remove("d-none");
   document.getElementById("drag-await-feedback").classList.remove("d-none");
 
-  if (tasksTodo == 0)
+  if (taskstodo == 0)
     document.getElementById("no-task-todo").classList.add("d-none");
-  if (tasksInProgress == 0)
+  if (tasksinprogress == 0)
     document.getElementById("no-task-in-progress").classList.add("d-none");
-  if (tasksAwaitFeedback == 0)
+  if (tasksawaitfeedback == 0)
     document.getElementById("no-task-await-feedback").classList.add("d-none");
-  if (tasksDone == 0)
+  if (tasksdone == 0)
     document.getElementById("no-task-done").classList.add("d-none");
 }
-
 
 /**
  * Move the current dragged element to the specified category.
@@ -81,11 +76,10 @@ function highlight() {
  * @param {type} category - the category to move the element to
  */
 function moveTo(category) {
-  tasks[currentDraggedElement]["categoryboard"] = category;
+  tasks[currentdraggedelement]["categoryboard"] = category;
   updateHTML();
   closeCardContainer();
 }
-
 
 /**
  * Asynchronously updates the HTML to reflect the current state of the tasks.
@@ -107,50 +101,48 @@ async function updateHTML() {
   setAmounts();
 }
 
-
 /**
  * Opens the add task container and sets up form submission for adding tasks to storage.
  *
- * @param {type} categoryInput - the category input for the task
+ * @param {type} categoryinput - the category input for the task
  */
-function openAddTaskContainer(categoryInput) {
+function openAddTaskContainer(categoryinput) {
   document.getElementById("board-background").classList.remove("d-none");
   document.getElementById("content-container").classList.add("overlap");
   document.body.classList.add("background-fixed");
-  document.getElementById("addTaskForm").setAttribute(
-    "onsubmit",
-    `addTasksToStorage('${categoryInput}'); return false;`
-  );
-  setTimeout(function() {
+  document
+    .getElementById("addTaskForm")
+    .setAttribute(
+      "onsubmit",
+      `addTasksToStorage('${categoryinput}'); return false;`
+    );
+  setTimeout(function () {
     window.removeEventListener("click", arguments.callee);
-    document.addEventListener('click', clickOutsideHandler);
+    document.addEventListener("click", clickOutsideHandler);
   }, 100);
 }
 
-
 /**
  * Handles click events outside the add task container.
- * 
+ *
  * @param {Event} event - The click event object.
  */
 function clickOutsideHandler(event) {
-  var addTaskBoard = document.querySelector('.add-task-board-card');
-  var targetElement = event.target;
-  if (!addTaskBoard.contains(targetElement)) {
+  var addtaskboard = document.querySelector(".add-task-board-card");
+  var targetelement = event.target;
+  if (!addtaskboard.contains(targetelement)) {
     closeAddTaskContainer();
-    document.removeEventListener('click', clickOutsideHandler);
+    document.removeEventListener("click", clickOutsideHandler);
   } else {
   }
 }
-
 
 /**
  * Removes the click outside listener from the document.
  */
 function removeClickOutsideListener() {
-  document.removeEventListener('click', clickOutsideHandler);
+  document.removeEventListener("click", clickOutsideHandler);
 }
-
 
 /**
  * Closes the add task container and resets the usersassignedto array.
@@ -162,7 +154,6 @@ function closeAddTaskContainer() {
   document.body.classList.remove("background-fixed");
 }
 
-
 /**
  * Set the amounts of different task statuses and perform additional actions if the current page is board.html.
  *
@@ -170,22 +161,21 @@ function closeAddTaskContainer() {
  * This function does not return any value.
  */
 function setAmounts() {
-  amountOfTasks = tasks.length;
-  tasksTodo = 0;
-  tasksDone = 0;
-  tasksInProgress = 0;
-  tasksAwaitFeedback = 0;
-  tasksUrgent = 0;
+  amountoftasks = tasks.length;
+  taskstodo = 0;
+  tasksdone = 0;
+  tasksinprogress = 0;
+  tasksawaitfeedback = 0;
+  tasksurgent = 0;
   for (let i = 0; i < tasks.length; i++) {
     checkCases(tasks, i);
     if (tasks[i].prio == "urgent" && tasks[i].categoryboard != "done")
-      tasksUrgent += 1;
+      tasksurgent += 1;
   }
   if (window.location.pathname == "/board.html") {
     noTasksToDo();
   }
 }
-
 
 /**
  * This function checks the category of a task and increments the corresponding counter.
@@ -196,39 +186,37 @@ function setAmounts() {
 function checkCases(tasks, i) {
   switch (tasks[i].categoryboard) {
     case "todo":
-      tasksTodo += 1;
+      taskstodo += 1;
       break;
     case "in-progress":
-      tasksInProgress += 1;
+      tasksinprogress += 1;
       break;
     case "await-feedback":
-      tasksAwaitFeedback += 1;
+      tasksawaitfeedback += 1;
       break;
     case "done":
-      tasksDone += 1;
+      tasksdone += 1;
       break;
     default:
       break;
   }
 }
 
-
 /**
  * Checks the number of tasks in different categories and updates the HTML content if there are no tasks.
  */
 function noTasksToDo() {
-  if (tasksTodo == 0)
+  if (taskstodo == 0)
     document.getElementById("todo").innerHTML = noTasksToDoHtml("todo");
-  if (tasksInProgress == 0)
+  if (tasksinprogress == 0)
     document.getElementById("in-progress").innerHTML =
       noTasksToDoHtml("in-progress");
-  if (tasksAwaitFeedback == 0)
+  if (tasksawaitfeedback == 0)
     document.getElementById("await-feedback").innerHTML =
       noTasksToDoHtml("await-feedback");
-  if (tasksDone == 0)
+  if (tasksdone == 0)
     document.getElementById("done").innerHTML = noTasksToDoHtml("done");
 }
-
 
 /**
  * Function to start the rotation of a card.
@@ -236,19 +224,17 @@ function noTasksToDo() {
  * @param {number} i - the index of the card to rotate
  */
 function rotateCardStart(i) {
-  currentCardDragged = i;
+  currentcarddragged = i;
   document.getElementById(`board-card${i}`).classList.add("rotate-card");
 }
-
 
 /**
  * Function to end the rotation of a card.
  */
 function rotateCardEnd() {
-  let card = currentCardDragged;
+  let card = currentcarddragged;
   document.getElementById(`board-card${card}`).classList.remove("rotate-card");
 }
-
 
 /**
  * Opens a card with the given index.
@@ -258,14 +244,13 @@ function rotateCardEnd() {
  */
 async function openCard(i) {
   await loadTasks();
-  currentTask = tasks[i];
+  currenttask = tasks[i];
   openCardContainer();
   renderCardInfo(i);
   renderSubtasksInfos(i);
   renderAssigned(i);
-  setAssignedUserHelp(editingCard);
+  setAssignedUserHelp(editingcard);
 }
-
 
 /**
  * Opens the card container by removing the "d-none" class from the element with the ID "card-background" and adding the "background-fixed" class to the body.
@@ -273,9 +258,10 @@ async function openCard(i) {
 function openCardContainer() {
   document.getElementById("card-background").classList.remove("d-none");
   document.body.classList.add("background-fixed");
-  document.getElementById("card-background").addEventListener("click", cardBackgroundClickHandler);
+  document
+    .getElementById("card-background")
+    .addEventListener("click", cardBackgroundClickHandler);
 }
-
 
 /**
  * Closes the card container by adding the "d-none" class to the element with the ID "card-background" and removing the "background-fixed" class from the body.
@@ -284,13 +270,14 @@ function closeCardContainer() {
   usersassignedto = [];
   document.getElementById("card-background").classList.add("d-none");
   document.body.classList.remove("background-fixed");
-  document.getElementById("card-background").removeEventListener("click", cardBackgroundClickHandler);
+  document
+    .getElementById("card-background")
+    .removeEventListener("click", cardBackgroundClickHandler);
 }
-
 
 /**
  * Handles click events on the card background to close the card container.
- * 
+ *
  * @param {Event} event - The click event object.
  */
 function cardBackgroundClickHandler(event) {
@@ -298,7 +285,6 @@ function cardBackgroundClickHandler(event) {
     closeCardContainer();
   }
 }
-
 
 /**
  * Calculate the percentage of completed subtasks and update the progress bar for the given task ID.
@@ -318,7 +304,6 @@ function finishedSubtasks(tasksid) {
   ).style = `width: ${percenttwo}%;`;
 }
 
-
 /**
  * Finds the name of the user assigned to a task by their user ID.
  *
@@ -326,13 +311,12 @@ function finishedSubtasks(tasksid) {
  * @return {string} The name of the user assigned to the task
  */
 function usersAssignTask(userid) {
-  for (let i = 0; i < remoteuserAssign.length; i++) {
-    if (remoteuserAssign[i].id === userid) {
-      return remoteuserAssign[i].name;
+  for (let i = 0; i < remoteuserassign.length; i++) {
+    if (remoteuserassign[i].id === userid) {
+      return remoteuserassign[i].name;
     }
   }
 }
-
 
 /**
  * A function that returns an image path based on the priority of a task.
@@ -350,23 +334,21 @@ function prioImg(i) {
   }
 }
 
-
 /**
  * Filters the task board based on the search input. Clears and filters each category, and renders all board tasks if the search input is empty.
  *
- * @param {string} searchInput - The value to search for in the task board
+ * @param {string} searchinput - The value to search for in the task board
  */
 function filterTaskBoard() {
-  let searchInput = document.getElementById("search_board").value;
+  let searchinput = document.getElementById("search_board").value;
   let categorys = ["todo", "in-progress", "await-feedback", "done"];
   categorys.forEach((element) => {
-    filterCategory(element, searchInput);
+    filterCategory(element, searchinput);
   });
-  if (searchInput.length == 0) {
+  if (searchinput.length == 0) {
     renderBoardTasks();
   }
 }
-
 
 /**
  * Clears the content of the specified board category element.
@@ -377,14 +359,13 @@ function clearBoardCategory(categorys) {
   document.getElementById(categorys).innerHTML = "";
 }
 
-
 /**
  * Sets the assigned user help for the given editing card.
  *
- * @param {Object} editingCard - the editing card for which the assigned user help is being set
+ * @param {Object} editingcard - the editing card for which the assigned user help is being set
  */
-function setAssignedUserHelp(editingCard) {
-  currentTask["assignedToID"].forEach((element) => {
+function setAssignedUserHelp(editingcard) {
+  currenttask["assignedToID"].forEach((element) => {
     let id = element - 1;
     if (!usersassignedto.includes(id)) {
       usersassignedto.push(id);

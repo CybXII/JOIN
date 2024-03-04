@@ -1,4 +1,4 @@
-let inputChecker = false;
+let inputchecker = false;
 
 document.addEventListener("DOMContentLoaded", configureDatePicker);
 
@@ -12,9 +12,9 @@ function configureDatePicker() {
     let today = new Date();
     let day = ("0" + today.getDate()).slice(-2);
     let month = ("0" + (today.getMonth() + 1)).slice(-2);
-    let formattedDate = today.getFullYear() + "-" + month + "-" + day;
-    let datePicker = document.getElementById("datePicker");
-    datePicker.setAttribute("min", formattedDate);
+    let formatteddate = today.getFullYear() + "-" + month + "-" + day;
+    let datepicker = document.getElementById("datepicker");
+    datepicker.setAttribute("min", formatteddate);
   }
   setMinDate();
 }
@@ -44,7 +44,7 @@ function taskPriorityChoosed(i, handler) {
    * @param {number} i - The index of the subtask to delete
    */
 function deleteSubtask(i) {
-  subtasksAdd.splice(i, 1);
+  subtasksadd.splice(i, 1);
   renderAddSubtasks();
 }
 
@@ -56,9 +56,7 @@ function deleteSubtask(i) {
    */
 function showSubtaskIcons(i) {
   document.getElementById(`subtask-icons-${i}`).classList.remove("d-none");
-  document
-    .getElementById(`subtask-comp-${i}`)
-    .classList.add("subtask-background");
+  document.getElementById(`subtask-comp-${i}`).classList.add("subtask-background");
 }
 
 
@@ -69,9 +67,7 @@ function showSubtaskIcons(i) {
    */
 function hideSubtaskIcons(i) {
   document.getElementById(`subtask-icons-${i}`).classList.add("d-none");
-  document
-    .getElementById(`subtask-comp-${i}`)
-    .classList.remove("subtask-background");
+  document.getElementById(`subtask-comp-${i}`).classList.remove("subtask-background");
 }
 
 
@@ -94,19 +90,19 @@ function taskPriorityActive(handler) {
 /**
  * Set event listener on the parent div to handle click events outside of the div.
  *
- * @param {Object} parent_div - the parent div to attach the event listener to
+ * @param {Object} parentdiv - the parent div to attach the event listener to
  */
-function setEventListenerSubtask(parent_div) {
+function setEventListenerSubtask(parentdiv) {
   window.addEventListener("click", function(e) {
-    if (!parent_div.contains(e.target)) {
-      inputField = document.getElementById("subtasks").value;
-      if (!inputField || inputField == "") {
+    if (!parentdiv.contains(e.target)) {
+      inputfield = document.getElementById("subtasks").value;
+      if (!inputfield || inputfield == "") {
         document.getElementById("subtask_add_button").classList.remove("d-none");
         document.getElementById("subtask_seperator").classList.add("d-none");
         document.getElementById("subtask_accept_button").classList.add("d-none");
         document.getElementById("subtask_cancel_button").classList.add("d-none");
         window.removeEventListener("click", arguments.callee);
-      } else if (inputField.length < 0) {
+      } else if (inputfield.length < 0) {
         window.removeEventListener("click", arguments.callee);
       }
     }
@@ -117,14 +113,14 @@ function setEventListenerSubtask(parent_div) {
 /**
  * Add tasks to storage.
  *
- * @param {type} categoryInput - input for category
+ * @param {type} categoryinput - input for category
  */
-function addTasksToStorage(categoryInput) {
-  checkInputFields(categoryInput);
-  if(inputChecker === true){
+function addTasksToStorage(categoryinput) {
+  checkInputFields(categoryinput);
+  if(inputchecker === true){
     setInitials();
     pushCategoryToJSON();
-    addTasktoBoard(categoryInput);
+    addTasktoBoard(categoryinput);
     taskAddedCompleteText();
     taskAddedCompleteTextBoard();
   }
@@ -149,13 +145,13 @@ function taskAddedCompleteTextBoard() {
  * @param {string} title - The title parameter
  * @param {string} date - The date parameter
  * @param {string} category - The category parameter
- * @param {string} categoryInput - The category input parameter
+ * @param {string} categoryinput - The category input parameter
  */
-function checkInputFields(categoryInput) {
+function checkInputFields(categoryinput) {
   let title = document.getElementById("task-title").value;
-  let date = document.getElementById("datePicker").value;
+  let date = document.getElementById("datepicker").value;
   let category = document.getElementById("category-list2").value;
-  checkBeforChange(title, date, category, categoryInput);
+  checkBeforChange(title, date, category, categoryinput);
 }
 
 
@@ -165,11 +161,11 @@ function checkInputFields(categoryInput) {
  * @param {string} title - The title input
  * @param {string} date - The date input
  * @param {string} category - The selected category
- * @param {string} categoryInput - The category input
+ * @param {string} categoryinput - The category input
  */
-function checkBeforChange(title, date, category, categoryInput) {
+function checkBeforChange(title, date, category, categoryinput) {
   if (date != "" && title != "" && category != "Select Task Category") {
-    inputChecker = true;
+    inputchecker = true;
   } else {
     changeStateCategoryInput(category);
     changeStateDateInput(date);
@@ -202,12 +198,12 @@ function changeStateCategoryInput(category) {
  */
 function changeStateDateInput(date) {
   if (date === "") {
-    document.getElementById("datePicker").classList.add("redBorder");
+    document.getElementById("datepicker").classList.add("redBorder");
     document.getElementById("warning-info-3").style = "display: block";
-    document.getElementById("datePicker").setAttribute("onchange", `checkInputFields('todo')`);
+    document.getElementById("datepicker").setAttribute("onchange", `checkInputFields('todo')`);
   } else if (date != "") {
     document.getElementById("warning-info-3").style = "display: none";
-    document.getElementById("datePicker").classList.remove("redBorder");
+    document.getElementById("datepicker").classList.remove("redBorder");
   }
 }
 
@@ -236,12 +232,12 @@ function changeStateTitleInput(title) {
  */
 function changeButtons(event) {
     event.preventDefault();
-    parent_div = document.getElementById("parent_subtasks");
+    parentdiv = document.getElementById("parent_subtasks");
     document.getElementById("subtask_add_button").classList.add("d-none");
     document.getElementById("subtask_seperator").classList.remove("d-none");
     document.getElementById("subtask_accept_button").classList.remove("d-none");
     document.getElementById("subtask_cancel_button").classList.remove("d-none");
-    setEventListenerSubtask(parent_div);
+    setEventListenerSubtask(parentdiv);
   }
 
   /**

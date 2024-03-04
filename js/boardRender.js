@@ -70,7 +70,7 @@ function renderEditCard(content, i) {
                 <input
                   class="input-title"
                   type="date"
-                  id="edit-datePicker"
+                  id="edit-datepicker"
                   value="${tasks[i]["dueDate"]}"
                 />
               </div>
@@ -198,7 +198,6 @@ function renderEditCard(content, i) {
   `;
 }
 
-
 /**
  * Renders the move to options in the card background.
  *
@@ -217,7 +216,6 @@ function renderMoveToOptions() {
     </div>
     `;
 }
-
 
 /**
  * Renders move-to buttons based on the task's category board.
@@ -253,7 +251,6 @@ function renderMoveToButtons(taskID) {
   }
 }
 
-
 /**
  * Renders the add subtasks card with the given index.
  *
@@ -262,8 +259,8 @@ function renderMoveToButtons(taskID) {
  */
 function renderAddSubtasksCard(i) {
   document.getElementById("edit-subtasks-container").innerHTML = "";
-  for (let j = 0; j < currentTask.subtasks.length; j++) {
-    const element = currentTask.subtasks[j].subtaskName;
+  for (let j = 0; j < currenttask.subtasks.length; j++) {
+    const element = currenttask.subtasks[j].subtaskName;
     let content = document.getElementById("edit-subtasks-container");
     content.innerHTML += /*html*/ `
       <div id="subtask-comp-${j}">
@@ -292,20 +289,18 @@ function renderAddSubtasksCard(i) {
   }
 }
 
-
 /**
  * Executes the subtasks function when a key is pressed down.
  *
  * @param {event} event - The keydown event object
  * @return {boolean} Returns false to prevent default behavior
  */
-function subtasksOnKeyDown(event, i, j){
-      if (event.keyCode == 13) {
-        event.preventDefault();
-        addEditSubTaskCard(i,j)
-      }
+function subtasksOnKeyDown(event, i, j) {
+  if (event.keyCode == 13) {
+    event.preventDefault();
+    addEditSubTaskCard(i, j);
+  }
 }
-
 
 /**
  * Renders badges for adding and editing tasks.
@@ -314,14 +309,13 @@ function subtasksOnKeyDown(event, i, j){
  * @return {type} description of return value
  */
 function renderBadgesAddTaskEdit() {
-  for (let i = 0; i < userInitialsAssignedtoBadges.length; i++) {
-    const initials = userInitialsAssignedtoBadges[i];
-    const color = userColorsAssignedtoBadges[i];
+  for (let i = 0; i < userinitialsassignedtobadges.length; i++) {
+    const initials = userinitialsassignedtobadges[i];
+    const color = usercolorsassignedtobadges[i];
     let content = document.getElementById("edit-assigned-to-add-task-list");
     renderBadgesEdit(initials, color, content, i);
   }
 }
-
 
 /**
  * Function to render badges in the edit mode.
@@ -336,15 +330,16 @@ function renderBadgesEdit(initials, color, content, i) {
     content.innerHTML += /*html*/ `<div class="assigned-to-add-task-user" style="background-color: ${color}">${initials}</div>`;
   }
   if (i == 4) {
-    content.innerHTML += /*html*/ `<div id="grey_badge" class="assigned-to-add-task-user" style="background-color: grey">+${i -
-      3}</div>`;
+    content.innerHTML += /*html*/ `<div id="grey_badge" class="assigned-to-add-task-user" style="background-color: grey">+${
+      i - 3
+    }</div>`;
   }
   if (i > 4) {
-    document.getElementById("grey_badge").innerHTML = /*html*/ `+${i -
-      3}</div>`;
+    document.getElementById("grey_badge").innerHTML = /*html*/ `+${
+      i - 3
+    }</div>`;
   }
 }
-
 
 /**
  * Change buttons in the card based on the event triggered.
@@ -353,7 +348,7 @@ function renderBadgesEdit(initials, color, content, i) {
  */
 function changeButtonsCard(event) {
   event.preventDefault();
-  parent_div = document.getElementById("edit-parent_subtasks");
+  parentdiv = document.getElementById("edit-parent_subtasks");
   document.getElementById("edit-subtask_add_button").classList.add("d-none");
   document.getElementById("edit-subtask_seperator").classList.remove("d-none");
   document
@@ -362,23 +357,22 @@ function changeButtonsCard(event) {
   document
     .getElementById("edit-subtask_cancel_button")
     .classList.remove("d-none");
-  setEventListenerSubtask(parent_div);
+  setEventListenerSubtask(parentdiv);
 }
-
 
 /**
  * Edit subtask html card function.
  *
- * @param {string} textContent - the text content to be displayed
+ * @param {string} textcontent - the text content to be displayed
  * @param {number} i - the first index
  * @param {number} j - the second index
  * @return {string} the html for the subtask card
  */
-function editSubTaskHtmlCard(textContent, i, j) {
+function editSubTaskHtmlCard(textcontent, i, j) {
   return /*html*/ `
         <div class="editSubTaskButtonBox" id="subtask-icons-${j}"></div> 
       <div class="subtask-edit-container">
-        <input id="editSubTaskInput${j}" type="text" class="sub-edit-input" minlength="3" maxlength="20" value=${textContent} onkeydown="subtasksOnKeyDown(event,${i},${j})" />
+        <input id="editSubTaskInput${j}" type="text" class="sub-edit-input" minlength="3" maxlength="20" value=${textcontent} onkeydown="subtasksOnKeyDown(event,${i},${j})" />
         <div class="sub-icons">
         <img src="./img/delete.svg" class="subtask-icon-edit" onclick="deleteSubtaskCard(${i},${j})"/>
           <img src="./img/Vector 19.svg" alt="" />

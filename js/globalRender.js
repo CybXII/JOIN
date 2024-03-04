@@ -6,21 +6,20 @@
  * @return {Promise<void>} A Promise that resolves once the function has been executed or an error has been logged.
  */
 async function includeHTMLInit(input) {
-  let functionName = `render${input}`;
+  let functionname = `render${input}`;
   await includeHTML();
   loadUsersFromLocalStorage();
 
   if (users[0] == undefined) {
     window.location.href = "login.html";
   }
-    if (typeof window[functionName] === "function") {
-      window[functionName]();
-      document.getElementById("header-initials").innerHTML = users[0].initials;
-    } else {
-      console.error(`Die Funktion ${functionName} wurde nicht gefunden.`);
-    } 
+  if (typeof window[functionname] === "function") {
+    window[functionname]();
+    document.getElementById("header-initials").innerHTML = users[0].initials;
+  } else {
+    console.error(`Die Funktion ${functionname} wurde nicht gefunden.`);
   }
-
+}
 
 /**
  * Render a filtered card to the specified category.
@@ -59,60 +58,58 @@ function renderFilteredCard(task, i, categorys) {
   </div>`;
 }
 
-
 /**
  * Renders the assigned tasks for a given index.
  *
  * @param {number} i - The index of the task to render
  */
 function renderAssigned(i) {
-  let assignedTask = tasks[i].assignedTo;
-  let colorsTask = tasks[i].colors;
+  let assignedtask = tasks[i].assignedTo;
+  let colorstask = tasks[i].colors;
   let userid = tasks[i].assignedToID;
-  for (let x = 0; x < assignedTask.length; x++) {
-    const initials = assignedTask[x];
-    const colors = colorsTask[x];
-    let assignNames = usersAssignTask(userid[x]);
-    let assignTask = document.getElementById(`card_assignedTo`);
-    assignTask.innerHTML += renderAssignedHTML(initials, assignNames, colors);
+  for (let x = 0; x < assignedtask.length; x++) {
+    const initials = assignedtask[x];
+    const colors = colorstask[x];
+    let assignnames = usersAssignTask(userid[x]);
+    let assigntask = document.getElementById(`card_assignedTo`);
+    assigntask.innerHTML += renderAssignedHTML(initials, assignnames, colors);
   }
 }
-
 
 /**
  * Renders assigned HTML based on initials, assigned names, and colors.
  *
  * @param {string} initials - The initials to be displayed.
- * @param {string} assignNames - The names to be assigned.
+ * @param {string} assignnames - The names to be assigned.
  * @param {string} colors - The color to be used for the background.
  * @return {string} The rendered HTML.
  */
-function renderAssignedHTML(initials, assignNames, colors) {
+function renderAssignedHTML(initials, assignnames, colors) {
   return /*html*/ `<div class="contact">
           <div id="contact_color" class="overlap-group" style="background-color: ${colors}">
             <div class="text-wrapper-2">${initials}</div>
           </div>
-          <div class="assigned_name">${assignNames}</div>
+          <div class="assigned_name">${assignnames}</div>
         </div>`;
 }
 
-
 /**
-   * Renders the finish counter for a specific ID.
-   *
-   * @param {type} id - the ID of the element
-   * @return {type} undefined
-   */
+ * Renders the finish counter for a specific ID.
+ *
+ * @param {type} id - the ID of the element
+ * @return {type} undefined
+ */
 function renderFinishCounter(id) {
-  document.getElementById(`subtask-counter${id}`).innerHTML = `${finishcounter}/${tasks[id]["subtasks"].length} Subtasks`;
+  document.getElementById(
+    `subtask-counter${id}`
+  ).innerHTML = `${finishcounter}/${tasks[id]["subtasks"].length} Subtasks`;
 }
 
-
 /**
-   * Render subtask information for a given task.
-   *
-   * @param {number} i - Index of the task
-   */
+ * Render subtask information for a given task.
+ *
+ * @param {number} i - Index of the task
+ */
 function renderSubtasksInfos(i) {
   let subtasks = tasks[i].subtasks;
   for (let j = 0; j < subtasks.length; j++) {
@@ -127,7 +124,6 @@ function renderSubtasksInfos(i) {
   }
 }
 
-
 /**
  * Render the HTML for subtasks information with a false value.
  *
@@ -136,13 +132,12 @@ function renderSubtasksInfos(i) {
  * @param {element} element - The third parameter description
  * @return {string} The HTML for subtasks information with a false value
  */
-function renderSubtasksInfosHTMLFalse(i, j, element){
-return /*html*/ `<div class="card_subtasks_item">
+function renderSubtasksInfosHTMLFalse(i, j, element) {
+  return /*html*/ `<div class="card_subtasks_item">
           <input checked id="subtask${j}" type="checkbox" class="card_checkbox" onclick="checkSubtasks(${i},${j})">
           <p>${element}</p>
         </div>`;
 }
-
 
 /**
  * Renders the HTML for subtask information.
@@ -152,38 +147,37 @@ return /*html*/ `<div class="card_subtasks_item">
  * @param {any} element - The third parameter description
  * @return {string} The rendered HTML for subtask information
  */
-function renderSubtasksInfosHTML(i, j, element){
+function renderSubtasksInfosHTML(i, j, element) {
   return /*html*/ `<div class="card_subtasks_item">
           <input id="subtask${j}" type="checkbox" class="card_checkbox" onclick="checkSubtasks(${i},${j})">
           <p>${element}</p>
         </div>`;
 }
 
-
 /**
-   * Renders and updates the grey badge on the assigned element.
-   *
-   * @param {HTMLElement} assigned - the element to which the grey badge will be added
-   * @param {number} j - the value used to update the grey badge
-   */
+ * Renders and updates the grey badge on the assigned element.
+ *
+ * @param {HTMLElement} assigned - the element to which the grey badge will be added
+ * @param {number} j - the value used to update the grey badge
+ */
 function renderUpdateGreyBadge(assigned, j, i) {
   assigned.innerHTML += `
     <div class="card-board-profile-batch">
       <div class="group-9-board">
-        <div id="grey_badge${i}" class="group-9-text" style="background-color: grey;">+${j -
-          3}</div>
+        <div id="grey_badge${i}" class="group-9-text" style="background-color: grey;">+${
+    j - 3
+  }</div>
       </div>
     </div>`;
 }
 
-
 /**
-   * Renders and updates colored badges on the assigned element.
-   *
-   * @param {HTMLElement} assigned - the element to which the colored badges will be added
-   * @param {string} colorbg - the background color for the badge
-   * @param {string} assign - the content of the badge
-   */
+ * Renders and updates colored badges on the assigned element.
+ *
+ * @param {HTMLElement} assigned - the element to which the colored badges will be added
+ * @param {string} colorbg - the background color for the badge
+ * @param {string} assign - the content of the badge
+ */
 function renderUpdateColoredBadges(assigned, colorbg, assign) {
   assigned.innerHTML += `
     <div class="card-board-profile-batch">
@@ -193,13 +187,12 @@ function renderUpdateColoredBadges(assigned, colorbg, assign) {
     </div>`;
 }
 
-
 /**
-   * Renders and updates the HTML for a task.
-   *
-   * @param {type} task - the task object to render
-   * @param {type} i - the index of the task
-   */
+ * Renders and updates the HTML for a task.
+ *
+ * @param {type} task - the task object to render
+ * @param {type} i - the index of the task
+ */
 function renderUpdateHTML(task, i) {
   document.getElementById(task.categoryboard).innerHTML += /*html*/ `
         <div class="card-board" draggable="true" ondragstart="rotateCardStart(${i}),moveToLocation(${i}),highlight()" id="board-card${i}" onclick="openCard(${i})" ondragend="rotateCardEnd()">
@@ -232,14 +225,13 @@ function renderUpdateHTML(task, i) {
   prioChecker(task, i);
 }
 
-
 /**
  * Function to check the priority and category of a task and update the corresponding elements in the DOM.
  *
  * @param {object} task - The task object containing priority and category information
  * @param {number} i - The index of the task
  */
-function prioChecker(task, i){
+function prioChecker(task, i) {
   if (task.prio == "urgent") {
     document.getElementById(`prio-svg${i}`).src = "./img/urgent_nofill.svg";
   } else if (task.prio == "medium") {
@@ -256,7 +248,6 @@ function prioChecker(task, i){
   }
 }
 
-
 /**
  * Renders and updates the subtasks in the subtasks-container element.
  *
@@ -265,8 +256,8 @@ function prioChecker(task, i){
  */
 function renderAddSubtasks() {
   document.getElementById("subtasks-container").innerHTML = "";
-  for (let i = 0; i < subtasksAdd.length; i++) {
-    const element = subtasksAdd[i].subtaskName;
+  for (let i = 0; i < subtasksadd.length; i++) {
+    const element = subtasksadd[i].subtaskName;
     let content = document.getElementById("subtasks-container");
     content.innerHTML += /*html*/ `
       <div id="subtask-comp-${i}">
@@ -281,7 +272,6 @@ function renderAddSubtasks() {
       </div>`;
   }
 }
-
 
 /**
  * Function to render urgent priority for the given handler.
@@ -299,7 +289,6 @@ function renderUrgent(handler) {
   document.getElementById(`${handler}prio-low`).classList.add("frame-26");
   document.getElementById(`${handler}prio-low-img`).src = "./img/low_nofill.svg";
 }
-
 
 /**
  * Renders the contact information HTML based on the provided parameters.
@@ -343,8 +332,8 @@ function renderContactInfo(fullname, email, color, initials, phone, userid, i) {
       <a href="tel:${phone}">${phone}</a>
     </div>
   </div>
-`}
-
+`;
+}
 
 /**
  * Renders and updates the assigned tasks for a specific task.
@@ -352,18 +341,17 @@ function renderContactInfo(fullname, email, color, initials, phone, userid, i) {
  * @param {object} task - the task object
  * @param {number} i - the index of the task
  */
-function renderUpdateAssigned(task,i){
+function renderUpdateAssigned(task, i) {
   let assigned = document.getElementById(`assigned-to${i}`);
   for (let j = 0; j < task["assignedTo"].length; j++) {
     const assign = task["assignedTo"][j];
     const colorbg = task["colors"][j];
     if (j <= 3) {
-      renderUpdateColoredBadges(assigned,colorbg,assign);
+      renderUpdateColoredBadges(assigned, colorbg, assign);
     } else if (j == 4) {
-      renderUpdateGreyBadge(assigned,j, i);
+      renderUpdateGreyBadge(assigned, j, i);
+    } else if (j >= 5) {
+      document.getElementById(`grey_badge${i}`).innerHTML = `+${j - 3}`;
     }
-    else if(j>=5){
-      document.getElementById(`grey_badge${i}`).innerHTML = `+${j-3}`;
-    } 
   }
 }

@@ -7,7 +7,7 @@ function renderAssignedTo(handler) {
   if (handler === "edit-") {
     let assigncontent = document.getElementById("edit-assigned-list");
     assigncontent.innerHTML = "";
-    remoteuserAssign.forEach((element, i) => {
+    remoteuserassign.forEach((element, i) => {
       const fullname = element.name;
       const initials = element.initials;
       const color = element.color;
@@ -30,7 +30,7 @@ function renderAssignedTo(handler) {
     handler = "";
     let assigncontent = document.getElementById(`${handler}assigned-list`);
     assigncontent.innerHTML = "";
-    remoteuserAssign.forEach((element, i) => {
+    remoteuserassign.forEach((element, i) => {
       const fullname = element.name;
       const initials = element.initials;
       const color = element.color;
@@ -59,9 +59,9 @@ function renderAssignedTo(handler) {
  * @return {type} description of return value
  */
 function renderBadgesAddTask() {
-  for (let i = 0; i < userInitialsAssignedtoBadges.length; i++) {
-    const initials = userInitialsAssignedtoBadges[i];
-    const color = userColorsAssignedtoBadges[i];
+  for (let i = 0; i < userinitialsassignedtobadges.length; i++) {
+    const initials = userinitialsassignedtobadges[i];
+    const color = usercolorsassignedtobadges[i];
     let content = document.getElementById("assigned-to-add-task-list");
     renderBadges(initials, color, content, i);
   }

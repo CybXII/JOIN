@@ -1,17 +1,16 @@
-let STORAGE_TOKEN = [];
-const STORAGE_URL = `https://remote-storage.developerakademie.org/item`;
+let STORAGETOKEN = [];
+const STORAGEURL = `https://remote-storage.developerakademie.org/item`;
 
 /**
- * Asynchronously loads the token from the specified JSON file and sets the STORAGE_TOKEN value.
+ * Asynchronously loads the token from the specified JSON file and sets the STORAGETOKEN value.
  *
- * @return {Promise<void>} A Promise that resolves when the token is successfully loaded and the STORAGE_TOKEN value is set.
+ * @return {Promise<void>} A Promise that resolves when the token is successfully loaded and the STORAGETOKEN value is set.
  */
 async function loadToken() {
   let resp = await fetch("./json/token.json");
   token = await resp.json();
-  STORAGE_TOKEN = token[0]["token"];
+  STORAGETOKEN = token[0]["token"];
 }
-
 
 /**
  * Asynchronously sets an item in the storage.
@@ -22,13 +21,12 @@ async function loadToken() {
  */
 async function setItem(key, value) {
   await loadToken();
-  const payload = { key, value, token: STORAGE_TOKEN };
-  return fetch(STORAGE_URL, {
+  const payload = { key, value, token: STORAGETOKEN };
+  return fetch(STORAGEURL, {
     method: "POST",
     body: JSON.stringify(payload),
   }).then((res) => res.json());
 }
-
 
 /**
  * Asynchronously retrieves an item from the storage using the provided key.
@@ -38,7 +36,7 @@ async function setItem(key, value) {
  */
 async function getItem(key) {
   await loadToken();
-  const url = `${STORAGE_URL}?key=${key}&token=${STORAGE_TOKEN}`;
+  const url = `${STORAGEURL}?key=${key}&token=${STORAGETOKEN}`;
   return fetch(url)
     .then((res) => res.json())
     .then((res) => {
@@ -48,7 +46,6 @@ async function getItem(key) {
       throw `Could not find data with key "${key}".`;
     });
 }
-
 
 /**
  * Asynchronously loads the user data from storage and handles any potential errors.
@@ -62,7 +59,6 @@ async function loadUser() {
   }
 }
 
-
 /**
  * Asynchronously loads tasks from storage and handles any potential errors.
  *
@@ -74,7 +70,6 @@ async function loadTasks() {
     console.error("Loading error:", e);
   }
 }
-
 
 /**
  * Asynchronously loads contacts from storage and handles any potential errors.
@@ -88,7 +83,6 @@ async function loadContacts() {
   }
 }
 
-
 /**
  * Asynchronously loads the remote user data, filters out users with id 999, and clears the remote user data in case of an error.
  *
@@ -96,12 +90,12 @@ async function loadContacts() {
  * @return {type} description of return value
  */
 async function loadRemoteUser() {
-  remoteuserAssign = [];
+  remoteuserassign = [];
   try {
     remoteuser = JSON.parse(await getItem("users"));
     for (let i = 0; i < remoteuser.length; i++) {
       if (remoteuser[i].id !== 999) {
-        remoteuserAssign.push(remoteuser[i]);
+        remoteuserassign.push(remoteuser[i]);
       }
     }
     remoteuser = [];
@@ -109,7 +103,6 @@ async function loadRemoteUser() {
     console.error("Loading error:", e);
   }
 }
-
 
 /**
  * Saves the users array to the local storage.
@@ -121,19 +114,17 @@ function saveUsersToLocalStorage() {
   localStorage.setItem("users", JSON.stringify(users));
 }
 
-
 /**
  * Loads users data from local storage and parses it if it exists.
  *
  */
 function loadUsersFromLocalStorage() {
-  let storageAsText = localStorage.getItem("users");
+  let storageastext = localStorage.getItem("users");
 
-  if (storageAsText) {
-    users = JSON.parse(storageAsText);
+  if (storageastext) {
+    users = JSON.parse(storageastext);
   }
 }
-
 
 /**
  * Loads remembered users from local storage.
@@ -141,9 +132,9 @@ function loadUsersFromLocalStorage() {
  * @return {object} The remembered users loaded from local storage.
  */
 function loadRememberedUsersFromLocalStorage() {
-  let storageAsText = localStorage.getItem("users");
+  let storageastext = localStorage.getItem("users");
 
-  if (storageAsText) {
-    remembered_user = JSON.parse(storageAsText);
+  if (storageastext) {
+    remembereduser = JSON.parse(storageastext);
   }
 }

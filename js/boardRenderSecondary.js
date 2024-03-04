@@ -48,7 +48,7 @@ function renderCardInfo(i) {
   let year = parseInt(parts[0]);
   let month = parseInt(parts[1]) - 1;
   let day = parseInt(parts[2]);
-  let formattedDate =
+  let formatteddate =
     ("0" + day).slice(-2) + "." + ("0" + (month + 1)).slice(-2) + "." + year;
   content.innerHTML = /*html*/ `
   <div class="card" onclick="dontClose()">
@@ -64,7 +64,7 @@ function renderCardInfo(i) {
         </div>
         <p id="card_description" class="card_description">${tasks[i]
           .description}</p>
-        <div class="main_infos_card"><p>Due date:</p><span>${formattedDate}</span></div>
+        <div class="main_infos_card"><p>Due date:</p><span>${formatteddate}</span></div>
         <div class="main_infos_card"><p>Priority:</p><span>${tasks[i]
           .prio}</span><img src=${prioimg} alt=""></div>
         <div class="card_assigned">

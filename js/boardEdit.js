@@ -5,12 +5,15 @@
  * @return {Promise<void>} A Promise that resolves after updating the tasks in the storage
  */
 async function editTasksfromStorage(i) {
-  currentTask["title"] = document.getElementById("edit-task-title").value;
-  currentTask["dueDate"] = document.getElementById("edit-datePicker").value;
-  currentTask["description"] = document.getElementById("edit-task-description").value;
-  currentTask["category"] = document.getElementById("parent-edit_items").innerHTML;
-  currentTask["prio"] = taskpriority;
-  tasks[i] = currentTask;
+  currenttask["title"] = document.getElementById("edit-task-title").value;
+  currenttask["dueDate"] = document.getElementById("edit-datepicker").value;
+  currenttask["description"] = document.getElementById(
+    "edit-task-description"
+  ).value;
+  currenttask["category"] =
+    document.getElementById("parent-edit_items").innerHTML;
+  currenttask["prio"] = taskpriority;
+  tasks[i] = currenttask;
   setInitialsEdit();
   closeCardContainer();
   await setItem("tasks", JSON.stringify(tasks));
@@ -18,26 +21,23 @@ async function editTasksfromStorage(i) {
   subtasksMessageEditBoard();
 }
 
-
 /**
  * Edit subtasks for a given task.
  *
  * @param {number} i - index of the task
  */
 function editSubtasks(i) {
-  subtasksAdd.push(tasks[i].subtasks);
-  subtasksAddCard = [];
-  subtasksAddCard.push(subtasksAdd[0]);
+  subtasksadd.push(tasks[i].subtasks);
+  subtasksaddcard = [];
+  subtasksaddcard.push(subtasksadd[0]);
   document.getElementById(`edit-subtasks-container`).innerHTML = "";
-  for (let j = 0; j < currentTask.subtasks.length; j++) {
-    const element = currentTask.subtasks[j].subtaskName;
+  for (let j = 0; j < currenttask.subtasks.length; j++) {
+    const element = currenttask.subtasks[j].subtaskName;
     let content = document.getElementById(`edit-subtasks-container`);
     renderEditSubtasks(element, content, i, j);
   }
-  subtasksAdd = [];
+  subtasksadd = [];
 }
-
-
 
 /**
  * Edit the subtask card with the specified index.
@@ -47,11 +47,10 @@ function editSubtasks(i) {
  */
 function editSubtaskCard(i, j) {
   let container = document.getElementById(`subtask-comp-${j}`);
-  let textContent = currentTask.subtasks[j].subtaskName;
-  container.innerHTML = editSubTaskHtmlCard(textContent, i, j);
+  let textcontent = currenttask.subtasks[j].subtaskName;
+  container.innerHTML = editSubTaskHtmlCard(textcontent, i, j);
   hideSubtaskIconsCard(j);
 }
-
 
 /**
  * Function to add or edit a subtask card.
@@ -60,16 +59,15 @@ function editSubtaskCard(i, j) {
  * @param {number} j - The index parameter.
  */
 async function addEditSubTaskCard(i, j) {
-  let subTaskInput = document.getElementById(`editSubTaskInput${j}`).value;
-  if(subTaskInput.length<=1){
+  let subtaskinput = document.getElementById(`editSubTaskInput${j}`).value;
+  if (subtaskinput.length <= 1) {
     subtasksMessage();
-  } else{
-    currentTask.subtasks[j].subtaskName = subTaskInput;
+  } else {
+    currenttask.subtasks[j].subtaskName = subtaskinput;
     editSubtaskCard(i, j);
-    renderAddSubtasksCard(i);  
+    renderAddSubtasksCard(i);
   }
 }
-
 
 /**
  * Opens the edit assign box for a given index and handler, and performs necessary actions based on the visibility state of the box.
@@ -78,56 +76,53 @@ async function addEditSubTaskCard(i, j) {
  * @param {string} handler - The handler identifier
  */
 function openEditAssignTo(i, handler) {
-  let assingBox = document.getElementById(`${handler}list1`);
-  if (!assingBox.classList.contains("visible")) {
-    assingBox.classList.add("visible");
+  let assingbox = document.getElementById(`${handler}list1`);
+  if (!assingbox.classList.contains("visible")) {
+    assingbox.classList.add("visible");
     renderAssignedUserAddTask(handler);
     setCheckBoxesEdit(i, handler);
   } else {
-    assingBox.classList.remove("visible");
+    assingbox.classList.remove("visible");
   }
-  setBoxListener(assingBox);
+  setBoxListener(assingbox);
 }
-
 
 /**
  * Opens the edit category box and sets the category input to be disabled or enabled based on the current state of the category box visibility.
  *
  */
 function openEditCategory() {
-  let categoryBox = document.getElementById("edit-list2");
-  let categoryInput = document.getElementById("parent-edit_items");
-  if (!categoryBox.classList.contains("visible")) {
-    categoryBox.classList.add("visible");
-    categoryInput.setAttribute("disabled", "");
+  let categorybox = document.getElementById("edit-list2");
+  let categoryinput = document.getElementById("parent-edit_items");
+  if (!categorybox.classList.contains("visible")) {
+    categorybox.classList.add("visible");
+    categoryinput.setAttribute("disabled", "");
   } else {
-    categoryBox.classList.remove("visible");
-    categoryInput.removeAttribute("disabled", "");
+    categorybox.classList.remove("visible");
+    categoryinput.removeAttribute("disabled", "");
   }
-  setBoxListener(categoryBox);
+  setBoxListener(categorybox);
 }
-
 
 /**
  * Function to set badges for adding and editing tasks.
  *
  */
 function setBadgesAddTaskEdit() {
-  userInitialsAssignedtoBadges = [];
-  userColorsAssignedtoBadges = [];
+  userinitialsassignedtobadges = [];
+  usercolorsassignedtobadges = [];
   document.getElementById("edit-assigned-to-add-task-list").innerHTML = "";
   for (let i = 0; i < usersassignedto.length; i++) {
     let index = usersassignedto[i];
-    let initialsremote = remoteuserAssign[index].initials;
-    let colorremote = remoteuserAssign[index].color;
-    if (remoteuserAssign[index]["id"] == index + 1) {
-      userInitialsAssignedtoBadges.push(initialsremote);
-      userColorsAssignedtoBadges.push(colorremote);
+    let initialsremote = remoteuserassign[index].initials;
+    let colorremote = remoteuserassign[index].color;
+    if (remoteuserassign[index]["id"] == index + 1) {
+      userinitialsassignedtobadges.push(initialsremote);
+      usercolorsassignedtobadges.push(colorremote);
     }
   }
   renderBadgesAddTaskEdit();
 }
-
 
 /**
  * Edit a card.
@@ -136,61 +131,57 @@ function setBadgesAddTaskEdit() {
  */
 function editCard(i) {
   let content = document.getElementById("card-background");
-  editingCard = i;
+  editingcard = i;
   taskpriority = tasks[i]["prio"];
   renderEditCard(content, i);
   taskPriorityChoosed(taskpriority, "edit-");
 }
 
-
 /**
  * Toggles the styling of elements based on checkbox state.
- * 
+ *
  * @param {string} id - The ID of the element to toggle styling for.
  * @param {boolean} isChecked - The state of the checkbox.
  * @return {undefined}
  */
-function toggleCheckbox(id,isChecked) {
-  const divElement = document.getElementById(`edit-fullname-addtask-dd-${id}`);
-  const parentDivElement = document.getElementById(`edit-catergory_list_${id}`);
+function toggleCheckbox(id, isChecked) {
+  const divelement = document.getElementById(`edit-fullname-addtask-dd-${id}`);
+  const parentdivelement = document.getElementById(`edit-catergory_list_${id}`);
   if (isChecked) {
-    toggleTrueBox(id,divElement,parentDivElement);
+    toggleTrueBox(id, divelement, parentdivelement);
   } else {
-    toggleFalseBox(id,divElement,parentDivElement);
+    toggleFalseBox(id, divelement, parentdivelement);
   }
 }
-
 
 /**
  * Function to toggle the true box and add class to elements if necessary, and push and sort id into usersassignedto array if not already included.
  *
  * @param {type} id - description of parameter
- * @param {type} divElement - description of parameter
- * @param {type} parentDivElement - description of parameter
+ * @param {type} divelement - description of parameter
+ * @param {type} parentdivelement - description of parameter
  * @return {type} description of return value
  */
-function toggleTrueBox(id,divElement,parentDivElement){
-  divElement.classList.add("white");
-  parentDivElement.classList.add("contact_background");
+function toggleTrueBox(id, divelement, parentdivelement) {
+  divelement.classList.add("white");
+  parentdivelement.classList.add("contact_background");
   if (!usersassignedto.includes(id)) {
     usersassignedto.push(id);
     usersassignedto.sort();
   }
 }
 
-
-
 /**
- * Remove the "white" class from the divElement and the "contact_background" class from the parentDivElement, 
+ * Remove the "white" class from the divelement and the "contact_background" class from the parentdivelement,
  * and remove the id from the usersassignedto array if it exists, then sort the array.
  *
  * @param {type} id - description of parameter
- * @param {type} divElement - description of parameter
- * @param {type} parentDivElement - description of parameter
+ * @param {type} divelement - description of parameter
+ * @param {type} parentdivelement - description of parameter
  */
-function toggleFalseBox(id,divElement,parentDivElement){
-  divElement.classList.remove("white");
-  parentDivElement.classList.remove("contact_background");
+function toggleFalseBox(id, divelement, parentdivelement) {
+  divelement.classList.remove("white");
+  parentdivelement.classList.remove("contact_background");
   const index = usersassignedto.indexOf(id);
   if (index !== -1) {
     usersassignedto.splice(index, 1);
@@ -198,15 +189,14 @@ function toggleFalseBox(id,divElement,parentDivElement){
   }
 }
 
-
 /**
  * Sets checkboxes for editing a card.
  *
- * @param {Object} editingCard - The card being edited.
- * @return {undefined} 
+ * @param {Object} editingcard - The card being edited.
+ * @return {undefined}
  */
-function setCheckBoxesEdit(editingCard) {
-  usersassignedto.forEach(element => {
+function setCheckBoxesEdit(editingcard) {
+  usersassignedto.forEach((element) => {
     const id = element;
     const checkbox = document.getElementById(`edit-checkbox${id}`);
     checkbox.checked = true;
@@ -214,7 +204,6 @@ function setCheckBoxesEdit(editingCard) {
   });
 }
 
-  
 /**
  * Sets the initials, IDs, and colors for the current task based on the users assigned to it.
  *
@@ -222,47 +211,45 @@ function setCheckBoxesEdit(editingCard) {
  * @return {type} description of return value
  */
 function setInitialsEdit() {
-  currentTask["assignedTo"] = [];
-  currentTask['assignedToID'] = [];
-  currentTask["colors"] = [];
+  currenttask["assignedTo"] = [];
+  currenttask["assignedToID"] = [];
+  currenttask["colors"] = [];
   for (let i = 0; i < usersassignedto.length; i++) {
     let index = usersassignedto[i];
-    let initialsremote = remoteuserAssign[index].initials;
-    let usersremoteID = remoteuserAssign[index].id;
-    let colorremote = remoteuserAssign[index].color;
-    if (remoteuserAssign[index]["id"] == index + 1) {
-      currentTask["assignedTo"].push(initialsremote);
-      currentTask["assignedToID"].push(usersremoteID);
-      currentTask["colors"].push(colorremote);
+    let initialsremote = remoteuserassign[index].initials;
+    let usersremoteid = remoteuserassign[index].id;
+    let colorremote = remoteuserassign[index].color;
+    if (remoteuserassign[index]["id"] == index + 1) {
+      currenttask["assignedTo"].push(initialsremote);
+      currenttask["assignedToID"].push(usersremoteid);
+      currenttask["colors"].push(colorremote);
     }
   }
 }
-
 
 /**
  * Filter tasks based on a specific category and search input, and update the HTML accordingly.
  *
  * @param {array} categorys - The category to filter tasks by
- * @param {string} searchInput - The search input to filter tasks by
+ * @param {string} searchinput - The search input to filter tasks by
  */
-function filterCategory(categorys, searchInput) {
+function filterCategory(categorys, searchinput) {
   tasks.forEach(function (task, i) {
-    let checkTitlel = task["title"];
-    let checkInfos = task["description"];
+    let checktitle = task["title"];
+    let checkinfos = task["description"];
     if (task.categoryboard === categorys) {
       if (
-        checkTitlel.toUpperCase().includes(searchInput.toUpperCase()) ||
-        checkInfos.toUpperCase().includes(searchInput.toUpperCase())
+        checktitle.toUpperCase().includes(searchinput.toUpperCase()) ||
+        checkinfos.toUpperCase().includes(searchinput.toUpperCase())
       ) {
-        renderFilteredTasks(categorys,task,i);
-      }else {
+        renderFilteredTasks(categorys, task, i);
+      } else {
         clearBoardCategory(categorys);
-        renderNoFilteredFound(categorys)
+        renderNoFilteredFound(categorys);
       }
     }
   });
 }
-
 
 /**
  * Delete a task from the tasks list, update the stored tasks, update the HTML, and close the card container.
@@ -277,7 +264,6 @@ async function deleteTask(i) {
   deleteTaskMessage();
 }
 
-
 /**
  * Asynchronously checks the status of a subtask and updates the task list in the HTML.
  *
@@ -286,11 +272,10 @@ async function deleteTask(i) {
  */
 async function checkSubtasks(i, j) {
   let status = document.getElementById(`subtask${j}`).checked;
-  currentTask.subtasks[j]["subtaskStatus"] = status;
+  currenttask.subtasks[j]["subtaskStatus"] = status;
   await setItem("tasks", JSON.stringify(tasks));
   updateHTML();
 }
-
 
 /**
  * Adds a subtask to the current task based on the input value from the "edit-subtasks" element.
@@ -301,19 +286,18 @@ async function checkSubtasks(i, j) {
 function addSubtasksCard(i, event) {
   let subtaskstoadd = document.getElementById("edit-subtasks").value;
   if (event.keyCode == 13) {
-    event.preventDefault(); 
+    event.preventDefault();
   }
   if (subtaskstoadd) {
-    let JSONToPush = {
+    let jsontopush = {
       subtaskName: subtaskstoadd,
       subtaskStatus: false,
     };
-    currentTask.subtasks.push(JSONToPush);
+    currenttask.subtasks.push(jsontopush);
     document.getElementById("edit-subtasks").value = "";
     renderAddSubtasksCard(i);
   }
 }
-
 
 /**
  * Deletes a subtask card from the current task.
@@ -322,10 +306,9 @@ function addSubtasksCard(i, event) {
  * @param {number} j - index of the subtask to be deleted
  */
 function deleteSubtaskCard(i, j) {
-  currentTask.subtasks.splice(j, 1);
+  currenttask.subtasks.splice(j, 1);
   renderAddSubtasksCard(j);
 }
-
 
 /**
  * Function to show subtask icons card.
@@ -335,9 +318,10 @@ function deleteSubtaskCard(i, j) {
  */
 function showSubtaskIconsCard(i, j) {
   document.getElementById(`subtask-icons-${i}`).classList.remove("d-none");
-  document.getElementById(`subtask-comp-${i}`).classList.add("subtask-background");
+  document
+    .getElementById(`subtask-comp-${i}`)
+    .classList.add("subtask-background");
 }
-
 
 /**
  * Hides the subtask icons card for a given index.
@@ -347,9 +331,10 @@ function showSubtaskIconsCard(i, j) {
  */
 function hideSubtaskIconsCard(i, j) {
   document.getElementById(`subtask-icons-${i}`).classList.add("d-none");
-  document.getElementById(`subtask-comp-${i}`).classList.remove("subtask-background");
+  document
+    .getElementById(`subtask-comp-${i}`)
+    .classList.remove("subtask-background");
 }
-
 
 /**
  * Resets the subtasks card by clearing the value of the "edit-subtasks" element.
@@ -359,20 +344,18 @@ function resetSubtasksCard() {
   document.getElementById("edit-subtasks").value = ``;
 }
 
-
 /**
  * Assigns users to help with the current task.
  *
  */
 function usersAssignedToHelp() {
-  currentTask["assignedToID"] = [];
+  currenttask["assignedToID"] = [];
   for (let i = 0; i < usersassignedto.length; i++) {
     let element = usersassignedto[i];
     element = element + 1;
-    currentTask["assignedToID"].push(element);
+    currenttask["assignedToID"].push(element);
   }
 }
-
 
 /**
  * Opens the burger board and performs related actions.
@@ -381,7 +364,7 @@ function usersAssignedToHelp() {
  * @param {number} i - The index parameter
  */
 function openBurgerBoard(event, i) {
-  currentDraggedElement = i;
+  currentdraggedelement = i;
   event.stopPropagation();
   openCardContainer();
   renderMoveToOptions();
