@@ -39,7 +39,7 @@ function renderFilteredCard(task, i, categorys) {
         <span class="card-board-title">${task.title}</span>
         <span class="card-board-content">${task.description}</span>
       </div>
-      <div class="card-board-progress">
+      <div class="card-board-progress" id="parent-progress-div${i}">
         <div class="card-board-progress-bar">
           <div class="card-board-progress-bar-filler"></div>
         </div>
@@ -207,7 +207,7 @@ function renderUpdateHTML(task, i) {
                 <span class="card-board-title">${task.title}</span>
                 <span class="card-board-content">${task.description}</span>
               </div>
-              <div class="card-board-progress">
+              <div class="card-board-progress" id="parent-progress-div${i}">
                 <div class="card-board-progress-bar">
                   <div class="card-board-progress-bar-filler" id="progress-bar-${i}"></div>
                 </div>

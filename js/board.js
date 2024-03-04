@@ -101,7 +101,7 @@ async function updateHTML() {
     renderUpdateHTML(task, i);
     renderUpdateAssigned(task, i);
     finishedSubtasks(i);
-    renderFinishCounter(i);
+    // renderFinishCounter(i);
     finishcounter = 0;
   });
   await setItem("tasks", JSON.stringify(tasks));
@@ -313,16 +313,21 @@ function cardBackgroundClickHandler(event) {
  * @param {number} tasksid - The ID of the task
  */
 function finishedSubtasks(tasksid) {
-  tasks[tasksid].subtasks.forEach((subtask) => {
-    if (subtask["subtaskStatus"] == true) {
-      finishcounter++;
-    }
-  });
-  let percent = (finishcounter / tasks[tasksid].subtasks.length) * 100;
-  let percenttwo = percent.toFixed(0);
-  document.getElementById(
-    `progress-bar-${tasksid}`
-  ).style = `width: ${percenttwo}%;`;
+  if(tasks[tasksid].subtasks.length > 0){
+    tasks[tasksid].subtasks.forEach((subtask) => {
+      if (subtask["subtaskStatus"] == true) {
+        finishcounter++;
+      }
+    });
+    let percent = (finishcounter / tasks[tasksid].subtasks.length) * 100;
+    let percenttwo = percent.toFixed(0);
+    document.getElementById(
+      `progress-bar-${tasksid}`
+    ).style = `width: ${percenttwo}%;`;  
+    renderFinishCounter(tasksid);
+  } else{
+    document.getElementById(`parent-progress-div${tasksid}`).innerHTML ="";
+  }
 }
 
 
