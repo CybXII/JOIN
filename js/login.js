@@ -21,10 +21,10 @@ function move() {
   }, 1000);
 }
 
+
 /**
  * Renders the login interface and initializes login listeners.
  */
-
 function renderLogin() {
   document.getElementById("frame-153").innerHTML = renderLoginHTML();
   document.getElementById("frame-156").classList.remove("d-none");
