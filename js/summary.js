@@ -23,7 +23,8 @@ function greetUsername() {
     document.getElementById("summary-fullname").innerHTML = users[0].name;
     document.getElementById("summary-fullname-resp").innerHTML = users[0].name;
   }
-  classesSummary();
+  removeActiveClass();
+  setActivClass("summary")
   renderGreetingTime();
   renderUrgent();
 }

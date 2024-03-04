@@ -16,7 +16,8 @@ let editingcard;
  *
  */
 async function renderAddTask() {
-  classesAddTask();
+  removeActiveClass();
+  setActivClass("add_task")
   document.querySelector("form").noValidate = false;
   await loadRemoteUser();
 }

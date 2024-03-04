@@ -20,7 +20,8 @@ async function renderBoardTasks() {
   await loadRemoteUser();
   await loadTasks();
   updateHTML();
-  classesBoard();
+  removeActiveClass();
+  setActivClass("board")
 }
 
 

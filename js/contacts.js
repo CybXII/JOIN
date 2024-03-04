@@ -335,7 +335,8 @@ function openContactsContainer() {
  */
 async function renderContacts() {
   await loadContacts();
-  classesContacts();
+  removeActiveClass();
+  setActivClass("contacts")
   pushLetters();
   addContactListeners();
 }

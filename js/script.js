@@ -22,7 +22,8 @@ function getRandomColor(color) {
  *
  */
 function renderPrivacyPolicy() {
-  classesPrivacyPolicy();
+  removeActiveClass();
+  setActivClass("privacy_policy")
 }
 
 /**
@@ -30,14 +31,15 @@ function renderPrivacyPolicy() {
  *
  */
 function renderHelp() {
-  classesHelp();
+  removeActiveClass();
 }
 
 /**
  * Renders the legal notice by calling the classesLegalNotice function.
  */
 function renderLegalNotice() {
-  classesLegalNotice();
+  removeActiveClass();
+  setActivClass("legal_notice")
 }
 
 /**
