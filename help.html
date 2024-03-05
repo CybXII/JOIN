@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>JOIN - Help</title>
+  <link rel="stylesheet" href="./styles/styleguide.css" />
+  <link rel="stylesheet" href="./styles/global.css" />
+  <link rel="stylesheet" href="./styles/style.css" />
+  <link rel="stylesheet" href="./styles/help.css" />
+  <link rel="stylesheet" href="./styles/fonts.css" />
+  <script src="./js/login.js"></script>
+  <script src="./js/globalRender.js"></script>
+  <script src="./js/script.js"></script>
+  <script src="./js/classesSidebar.js"></script>
+  <script src="./js/storage.js"></script>
+  <link rel="icon" type="image" href="./img/join-favicon.svg" />
+</head>
+
+<body onload="includeHTMLInit('Help')">
+  <div class="task-comp-bg d-none" id="msgBox-bg">
+    <div class="task-comp">
+      <span id="msgBox" class="task-comp-text"></span>
+    </div>
+  </div>
+  <main w3-include-html="./templates/sidebar.html"></main>
+  <nav w3-include-html="./templates/header.html"></nav>
+  <div class="content-container">
+    <div class="container" id="content">
+      <a action="action" onclick="window.history.go(-1); return false;" type="submit" value="Cancel"><img
+          src="./img/arrow-left-line.svg" class="arrow-left-line" />
+      </a>
+      <div class="help">
+        <div class="div">
+          <div class="frame">
+            <div class="text-wrapper">Help</div>
+          </div>
+          <div class="text">
+            <p class="p">
+              <span class="span">Welcome to the help page for </span>
+              <span class="text-wrapper-2">Join</span>
+              <span class="span">
+                , your guide to using our kanban project management tool. Here, we'll provide an overview of what
+              </span>
+              <span class="text-wrapper-2">Join</span>
+              <span class="span"> is, how it can benefit you, and how to use it.</span>
+            </p>
+            <div class="frame-2">
+              <div class="text-wrapper-3">What is Join?</div>
+              <p class="join-is-a-kanban">
+                <span class="text-wrapper-2">Join</span>
+                <span class="span">
+                  is a kanban-based project management tool designed and built by a group of dedicated students as part
+                  of
+                  their web development bootcamp at the Developer Akademie.<br /><br />Kanban, a Japanese term meaning
+                  "billboard", is a highly effective method to visualize work, limit work-in-progress, and
+                  maximize efficiency (or flow).
+                </span>
+                <span class="text-wrapper-2">Join</span>
+                <span class="span">
+                  leverages the principles of kanban to help users manage their tasks and projects in an intuitive,
+                  visual
+                  interface.<br /><br />It is important to note that
+                </span>
+                <span class="text-wrapper-2">Join</span>
+                <span class="span">
+                  is designed as an educational exercise and is not intended for extensive business usage. While we
+                  strive
+                  to ensure the best possible user experience, we cannot guarantee consistent availability, reliability,
+                  accuracy, or other aspects of quality regarding
+                </span>
+                <span class="text-wrapper-2">Join</span>
+                <span class="span">.</span>
+              </p>
+            </div>
+            <div class="text-wrapper-4">How to use it</div>
+            <div class="frame-2">
+              <p class="p">
+                <span class="span">Here is a step-by-step guide on how to use </span>
+                <span class="text-wrapper-2">Join</span>
+                <span class="span">:</span>
+              </p>
+              <div class="frame-2">
+                <div class="frame-300">
+                  <div class="text-wrapper-5">1.</div>
+                  <p class="div-2">
+                    <span class="text-wrapper-6">Exploring the Board<br /></span>
+                    <span class="span">When you log in to </span>
+                    <span class="text-wrapper-2">Join</span>
+                    <span class="span">, you&#39;ll find a default board. This board represents your project and
+                      contains four default
+                      lists: &#34;To Do&#34;, &#34;In Progress&#34;, “Await feedback” and &#34;Done&#34;.</span>
+                  </p>
+                </div>
+                <div class="frame-300">
+                  <div class="text-wrapper-5">2.</div>
+                  <p class="div-2">
+                    <span class="text-wrapper-6">Creating Contacts<br /></span>
+                    <span class="span">In </span>
+                    <span class="text-wrapper-2">Join</span>
+                    <span class="span">, you can add contacts to collaborate on your projects. Go to the
+                      &#34;Contacts&#34; section, click
+                      on &#34;New contact&#34;, and fill in the required information. Once added, these contacts can be
+                      assigned tasks and they can interact with the tasks on the board.</span>
+                  </p>
+                </div>
+                <div class="frame-300">
+                  <div class="text-wrapper-5">3.</div>
+                  <p class="div-3">
+                    <span class="text-wrapper-7">Adding Cards<br /></span>
+                    <span class="text-wrapper-8">Now that you&#39;ve added your contacts, you can start adding cards.
+                      Cards represent individual
+                      tasks. Click the &#34;+&#34; button under the appropriate list to create a new card. Fill in the
+                      task details in the card, like task name, description, due date, assignees, etc.</span>
+                  </p>
+                </div>
+                <div class="frame-300">
+                  <div class="text-wrapper-5">4.</div>
+                  <p class="div-3">
+                    <span class="text-wrapper-7">Moving Cards<br /></span>
+                    <span class="text-wrapper-8">As the task moves from one stage to another, you can reflect that on
+                      the board by dragging and
+                      dropping the card from one list to another.</span>
+                  </p>
+                </div>
+                <div class="frame-300">
+                  <div class="text-wrapper-5">5.</div>
+                  <p class="div-2">
+                    <span class="text-wrapper-6">Deleting Cards<br /></span>
+                    <span class="span">Once a task is completed, you can either move it to the &#34;Done&#34; list or
+                      delete it. Deleting
+                      a card will permanently remove it from the board. Please exercise caution when deleting cards, as
+                      this action is irreversible.<br /><br />Remember that using
+                    </span>
+                    <span class="text-wrapper-2">Join</span>
+                    <span class="span">
+                      effectively requires consistent updates from you and your team to ensure the board reflects the
+                      current state of your project.<br /><br />Have more questions about
+                    </span>
+                    <span class="text-wrapper-2">Join</span>
+                    <span class="span">? Feel free to contact us at luft.luft86@googlemail.com. We&#39;re here to help
+                      you!<br /></span>
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="text-wrapper-4">Enjoy using Join!</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

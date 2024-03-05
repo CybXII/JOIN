@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>JOIN - Summary</title>
+  <link rel="stylesheet" href="./styles/styleguide.css" />
+  <link rel="stylesheet" href="./styles/global.css" />
+  <link rel="stylesheet" href="./styles/style.css" />
+  <link rel="stylesheet" href="../styles/fonts.css" />
+  <link rel="stylesheet" href="./styles/summary.css" />
+  <script src="./js/login.js"></script>
+  <script src="./js/globalRender.js"></script>
+  <script src="./js/storage.js"></script>
+  <script src="./js/summary.js"></script>
+  <script src="./js/script.js"></script>
+  <script src="./js/board.js"></script>
+  <script src="./js/classesSidebar.js"></script>
+  <link rel="icon" type="image" href="../img/join-favicon.svg" />
+</head>
+
+<body onload="includeHTMLInit(`Summary`), greetSummaryAnimation()">
+  <div class="task-comp-bg d-none" id="msgBox-bg">
+    <div class="task-comp">
+      <span id="msgBox" class="task-comp-text"></span>
+    </div>
+  </div>
+  <main w3-include-html="./templates/sidebar.html"></main>
+  <nav w3-include-html="./templates/header.html"></nav>
+  <div class="content-container">
+    <div class="container" id="content">
+      <div class="board_window">
+        <div class="frame-40">
+          <span>Join 360</span>
+          <img class="img2" src="../img/separation-blue.svg" alt="separation-blue" />
+          <p>Key Metrics at a Glance</p>
+          <img class="img1" src="../img/img1_summary.svg" alt="separation-blue" />
+        </div>
+        <div class="summary_helper">
+          <div class="frame-71">
+            <div class="frame-65">
+              <a class="pencil-rectangle-button-v1" href="./board.html">
+                <div class="frame-59">
+                  <div class="todo_picture"></div>
+                </div>
+                <div class="frame-62">
+                  <span id="summ-tasks-todo"></span>
+                  <p>To-do</p>
+                </div>
+              </a>
+              <a class="cheack-reactangle-button-v1" href="./board.html">
+                <div class="frame-59">
+                  <div class="done_picture"></div>
+                </div>
+                <div class="frame-60">
+                  <span id="summ-tasks-done"></span>
+                  <p>Done</p>
+                </div>
+              </a>
+            </div>
+            <a class="urgency-summary-v1" href="./board.html">
+              <div class="frame-67">
+                <div class="frame-59">
+                  <img class="frame-59-ellipse" src="../img/ellipse-4.svg" alt="ellipse" />
+                  <img class="frame-59-prio-alta" src="../img/prio-alta.svg" alt="prio-alta" />
+                </div>
+                <div class="frame-63">
+                  <span id="summ-tasks-urgent"></span>
+                  <p>Urgent</p>
+                </div>
+              </div>
+              <img class="separation-gray" src="../img/separation-gray.svg" alt="Trennungsstrich" />
+              <div class="frame-68">
+                <span id="summ-upcoming"></span>
+                <p id="urgent-tasks">Upcoming Deadline</p>
+              </div>
+            </a>
+            <div class="frame-64">
+              <a class="square-button-v1" href="./board.html">
+                <div class="frame-61">
+                  <span id="summ-tasks-board"></span>
+                  <p>
+                    Tasks in<br />
+                    Board
+                  </p>
+                </div>
+              </a>
+              <a class="square-button-v1" href="./board.html">
+                <div class="frame-61">
+                  <span id="summ-tasks-progress"></span>
+                  <p>
+                    Tasks In<br />
+                    Progress
+                  </p>
+                </div>
+              </a>
+              <a class="square-button-v1" href="./board.html">
+                <div class="frame-61">
+                  <span id="summ-tasks-feedback"></span>
+                  <p>
+                    Awaiting<br />
+                    Feedback
+                  </p>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="frame-69">
+            <span class="header-text" id="summary-greeting"></span>
+            <span class="footer-text" id="summary-fullname"></span>
+          </div>
+          <div id="frame-69_responsiv" class="frame-69_responsiv frame-69_responsiv_background"">
+              <span class=" header-text" id="summary-greeting-resp"></span>
+            <span class="footer-text" id="summary-fullname-resp"></span>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

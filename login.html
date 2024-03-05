@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>JOIN - Login</title>
+  <link rel="stylesheet" href="./styles/styleguide.css" />
+  <link rel="stylesheet" href="./styles/global.css" />
+  <link rel="stylesheet" href="./styles/style.css" />
+  <link rel="stylesheet" href="./styles/login.css" />
+  <link rel="stylesheet" href="./styles/fonts.css" />
+  <script src="./js/login.js"></script>
+  <script src="./js/loginRender.js"></script>
+  <script src="./js/globalRender.js"></script>
+  <script src="./js/register.js"></script>
+  <script src="./js/storage.js"></script>
+  <script src="./js/script.js"></script>
+  <script src="./js/classesSidebar.js"></script>
+  <link rel="icon" type="image" href="./img/join-favicon.svg" />
+</head>
+
+<body onload="move(), renderLogin(), loadRememberedUsersFromLocalStorage(), rememberMeLogin()" id="body">
+  
+  <div class="log-in">
+    <div class="logo">
+      <div id="logo_container" class="big_size logo_container background">
+        <img id="join_logo" class="join_logo_start capa background" src="img/join_start.svg" />
+        <img id="join_logo2" class="join_logo_start_responsiv capa background" src="img/respo_logo.svg" />
+      </div>
+    </div>
+    <div class="register-comp-bg d-none" id="msgBox-bg">
+      <div class="register-comp">
+        <span id="msgBox" class="register-comp-text">You Signed Up successfully</span>
+      </div>
+    </div>
+    <div class="register-comp-bg d-none" id="privacybox-bg">
+      <div class="register-comp">
+        <span id="privacybox" class="register-comp-text">Please Accept the Privacy Policy</span>
+      </div>
+    </div>
+    <form class="frame-153" id="frame-153" onsubmit="login(event); return false;"></form>
+    <div class="frame-156" id="frame-156">
+      <div class="text-wrapper-5">Not a Join user?</div>
+      <div class="button-wrapper" onclick="renderSignUp()">
+        <button class="button-3">Sign up</button>
+      </div>
+    </div>
+    <div class="frame-213">
+      <div class="text-button">
+        <a href="./legal-external.html" target="_blank">
+          <div class="text-wrapper-6">Privacy Policy</div>
+        </a>
+      </div>
+      <div class="div-wrapper">
+        <a href="./privacy-external.html" target="_blank">
+          <div class="text-wrapper-6">Legal notice</div>
+        </a>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

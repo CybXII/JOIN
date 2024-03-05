@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>JOIN - Add Task</title>
+  <link rel="stylesheet" href="./styles/styleguide.css" />
+  <link rel="stylesheet" href="./styles/global.css" />
+  <link rel="stylesheet" href="./styles/style.css" />
+  <link rel="stylesheet" href="../styles/fonts.css" />
+  <link rel="stylesheet" href="./styles/add-task.css" />
+  <script src="./js/login.js"></script>
+  <script src="./js/globalRender.js"></script>
+  <script src="./js/script.js"></script>
+  <script src="./js/storage.js"></script>
+  <script src="./js/classesSidebar.js"></script>
+  <script src="./js/addTask.js"></script>
+  <script src="./js/addTaskRender.js"></script>
+  <script src="./js/addTaskAssets.js"></script>
+  <link rel="icon" type="image" href="./img/join-favicon.svg" />
+</head>
+
+<body onload="includeHTMLInit(`AddTask`)">
+  <div class="task-comp-bg d-none" id="msgBox-bg">
+    <div class="task-comp">
+      <span id="msgBox" class="task-comp-text">Task added to Board</span>
+    </div>
+  </div>
+
+  <main w3-include-html="./templates/sidebar.html"></main>
+  <div class="content-container">
+    <div class="container-task" id="content">
+      <div class="frame-40">
+        <h1>Add Task</h1>
+      </div>
+
+      <form id="addTaskForm" class="addTask_helper" onsubmit="addTasksToStorage('todo'); return false;">
+        <div class="input-fields">
+          <div class="frame-219">
+            <div class="title-v1">
+              <div class="title">Title<span class="red">*</span></div>
+              <div class="frame-203">
+                <div class="frame-14">
+                  <input class="input-title" placeholder="Enter a title" type="text" name="title" id="task-title" />
+                </div>
+                <span id="warning-info-1" class="warning-info-1" style="display: none">This field is required</span>
+              </div>
+            </div>
+            <div class="description-v1">
+              <span>Description</span>
+              <div class="frame-207">
+                <div class="frame-17">
+                  <textarea class="input-title" placeholder="Enter a Description" type="text" name="description"
+                    id="task-description"></textarea>
+                </div>
+              </div>
+            </div>
+            <div class="asigned-to-v1">
+              <span class="assigned-to">Assigned to</span>
+              <div id="list1" class="dropdown-check-list" tabindex="100">
+                <div onclick="renderAssignedTo(), openAssignTo()">
+                  <span class="anchor">Select contacts to assign</span>
+                </div>
+                <ul class="items">
+                  <div id="assigned-list"></div>
+                </ul>
+              </div>
+            </div>
+            <div class="assigned-to-add-task-list" id="assigned-to-add-task-list"></div>
+          </div>
+          <img class="vertical-line" src="././img/vertical-line.svg" alt="vertical-line" />
+          <div class="frame-39">
+            <div class="due-date-v1">
+              <div for="title">Due date<span class="red">*</span></div>
+              <div class="frame-211">
+                <div class="frame-15">
+                  <input class="input-title" type="date" id="datepicker" placeholder="dd/mm/yyyy" />
+                </div>
+                <span id="warning-info-3" class="warning-info-3" style="display: none">This field is required.</span>
+              </div>
+            </div>
+            <div class="frame-28">
+              <div for="title">Prio</div>
+              <div class="priority">
+                <div class="frame-16" id="prio-urgent" onclick="taskPriorityChoosed('urgent');">
+                  <span>Urgent</span>
+                  <img id="prio-urgent-img" src="./img/urgent_nofill.svg" alt="prio-alta-red" />
+                </div>
+                <div class="frame-25-active" id="prio-medium" onclick="taskPriorityChoosed('medium');">
+                  <span>Medium</span>
+                  <img id="prio-medium-img" src="./img/medium_fill.svg" alt="prio-media" />
+                </div>
+                <div class="frame-26" id="prio-low" onclick="taskPriorityChoosed('low');">
+                  <span>Low</span>
+                  <img id="prio-low-img" src="./img/low_nofill.svg" alt="prio-baja" />
+                </div>
+              </div>
+            </div>
+            <div class="category">
+              <div for="title">Category<span class="red">*</span></div>
+              <div id="list2" class="dropdown-check-list2" tabindex="100">
+                <div onclick="openCategory()">
+                  <span id="category-border" class="anchor">
+                    <input id="category-list2"  value="Select Task Category"></input>
+                  </span>
+                </div>
+                <ul class="items">
+                  <div id="category-list2-items">
+                    <li onclick="fillInputField('Technical Task')">
+                      Technical Task
+                    </li>
+                    <li onclick="fillInputField('User Story')">User Story</li>
+                  </div>
+                </ul>
+              </div>
+              <span id="warning-info-2" class="warning-info-2" style="display: none">This field is required</span>
+
+            </div>
+            <div class="subtask-v1-reconstrution">
+              <div>Subtasks</div>
+              <div id="parent_subtasks" class="frame-18">
+                <input id="subtasks" type="text" onclick="changeButtons(event)" class="subtasks"
+                  placeholder="Add new subtask" onkeydown="checkOnKeyDown(event)"/>
+                <div class="subtasks_buttons">
+                  <img id="subtask_add_button" class="subtask_add_button" src="../img/add_icon.svg" alt="" />
+                  <img id="subtask_cancel_button" onclick="resetSubtasks()" class="subtask_add_button d-none"
+                    src="../img/cancel.svg" alt="" />
+                  <img id="subtask_seperator" class="subtask_add_button d-none" src="../img/subtask_seperator.svg"
+                    alt="" />
+                  <img id="subtask_accept_button" class="subtask_add_button d-none" src="../img/subtasks_add.svg" alt=""
+                    onclick="addSubtasks()" />
+                </div>
+              </div>
+              <div class="subtasks-container" id="subtasks-container"></div>
+            </div>
+          </div>
+        </div>
+        <div class="frame-27">
+          <p class="disclaimer" for="disclaimer">
+            <span>*</span>This field is required
+          </p>
+          <div>
+            <div onclick="clearFields()" class="secondary">
+              <span>Clear</span>
+              <div class="close"></div>
+            </div>
+            <button class="primary-check-button" type="submit">
+              <span>Create Task</span>
+              <img src="../img/check-out-wheite.svg" alt="check-out-wheite" />
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+  <nav w3-include-html="./templates/header.html"></nav>
+</body>
+
+</html>

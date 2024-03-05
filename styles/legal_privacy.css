@@ -1,0 +1,113 @@
+h1{
+    width: fit-content;
+    font-family: var(--version-2-t1-font-family);
+    font-weight: var(--version-2-t1-font-weight);
+    color: #000000;
+    font-size: var(--version-2-t1-font-size);
+    letter-spacing: var(--version-2-t1-letter-spacing);
+    line-height: var(--version-2-t1-line-height);
+    white-space: nowrap;
+    font-style: var(--version-2-t1-font-style);
+}
+
+.container {
+    padding: 80px 20px 80px 80px;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    margin: 0;
+    position: fixed;
+    top: 96px;
+    left: 232px;
+    right: 0;
+    bottom: 0;
+    overflow-y: scroll;
+}
+
+main{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: var(--version-2main-color);
+    z-index: 30;
+}
+
+.container::-webkit-scrollbar {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    z-index: 20;
+}
+
+.container::-webkit-scrollbar-track {
+    border-radius: 0.5vw;
+    width: 1px;  
+    height: 53px;
+    z-index: 20;
+}
+
+.container::-webkit-scrollbar-thumb {
+    background: #A8A8A8; 
+    border-radius: 5px;
+    z-index: 20;
+}
+
+.arrow-left-line{
+    right: 16px;
+    left: unset;
+    top: 100px;
+}
+
+
+body{
+overflow: hidden;
+}
+
+@media (max-width: 900px) {
+    main{
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        background-color: var(--version-2main-color);
+    }
+
+    body{
+        overflow: hidden;
+    }
+
+    .arrow-left-line{
+        right: 16px;
+        left: unset;
+        top: 72px;
+    }
+
+    .container{
+        padding:  51px 10px;
+        /* overflow-y: scroll; */
+        top: 80px;
+        left: 10px;
+        bottom: 80px;
+        position: fixed;
+        width: 94%;
+    }
+
+    .content-container {
+        margin: 0px;
+        top: 80px;
+        bottom: 80px;
+        position: fixed;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+
+    h1{
+        white-space: wrap;
+    }
+
+    nav {
+        position: fixed;
+        z-index: 100;
+    }
+}

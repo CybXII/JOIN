@@ -1,0 +1,7 @@
+*.bat
+node_modules
+package-lock.json
+package.json
+infosLukas.txt
+json/token.json
+.DS_Store

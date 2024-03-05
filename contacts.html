@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>JOIN - Contacts</title>
+  <link rel="stylesheet" href="./styles/styleguide.css" />
+  <link rel="stylesheet" href="./styles/global.css" />
+  <link rel="stylesheet" href="./styles/fonts.css" />
+  <link rel="stylesheet" href="./styles/style.css" />
+  <link rel="stylesheet" href="./styles/contacts.css" />
+  <script src="./js/login.js"></script>
+  <script src="./js/script.js"></script>
+  <script src="./js/globalRender.js"></script>
+  <script src="./js/storage.js"></script>
+  <script src="./js/classesSidebar.js"></script>
+  <script src="./js/contacts.js"></script>
+  <script src="./js/contactsRender.js"></script>
+  <link rel="icon" type="image" href="./img/join-favicon.svg" />
+</head>
+
+<body onload="includeHTMLInit(`Contacts`), pushLetters()">
+    <div class="task-comp-bg d-none" id="msgBox-bg">
+    <div class="task-comp">
+      <span id="msgBox" class="task-comp-text"></span>
+    </div>
+  </div>
+  <div class="contacts-background d-none" id="contacts-background" onclick="closeContactsContainer()">
+    <div class="contact_Card_helper">
+      <div class="contacts-card" onclick="dontClose()">
+        <div class="leftSide" id="left-side"></div>
+        <div class="rightSide" id="right-side"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="contact_info_resp_background d-none" id="contact_info_resp_background"
+    onclick="closeRespContactContainer()">
+
+    <div class="frame-40-resp">
+      <div class="contact_resp_headline_container">
+        <div class="headline_resp">
+          <span>Contacts</span>
+          <div class="second_headline_resp">
+            <img src="./img/separation-blue.svg" alt="separation-blue" />
+            <p>Better with a team</p>
+          </div>
+        </div>
+
+        <div onclick="closeRespContactContainer()"><img src="./img/arrow-left-line.svg"
+            class="arrow-left-line-contacts" />
+        </div>
+
+      </div>
+      <div class="contact_info_resp" id="contact_info_resp"></div>
+    </div>
+  </div>
+  <nav w3-include-html="./templates/header.html"></nav>
+  <div class="content-container">
+    <div class="container" id="content">
+      <div>
+        <div class="frame-97">
+          <div class="addContact">
+            <div class="primary-contact" onclick="openContactsContainerAdd()">
+              <div class="text-wrapper">Add new contact</div>
+              <img class="person-add" src="img/person_add.svg" />
+            </div>
+          </div>
+          <div id="renderedContent" class="contact-list"></div>
+        </div>
+        <div class="frame-40">
+          <div class="headline">
+            <span>Contacts</span>
+            <div>
+              <img src="./img/separation-blue.svg" alt="separation-blue" />
+              <p>Better with a team</p>
+            </div>
+          </div>
+          <div class="contact_info" id="contact_info"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <main w3-include-html="./templates/sidebar.html"></main>
+</body>
+
+</html>

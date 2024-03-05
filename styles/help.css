@@ -1,0 +1,517 @@
+ 
+  .help{
+    padding-bottom: 40px;
+  }
+
+  .container {
+    padding: 80px 20px 0 80px;
+  }
+  
+  .help .frame {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    top: 206px;
+    left: 328px;
+  }
+  
+  .help .text-wrapper {
+    position: relative;
+    width: fit-content;
+    margin-top: -1px;
+    font-family: var(--version-2-t1-font-family);
+    font-weight: var(--version-2-t1-font-weight);
+    color: #000000;
+    font-size: var(--version-2-t1-font-size);
+    letter-spacing: var(--version-2-t1-letter-spacing);
+    line-height: var(--version-2-t1-line-height);
+    white-space: nowrap;
+    font-style: var(--version-2-t1-font-style);
+  }
+  
+  .help .text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+
+  }
+  
+  .help .p {
+    position: relative;
+    align-self: stretch;
+    margin-top: -1px;
+    font-family: var(--version-2-body-font-family);
+    font-weight: var(--version-2-body-font-weight);
+    color: transparent;
+    font-size: var(--version-2-body-font-size);
+    letter-spacing: var(--version-2-body-letter-spacing);
+    line-height: var(--version-2-body-line-height);
+    font-style: var(--version-2-body-font-style);
+  }
+  
+  .help .span {
+    color: #000000;
+    font-family: var(--version-2-body-font-family);
+    font-style: var(--version-2-body-font-style);
+    font-weight: var(--version-2-body-font-weight);
+    letter-spacing: var(--version-2-body-letter-spacing);
+    line-height: var(--version-2-body-line-height);
+    font-size: var(--version-2-body-font-size);
+  }
+  
+  .help .text-wrapper-2 {
+    color: #29abe2;
+    font-family: var(--version-2-body-font-family);
+    font-style: var(--version-2-body-font-style);
+    font-weight: var(--version-2-body-font-weight);
+    letter-spacing: var(--version-2-body-letter-spacing);
+    line-height: var(--version-2-body-line-height);
+    font-size: var(--version-2-body-font-size);
+  }
+  
+  .help .frame-2 {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+    position: relative;
+    align-self: stretch;
+    width: 100%;
+    flex: 0 0 auto;
+  }
+  
+  .arrow-left-line{
+    right: 16px;
+    left: unset;
+    top: 100px;
+}
+  
+  .help .text-wrapper-3 {
+    position: relative;
+    margin-top: -1px;
+    font-family: "Inter-Bold", Helvetica;
+    font-weight: 700;
+    color: var(--black);
+    font-size: 27px;
+    letter-spacing: 0;
+    line-height: 32.4px;
+  }
+  
+  .help .join-is-a-kanban {
+    position: relative;
+    align-self: stretch;
+    font-family: var(--version-2-body-font-family);
+    font-weight: var(--version-2-body-font-weight);
+    color: transparent;
+    font-size: var(--version-2-body-font-size);
+    letter-spacing: var(--version-2-body-letter-spacing);
+    line-height: var(--version-2-body-line-height);
+    font-style: var(--version-2-body-font-style);
+  }
+  
+  .help .text-wrapper-4 {
+    position: relative;
+    font-family: "Inter-Bold", Helvetica;
+    font-weight: 700;
+    color: var(--black);
+    font-size: 27px;
+    letter-spacing: 0;
+    line-height: 32.4px;
+  }
+  
+  .help .frame-300 {
+    display: flex;
+    align-items: flex-start;
+    gap: 35px;
+    position: relative;
+    align-self: stretch;
+    width: 100%;
+    flex: 0 0 auto;
+  }
+  
+  .help .text-wrapper-5 {
+    position: relative;
+    width: fit-content;
+    margin-top: -1px;
+    font-family: "Inter-Bold", Helvetica;
+    font-weight: 700;
+    color: var(--black);
+    font-size: 27px;
+    letter-spacing: 0;
+    line-height: 32.4px;
+    white-space: nowrap;
+  }
+  
+  .help .div-2 {
+    color: transparent;
+    position: relative;
+    flex: 1;
+    margin-top: -1px;
+    font-family: "Inter-Bold", Helvetica;
+    font-weight: 400;
+    font-size: 20px;
+    letter-spacing: 0;
+    line-height: 24px;
+  }
+  
+  .help .text-wrapper-6 {
+    font-weight: 700;
+    color: #000000;
+  }
+  
+  .help .div-3 {
+    color: #000000;
+    position: relative;
+    flex: 1;
+    margin-top: -1px;
+    font-family: "Inter-Bold", Helvetica;
+    font-weight: 400;
+    font-size: 20px;
+    letter-spacing: 0;
+    line-height: 24px;
+  }
+  
+  .help .text-wrapper-7 {
+    font-weight: 700;
+  }
+  
+  .help .text-wrapper-8 {
+    font-family: var(--version-2-body-font-family);
+    font-size: var(--version-2-body-font-size);
+    line-height: var(--version-2-body-line-height);
+    font-style: var(--version-2-body-font-style);
+    font-weight: var(--version-2-body-font-weight);
+    letter-spacing: var(--version-2-body-letter-spacing);
+  }
+  
+  .help .header {
+    display: flex;
+    width: 1440px;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 40px 20px 348px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #ffffff;
+    box-shadow: var(--barra-superior);
+  }
+  
+  .help .text-wrapper-9 {
+    position: relative;
+    width: fit-content;
+    font-family: var(--version-2-t6-font-family);
+    font-weight: var(--version-2-t6-font-weight);
+    color: #000000;
+    font-size: var(--version-2-t6-font-size);
+    letter-spacing: var(--version-2-t6-letter-spacing);
+    line-height: var(--version-2-t6-line-height);
+    white-space: nowrap;
+    font-style: var(--version-2-t6-font-style);
+  }
+  
+  .help .frame-4 {
+    display: inline-flex;
+    align-items: center;
+    gap: 16px;
+    position: relative;
+    flex: 0 0 auto;
+  }
+  
+  .help .user-profile {
+    position: relative;
+    flex: 0 0 auto;
+  }
+  
+  .help .frame-5 {
+    display: flex;
+    flex-direction: column;
+    width: 232px;
+    height: 1024px;
+    align-items: center;
+    justify-content: space-between;
+    padding: 64px 0px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #2a3647;
+    box-shadow: var(--nuevo);
+  }
+  
+  .help .capa {
+    position: relative;
+    width: 100.03px;
+    height: 121.97px;
+  }
+  
+  .help .menu {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 15px;
+    position: relative;
+    flex: 0 0 auto;
+  }
+  
+  .help .summary {
+    display: flex;
+    width: 232px;
+    height: 46px;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    padding: 8px 53px;
+    position: relative;
+    border-radius: 8px;
+  }
+  
+  .help .menu-button-hover {
+    display: flex;
+
+    height: 46px;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 56px;
+    position: relative;
+    margin-top: -8px;
+    margin-bottom: -8px;
+    margin-left: -53px;
+    margin-right: -53px;
+    border-radius: 8px;
+  }
+  
+  .help .icons {
+    position: relative;
+    width: 30px;
+    height: 30px;
+  }
+  
+  .help .text-2 {
+    position: relative;
+    width: fit-content;
+    font-family: var(--version-2-body-font-family);
+    font-weight: var(--version-2-body-font-weight);
+    color: #cdcdcd;
+    font-size: var(--version-2-body-font-size);
+    letter-spacing: var(--version-2-body-letter-spacing);
+    line-height: var(--version-2-body-line-height);
+    white-space: nowrap;
+    font-style: var(--version-2-body-font-style);
+  }
+  
+  .help .add-task {
+    display: inline-flex;
+    align-items: center;
+    gap: 20px;
+    position: relative;
+    flex: 0 0 auto;
+  }
+  
+  .help .menu-button-hover-2 {
+    display: flex;
+
+    height: 46px;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 56px;
+    position: relative;
+    border-radius: 8px;
+  }
+  
+  .help .board {
+    display: flex;
+
+    align-items: flex-start;
+    gap: 20px;
+    position: relative;
+    flex: 0 0 auto;
+  }
+  
+  .help .contacts {
+    display: flex;
+
+    align-items: flex-start;
+    gap: 8px;
+    position: relative;
+    flex: 0 0 auto;
+  }
+  
+  .help .frame-6 {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-end;
+    gap: 4px;
+    padding: 243px 0px 0px 52px;
+    position: relative;
+    align-self: stretch;
+    width: 100%;
+    flex: 0 0 auto;
+  }
+  
+  .help .text-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px;
+    position: relative;
+    flex: 0 0 auto;
+  }
+  
+  .help .text-wrapper-10 {
+    position: relative;
+    margin-top: -1px;
+    font-family: var(--version-2-body-font-family);
+    font-weight: var(--version-2-body-font-weight);
+    color: var(--icon);
+    font-size: var(--version-2-body-font-size);
+    letter-spacing: var(--version-2-body-letter-spacing);
+    line-height: var(--version-2-body-line-height);
+    white-space: nowrap;
+    font-style: var(--version-2-body-font-style);
+  }
+  
+  .help .arrow-left-line {
+    position: fixed;
+    width: 37px;
+    height: 37px;
+    top: 225px;
+    left: 1307px;
+  }
+  
+  .help .img {
+    position: absolute;
+    width: 32px;
+    height: 32px;
+    top: 3px;
+    left: 2px;
+  }
+  
+
+  h1{
+    width: fit-content;
+    font-family: var(--version-2-t1-font-family);
+    font-weight: var(--version-2-t1-font-weight);
+    color: #000000;
+    font-size: var(--version-2-t1-font-size);
+    letter-spacing: var(--version-2-t1-letter-spacing);
+    line-height: var(--version-2-t1-line-height);
+    white-space: nowrap;
+    font-style: var(--version-2-t1-font-style);
+  }
+
+  .container {
+      padding: 80px 20px 80px 80px;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      margin: 0;
+      position: fixed;
+      top: 96px;
+      left: 232px;
+      right: 0;
+      bottom: 0;
+      overflow-y: scroll;
+  }
+
+  main{
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      background-color: var(--version-2main-color);
+      z-index: 30;
+  }
+
+  .text-wrapper-6 {
+    position: relative;
+    width: fit-content;
+    margin-top: -1px;
+    font-family: var(--version-2-body-font-family);
+    font-weight: var(--version-2-body-font-weight);
+    color: var(--icon);
+    font-size: var(--version-2-body-font-size);
+    letter-spacing: var(--version-2-body-letter-spacing);
+    line-height: var(--version-2-body-line-height);
+    white-space: nowrap;
+    font-style: var(--version-2-body-font-style);
+    cursor: pointer;
+
+  }
+
+  .container::-webkit-scrollbar {
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      z-index: 20;
+  }
+      
+  .container::-webkit-scrollbar-track {
+      border-radius: 0.5vw;
+      width: 1px;  
+      height: 53px;
+      z-index: 20;
+    }
+    
+    .container::-webkit-scrollbar-thumb {
+      background: #A8A8A8; 
+      border-radius: 5px;
+      z-index: 20;
+  }
+
+
+  body{
+  overflow: hidden;
+  }
+
+@media (max-width: 900px) {
+    main{
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        background-color: var(--version-2main-color);
+    }
+
+  body{
+      overflow: hidden;
+  }
+
+  .arrow-left-line{
+    right: 16px;
+    left: unset;
+    top: 72px;
+  }
+
+  .container{
+      padding:  48px 16px;
+      overflow-y: scroll;
+      top: 80px;
+      left: 0;
+      bottom: 80px;
+      position: fixed;
+      width: 100%;
+      box-sizing: border-box;
+  }
+
+  .content-container {
+      margin: 0px;
+      top: 80px;
+      bottom: 80px;
+      position: fixed;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      width: 100%;
+  }
+
+  h1{
+      white-space: wrap;
+  }
+
+  nav{
+      position: fixed;
+      z-index: 100;
+  }
+}
